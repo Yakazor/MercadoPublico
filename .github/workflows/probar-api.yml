@@ -13,14 +13,18 @@ on:
         description: "Código de orden de compra (opcional)"
         required: false
         default: ""
+      fecha_oc:
+        description: "Fecha ddmmaaaa: lista OC del día + detalle de la primera (opcional)"
+        required: false
+        default: ""
 
 jobs:
   probar:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
@@ -30,6 +34,7 @@ jobs:
           MP_TICKET: ${{ secrets.MP_TICKET }}
           CODIGO: ${{ inputs.codigo }}
           OC: ${{ inputs.oc }}
+          FECHA_OC: ${{ inputs.fecha_oc }}
         run: |
           if [ -z "$MP_TICKET" ]; then
             echo "::error::Falta el secret MP_TICKET en Settings → Secrets and variables → Actions"
@@ -38,8 +43,9 @@ jobs:
           ARGS=""
           [ -n "$CODIGO" ] && ARGS="--codigo $CODIGO"
           [ -n "$OC" ] && ARGS="--oc $OC"
+          [ -n "$FECHA_OC" ] && ARGS="--fecha-oc $FECHA_OC"
           python scripts/probar_api.py $ARGS
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: always()
         with:
           name: muestra-api
