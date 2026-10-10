@@ -43,3 +43,50 @@ def test_orden_compra_una_fila_por_item():
     }
     filas = filas_orden_compra(oc, FILTRO.evaluar("guantes"))
     assert [f["precio_unitario_neto"] for f in filas] == [50.0, 20.5]
+
+
+# Forma real devuelta por licitaciones.json?codigo=1000-24-LE26 (10-10-2026, resumida)
+DETALLE_REAL = {
+    "CodigoExterno": "1000-24-LE26",
+    "Nombre": "SUM. DE PIEZAS DE MADERA DE ROBLE O COIGÜE",
+    "CodigoEstado": 5,
+    "Descripcion": "La Dirección Provincial de Vialidad, Provincia de Biobío, necesita adquirir...",
+    "FechaCierre": None,
+    "Estado": "Publicada",
+    "Comprador": {
+        "NombreOrganismo": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF",
+        "NombreUnidad": "Dirección de Vialidad - VIII Región - Provincia Bio Bio",
+        "ComunaUnidad": "Los Angeles",
+        "RegionUnidad": "Región del Biobío ",
+    },
+    "Tipo": "LE",
+    "Moneda": "CLP",
+    "Fechas": {
+        "FechaCreacion": "2026-09-28T11:36:56.01",
+        "FechaCierre": "2026-10-16T15:10:00",
+        "FechaPublicacion": "2026-10-06T17:51:21.567",
+    },
+    "VisibilidadMonto": 0,
+    "MontoEstimado": None,
+    "Items": {"Cantidad": 2, "Listado": [{
+        "Correlativo": 1,
+        "Categoria": "Productos derivados de minerales, plantas y animales",
+        "NombreProducto": "Maderas duras",
+        "Descripcion": "PIEZAS DE MADERA DE ROBLE O COIGUE",
+        "UnidadMedida": "Unidad",
+        "Cantidad": 780.0,
+    }]},
+}
+
+
+def test_detalle_real_de_la_api():
+    filtro = FiltroRubros({"madera": {"nombre": "Madera", "palabras_clave": ["maderas duras"]}})
+    r = filtro.evaluar(*texto_licitacion(DETALLE_REAL))
+    f = fila_licitacion(DETALLE_REAL, r, hoy=date(2026, 10, 10))
+    assert f["region"] == "Región del Biobío"
+    assert f["fecha_cierre"] == "2026-10-16 15:10:00"
+    assert f["fecha_publicacion"] == "2026-10-06 17:51:21.567000"
+    assert f["monto_estimado"] is None
+    assert f["estado"] == "Publicada"
+    assert f["dias_restantes"] == 6
+    assert f["rubro"] == "madera"
