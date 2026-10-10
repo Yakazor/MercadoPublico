@@ -90,3 +90,42 @@ def test_detalle_real_de_la_api():
     assert f["estado"] == "Publicada"
     assert f["dias_restantes"] == 6
     assert f["rubro"] == "madera"
+
+
+# Forma real devuelta por ordenesdecompra.json?codigo=1000813-117-AG26 (resumida)
+OC_REAL = {
+    "Codigo": "1000813-117-AG26",
+    "Nombre": "LP_ ADQUISICION DE MATERIALES PARA MANTENIMIENTO Y REPARACION",
+    "CodigoEstado": 12,
+    "Estado": "Recepción Conforme",
+    "CodigoLicitacion": "",
+    "TipoMoneda": "CLP",
+    "Fechas": {"FechaCreacion": "2026-04-20T10:28:25.683"},
+    "TotalNeto": 936676.0,
+    "Comprador": {
+        "NombreOrganismo": "DIVISION LOGISTICA DEL EJERCITO",
+        "RegionUnidad": "Región de Magallanes y de la Antártica",
+    },
+    "Proveedor": {"Nombre": "VIOLETA DEL CARMEN ", "RutSucursal": "76.490.442-7"},
+    "Items": {"Cantidad": 1, "Listado": [{
+        "Correlativo": 1,
+        "Categoria": "Artículos de fabricación y producción / Pinturas, diluyentes y accesorios",
+        "Producto": "Brochas",
+        "EspecificacionComprador": 'BROCHA CERDA HELA DE 3"',
+        "EspecificacionProveedor": 'BROCHA CERDA HELA DE 3"',
+        "Cantidad": 8.0,
+        "Unidad": None,
+        "Moneda": "CLP",
+        "PrecioNeto": 4516.0,
+        "Total": 0.0,
+    }]},
+}
+
+
+def test_orden_compra_real_recalcula_total_y_limpia_textos():
+    f = filas_orden_compra(OC_REAL, FILTRO.evaluar(""))[0]
+    assert f["proveedor"] == "VIOLETA DEL CARMEN"
+    assert f["precio_unitario_neto"] == 4516.0
+    assert f["total_item"] == 8 * 4516.0
+    assert f["fecha_creacion"] == "2026-04-20 10:28:25.683000"
+    assert f["region"] == "Región de Magallanes y de la Antártica"

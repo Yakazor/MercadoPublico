@@ -38,6 +38,13 @@ def _numero(valor) -> float | None:
         return None
 
 
+def _texto(valor) -> str | None:
+    """Recorta espacios (la API devuelve p. ej. "Región del Biobío ")."""
+    if valor is None:
+        return None
+    return str(valor).strip() or None
+
+
 def _iso(dt: datetime | None) -> str | None:
     return dt.isoformat(sep=" ") if dt else None
 
@@ -70,8 +77,8 @@ def fila_licitacion(detalle: dict, resultado_filtro, hoy: date | None = None) ->
         "nombre": detalle.get("Nombre"),
         "organismo": comprador.get("NombreOrganismo"),
         "unidad_compra": comprador.get("NombreUnidad"),
-        "region": (comprador.get("RegionUnidad") or "").strip() or None,
-        "comuna": comprador.get("ComunaUnidad"),
+        "region": _texto(comprador.get("RegionUnidad")),
+        "comuna": _texto(comprador.get("ComunaUnidad")),
         "monto_estimado": _numero(detalle.get("MontoEstimado")),
         "moneda": detalle.get("Moneda"),
         "tipo": detalle.get("Tipo"),
@@ -99,8 +106,8 @@ def filas_orden_compra(detalle: dict, resultado_filtro) -> list[dict]:
         "estado": detalle.get("Estado"),
         "fecha_creacion": _iso(_fecha(fechas.get("FechaCreacion"))),
         "organismo": comprador.get("NombreOrganismo"),
-        "region": (comprador.get("RegionUnidad") or "").strip() or None,
-        "proveedor": proveedor.get("Nombre"),
+        "region": _texto(comprador.get("RegionUnidad")),
+        "proveedor": _texto(proveedor.get("Nombre")),
         "rut_proveedor": proveedor.get("RutSucursal"),
         "moneda": detalle.get("TipoMoneda"),
         "rubro": resultado_filtro.rubro,
@@ -111,6 +118,10 @@ def filas_orden_compra(detalle: dict, resultado_filtro) -> list[dict]:
     for item in (detalle.get("Items") or {}).get("Listado") or []:
         cantidad = _numero(item.get("Cantidad"))
         precio = _numero(item.get("PrecioNeto"))
+        total = _numero(item.get("Total"))
+        # En la API real "Total" del ítem suele venir en 0: se recalcula.
+        if not total and cantidad and precio:
+            total = cantidad * precio
         filas.append(
             base
             | {
@@ -122,7 +133,7 @@ def filas_orden_compra(detalle: dict, resultado_filtro) -> list[dict]:
                 "unidad": item.get("Unidad"),
                 "cantidad": cantidad,
                 "precio_unitario_neto": precio,
-                "total_item": _numero(item.get("Total")),
+                "total_item": total,
             }
         )
     return filas
