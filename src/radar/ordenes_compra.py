@@ -30,7 +30,7 @@ def procesar_dia(
 ) -> int:
     """Descarga las OC de un día, filtra por rubro y guarda sus ítems."""
     listado = cliente.ordenes_de_compra(fecha=fecha.strftime("%d%m%Y"), estado=estado).get("Listado") or []
-    candidatas = [oc for oc in listado if filtro.evaluar(oc.get("Nombre")).coincide]
+    candidatas = [oc for oc in listado if filtro.evaluar(nombre=oc.get("Nombre")).coincide]
     log.info("%s: %d OC, %d candidatas por nombre", fecha, len(listado), len(candidatas))
 
     guardadas = 0
@@ -43,7 +43,7 @@ def procesar_dia(
             continue
         if not det:
             continue
-        resultado = filtro.evaluar(*texto_orden_compra(det))
+        resultado = filtro.evaluar(*texto_orden_compra(det), nombre=det.get("Nombre"))
         if resultado.coincide:
             guardadas += db.guardar_items_oc(filas_orden_compra(det, resultado))
     return guardadas

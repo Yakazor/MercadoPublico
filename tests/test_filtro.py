@@ -36,3 +36,25 @@ def test_elige_rubro_con_mas_coincidencias():
     r = FiltroRubros(RUBROS).evaluar("Consultoría control de gestión y dashboard Power BI; guantes")
     assert r.rubro == "bi"
     assert r.rubros == ["bi", "aseo"]
+
+
+def test_exclusion_en_nombre_no_afecta_descripcion():
+    rubros = {"aseo": {"nombre": "Aseo", "palabras_clave": ["articulos de aseo"],
+                       "excluir_en_nombre": ["servicio de aseo"]}}
+    f = FiltroRubros(rubros)
+    # Compra de productos cuya descripción menciona al personal del servicio de aseo
+    assert f.evaluar("para uso del servicio de aseo del hospital",
+                     nombre="Compra de artículos de aseo").coincide
+    # Contratación del servicio (nombre) se descarta
+    assert not f.evaluar("incluye artículos de aseo", nombre="Servicio de aseo oficinas").coincide
+
+
+def test_config_real_casos_del_primer_radar():
+    from radar.config import cargar_config
+    f = FiltroRubros(cargar_config()["rubros"])
+    assert f.evaluar(nombre="Licencias MicroStrategy y Servicios BI").rubro == "consultoria_gestion_bi"
+    assert f.evaluar(nombre="SUMINISTRO ALCOHOL GEL 70% CO DISPENSADOR").rubro == "insumos_medicos_aseo"
+    assert not f.evaluar(nombre="SERVICIOS DE ASEO PARA SLEP PUNILLA CORDIILLERA").coincide
+    assert not f.evaluar(nombre="ASESORIA A LA INSPECCION FISCAL, RUTA 23-CH").coincide
+    assert not f.evaluar(nombre="EPP Depto. Aseo y Ornato").coincide
+    assert not f.evaluar(nombre="ADQUISICIÓN DE GUANTES TÁCTICOS MOTORISTA").coincide

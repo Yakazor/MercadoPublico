@@ -7,55 +7,162 @@ api:
   reintentos: 4                        # esperas crecientes: 2, 4, 8, 16 s
   espera_inicial_reintento_segundos: 2
 
-# Rubros a detectar. Las palabras se comparan sin tildes ni mayúsculas.
-# "excluir": si aparece alguna, la licitación NO se asigna a ese rubro.
+# Rubros a detectar. Las palabras se comparan sin tildes ni mayúsculas y por
+# palabra completa ("aseo" no coincide con "paseo").
+#   palabras_clave:    basta con que aparezca UNA (en nombre, descripción o ítems).
+#                      Prefiere frases ("articulos de aseo") a palabras sueltas
+#                      ("aseo"): las sueltas traen muchos falsos positivos.
+#   excluir:           si aparece en cualquier texto, se descarta el rubro.
+#   excluir_en_nombre: se revisa SOLO en el nombre de la licitación (útil para
+#                      descartar servicios u obras sin perder compras de productos).
 rubros:
   insumos_medicos_aseo:
     nombre: "Insumos médicos no regulados y aseo"
     palabras_clave:
+      # Insumos médicos de uso general
       - insumos medicos
       - insumo medico
+      - insumos clinicos
       - guantes
+      - guantes de nitrilo
+      - guantes de latex
+      - guantes de procedimiento
       - mascarillas
       - mascarilla
+      - respirador desechable
       - pecheras
       - cofias
       - jeringas
       - gasas
+      - aposito
+      - apositos
       - alcohol gel
+      - toallas desinfectantes
+      # Productos de aseo (frases, no la palabra "aseo" sola)
+      - articulos de aseo
+      - articulos aseo
+      - materiales de aseo
+      - material de aseo
+      - materiales aseo
+      - productos de aseo
+      - insumos de aseo
+      - insumos para aseo
+      - equipos de aseo
+      - utiles de aseo
+      - productos de limpieza
+      - articulos de limpieza
+      - insumos de limpieza
+      - materiales de limpieza
       - toallas de papel
+      - toalla de papel
       - papel higienico
-      - aseo
-      - limpieza
+      - jabon liquido
       - desinfectante
       - cloro
       - detergente
       - bolsas de basura
     excluir:
-      - servicio de aseo        # servicios de personal, no productos
       - farmaco
+      - farmacos
       - medicamento
+      - medicamentos
+    excluir_en_nombre:
+      # Servicios (personal de aseo), no venta de productos
+      - servicio de aseo
+      - servicios de aseo
+      - servicio aseo
+      - servicios aseo
+      - servicio complementario de aseo
+      - servicios externos de aseo
+      - aseo integral
+      - serv integral
+      - serv. integral
+      - provision de personal
+      - servicio de limpieza
+      - servicios de limpieza
+      - serv limpieza
+      - limpieza de fosa
+      - limpieza de fosas
+      - fosa
+      - fosas
+      - alcantarillado
+      - recoleccion
+      - residuos
+      - concesion
+      - aseo y ornato
+      # Guantes que no son insumo médico
+      - tacticos
+      - motorista
+      # Insumos clínicos especializados (normalmente dispositivos regulados).
+      # Borra estas líneas si también te interesan.
+      - cirugia robotica
+      - hemodinamia
+      - angiografia
+      - dialisis
+      - oftalmologia
+      - traumatologia
+      - cardiocirugia
+      - anestesia
+      - nebulizador
 
   consultoria_gestion_bi:
     nombre: "Consultoría en gestión, BI y control de gestión"
     palabras_clave:
-      - consultoria
-      - asesoria
+      # "consultoria" o "asesoria" solas traen sobre todo obras e ingeniería:
+      # se usan solo en combinación con gestión/procesos/datos.
+      - consultoria en gestion
+      - consultoria de gestion
+      - consultoria para la gestion
+      - asesoria en gestion
+      - asesoria de gestion
+      - control de gestion
+      - modelo de gestion
+      - gestion de procesos
+      - mejora de procesos
+      - mejoramiento de procesos
+      - levantamiento de procesos
+      - rediseno de procesos
+      - planificacion estrategica
+      - plan estrategico
       - inteligencia de negocios
       - business intelligence
+      - servicios bi
+      - solucion bi
+      - plataforma bi
       - power bi
-      - control de gestion
+      - microstrategy
+      - tableau
+      - qlik
       - dashboard
+      - dashboards
       - tablero de control
+      - tableros de control
       - cuadro de mando
-      - indicadores
+      - indicadores de gestion
+      - sistema de indicadores
+      - indicadores de desempeno
       - kpi
       - analisis de datos
-      - planificacion estrategica
-      - gestion de procesos
+      - analitica de datos
+      - visualizacion de datos
+      - ciencia de datos
+      - gestion financiera
+      - control presupuestario
+      - control financiero
+      - modelo de costos
+      - estudio de costos
+      - reportabilidad
     excluir:
-      - consultoria juridica
+      - asesoria juridica
       - asesoria legal
+      - consultoria juridica
+    excluir_en_nombre:
+      - inspeccion tecnica
+      - inspeccion fiscal
+      - obra
+      - obras
+      - pavimentacion
+      - arquitectura
 
 # Licitaciones activas: solo se pide el detalle de las que pasan el
 # filtro preliminar por nombre (ahorra llamadas). Con "false" se pide el

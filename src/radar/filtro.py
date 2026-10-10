@@ -30,6 +30,7 @@ class Rubro:
     nombre: str
     incluir: re.Pattern | None
     excluir: re.Pattern | None
+    excluir_en_nombre: re.Pattern | None = None
 
 
 @dataclass
@@ -52,17 +53,23 @@ class FiltroRubros:
                 nombre=datos.get("nombre", clave),
                 incluir=_patron(datos.get("palabras_clave", [])),
                 excluir=_patron(datos.get("excluir", [])),
+                excluir_en_nombre=_patron(datos.get("excluir_en_nombre", [])),
             )
             for clave, datos in (config_rubros or {}).items()
         ]
 
-    def evaluar(self, *textos: str | None) -> Resultado:
-        texto = normalizar(" ".join(t for t in textos if t))
+    def evaluar(self, *textos: str | None, nombre: str | None = None) -> Resultado:
+        """Evalúa los textos. `nombre` (si se entrega) también se evalúa y es el
+        único texto donde se aplican las exclusiones `excluir_en_nombre`."""
+        texto = normalizar(" ".join(t for t in (nombre, *textos) if t))
+        nombre_norm = normalizar(nombre)
         hallazgos: list[tuple[Rubro, list[str]]] = []
         for rubro in self.rubros:
             if rubro.incluir is None:
                 continue
             if rubro.excluir is not None and rubro.excluir.search(texto):
+                continue
+            if rubro.excluir_en_nombre is not None and rubro.excluir_en_nombre.search(nombre_norm):
                 continue
             palabras = sorted(set(rubro.incluir.findall(texto)))
             if palabras:

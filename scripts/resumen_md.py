@@ -12,15 +12,25 @@ import _ruta  # noqa: F401
 from radar.config import cargar_config, ruta_proyecto
 
 
-def _fmt_monto(v):
-    return "" if pd.isna(v) else f"${v:,.0f}".replace(",", ".")
+def _fmt_monto(v, moneda=None):
+    if pd.isna(v):
+        return ""
+    texto = f"{v:,.0f}".replace(",", ".")
+    if moneda is None or pd.isna(moneda) or moneda == "CLP":
+        return f"${texto}"
+    return f"{texto} {moneda}"
+
+
+def _fmt_dias(v):
+    return "?" if pd.isna(v) else str(int(v))
 
 
 def auditoria(df: pd.DataFrame) -> None:
     for rubro, g in df.sort_values(["rubro_nombre", "dias_restantes"]).groupby("rubro_nombre"):
         print(f"\n=== {rubro} ({len(g)}) ===")
         for _, f in g.iterrows():
-            print(f"{f['codigo']} | {f['dias_restantes']}d | {_fmt_monto(f['monto_estimado']) or 's/m'} | "
+            print(f"{f['codigo']} | {_fmt_dias(f['dias_restantes'])}d | "
+                  f"{_fmt_monto(f['monto_estimado'], f.get('moneda')) or 's/m'} | "
                   f"[{f['palabras_detectadas']}] | {str(f['nombre'])[:90]} | {str(f['organismo'])[:45]}")
 
 
@@ -53,7 +63,9 @@ def main():
     for _, f in pronto.head(30).iterrows():
         nombre = str(f["nombre"])[:70].replace("|", "/")
         organismo = str(f["organismo"])[:40].replace("|", "/")
-        print(f"| {f['dias_restantes']} | [{f['codigo']}]({f['url']}) | {nombre} | {organismo} | {f['region'] if pd.notna(f['region']) else ''} | {_fmt_monto(f['monto_estimado'])} |")
+        region = f["region"] if pd.notna(f["region"]) else ""
+        monto = _fmt_monto(f["monto_estimado"], f.get("moneda"))
+        print(f"| {_fmt_dias(f['dias_restantes'])} | [{f['codigo']}]({f['url']}) | {nombre} | {organismo} | {region} | {monto} |")
     if len(pronto) > 30:
         print(f"\n…y {len(pronto) - 30} más en el Excel.")
 

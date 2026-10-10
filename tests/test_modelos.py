@@ -17,7 +17,7 @@ DETALLE = {
 
 
 def test_fila_licitacion_campos_minimos():
-    r = FILTRO.evaluar(*texto_licitacion(DETALLE))
+    r = FILTRO.evaluar(*texto_licitacion(DETALLE), nombre=DETALLE["Nombre"])
     f = fila_licitacion(DETALLE, r, hoy=date(2026, 10, 10))
     assert f["codigo"] == "1234-56-LE26"
     assert f["organismo"] == "Hospital X"
@@ -81,7 +81,7 @@ DETALLE_REAL = {
 
 def test_detalle_real_de_la_api():
     filtro = FiltroRubros({"madera": {"nombre": "Madera", "palabras_clave": ["maderas duras"]}})
-    r = filtro.evaluar(*texto_licitacion(DETALLE_REAL))
+    r = filtro.evaluar(*texto_licitacion(DETALLE_REAL), nombre=DETALLE_REAL["Nombre"])
     f = fila_licitacion(DETALLE_REAL, r, hoy=date(2026, 10, 10))
     assert f["region"] == "Región del Biobío"
     assert f["fecha_cierre"] == "2026-10-16 15:10:00"

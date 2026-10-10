@@ -60,8 +60,8 @@ def items_licitacion(detalle: dict) -> list[dict]:
 
 
 def texto_licitacion(detalle: dict) -> list[str]:
-    """Textos sobre los que se aplica el filtro de rubros."""
-    textos = [detalle.get("Nombre"), detalle.get("Descripcion")]
+    """Textos (además del nombre) sobre los que se aplica el filtro de rubros."""
+    textos = [detalle.get("Descripcion")]
     for item in items_licitacion(detalle):
         textos += [item.get("NombreProducto"), item.get("Descripcion"), item.get("Categoria")]
     return [t for t in textos if t]
@@ -140,7 +140,7 @@ def filas_orden_compra(detalle: dict, resultado_filtro) -> list[dict]:
 
 
 def texto_orden_compra(detalle: dict) -> list[str]:
-    textos = [detalle.get("Nombre"), detalle.get("Descripcion")]
+    textos = [detalle.get("Descripcion")]
     for item in (detalle.get("Items") or {}).get("Listado") or []:
         textos += [
             item.get("Producto"),

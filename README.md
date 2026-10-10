@@ -107,8 +107,16 @@ reanudar. Usa `--reprocesar` para forzar la descarga.
 
 Edita `config.yaml`:
 - `palabras_clave`: se comparan sin tildes ni mayúsculas y por palabra completa
-  ("aseo" no coincide con "paseo").
-- `excluir`: descarta el rubro si aparece la frase (ej. "servicio de aseo").
+  ("aseo" no coincide con "paseo"). **Usa frases** ("artículos de aseo",
+  "consultoría en gestión"): en la primera corrida real, las palabras sueltas
+  "aseo", "limpieza", "consultoría" y "asesoría" trajeron 123 resultados, de los
+  cuales ~90 eran servicios de aseo, limpieza de fosas u obras civiles.
+- `excluir`: descarta el rubro si la frase aparece en cualquier texto.
+- `excluir_en_nombre`: descarta el rubro si la frase aparece **en el nombre**
+  (ej. "servicios de aseo", "inspección fiscal"), sin afectar compras de
+  productos cuya descripción mencione esas palabras.
+- Para revisar el filtro: `python scripts/resumen_md.py --auditoria` lista
+  todo lo detectado con las palabras que coincidieron.
 - `filtro_preliminar_por_nombre: true` pide el detalle solo de las licitaciones
   cuyo nombre ya coincide (rápido). Con `false` revisa también descripción e
   ítems de todas (más completo, pero muchas más llamadas).

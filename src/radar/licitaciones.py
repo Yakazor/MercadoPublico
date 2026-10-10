@@ -33,7 +33,7 @@ def radar_licitaciones(
     log.info("Licitaciones activas: %d", len(activas))
 
     if preliminar_por_nombre:
-        candidatas = [l for l in activas if filtro.evaluar(l.get("Nombre")).coincide]
+        candidatas = [l for l in activas if filtro.evaluar(nombre=l.get("Nombre")).coincide]
         log.info("Candidatas tras filtro por nombre: %d", len(candidatas))
     else:
         candidatas = activas
@@ -50,7 +50,7 @@ def radar_licitaciones(
             continue
         if not det:
             continue
-        resultado = filtro.evaluar(*texto_licitacion(det))
+        resultado = filtro.evaluar(*texto_licitacion(det), nombre=det.get("Nombre"))
         if resultado.coincide:
             filas.append(fila_licitacion(det, resultado, hoy))
         if i % 25 == 0:
