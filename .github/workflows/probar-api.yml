@@ -1,0 +1,47 @@
+name: Probar API Mercado Público
+
+# Ejecución manual: Actions → "Probar API Mercado Público" → Run workflow.
+# Requiere el secret MP_TICKET (Settings → Secrets and variables → Actions).
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código de licitación (vacío = listado de activas)"
+        required: false
+        default: ""
+      oc:
+        description: "Código de orden de compra (opcional)"
+        required: false
+        default: ""
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Llamada real a la API
+        env:
+          MP_TICKET: ${{ secrets.MP_TICKET }}
+          CODIGO: ${{ inputs.codigo }}
+          OC: ${{ inputs.oc }}
+        run: |
+          if [ -z "$MP_TICKET" ]; then
+            echo "::error::Falta el secret MP_TICKET en Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          ARGS=""
+          [ -n "$CODIGO" ] && ARGS="--codigo $CODIGO"
+          [ -n "$OC" ] && ARGS="--oc $OC"
+          python scripts/probar_api.py $ARGS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: muestra-api
+          path: data/muestra_api.json
+          if-no-files-found: ignore
