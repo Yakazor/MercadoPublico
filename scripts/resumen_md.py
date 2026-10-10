@@ -2,6 +2,7 @@
 
 Uso:
     python scripts/resumen_md.py >> "$GITHUB_STEP_SUMMARY"
+    python scripts/resumen_md.py --auditoria   # todas las filas, para revisar el filtro
 """
 import sys
 
@@ -15,6 +16,14 @@ def _fmt_monto(v):
     return "" if pd.isna(v) else f"${v:,.0f}".replace(",", ".")
 
 
+def auditoria(df: pd.DataFrame) -> None:
+    for rubro, g in df.sort_values(["rubro_nombre", "dias_restantes"]).groupby("rubro_nombre"):
+        print(f"\n=== {rubro} ({len(g)}) ===")
+        for _, f in g.iterrows():
+            print(f"{f['codigo']} | {f['dias_restantes']}d | {_fmt_monto(f['monto_estimado']) or 's/m'} | "
+                  f"[{f['palabras_detectadas']}] | {str(f['nombre'])[:90]} | {str(f['organismo'])[:45]}")
+
+
 def main():
     config = cargar_config()
     carpeta = ruta_proyecto(config.get("rutas", {}).get("exportaciones", "data/exportaciones"))
@@ -23,6 +32,9 @@ def main():
         print("No se generó el archivo de licitaciones.")
         return
     df = pd.read_csv(csv, sep=";", encoding="utf-8-sig")
+    if "--auditoria" in sys.argv:
+        auditoria(df)
+        return
     print(f"## Radar de Licitaciones — {len(df)} vigentes en tus rubros\n")
     if df.empty:
         return

@@ -19,19 +19,22 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--limite", type=int, help="máximo de detalles a consultar (pruebas)")
     p.add_argument("--config", help="ruta alternativa a config.yaml")
+    p.add_argument("--solo-exportar", action="store_true",
+                   help="no llama a la API: re-exporta lo que ya está en la base")
     args = p.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
     config = cargar_config(args.config)
-    cliente = ClienteMercadoPublico.desde_config(config, obtener_ticket())
-    filtro = FiltroRubros(config["rubros"])
-
-    filas = radar_licitaciones(
-        cliente,
-        filtro,
-        preliminar_por_nombre=config.get("filtro_preliminar_por_nombre", True),
-        limite=args.limite,
-    )
+    if args.solo_exportar:
+        filas = []
+    else:
+        cliente = ClienteMercadoPublico.desde_config(config, obtener_ticket())
+        filas = radar_licitaciones(
+            cliente,
+            FiltroRubros(config["rubros"]),
+            preliminar_por_nombre=config.get("filtro_preliminar_por_nombre", True),
+            limite=args.limite,
+        )
 
     rutas = config.get("rutas", {})
     db = BaseDatos(ruta_proyecto(rutas.get("base_datos", "data/radar.db")))

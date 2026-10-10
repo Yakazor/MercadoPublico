@@ -11,6 +11,10 @@ on:
         description: "Máximo de detalles a consultar (vacío = todos)"
         required: false
         default: ""
+      solo_exportar:
+        description: "No llamar a la API: solo re-exportar la base guardada"
+        type: boolean
+        default: false
 
 concurrency:
   group: radar-diario
@@ -40,9 +44,11 @@ jobs:
         env:
           MP_TICKET: ${{ secrets.MP_TICKET }}
           LIMITE: ${{ inputs.limite }}
+          SOLO_EXPORTAR: ${{ inputs.solo_exportar }}
         run: |
           ARGS=""
           [ -n "$LIMITE" ] && ARGS="--limite $LIMITE"
+          [ "$SOLO_EXPORTAR" = "true" ] && ARGS="--solo-exportar"
           python scripts/radar_diario.py $ARGS
 
       - name: Guardar base de datos
@@ -55,6 +61,10 @@ jobs:
       - name: Resumen
         if: always()
         run: python scripts/resumen_md.py >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Auditoría del filtro (listado completo)
+        if: always()
+        run: python scripts/resumen_md.py --auditoria
 
       - uses: actions/upload-artifact@v6
         if: always()
