@@ -28,3 +28,15 @@ def test_exportar_crea_archivos(tmp_path):
         "licitaciones_2026-10-10.csv", "licitaciones_2026-10-10.xlsx",
         "licitaciones_actual.csv", "licitaciones_actual.xlsx",
     }
+
+
+def test_depurar_vigentes_elimina_las_que_ya_no_calzan(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    db.guardar_licitaciones([
+        _fila("A", "2026-10-20 15:00:00"),
+        _fila("B", "2026-10-20 15:00:00"),
+        _fila("C", "2026-10-01 15:00:00"),  # cerrada: se conserva como historial
+    ])
+    assert db.depurar_vigentes({"A"}, hoy=date(2026, 10, 10)) == 1
+    codigos = {c for (c,) in db.con.execute("SELECT codigo FROM licitaciones")}
+    assert codigos == {"A", "C"}

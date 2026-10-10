@@ -92,6 +92,20 @@ class BaseDatos:
         self.con.commit()
         return len(filas)
 
+    def depurar_vigentes(self, codigos_actuales: set[str], hoy: date | None = None) -> int:
+        """Elimina vigentes que ya no pasan el filtro (p. ej. tras cambiar config.yaml)."""
+        hoy = hoy or date.today()
+        vigentes = [
+            c for (c,) in self.con.execute(
+                "SELECT codigo FROM licitaciones WHERE fecha_cierre IS NULL OR date(fecha_cierre) >= ?",
+                [hoy.isoformat()],
+            )
+        ]
+        sobran = [c for c in vigentes if c not in codigos_actuales]
+        self.con.executemany("DELETE FROM licitaciones WHERE codigo = ?", [(c,) for c in sobran])
+        self.con.commit()
+        return len(sobran)
+
     def licitaciones_vigentes(self, hoy: date | None = None) -> pd.DataFrame:
         """Licitaciones con cierre hoy o después; días restantes recalculados."""
         hoy = hoy or date.today()

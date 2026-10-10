@@ -40,6 +40,10 @@ def main():
     db = BaseDatos(ruta_proyecto(rutas.get("base_datos", "data/radar.db")))
     try:
         db.guardar_licitaciones(filas)
+        if not args.solo_exportar and not args.limite:
+            eliminadas = db.depurar_vigentes({f["codigo"] for f in filas})
+            if eliminadas:
+                logging.info("Eliminadas de la base (ya no pasan el filtro): %d", eliminadas)
         vigentes = db.licitaciones_vigentes()
         archivos = exportar(vigentes, ruta_proyecto(rutas.get("exportaciones", "data/exportaciones")), "licitaciones")
     finally:
