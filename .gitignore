@@ -1,0 +1,14 @@
+# Secretos
+.env
+
+# Datos generados
+data/*
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/

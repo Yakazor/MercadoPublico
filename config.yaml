@@ -1,0 +1,67 @@
+# Configuración del Radar de Licitaciones
+
+api:
+  base_url: "https://api.mercadopublico.cl/servicios/v1/publico"
+  timeout_segundos: 30
+  pausa_entre_llamadas_segundos: 2.0   # respeta el límite de la API
+  reintentos: 4                        # esperas crecientes: 2, 4, 8, 16 s
+  espera_inicial_reintento_segundos: 2
+
+# Rubros a detectar. Las palabras se comparan sin tildes ni mayúsculas.
+# "excluir": si aparece alguna, la licitación NO se asigna a ese rubro.
+rubros:
+  insumos_medicos_aseo:
+    nombre: "Insumos médicos no regulados y aseo"
+    palabras_clave:
+      - insumos medicos
+      - insumo medico
+      - guantes
+      - mascarillas
+      - mascarilla
+      - pecheras
+      - cofias
+      - jeringas
+      - gasas
+      - alcohol gel
+      - toallas de papel
+      - papel higienico
+      - aseo
+      - limpieza
+      - desinfectante
+      - cloro
+      - detergente
+      - bolsas de basura
+    excluir:
+      - servicio de aseo        # servicios de personal, no productos
+      - farmaco
+      - medicamento
+
+  consultoria_gestion_bi:
+    nombre: "Consultoría en gestión, BI y control de gestión"
+    palabras_clave:
+      - consultoria
+      - asesoria
+      - inteligencia de negocios
+      - business intelligence
+      - power bi
+      - control de gestion
+      - dashboard
+      - tablero de control
+      - cuadro de mando
+      - indicadores
+      - kpi
+      - analisis de datos
+      - planificacion estrategica
+      - gestion de procesos
+    excluir:
+      - consultoria juridica
+      - asesoria legal
+
+# Licitaciones activas: solo se pide el detalle de las que pasan el
+# filtro preliminar por nombre (ahorra llamadas). Con "false" se pide el
+# detalle de todas (mucho más lento).
+filtro_preliminar_por_nombre: true
+
+rutas:
+  base_datos: "data/radar.db"
+  exportaciones: "data/exportaciones"
