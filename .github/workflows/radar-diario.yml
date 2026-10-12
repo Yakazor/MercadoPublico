@@ -33,12 +33,25 @@ jobs:
       - run: pip install -r requirements.txt
 
       # Recupera la base SQLite de la ejecución anterior (historial y primera detección).
+      # La base vive en la caché. Claves "v1" = base con historial; "v0" = base
+      # que partió vacía (caché no encontrada). Se prefiere siempre una v1, así
+      # una falla puntual de la caché no reemplaza el historial por una base vacía.
       - name: Restaurar base de datos
+        id: restaurar
         uses: actions/cache/restore@v5
         with:
           path: data/radar.db
-          key: radar-db-${{ github.run_id }}
-          restore-keys: radar-db-
+          key: radar-db-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            radar-db-v1-
+            radar-db-v0-
+            radar-db-
+
+      - name: Aviso si no había base guardada
+        if: steps.restaurar.outputs.cache-matched-key == ''
+        run: |
+          echo "::warning::No se encontró la base guardada; esta corrida parte con una base vacía (se guarda como v0, sin reemplazar una base con historial)."
+          echo "> ⚠️ No se encontró la base guardada: esta corrida partió con una base vacía. Puedes recuperar una copia desde el artefacto radar-db-* de una corrida anterior." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Ejecutar radar
         env:
@@ -56,7 +69,16 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: data/radar.db
-          key: radar-db-${{ github.run_id }}
+          key: radar-db-${{ steps.restaurar.outputs.cache-matched-key != '' && 'v1' || 'v0' }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Respaldo de la base (artefacto, 90 días)
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: radar-db-${{ github.run_number }}-${{ github.run_attempt }}
+          path: data/radar.db
+          retention-days: 90
+          if-no-files-found: ignore
 
       - name: Resumen
         if: always()

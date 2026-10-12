@@ -2,7 +2,9 @@ name: Órdenes de compra históricas
 
 # Descarga OC de mis rubros para estimar precios adjudicados (validar márgenes).
 # - Manual: Actions → "Órdenes de compra históricas" → Run workflow.
-# - Semanal: sábados 9:11 UTC procesa los últimos 7 días (los ya procesados se omiten).
+# - Semanal: sábados 9:11 UTC revisa los últimos 21 días. Los ya procesados se
+#   omiten sin llamar a la API, así se reintentan días que quedaron pendientes
+#   (errores de la API o falta de tiempo) en semanas anteriores.
 on:
   schedule:
     - cron: "11 9 * * 6"
@@ -43,17 +45,30 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
 
+      # La base vive en la caché. Claves "v1" = base con historial; "v0" = base
+      # que partió vacía (caché no encontrada). Se prefiere siempre una v1, así
+      # una falla puntual de la caché no reemplaza el historial por una base vacía.
       - name: Restaurar base de datos
+        id: restaurar
         uses: actions/cache/restore@v5
         with:
           path: data/radar.db
-          key: radar-db-${{ github.run_id }}
-          restore-keys: radar-db-
+          key: radar-db-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            radar-db-v1-
+            radar-db-v0-
+            radar-db-
+
+      - name: Aviso si no había base guardada
+        if: steps.restaurar.outputs.cache-matched-key == ''
+        run: |
+          echo "::warning::No se encontró la base guardada; esta corrida parte con una base vacía (se guarda como v0, sin reemplazar una base con historial)."
+          echo "> ⚠️ No se encontró la base guardada: esta corrida partió con una base vacía. Puedes recuperar una copia desde el artefacto radar-db-* de una corrida anterior." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Descargar órdenes de compra
         env:
           MP_TICKET: ${{ secrets.MP_TICKET }}
-          DIAS: ${{ inputs.dias || '7' }}
+          DIAS: ${{ inputs.dias || '21' }}
           DESDE: ${{ inputs.desde }}
           HASTA: ${{ inputs.hasta }}
           REPROCESAR: ${{ inputs.reprocesar }}
@@ -65,14 +80,24 @@ jobs:
             ARGS="--dias $DIAS"
           fi
           [ "$REPROCESAR" = "true" ] && ARGS="$ARGS --reprocesar"
-          python scripts/ordenes_historicas.py $ARGS
+          # Deja ~40 min de margen (un día hábil tarda ~25 min) antes del timeout para guardar la base.
+          python scripts/ordenes_historicas.py $ARGS --max-minutos 290
 
       - name: Guardar base de datos
         if: always()
         uses: actions/cache/save@v5
         with:
           path: data/radar.db
-          key: radar-db-${{ github.run_id }}
+          key: radar-db-${{ steps.restaurar.outputs.cache-matched-key != '' && 'v1' || 'v0' }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Respaldo de la base (artefacto, 90 días)
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: radar-db-${{ github.run_number }}-${{ github.run_attempt }}
+          path: data/radar.db
+          retention-days: 90
+          if-no-files-found: ignore
 
       - name: Resumen
         if: always()
