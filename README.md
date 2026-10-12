@@ -125,8 +125,17 @@ palabra completa ("aseo" no coincide con "paseo").
   **nombre o en los ítems**; en la descripción general, solo si el rubro tiene
   `detectar_en_descripcion: true` (en consultoría está apagado, porque la
   descripción suele nombrar unidades como "Depto. de Control de Gestión").
+- `palabras_debiles`: claves que también son nombres de unidades o frases de
+  informes ("control de gestión", "indicadores de gestión"): cuentan en el nombre;
+  en los ítems, solo junto a otra clave.
 - `palabras_candidatas`: frases amplias ("insumos clínicos", "consultoría") que,
-  en el nombre, hacen que se revise el detalle; por sí solas no cuentan.
+  en el nombre, hacen que se revise el detalle; por sí solas no cuentan. En
+  consultoría, si el nombre trae una candidata, la descripción cuenta cuando
+  tiene 2 o más claves distintas.
+- `usar_clasificacion_onu`: si la categoría/producto del clasificador ONU de
+  Mercado Público cuenta como señal. Útil en insumos ("Guantes médicos"); apagado
+  en consultoría, porque "Servicios de consultoría de gestión" se asigna a casi
+  cualquier servicio profesional (médicos, abogados…).
 - `excluir_en_nombre`: descarta siempre (ej. "servicio de aseo", "inspección fiscal").
 - `excluir_en_nombre_salvo_clave`: descarta salvo que el nombre traiga otra palabra
   clave: "Compra de sondas" se descarta, "Gasas, guantes y sondas" no.
@@ -139,7 +148,9 @@ palabra completa ("aseo" no coincide con "paseo").
   todas (más completo, pero muchas más llamadas).
 
 En las **órdenes de compra** cada ítem se clasifica por su producto (y la
-categoría ONU si el producto no lo dice): solo se guardan los ítems de tus rubros,
+categoría ONU si el producto no lo dice; las exclusiones también se revisan en la
+especificación del comprador). Si la OC tiene un solo ítem genérico, se usa el
+nombre de la OC. Solo se guardan los ítems de tus rubros,
 así el catering, los pasajes o un monitor de una OC de "insumos clínicos" no
 entran al cálculo de precios. Si cambias `config.yaml`, la siguiente ejecución
 reclasifica lo ya guardado sin llamar a la API.

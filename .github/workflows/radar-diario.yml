@@ -58,9 +58,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          id=$(gh api "repos/${{ github.repository }}/actions/artifacts?per_page=100" \
-            --jq '[.artifacts[] | select(.name | startswith("radar-db-")) | select(.expired | not)]
-                  | sort_by(.created_at) | last | .id // empty')
+          # Solo respaldos de esta rama y con historial (v1).
+          id=$(gh api --paginate "repos/${{ github.repository }}/actions/artifacts?per_page=100" \
+            --jq ".artifacts[] | select(.name | startswith(\"radar-db-v1-\")) | select(.expired | not)
+                  | select(.workflow_run.head_branch == \"${GITHUB_REF_NAME}\") | [.created_at, .id] | @tsv" \
+            | sort | tail -n 1 | cut -f2)
           if [ -n "$id" ]; then
             gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" > /tmp/radar-db.zip
             mkdir -p data && unzip -o -q /tmp/radar-db.zip -d data
@@ -74,9 +76,16 @@ jobs:
         id: version
         # Si solo cambiaron archivos que no afectan los datos (README, workflows),
         # se guarda igual: no se pierde una corrida larga por un cambio menor.
+        # Solo la rama principal guarda la base (las ramas de prueba no la pisan).
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          principal=$(gh api "repos/${{ github.repository }}" --jq .default_branch)
           actual=$(git ls-remote origin "refs/heads/${GITHUB_REF_NAME}" | cut -f1)
-          if [ "$actual" = "$GITHUB_SHA" ]; then
+          if [ "$GITHUB_REF_NAME" != "$principal" ]; then
+            echo "es_actual=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Rama '$GITHUB_REF_NAME' no es la principal ('$principal'): la base no se guardará."
+          elif [ "$actual" = "$GITHUB_SHA" ]; then
             echo "es_actual=true" >> "$GITHUB_OUTPUT"
           elif git fetch -q --depth=1 origin "$actual" \
                && git diff --quiet "$GITHUB_SHA" "$actual" -- src scripts config.yaml requirements.txt; then
@@ -115,7 +124,7 @@ jobs:
         if: always() && steps.version.outputs.es_actual == 'true'
         uses: actions/upload-artifact@v6
         with:
-          name: radar-db-${{ github.run_number }}-${{ github.run_attempt }}
+          name: radar-db-${{ (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true') && 'v1' || 'v0' }}-${{ github.run_number }}-${{ github.run_attempt }}
           path: data/radar.db
           retention-days: 90
           if-no-files-found: ignore
