@@ -21,8 +21,9 @@ from dataclasses import dataclass, field
 _PUNTUACION = re.compile(r"[.\-_/,;:()\[\]\"'“”‘’·•]+")
 _CONECTORES = {"de", "del", "en", "para", "el", "la", "los", "las", "al"}
 _CONECTOR_OPCIONAL = r"\s+(?:(?:de|del|en|para|el|la|los|las|al)\s+){0,2}"
-_UNIDADES = (r"(?:unidad|departamento|depto|direccion|division|subdireccion|"
-             r"jefatura|gerencia|subgerencia|subdepartamento|coordinacion|encargad[oa]|jef[ea])")
+# Solo se aplica fuera del nombre (descripción, ítems, especificaciones).
+_UNIDADES = (r"(?:unidad|departamento|depto|dpto|direccion|division|subdireccion|secretaria|seccion|"
+             r"oficina|area|jefatura|gerencia|subgerencia|subdepartamento|coordinacion|encargad[oa]|jef[ea])")
 _SEGMENTOS = re.compile(r"[,;\n]|\s+y\s+|\s+e\s+", re.IGNORECASE)
 
 
@@ -89,6 +90,7 @@ class Rubro:
     ignorar: re.Pattern | None = None              # frases que se borran (unidades, etc.)
     unidades: re.Pattern | None = None             # "Depto. de <palabra clave>"
     debiles: re.Pattern | None = None              # claves que solas no bastan fuera del nombre
+    no_rescatan: re.Pattern | None = None          # claves genéricas que no anulan una exclusión
     detectar_en_descripcion: bool = True
     usar_clasificacion_onu: bool = True            # categoría / producto ONU de Mercado Público
 
@@ -129,7 +131,11 @@ class Rubro:
         if self.excluir is not None and self.excluir.search(nombre):
             return True
         if self.excluir_salvo_clave is not None and self.excluir_salvo_clave.search(nombre):
-            return not self.claves(nombre, es_nombre=True)
+            # Una clave genérica ("guantes", "cloro") no rescata: "EPP: guantes y lentes"
+            # se descarta; "EPP: guantes, mascarillas y pecheras" no.
+            rescatan = {c for c in self.claves(nombre, es_nombre=True)
+                        if not (self.no_rescatan is not None and self.no_rescatan.fullmatch(c))}
+            return not rescatan
         return False
 
     def tiene_candidata(self, nombre_norm: str) -> bool:
@@ -193,6 +199,7 @@ class FiltroRubros:
                     rf"\b{_UNIDADES}\s+(?:de\s+|del\s+)?(?:la\s+|el\s+|los\s+|las\s+)?(?:{alts})"
                     rf"(?:\s+(?:y|e)\s+(?:{alts}))*\b") if alts else None,
                 debiles=_patron(debiles),
+                no_rescatan=_patron(datos.get("no_rescatan") or []),
                 detectar_en_descripcion=bool(datos.get("detectar_en_descripcion", True)),
                 usar_clasificacion_onu=bool(datos.get("usar_clasificacion_onu", True)),
             ))
@@ -205,6 +212,9 @@ class FiltroRubros:
     @classmethod
     def desde_config(cls, config: dict) -> "FiltroRubros":
         return cls(config.get("rubros") or {}, config.get("alertas_regulatorias"))
+
+    def usa_clasificacion_onu(self, clave: str | None) -> bool:
+        return any(r.clave == clave and r.usar_clasificacion_onu for r in self.rubros)
 
     # -- Licitaciones y nombres -------------------------------------------
     def es_candidata(self, nombre: str | None) -> bool:

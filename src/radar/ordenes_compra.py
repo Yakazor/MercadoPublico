@@ -11,7 +11,7 @@ import pandas as pd
 from .almacenamiento import BaseDatos
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros, normalizar
-from .modelos import clasificar_items_oc, filas_orden_compra, textos_item_oc
+from .modelos import clasificar_items_oc, filas_orden_compra, textos_alerta_item_oc
 
 log = logging.getLogger(__name__)
 
@@ -119,7 +119,7 @@ def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int]:
                     db.con.execute("DELETE FROM ordenes_compra_items WHERE rowid = ?", [item["rowid"]])
                     eliminados += 1
                     continue
-                alertas = filtro.alertas(*textos_item_oc(item))
+                alertas = filtro.alertas(*textos_alerta_item_oc(item))
                 db.con.execute(
                     "UPDATE ordenes_compra_items SET rubro = ?, rubro_nombre = ?, palabras_detectadas = ?, "
                     "alertas_regulatorias = ? WHERE rowid = ?",
@@ -163,7 +163,9 @@ def resumen_precios(items: pd.DataFrame) -> pd.DataFrame:
         "monto_total": agrupado["total_item"].sum(),
     })
     if "alertas_regulatorias" in df.columns:
-        resumen["alertas_regulatorias"] = agrupado["alertas_regulatorias"].agg(_unir_alertas)
+        # Se marca el producto si la mayoría de sus ítems tiene alerta.
+        resumen["alertas_regulatorias"] = agrupado["alertas_regulatorias"].agg(
+            lambda s: _unir_alertas(s) if s.notna().mean() >= 0.5 else None)
     else:
         resumen["alertas_regulatorias"] = None
     resumen = resumen.reset_index().reindex(columns=COLUMNAS_RESUMEN)

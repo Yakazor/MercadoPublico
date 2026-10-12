@@ -119,6 +119,12 @@ def textos_item_oc(item: dict) -> list[str]:
     ) if t]
 
 
+def textos_alerta_item_oc(item: dict) -> list[str]:
+    """Para las alertas: producto y lo que pidió el comprador (la especificación del
+    proveedor trae publicidad del tipo "blanqueado sin cloro")."""
+    return [t for t in (item.get("Producto"), item.get("EspecificacionComprador")) if t]
+
+
 def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> list[tuple[dict, object]]:
     """[(item, Resultado)] de los ítems que pertenecen a un rubro.
 
@@ -137,9 +143,11 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
     ]
     # Respaldo por nombre solo con UN ítem: en OC de varios ítems sin palabra clave,
     # los ítems genéricos pueden ser de otro rubro (pasajes, catering, despacho).
+    # Solo en rubros de productos (usar_clasificacion_onu): en consultoría una OC
+    # "Café para jornada de planificación estratégica" no hace BI al café.
     if len(evaluados) == 1 and not evaluados[0][1].coincide and not evaluados[0][1].excluido and nombre_oc:
         por_nombre = filtro.evaluar(nombre=nombre_oc)
-        if por_nombre.coincide:
+        if por_nombre.coincide and filtro.usa_clasificacion_onu(por_nombre.rubro):
             evaluados = [(evaluados[0][0], por_nombre)]
     return [(item, r) for item, r in evaluados if r.coincide]
 
@@ -167,7 +175,7 @@ def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
     items = (detalle.get("Items") or {}).get("Listado") or []
     filas = []
     for item, resultado in clasificar_items_oc(detalle.get("Nombre"), items, filtro):
-        alertas = filtro.alertas(*textos_item_oc(item))
+        alertas = filtro.alertas(*textos_alerta_item_oc(item))
         cantidad = _numero(item.get("Cantidad"))
         precio = _numero(item.get("PrecioNeto"))
         total = _numero(item.get("Total"))

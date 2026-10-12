@@ -19,6 +19,8 @@ api:
 #                        en la categoría ONU de los ítems si usar_clasificacion_onu: true).
 #   palabras_debiles:    claves que cuentan en el NOMBRE, pero en los ítems solo junto
 #                        a otra clave (también son nombres de unidades o frases de informes).
+#   no_rescatan:         claves genéricas ("guantes") que no anulan una exclusión
+#                        "salvo clave" (p. ej. "epp").
 #   palabras_candidatas: frases amplias que, en el NOMBRE, hacen que se revise el
 #                        detalle; por sí solas NO cuentan como detección (en rubros sin
 #                        detectar_en_descripcion, la descripción cuenta si trae 2+ claves).
@@ -117,7 +119,16 @@ rubros:
       - agua potable
       - apr
       - cloro gas
+    # Claves genéricas que no alcanzan para anular una exclusión "salvo clave":
+    # "EPP: guantes y lentes" se descarta; "EPP: guantes, mascarillas y pecheras" no.
+    no_rescatan:
+      - guantes
+      - cloro
     excluir_en_nombre_salvo_clave:
+      # Cloro para tratamiento de agua (no es producto de aseo)
+      - tratamiento de agua
+      - planta de tratamiento
+      - agua rural
       # Recolección de basura (servicio), salvo que se compren bolsas, etc.
       - recoleccion
       - residuos
@@ -255,7 +266,8 @@ alertas_regulatorias:
   - palabras: [alcohol gel, clorogel, gel hidroalcoholico, gel antiseptico, gel desinfectante, higienizante de manos]
     nota: "Alcohol gel: registro ISP como cosmético (Res. Minsal 199/2021)"
   - palabras: [desinfectantes, cloro, hipoclorito, amonio cuaternario, sanitizantes, toallas desinfectantes]
-    excepto: [resistente a desinfectantes, compatible con desinfectantes]
+    excepto: [resistente a desinfectantes, compatible con desinfectantes, sin cloro, libre de cloro,
+              libres de cloro, exento de cloro, blanqueado sin cloro]
     nota: "Desinfectantes/cloro: registro ISP 'D' (DS 157)"
   - palabras: [jabon liquido, jabon de manos, jabon antibacterial]
     nota: "Jabón de manos: producto de higiene con trámite ISP (DS 239/2002)"

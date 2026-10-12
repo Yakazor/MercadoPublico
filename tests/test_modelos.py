@@ -237,3 +237,22 @@ def test_consultoria_no_usa_categoria_onu_pero_insumos_si():
 def test_medicamento_inyectable_en_jeringa_no_es_insumo():
     filtro = FiltroRubros.desde_config(cargar_config())
     assert not filtro.es_candidata("C.S. de Paliperidona 75 mg Susp. Iny. LP Jeringa P")
+
+
+def test_respaldo_por_nombre_no_aplica_en_consultoria():
+    """Corrida real: 'Café para jornada de planificación estratégica' con un ítem de café
+    quedaba como BI."""
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC-C", "Nombre": "Servicio de café para jornada de planificación estratégica",
+          "TipoMoneda": "CLP", "Items": {"Listado": [
+              {"Correlativo": 1, "Producto": "Servicios de elaboración de café", "PrecioNeto": 5800}]}}
+    assert filas_orden_compra(oc, filtro) == []
+
+
+def test_alertas_de_item_ignoran_publicidad_del_proveedor():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC-P", "Nombre": "Compra de papel higiénico", "TipoMoneda": "CLP",
+          "Items": {"Listado": [{"Correlativo": 1, "Producto": "Papel higiénico",
+                                 "EspecificacionComprador": "Papel higiénico doble hoja",
+                                 "EspecificacionProveedor": "Blanqueado sin cloro, desinfectado", "PrecioNeto": 500}]}}
+    assert filas_orden_compra(oc, filtro)[0]["alertas_regulatorias"] is None

@@ -334,3 +334,26 @@ def test_real_gel_y_ffp2(real):
 ])
 def test_real_solo_regulados_por_segmento(real, nombre, esperado):
     assert real.evaluar(nombre=nombre).solo_regulados is esperado
+
+
+
+@pytest.mark.parametrize("nombre", [
+    "Adquisicion de EPP: guantes y lentes",
+    "Elementos de proteccion personal: guantes, lentes y zapatos",
+    "Cloro granulado para tratamiento de agua",
+    "Hipoclorito y cloro para planta de tratamiento de agua",
+    "Cloro para sistema de agua rural",
+])
+def test_real_genericas_no_rescatan(real, nombre):
+    assert not real.es_candidata(nombre) and not real.evaluar(nombre=nombre).coincide
+
+
+def test_real_epp_con_insumos_medicos_se_conserva(real):
+    assert real.evaluar(nombre="EPP: guantes, mascarillas y pecheras para CESFAM").coincide
+    assert real.evaluar(nombre="EPP guantes de nitrilo talla M").coincide
+
+
+def test_real_unidades_dpto_en_items(real):
+    r = real.evaluar(nombre="Consultoria para estudio hidrogeologico sector norte",
+                     items=["Dpto. de Planificación Estratégica y Control de Gestión"])
+    assert not r.coincide
