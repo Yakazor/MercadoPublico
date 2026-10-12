@@ -227,14 +227,17 @@ def test_real_unidades_no_cuentan_como_bi(real):
     assert not real.evaluar(nombre="Construcción de tablero de control eléctrico sala de bombas").coincide
 
 
-def test_real_descripcion_cuenta_solo_para_insumos(real):
+def test_real_descripcion_en_consultoria_exige_candidata_y_dos_claves(real):
     assert real.evaluar("Se requieren guantes de nitrilo talla M", nombre="Adquisición de insumos varios").coincide
-    assert not real.evaluar("Implementar dashboards en Power BI", nombre="Servicio de consultoría").coincide
+    # Consultoría: con candidata en el nombre y 2+ claves distintas en la descripción, cuenta…
+    assert real.evaluar("Implementar dashboards en Power BI", nombre="Servicio de consultoría").coincide
+    # …con una sola clave, o sin candidata en el nombre, no.
+    assert not real.evaluar("Implementar un tablero en Power BI", nombre="Servicio de consultoría").coincide
+    assert not real.evaluar("Dashboards en Power BI", nombre="Adquisición de mobiliario").coincide
 
 
 @pytest.mark.parametrize("nombre", [
     "Insumos clinicos para Unidad de Hemodinamia",
-    "Cloro y articulos de aseo para comite de agua potable rural",
     "Mascarillas laringeas, guantes y gasas para pabellon",
     "COMPRA DE MATERIAL DE LIMPIEZA", "PRODUCTO DE LIMPIEZA", "INSUMO DE ASEO",
     "ADQ. ART DE ASEO", "COMPRA ART DE ASEO", "ARTS. ASEO", "PRODUCTO ASEO", "INSUMO ASEO",
@@ -254,6 +257,11 @@ def test_real_insumos_variantes(real, nombre):
     "Guantes de seguridad para personal de operaciones",
     "Adquisicion de EPP: guantes de seguridad y cascos para cuadrilla",
     "Cloro para sistemas APR comuna",
+    "Adquisición de cloro para sistemas de agua potable rural",
+    # Decisión: "agua potable"/"APR" excluye siempre (también este caso mixto, poco frecuente).
+    "Cloro y articulos de aseo para comite de agua potable rural",
+    "Adquisicion de EPP: guantes, lentes y cascos para cuadrilla",
+    "Guante cabritilla soldador",
 ])
 def test_real_exclusiones_variantes(real, nombre):
     assert not real.evaluar(nombre=nombre).coincide, nombre
@@ -268,3 +276,61 @@ def test_clave_vacia_en_config_no_falla():
     f = FiltroRubros({"x": {"nombre": "X", "palabras_clave": ["guantes"], "excluir_en_nombre": None,
                             "excluir_en_nombre_salvo_clave": None, "palabras_candidatas": None}})
     assert f.evaluar(nombre="Guantes").coincide
+
+
+# --- Tercera ronda ------------------------------------------------------------------
+
+def test_real_palabras_debiles_solas_no_bastan_en_items(real):
+    kine = real.evaluar(nombre="Servicios profesionales de kinesiología",
+                        items=["10 sesiones; reporte con indicadores de gestión"])
+    assert not kine.coincide
+    assert real.evaluar(nombre="Servicio de consultoría",
+                        items=["Tablero de control con indicadores de gestión"]).coincide
+    # En el nombre, una débil sí basta.
+    assert real.evaluar(nombre="Consultoría en control de gestión").rubro == "consultoria_gestion_bi"
+
+
+@pytest.mark.parametrize("nombre", [
+    "Consultoría en el área de control de gestión",
+    "Asesoría para implementar unidad de control de gestión",
+    "Consultoría para fortalecer la unidad de gestión estratégica",
+])
+def test_real_unidad_en_el_nombre_no_se_borra(real, nombre):
+    assert real.evaluar(nombre=nombre).rubro == "consultoria_gestion_bi"
+
+
+def test_real_descripcion_bi_con_candidata(real):
+    r = real.evaluar("Se requiere apoyo en control de gestión e indicadores de gestión",
+                     nombre="CONSULTORÍA PARA LA DIRECCIÓN DE SALUD MUNICIPAL")
+    assert r.rubro == "consultoria_gestion_bi"
+
+
+def test_real_item_excluido_por_especificacion(real):
+    r = real.evaluar_item("Guantes de protección", None, "Guante de cuero para soldador, talla 10")
+    assert not r.coincide and r.excluido
+    assert real.evaluar_item("Guantes de procedimiento", None, "Nitrilo talla M").coincide
+    assert not real.evaluar_item(None, None, "Sesiones de kinesiología; reporte con indicadores de gestión").coincide
+
+
+@pytest.mark.parametrize("texto", [
+    "Guante nitrilo libre de polvo y látex", "Guantes de nitrilo exentos de látex", "Guantes vinilo no látex",
+])
+def test_real_alertas_latex_negado(real, texto):
+    assert real.alertas(texto) == []
+
+
+def test_real_gel_y_ffp2(real):
+    assert real.evaluar_item("Gel hidroalcohólico 500 ml").coincide and real.alertas("Gel hidroalcohólico 500 ml")
+    assert real.evaluar_item("Clorogel 5 L").coincide
+    assert real.alertas("Mascarilla FFP-2") and real.alertas("Mascarilla FFP 2")
+
+
+@pytest.mark.parametrize("nombre,esperado", [
+    ("Guantes de procedimiento de látex talla M", True),
+    ("Guantes de examen de látex", True),
+    ("Mascarillas N95", True),
+    ("Alcohol gel y papel higiénico", False),
+    ("Guantes de nitrilo, jeringas y gasas", False),
+])
+def test_real_solo_regulados_por_segmento(real, nombre, esperado):
+    assert real.evaluar(nombre=nombre).solo_regulados is esperado

@@ -190,8 +190,14 @@ def test_orden_compra_items_genericos_usan_nombre_de_la_oc():
               {"Correlativo": 1, "Producto": "NITRIDERM TALLA M CAJA 100", "Cantidad": 10, "PrecioNeto": 5000},
               {"Correlativo": 2, "Producto": "Sonda Foley", "Cantidad": 1, "PrecioNeto": 2000},
           ]}}
-    filas = filas_orden_compra(oc, filtro)
-    assert [f["correlativo"] for f in filas] == [1]   # la sonda sigue excluida
+    # Varios ítems sin palabra clave: no se usa el nombre (podrían ser de otro rubro).
+    assert filas_orden_compra(oc, filtro) == []
+    # Un solo ítem genérico: se usa el rubro del nombre de la OC.
+    una = oc | {"Items": {"Listado": oc["Items"]["Listado"][:1]}}
+    assert [f["correlativo"] for f in filas_orden_compra(una, filtro)] == [1]
+    # Un solo ítem excluido (sonda): no.
+    sonda = oc | {"Items": {"Listado": oc["Items"]["Listado"][1:]}}
+    assert filas_orden_compra(sonda, filtro) == []
 
 
 def test_orden_compra_especificaciones_no_detectan_ni_excluyen():

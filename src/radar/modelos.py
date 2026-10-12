@@ -125,9 +125,9 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
     - Si el nombre de la OC está excluido (p. ej. "Guantes de cuero para soldador"
       o "Compra de medicamentos…"), no se guarda nada.
     - Cada ítem se clasifica por su producto/categoría (`filtro.evaluar_item`).
-    - Si NINGÚN ítem trae palabra clave (productos genéricos o marcas) pero el
-      nombre de la OC sí, se usan todos los ítems no excluidos con el rubro del
-      nombre ("Compra de guantes de nitrilo" con ítem "NITRIDERM M CAJA 100")."""
+    - Si la OC tiene UN solo ítem sin palabra clave (producto genérico o marca) y
+      el nombre de la OC sí la trae, se usa el rubro del nombre ("Compra de guantes
+      de nitrilo" con el ítem "NITRIDERM M CAJA 100")."""
     if nombre_oc and not filtro.es_candidata(nombre_oc):
         return []
     evaluados = [
@@ -135,10 +135,12 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
                                    item.get("EspecificacionComprador")))
         for item in items
     ]
-    if not any(r.coincide for _, r in evaluados) and nombre_oc:
+    # Respaldo por nombre solo con UN ítem: en OC de varios ítems sin palabra clave,
+    # los ítems genéricos pueden ser de otro rubro (pasajes, catering, despacho).
+    if len(evaluados) == 1 and not evaluados[0][1].coincide and not evaluados[0][1].excluido and nombre_oc:
         por_nombre = filtro.evaluar(nombre=nombre_oc)
         if por_nombre.coincide:
-            evaluados = [(item, r if r.excluido else por_nombre) for item, r in evaluados]
+            evaluados = [(evaluados[0][0], por_nombre)]
     return [(item, r) for item, r in evaluados if r.coincide]
 
 
