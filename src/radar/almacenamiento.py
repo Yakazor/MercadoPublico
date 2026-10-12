@@ -196,6 +196,14 @@ class BaseDatos:
                                 [fecha.isoformat()]).fetchone()
         return n
 
+    def dias_pendientes(self) -> list[date]:
+        """Días con intentos fallidos que aún no se marcan como procesados."""
+        filas = self.con.execute(
+            "SELECT fecha FROM ordenes_compra_intentos "
+            "WHERE fecha NOT IN (SELECT fecha FROM ordenes_compra_dias) ORDER BY fecha"
+        ).fetchall()
+        return [date.fromisoformat(f) for (f,) in filas]
+
     def items_oc(self) -> pd.DataFrame:
         return pd.read_sql_query("SELECT * FROM ordenes_compra_items", self.con)
 

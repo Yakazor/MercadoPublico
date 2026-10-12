@@ -72,7 +72,13 @@ def main():
                          eliminados, actualizados)
 
         hasta_monotonic = inicio + args.max_minutos * 60 if args.max_minutos else None
-        for fecha in dias(desde, hasta):
+        # Días con fallas de ejecuciones anteriores se reintentan aunque ya hayan
+        # quedado fuera de la ventana (--dias), hasta MAX_INTENTOS.
+        anteriores = [d for d in db.dias_pendientes() if d < desde]
+        if anteriores:
+            logging.info("Reintentando días pendientes de ejecuciones anteriores: %s",
+                         ", ".join(map(str, anteriores)))
+        for fecha in [*anteriores, *dias(desde, hasta)]:
             if not args.reprocesar and db.dia_oc_procesado(fecha):
                 logging.info("%s ya procesado, se omite", fecha)
                 continue
@@ -82,8 +88,15 @@ def main():
             try:
                 r = procesar_dia(cliente, filtro, db, fecha, args.estado, hasta_monotonic)
             except ErrorApi as e:
-                logging.error("%s: no se pudo procesar (%s). Se reintentará en la próxima ejecución.", fecha, e)
-                pendientes.append(str(fecha))
+                intentos = db.registrar_intento_fallido(fecha, ["(listado del día)"])
+                if intentos >= MAX_INTENTOS:
+                    db.marcar_dia_oc(fecha)
+                    logging.error("%s: el listado del día falló %d veces (%s); se da por perdido.",
+                                  fecha, intentos, e)
+                else:
+                    logging.error("%s: no se pudo procesar (%s). Se reintentará en la próxima ejecución "
+                                  "(intento %d de %d).", fecha, e, intentos, MAX_INTENTOS)
+                    pendientes.append(str(fecha))
                 continue
             if r.purgadas:
                 logging.info("%s: %d OC guardadas ya no pasan el filtro y se eliminaron", fecha, r.purgadas)

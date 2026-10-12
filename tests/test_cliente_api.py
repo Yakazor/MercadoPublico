@@ -49,13 +49,15 @@ def test_error_definitivo_no_reintenta_ni_expone_ticket():
     with pytest.raises(ErrorApi) as e:
         c.licitaciones(codigo="X")
     assert "Ticket no válido" in str(e.value) and "SECRETO" not in str(e.value)
+    assert not e.value.temporal
     assert len(c._sesion.llamadas) == 1
 
 
 def test_agota_reintentos():
     c = _cliente([Resp(503, None)] * 3, reintentos=2)
-    with pytest.raises(ErrorApi, match="2 reintentos"):
+    with pytest.raises(ErrorApi, match="2 reintentos") as e:
         c.ordenes_de_compra(fecha="01102026")
+    assert e.value.temporal
 
 
 def test_respuesta_200_sin_json_se_reintenta():

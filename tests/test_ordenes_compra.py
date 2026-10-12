@@ -49,7 +49,7 @@ class ClienteFalso:
         if codigo is None:
             return {"Listado": self.listado}
         if codigo in self.fallan:
-            raise ErrorApi("simulado")
+            raise ErrorApi("simulado", temporal=True)
         return {"Listado": [self.detalles[codigo]]}
 
 
@@ -139,3 +139,35 @@ def test_intentos_fallidos_se_acumulan(tmp_path):
     db = BaseDatos(tmp_path / "r.db")
     assert db.registrar_intento_fallido(date(2026, 10, 5), ["X"]) == 1
     assert db.registrar_intento_fallido(date(2026, 10, 5), ["X"]) == 2
+
+
+class ClienteConErrores(ClienteFalso):
+    def __init__(self, listado, detalles, definitivas=(), temporales=()):
+        super().__init__(listado, detalles)
+        self.definitivas, self.temporales = set(definitivas), set(temporales)
+
+    def ordenes_de_compra(self, fecha=None, estado=None, codigo=None):
+        if codigo in self.definitivas:
+            raise ErrorApi("Código no válido", temporal=False)
+        if codigo in self.temporales:
+            raise ErrorApi("HTTP 500 tras reintentos", temporal=True)
+        return super().ordenes_de_compra(fecha, estado, codigo)
+
+
+def test_error_definitivo_no_deja_el_dia_pendiente(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    listado = [{"Codigo": "A", "Nombre": "Compra de guantes A"}, {"Codigo": "B", "Nombre": "Compra de guantes B"}]
+    r = procesar_dia(ClienteConErrores(listado, {"A": _oc("A", "Guantes")}, definitivas={"B"}),
+                     FILTRO, db, date(2026, 10, 5))
+    assert r.completo and r.fallidas == []
+    r = procesar_dia(ClienteConErrores(listado, {"A": _oc("A", "Guantes")}, temporales={"B"}),
+                     FILTRO, db, date(2026, 10, 6))
+    assert not r.completo and r.fallidas == ["B"]
+
+
+def test_dias_pendientes(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    db.registrar_intento_fallido(date(2026, 9, 5), ["X"])
+    db.registrar_intento_fallido(date(2026, 9, 6), ["Y"])
+    db.marcar_dia_oc(date(2026, 9, 6))
+    assert db.dias_pendientes() == [date(2026, 9, 5)]

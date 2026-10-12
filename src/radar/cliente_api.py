@@ -21,7 +21,15 @@ _MENSAJES_TEMPORALES = ("simultane", "intente nuevamente", "limite")
 
 
 class ErrorApi(Exception):
-    """Error definitivo de la API (no se resuelve reintentando)."""
+    """Error de la API.
+
+    `temporal=True`: se agotaron los reintentos (5xx, 429, red, respuesta sin JSON);
+    puede funcionar más tarde. `temporal=False`: error definitivo (código inválido,
+    ticket rechazado): reintentar no sirve."""
+
+    def __init__(self, mensaje: str, temporal: bool = False):
+        super().__init__(mensaje)
+        self.temporal = temporal
 
 
 class ClienteMercadoPublico:
@@ -101,7 +109,8 @@ class ClienteMercadoPublico:
                 motivo = f"error de red: {e.__class__.__name__}"
 
             if intento == self.reintentos:
-                raise ErrorApi(f"{recurso} {visible}: falló tras {self.reintentos} reintentos ({motivo})")
+                raise ErrorApi(f"{recurso} {visible}: falló tras {self.reintentos} reintentos ({motivo})",
+                               temporal=True)
             log.warning("%s %s: %s. Reintento en %.0f s", recurso, visible, motivo, espera)
             time.sleep(espera)
             espera *= 2
