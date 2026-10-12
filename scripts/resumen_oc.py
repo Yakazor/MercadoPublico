@@ -15,8 +15,18 @@ from radar.config import cargar_config, ruta_proyecto
 from radar.ordenes_compra import resumen_precios
 
 
-def _clp(v) -> str:
-    return "" if pd.isna(v) else f"{v:,.0f}".replace(",", ".")
+def _es_clp(moneda) -> bool:
+    return moneda is None or pd.isna(moneda) or str(moneda).strip().upper() in ("", "CLP", "PESO", "$")
+
+
+def _monto(v, moneda=None) -> str:
+    """CLP sin decimales; UF/USD/otras con 2 decimales y su código."""
+    if pd.isna(v):
+        return ""
+    if _es_clp(moneda):
+        return f"{v:,.0f}".replace(",", ".")
+    texto = f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return f"{texto} {moneda}"
 
 
 def main():
@@ -43,26 +53,36 @@ def main():
         print("Sin ítems con precio todavía.")
         return
 
+    # Primero CLP (comparables entre sí); dentro de cada moneda, por monto total.
+    resumen = resumen.assign(_no_clp=~resumen["moneda"].map(_es_clp))
+    nota = "⚠ = producto con registro/certificación obligatoria (ver columna alertas_regulatorias del Excel)"
+    print(nota if args.texto else f"_{nota}_")
+
     for rubro, g in resumen.groupby("rubro_nombre"):
-        g = g.sort_values("monto_total", ascending=False).head(args.top)
+        g = g.sort_values(["_no_clp", "monto_total"], ascending=[True, False]).head(args.top)
         if args.texto:
-            print(f"\n=== {rubro} (top {len(g)} por monto) ===")
+            print(f"\n=== {rubro} (top {len(g)}; CLP primero, luego otras monedas) ===")
             for _, f in g.iterrows():
+                m = f["moneda"]
                 unidad = f["unidad"] if pd.notna(f["unidad"]) else "s/u"
-                moneda = "" if f["moneda"] in (None, "CLP") or pd.isna(f["moneda"]) else f" {f['moneda']}"
-                print(f"{str(f['producto_normalizado'])[:55]:55} | {unidad:10} | OC={f['n_ordenes']:>3} "
-                      f"prov={f['n_proveedores']:>3} | mediana {_clp(f['precio_mediana'])}{moneda} "
-                      f"(p25 {_clp(f['precio_p25'])} – p75 {_clp(f['precio_p75'])}; "
-                      f"mín {_clp(f['precio_min'])} máx {_clp(f['precio_max'])}) | total {_clp(f['monto_total'])}")
+                alerta = "⚠ " if pd.notna(f["alertas_regulatorias"]) else "  "
+                print(f"{alerta}{str(f['producto_normalizado'])[:55]:55} | {unidad:10} | OC={f['n_ordenes']:>3} "
+                      f"prov={f['n_proveedores']:>3} | mediana {_monto(f['precio_mediana'], m)} "
+                      f"(p25 {_monto(f['precio_p25'], m)} – p75 {_monto(f['precio_p75'], m)}; "
+                      f"mín {_monto(f['precio_min'], m)} máx {_monto(f['precio_max'], m)}) | "
+                      f"total {_monto(f['monto_total'], m)}")
         else:
             print(f"\n### {rubro}\n")
-            print("| Producto | Unidad | OC | Proveedores | Mediana | P25 – P75 | Monto total |")
-            print("|---|---|---:|---:|---:|---:|---:|")
+            print("| | Producto | Unidad | Moneda | OC | Proveedores | Mediana | P25 – P75 | Monto total |")
+            print("|---|---|---|---|---:|---:|---:|---:|---:|")
             for _, f in g.iterrows():
+                m = f["moneda"]
                 unidad = f["unidad"] if pd.notna(f["unidad"]) else ""
-                print(f"| {str(f['producto_normalizado'])[:60]} | {unidad} | {f['n_ordenes']} | "
-                      f"{f['n_proveedores']} | {_clp(f['precio_mediana'])} | "
-                      f"{_clp(f['precio_p25'])} – {_clp(f['precio_p75'])} | {_clp(f['monto_total'])} |")
+                alerta = "⚠" if pd.notna(f["alertas_regulatorias"]) else ""
+                producto = str(f["producto_normalizado"])[:60].replace("|", "/")
+                print(f"| {alerta} | {producto} | {unidad} | {m if pd.notna(m) else ''} | {f['n_ordenes']} | "
+                      f"{f['n_proveedores']} | {_monto(f['precio_mediana'], m)} | "
+                      f"{_monto(f['precio_p25'], m)} – {_monto(f['precio_p75'], m)} | {_monto(f['monto_total'], m)} |")
 
 
 if __name__ == "__main__":
