@@ -8,19 +8,24 @@ api:
   espera_inicial_reintento_segundos: 2
 
 # Rubros a detectar. Las palabras se comparan sin tildes ni mayúsculas y por
-# palabra completa ("aseo" no coincide con "paseo").
-#   palabras_clave:    basta con que aparezca UNA (en nombre, descripción o ítems)
-#                      para que la licitación cuente como detectada.
-#   palabras_candidatas: (opcional) frases amplias que, si aparecen en el NOMBRE,
-#                      hacen que se pida el detalle para revisar descripción e
-#                      ítems, pero que por sí solas NO cuentan como detección
-#                      (ej. "insumos clinicos" → se acepta solo si los ítems
-#                      traen guantes, mascarillas, etc.).
-#                      Prefiere frases ("articulos de aseo") a palabras sueltas
-#                      ("aseo"): las sueltas traen muchos falsos positivos.
-#   excluir:           si aparece en cualquier texto, se descarta el rubro.
-#   excluir_en_nombre: se revisa SOLO en el nombre de la licitación (útil para
-#                      descartar servicios u obras sin perder compras de productos).
+# palabra completa ("aseo" no coincide con "paseo"). Escribe singular Y plural
+# ("guante", "guantes") y prefiere frases ("articulos de aseo") a palabras
+# sueltas ("aseo"), que traen muchos falsos positivos.
+#
+#   palabras_clave:      cuenta como detección si aparece en el NOMBRE o en los
+#                        ÍTEMS. En la descripción general solo suma (ahí suelen
+#                        nombrarse unidades como "Depto. de Control de Gestión").
+#   palabras_candidatas: frases amplias que, en el NOMBRE, hacen que se revise el
+#                        detalle; por sí solas NO cuentan como detección.
+#   excluir_en_nombre:   descarta SIEMPRE si aparece en el nombre (servicios, EPP
+#                        industrial, obras).
+#   excluir_en_nombre_salvo_clave: descarta si aparece en el nombre, SALVO que el
+#                        nombre también traiga una palabra clave. Ej.: "sondas"
+#                        descarta "Compra de sondas", pero no "Gasas, guantes y
+#                        sondas"; "residuos" no descarta "Bolsas de basura para
+#                        residuos".
+# En las órdenes de compra se aplica lo mismo a CADA ÍTEM por separado: solo se
+# guardan (y entran al cálculo de precios) los ítems de tus rubros.
 rubros:
   insumos_medicos_aseo:
     nombre: "Insumos médicos no regulados y aseo"
@@ -28,43 +33,60 @@ rubros:
       # Insumos médicos de uso general
       - insumos medicos
       - insumo medico
+      - guante
       - guantes
       - guantes de nitrilo
       - guantes de latex
       - guantes de procedimiento
-      - mascarillas
       - mascarilla
+      - mascarillas
       - respirador desechable
+      - respiradores desechables
+      - pechera
       - pecheras
+      - cofia
       - cofias
+      - jeringa
       - jeringas
+      - gasa
       - gasas
       - aposito
       - apositos
       - alcohol gel
       - toallas desinfectantes
       # Productos de aseo (frases, no la palabra "aseo" sola)
+      - articulo de aseo
       - articulos de aseo
       - articulos aseo
-      - materiales de aseo
+      - art. de aseo
+      - art. aseo
+      - arts. de aseo
       - material de aseo
+      - materiales de aseo
       - materiales aseo
+      - producto de aseo
       - productos de aseo
+      - productos aseo
       - insumos de aseo
+      - insumos aseo
       - insumos para aseo
       - equipos de aseo
       - utiles de aseo
+      - utiles aseo
       - productos de limpieza
       - articulos de limpieza
       - insumos de limpieza
       - materiales de limpieza
-      - toallas de papel
       - toalla de papel
+      - toallas de papel
       - papel higienico
       - jabon liquido
       - desinfectante
+      - desinfectantes
       - cloro
       - detergente
+      - detergentes
+      - bolsa de basura
       - bolsas de basura
     palabras_candidatas:
       - insumos clinicos
@@ -72,50 +94,69 @@ rubros:
       - material clinico
       - materiales clinicos
       - insumos hospitalarios
-    excluir:
+    excluir_en_nombre:
       - farmaco
       - farmacos
       - medicamento
       - medicamentos
-    excluir_en_nombre:
       # Servicios (personal de aseo), no venta de productos
       - servicio de aseo
       - servicios de aseo
       - servicio aseo
       - servicios aseo
+      - serv aseo
+      - serv. aseo
+      - serv. de aseo
       - servicio complementario de aseo
       - servicios externos de aseo
       - aseo integral
       - serv integral
       - serv. integral
+      - serv.integral
       - provision de personal
       - servicio de limpieza
       - servicios de limpieza
       - serv limpieza
+      - serv. limpieza
+      - serv. de limpieza
       - limpieza de fosa
       - limpieza de fosas
       - fosa
       - fosas
       - alcantarillado
-      - recoleccion
-      - residuos
       - concesion
       - aseo y ornato
-      # Guantes que no son insumo médico
+      # EPP industrial y otros usos (no insumo médico)
       - tacticos
       - motorista
+      - de cuero
+      - soldador
+      - anticorte
+      - ropa de trabajo
+      - zapatos de seguridad
+      - mascarilla laringea
+      - mascarillas laringeas
+      - cloro gas
+      - agua potable rural
+    excluir_en_nombre_salvo_clave:
+      # Recolección de basura (servicio), salvo que se compren bolsas, etc.
+      - recoleccion
+      - residuos
       # Insumos clínicos especializados (normalmente dispositivos regulados).
-      # Borra estas líneas si también te interesan.
+      # Si el nombre también trae guantes, gasas, etc. (convenio mixto), se revisa.
       - cateter
       - cateteres
       - sonda
       - sondas
       - endotraqueal
+      - endotraqueales
       - endotqq
       - tuboendotqq
+      - acceso venoso
       - accesos venosos
       - sutura quirurgica
       - suturas quirurgicas
+      - parche dea
       - parches dea
       - stent
       - stents
@@ -129,23 +170,23 @@ rubros:
       - cirugia robotica
       - hemodinamia
       - angiografia
-      - dialisis
-      - oftalmologia
-      - traumatologia
-      - cardiocirugia
-      - anestesia
       - nebulizador
 
   consultoria_gestion_bi:
     nombre: "Consultoría en gestión, BI y control de gestión"
     palabras_clave:
       # "consultoria" o "asesoria" solas traen sobre todo obras e ingeniería:
-      # se usan solo en combinación con gestión/procesos/datos.
+      # se usan como candidatas y se exige gestión/procesos/datos.
       - consultoria en gestion
+      - consultorias en gestion
       - consultoria de gestion
+      - consultorias de gestion
       - consultoria para la gestion
       - asesoria en gestion
+      - asesorias en gestion
       - asesoria de gestion
+      - asesorias de gestion
+      - gestion estrategica
       - control de gestion
       - modelo de gestion
       - gestion de procesos
@@ -168,15 +209,18 @@ rubros:
       - dashboards
       - tablero de control
       - tableros de control
+      - tablero de gestion
       - cuadro de mando
       - indicadores de gestion
       - sistema de indicadores
       - indicadores de desempeno
       - kpi
+      - kpis
       - analisis de datos
       - analitica de datos
       - visualizacion de datos
       - ciencia de datos
+      - arquitectura de datos
       - gestion financiera
       - control presupuestario
       - control financiero
@@ -184,24 +228,49 @@ rubros:
       - estudio de costos
       - reportabilidad
     palabras_candidatas:
-      # Se pide el detalle y se acepta solo si la descripción o los ítems
-      # mencionan alguna palabra clave (gestión, BI, indicadores…).
       - consultoria
       - consultorias
       - asesoria
       - asesorias
       - servicios profesionales
-    excluir:
+    excluir_en_nombre:
       - asesoria juridica
       - asesoria legal
       - consultoria juridica
-    excluir_en_nombre:
       - inspeccion tecnica
       - inspeccion fiscal
+      - pavimentacion
+      - repavimentacion
+    excluir_en_nombre_salvo_clave:
+      # Construcción e ingeniería (salvo que el nombre traiga gestión/BI, p. ej.
+      # "Dashboards Power BI para la Dirección de Obras Portuarias").
       - obra
       - obras
-      - pavimentacion
+      - obras civiles
       - arquitectura
+      - proyecto de arquitectura
+      - diseno de arquitectura
+      - ingenieria civil
+      - impacto ambiental
+
+# Alertas regulatorias (ISP / Minsal). No excluyen nada: agregan la columna
+# "alertas_regulatorias" y "solo_regulados" (= todas las palabras detectadas
+# corresponden a productos con registro obligatorio), para filtrar en Power BI.
+# Fuente: investigación del 12-10-2026 con normativa del ISP, Minsal y BCN;
+# confírmalo con el ISP antes de comprometer contratos.
+alertas_regulatorias:
+  - palabras: [guantes de latex, guante de latex, latex, guantes quirurgicos, guante quirurgico, guantes esteriles]
+    nota: "Guantes de látex/quirúrgicos: registro ISP + conformidad por lote (DE 342/2004)"
+  - palabras: [jeringa, jeringas, aguja, agujas, aguja hipodermica, agujas hipodermicas]
+    nota: "Jeringas/agujas: registro ISP + conformidad por lote (DE 47/2025)"
+  - palabras: [n95, kn95, ffp2, respirador, respiradores]
+    nota: "Respiradores N95/KN95: EPP inscrito en el RFI del ISP (Res. 45/2023)"
+  - palabras: [alcohol gel, gel antiseptico, gel desinfectante, higienizante de manos]
+    nota: "Alcohol gel: registro ISP como cosmético (Res. Minsal 199/2021)"
+  - palabras: [desinfectante, desinfectantes, cloro, hipoclorito, amonio cuaternario, sanitizante, sanitizantes, toallas desinfectantes]
+    nota: "Desinfectantes/cloro: registro ISP 'D' (DS 157)"
+  - palabras: [jabon liquido, jabon de manos, jabon antibacterial]
+    nota: "Jabón de manos: producto de higiene con trámite ISP (DS 239/2002)"
 
 # Licitaciones activas: solo se pide el detalle de las que pasan el
 # filtro preliminar por nombre (ahorra llamadas). Con "false" se pide el
