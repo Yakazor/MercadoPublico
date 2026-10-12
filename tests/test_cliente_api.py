@@ -56,3 +56,15 @@ def test_agota_reintentos():
     c = _cliente([Resp(503, None)] * 3, reintentos=2)
     with pytest.raises(ErrorApi, match="2 reintentos"):
         c.ordenes_de_compra(fecha="01102026")
+
+
+def test_respuesta_200_sin_json_se_reintenta():
+    c = _cliente([Resp(200, None), Resp(200, {"Cantidad": 0, "Listado": []})])
+    assert c.ordenes_de_compra(fecha="01102026") == {"Cantidad": 0, "Listado": []}
+    assert len(c._sesion.llamadas) == 2
+
+
+def test_respuesta_200_sin_json_persistente_es_error_api():
+    c = _cliente([Resp(200, None)] * 3, reintentos=2)
+    with pytest.raises(ErrorApi, match="sin JSON"):
+        c.licitaciones(codigo="X")

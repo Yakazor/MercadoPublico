@@ -83,15 +83,19 @@ class ClienteMercadoPublico:
                 resp = self._sesion.get(url, params=consulta, timeout=self.timeout)
                 self._ultima_llamada = time.monotonic()
                 datos = _leer_json(resp)
-                if resp.ok and not _es_error_temporal(datos):
-                    if isinstance(datos, dict) and "Listado" not in datos and "Mensaje" in datos:
+                if resp.ok and not isinstance(datos, dict):
+                    # 200 con HTML/vacío (p. ej. página de mantenimiento): temporal.
+                    motivo = f"HTTP {resp.status_code} sin JSON válido"
+                elif resp.ok and not _es_error_temporal(datos):
+                    if "Listado" not in datos and "Mensaje" in datos:
                         raise ErrorApi(f"{recurso} {visible}: {datos.get('Mensaje')}")
                     return datos
-                if resp.status_code < 500 and resp.status_code != 429 and not _es_error_temporal(datos):
+                elif resp.status_code < 500 and resp.status_code != 429 and not _es_error_temporal(datos):
                     raise ErrorApi(
                         f"{recurso} {visible}: HTTP {resp.status_code} - {_mensaje(datos, resp)}"
                     )
-                motivo = f"HTTP {resp.status_code} - {_mensaje(datos, resp)}"
+                else:
+                    motivo = f"HTTP {resp.status_code} - {_mensaje(datos, resp)}"
             except (requests.ConnectionError, requests.Timeout) as e:
                 self._ultima_llamada = time.monotonic()
                 motivo = f"error de red: {e.__class__.__name__}"
