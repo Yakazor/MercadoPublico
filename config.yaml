@@ -7,185 +7,142 @@ api:
   reintentos: 4                        # esperas crecientes: 2, 4, 8, 16 s
   espera_inicial_reintento_segundos: 2
 
-# Rubros a detectar. Las palabras se comparan sin tildes ni mayúsculas y por
-# palabra completa ("aseo" no coincide con "paseo"). Escribe singular Y plural
-# ("guante", "guantes") y prefiere frases ("articulos de aseo") a palabras
-# sueltas ("aseo"), que traen muchos falsos positivos.
+# Rubros a detectar. Cómo se comparan las frases:
+#   - sin tildes, mayúsculas ni puntuación ("SERV.ASEO" = "serv aseo");
+#   - cada palabra admite plural ("guante" = "guantes"): basta escribir una forma;
+#   - entre palabras se admiten conectores ("productos de aseo" = "productos aseo"
+#     = "productos para el aseo");
+#   - siempre por palabra completa ("aseo" no coincide con "paseo").
 #
-#   palabras_clave:      cuenta como detección si aparece en el NOMBRE o en los
-#                        ÍTEMS. En la descripción general solo suma (ahí suelen
-#                        nombrarse unidades como "Depto. de Control de Gestión").
+#   palabras_clave:      cuenta como detección si aparece en el NOMBRE o en los ÍTEMS
+#                        (y en la descripción general si detectar_en_descripcion: true).
 #   palabras_candidatas: frases amplias que, en el NOMBRE, hacen que se revise el
 #                        detalle; por sí solas NO cuentan como detección.
-#   excluir_en_nombre:   descarta SIEMPRE si aparece en el nombre (servicios, EPP
-#                        industrial, obras).
+#   excluir_en_nombre:   descarta SIEMPRE si aparece en el nombre (servicios, obras).
 #   excluir_en_nombre_salvo_clave: descarta si aparece en el nombre, SALVO que el
-#                        nombre también traiga una palabra clave. Ej.: "sondas"
-#                        descarta "Compra de sondas", pero no "Gasas, guantes y
-#                        sondas"; "residuos" no descarta "Bolsas de basura para
-#                        residuos".
-# En las órdenes de compra se aplica lo mismo a CADA ÍTEM por separado: solo se
-# guardan (y entran al cálculo de precios) los ítems de tus rubros.
+#                        nombre traiga otra palabra clave fuera de la frase excluida:
+#                        "Mascarilla laríngea desechable" → se descarta;
+#                        "Mascarillas laríngeas, guantes y gasas" → se revisa por guantes.
+#                        Una palabra clave dentro de la frase excluida no cuenta.
+#   ignorar:             frases que se borran antes de evaluar (nombres de unidades
+#                        compradoras). Los nombres de unidad seguidos de una palabra
+#                        clave ("Departamento de Control de Gestión") se ignoran solos.
+# En las órdenes de compra se clasifica CADA ÍTEM por su producto/categoría: solo
+# se guardan (y entran al cálculo de precios) los ítems de tus rubros.
 rubros:
   insumos_medicos_aseo:
     nombre: "Insumos médicos no regulados y aseo"
+    detectar_en_descripcion: true
     palabras_clave:
       # Insumos médicos de uso general
       - insumos medicos
-      - insumo medico
-      - guante
       - guantes
       - guantes de nitrilo
       - guantes de latex
       - guantes de procedimiento
-      - mascarilla
       - mascarillas
-      - respirador desechable
       - respiradores desechables
-      - pechera
       - pecheras
-      - cofia
       - cofias
-      - jeringa
       - jeringas
-      - gasa
       - gasas
-      - aposito
       - apositos
       - alcohol gel
       - toallas desinfectantes
       # Productos de aseo (frases, no la palabra "aseo" sola)
-      - articulo de aseo
       - articulos de aseo
-      - articulos aseo
-      - art. de aseo
-      - art. aseo
-      - arts. de aseo
-      - material de aseo
+      - art de aseo
       - materiales de aseo
-      - materiales aseo
-      - producto de aseo
       - productos de aseo
-      - productos aseo
       - insumos de aseo
-      - insumos aseo
-      - insumos para aseo
       - equipos de aseo
       - utiles de aseo
-      - utiles aseo
       - productos de limpieza
       - articulos de limpieza
       - insumos de limpieza
       - materiales de limpieza
-      - toalla de papel
       - toallas de papel
       - papel higienico
       - jabon liquido
-      - desinfectante
       - desinfectantes
       - cloro
-      - detergente
       - detergentes
-      - bolsa de basura
       - bolsas de basura
+      - bolsas de residuos
     palabras_candidatas:
       - insumos clinicos
-      - insumo clinico
       - material clinico
-      - materiales clinicos
       - insumos hospitalarios
     excluir_en_nombre:
-      - farmaco
       - farmacos
-      - medicamento
       - medicamentos
       # Servicios (personal de aseo), no venta de productos
       - servicio de aseo
-      - servicios de aseo
-      - servicio aseo
-      - servicios aseo
-      - serv aseo
-      - serv. aseo
-      - serv. de aseo
+      - serv de aseo
+      - servs de aseo
       - servicio complementario de aseo
       - servicios externos de aseo
       - aseo integral
       - serv integral
-      - serv. integral
-      - serv.integral
       - provision de personal
       - servicio de limpieza
-      - servicios de limpieza
-      - serv limpieza
-      - serv. limpieza
-      - serv. de limpieza
-      - limpieza de fosa
+      - serv de limpieza
       - limpieza de fosas
-      - fosa
       - fosas
       - alcantarillado
       - concesion
       - aseo y ornato
-      # EPP industrial y otros usos (no insumo médico)
-      - tacticos
-      - motorista
-      - de cuero
-      - soldador
-      - anticorte
-      - ropa de trabajo
-      - zapatos de seguridad
-      - mascarilla laringea
-      - mascarillas laringeas
-      - cloro gas
-      - agua potable rural
     excluir_en_nombre_salvo_clave:
       # Recolección de basura (servicio), salvo que se compren bolsas, etc.
       - recoleccion
       - residuos
+      # EPP industrial y otros usos (no insumo médico)
+      - guantes tacticos
+      - guantes motorista
+      - guantes de cuero
+      - guantes de seguridad
+      - guantes de trabajo
+      - guantes de soldador
+      - guantes para soldar
+      - guantes anticorte
+      - guantes de descarne
+      - guantes de jardineria
+      - ropa de trabajo
+      - zapatos de seguridad
+      - elementos de proteccion personal
+      - epp
+      - mascarillas laringeas
+      - cloro gas
+      - cloro para apr
+      - cloro para sistemas apr
+      - cloro para agua potable
+      - agua potable rural
       # Insumos clínicos especializados (normalmente dispositivos regulados).
-      # Si el nombre también trae guantes, gasas, etc. (convenio mixto), se revisa.
-      - cateter
       - cateteres
-      - sonda
       - sondas
       - endotraqueal
-      - endotraqueales
       - endotqq
       - tuboendotqq
-      - acceso venoso
       - accesos venosos
-      - sutura quirurgica
       - suturas quirurgicas
-      - parche dea
       - parches dea
-      - stent
       - stents
       - angioplastia
-      - implante
       - implantes
       - protesis
-      - marcapaso
       - marcapasos
       - osteosintesis
-      - cirugia robotica
-      - hemodinamia
-      - angiografia
       - nebulizador
 
   consultoria_gestion_bi:
     nombre: "Consultoría en gestión, BI y control de gestión"
+    # La descripción general suele nombrar unidades ("Depto. de Planificación
+    # Estratégica y Control de Gestión"): para este rubro solo cuentan nombre e ítems.
+    detectar_en_descripcion: false
     palabras_clave:
-      # "consultoria" o "asesoria" solas traen sobre todo obras e ingeniería:
-      # se usan como candidatas y se exige gestión/procesos/datos.
       - consultoria en gestion
-      - consultorias en gestion
-      - consultoria de gestion
-      - consultorias de gestion
       - consultoria para la gestion
       - asesoria en gestion
-      - asesorias en gestion
-      - asesoria de gestion
-      - asesorias de gestion
       - gestion estrategica
       - control de gestion
       - modelo de gestion
@@ -206,21 +163,22 @@ rubros:
       - tableau
       - qlik
       - dashboard
-      - dashboards
-      - tablero de control
-      - tableros de control
+      - tablero de control de gestion
       - tablero de gestion
+      - tablero de indicadores
       - cuadro de mando
       - indicadores de gestion
       - sistema de indicadores
       - indicadores de desempeno
       - kpi
-      - kpis
       - analisis de datos
       - analitica de datos
       - visualizacion de datos
       - ciencia de datos
       - arquitectura de datos
+      - arquitectura de informacion
+      - arquitectura empresarial
+      - arquitectura de procesos
       - gestion financiera
       - control presupuestario
       - control financiero
@@ -229,10 +187,15 @@ rubros:
       - reportabilidad
     palabras_candidatas:
       - consultoria
-      - consultorias
       - asesoria
-      - asesorias
       - servicios profesionales
+    ignorar:
+      - direccion de obras
+      - direccion de obras municipales
+      - direccion de obras hidraulicas
+      - direccion de obras portuarias
+      - direccion general de obras publicas
+      - ministerio de obras publicas
     excluir_en_nombre:
       - asesoria juridica
       - asesoria legal
@@ -242,32 +205,32 @@ rubros:
       - pavimentacion
       - repavimentacion
     excluir_en_nombre_salvo_clave:
-      # Construcción e ingeniería (salvo que el nombre traiga gestión/BI, p. ej.
-      # "Dashboards Power BI para la Dirección de Obras Portuarias").
-      - obra
+      # Construcción e ingeniería (salvo que el nombre traiga gestión/BI).
       - obras
       - obras civiles
+      - construccion
       - arquitectura
-      - proyecto de arquitectura
-      - diseno de arquitectura
       - ingenieria civil
       - impacto ambiental
 
-# Alertas regulatorias (ISP / Minsal). No excluyen nada: agregan la columna
-# "alertas_regulatorias" y "solo_regulados" (= todas las palabras detectadas
-# corresponden a productos con registro obligatorio), para filtrar en Power BI.
+# Alertas regulatorias (ISP / Minsal). No excluyen nada: agregan las columnas
+# "alertas_regulatorias" y "solo_regulados" (= todo lo detectado es producto con
+# registro obligatorio), para filtrar en Power BI. "excepto": frases que se borran
+# antes de revisar (p. ej. "libre de látex" no es un guante de látex).
 # Fuente: investigación del 12-10-2026 con normativa del ISP, Minsal y BCN;
 # confírmalo con el ISP antes de comprometer contratos.
 alertas_regulatorias:
-  - palabras: [guantes de latex, guante de latex, latex, guantes quirurgicos, guante quirurgico, guantes esteriles]
+  - palabras: [guantes de latex, guante latex, latex, guantes quirurgicos, guantes esteriles]
+    excepto: [libre de latex, sin latex, latex free, pintura latex, pintura al latex, no contiene latex]
     nota: "Guantes de látex/quirúrgicos: registro ISP + conformidad por lote (DE 342/2004)"
-  - palabras: [jeringa, jeringas, aguja, agujas, aguja hipodermica, agujas hipodermicas]
+  - palabras: [jeringas, agujas hipodermicas, agujas desechables, aguja de jeringa]
     nota: "Jeringas/agujas: registro ISP + conformidad por lote (DE 47/2025)"
-  - palabras: [n95, kn95, ffp2, respirador, respiradores]
+  - palabras: [n95, n 95, kn95, kn 95, ffp2, respirador n95, respiradores desechables, respirador desechable]
     nota: "Respiradores N95/KN95: EPP inscrito en el RFI del ISP (Res. 45/2023)"
-  - palabras: [alcohol gel, gel antiseptico, gel desinfectante, higienizante de manos]
+  - palabras: [alcohol gel, clorogel, gel antiseptico, gel desinfectante, higienizante de manos]
     nota: "Alcohol gel: registro ISP como cosmético (Res. Minsal 199/2021)"
-  - palabras: [desinfectante, desinfectantes, cloro, hipoclorito, amonio cuaternario, sanitizante, sanitizantes, toallas desinfectantes]
+  - palabras: [desinfectantes, cloro, hipoclorito, amonio cuaternario, sanitizantes, toallas desinfectantes]
+    excepto: [resistente a desinfectantes, compatible con desinfectantes]
     nota: "Desinfectantes/cloro: registro ISP 'D' (DS 157)"
   - palabras: [jabon liquido, jabon de manos, jabon antibacterial]
     nota: "Jabón de manos: producto de higiene con trámite ISP (DS 239/2002)"

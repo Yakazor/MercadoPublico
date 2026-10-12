@@ -1,27 +1,76 @@
-"""Detección de rubro por palabras clave configurables (config.yaml)."""
+"""Detección de rubro por palabras clave configurables (config.yaml).
+
+Cómo se comparan las frases (ver `_alternativa`):
+- sin tildes, mayúsculas ni puntuación ("SERV.ASEO" = "serv aseo");
+- cada palabra admite plural ("guante" = "guantes", "indicador" = "indicadores");
+- entre palabras se admiten conectores ("productos de aseo" = "productos aseo" =
+  "productos para el aseo");
+- siempre por palabra completa ("aseo" no coincide con "paseo").
+
+Una palabra clave que queda DENTRO de una frase excluida no cuenta: "Mascarilla
+laríngea desechable" se descarta, pero "Mascarillas laríngeas, guantes y gasas" se
+detecta por guantes/gasas. Los nombres de unidades ("Depto. de Control de Gestión")
+y las frases de `ignorar` se borran antes de evaluar.
+"""
 from __future__ import annotations
 
 import re
 import unicodedata
 from dataclasses import dataclass, field
 
+_PUNTUACION = re.compile(r"[.\-_/,;:()\[\]\"'“”‘’·•]+")
+_CONECTORES = {"de", "del", "en", "para", "el", "la", "los", "las", "al"}
+_CONECTOR_OPCIONAL = r"\s+(?:(?:de|del|en|para|el|la|los|las|al)\s+){0,2}"
+_UNIDADES = (r"(?:unidad|departamento|depto|direccion|division|subdireccion|seccion|oficina|area|"
+             r"jefatura|gerencia|subgerencia|subdepartamento|coordinacion|encargad[oa]|jef[ea])")
+
 
 def normalizar(texto: str | None) -> str:
-    """Minúsculas, sin tildes y con espacios simples."""
+    """Minúsculas, sin tildes, sin puntuación y con espacios simples."""
     if not texto:
         return ""
     sin_tildes = unicodedata.normalize("NFKD", str(texto))
     sin_tildes = "".join(c for c in sin_tildes if not unicodedata.combining(c))
-    return re.sub(r"\s+", " ", sin_tildes.lower()).strip()
+    return re.sub(r"\s+", " ", _PUNTUACION.sub(" ", sin_tildes.lower())).strip()
 
 
-def _patron(palabras: list[str]) -> re.Pattern | None:
-    palabras = [normalizar(p) for p in palabras or [] if normalizar(p)]
-    if not palabras:
+def _alternativa(frase: str) -> str | None:
+    """Regex (sin bordes) para una frase, con plural y conectores opcionales."""
+    tokens = normalizar(frase).split()
+    if not tokens:
         return None
-    # Bordes de palabra: "aseo" no coincide con "paseo".
-    alternativas = "|".join(re.escape(p) for p in sorted(palabras, key=len, reverse=True))
-    return re.compile(rf"\b(?:{alternativas})\b")
+    # Conectores internos ("de", "para"…) se vuelven opcionales.
+    palabras = [t for i, t in enumerate(tokens)
+                if not (t in _CONECTORES and 0 < i < len(tokens) - 1)]
+    return _CONECTOR_OPCIONAL.join(_singular_plural(t) for t in palabras)
+
+
+def _singular_plural(t: str) -> str:
+    """Regex que acepta singular y plural de una palabra escrita en cualquiera de
+    las dos formas: guante/guantes, indicador/indicadores, detergente/detergentes."""
+    if len(t) <= 2 or not t[-1].isalpha():
+        return re.escape(t)
+    if t.endswith("es") and len(t) > 4:
+        return re.escape(t[:-2]) + "(?:es|e|s)?"
+    if t.endswith("s") and len(t) > 3:
+        return re.escape(t[:-1]) + "(?:es|s)?"
+    return re.escape(t) + "(?:es|s)?"
+
+
+def _alternativas(frases) -> str | None:
+    alts = {a for f in (frases or []) if (a := _alternativa(f))}
+    if not alts:
+        return None
+    return "|".join(sorted(alts, key=len, reverse=True))
+
+
+def _patron(frases) -> re.Pattern | None:
+    alts = _alternativas(frases)
+    return re.compile(rf"\b(?:{alts})\b") if alts else None
+
+
+def _quitar(patron: re.Pattern | None, texto: str) -> str:
+    return patron.sub(" ", texto) if patron is not None and texto else texto
 
 
 def _unir(textos) -> str:
@@ -34,15 +83,43 @@ class Rubro:
     nombre: str
     incluir: re.Pattern | None
     candidatas: re.Pattern | None = None
-    excluir: re.Pattern | None = None            # en el nombre, siempre
-    excluir_salvo_clave: re.Pattern | None = None  # en el nombre, salvo que traiga palabra clave
+    excluir: re.Pattern | None = None              # en el nombre, siempre
+    excluir_salvo_clave: re.Pattern | None = None  # en el nombre, salvo que quede palabra clave
+    ignorar: re.Pattern | None = None              # frases que se borran (unidades, etc.)
+    unidades: re.Pattern | None = None             # "Depto. de <palabra clave>"
+    detectar_en_descripcion: bool = True
+
+    def base(self, texto_norm: str) -> str:
+        """Borra nombres de unidades ("Depto. de Control de Gestión") y frases ignoradas."""
+        return _quitar(self.unidades, _quitar(self.ignorar, texto_norm))
+
+    def _tramos_excluidos(self, texto_norm: str) -> list[tuple[int, int]]:
+        return [(m.start(), m.end()) for p in (self.excluir, self.excluir_salvo_clave)
+                if p is not None for m in p.finditer(texto_norm)]
+
+    def claves(self, texto_norm: str) -> set[str]:
+        """Palabras clave del texto, sin contar las que quedan DENTRO de una frase
+        excluida ("mascarilla" en "mascarilla laríngea"). Una clave que contiene a
+        la exclusión sí cuenta ("arquitectura de información" ⊃ "arquitectura")."""
+        if self.incluir is None or not texto_norm:
+            return set()
+        texto = self.base(texto_norm)
+        excluidos = self._tramos_excluidos(texto)
+        return {
+            normalizar(m.group(0)) for m in self.incluir.finditer(texto)
+            if not any(a <= m.start() and m.end() <= b for a, b in excluidos)
+        }
 
     def excluido(self, nombre_norm: str) -> bool:
-        if self.excluir is not None and self.excluir.search(nombre_norm):
+        nombre = self.base(nombre_norm)
+        if self.excluir is not None and self.excluir.search(nombre):
             return True
-        if self.excluir_salvo_clave is not None and self.excluir_salvo_clave.search(nombre_norm):
-            return not (self.incluir is not None and self.incluir.search(nombre_norm))
+        if self.excluir_salvo_clave is not None and self.excluir_salvo_clave.search(nombre):
+            return not self.claves(nombre)
         return False
+
+    def tiene_candidata(self, texto_norm: str) -> bool:
+        return self.candidatas is not None and bool(self.candidatas.search(self.base(texto_norm)))
 
 
 @dataclass
@@ -51,6 +128,8 @@ class Resultado:
     rubro_nombre: str | None = None
     rubros: list[str] = field(default_factory=list)
     palabras: list[str] = field(default_factory=list)
+    solo_regulados: bool = False        # todo lo detectado es producto con alerta regulatoria
+    excluido: bool = False              # (ítems) descartado por una exclusión explícita
 
     @property
     def coincide(self) -> bool:
@@ -61,42 +140,55 @@ class Resultado:
 class Alerta:
     patron: re.Pattern
     nota: str
+    excepto: re.Pattern | None = None
+
+    def aplica(self, texto_norm: str) -> bool:
+        return bool(self.patron.search(_quitar(self.excepto, texto_norm)))
 
 
 class FiltroRubros:
     """Aplica los rubros de config.yaml.
 
     - `es_candidata(nombre)`: filtro preliminar barato, solo con el nombre.
-    - `evaluar(descripcion..., nombre=, items=)`: decisión final. Cuenta como
-      detección si hay una palabra clave en el NOMBRE o en los ÍTEMS; la
-      descripción libre solo suma palabras (suele mencionar unidades como
-      "Departamento de Control de Gestión" que no describen lo que se compra).
+    - `evaluar(descripcion..., nombre=, items=)`: decisión final para una licitación.
+      Cuenta si hay palabra clave en el NOMBRE o en los ÍTEMS; en la descripción
+      general solo si el rubro tiene `detectar_en_descripcion: true`.
+    - `evaluar_item(producto, categoria)`: un ítem de orden de compra.
     - `alertas(...)`: notas regulatorias (ISP) para los productos mencionados.
     """
 
     def __init__(self, config_rubros: dict, alertas_regulatorias: list[dict] | None = None):
         self.rubros = []
         for clave, datos in (config_rubros or {}).items():
+            datos = datos or {}
+            claves = datos.get("palabras_clave") or []
+            alts = _alternativas(claves)
             # "excluir" (formato antiguo) se trata como exclusión en el nombre.
-            duras = list(datos.get("excluir_en_nombre", [])) + list(datos.get("excluir", []))
+            duras = list(datos.get("excluir_en_nombre") or []) + list(datos.get("excluir") or [])
             self.rubros.append(Rubro(
                 clave=clave,
                 nombre=datos.get("nombre", clave),
-                incluir=_patron(datos.get("palabras_clave", [])),
-                candidatas=_patron(datos.get("palabras_candidatas", [])),
+                incluir=_patron(claves),
+                candidatas=_patron(datos.get("palabras_candidatas") or []),
                 excluir=_patron(duras),
-                excluir_salvo_clave=_patron(datos.get("excluir_en_nombre_salvo_clave", [])),
+                excluir_salvo_clave=_patron(datos.get("excluir_en_nombre_salvo_clave") or []),
+                ignorar=_patron(datos.get("ignorar") or []),
+                unidades=re.compile(
+                    rf"\b{_UNIDADES}\s+(?:de\s+|del\s+)?(?:la\s+|el\s+|los\s+|las\s+)?(?:{alts})"
+                    rf"(?:\s+(?:y|e)\s+(?:{alts}))*\b") if alts else None,
+                detectar_en_descripcion=bool(datos.get("detectar_en_descripcion", True)),
             ))
-        self._alertas = [
-            Alerta(patron=p, nota=a["nota"])
-            for a in (alertas_regulatorias or [])
-            if (p := _patron(a.get("palabras", []))) is not None and a.get("nota")
-        ]
+        self._alertas = []
+        for a in alertas_regulatorias or []:
+            patron = _patron(a.get("palabras") or [])
+            if patron is not None and a.get("nota"):
+                self._alertas.append(Alerta(patron, a["nota"], _patron(a.get("excepto") or [])))
 
     @classmethod
     def desde_config(cls, config: dict) -> "FiltroRubros":
-        return cls(config.get("rubros", {}), config.get("alertas_regulatorias"))
+        return cls(config.get("rubros") or {}, config.get("alertas_regulatorias"))
 
+    # -- Licitaciones y nombres -------------------------------------------
     def es_candidata(self, nombre: str | None) -> bool:
         """¿Vale la pena pedir el detalle? Palabra clave o candidata en el nombre,
         sin exclusiones. La decisión final la toma `evaluar`."""
@@ -106,9 +198,7 @@ class FiltroRubros:
         for rubro in self.rubros:
             if rubro.incluir is None or rubro.excluido(nombre_norm):
                 continue
-            if rubro.incluir.search(nombre_norm):
-                return True
-            if rubro.candidatas is not None and rubro.candidatas.search(nombre_norm):
+            if rubro.claves(nombre_norm) or rubro.tiene_candidata(nombre_norm):
                 return True
         return False
 
@@ -116,15 +206,18 @@ class FiltroRubros:
         nombre_norm = normalizar(nombre)
         fuerte = _unir([nombre, *items])
         libre = _unir(descripcion)
-        hallazgos: list[tuple[Rubro, list[str]]] = []
+        hallazgos: list[tuple[Rubro, set[str]]] = []
         for rubro in self.rubros:
             if rubro.incluir is None or rubro.excluido(nombre_norm):
                 continue
-            fuertes = set(rubro.incluir.findall(fuerte))
-            if not fuertes:
+            fuertes = rubro.claves(fuerte)
+            en_descripcion = rubro.claves(libre)
+            if not fuertes and not (rubro.detectar_en_descripcion and en_descripcion):
                 continue
-            hallazgos.append((rubro, sorted(fuertes | set(rubro.incluir.findall(libre)))))
+            hallazgos.append((rubro, fuertes | en_descripcion))
+        return self._resultado(hallazgos, f"{fuerte} {libre}")
 
+    def _resultado(self, hallazgos, texto_norm: str) -> Resultado:
         if not hallazgos:
             return Resultado()
         hallazgos.sort(key=lambda h: len(h[1]), reverse=True)
@@ -134,19 +227,43 @@ class FiltroRubros:
             rubro_nombre=principal.nombre,
             rubros=[r.clave for r, _ in hallazgos],
             palabras=sorted({p for _, ps in hallazgos for p in ps}),
+            solo_regulados=self._solo_regulados(principal, texto_norm),
         )
 
-    def evaluar_item(self, *textos_item: str | None) -> Resultado:
-        """Un ítem (producto) se evalúa como si su texto fuera un nombre: aplica
-        exclusiones (ej. "sonda") y exige una palabra clave en el propio ítem."""
-        return self.evaluar(nombre=" ".join(t for t in textos_item if t))
+    # -- Ítems de órdenes de compra ----------------------------------------
+    def evaluar_item(self, producto: str | None, categoria: str | None = None) -> Resultado:
+        """Un ítem se clasifica por su PRODUCTO (y la categoría UNSPSC si el producto
+        no trae palabra clave). Las exclusiones se aplican solo al producto; las
+        especificaciones libres no cuentan ("Monitor… resistente a desinfectantes")."""
+        producto_norm = normalizar(producto)
+        categoria_norm = normalizar(categoria)
+        hallazgos = []
+        excluido = False
+        for rubro in self.rubros:
+            if rubro.incluir is None:
+                continue
+            if producto_norm and rubro.excluido(producto_norm):
+                excluido = True
+                continue
+            claves = rubro.claves(producto_norm) or rubro.claves(categoria_norm)
+            if claves:
+                hallazgos.append((rubro, claves))
+        resultado = self._resultado(hallazgos, f"{producto_norm} {categoria_norm}")
+        resultado.excluido = excluido and not resultado.coincide
+        return resultado
 
+    # -- Alertas regulatorias ---------------------------------------------
     def alertas(self, *textos: str | None) -> list[str]:
         texto = _unir(textos)
-        return [a.nota for a in self._alertas if a.patron.search(texto)]
+        return [a.nota for a in self._alertas if a.aplica(texto)]
 
-    def solo_regulados(self, palabras: list[str]) -> bool:
-        """True si TODAS las palabras detectadas corresponden a productos con alerta."""
-        if not palabras or not self._alertas:
+    def _solo_regulados(self, rubro: Rubro, texto_norm: str) -> bool:
+        """True si hay alerta y, al borrar los productos con alerta, no queda
+        ninguna palabra clave (todo lo que se compra es regulado)."""
+        con_alerta = [a for a in self._alertas if a.aplica(texto_norm)]
+        if not con_alerta:
             return False
-        return all(any(a.patron.search(normalizar(p)) for a in self._alertas) for p in palabras)
+        resto = texto_norm
+        for a in con_alerta:
+            resto = _quitar(a.patron, _quitar(a.excepto, resto))
+        return not rubro.claves(resto)
