@@ -10,7 +10,7 @@ import logging
 import _ruta  # noqa: F401
 from radar.almacenamiento import BaseDatos, exportar
 from radar.cliente_api import ClienteMercadoPublico
-from radar.config import cargar_config, obtener_ticket, ruta_proyecto
+from radar.config import cargar_config, hoy_chile, obtener_ticket, ruta_proyecto
 from radar.filtro import FiltroRubros
 from radar.licitaciones import ResultadoRadar, radar_licitaciones
 
@@ -34,6 +34,7 @@ def main():
             FiltroRubros.desde_config(config),
             preliminar_por_nombre=config.get("filtro_preliminar_por_nombre", True),
             limite=args.limite,
+            hoy=hoy_chile(),
         )
     filas = resultado.filas
 
@@ -44,7 +45,7 @@ def main():
         if not args.solo_exportar and not args.limite:
             # Las que fallaron por la API no se revisaron: se conservan tal cual.
             conservar = {f["codigo"] for f in filas} | resultado.fallidas
-            eliminadas = db.depurar_vigentes(conservar)
+            eliminadas = db.depurar_vigentes(conservar, hoy=hoy_chile())
             if eliminadas:
                 logging.info("Eliminadas de la base (ya no pasan el filtro): %d", eliminadas)
         if resultado.fallidas:
@@ -52,8 +53,9 @@ def main():
                 "%d de %d candidatas sin detalle por errores de la API; se conservan sus datos anteriores.",
                 len(resultado.fallidas), resultado.candidatas,
             )
-        vigentes = db.licitaciones_vigentes()
-        archivos = exportar(vigentes, ruta_proyecto(rutas.get("exportaciones", "data/exportaciones")), "licitaciones")
+        vigentes = db.licitaciones_vigentes(hoy=hoy_chile())
+        archivos = exportar(vigentes, ruta_proyecto(rutas.get("exportaciones", "data/exportaciones")),
+                            "licitaciones", hoy=hoy_chile())
     finally:
         db.cerrar()
 

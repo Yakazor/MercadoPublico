@@ -15,9 +15,12 @@ from datetime import date, datetime, timedelta
 import _ruta  # noqa: F401
 from radar.almacenamiento import BaseDatos, exportar
 from radar.cliente_api import ClienteMercadoPublico, ErrorApi
-from radar.config import cargar_config, obtener_ticket, ruta_proyecto
+from radar.config import cargar_config, hoy_chile, obtener_ticket, ruta_proyecto
 from radar.filtro import FiltroRubros
 from radar.ordenes_compra import dias, procesar_dia, reclasificar_items, resumen_precios
+
+
+MAX_INTENTOS = 3  # tras 3 ejecuciones con OC que fallan, el día se da por cerrado
 
 
 def _fecha(texto: str) -> date:
@@ -42,7 +45,7 @@ def main():
     args = p.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-    ayer = date.today() - timedelta(days=1)
+    ayer = hoy_chile() - timedelta(days=1)
     if args.dias:
         desde, hasta = ayer - timedelta(days=args.dias - 1), ayer
     elif args.desde:
@@ -68,32 +71,47 @@ def main():
             logging.info("Reclasificación con config actual: %d ítems eliminados, %d actualizados",
                          eliminados, actualizados)
 
+        hasta_monotonic = inicio + args.max_minutos * 60 if args.max_minutos else None
         for fecha in dias(desde, hasta):
             if not args.reprocesar and db.dia_oc_procesado(fecha):
                 logging.info("%s ya procesado, se omite", fecha)
                 continue
-            if args.max_minutos and time.monotonic() - inicio > args.max_minutos * 60:
+            if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
                 pendientes.append(str(fecha))
                 continue
             try:
-                r = procesar_dia(cliente, filtro, db, fecha, args.estado)
+                r = procesar_dia(cliente, filtro, db, fecha, args.estado, hasta_monotonic)
             except ErrorApi as e:
                 logging.error("%s: no se pudo procesar (%s). Se reintentará en la próxima ejecución.", fecha, e)
                 pendientes.append(str(fecha))
                 continue
+            if r.purgadas:
+                logging.info("%s: %d OC guardadas ya no pasan el filtro y se eliminaron", fecha, r.purgadas)
             if r.completo:
                 db.marcar_dia_oc(fecha)
                 logging.info("%s: %d ítems de %d OC guardados", fecha, r.items, r.ordenes)
-            else:
+            elif r.interrumpido:
                 pendientes.append(str(fecha))
-                logging.warning(
-                    "%s: %d de %d OC sin detalle por errores de la API; el día NO se marca como "
-                    "procesado y se reintentará en la próxima ejecución.", fecha, r.fallidas, r.candidatas,
-                )
+            else:
+                intentos = db.registrar_intento_fallido(fecha, r.fallidas)
+                if intentos >= MAX_INTENTOS:
+                    db.marcar_dia_oc(fecha)
+                    logging.warning(
+                        "%s: %d OC siguen fallando tras %d intentos y se dan por perdidas: %s",
+                        fecha, len(r.fallidas), intentos, ", ".join(r.fallidas),
+                    )
+                else:
+                    pendientes.append(str(fecha))
+                    logging.warning(
+                        "%s: %d de %d OC sin detalle por errores de la API (intento %d de %d); "
+                        "el día se reintentará en la próxima ejecución.",
+                        fecha, len(r.fallidas), r.candidatas, intentos, MAX_INTENTOS,
+                    )
 
         items = db.items_oc()
         carpeta = ruta_proyecto(rutas.get("exportaciones", "data/exportaciones"))
-        archivos = exportar(items, carpeta, "oc_items") + exportar(resumen_precios(items), carpeta, "oc_resumen_precios")
+        archivos = (exportar(items, carpeta, "oc_items", hoy=hoy_chile())
+                    + exportar(resumen_precios(items), carpeta, "oc_resumen_precios", hoy=hoy_chile()))
     finally:
         db.cerrar()
 

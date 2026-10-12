@@ -59,9 +59,12 @@ def main():
     print(nota if args.texto else f"_{nota}_")
 
     for rubro, g in resumen.groupby("rubro_nombre"):
-        g = g.sort_values(["_no_clp", "monto_total"], ascending=[True, False]).head(args.top)
+        # Top N dentro de cada moneda (CLP primero): los montos en UF/USD no se
+        # comparan con pesos ni quedan ocultos detrás de ellos.
+        g = (g.sort_values(["_no_clp", "moneda", "monto_total"], ascending=[True, True, False])
+              .groupby("moneda", dropna=False, sort=False).head(args.top))
         if args.texto:
-            print(f"\n=== {rubro} (top {len(g)}; CLP primero, luego otras monedas) ===")
+            print(f"\n=== {rubro} (top {args.top} por moneda; CLP primero) ===")
             for _, f in g.iterrows():
                 m = f["moneda"]
                 unidad = f["unidad"] if pd.notna(f["unidad"]) else "s/u"

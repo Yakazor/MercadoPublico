@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import os
+from datetime import date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import yaml
 from dotenv import load_dotenv
@@ -28,3 +30,8 @@ def obtener_ticket() -> str:
 
 def ruta_proyecto(relativa: str) -> Path:
     return RAIZ / relativa
+
+
+def hoy_chile() -> date:
+    """Fecha actual en Chile (GitHub Actions corre en UTC: de noche ya es "mañana")."""
+    return datetime.now(ZoneInfo("America/Santiago")).date()
