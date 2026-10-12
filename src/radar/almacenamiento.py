@@ -64,6 +64,12 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_dias (
     fecha        TEXT PRIMARY KEY,   -- días ya procesados (permite reanudar)
     procesado_en TEXT
 );
+
+CREATE TABLE IF NOT EXISTS ordenes_compra_intentos (
+    fecha     TEXT PRIMARY KEY,      -- días con OC cuyo detalle falló
+    intentos  INTEGER,
+    pendientes TEXT                  -- códigos de OC que fallaron en el último intento
+);
 """
 
 # Columnas agregadas después de la primera versión: se añaden a bases antiguas
@@ -174,6 +180,21 @@ class BaseDatos:
             [fecha.isoformat(), datetime.now().isoformat(sep=" ", timespec="seconds")],
         )
         self.con.commit()
+
+    def codigos_oc(self) -> set[str]:
+        return {c for (c,) in self.con.execute("SELECT DISTINCT codigo_oc FROM ordenes_compra_items")}
+
+    def registrar_intento_fallido(self, fecha: date, pendientes: list[str]) -> int:
+        """Suma un intento fallido para el día y devuelve cuántos lleva."""
+        with self.con:
+            self.con.execute(
+                "INSERT INTO ordenes_compra_intentos (fecha, intentos, pendientes) VALUES (?, 1, ?) "
+                "ON CONFLICT(fecha) DO UPDATE SET intentos = intentos + 1, pendientes = excluded.pendientes",
+                [fecha.isoformat(), ", ".join(pendientes)],
+            )
+        (n,) = self.con.execute("SELECT intentos FROM ordenes_compra_intentos WHERE fecha = ?",
+                                [fecha.isoformat()]).fetchone()
+        return n
 
     def items_oc(self) -> pd.DataFrame:
         return pd.read_sql_query("SELECT * FROM ordenes_compra_items", self.con)

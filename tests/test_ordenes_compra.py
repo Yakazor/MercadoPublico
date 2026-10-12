@@ -64,7 +64,7 @@ def test_procesar_dia_cuenta_fallidas_y_no_completa(tmp_path):
     listado = [{"Codigo": "A", "Nombre": "Compra de guantes A"}, {"Codigo": "B", "Nombre": "Compra de guantes B"}]
     cliente = ClienteFalso(listado, {"A": _oc("A", "Guantes nitrilo", "Sonda Foley")}, fallan={"B"})
     r = procesar_dia(cliente, FILTRO, db, date(2026, 10, 5))
-    assert (r.items, r.ordenes, r.fallidas, r.completo) == (1, 1, 1, False)
+    assert (r.items, r.ordenes, r.fallidas, r.completo) == (1, 1, ["B"], False)
     assert list(db.items_oc()["producto"]) == ["Guantes nitrilo"]
 
 
@@ -101,3 +101,41 @@ def test_resumen_une_alertas_por_producto():
                           base | {"codigo_oc": "2", "alertas_regulatorias": None}])
     r = resumen_precios(items)
     assert r.iloc[0]["alertas_regulatorias"] == "Desinfectantes/cloro: registro"
+
+
+def test_reclasificar_purga_oc_cuyo_nombre_quedo_excluido(tmp_path):
+    from radar.config import cargar_config
+    db = BaseDatos(tmp_path / "r.db")
+    sin_exclusiones = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"]}})
+    oc = _oc("A", "Guante cabritilla") | {"Nombre": "Guantes de cuero para soldador"}
+    procesar_dia(ClienteFalso([{"Codigo": "A", "Nombre": oc["Nombre"]}], {"A": oc}), sin_exclusiones, db,
+                 date(2026, 10, 5))
+    assert len(db.items_oc()) == 1
+    assert reclasificar_items(db, FiltroRubros.desde_config(cargar_config())) == (0, 1)
+    assert db.items_oc().empty
+
+
+def test_procesar_dia_purga_oc_que_dejo_de_ser_candidata(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    amplio = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "cuero"]}})
+    listado = [{"Codigo": "A", "Nombre": "Compra de cuero"}]
+    procesar_dia(ClienteFalso(listado, {"A": _oc("A", "Cuero") | {"Nombre": "Compra de cuero"}}), amplio, db,
+                 date(2026, 10, 5))
+    assert len(db.items_oc()) == 1
+    r = procesar_dia(ClienteFalso(listado, {}), FILTRO, db, date(2026, 10, 5))
+    assert r.purgadas == 1 and db.items_oc().empty
+
+
+def test_procesar_dia_respeta_tiempo_limite(tmp_path):
+    import time
+    db = BaseDatos(tmp_path / "r.db")
+    listado = [{"Codigo": "A", "Nombre": "Compra de guantes A"}]
+    r = procesar_dia(ClienteFalso(listado, {"A": _oc("A", "Guantes")}), FILTRO, db, date(2026, 10, 5),
+                     hasta_monotonic=time.monotonic() - 1)
+    assert r.interrumpido and not r.completo and r.items == 0
+
+
+def test_intentos_fallidos_se_acumulan(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    assert db.registrar_intento_fallido(date(2026, 10, 5), ["X"]) == 1
+    assert db.registrar_intento_fallido(date(2026, 10, 5), ["X"]) == 2

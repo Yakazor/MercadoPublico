@@ -115,12 +115,34 @@ def textos_item_oc(item: dict) -> list[str]:
     ) if t]
 
 
+def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> list[tuple[dict, object]]:
+    """[(item, Resultado)] de los ítems que pertenecen a un rubro.
+
+    - Si el nombre de la OC está excluido (p. ej. "Guantes de cuero para soldador"
+      o "Compra de medicamentos…"), no se guarda nada.
+    - Cada ítem se clasifica por su producto/categoría (`filtro.evaluar_item`).
+    - Si NINGÚN ítem trae palabra clave (productos genéricos o marcas) pero el
+      nombre de la OC sí, se usan todos los ítems no excluidos con el rubro del
+      nombre ("Compra de guantes de nitrilo" con ítem "NITRIDERM M CAJA 100")."""
+    if nombre_oc and not filtro.es_candidata(nombre_oc):
+        return []
+    evaluados = [
+        (item, filtro.evaluar_item(item.get("Producto") or item.get("EspecificacionComprador"),
+                                   item.get("Categoria")))
+        for item in items
+    ]
+    if not any(r.coincide for _, r in evaluados) and nombre_oc:
+        por_nombre = filtro.evaluar(nombre=nombre_oc)
+        if por_nombre.coincide:
+            evaluados = [(item, r if r.excluido else por_nombre) for item, r in evaluados]
+    return [(item, r) for item, r in evaluados if r.coincide]
+
+
 def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
     """Una fila por ítem de la OC QUE PERTENEZCA A UN RUBRO, con su precio unitario.
 
-    Cada ítem se clasifica por separado (`filtro.evaluar_item`): una OC de
-    "insumos clínicos" puede traer guantes (se guardan) y un monitor o una sonda
-    (no se guardan), y una OC de consultoría puede traer catering o pasajes."""
+    Una OC de "insumos clínicos" puede traer guantes (se guardan) y un monitor o
+    una sonda (no se guardan); una de consultoría, catering o pasajes."""
     comprador = detalle.get("Comprador") or {}
     proveedor = detalle.get("Proveedor") or {}
     fechas = detalle.get("Fechas") or {}
@@ -136,13 +158,10 @@ def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
         "rut_proveedor": proveedor.get("RutSucursal"),
         "moneda": _texto(detalle.get("TipoMoneda")),
     }
+    items = (detalle.get("Items") or {}).get("Listado") or []
     filas = []
-    for item in (detalle.get("Items") or {}).get("Listado") or []:
-        textos = textos_item_oc(item)
-        resultado = filtro.evaluar_item(*textos)
-        if not resultado.coincide:
-            continue
-        alertas = filtro.alertas(*textos)
+    for item, resultado in clasificar_items_oc(detalle.get("Nombre"), items, filtro):
+        alertas = filtro.alertas(*textos_item_oc(item))
         cantidad = _numero(item.get("Cantidad"))
         precio = _numero(item.get("PrecioNeto"))
         total = _numero(item.get("Total"))

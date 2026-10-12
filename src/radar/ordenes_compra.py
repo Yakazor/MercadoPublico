@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+import time
+from dataclasses import dataclass, field
 from datetime import date, timedelta
 
 import pandas as pd
@@ -10,7 +11,7 @@ import pandas as pd
 from .almacenamiento import BaseDatos
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros, normalizar
-from .modelos import filas_orden_compra
+from .modelos import clasificar_items_oc, filas_orden_compra, textos_item_oc
 
 log = logging.getLogger(__name__)
 
@@ -26,12 +27,14 @@ def dias(desde: date, hasta: date):
 class ResultadoDia:
     items: int = 0
     ordenes: int = 0
-    fallidas: int = 0       # OC cuyo detalle no se pudo descargar
+    fallidas: list[str] = field(default_factory=list)   # OC cuyo detalle no se pudo descargar
     candidatas: int = 0
+    purgadas: int = 0                                     # OC guardadas que ya no son candidatas
+    interrumpido: bool = False                            # se acabó el tiempo a mitad del día
 
     @property
     def completo(self) -> bool:
-        return self.fallidas == 0
+        return not self.fallidas and not self.interrumpido
 
 
 def procesar_dia(
@@ -40,24 +43,38 @@ def procesar_dia(
     db: BaseDatos,
     fecha: date,
     estado: str = "todos",
+    hasta_monotonic: float | None = None,
 ) -> ResultadoDia:
     """Descarga las OC de un día y guarda los ítems que pertenecen a un rubro.
 
     Un error en el listado del día se propaga (ErrorApi). Los errores en el
-    detalle de una OC se cuentan en `fallidas`: el día no debe marcarse como
-    procesado para que la próxima ejecución lo reintente."""
+    detalle de una OC quedan en `fallidas` y, si se acaba el tiempo
+    (`hasta_monotonic`), `interrumpido`: en ambos casos el día no está completo."""
     listado = cliente.ordenes_de_compra(fecha=fecha.strftime("%d%m%Y"), estado=estado).get("Listado") or []
     candidatas = [oc for oc in listado if filtro.es_candidata(oc.get("Nombre"))]
     log.info("%s: %d OC, %d candidatas por nombre", fecha, len(listado), len(candidatas))
 
     resultado = ResultadoDia(candidatas=len(candidatas))
+    # OC ya guardadas que con la config actual dejaron de ser candidatas: se borran.
+    guardadas = db.codigos_oc()
+    codigos_candidatas = {oc.get("Codigo") for oc in candidatas}
+    for oc in listado:
+        codigo = oc.get("Codigo")
+        if codigo in guardadas and codigo not in codigos_candidatas:
+            db.reemplazar_items_oc(codigo, [])
+            resultado.purgadas += 1
+
     for resumen in candidatas:
+        if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
+            resultado.interrumpido = True
+            log.warning("%s: se acabó el tiempo; el día queda pendiente.", fecha)
+            break
         codigo = resumen.get("Codigo")
         try:
             det = (cliente.ordenes_de_compra(codigo=codigo).get("Listado") or [None])[0]
         except ErrorApi as e:
             log.error("Sin detalle para OC %s: %s", codigo, e)
-            resultado.fallidas += 1
+            resultado.fallidas.append(codigo)
             continue
         if not det:
             log.warning("Detalle vacío para OC %s", codigo)
@@ -74,29 +91,38 @@ def procesar_dia(
 def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int]:
     """Re-evalúa los ítems guardados con el filtro actual, sin llamar a la API.
 
-    Borra los que ya no pertenecen a un rubro y actualiza rubro/palabras/alertas
-    del resto (útil tras cambiar config.yaml). Devuelve (actualizados, eliminados)."""
+    Usa la misma lógica que la descarga (`clasificar_items_oc`): borra los ítems
+    que ya no pertenecen a un rubro (o cuya OC quedó excluida por nombre) y
+    actualiza rubro/palabras/alertas del resto. Devuelve (actualizados, eliminados)."""
     filas = db.con.execute(
-        "SELECT rowid, producto, especificacion_comprador, especificacion_proveedor, categoria "
-        "FROM ordenes_compra_items"
+        "SELECT rowid, codigo_oc, nombre_oc, producto, categoria, especificacion_comprador, "
+        "especificacion_proveedor FROM ordenes_compra_items"
     ).fetchall()
+    por_oc: dict[str, list] = {}
+    for fila in filas:
+        por_oc.setdefault(fila[1], []).append(fila)
+
     actualizados = eliminados = 0
     with db.con:
-        for rowid, *textos in filas:
-            textos = [t for t in textos if t]
-            resultado = filtro.evaluar_item(*textos)
-            if not resultado.coincide:
-                db.con.execute("DELETE FROM ordenes_compra_items WHERE rowid = ?", [rowid])
-                eliminados += 1
-                continue
-            alertas = filtro.alertas(*textos)
-            db.con.execute(
-                "UPDATE ordenes_compra_items SET rubro = ?, rubro_nombre = ?, palabras_detectadas = ?, "
-                "alertas_regulatorias = ? WHERE rowid = ?",
-                [resultado.rubro, resultado.rubro_nombre, ", ".join(resultado.palabras),
-                 " | ".join(alertas) if alertas else None, rowid],
-            )
-            actualizados += 1
+        for codigo, filas_oc in por_oc.items():
+            nombre_oc = filas_oc[0][2]
+            items = [{"rowid": f[0], "Producto": f[3], "Categoria": f[4],
+                      "EspecificacionComprador": f[5], "EspecificacionProveedor": f[6]} for f in filas_oc]
+            vigentes = {item["rowid"]: r for item, r in clasificar_items_oc(nombre_oc, items, filtro)}
+            for item in items:
+                r = vigentes.get(item["rowid"])
+                if r is None:
+                    db.con.execute("DELETE FROM ordenes_compra_items WHERE rowid = ?", [item["rowid"]])
+                    eliminados += 1
+                    continue
+                alertas = filtro.alertas(*textos_item_oc(item))
+                db.con.execute(
+                    "UPDATE ordenes_compra_items SET rubro = ?, rubro_nombre = ?, palabras_detectadas = ?, "
+                    "alertas_regulatorias = ? WHERE rowid = ?",
+                    [r.rubro, r.rubro_nombre, ", ".join(r.palabras),
+                     " | ".join(alertas) if alertas else None, item["rowid"]],
+                )
+                actualizados += 1
     return actualizados, eliminados
 
 

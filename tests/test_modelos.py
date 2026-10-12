@@ -132,7 +132,7 @@ OC_REAL = {
 
 def test_orden_compra_real_recalcula_total_y_limpia_textos():
     filtro = FiltroRubros({"pinturas": {"nombre": "Pinturas", "palabras_clave": ["brocha"]}})
-    f = filas_orden_compra(OC_REAL, filtro)[0]
+    f = filas_orden_compra(OC_REAL | {"Nombre": "Compra de brochas"}, filtro)[0]
     assert f["proveedor"] == "VIOLETA DEL CARMEN"
     assert f["precio_unitario_neto"] == 4516.0
     assert f["total_item"] == 8 * 4516.0
@@ -175,10 +175,36 @@ def test_alertas_regulatorias_en_licitacion():
     filtro = FiltroRubros.desde_config(cargar_config())
     det = {"CodigoExterno": "A", "Nombre": "CONV SUMINISTRO ALCOHOL GEL PARA 24 MESES", "Items": {"Listado": []}}
     r = _evaluar(filtro, det)
-    f = fila_licitacion(det, r, alertas=filtro.alertas(det["Nombre"]),
-                        solo_regulados=filtro.solo_regulados(r.palabras))
+    f = fila_licitacion(det, r, alertas=filtro.alertas(det["Nombre"]), solo_regulados=r.solo_regulados)
     assert "Alcohol gel" in f["alertas_regulatorias"] and f["solo_regulados"] == 1
 
     det = {"CodigoExterno": "B", "Nombre": "Suministro de papel higiénico y toallas de papel"}
     r = _evaluar(filtro, det)
-    assert r.coincide and filtro.alertas(det["Nombre"]) == [] and not filtro.solo_regulados(r.palabras)
+    assert r.coincide and filtro.alertas(det["Nombre"]) == [] and not r.solo_regulados
+
+
+def test_orden_compra_items_genericos_usan_nombre_de_la_oc():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC-G", "Nombre": "Compra de guantes de nitrilo", "TipoMoneda": "CLP",
+          "Items": {"Listado": [
+              {"Correlativo": 1, "Producto": "NITRIDERM TALLA M CAJA 100", "Cantidad": 10, "PrecioNeto": 5000},
+              {"Correlativo": 2, "Producto": "Sonda Foley", "Cantidad": 1, "PrecioNeto": 2000},
+          ]}}
+    filas = filas_orden_compra(oc, filtro)
+    assert [f["correlativo"] for f in filas] == [1]   # la sonda sigue excluida
+
+
+def test_orden_compra_especificaciones_no_detectan_ni_excluyen():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC-S", "Nombre": "Adquisición de insumos clínicos para pabellón", "TipoMoneda": "CLP",
+          "Items": {"Listado": [
+              {"Correlativo": 1, "Producto": "Monitor multiparámetro",
+               "EspecificacionComprador": "Insumos médicos para pabellón según bases", "PrecioNeto": 9000000},
+              {"Correlativo": 2, "Producto": "Sonda Foley 2 vías",
+               "EspecificacionProveedor": "Producto sellado; manipular con guantes", "PrecioNeto": 2000},
+              {"Correlativo": 3, "Producto": "Alcohol gel 1 lt",
+               "Categoria": "Medicamentos y productos farmacéuticos / Antiinfecciosos / Antisépticos",
+               "PrecioNeto": 2500},
+          ]}}
+    filas = filas_orden_compra(oc, filtro)
+    assert [f["correlativo"] for f in filas] == [3]

@@ -41,7 +41,7 @@ def clasificar(detalle_licitacion: dict, filtro: FiltroRubros, hoy: date | None 
         resultado,
         hoy,
         alertas=filtro.alertas(nombre, *descripcion, *items),
-        solo_regulados=filtro.solo_regulados(resultado.palabras),
+        solo_regulados=resultado.solo_regulados,
     )
 
 
