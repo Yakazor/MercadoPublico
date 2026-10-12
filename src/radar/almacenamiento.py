@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS licitaciones (
     rubros_todos        TEXT,
     palabras_detectadas TEXT,
     dias_restantes      INTEGER,
+    alertas_regulatorias TEXT,
+    solo_regulados      INTEGER,
     url                 TEXT,
     primera_deteccion   TEXT,
     ultima_actualizacion TEXT
@@ -46,6 +48,7 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_items (
     rubro                   TEXT,
     rubro_nombre            TEXT,
     palabras_detectadas     TEXT,
+    alertas_regulatorias    TEXT,
     producto                TEXT,
     categoria               TEXT,
     especificacion_comprador TEXT,
@@ -63,12 +66,28 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_dias (
 );
 """
 
+# Columnas agregadas después de la primera versión: se añaden a bases antiguas
+# (la base vive en la caché de GitHub Actions entre ejecuciones).
+COLUMNAS_NUEVAS = {
+    "licitaciones": {"alertas_regulatorias": "TEXT", "solo_regulados": "INTEGER"},
+    "ordenes_compra_items": {"alertas_regulatorias": "TEXT"},
+}
+
 
 class BaseDatos:
     def __init__(self, ruta: str | Path):
         Path(ruta).parent.mkdir(parents=True, exist_ok=True)
         self.con = sqlite3.connect(ruta)
         self.con.executescript(ESQUEMA)
+        self._migrar()
+
+    def _migrar(self) -> None:
+        for tabla, columnas in COLUMNAS_NUEVAS.items():
+            existentes = {fila[1] for fila in self.con.execute(f"PRAGMA table_info({tabla})")}
+            for columna, tipo in columnas.items():
+                if columna not in existentes:
+                    self.con.execute(f"ALTER TABLE {tabla} ADD COLUMN {columna} {tipo}")
+        self.con.commit()
 
     def cerrar(self) -> None:
         self.con.close()
@@ -92,8 +111,10 @@ class BaseDatos:
         self.con.commit()
         return len(filas)
 
-    def depurar_vigentes(self, codigos_actuales: set[str], hoy: date | None = None) -> int:
-        """Elimina vigentes que ya no pasan el filtro (p. ej. tras cambiar config.yaml)."""
+    def depurar_vigentes(self, conservar: set[str], hoy: date | None = None) -> int:
+        """Elimina las vigentes que no están en `conservar` (ya no pasan el filtro,
+        p. ej. tras cambiar config.yaml). `conservar` debe incluir las detectadas
+        hoy Y las que no se pudieron revisar por un error de la API."""
         hoy = hoy or date.today()
         vigentes = [
             c for (c,) in self.con.execute(
@@ -101,7 +122,7 @@ class BaseDatos:
                 [hoy.isoformat()],
             )
         ]
-        sobran = [c for c in vigentes if c not in codigos_actuales]
+        sobran = [c for c in vigentes if c not in conservar]
         self.con.executemany("DELETE FROM licitaciones WHERE codigo = ?", [(c,) for c in sobran])
         self.con.commit()
         return len(sobran)
@@ -122,14 +143,26 @@ class BaseDatos:
     # -- Órdenes de compra --------------------------------------------
     def guardar_items_oc(self, filas: list[dict]) -> int:
         for fila in filas:
-            columnas = list(fila)
-            self.con.execute(
-                f"INSERT OR REPLACE INTO ordenes_compra_items ({', '.join(columnas)}) "
-                f"VALUES ({', '.join('?' * len(columnas))})",
-                list(fila.values()),
-            )
+            self._insertar_item_oc(fila)
         self.con.commit()
         return len(filas)
+
+    def reemplazar_items_oc(self, codigo_oc: str, filas: list[dict]) -> int:
+        """Deja en la base exactamente `filas` para esa OC (borra ítems que ya no
+        pertenecen a un rubro o que la OC ya no trae). En una sola transacción."""
+        with self.con:
+            self.con.execute("DELETE FROM ordenes_compra_items WHERE codigo_oc = ?", [codigo_oc])
+            for fila in filas:
+                self._insertar_item_oc(fila)
+        return len(filas)
+
+    def _insertar_item_oc(self, fila: dict) -> None:
+        columnas = list(fila)
+        self.con.execute(
+            f"INSERT OR REPLACE INTO ordenes_compra_items ({', '.join(columnas)}) "
+            f"VALUES ({', '.join('?' * len(columnas))})",
+            list(fila.values()),
+        )
 
     def dia_oc_procesado(self, fecha: date) -> bool:
         cur = self.con.execute("SELECT 1 FROM ordenes_compra_dias WHERE fecha = ?", [fecha.isoformat()])

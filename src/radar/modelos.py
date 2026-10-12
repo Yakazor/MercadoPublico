@@ -59,15 +59,25 @@ def items_licitacion(detalle: dict) -> list[dict]:
     return (detalle.get("Items") or {}).get("Listado") or []
 
 
-def texto_licitacion(detalle: dict) -> list[str]:
-    """Textos (además del nombre) sobre los que se aplica el filtro de rubros."""
-    textos = [detalle.get("Descripcion")]
+def textos_licitacion(detalle: dict) -> tuple[list[str], list[str]]:
+    """(descripción, ítems) para el filtro. El nombre se pasa aparte.
+
+    Los ítems (producto, descripción de la línea, categoría) describen lo que se
+    compra; la descripción general suele mencionar además la unidad solicitante."""
+    descripcion = [t for t in [detalle.get("Descripcion")] if t]
+    items = []
     for item in items_licitacion(detalle):
-        textos += [item.get("NombreProducto"), item.get("Descripcion"), item.get("Categoria")]
-    return [t for t in textos if t]
+        items += [item.get("NombreProducto"), item.get("Descripcion"), item.get("Categoria")]
+    return descripcion, [t for t in items if t]
 
 
-def fila_licitacion(detalle: dict, resultado_filtro, hoy: date | None = None) -> dict:
+def fila_licitacion(
+    detalle: dict,
+    resultado_filtro,
+    hoy: date | None = None,
+    alertas: list[str] | None = None,
+    solo_regulados: bool = False,
+) -> dict:
     comprador = detalle.get("Comprador") or {}
     fechas = detalle.get("Fechas") or {}
     cierre = _fecha(fechas.get("FechaCierre") or detalle.get("FechaCierre"))
@@ -90,32 +100,49 @@ def fila_licitacion(detalle: dict, resultado_filtro, hoy: date | None = None) ->
         "rubros_todos": ", ".join(resultado_filtro.rubros),
         "palabras_detectadas": ", ".join(resultado_filtro.palabras),
         "dias_restantes": dias_restantes(cierre, hoy),
+        "alertas_regulatorias": " | ".join(alertas) if alertas else None,
+        "solo_regulados": int(bool(solo_regulados)),
         "url": f"https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={detalle.get('CodigoExterno')}",
     }
 
 
-def filas_orden_compra(detalle: dict, resultado_filtro) -> list[dict]:
-    """Una fila por ítem de la OC, con precio unitario para análisis de márgenes."""
+def textos_item_oc(item: dict) -> list[str]:
+    return [t for t in (
+        item.get("Producto"),
+        item.get("EspecificacionComprador"),
+        item.get("EspecificacionProveedor"),
+        item.get("Categoria"),
+    ) if t]
+
+
+def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
+    """Una fila por ítem de la OC QUE PERTENEZCA A UN RUBRO, con su precio unitario.
+
+    Cada ítem se clasifica por separado (`filtro.evaluar_item`): una OC de
+    "insumos clínicos" puede traer guantes (se guardan) y un monitor o una sonda
+    (no se guardan), y una OC de consultoría puede traer catering o pasajes."""
     comprador = detalle.get("Comprador") or {}
     proveedor = detalle.get("Proveedor") or {}
     fechas = detalle.get("Fechas") or {}
     base = {
         "codigo_oc": detalle.get("Codigo"),
         "nombre_oc": detalle.get("Nombre"),
-        "codigo_licitacion": detalle.get("CodigoLicitacion"),
+        "codigo_licitacion": _texto(detalle.get("CodigoLicitacion")),
         "estado": detalle.get("Estado"),
         "fecha_creacion": _iso(_fecha(fechas.get("FechaCreacion"))),
         "organismo": comprador.get("NombreOrganismo"),
         "region": _texto(comprador.get("RegionUnidad")),
         "proveedor": _texto(proveedor.get("Nombre")),
         "rut_proveedor": proveedor.get("RutSucursal"),
-        "moneda": detalle.get("TipoMoneda"),
-        "rubro": resultado_filtro.rubro,
-        "rubro_nombre": resultado_filtro.rubro_nombre,
-        "palabras_detectadas": ", ".join(resultado_filtro.palabras),
+        "moneda": _texto(detalle.get("TipoMoneda")),
     }
     filas = []
     for item in (detalle.get("Items") or {}).get("Listado") or []:
+        textos = textos_item_oc(item)
+        resultado = filtro.evaluar_item(*textos)
+        if not resultado.coincide:
+            continue
+        alertas = filtro.alertas(*textos)
         cantidad = _numero(item.get("Cantidad"))
         precio = _numero(item.get("PrecioNeto"))
         total = _numero(item.get("Total"))
@@ -125,27 +152,19 @@ def filas_orden_compra(detalle: dict, resultado_filtro) -> list[dict]:
         filas.append(
             base
             | {
+                "rubro": resultado.rubro,
+                "rubro_nombre": resultado.rubro_nombre,
+                "palabras_detectadas": ", ".join(resultado.palabras),
+                "alertas_regulatorias": " | ".join(alertas) if alertas else None,
                 "correlativo": item.get("Correlativo"),
-                "producto": item.get("Producto"),
+                "producto": _texto(item.get("Producto")),
                 "categoria": item.get("Categoria"),
                 "especificacion_comprador": item.get("EspecificacionComprador"),
                 "especificacion_proveedor": item.get("EspecificacionProveedor"),
-                "unidad": item.get("Unidad"),
+                "unidad": _texto(item.get("Unidad")),
                 "cantidad": cantidad,
                 "precio_unitario_neto": precio,
                 "total_item": total,
             }
         )
     return filas
-
-
-def texto_orden_compra(detalle: dict) -> list[str]:
-    textos = [detalle.get("Descripcion")]
-    for item in (detalle.get("Items") or {}).get("Listado") or []:
-        textos += [
-            item.get("Producto"),
-            item.get("Categoria"),
-            item.get("EspecificacionComprador"),
-            item.get("EspecificacionProveedor"),
-        ]
-    return [t for t in textos if t]

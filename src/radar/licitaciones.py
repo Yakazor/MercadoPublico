@@ -2,13 +2,21 @@
 from __future__ import annotations
 
 import logging
+from dataclasses import dataclass, field
 from datetime import date
 
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros
-from .modelos import fila_licitacion, texto_licitacion
+from .modelos import fila_licitacion, textos_licitacion
 
 log = logging.getLogger(__name__)
+
+
+@dataclass
+class ResultadoRadar:
+    filas: list[dict] = field(default_factory=list)
+    fallidas: set[str] = field(default_factory=set)   # detalle no disponible (error de API)
+    candidatas: int = 0
 
 
 def listar_activas(cliente: ClienteMercadoPublico) -> list[dict]:
@@ -21,14 +29,30 @@ def detalle(cliente: ClienteMercadoPublico, codigo: str) -> dict | None:
     return listado[0] if listado else None
 
 
+def clasificar(detalle_licitacion: dict, filtro: FiltroRubros, hoy: date | None = None) -> dict | None:
+    """Fila lista para guardar si la licitación pertenece a un rubro; si no, None."""
+    descripcion, items = textos_licitacion(detalle_licitacion)
+    nombre = detalle_licitacion.get("Nombre")
+    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items)
+    if not resultado.coincide:
+        return None
+    return fila_licitacion(
+        detalle_licitacion,
+        resultado,
+        hoy,
+        alertas=filtro.alertas(nombre, *descripcion, *items),
+        solo_regulados=filtro.solo_regulados(resultado.palabras),
+    )
+
+
 def radar_licitaciones(
     cliente: ClienteMercadoPublico,
     filtro: FiltroRubros,
     preliminar_por_nombre: bool = True,
     limite: int | None = None,
     hoy: date | None = None,
-) -> list[dict]:
-    """Devuelve filas de las licitaciones activas que calzan con algún rubro."""
+) -> ResultadoRadar:
+    """Licitaciones activas que calzan con algún rubro, y las que no se pudieron revisar."""
     activas = listar_activas(cliente)
     log.info("Licitaciones activas: %d", len(activas))
 
@@ -40,20 +64,23 @@ def radar_licitaciones(
     if limite:
         candidatas = candidatas[:limite]
 
-    filas = []
+    resultado = ResultadoRadar(candidatas=len(candidatas))
     for i, resumen in enumerate(candidatas, 1):
         codigo = resumen.get("CodigoExterno")
         try:
             det = detalle(cliente, codigo)
         except ErrorApi as e:
             log.error("Sin detalle para %s: %s", codigo, e)
+            resultado.fallidas.add(codigo)
             continue
         if not det:
+            log.warning("Detalle vacío para %s", codigo)
+            resultado.fallidas.add(codigo)
             continue
-        resultado = filtro.evaluar(*texto_licitacion(det), nombre=det.get("Nombre"))
-        if resultado.coincide:
-            filas.append(fila_licitacion(det, resultado, hoy))
+        fila = clasificar(det, filtro, hoy)
+        if fila:
+            resultado.filas.append(fila)
         if i % 25 == 0:
             log.info("Detalle %d/%d", i, len(candidatas))
-    log.info("Licitaciones en rubros: %d", len(filas))
-    return filas
+    log.info("Licitaciones en rubros: %d (sin detalle por error: %d)", len(resultado.filas), len(resultado.fallidas))
+    return resultado

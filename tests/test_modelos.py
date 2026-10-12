@@ -1,7 +1,8 @@
 from datetime import date
 
 from radar.filtro import FiltroRubros
-from radar.modelos import fila_licitacion, filas_orden_compra, texto_licitacion
+from radar.config import cargar_config
+from radar.modelos import fila_licitacion, filas_orden_compra, textos_licitacion
 
 FILTRO = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"]}})
 
@@ -16,8 +17,13 @@ DETALLE = {
 }
 
 
+def _evaluar(filtro, detalle):
+    descripcion, items = textos_licitacion(detalle)
+    return filtro.evaluar(*descripcion, nombre=detalle["Nombre"], items=items)
+
+
 def test_fila_licitacion_campos_minimos():
-    r = FILTRO.evaluar(*texto_licitacion(DETALLE), nombre=DETALLE["Nombre"])
+    r = _evaluar(FILTRO, DETALLE)
     f = fila_licitacion(DETALLE, r, hoy=date(2026, 10, 10))
     assert f["codigo"] == "1234-56-LE26"
     assert f["organismo"] == "Hospital X"
@@ -26,6 +32,7 @@ def test_fila_licitacion_campos_minimos():
     assert f["estado"] == "Publicada"
     assert f["rubro"] == "aseo"
     assert f["dias_restantes"] == 10
+    assert f["alertas_regulatorias"] is None and f["solo_regulados"] == 0
 
 
 def test_fila_tolera_campos_faltantes():
@@ -41,7 +48,8 @@ def test_orden_compra_una_fila_por_item():
             {"Producto": "Mascarillas", "Cantidad": "10", "PrecioNeto": "20.5"},
         ]},
     }
-    filas = filas_orden_compra(oc, FILTRO.evaluar("guantes"))
+    filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "mascarillas"]}})
+    filas = filas_orden_compra(oc, filtro)
     assert [f["precio_unitario_neto"] for f in filas] == [50.0, 20.5]
 
 
@@ -81,7 +89,7 @@ DETALLE_REAL = {
 
 def test_detalle_real_de_la_api():
     filtro = FiltroRubros({"madera": {"nombre": "Madera", "palabras_clave": ["maderas duras"]}})
-    r = filtro.evaluar(*texto_licitacion(DETALLE_REAL), nombre=DETALLE_REAL["Nombre"])
+    r = _evaluar(filtro, DETALLE_REAL)
     f = fila_licitacion(DETALLE_REAL, r, hoy=date(2026, 10, 10))
     assert f["region"] == "Región del Biobío"
     assert f["fecha_cierre"] == "2026-10-16 15:10:00"
@@ -123,9 +131,54 @@ OC_REAL = {
 
 
 def test_orden_compra_real_recalcula_total_y_limpia_textos():
-    f = filas_orden_compra(OC_REAL, FILTRO.evaluar(""))[0]
+    filtro = FiltroRubros({"pinturas": {"nombre": "Pinturas", "palabras_clave": ["brocha"]}})
+    f = filas_orden_compra(OC_REAL, filtro)[0]
     assert f["proveedor"] == "VIOLETA DEL CARMEN"
     assert f["precio_unitario_neto"] == 4516.0
     assert f["total_item"] == 8 * 4516.0
     assert f["fecha_creacion"] == "2026-04-20 10:28:25.683000"
     assert f["region"] == "Región de Magallanes y de la Antártica"
+
+
+def test_orden_compra_guarda_solo_items_del_rubro_con_config_real():
+    """Caso visto en la corrida real del 12-10-2026: OC de 'insumos clínicos' con
+    monitores y sondas, y OC de consultoría con catering y pasajes."""
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {
+        "Codigo": "OC-X", "Nombre": "Adquisición de insumos clínicos para pabellón", "TipoMoneda": "CLP",
+        "Items": {"Listado": [
+            {"Correlativo": 1, "Producto": "Guantes médicos de examen", "Cantidad": 10, "PrecioNeto": 3000},
+            {"Correlativo": 2, "Producto": "Sonda Foley", "Cantidad": 5, "PrecioNeto": 2000},
+            {"Correlativo": 3, "Producto": "Monitor multiparámetro", "Cantidad": 1, "PrecioNeto": 9000000},
+            {"Correlativo": 4, "Producto": "Alcohol gel 1 litro", "Cantidad": 20, "PrecioNeto": 2500},
+        ]},
+    }
+    filas = filas_orden_compra(oc, filtro)
+    assert [f["correlativo"] for f in filas] == [1, 4]
+    assert filas[0]["rubro"] == "insumos_medicos_aseo" and filas[0]["alertas_regulatorias"] is None
+    assert "Alcohol gel" in filas[1]["alertas_regulatorias"]
+
+    consultoria = {
+        "Codigo": "OC-Y", "Nombre": "Asesoría en gestión estratégica", "TipoMoneda": "CLP",
+        "Items": {"Listado": [
+            {"Correlativo": 1, "Producto": "Asesorías en gestión estratégica", "Cantidad": 1, "PrecioNeto": 1144125},
+            {"Correlativo": 2, "Producto": "Servicios de catering", "Cantidad": 1, "PrecioNeto": 280000},
+            {"Correlativo": 3, "Producto": "Pasaje aéreo nacional", "Cantidad": 1, "PrecioNeto": 128516},
+        ]},
+    }
+    filas = filas_orden_compra(consultoria, filtro)
+    assert [f["producto"] for f in filas] == ["Asesorías en gestión estratégica"]
+    assert filas[0]["rubro"] == "consultoria_gestion_bi"
+
+
+def test_alertas_regulatorias_en_licitacion():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    det = {"CodigoExterno": "A", "Nombre": "CONV SUMINISTRO ALCOHOL GEL PARA 24 MESES", "Items": {"Listado": []}}
+    r = _evaluar(filtro, det)
+    f = fila_licitacion(det, r, alertas=filtro.alertas(det["Nombre"]),
+                        solo_regulados=filtro.solo_regulados(r.palabras))
+    assert "Alcohol gel" in f["alertas_regulatorias"] and f["solo_regulados"] == 1
+
+    det = {"CodigoExterno": "B", "Nombre": "Suministro de papel higiénico y toallas de papel"}
+    r = _evaluar(filtro, det)
+    assert r.coincide and filtro.alertas(det["Nombre"]) == [] and not filtro.solo_regulados(r.palabras)

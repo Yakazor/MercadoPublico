@@ -25,11 +25,18 @@ def _fmt_dias(v):
     return "?" if pd.isna(v) else str(int(v))
 
 
+def _marca(fila) -> str:
+    """⚠⚠ = solo productos regulados; ⚠ = incluye alguno regulado."""
+    if not pd.notna(fila.get("alertas_regulatorias")):
+        return ""
+    return "⚠⚠ " if fila.get("solo_regulados") == 1 else "⚠ "
+
+
 def auditoria(df: pd.DataFrame) -> None:
     for rubro, g in df.sort_values(["rubro_nombre", "dias_restantes"]).groupby("rubro_nombre"):
         print(f"\n=== {rubro} ({len(g)}) ===")
         for _, f in g.iterrows():
-            print(f"{f['codigo']} | {_fmt_dias(f['dias_restantes'])}d | "
+            print(f"{_marca(f)}{f['codigo']} | {_fmt_dias(f['dias_restantes'])}d | "
                   f"{_fmt_monto(f['monto_estimado'], f.get('moneda')) or 's/m'} | "
                   f"[{f['palabras_detectadas']}] | {str(f['nombre'])[:90]} | {str(f['organismo'])[:45]}")
 
@@ -58,6 +65,7 @@ def main():
     if pronto.empty:
         print("Ninguna.")
         return
+    print("_⚠ incluye productos con registro ISP obligatorio · ⚠⚠ solo productos regulados_\n")
     print("| Días | Código | Nombre | Organismo | Región | Monto |")
     print("|---:|---|---|---|---|---:|")
     for _, f in pronto.head(30).iterrows():
@@ -65,7 +73,7 @@ def main():
         organismo = str(f["organismo"])[:40].replace("|", "/")
         region = f["region"] if pd.notna(f["region"]) else ""
         monto = _fmt_monto(f["monto_estimado"], f.get("moneda"))
-        print(f"| {_fmt_dias(f['dias_restantes'])} | [{f['codigo']}]({f['url']}) | {nombre} | {organismo} | {region} | {monto} |")
+        print(f"| {_fmt_dias(f['dias_restantes'])} | {_marca(f)}[{f['codigo']}]({f['url']}) | {nombre} | {organismo} | {region} | {monto} |")
     if len(pronto) > 30:
         print(f"\n…y {len(pronto) - 30} más en el Excel.")
 

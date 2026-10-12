@@ -40,3 +40,21 @@ def test_depurar_vigentes_elimina_las_que_ya_no_calzan(tmp_path):
     assert db.depurar_vigentes({"A"}, hoy=date(2026, 10, 10)) == 1
     codigos = {c for (c,) in db.con.execute("SELECT codigo FROM licitaciones")}
     assert codigos == {"A", "C"}
+
+
+def test_migra_base_antigua_sin_columnas_nuevas(tmp_path):
+    import sqlite3
+    ruta = tmp_path / "vieja.db"
+    con = sqlite3.connect(ruta)
+    con.execute("CREATE TABLE licitaciones (codigo TEXT PRIMARY KEY, nombre TEXT, fecha_cierre TEXT, "
+                "rubro TEXT, primera_deteccion TEXT, ultima_actualizacion TEXT)")
+    con.execute("CREATE TABLE ordenes_compra_items (codigo_oc TEXT, correlativo INTEGER, producto TEXT, "
+                "PRIMARY KEY (codigo_oc, correlativo))")
+    con.commit()
+    con.close()
+    db = BaseDatos(ruta)
+    db.guardar_licitaciones([_fila("A", "2026-10-20 15:00:00") | {"alertas_regulatorias": "x", "solo_regulados": 1}])
+    db.reemplazar_items_oc("OC", [{"codigo_oc": "OC", "correlativo": 1, "producto": "Cloro",
+                                   "alertas_regulatorias": "y"}])
+    assert db.licitaciones_vigentes(date(2026, 10, 10)).loc[0, "alertas_regulatorias"] == "x"
+    assert db.items_oc().loc[0, "alertas_regulatorias"] == "y"

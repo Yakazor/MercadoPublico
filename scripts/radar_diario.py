@@ -12,7 +12,7 @@ from radar.almacenamiento import BaseDatos, exportar
 from radar.cliente_api import ClienteMercadoPublico
 from radar.config import cargar_config, obtener_ticket, ruta_proyecto
 from radar.filtro import FiltroRubros
-from radar.licitaciones import radar_licitaciones
+from radar.licitaciones import ResultadoRadar, radar_licitaciones
 
 
 def main():
@@ -26,24 +26,32 @@ def main():
 
     config = cargar_config(args.config)
     if args.solo_exportar:
-        filas = []
+        resultado = ResultadoRadar()
     else:
         cliente = ClienteMercadoPublico.desde_config(config, obtener_ticket())
-        filas = radar_licitaciones(
+        resultado = radar_licitaciones(
             cliente,
-            FiltroRubros(config["rubros"]),
+            FiltroRubros.desde_config(config),
             preliminar_por_nombre=config.get("filtro_preliminar_por_nombre", True),
             limite=args.limite,
         )
+    filas = resultado.filas
 
     rutas = config.get("rutas", {})
     db = BaseDatos(ruta_proyecto(rutas.get("base_datos", "data/radar.db")))
     try:
         db.guardar_licitaciones(filas)
         if not args.solo_exportar and not args.limite:
-            eliminadas = db.depurar_vigentes({f["codigo"] for f in filas})
+            # Las que fallaron por la API no se revisaron: se conservan tal cual.
+            conservar = {f["codigo"] for f in filas} | resultado.fallidas
+            eliminadas = db.depurar_vigentes(conservar)
             if eliminadas:
                 logging.info("Eliminadas de la base (ya no pasan el filtro): %d", eliminadas)
+        if resultado.fallidas:
+            logging.warning(
+                "%d de %d candidatas sin detalle por errores de la API; se conservan sus datos anteriores.",
+                len(resultado.fallidas), resultado.candidatas,
+            )
         vigentes = db.licitaciones_vigentes()
         archivos = exportar(vigentes, ruta_proyecto(rutas.get("exportaciones", "data/exportaciones")), "licitaciones")
     finally:
