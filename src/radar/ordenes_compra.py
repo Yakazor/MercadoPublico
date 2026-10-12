@@ -30,7 +30,7 @@ def procesar_dia(
 ) -> int:
     """Descarga las OC de un día, filtra por rubro y guarda sus ítems."""
     listado = cliente.ordenes_de_compra(fecha=fecha.strftime("%d%m%Y"), estado=estado).get("Listado") or []
-    candidatas = [oc for oc in listado if filtro.evaluar(nombre=oc.get("Nombre")).coincide]
+    candidatas = [oc for oc in listado if filtro.es_candidata(oc.get("Nombre"))]
     log.info("%s: %d OC, %d candidatas por nombre", fecha, len(listado), len(candidatas))
 
     guardadas = 0
@@ -55,6 +55,9 @@ def resumen_precios(items: pd.DataFrame) -> pd.DataFrame:
         return items
     df = items.dropna(subset=["precio_unitario_neto"]).copy()
     df = df[df["precio_unitario_neto"] > 0]
+    # Las OC canceladas no reflejan un precio realmente pagado.
+    cancelada = df["estado"].fillna("").map(normalizar).str.contains("cancelad")
+    df = df[~cancelada]
     df["producto_normalizado"] = df["producto"].map(normalizar)
     agrupado = df.groupby(["rubro_nombre", "producto_normalizado", "unidad", "moneda"], dropna=False)
     precio = agrupado["precio_unitario_neto"]

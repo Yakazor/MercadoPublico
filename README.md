@@ -87,8 +87,13 @@ python scripts/ordenes_historicas.py --desde 2026-09-01 --hasta 2026-09-30
 ```
 Genera `oc_items_*.csv/.xlsx` (una fila por ítem con precio unitario neto,
 proveedor y organismo) y `oc_resumen_precios_*.csv/.xlsx` (mín, p25, mediana,
-p75 y máx por producto). Los días ya procesados se saltan: puedes cortar y
-reanudar. Usa `--reprocesar` para forzar la descarga.
+p75 y máx por producto; las OC canceladas no se consideran). Los días ya
+procesados se saltan: puedes cortar y reanudar. Usa `--reprocesar` para forzar
+la descarga. `python scripts/resumen_oc.py --texto` muestra el resumen en pantalla.
+
+Desde GitHub: **Actions → Órdenes de compra históricas → Run workflow** (por
+defecto, últimos 7 días). Además corre solo cada sábado con la última semana,
+así la base de precios crece sin que hagas nada.
 
 > **Volumen real:** un solo día trae ~18.000 órdenes de compra (medido el
 > 08-10-2026). El listado es una llamada, pero el detalle se pide solo para las
@@ -113,12 +118,15 @@ Edita `config.yaml`:
   cuales ~90 eran servicios de aseo, limpieza de fosas u obras civiles.
 - `excluir`: descarta el rubro si la frase aparece en cualquier texto.
 - `excluir_en_nombre`: descarta el rubro si la frase aparece **en el nombre**
-  (ej. "servicios de aseo", "inspección fiscal"), sin afectar compras de
-  productos cuya descripción mencione esas palabras.
+  (ej. "servicios de aseo", "inspección fiscal", "catéter"), sin afectar compras
+  de productos cuya descripción mencione esas palabras.
+- `palabras_candidatas`: frases amplias ("insumos clínicos", "consultoría") que,
+  si están en el nombre, hacen que se revise el detalle; la licitación solo
+  cuenta si la descripción o los ítems traen alguna `palabra_clave`.
 - Para revisar el filtro: `python scripts/resumen_md.py --auditoria` lista
   todo lo detectado con las palabras que coincidieron.
 - `filtro_preliminar_por_nombre: true` pide el detalle solo de las licitaciones
-  cuyo nombre ya coincide (rápido). Con `false` revisa también descripción e
+  cuyo nombre trae una palabra clave o candidata (rápido). Con `false` revisa también descripción e
   ítems de todas (más completo, pero muchas más llamadas).
 
 ## Límites de la API

@@ -17,7 +17,7 @@ on:
         default: false
 
 concurrency:
-  group: radar-diario
+  group: radar-db
   cancel-in-progress: false
 
 jobs:
