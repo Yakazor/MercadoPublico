@@ -92,8 +92,10 @@ procesados se saltan: puedes cortar y reanudar. Usa `--reprocesar` para forzar
 la descarga. `python scripts/resumen_oc.py --texto` muestra el resumen en pantalla.
 
 Desde GitHub: **Actions → Órdenes de compra históricas → Run workflow** (por
-defecto, últimos 7 días). Además corre solo cada sábado con la última semana,
-así la base de precios crece sin que hagas nada.
+defecto, últimos 7 días). Además corre solo cada sábado y revisa los últimos 21
+días: los ya procesados se saltan y se reintentan los que quedaron pendientes.
+Un día cuyas OC fallan por errores de la API no se marca como procesado (se
+reintenta hasta 3 veces). Las fechas se calculan con la hora de Chile.
 
 > **Volumen real:** un solo día trae ~18.000 órdenes de compra (medido el
 > 08-10-2026). El listado es una llamada, pero el detalle se pide solo para las
@@ -110,24 +112,54 @@ así la base de precios crece sin que hagas nada.
 
 ## Ajustar los rubros
 
-Edita `config.yaml`:
-- `palabras_clave`: se comparan sin tildes ni mayúsculas y por palabra completa
-  ("aseo" no coincide con "paseo"). **Usa frases** ("artículos de aseo",
-  "consultoría en gestión"): en la primera corrida real, las palabras sueltas
-  "aseo", "limpieza", "consultoría" y "asesoría" trajeron 123 resultados, de los
-  cuales ~90 eran servicios de aseo, limpieza de fosas u obras civiles.
-- `excluir`: descarta el rubro si la frase aparece en cualquier texto.
-- `excluir_en_nombre`: descarta el rubro si la frase aparece **en el nombre**
-  (ej. "servicios de aseo", "inspección fiscal", "catéter"), sin afectar compras
-  de productos cuya descripción mencione esas palabras.
+Edita `config.yaml` (los comentarios del archivo explican cada opción). Cómo se
+comparan las frases: sin tildes, mayúsculas ni puntuación; cada palabra acepta
+singular y plural ("guante" = "guantes"); entre palabras se aceptan conectores
+("productos de aseo" = "productos aseo" = "productos para el aseo"); y siempre por
+palabra completa ("aseo" no coincide con "paseo").
+
+- `palabras_clave`: **usa frases** ("artículos de aseo", "consultoría en gestión").
+  En la primera corrida real, las palabras sueltas "aseo", "limpieza",
+  "consultoría" y "asesoría" trajeron 123 resultados, ~90 de ellos falsos
+  (servicios de aseo, limpieza de fosas, obras civiles). Cuentan si aparecen en el
+  **nombre o en los ítems**; en la descripción general, solo si el rubro tiene
+  `detectar_en_descripcion: true` (en consultoría está apagado, porque la
+  descripción suele nombrar unidades como "Depto. de Control de Gestión").
 - `palabras_candidatas`: frases amplias ("insumos clínicos", "consultoría") que,
-  si están en el nombre, hacen que se revise el detalle; la licitación solo
-  cuenta si la descripción o los ítems traen alguna `palabra_clave`.
-- Para revisar el filtro: `python scripts/resumen_md.py --auditoria` lista
-  todo lo detectado con las palabras que coincidieron.
+  en el nombre, hacen que se revise el detalle; por sí solas no cuentan.
+- `excluir_en_nombre`: descarta siempre (ej. "servicio de aseo", "inspección fiscal").
+- `excluir_en_nombre_salvo_clave`: descarta salvo que el nombre traiga otra palabra
+  clave: "Compra de sondas" se descarta, "Gasas, guantes y sondas" no.
+- `ignorar`: nombres de unidades compradoras ("Dirección de Obras Municipales")
+  que no deben contar ni excluir.
+- Para revisar el filtro: `python scripts/resumen_md.py --auditoria` lista todo lo
+  detectado con las palabras que coincidieron.
 - `filtro_preliminar_por_nombre: true` pide el detalle solo de las licitaciones
-  cuyo nombre trae una palabra clave o candidata (rápido). Con `false` revisa también descripción e
-  ítems de todas (más completo, pero muchas más llamadas).
+  cuyo nombre trae una palabra clave o candidata (rápido). Con `false` revisa
+  todas (más completo, pero muchas más llamadas).
+
+En las **órdenes de compra** cada ítem se clasifica por su producto (y la
+categoría ONU si el producto no lo dice): solo se guardan los ítems de tus rubros,
+así el catering, los pasajes o un monitor de una OC de "insumos clínicos" no
+entran al cálculo de precios. Si cambias `config.yaml`, la siguiente ejecución
+reclasifica lo ya guardado sin llamar a la API.
+
+## Alertas regulatorias (ISP)
+
+Una investigación del 12-10-2026 (normativa del ISP, Minsal y BCN) concluyó que
+varios productos de la lista **no son "no regulados"**: guantes de látex y
+quirúrgicos, jeringas y agujas, respiradores N95/KN95, alcohol gel,
+desinfectantes y cloro, y jabón de manos. Sí se consideran no regulados:
+guantes de nitrilo de examen (conviene confirmarlo por escrito con el ISP),
+mascarillas quirúrgicas de 3 pliegues, pecheras, cofias, gasas, apósitos simples,
+detergentes sin declaración desinfectante, papel higiénico y toallas.
+
+No se excluye nada automáticamente: las licitaciones e ítems de OC llevan las
+columnas `alertas_regulatorias` (qué registro exige) y `solo_regulados` (todo lo
+que se compra es regulado), para filtrarlas en Power BI. En los resúmenes se
+marcan con ⚠ (incluye regulados) y ⚠⚠ (solo regulados). Edita la sección
+`alertas_regulatorias` de `config.yaml` para ajustarlas. Antes de ofertar,
+confirma con el ISP y pide al proveedor el N° de registro de cada producto.
 
 ## Límites de la API
 

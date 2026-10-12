@@ -23,6 +23,9 @@ concurrency:
 jobs:
   radar:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      actions: read
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v5
@@ -47,8 +50,45 @@ jobs:
             radar-db-v0-
             radar-db-
 
-      - name: Aviso si no había base guardada
+      # Sin caché (expiró tras 7 días sin uso, cambió la rama por defecto…): se
+      # recupera el respaldo más reciente guardado como artefacto.
+      - name: Recuperar base desde el último respaldo
+        id: respaldo
         if: steps.restaurar.outputs.cache-matched-key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id=$(gh api "repos/${{ github.repository }}/actions/artifacts?per_page=100" \
+            --jq '[.artifacts[] | select(.name | startswith("radar-db-")) | select(.expired | not)]
+                  | sort_by(.created_at) | last | .id // empty')
+          if [ -n "$id" ]; then
+            gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" > /tmp/radar-db.zip
+            mkdir -p data && unzip -o -q /tmp/radar-db.zip -d data
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+            echo "Base recuperada desde el artefacto $id"
+          fi
+
+      # Una re-ejecución de una corrida antigua usa código y config.yaml antiguos:
+      # puede correr, pero no reemplaza la base compartida.
+      - name: Verificar que el código es la última versión de la rama
+        id: version
+        # Si solo cambiaron archivos que no afectan los datos (README, workflows),
+        # se guarda igual: no se pierde una corrida larga por un cambio menor.
+        run: |
+          actual=$(git ls-remote origin "refs/heads/${GITHUB_REF_NAME}" | cut -f1)
+          if [ "$actual" = "$GITHUB_SHA" ]; then
+            echo "es_actual=true" >> "$GITHUB_OUTPUT"
+          elif git fetch -q --depth=1 origin "$actual" \
+               && git diff --quiet "$GITHUB_SHA" "$actual" -- src scripts config.yaml requirements.txt; then
+            echo "es_actual=true" >> "$GITHUB_OUTPUT"
+            echo "La rama avanzó, pero sin cambios en src/, scripts/ ni config.yaml."
+          else
+            echo "es_actual=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Esta corrida usa código o config.yaml antiguos ($GITHUB_SHA); no se guardará la base."
+          fi
+
+      - name: Aviso si no había base guardada
+        if: steps.restaurar.outputs.cache-matched-key == '' && steps.respaldo.outputs.ok != 'true'
         run: |
           echo "::warning::No se encontró la base guardada; esta corrida parte con una base vacía (se guarda como v0, sin reemplazar una base con historial)."
           echo "> ⚠️ No se encontró la base guardada: esta corrida partió con una base vacía. Puedes recuperar una copia desde el artefacto radar-db-* de una corrida anterior." >> "$GITHUB_STEP_SUMMARY"
@@ -65,14 +105,14 @@ jobs:
           python scripts/radar_diario.py $ARGS
 
       - name: Guardar base de datos
-        if: always()
+        if: always() && steps.version.outputs.es_actual == 'true'
         uses: actions/cache/save@v5
         with:
           path: data/radar.db
-          key: radar-db-${{ steps.restaurar.outputs.cache-matched-key != '' && 'v1' || 'v0' }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: radar-db-${{ (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true') && 'v1' || 'v0' }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Respaldo de la base (artefacto, 90 días)
-        if: always()
+        if: always() && steps.version.outputs.es_actual == 'true'
         uses: actions/upload-artifact@v6
         with:
           name: radar-db-${{ github.run_number }}-${{ github.run_attempt }}
