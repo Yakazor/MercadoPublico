@@ -18,8 +18,8 @@ DETALLE = {
 
 
 def _evaluar(filtro, detalle):
-    descripcion, items = textos_licitacion(detalle)
-    return filtro.evaluar(*descripcion, nombre=detalle["Nombre"], items=items)
+    descripcion, items, onu = textos_licitacion(detalle)
+    return filtro.evaluar(*descripcion, nombre=detalle["Nombre"], items=items, items_onu=onu)
 
 
 def test_fila_licitacion_campos_minimos():
@@ -208,3 +208,26 @@ def test_orden_compra_especificaciones_no_detectan_ni_excluyen():
           ]}}
     filas = filas_orden_compra(oc, filtro)
     assert [f["correlativo"] for f in filas] == [3]
+
+
+def test_consultoria_no_usa_categoria_onu_pero_insumos_si():
+    """Corrida real 12-10-2026: 'Servicios profesionales médicos anestesiólogos' salía como
+    BI por la categoría ONU 'Servicios de consultoría de gestión'."""
+    filtro = FiltroRubros.desde_config(cargar_config())
+    medicos = {"CodigoExterno": "M", "Nombre": "Servicios de Profesionales médicos Anestesiólogos",
+               "Items": {"Listado": [{"NombreProducto": "Servicios de consultoría de gestión",
+                                      "Categoria": "Servicios de gestión / Consultorías de gestión",
+                                      "Descripcion": "Turnos de anestesia"}]}}
+    assert not _evaluar(filtro, medicos).coincide
+    bi = medicos | {"Nombre": "Servicios profesionales",
+                    "Items": {"Listado": [{"Categoria": "Servicios de gestión",
+                                           "Descripcion": "Desarrollo de dashboards en Power BI"}]}}
+    assert _evaluar(filtro, bi).rubro == "consultoria_gestion_bi"
+    guantes = {"CodigoExterno": "G", "Nombre": "Insumos clínicos varios",
+               "Items": {"Listado": [{"NombreProducto": "Guantes médicos de examen", "Descripcion": "talla M"}]}}
+    assert _evaluar(filtro, guantes).rubro == "insumos_medicos_aseo"
+
+
+def test_medicamento_inyectable_en_jeringa_no_es_insumo():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    assert not filtro.es_candidata("C.S. de Paliperidona 75 mg Susp. Iny. LP Jeringa P")

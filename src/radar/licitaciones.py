@@ -31,16 +31,16 @@ def detalle(cliente: ClienteMercadoPublico, codigo: str) -> dict | None:
 
 def clasificar(detalle_licitacion: dict, filtro: FiltroRubros, hoy: date | None = None) -> dict | None:
     """Fila lista para guardar si la licitación pertenece a un rubro; si no, None."""
-    descripcion, items = textos_licitacion(detalle_licitacion)
+    descripcion, items, items_onu = textos_licitacion(detalle_licitacion)
     nombre = detalle_licitacion.get("Nombre")
-    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items)
+    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items, items_onu=items_onu)
     if not resultado.coincide:
         return None
     return fila_licitacion(
         detalle_licitacion,
         resultado,
         hoy,
-        alertas=filtro.alertas(nombre, *descripcion, *items),
+        alertas=filtro.alertas(nombre, *descripcion, *items, *items_onu),
         solo_regulados=resultado.solo_regulados,
     )
 

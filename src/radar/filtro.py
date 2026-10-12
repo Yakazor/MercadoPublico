@@ -88,6 +88,7 @@ class Rubro:
     ignorar: re.Pattern | None = None              # frases que se borran (unidades, etc.)
     unidades: re.Pattern | None = None             # "Depto. de <palabra clave>"
     detectar_en_descripcion: bool = True
+    usar_clasificacion_onu: bool = True            # categoría / producto ONU de Mercado Público
 
     def base(self, texto_norm: str) -> str:
         """Borra nombres de unidades ("Depto. de Control de Gestión") y frases ignoradas."""
@@ -177,6 +178,7 @@ class FiltroRubros:
                     rf"\b{_UNIDADES}\s+(?:de\s+|del\s+)?(?:la\s+|el\s+|los\s+|las\s+)?(?:{alts})"
                     rf"(?:\s+(?:y|e)\s+(?:{alts}))*\b") if alts else None,
                 detectar_en_descripcion=bool(datos.get("detectar_en_descripcion", True)),
+                usar_clasificacion_onu=bool(datos.get("usar_clasificacion_onu", True)),
             ))
         self._alertas = []
         for a in alertas_regulatorias or []:
@@ -202,20 +204,23 @@ class FiltroRubros:
                 return True
         return False
 
-    def evaluar(self, *descripcion: str | None, nombre: str | None = None, items=()) -> Resultado:
+    def evaluar(self, *descripcion: str | None, nombre: str | None = None, items=(), items_onu=()) -> Resultado:
+        """`items`: texto libre de cada línea; `items_onu`: producto/categoría según el
+        clasificador ONU (cuentan solo si el rubro tiene usar_clasificacion_onu)."""
         nombre_norm = normalizar(nombre)
         fuerte = _unir([nombre, *items])
+        onu = _unir(items_onu)
         libre = _unir(descripcion)
         hallazgos: list[tuple[Rubro, set[str]]] = []
         for rubro in self.rubros:
             if rubro.incluir is None or rubro.excluido(nombre_norm):
                 continue
-            fuertes = rubro.claves(fuerte)
+            fuertes = rubro.claves(fuerte) | (rubro.claves(onu) if rubro.usar_clasificacion_onu else set())
             en_descripcion = rubro.claves(libre)
             if not fuertes and not (rubro.detectar_en_descripcion and en_descripcion):
                 continue
             hallazgos.append((rubro, fuertes | en_descripcion))
-        return self._resultado(hallazgos, f"{fuerte} {libre}")
+        return self._resultado(hallazgos, f"{fuerte} {onu} {libre}")
 
     def _resultado(self, hallazgos, texto_norm: str) -> Resultado:
         if not hallazgos:
@@ -231,12 +236,16 @@ class FiltroRubros:
         )
 
     # -- Ítems de órdenes de compra ----------------------------------------
-    def evaluar_item(self, producto: str | None, categoria: str | None = None) -> Resultado:
-        """Un ítem se clasifica por su PRODUCTO (y la categoría UNSPSC si el producto
-        no trae palabra clave). Las exclusiones se aplican solo al producto; las
-        especificaciones libres no cuentan ("Monitor… resistente a desinfectantes")."""
-        producto_norm = normalizar(producto)
+    def evaluar_item(self, producto: str | None, categoria: str | None = None,
+                     especificacion: str | None = None) -> Resultado:
+        """Un ítem se clasifica por su PRODUCTO; si el producto no trae palabra clave,
+        por la categoría ONU (rubros con usar_clasificacion_onu) o por la
+        especificación del comprador (rubros sin ella, p. ej. consultoría, donde la
+        categoría ONU "consultoría de gestión" se usa para cualquier servicio).
+        Las exclusiones se aplican al producto."""
+        producto_norm = normalizar(producto or especificacion)
         categoria_norm = normalizar(categoria)
+        especificacion_norm = normalizar(especificacion)
         hallazgos = []
         excluido = False
         for rubro in self.rubros:
@@ -245,7 +254,10 @@ class FiltroRubros:
             if producto_norm and rubro.excluido(producto_norm):
                 excluido = True
                 continue
-            claves = rubro.claves(producto_norm) or rubro.claves(categoria_norm)
+            claves = rubro.claves(producto_norm)
+            if not claves:
+                respaldo = categoria_norm if rubro.usar_clasificacion_onu else especificacion_norm
+                claves = rubro.claves(respaldo)
             if claves:
                 hallazgos.append((rubro, claves))
         resultado = self._resultado(hallazgos, f"{producto_norm} {categoria_norm}")

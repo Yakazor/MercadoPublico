@@ -59,16 +59,20 @@ def items_licitacion(detalle: dict) -> list[dict]:
     return (detalle.get("Items") or {}).get("Listado") or []
 
 
-def textos_licitacion(detalle: dict) -> tuple[list[str], list[str]]:
-    """(descripción, ítems) para el filtro. El nombre se pasa aparte.
+def textos_licitacion(detalle: dict) -> tuple[list[str], list[str], list[str]]:
+    """(descripción, ítems, ítems ONU) para el filtro. El nombre se pasa aparte.
 
-    Los ítems (producto, descripción de la línea, categoría) describen lo que se
-    compra; la descripción general suele mencionar además la unidad solicitante."""
+    - ítems: descripción libre de cada línea (lo que escribe el comprador);
+    - ítems ONU: producto y categoría del clasificador de Mercado Público, útiles
+      para insumos ("Guantes médicos") pero genéricos para servicios ("Servicios
+      de consultoría de gestión" se usa para casi cualquier servicio profesional);
+    - descripción general: suele mencionar además la unidad solicitante."""
     descripcion = [t for t in [detalle.get("Descripcion")] if t]
-    items = []
+    items, onu = [], []
     for item in items_licitacion(detalle):
-        items += [item.get("NombreProducto"), item.get("Descripcion"), item.get("Categoria")]
-    return descripcion, [t for t in items if t]
+        items.append(item.get("Descripcion"))
+        onu += [item.get("NombreProducto"), item.get("Categoria")]
+    return descripcion, [t for t in items if t], [t for t in onu if t]
 
 
 def fila_licitacion(
@@ -127,8 +131,8 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
     if nombre_oc and not filtro.es_candidata(nombre_oc):
         return []
     evaluados = [
-        (item, filtro.evaluar_item(item.get("Producto") or item.get("EspecificacionComprador"),
-                                   item.get("Categoria")))
+        (item, filtro.evaluar_item(item.get("Producto"), item.get("Categoria"),
+                                   item.get("EspecificacionComprador")))
         for item in items
     ]
     if not any(r.coincide for _, r in evaluados) and nombre_oc:

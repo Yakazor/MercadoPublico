@@ -15,7 +15,8 @@ api:
 #   - siempre por palabra completa ("aseo" no coincide con "paseo").
 #
 #   palabras_clave:      cuenta como detección si aparece en el NOMBRE o en los ÍTEMS
-#                        (y en la descripción general si detectar_en_descripcion: true).
+#                        (y en la descripción general si detectar_en_descripcion: true;
+#                        en la categoría ONU de los ítems si usar_clasificacion_onu: true).
 #   palabras_candidatas: frases amplias que, en el NOMBRE, hacen que se revise el
 #                        detalle; por sí solas NO cuentan como detección.
 #   excluir_en_nombre:   descarta SIEMPRE si aparece en el nombre (servicios, obras).
@@ -76,6 +77,9 @@ rubros:
     excluir_en_nombre:
       - farmacos
       - medicamentos
+      - susp iny
+      - suspension inyectable
+      - solucion inyectable
       # Servicios (personal de aseo), no venta de productos
       - servicio de aseo
       - serv de aseo
@@ -139,6 +143,9 @@ rubros:
     # La descripción general suele nombrar unidades ("Depto. de Planificación
     # Estratégica y Control de Gestión"): para este rubro solo cuentan nombre e ítems.
     detectar_en_descripcion: false
+    # La categoría/producto ONU "Servicios de consultoría de gestión" se usa para
+    # casi cualquier servicio profesional (médicos, abogados…): no cuenta.
+    usar_clasificacion_onu: false
     palabras_clave:
       - consultoria en gestion
       - consultoria para la gestion
