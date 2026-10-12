@@ -33,7 +33,7 @@ def radar_licitaciones(
     log.info("Licitaciones activas: %d", len(activas))
 
     if preliminar_por_nombre:
-        candidatas = [l for l in activas if filtro.evaluar(nombre=l.get("Nombre")).coincide]
+        candidatas = [l for l in activas if filtro.es_candidata(l.get("Nombre"))]
         log.info("Candidatas tras filtro por nombre: %d", len(candidatas))
     else:
         candidatas = activas

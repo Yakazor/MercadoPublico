@@ -9,7 +9,13 @@ api:
 
 # Rubros a detectar. Las palabras se comparan sin tildes ni mayúsculas y por
 # palabra completa ("aseo" no coincide con "paseo").
-#   palabras_clave:    basta con que aparezca UNA (en nombre, descripción o ítems).
+#   palabras_clave:    basta con que aparezca UNA (en nombre, descripción o ítems)
+#                      para que la licitación cuente como detectada.
+#   palabras_candidatas: (opcional) frases amplias que, si aparecen en el NOMBRE,
+#                      hacen que se pida el detalle para revisar descripción e
+#                      ítems, pero que por sí solas NO cuentan como detección
+#                      (ej. "insumos clinicos" → se acepta solo si los ítems
+#                      traen guantes, mascarillas, etc.).
 #                      Prefiere frases ("articulos de aseo") a palabras sueltas
 #                      ("aseo"): las sueltas traen muchos falsos positivos.
 #   excluir:           si aparece en cualquier texto, se descarta el rubro.
@@ -22,7 +28,6 @@ rubros:
       # Insumos médicos de uso general
       - insumos medicos
       - insumo medico
-      - insumos clinicos
       - guantes
       - guantes de nitrilo
       - guantes de latex
@@ -61,6 +66,12 @@ rubros:
       - cloro
       - detergente
       - bolsas de basura
+    palabras_candidatas:
+      - insumos clinicos
+      - insumo clinico
+      - material clinico
+      - materiales clinicos
+      - insumos hospitalarios
     excluir:
       - farmaco
       - farmacos
@@ -95,6 +106,26 @@ rubros:
       - motorista
       # Insumos clínicos especializados (normalmente dispositivos regulados).
       # Borra estas líneas si también te interesan.
+      - cateter
+      - cateteres
+      - sonda
+      - sondas
+      - endotraqueal
+      - endotqq
+      - tuboendotqq
+      - accesos venosos
+      - sutura quirurgica
+      - suturas quirurgicas
+      - parches dea
+      - stent
+      - stents
+      - angioplastia
+      - implante
+      - implantes
+      - protesis
+      - marcapaso
+      - marcapasos
+      - osteosintesis
       - cirugia robotica
       - hemodinamia
       - angiografia
@@ -152,6 +183,14 @@ rubros:
       - modelo de costos
       - estudio de costos
       - reportabilidad
+    palabras_candidatas:
+      # Se pide el detalle y se acepta solo si la descripción o los ítems
+      # mencionan alguna palabra clave (gestión, BI, indicadores…).
+      - consultoria
+      - consultorias
+      - asesoria
+      - asesorias
+      - servicios profesionales
     excluir:
       - asesoria juridica
       - asesoria legal

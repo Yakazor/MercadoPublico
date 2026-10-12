@@ -31,6 +31,7 @@ class Rubro:
     incluir: re.Pattern | None
     excluir: re.Pattern | None
     excluir_en_nombre: re.Pattern | None = None
+    candidatas: re.Pattern | None = None
 
 
 @dataclass
@@ -54,9 +55,32 @@ class FiltroRubros:
                 incluir=_patron(datos.get("palabras_clave", [])),
                 excluir=_patron(datos.get("excluir", [])),
                 excluir_en_nombre=_patron(datos.get("excluir_en_nombre", [])),
+                candidatas=_patron(datos.get("palabras_candidatas", [])),
             )
             for clave, datos in (config_rubros or {}).items()
         ]
+
+    def es_candidata(self, nombre: str | None) -> bool:
+        """Filtro preliminar por nombre: ¿vale la pena pedir el detalle?
+
+        Basta una palabra clave o una palabra candidata en el nombre, siempre que
+        el nombre no tenga exclusiones. La decisión final la toma `evaluar`
+        sobre el detalle completo."""
+        nombre_norm = normalizar(nombre)
+        if not nombre_norm:
+            return False
+        for rubro in self.rubros:
+            if rubro.incluir is None:
+                continue
+            if rubro.excluir is not None and rubro.excluir.search(nombre_norm):
+                continue
+            if rubro.excluir_en_nombre is not None and rubro.excluir_en_nombre.search(nombre_norm):
+                continue
+            if rubro.incluir.search(nombre_norm):
+                return True
+            if rubro.candidatas is not None and rubro.candidatas.search(nombre_norm):
+                return True
+        return False
 
     def evaluar(self, *textos: str | None, nombre: str | None = None) -> Resultado:
         """Evalúa los textos. `nombre` (si se entrega) también se evalúa y es el

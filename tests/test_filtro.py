@@ -58,3 +58,35 @@ def test_config_real_casos_del_primer_radar():
     assert not f.evaluar(nombre="ASESORIA A LA INSPECCION FISCAL, RUTA 23-CH").coincide
     assert not f.evaluar(nombre="EPP Depto. Aseo y Ornato").coincide
     assert not f.evaluar(nombre="ADQUISICIÓN DE GUANTES TÁCTICOS MOTORISTA").coincide
+
+
+def test_palabras_candidatas_solo_habilitan_el_detalle():
+    rubros = {"insumos": {"nombre": "Insumos", "palabras_clave": ["guantes"],
+                          "palabras_candidatas": ["insumos clinicos"],
+                          "excluir_en_nombre": ["cateter"]}}
+    f = FiltroRubros(rubros)
+    nombre = "Insumos clínicos para central de esterilización"
+    assert f.es_candidata(nombre)
+    # Sin palabra clave en el detalle no cuenta como detección…
+    assert not f.evaluar("cajas plásticas", nombre=nombre).coincide
+    # …pero sí cuando los ítems traen una palabra clave.
+    assert f.evaluar("guantes de nitrilo talla M", nombre=nombre).rubro == "insumos"
+    # Las exclusiones por nombre también aplican al filtro preliminar.
+    assert not f.es_candidata("Adquisición de catéter e insumos clínicos")
+    assert not f.es_candidata("")
+
+
+def test_config_real_excluye_dispositivos_regulados_y_conserva_mixtos():
+    from radar.config import cargar_config
+    f = FiltroRubros(cargar_config()["rubros"])
+    assert not f.es_candidata("ADQUISICION DE CATETER SONDAS CANULAS TQQ TUBO ENDOTQQ")
+    assert not f.es_candidata("ADQ. DE SUTURAS QUIRÚRGICAS E INSUMOS CLÍNICOS")
+    assert not f.es_candidata("CONVENIO SUMINISTRO INSUMOS CLINICOS ACCESOS VENOSOS ARTERIALES")
+    mixto = "CONVENIO DE SUMINISTRO DE GASAS GUANTES JERINGAS MASCARILLAS SUTURAS Y OTROS"
+    assert f.es_candidata(mixto) and f.evaluar(nombre=mixto).coincide
+    # "consultoría" sola habilita el detalle, pero exige una palabra de gestión/BI
+    assert f.es_candidata("Servicio de consultoría")
+    assert not f.evaluar("diagnóstico organizacional", nombre="Servicio de consultoría").coincide
+    assert f.evaluar("implementar tablero de control con indicadores de gestión",
+                     nombre="Servicio de consultoría").rubro == "consultoria_gestion_bi"
+    assert not f.es_candidata("Consultoría de diseño de arquitectura")
