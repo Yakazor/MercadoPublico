@@ -58,10 +58,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Solo respaldos de esta rama y con historial (v1).
+          # Solo respaldos con historial (v1). Solo la rama principal los sube, así
+          # que sirven aunque la rama principal haya cambiado de nombre.
           id=$(gh api --paginate "repos/${{ github.repository }}/actions/artifacts?per_page=100" \
             --jq ".artifacts[] | select(.name | startswith(\"radar-db-v1-\")) | select(.expired | not)
-                  | select(.workflow_run.head_branch == \"${GITHUB_REF_NAME}\") | [.created_at, .id] | @tsv" \
+                  | [.created_at, .id] | @tsv" \
             | sort | tail -n 1 | cut -f2)
           if [ -n "$id" ]; then
             gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" > /tmp/radar-db.zip
