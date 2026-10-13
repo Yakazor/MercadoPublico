@@ -37,7 +37,7 @@ jobs:
   ordenes:
     runs-on: ubuntu-24.04
     permissions:
-      contents: read
+      contents: write   # publica los JSON del dashboard en la rama "datos"
       actions: read
     timeout-minutes: 330
     steps:
@@ -152,6 +152,22 @@ jobs:
           path: data/radar.db
           retention-days: 90
           if-no-files-found: ignore
+
+      # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
+      # commit que se reemplaza en cada corrida). Solo con una base con historial.
+      - name: Publicar datos para el dashboard
+        if: success() && steps.version.outputs.es_actual == 'true' && (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true')
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/publicar_datos.py --salida "$RUNNER_TEMP/datos"
+          cd "$RUNNER_TEMP/datos"
+          git init -q -b datos
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Datos del radar $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:refs/heads/datos
 
       - name: Resumen
         if: always()
