@@ -470,3 +470,26 @@ def test_real_unidad_compradora_sigue_sin_contar(real):
     assert real.evaluar("Apoyo al área de análisis de datos y visualización de datos",
                         nombre="Servicio de consultoría").coincide
     assert real.evaluar_item(None, "Servicios de consultoría de gestión", "Apoyo al área de análisis de datos").coincide
+
+
+@pytest.mark.parametrize("nombre", [
+    "Adquisición de guantes estériles y sondas de aspiración",
+    "Insumos clinicos: sondas Foley y guantes de examen",
+    "Guantes de examen y nebulizadores",
+    "Bolsas de residuos y guantes para recolección",
+])
+def test_real_guantes_rescatan_exclusiones_clinicas(real, nombre):
+    assert real.evaluar(nombre=nombre).rubro == "insumos_medicos_aseo"
+
+
+def test_real_en_el_area_de_es_ambito_no_unidad(real):
+    for item in ["Asesoría especializada en el área de inteligencia de negocios y análisis de datos",
+                 "Asesoría en el área de control de gestión e indicadores de gestión"]:
+        assert real.evaluar(nombre="Contratación de consultoría externa", items=[item]).coincide
+
+
+def test_real_respaldo_por_nombre_ignora_unidades_de_bi(real):
+    r = real.respaldo_por_nombre("Artículos de aseo para Depto. de Planificación Estratégica y Control de Gestión")
+    assert not r.coincide  # "artículos de aseo" es amplia
+    r = real.respaldo_por_nombre("Toallas de papel para Depto. de Planificación Estratégica y Control de Gestión")
+    assert r.rubro == "insumos_medicos_aseo"

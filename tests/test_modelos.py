@@ -300,3 +300,21 @@ def test_orden_de_un_item_con_nombre_amplio_no_usa_el_nombre():
         oc = {"Codigo": "OC", "Nombre": "Compra de insumos médicos para pabellón", "TipoMoneda": "CLP",
               "Items": {"Listado": [{"Correlativo": 1, "Producto": producto, "Categoria": categoria, "PrecioNeto": 1}]}}
         assert filas_orden_compra(oc, filtro) == []
+
+
+def test_alerta_de_item_clasificado_por_categoria():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC", "Nombre": "Compra de insumos clínicos", "TipoMoneda": "CLP",
+          "Items": {"Listado": [{"Correlativo": 1, "Producto": "BD Plastipak 3 ml luer lock",
+                                 "Categoria": "Equipamiento médico / Productos de inyección / Jeringas",
+                                 "PrecioNeto": 100}]}}
+    fila = filas_orden_compra(oc, filtro)[0]
+    assert "Jeringas" in fila["alertas_regulatorias"]
+
+
+def test_exclusion_de_otro_rubro_no_bloquea_el_respaldo_por_nombre():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC", "Nombre": "Compra de bolsas de basura", "TipoMoneda": "CLP",
+          "Items": {"Listado": [{"Correlativo": 1, "Producto": "Bolsas plásticas", "PrecioNeto": 100,
+                                 "EspecificacionComprador": "Bolsa negra 80x110 biodegradable, de bajo impacto ambiental"}]}}
+    assert filas_orden_compra(oc, filtro)[0]["rubro"] == "insumos_medicos_aseo"

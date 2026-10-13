@@ -120,9 +120,9 @@ def textos_item_oc(item: dict) -> list[str]:
 
 
 def textos_alerta_item_oc(item: dict) -> list[str]:
-    """Para las alertas: producto y lo que pidió el comprador (la especificación del
-    proveedor trae publicidad del tipo "blanqueado sin cloro")."""
-    return [t for t in (item.get("Producto"), item.get("EspecificacionComprador")) if t]
+    """Para las alertas: producto, lo que pidió el comprador y la categoría (la
+    especificación del proveedor trae publicidad del tipo "blanqueado sin cloro")."""
+    return [t for t in (item.get("Producto"), item.get("EspecificacionComprador"), item.get("Categoria")) if t]
 
 
 def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> list[tuple[dict, object]]:
@@ -146,9 +146,11 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
     # Solo en rubros de productos y con un nombre que diga qué producto es: en
     # consultoría una OC "Café para jornada de planificación estratégica" no hace BI
     # al café (ver `FiltroRubros.respaldo_por_nombre`).
-    if len(evaluados) == 1 and not evaluados[0][1].coincide and not evaluados[0][1].excluido and nombre_oc:
+    if len(evaluados) == 1 and not evaluados[0][1].coincide and nombre_oc:
         por_nombre = filtro.respaldo_por_nombre(nombre_oc)
-        if por_nombre.coincide:
+        # Solo si el ítem no está excluido en ESE rubro ("bajo impacto ambiental"
+        # excluye en consultoría, no en aseo).
+        if por_nombre.coincide and por_nombre.rubro not in evaluados[0][1].excluidos:
             evaluados = [(evaluados[0][0], por_nombre)]
     return [(item, r) for item, r in evaluados if r.coincide]
 

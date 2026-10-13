@@ -98,6 +98,7 @@ class Rubro:
     candidatas: re.Pattern | None = None
     excluir: re.Pattern | None = None              # en el nombre, siempre
     excluir_salvo_clave: re.Pattern | None = None  # en el nombre, salvo que quede palabra clave
+    excluir_salvo_especifica: re.Pattern | None = None  # ídem, pero `no_rescatan` no basta
     ignorar: re.Pattern | None = None              # frases que se borran (unidades, etc.)
     unidades: re.Pattern | None = None             # "Depto. de <palabra clave>"
     debiles: re.Pattern | None = None              # claves que solas no bastan fuera del nombre
@@ -125,7 +126,9 @@ class Rubro:
             previas = texto[:m.start()].split()[-3:]
             if _VERBOS_UNIDAD.intersection(previas):
                 return m.group(0)
-            if m.group("unidad") in _UNIDADES_INFORMALES and not self._solo_debiles(m.group("claves")):
+            if m.group("unidad") in _UNIDADES_INFORMALES and (
+                    # "Asesoría en el área de control de gestión" = en el ámbito de.
+                    previas[-2:] in (["en", "el"], ["en", "la"]) or not self._solo_debiles(m.group("claves"))):
                 return m.group(0)
             return " "
         return self.unidades.sub(reemplazo, texto)
@@ -135,7 +138,8 @@ class Rubro:
             self.debiles.fullmatch(normalizar(m.group(0))) for m in self.incluir.finditer(texto))
 
     def _tramos_excluidos(self, texto_norm: str) -> list[tuple[int, int]]:
-        return [(m.start(), m.end()) for p in (self.excluir, self.excluir_salvo_clave)
+        return [(m.start(), m.end())
+                for p in (self.excluir, self.excluir_salvo_clave, self.excluir_salvo_especifica)
                 if p is not None for m in p.finditer(texto_norm)]
 
     def claves(self, texto_norm: str, es_nombre: bool = False) -> set[str]:
@@ -163,10 +167,17 @@ class Rubro:
         nombre = self.base(nombre_norm, es_nombre=True)
         if self.excluir is not None and self.excluir.search(nombre):
             return True
-        if self.excluir_salvo_clave is not None and self.excluir_salvo_clave.search(nombre):
+        claves = None
+        if self.excluir_salvo_especifica is not None and self.excluir_salvo_especifica.search(nombre):
             # Una clave genérica ("guantes", "cloro") no rescata: "EPP: guantes y lentes"
             # se descarta; "EPP: guantes, mascarillas y pecheras" no.
-            return not self.rescatan(self.claves(nombre, es_nombre=True))
+            claves = self.claves(nombre, es_nombre=True)
+            if not self.rescatan(claves):
+                return True
+        if self.excluir_salvo_clave is not None and self.excluir_salvo_clave.search(nombre):
+            # Aquí cualquier clave rescata: "Guantes de examen y sondas" se revisa.
+            claves = self.claves(nombre, es_nombre=True) if claves is None else claves
+            return not claves
         return False
 
     def tiene_candidata(self, nombre_norm: str) -> bool:
@@ -199,6 +210,7 @@ class Resultado:
     palabras: list[str] = field(default_factory=list)
     solo_regulados: bool = False        # todo lo detectado es producto con alerta regulatoria
     excluido: bool = False              # (ítems) descartado por una exclusión explícita
+    excluidos: set[str] = field(default_factory=set)  # (ítems) rubros que lo excluyen
 
     @property
     def coincide(self) -> bool:
@@ -256,6 +268,7 @@ class FiltroRubros:
                 candidatas=_patron(datos.get("palabras_candidatas") or []),
                 excluir=_patron(duras),
                 excluir_salvo_clave=_patron(datos.get("excluir_en_nombre_salvo_clave") or []),
+                excluir_salvo_especifica=_patron(datos.get("excluir_en_nombre_salvo_clave_especifica") or []),
                 ignorar=_patron(datos.get("ignorar") or []),
                 unidades=re.compile(
                     rf"\b(?P<unidad>{_UNIDADES})\s+(?:de\s+|del\s+)?(?:la\s+|el\s+|los\s+|las\s+)?"
@@ -348,13 +361,14 @@ class FiltroRubros:
         (usar_clasificacion_onu) y si el nombre dice QUÉ producto es: "Compra de
         insumos médicos" (clave amplia) puede traer un monitor o un despacho."""
         nombre_norm = normalizar(nombre)
-        resultado = self.evaluar(nombre=nombre)
-        rubro = next((r for r in self.rubros if r.clave == resultado.rubro), None)
-        if rubro is None or not rubro.usar_clasificacion_onu:
-            return Resultado()
-        especificas = {c for c in rubro.claves(nombre_norm, es_nombre=True)
-                       if not (rubro.amplias is not None and rubro.amplias.fullmatch(c))}
-        return resultado if especificas else Resultado()
+        hallazgos = []
+        for rubro in self.rubros:
+            if rubro.incluir is None or not rubro.usar_clasificacion_onu or rubro.excluido(nombre_norm):
+                continue
+            claves = rubro.claves(nombre_norm, es_nombre=True)
+            if any(not (rubro.amplias is not None and rubro.amplias.fullmatch(c)) for c in claves):
+                hallazgos.append((rubro, claves))
+        return self._resultado(hallazgos, nombre_norm, _segmentos(nombre))
 
     def evaluar_item(self, producto: str | None, categoria: str | None = None,
                      especificacion: str | None = None, especificacion_proveedor: str | None = None) -> Resultado:
@@ -373,12 +387,12 @@ class FiltroRubros:
         especificacion_norm = normalizar(especificacion)
         proveedor_norm = normalizar(especificacion_proveedor)
         hallazgos = []
-        excluido = False
+        excluidos = set()
         for rubro in self.rubros:
             if rubro.incluir is None:
                 continue
             if any(t and rubro.excluido(t) for t in (producto_norm, especificacion_norm, proveedor_norm)):
-                excluido = True
+                excluidos.add(rubro.clave)
                 continue
             # "Servicios de consultoría de gestión" (producto ONU de cualquier servicio
             # profesional) no cuenta por sí mismo: se mira la especificación.
@@ -396,7 +410,8 @@ class FiltroRubros:
             if claves:
                 hallazgos.append((rubro, claves))
         resultado = self._resultado(hallazgos, f"{producto_norm} {categoria_norm}", [producto_norm])
-        resultado.excluido = excluido and not resultado.coincide
+        resultado.excluidos = excluidos
+        resultado.excluido = bool(excluidos) and not resultado.coincide
         return resultado
 
     # -- Alertas regulatorias ---------------------------------------------

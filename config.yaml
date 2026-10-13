@@ -20,7 +20,7 @@ api:
 #   palabras_debiles:    claves que cuentan en el NOMBRE, pero en los ítems solo junto
 #                        a otra clave (también son nombres de unidades o frases de informes).
 #   no_rescatan:         claves genéricas ("guantes") que no anulan una exclusión
-#                        "salvo clave" (p. ej. "epp").
+#                        "salvo clave específica" (p. ej. "epp").
 #   palabras_candidatas: frases amplias que, en el NOMBRE, hacen que se revise el
 #                        detalle; por sí solas NO cuentan como detección (en rubros sin
 #                        detectar_en_descripcion, la descripción cuenta si trae 2+ claves).
@@ -30,6 +30,9 @@ api:
 #                        "Mascarilla laríngea desechable" → se descarta;
 #                        "Mascarillas laríngeas, guantes y gasas" → se revisa por guantes.
 #                        Una palabra clave dentro de la frase excluida no cuenta.
+#   excluir_en_nombre_salvo_clave_especifica: igual, pero las claves de `no_rescatan`
+#                        no bastan: "EPP: guantes y lentes" → se descarta.
+#   (Las exclusiones también se revisan en cada ítem.)
 #   ignorar:             frases que se borran antes de evaluar (nombres de unidades
 #                        compradoras). Los nombres de unidad seguidos de una palabra
 #                        clave ("Departamento de Control de Gestión") se ignoran solos.
@@ -167,12 +170,13 @@ rubros:
       - apr
       - sanitario rural
       - cloro gas
-    # Claves genéricas que no alcanzan para anular una exclusión "salvo clave":
-    # "EPP: guantes y lentes" se descarta; "EPP: guantes, mascarillas y pecheras" no.
+    # Claves genéricas que no alcanzan para anular una exclusión "salvo clave
+    # específica": "EPP: guantes y lentes" se descarta; "EPP: guantes, mascarillas y
+    # pecheras" no.
     no_rescatan:
       - guantes
       - cloro
-    excluir_en_nombre_salvo_clave:
+    excluir_en_nombre_salvo_clave_especifica:
       # Cloro para tratamiento de agua o de laboratorio (no es producto de aseo)
       - tratamiento de agua
       - planta de tratamiento
@@ -183,11 +187,8 @@ rubros:
       - medidor de cloro
       - cloro residual
       - cloro libre y total
-      # Recolección de basura (servicio), salvo que se compren bolsas, etc.
-      - recoleccion
-      - residuos
-      # Guantes y mascarillas que no son insumo médico (si el nombre trae además
-      # otra palabra clave, p. ej. "guantes de nitrilo", se revisa igual)
+      # Guantes de EPP industrial (si el nombre trae además otra clave, p. ej.
+      # "guantes de nitrilo" o "mascarillas", se revisa igual)
       - guantes de seguridad
       - guantes de trabajo
       - guantes de jardineria
@@ -196,6 +197,10 @@ rubros:
       - implementos de seguridad
       - elementos de seguridad
       - lentes de seguridad
+    excluir_en_nombre_salvo_clave:
+      # Recolección de basura (servicio), salvo que se compren bolsas, etc.
+      - recoleccion
+      - residuos
       - mascarillas laringeas
       # Insumos clínicos especializados (normalmente dispositivos regulados).
       - cateteres
