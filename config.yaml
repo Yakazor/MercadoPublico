@@ -48,6 +48,12 @@ rubros:
       - guantes de procedimiento
       - mascarillas
       - respiradores desechables
+      - respirador n95
+      - respirador n 95
+      - respirador kn95
+      - respirador kn 95
+      - respirador ffp2
+      - respirador ffp 2
       - pecheras
       - cofias
       - jeringas
@@ -56,6 +62,9 @@ rubros:
       - alcohol gel
       - clorogel
       - gel hidroalcoholico
+      - gel hidro alcoholico
+      - gel alcoholico
+      - solucion hidroalcoholica
       - toallas desinfectantes
       # Productos de aseo (frases, no la palabra "aseo" sola)
       - articulos de aseo
@@ -97,6 +106,22 @@ rubros:
       - insumos clinicos
       - material clinico
       - insumos hospitalarios
+    # Claves que nombran una categoría completa: en una OC de un solo ítem sin
+    # palabra clave no bastan para clasificarlo por el nombre de la OC ("Compra de
+    # insumos médicos" con un monitor o un despacho).
+    palabras_amplias:
+      - insumos medicos
+      - articulos de aseo
+      - art de aseo
+      - materiales de aseo
+      - productos de aseo
+      - insumos de aseo
+      - equipos de aseo
+      - utiles de aseo
+      - productos de limpieza
+      - articulos de limpieza
+      - insumos de limpieza
+      - materiales de limpieza
     excluir_en_nombre:
       - farmacos
       - medicamentos
@@ -126,9 +151,11 @@ rubros:
       # EPP industrial y agua potable: nunca son insumo médico, aunque digan "guantes"/"cloro"
       - soldador
       - soldar
+      - soldadura
       - tacticos
       - motorista
       - anticorte
+      - anti corte
       - cabritilla
       - descarne
       - de cuero
@@ -138,6 +165,7 @@ rubros:
       - cuadrilla
       - agua potable
       - apr
+      - sanitario rural
       - cloro gas
     # Claves genéricas que no alcanzan para anular una exclusión "salvo clave":
     # "EPP: guantes y lentes" se descarta; "EPP: guantes, mascarillas y pecheras" no.
@@ -149,6 +177,7 @@ rubros:
       - tratamiento de agua
       - planta de tratamiento
       - agua rural
+      - agua de bebida
       - potabilizacion
       - analizador de cloro
       - medidor de cloro
@@ -318,9 +347,11 @@ alertas_regulatorias:
     nota: "Guantes de látex/quirúrgicos: registro ISP + conformidad por lote (DE 342/2004)"
   - palabras: [jeringas, agujas hipodermicas, agujas desechables, aguja de jeringa]
     nota: "Jeringas/agujas: registro ISP + conformidad por lote (DE 47/2025)"
-  - palabras: [n95, n 95, kn95, kn 95, ffp2, ffp 2, respirador n95, respiradores desechables, respirador desechable]
+  - palabras: [n95, n 95, kn95, kn 95, ffp2, ffp 2, ffp3, ffp 3, respirador n95, respiradores desechables,
+               respirador desechable]
     nota: "Respiradores N95/KN95: EPP inscrito en el RFI del ISP (Res. 45/2023)"
-  - palabras: [alcohol gel, clorogel, gel hidroalcoholico, gel antiseptico, gel desinfectante, higienizante de manos]
+  - palabras: [alcohol gel, clorogel, gel hidroalcoholico, gel hidro alcoholico, gel alcoholico,
+               solucion hidroalcoholica, gel antiseptico, gel desinfectante, higienizante de manos]
     nota: "Alcohol gel: registro ISP como cosmético (Res. Minsal 199/2021)"
   - palabras: [desinfectantes, cloro, hipoclorito, amonio cuaternario, sanitizantes, toallas desinfectantes]
     excepto: [resistente a desinfectantes, compatible con desinfectantes, sin cloro, libre de cloro,

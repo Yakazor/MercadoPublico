@@ -138,16 +138,17 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
         return []
     evaluados = [
         (item, filtro.evaluar_item(item.get("Producto"), item.get("Categoria"),
-                                   item.get("EspecificacionComprador")))
+                                   item.get("EspecificacionComprador"), item.get("EspecificacionProveedor")))
         for item in items
     ]
     # Respaldo por nombre solo con UN ítem: en OC de varios ítems sin palabra clave,
     # los ítems genéricos pueden ser de otro rubro (pasajes, catering, despacho).
-    # Solo en rubros de productos (usar_clasificacion_onu): en consultoría una OC
-    # "Café para jornada de planificación estratégica" no hace BI al café.
+    # Solo en rubros de productos y con un nombre que diga qué producto es: en
+    # consultoría una OC "Café para jornada de planificación estratégica" no hace BI
+    # al café (ver `FiltroRubros.respaldo_por_nombre`).
     if len(evaluados) == 1 and not evaluados[0][1].coincide and not evaluados[0][1].excluido and nombre_oc:
-        por_nombre = filtro.evaluar(nombre=nombre_oc)
-        if por_nombre.coincide and filtro.usa_clasificacion_onu(por_nombre.rubro):
+        por_nombre = filtro.respaldo_por_nombre(nombre_oc)
+        if por_nombre.coincide:
             evaluados = [(evaluados[0][0], por_nombre)]
     return [(item, r) for item, r in evaluados if r.coincide]
 

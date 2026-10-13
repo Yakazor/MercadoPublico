@@ -291,3 +291,12 @@ def test_orden_compra_aseo_con_productos_de_limpieza():
           "Items": {"Listado": [{"Correlativo": i, "Producto": p, "PrecioNeto": 1} for i, p in enumerate(
               ["Lavalozas", "Limpiadores de pisos", "Escobas", "Traperos", "Paños multiuso", "Cloro"], 1)]}}
     assert len(filas_orden_compra(oc, filtro)) == 6
+
+
+def test_orden_de_un_item_con_nombre_amplio_no_usa_el_nombre():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    for producto, categoria in [("Monitor multiparámetro", "Equipos médicos y quirúrgicos"),
+                                ("Despacho", "Servicios de transporte de carga")]:
+        oc = {"Codigo": "OC", "Nombre": "Compra de insumos médicos para pabellón", "TipoMoneda": "CLP",
+              "Items": {"Listado": [{"Correlativo": 1, "Producto": producto, "Categoria": categoria, "PrecioNeto": 1}]}}
+        assert filas_orden_compra(oc, filtro) == []

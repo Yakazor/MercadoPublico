@@ -95,6 +95,7 @@ class Rubro:
     unidades: re.Pattern | None = None             # "Depto. de <palabra clave>"
     debiles: re.Pattern | None = None              # claves que solas no bastan fuera del nombre
     no_rescatan: re.Pattern | None = None          # claves genéricas que no anulan una exclusión
+    amplias: re.Pattern | None = None              # claves de categoría ("insumos médicos")
     detectar_en_descripcion: bool = True
     usar_clasificacion_onu: bool = True            # categoría / producto ONU de Mercado Público
     # Ítems de OC: productos ONU genéricos que no cuentan como clave, y productos a
@@ -237,6 +238,7 @@ class FiltroRubros:
                     rf"(?:\s+(?:y|e)\s+(?:{alts}))*\b") if alts else None,
                 debiles=_patron(debiles),
                 no_rescatan=_patron(datos.get("no_rescatan") or []),
+                amplias=_patron(datos.get("palabras_amplias") or []),
                 detectar_en_descripcion=bool(datos.get("detectar_en_descripcion", True)),
                 usar_clasificacion_onu=bool(datos.get("usar_clasificacion_onu", True)),
                 productos_genericos=_patron(datos.get("productos_genericos") or []),
@@ -255,9 +257,6 @@ class FiltroRubros:
     @classmethod
     def desde_config(cls, config: dict) -> "FiltroRubros":
         return cls(config.get("rubros") or {}, config.get("alertas_regulatorias"))
-
-    def usa_clasificacion_onu(self, clave: str | None) -> bool:
-        return any(r.clave == clave and r.usar_clasificacion_onu for r in self.rubros)
 
     # -- Licitaciones y nombres -------------------------------------------
     def es_candidata(self, nombre: str | None) -> bool:
@@ -319,8 +318,22 @@ class FiltroRubros:
         )
 
     # -- Ítems de órdenes de compra ----------------------------------------
+    def respaldo_por_nombre(self, nombre: str | None) -> Resultado:
+        """Rubro del nombre de una OC para clasificar su único ítem genérico ("Compra
+        de guantes de nitrilo" + "NITRIDERM M CAJA 100"). Solo en rubros de productos
+        (usar_clasificacion_onu) y si el nombre dice QUÉ producto es: "Compra de
+        insumos médicos" (clave amplia) puede traer un monitor o un despacho."""
+        nombre_norm = normalizar(nombre)
+        resultado = self.evaluar(nombre=nombre)
+        rubro = next((r for r in self.rubros if r.clave == resultado.rubro), None)
+        if rubro is None or not rubro.usar_clasificacion_onu:
+            return Resultado()
+        especificas = {c for c in rubro.claves(nombre_norm, es_nombre=True)
+                       if not (rubro.amplias is not None and rubro.amplias.fullmatch(c))}
+        return resultado if especificas else Resultado()
+
     def evaluar_item(self, producto: str | None, categoria: str | None = None,
-                     especificacion: str | None = None) -> Resultado:
+                     especificacion: str | None = None, especificacion_proveedor: str | None = None) -> Resultado:
         """Un ítem se clasifica por su PRODUCTO; si el producto no trae palabra clave,
         por la categoría ONU (rubros con usar_clasificacion_onu) o por la
         especificación del comprador (rubros sin ella, p. ej. consultoría, donde la
@@ -328,19 +341,19 @@ class FiltroRubros:
         esos rubros la especificación solo se revisa si el producto es compatible
         (`especificacion_si_producto`): "Servicios de catering" para una "jornada de
         plan estratégico" no es consultoría.
-        Las exclusiones se revisan en el producto y en la especificación ("Guantes de
-        protección" + "guante de cuero para soldador")."""
+        Las exclusiones se revisan en el producto y en ambas especificaciones
+        ("Guantes de protección" + "guante de cuero para soldador")."""
         desde_especificacion = not producto
         producto_norm = normalizar(producto or especificacion)
         categoria_norm = normalizar(categoria)
         especificacion_norm = normalizar(especificacion)
+        proveedor_norm = normalizar(especificacion_proveedor)
         hallazgos = []
         excluido = False
         for rubro in self.rubros:
             if rubro.incluir is None:
                 continue
-            if (producto_norm and rubro.excluido(producto_norm)) or (
-                    especificacion_norm and rubro.excluido(especificacion_norm)):
+            if any(t and rubro.excluido(t) for t in (producto_norm, especificacion_norm, proveedor_norm)):
                 excluido = True
                 continue
             # "Servicios de consultoría de gestión" (producto ONU de cualquier servicio

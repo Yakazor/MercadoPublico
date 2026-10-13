@@ -411,3 +411,43 @@ def test_real_latex_sin_negacion_sigue_alertando(real):
     assert real.alertas("Guante de procedimiento látex sin polvo")
     assert real.alertas("Guantes de nitrilo y guantes de látex")
     assert real.alertas("Guante sin polvo, látex, talla M")
+
+
+@pytest.mark.parametrize("nombre", [
+    "Guantes anti-corte nivel 5", "Guantes anti corte para taller", "Guantes de soldadura para taller municipal",
+    "Guantes negros tácticos para Carabineros", "Cloro para Servicio Sanitario Rural Los Robles",
+    "Cloro para agua de bebida comité rural",
+    "Suministro de cloro para comités de agua potable rural",
+])
+def test_real_epp_y_agua_rural_mas_variantes(real, nombre):
+    assert not real.es_candidata(nombre) and not real.evaluar(nombre=nombre).coincide
+
+
+@pytest.mark.parametrize("producto", [
+    "GEL HIDRO-ALCOHOLICO 1L", "Gel hidro alcohólico 1 L", "Solución hidroalcohólica 500 ml", "Gel alcohólico 1 L",
+    "Respirador N95", "Respirador KN95 caja 20", "Respirador FFP2 sin válvula",
+])
+def test_real_gel_y_respiradores_se_detectan_con_alerta(real, producto):
+    assert real.evaluar_item(producto).coincide and real.alertas(producto)
+    assert real.evaluar(nombre=f"Adquisición de {producto}").coincide
+
+
+def test_real_respirador_mecanico_no_es_insumo(real):
+    assert not real.evaluar(nombre="Circuito para respirador mecánico adulto").coincide
+
+
+def test_real_item_excluido_por_especificacion_del_proveedor(real):
+    r = real.evaluar_item("Guantes de protección", "Guantes", "Guante talla 10", "Guante de cuero para soldador marca X")
+    assert not r.coincide and r.excluido
+    assert not real.evaluar_item("Guantes", None, None, "Guante de seguridad multiflex").coincide
+
+
+def test_real_respaldo_por_nombre_exige_producto_especifico(real):
+    assert real.respaldo_por_nombre("Compra de guantes de nitrilo").coincide
+    assert not real.respaldo_por_nombre("Compra de insumos médicos para pabellón").coincide
+    assert not real.respaldo_por_nombre("Servicio de café para jornada de planificación estratégica").coincide
+
+
+def test_real_ssr_servicio_de_salud_no_se_excluye(real):
+    # "SSR" también es la sigla del Servicio de Salud del Reloncaví.
+    assert real.evaluar(nombre="Guantes de nitrilo para SSR").coincide
