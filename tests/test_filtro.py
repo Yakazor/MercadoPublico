@@ -529,3 +529,39 @@ def test_real_especialidad_con_lineas_de_reventa_se_detecta(real):
 ])
 def test_real_insumos_de_reventa_se_conservan(real, nombre):
     assert real.evaluar(nombre=nombre).rubro == "insumos_medicos_aseo"
+
+
+# --- Revisión del 13-10-2026 ---------------------------------------------------
+
+def test_real_negacion_de_latex_no_cruza_lineas(real):
+    nota = "Guantes de látex/quirúrgicos: registro ISP + conformidad por lote (DE 342/2004)"
+    assert nota in real.alertas("GUANTE DE PROCEDIMIENTO NITRILO TALLA S", "GUANTE DE PROCEDIMIENTO LATEX TALLA S")
+    assert nota in real.alertas("Guante nitrilo s/polvo talla M", "Guante látex talla M")
+    assert nota in real.alertas("Guante vinilo talla S", "Guante quirúrgico estéril Nº 7")
+    assert nota in real.alertas("CONVENIO SUMINISTRO Nº 45/2026 GUANTES DE LÁTEX Y NITRILO")
+    assert nota in real.alertas("Guante nitrilo sin polvo, guante látex talla M")
+
+
+@pytest.mark.parametrize("nombre,items", [
+    ("Adquisición de alcohol gel y toallas de papel para CESFAM",
+     ["Alcohol gel 70% bidón 5 litros", "Toalla interfoliada 250 hojas, caja 20 paquetes"]),
+    ("Adquisición de artículos de aseo", ["Alcohol gel 1 litro", "Toalla interfoliada", "Lustramuebles"]),
+    ("Adquisición de insumos de aseo", ["Jabón líquido y papel higiénico"]),
+])
+def test_real_solo_regulados_no_oculta_productos_no_regulados(real, nombre, items):
+    r = real.evaluar(nombre=nombre, items=items)
+    assert r.coincide and not r.solo_regulados
+
+
+def test_real_exclusion_de_contexto_no_borra_linea_con_producto(real):
+    r = real.evaluar(nombre="Adquisición de insumos clínicos para Posta Rural Quilaco",
+                     items=["Jeringa desechable 3 ml para administración de medicamentos"])
+    assert r.coincide
+    r = real.evaluar_item("Jeringas", None, None, "Jeringa 3 ml c/aguja 21G, para administración de medicamentos")
+    assert r.coincide
+
+
+def test_real_soldadura_estrella_en_bolsas_no_excluye(real):
+    assert real.evaluar(nombre="Adquisición de bolsas de basura 80x110 con soldadura estrella").coincide
+    assert real.evaluar_item("Bolsas de basura", None, None, "BOLSA NEGRA 80X110 SOLDADURA ESTRELLA").coincide
+    assert not real.evaluar(nombre="Guantes de soldadura para taller municipal").coincide

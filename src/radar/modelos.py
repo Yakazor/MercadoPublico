@@ -152,7 +152,22 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
         # excluye en consultoría, no en aseo).
         if por_nombre.coincide and por_nombre.rubro not in evaluados[0][1].excluidos:
             evaluados = [(evaluados[0][0], por_nombre)]
+    # Servicios: "Servicios de consultoría de gestión" + "según términos de referencia"
+    # en una OC "Consultoría en gestión estratégica" toma el rubro del nombre (también
+    # con varios ítems: un "Servicio de catering" no es un producto compatible).
+    if nombre_oc:
+        evaluados = [
+            (item, _respaldo_servicio(filtro, nombre_oc, item, r)) if not r.coincide else (item, r)
+            for item, r in evaluados
+        ]
     return [(item, r) for item, r in evaluados if r.coincide]
+
+
+def _respaldo_servicio(filtro, nombre_oc: str, item: dict, resultado):
+    por_servicio = filtro.respaldo_servicio(nombre_oc, item.get("Producto"), item.get("EspecificacionComprador"))
+    if por_servicio.coincide and por_servicio.rubro not in resultado.excluidos:
+        return por_servicio
+    return resultado
 
 
 _CAMPOS_ITEM_OC = ("Correlativo", "Producto", "Categoria", "EspecificacionComprador",
@@ -203,7 +218,9 @@ def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
     items = (detalle.get("Items") or {}).get("Listado") or []
     filas = []
     for item, resultado in clasificar_items_oc(detalle.get("Nombre"), items, filtro):
-        alertas = filtro.alertas(*textos_alerta_item_oc(item))
+        # Un ítem es un solo producto: sus textos se revisan juntos ("Guante nitrilo" +
+        # "libre de polvo, látex").
+        alertas = filtro.alertas(" ".join(textos_alerta_item_oc(item)))
         cantidad = _numero(item.get("Cantidad"))
         precio = _numero(item.get("PrecioNeto"))
         total = _numero(item.get("Total"))

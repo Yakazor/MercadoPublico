@@ -318,3 +318,20 @@ def test_exclusion_de_otro_rubro_no_bloquea_el_respaldo_por_nombre():
           "Items": {"Listado": [{"Correlativo": 1, "Producto": "Bolsas plásticas", "PrecioNeto": 100,
                                  "EspecificacionComprador": "Bolsa negra 80x110 biodegradable, de bajo impacto ambiental"}]}}
     assert filas_orden_compra(oc, filtro)[0]["rubro"] == "insumos_medicos_aseo"
+
+
+def test_consultoria_generica_con_especificacion_de_tramite_usa_el_nombre():
+    """Revisión: OC de consultoría con el producto ONU genérico y 'según TDR'."""
+    filtro = FiltroRubros.desde_config(cargar_config())
+    for especificacion in (None, "Según términos de referencia", "Servicio de consultoría según propuesta técnica"):
+        oc = {"Codigo": "OC", "Nombre": "Consultoría en gestión estratégica y tablero de indicadores", "TipoMoneda": "CLP",
+              "Items": {"Listado": [{"Correlativo": 1, "Producto": "Servicios de consultoría de gestión",
+                                     "EspecificacionComprador": especificacion, "PrecioNeto": 8500000}]}}
+        assert [f["rubro"] for f in filas_orden_compra(oc, filtro)] == ["consultoria_gestion_bi"], especificacion
+    oc = {"Codigo": "OC", "Nombre": "Consultoría Power BI para DAF", "TipoMoneda": "CLP", "Items": {"Listado": [
+        {"Correlativo": 1, "Producto": "Licencia Power BI Pro", "PrecioNeto": 1},
+        {"Correlativo": 2, "Producto": "Servicios de apoyo gerencial", "EspecificacionComprador": "Según cotización N° 123",
+         "PrecioNeto": 4500000},
+        {"Correlativo": 3, "Producto": "Servicios de catering", "EspecificacionComprador": "Según cotización", "PrecioNeto": 1},
+    ]}}
+    assert [f["correlativo"] for f in filas_orden_compra(oc, filtro)] == [1, 2]

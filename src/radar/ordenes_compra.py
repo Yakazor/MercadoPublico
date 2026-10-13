@@ -139,7 +139,7 @@ def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int, i
                     db.con.execute("DELETE FROM ordenes_compra_items WHERE rowid = ?", [item["rowid"]])
                     eliminados += 1
                     continue
-                alertas = filtro.alertas(*textos_alerta_item_oc(item))
+                alertas = filtro.alertas(" ".join(textos_alerta_item_oc(item)))
                 db.con.execute(
                     "UPDATE ordenes_compra_items SET rubro = ?, rubro_nombre = ?, palabras_detectadas = ?, "
                     "alertas_regulatorias = ? WHERE rowid = ?",

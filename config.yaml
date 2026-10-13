@@ -154,7 +154,6 @@ rubros:
       # EPP industrial y agua potable: nunca son insumo médico, aunque digan "guantes"/"cloro"
       - soldador
       - soldar
-      - soldadura
       - tacticos
       - motorista
       - anticorte
@@ -201,11 +200,17 @@ rubros:
       - resonancia magnetica
       - jeringa inyectora
       - formalina
-    claves_genericas_en_especialidad:
+    # Claves que nombran un tipo de producto sin decir cuál (puede ser regulado o
+    # no): en especialidades no bastan, y para "solo regulados" mandan las líneas.
+    claves_genericas:
       - insumos medicos
       - guantes
       - jeringas
+      - mascarillas
+      - cloro
     excluir_en_nombre_salvo_clave_especifica:
+      # EPP de soldadura ("bolsas con soldadura estrella" sí se revisan)
+      - soldadura
       # Cloro para tratamiento de agua o de laboratorio (no es producto de aseo)
       - tratamiento de agua
       - planta de tratamiento
