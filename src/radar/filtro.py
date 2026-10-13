@@ -104,6 +104,8 @@ class Rubro:
     debiles: re.Pattern | None = None              # claves que solas no bastan fuera del nombre
     no_rescatan: re.Pattern | None = None          # claves genéricas que no anulan una exclusión
     amplias: re.Pattern | None = None              # claves de categoría ("insumos médicos")
+    especialidades: re.Pattern | None = None       # "angiografía": deciden los ítems
+    genericas_especialidad: re.Pattern | None = None  # claves del nombre que ahí no bastan
     detectar_en_descripcion: bool = True
     usar_clasificacion_onu: bool = True            # categoría / producto ONU de Mercado Público
     # Ítems de OC: productos ONU genéricos que no cuentan como clave, y productos a
@@ -139,7 +141,8 @@ class Rubro:
 
     def _tramos_excluidos(self, texto_norm: str) -> list[tuple[int, int]]:
         return [(m.start(), m.end())
-                for p in (self.excluir, self.excluir_salvo_clave, self.excluir_salvo_especifica)
+                for p in (self.excluir, self.excluir_salvo_clave, self.excluir_salvo_especifica,
+                          self.especialidades)
                 if p is not None for m in p.finditer(texto_norm)]
 
     def claves(self, texto_norm: str, es_nombre: bool = False) -> set[str]:
@@ -183,6 +186,10 @@ class Rubro:
     def tiene_candidata(self, nombre_norm: str) -> bool:
         return self.candidatas is not None and bool(
             self.candidatas.search(self.base(nombre_norm, es_nombre=True)))
+
+    def es_especialidad(self, nombre_norm: str) -> bool:
+        return self.especialidades is not None and bool(
+            self.especialidades.search(self.base(nombre_norm, es_nombre=True)))
 
     def rescatan(self, claves: set[str]) -> set[str]:
         """Claves que no son genéricas (`no_rescatan`)."""
@@ -276,6 +283,8 @@ class FiltroRubros:
                 debiles=_patron(debiles),
                 no_rescatan=_patron(datos.get("no_rescatan") or []),
                 amplias=_patron(datos.get("palabras_amplias") or []),
+                especialidades=_patron(datos.get("especialidades") or []),
+                genericas_especialidad=_patron(datos.get("claves_genericas_en_especialidad") or []),
                 detectar_en_descripcion=bool(datos.get("detectar_en_descripcion", True)),
                 usar_clasificacion_onu=bool(datos.get("usar_clasificacion_onu", True)),
                 productos_genericos=_patron(datos.get("productos_genericos") or []),
@@ -327,9 +336,16 @@ class FiltroRubros:
             # salvo que el nombre traiga una clave específica ("Jeringas").
             if items_excluidos and not rubro.rescatan(en_nombre):
                 continue
+            # "Insumos médicos para angiografía": deciden los ítems escritos por el
+            # comprador; no cuentan las claves genéricas del nombre, la descripción
+            # ni la clasificación ONU.
+            especialidad = rubro.es_especialidad(nombre_norm)
+            if especialidad and rubro.genericas_especialidad is not None:
+                en_nombre = {c for c in en_nombre if not rubro.genericas_especialidad.fullmatch(c)}
+            usa_onu = rubro.usar_clasificacion_onu and not especialidad
             fuertes = (en_nombre | en_items
-                       | (rubro.sin_debiles_solas(rubro.claves(onu)) if rubro.usar_clasificacion_onu else set()))
-            en_descripcion = rubro.claves(libre)
+                       | (rubro.sin_debiles_solas(rubro.claves(onu)) if usa_onu else set()))
+            en_descripcion = set() if especialidad else rubro.claves(libre)
             # Descripción: siempre si el rubro lo permite; si no, solo cuando el nombre
             # ya era candidato ("Consultoría…") y la descripción trae 2+ claves distintas.
             descripcion_cuenta = rubro.detectar_en_descripcion or (

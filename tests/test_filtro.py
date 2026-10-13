@@ -493,3 +493,39 @@ def test_real_respaldo_por_nombre_ignora_unidades_de_bi(real):
     assert not r.coincide  # "artículos de aseo" es amplia
     r = real.respaldo_por_nombre("Toallas de papel para Depto. de Planificación Estratégica y Control de Gestión")
     assert r.rubro == "insumos_medicos_aseo"
+
+
+@pytest.mark.parametrize("nombre", [
+    "ADQUISICIÓN DE INSUMOS MÉDICOS PARA ANGIOGRAFÍA Y HEMODINAMIA",
+    "ADQUISICIÓN DE INSUMOS MÉDICOS PARA LOS SERVICIOS DE TRAUMATOLOGÍA Y CARDIOCIRUGÍA",
+    "Adquisición de Insumos Médicos para Cirugía Robótica por Sistema de Suministro",
+    "CONVENIO SUMINISTRO INSUMOS MEDICOS VARIOS PARA DIALISIS HOSPITAL VILLARRICA",
+    "CONVENIO SUMINISTRO INSUMOS MEDICOS PARA OFTALMOLOGIA HOSPITAL VILLARRICA",
+    "CONVENIO SUMINISTRO INSUMOS MEDICOS FORMALINA PARA EL HOSPITAL VILLARRICA",
+    "BMC ADQ JERINGA INYECTORA PARA RESONADOR MAGNETICO",
+    "221 - ADQUISICIÓN DE MASCARILLAS NEBULIZADOR APARATO DE FISIOTERAPIA Y AEROCÁMARA",
+    "CAPS ADQ. DE MASCARILLA ANESTESIA Y OTROS INSUMOS",
+])
+def test_real_especialidades_clinicas_no_son_reventa(real, nombre):
+    """Corrida real del 12-10-2026: dispositivos de especialidad, no productos de reventa."""
+    assert not real.evaluar("Adquisición de insumos médicos según bases", nombre=nombre,
+                            items=["Catéter angiográfico 5F", "Introductor valvulado"],
+                            items_onu=["Jeringas", "Equipos médicos"]).coincide
+
+
+def test_real_especialidad_con_lineas_de_reventa_se_detecta(real):
+    r = real.evaluar(nombre="ADQUISICIÓN DE INSUMOS MÉDICOS PARA ANGIOGRAFÍA Y HEMODINAMIA",
+                     items=["Catéter angiográfico 5F", "Guante de procedimiento nitrilo talla M", "Gasa 10x10"])
+    assert r.rubro == "insumos_medicos_aseo" and "insumos medicos" not in r.palabras
+    assert not real.evaluar(nombre="Jeringas para resonador", items=["Jeringa inyectora 200 ml"]).coincide
+
+
+@pytest.mark.parametrize("nombre", [
+    "Guantes y gasas para unidad de diálisis",
+    "INSUMOS MEDICOS MES DE OCTUBRE PARA DEPTO DE SALUD",
+    "Compra Insumos Clínicos – Clínicas Odontológicas: guantes nitrilo y jabón líquido",
+    "CONVENIO DE SUMINISTRO DE GASAS GUANTES JERINGAS MASCARILLAS SUTURAS Y OTROS INSUMOS",
+    "Mascarillas de 3 pliegues y mascarillas N95",
+])
+def test_real_insumos_de_reventa_se_conservan(real, nombre):
+    assert real.evaluar(nombre=nombre).rubro == "insumos_medicos_aseo"

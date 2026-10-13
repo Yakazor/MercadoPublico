@@ -139,9 +139,15 @@ palabra completa ("aseo" no coincide con "paseo").
 - `excluir_en_nombre`: descarta siempre (ej. "servicio de aseo", "inspección fiscal").
 - `excluir_en_nombre_salvo_clave`: descarta salvo que el nombre traiga otra palabra
   clave: "Compra de sondas" se descarta, "Gasas, guantes y sondas" no.
-- `no_rescatan`: claves genéricas ("guantes", "cloro") que no anulan esa
-  exclusión: "EPP: guantes y lentes" se descarta, "EPP: guantes de nitrilo y
-  mascarillas" no. Las exclusiones también se revisan en cada ítem: si todos los
+- **Criterio de reventa** (insumos y aseo): el radar busca productos que puedas
+  comprar y revender tal cual. `especialidades` (angiografía, diálisis,
+  traumatología…) marca licitaciones que suelen pedir dispositivos técnicos o de
+  marca: ahí "insumos médicos" en el nombre no basta y deciden los ítems (una
+  línea de guantes o gasas sí cuenta). Los productos con registro ISP no se
+  excluyen: quedan marcados (ver Alertas regulatorias).
+- `no_rescatan`: claves genéricas ("guantes", "cloro") que no anulan una
+  exclusión de `excluir_en_nombre_salvo_clave_especifica` (EPP, agua): "EPP:
+  guantes y lentes" se descarta, "EPP: guantes de nitrilo y mascarillas" no. Las exclusiones también se revisan en cada ítem: si todos los
   ítems están excluidos ("Guante cabritilla soldador"), un nombre genérico como
   "Guantes" se descarta.
 - `ignorar`: nombres de unidades compradoras ("Dirección de Obras Municipales")

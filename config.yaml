@@ -176,6 +176,35 @@ rubros:
     no_rescatan:
       - guantes
       - cloro
+    # Especialidades clínicas: suelen comprar dispositivos técnicos o de marca, no
+    # productos de reventa. Si el nombre las menciona, sus claves genéricas
+    # ("Insumos médicos para angiografía") no bastan: deciden los ítems (una línea
+    # de guantes o gasas sí cuenta). Una clave dentro de la frase ("jeringa
+    # inyectora") nunca cuenta.
+    especialidades:
+      - angiografia
+      - hemodinamia
+      - traumatologia
+      - cardiocirugia
+      - cirugia cardiaca
+      - cirugia robotica
+      - laparoscopia
+      - dialisis
+      - hemodialisis
+      - oftalmologia
+      - neurocirugia
+      - vascular
+      - urologia
+      - endoscopia
+      - radiologia
+      - resonador
+      - resonancia magnetica
+      - jeringa inyectora
+      - formalina
+    claves_genericas_en_especialidad:
+      - insumos medicos
+      - guantes
+      - jeringas
     excluir_en_nombre_salvo_clave_especifica:
       # Cloro para tratamiento de agua o de laboratorio (no es producto de aseo)
       - tratamiento de agua
@@ -201,7 +230,13 @@ rubros:
       # Recolección de basura (servicio), salvo que se compren bolsas, etc.
       - recoleccion
       - residuos
+      # Mascarillas que son dispositivos de terapia, no insumo de reventa
       - mascarillas laringeas
+      - mascarillas de nebulizacion
+      - mascarillas nebulizador
+      - mascarillas de anestesia
+      - mascarillas anestesia
+      - aerocamara
       # Insumos clínicos especializados (normalmente dispositivos regulados).
       - cateteres
       - sondas
