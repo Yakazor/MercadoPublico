@@ -24,12 +24,14 @@ class ErrorApi(Exception):
     """Error de la API.
 
     `temporal=True`: se agotaron los reintentos (5xx, 429, red, respuesta sin JSON);
-    puede funcionar más tarde. `temporal=False`: error definitivo (código inválido,
-    ticket rechazado): reintentar no sirve."""
+    puede funcionar más tarde. `temporal=False`: error definitivo (p. ej. código
+    inválido): reintentar no sirve. `fatal=True`: afecta a toda la ejecución (ticket
+    rechazado, HTTP 401/403): hay que detenerse sin marcar nada como procesado."""
 
-    def __init__(self, mensaje: str, temporal: bool = False):
+    def __init__(self, mensaje: str, temporal: bool = False, fatal: bool = False):
         super().__init__(mensaje)
         self.temporal = temporal
+        self.fatal = fatal
 
 
 class ClienteMercadoPublico:
@@ -96,15 +98,17 @@ class ClienteMercadoPublico:
                     motivo = f"HTTP {resp.status_code} sin JSON válido"
                 elif resp.ok and not _es_error_temporal(datos):
                     if "Listado" not in datos and "Mensaje" in datos:
-                        raise ErrorApi(f"{recurso} {visible}: {datos.get('Mensaje')}")
+                        mensaje = str(datos.get("Mensaje"))
+                        raise ErrorApi(f"{recurso} {visible}: {mensaje}", fatal=_es_fatal(resp.status_code, mensaje))
                     return datos
                 elif resp.status_code < 500 and resp.status_code != 429 and not _es_error_temporal(datos):
-                    raise ErrorApi(
-                        f"{recurso} {visible}: HTTP {resp.status_code} - {_mensaje(datos, resp)}"
-                    )
+                    mensaje = _mensaje(datos, resp)
+                    raise ErrorApi(f"{recurso} {visible}: HTTP {resp.status_code} - {mensaje}",
+                                   fatal=_es_fatal(resp.status_code, mensaje))
                 else:
                     motivo = f"HTTP {resp.status_code} - {_mensaje(datos, resp)}"
-            except (requests.ConnectionError, requests.Timeout) as e:
+            except requests.RequestException as e:
+                # Red, timeout o conexión cortada a mitad de la respuesta.
                 self._ultima_llamada = time.monotonic()
                 motivo = f"error de red: {e.__class__.__name__}"
 
@@ -128,6 +132,11 @@ def _mensaje(datos, resp: requests.Response) -> str:
     if isinstance(datos, dict) and datos.get("Mensaje"):
         return str(datos["Mensaje"])
     return resp.text[:200]
+
+
+def _es_fatal(status: int, mensaje: str) -> bool:
+    """Ticket inválido o acceso denegado: ninguna otra llamada va a funcionar."""
+    return status in (401, 403) or "ticket" in mensaje.lower()
 
 
 def _es_error_temporal(datos) -> bool:

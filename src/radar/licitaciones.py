@@ -70,6 +70,8 @@ def radar_licitaciones(
         try:
             det = detalle(cliente, codigo)
         except ErrorApi as e:
+            if e.fatal:
+                raise
             log.error("Sin detalle para %s: %s", codigo, e)
             resultado.fallidas.add(codigo)
             continue

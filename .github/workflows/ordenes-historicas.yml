@@ -93,9 +93,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          principal=$(gh api "repos/${{ github.repository }}" --jq .default_branch)
-          actual=$(git ls-remote origin "refs/heads/${GITHUB_REF_NAME}" | cut -f1)
-          if [ "$GITHUB_REF_NAME" != "$principal" ]; then
+          # Si GitHub no responde, la corrida sigue, pero sin guardar la base.
+          principal=$(gh api "repos/${{ github.repository }}" --jq .default_branch) || principal=""
+          actual=$(git ls-remote origin "refs/heads/${GITHUB_REF_NAME}" | cut -f1) || actual=""
+          if [ -z "$principal" ] || [ -z "$actual" ]; then
+            echo "es_actual=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::No se pudo consultar la rama en GitHub; esta corrida no guardará la base."
+          elif [ "$GITHUB_REF_NAME" != "$principal" ]; then
             echo "es_actual=false" >> "$GITHUB_OUTPUT"
             echo "::warning::Rama '$GITHUB_REF_NAME' no es la principal ('$principal'): la base no se guardará."
           elif [ "$actual" = "$GITHUB_SHA" ]; then

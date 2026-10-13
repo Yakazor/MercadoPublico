@@ -73,6 +73,8 @@ def procesar_dia(
         try:
             det = (cliente.ordenes_de_compra(codigo=codigo).get("Listado") or [None])[0]
         except ErrorApi as e:
+            if e.fatal:
+                raise
             if not e.temporal:
                 # Definitivo (p. ej. código inválido): reintentar no sirve.
                 log.warning("OC %s descartada por error definitivo de la API: %s", codigo, e)

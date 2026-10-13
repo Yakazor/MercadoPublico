@@ -194,3 +194,26 @@ def test_dias_pendientes(tmp_path):
     db.registrar_intento_fallido(date(2026, 9, 6), ["Y"])
     db.marcar_dia_oc(date(2026, 9, 6))
     assert db.dias_pendientes() == [date(2026, 9, 5)]
+
+
+def test_ticket_rechazado_detiene_el_dia(tmp_path):
+    import pytest
+
+    class TicketInvalido(ClienteFalso):
+        def ordenes_de_compra(self, fecha=None, estado=None, codigo=None):
+            if codigo is not None:
+                raise ErrorApi("Ticket no válido.", fatal=True)
+            return super().ordenes_de_compra(fecha, estado, codigo)
+
+    db = BaseDatos(tmp_path / "r.db")
+    with pytest.raises(ErrorApi):
+        procesar_dia(TicketInvalido([{"Codigo": "A", "Nombre": "Compra de guantes A"}], {}), FILTRO, db,
+                     date(2026, 10, 5))
+    assert not db.dia_oc_procesado(date(2026, 10, 5))
+
+
+def test_dia_sin_tiempo_queda_pendiente_sin_contar_intento(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    db.registrar_pendiente(date(2026, 9, 5))
+    assert db.dias_pendientes() == [date(2026, 9, 5)]
+    assert db.registrar_intento_fallido(date(2026, 9, 5), ["X"]) == 1

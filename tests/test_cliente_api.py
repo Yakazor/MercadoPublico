@@ -49,7 +49,7 @@ def test_error_definitivo_no_reintenta_ni_expone_ticket():
     with pytest.raises(ErrorApi) as e:
         c.licitaciones(codigo="X")
     assert "Ticket no válido" in str(e.value) and "SECRETO" not in str(e.value)
-    assert not e.value.temporal
+    assert not e.value.temporal and e.value.fatal
     assert len(c._sesion.llamadas) == 1
 
 
@@ -70,3 +70,25 @@ def test_respuesta_200_sin_json_persistente_es_error_api():
     c = _cliente([Resp(200, None)] * 3, reintentos=2)
     with pytest.raises(ErrorApi, match="sin JSON"):
         c.licitaciones(codigo="X")
+
+
+def test_codigo_invalido_no_es_fatal():
+    c = _cliente([Resp(400, {"Codigo": 400, "Mensaje": "Código no válido."})])
+    with pytest.raises(ErrorApi) as e:
+        c.licitaciones(codigo="X")
+    assert not e.value.temporal and not e.value.fatal
+
+
+def test_conexion_cortada_a_mitad_de_respuesta_se_reintenta():
+    import requests
+
+    class Cortada(Sesion):
+        def get(self, url, params, timeout):
+            self.llamadas.append(params)
+            if len(self.llamadas) == 1:
+                raise requests.exceptions.ChunkedEncodingError("IncompleteRead")
+            return Resp(200, {"Cantidad": 0, "Listado": []})
+
+    c = ClienteMercadoPublico("SECRETO", pausa=0, reintentos=2)
+    c._sesion = Cortada([])
+    assert c.ordenes_de_compra(codigo="X") == {"Cantidad": 0, "Listado": []}

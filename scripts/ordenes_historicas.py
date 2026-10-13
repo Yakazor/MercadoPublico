@@ -83,11 +83,16 @@ def main():
                 logging.info("%s ya procesado, se omite", fecha)
                 continue
             if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
+                db.registrar_pendiente(fecha)
                 pendientes.append(str(fecha))
                 continue
             try:
                 r = procesar_dia(cliente, filtro, db, fecha, args.estado, hasta_monotonic)
             except ErrorApi as e:
+                if e.fatal:
+                    # Ticket rechazado: nada funcionará; no se marca ni se cuenta ningún día.
+                    logging.error("Error de la API que detiene la ejecución: %s", e)
+                    raise SystemExit(1)
                 intentos = db.registrar_intento_fallido(fecha, ["(listado del día)"])
                 if intentos >= MAX_INTENTOS:
                     db.marcar_dia_oc(fecha)
@@ -104,6 +109,7 @@ def main():
                 db.marcar_dia_oc(fecha)
                 logging.info("%s: %d ítems de %d OC guardados", fecha, r.items, r.ordenes)
             elif r.interrumpido:
+                db.registrar_pendiente(fecha)
                 pendientes.append(str(fecha))
             else:
                 intentos = db.registrar_intento_fallido(fecha, r.fallidas)

@@ -21,6 +21,14 @@ def _fmt_monto(v, moneda=None):
     return f"{texto} {moneda}"
 
 
+def _total_por_moneda(g: pd.DataFrame) -> str:
+    """"$10.000.000 + 1.500 UF": no se suman pesos con UF o dólares."""
+    moneda = g["moneda"].fillna("CLP") if "moneda" in g else pd.Series("CLP", index=g.index)
+    totales = g["monto_estimado"].groupby(moneda).sum(min_count=1).dropna()
+    orden = sorted(totales.index, key=lambda m: (m != "CLP", m))
+    return " + ".join(_fmt_monto(totales[m], m) for m in orden)
+
+
 def _fmt_dias(v):
     return "?" if pd.isna(v) else str(int(v))
 
@@ -58,7 +66,7 @@ def main():
     print("| Rubro | Licitaciones | Monto estimado visible |")
     print("|---|---:|---:|")
     for rubro, g in df.groupby("rubro_nombre"):
-        print(f"| {rubro} | {len(g)} | {_fmt_monto(g['monto_estimado'].sum(min_count=1))} |")
+        print(f"| {rubro} | {len(g)} | {_total_por_moneda(g)} |")
 
     print("\n### Cierran en los próximos 7 días\n")
     pronto = df[(df["dias_restantes"] >= 0) & (df["dias_restantes"] <= 7)].sort_values("dias_restantes")

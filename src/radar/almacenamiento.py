@@ -223,6 +223,13 @@ class BaseDatos:
                                 [fecha.isoformat()]).fetchone()
         return n
 
+    def registrar_pendiente(self, fecha: date) -> None:
+        """Día que quedó a medias por tiempo: se reintenta aunque salga de la ventana
+        (no cuenta como intento fallido)."""
+        with self.con:
+            self.con.execute("INSERT OR IGNORE INTO ordenes_compra_intentos (fecha, intentos, pendientes) "
+                             "VALUES (?, 0, '(sin tiempo)')", [fecha.isoformat()])
+
     def dias_pendientes(self) -> list[date]:
         """Días con intentos fallidos que aún no se marcan como procesados."""
         filas = self.con.execute(
