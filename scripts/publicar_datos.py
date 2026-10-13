@@ -22,7 +22,7 @@ from radar.config import cargar_config, hoy_chile, ruta_proyecto
 from radar.ordenes_compra import resumen_precios
 
 COLUMNAS_LICITACIONES = [
-    "codigo", "nombre", "organismo", "region", "comuna", "monto_estimado", "moneda", "tipo",
+    "codigo", "nombre", "organismo", "region", "comuna", "monto_estimado", "moneda", "tipo", "rubro",
     "fecha_publicacion", "fecha_cierre", "dias_restantes", "estado", "rubro_nombre",
     "palabras_detectadas", "alertas_regulatorias", "solo_regulados", "url", "primera_deteccion",
 ]
@@ -50,6 +50,7 @@ def main():
         db.cerrar()
 
     precios = precios.sort_values("monto_total", ascending=False).head(MAX_PRECIOS)
+    precios.insert(0, "id", range(1, len(precios) + 1))  # clave estable de cada fila para el dashboard
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
     meta = {

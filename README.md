@@ -174,11 +174,15 @@ Solo se guardan los ítems de tus rubros, así el catering, los pasajes o un
 monitor de una OC de "insumos clínicos" no entran al cálculo de precios.
 
 La base guarda además el detalle compacto de cada OC revisada (tabla
-`ordenes_compra_detalle`). Si cambias `config.yaml`, la siguiente ejecución
-reclasifica todo sin llamar a la API: agrega los ítems que ahora calzan y quita
-los que ya no. Las OC descargadas antes de esta mejora (sin detalle guardado)
-solo pueden quitarse; para recuperarlas, vuelve a procesar esos días con
-`--reprocesar`.
+`ordenes_compra_detalle`) y, por 90 días, el listado de códigos y nombres de cada
+día. Si cambias `config.yaml`:
+- la siguiente ejecución (radar u OC) reclasifica lo guardado sin llamar a la
+  API: agrega los ítems que ahora calzan y quita los que ya no;
+- la siguiente ejecución de OC descarga solo las OC de los últimos 90 días cuyo
+  nombre ahora calza (p. ej. tras agregar "escobas") y que nunca se pidieron.
+
+Para días más antiguos, o descargados antes de esta mejora, vuelve a
+procesarlos con `--reprocesar`.
 
 ## Alertas regulatorias (ISP)
 

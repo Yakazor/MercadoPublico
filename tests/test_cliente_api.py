@@ -92,3 +92,10 @@ def test_conexion_cortada_a_mitad_de_respuesta_se_reintenta():
     c = ClienteMercadoPublico("SECRETO", pausa=0, reintentos=2)
     c._sesion = Cortada([])
     assert c.ordenes_de_compra(codigo="X") == {"Cantidad": 0, "Listado": []}
+
+
+def test_ticket_rechazado_con_http_500_es_fatal_sin_reintentar():
+    c = _cliente([Resp(500, {"Codigo": 203, "Mensaje": "Ticket no válido."})])
+    with pytest.raises(ErrorApi) as e:
+        c.ordenes_de_compra(fecha="01102026")
+    assert e.value.fatal and len(c._sesion.llamadas) == 1

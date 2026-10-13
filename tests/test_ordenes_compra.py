@@ -35,7 +35,8 @@ from datetime import date
 from radar.almacenamiento import BaseDatos
 from radar.cliente_api import ErrorApi
 from radar.filtro import FiltroRubros
-from radar.ordenes_compra import COLUMNAS_RESUMEN, procesar_dia, reclasificar_items
+from radar.ordenes_compra import (COLUMNAS_RESUMEN, candidatas_sin_detalle, completar_candidatas,
+                                  procesar_dia, reclasificar_items)
 
 FILTRO = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "cloro"],
                                 "excluir_en_nombre_salvo_clave": ["sonda"]}})
@@ -217,3 +218,25 @@ def test_dia_sin_tiempo_queda_pendiente_sin_contar_intento(tmp_path):
     db.registrar_pendiente(date(2026, 9, 5))
     assert db.dias_pendientes() == [date(2026, 9, 5)]
     assert db.registrar_intento_fallido(date(2026, 9, 5), ["X"]) == 1
+
+
+def test_config_nueva_recupera_oc_que_no_eran_candidatas(tmp_path):
+    """El listado del día queda guardado: al agregar 'escobas', se piden solo esas OC."""
+    db = BaseDatos(tmp_path / "r.db")
+    listado = [{"Codigo": "A", "Nombre": "Compra de guantes"}, {"Codigo": "E", "Nombre": "Compra de escobas"}]
+    detalles = {"A": _oc("A", "Guantes"), "E": _oc("E", "Escobas") | {"Nombre": "Compra de escobas"}}
+    procesar_dia(ClienteFalso(listado, detalles), FILTRO, db, date(2026, 10, 5))
+    db.marcar_dia_oc(date(2026, 10, 5))
+    assert list(db.items_oc()["producto"]) == ["Guantes"]
+    amplio = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "escobas"]}})
+    assert candidatas_sin_detalle(db, amplio) == [(date(2026, 10, 5), "E")]
+    assert completar_candidatas(ClienteFalso(listado, detalles), amplio, db) == (1, 0)
+    assert sorted(db.items_oc()["producto"]) == ["Escobas", "Guantes"]
+    assert candidatas_sin_detalle(db, amplio) == []
+
+
+def test_listados_de_oc_se_conservan_90_dias(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    db.guardar_listado_oc(date(2026, 6, 1), [{"Codigo": "X", "Nombre": "n"}])
+    db.guardar_listado_oc(date(2026, 10, 5), [{"Codigo": "Y", "Nombre": "n"}])
+    assert [f for f, _ in db.listados_oc()] == [date(2026, 10, 5)]

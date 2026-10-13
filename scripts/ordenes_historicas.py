@@ -17,7 +17,7 @@ from radar.almacenamiento import BaseDatos, exportar
 from radar.cliente_api import ClienteMercadoPublico, ErrorApi
 from radar.config import cargar_config, hoy_chile, obtener_ticket, ruta_proyecto
 from radar.filtro import FiltroRubros
-from radar.ordenes_compra import dias, procesar_dia, reclasificar_items, resumen_precios
+from radar.ordenes_compra import completar_candidatas, dias, procesar_dia, reclasificar_items, resumen_precios
 
 
 MAX_INTENTOS = 3  # tras 3 ejecuciones con OC que fallan, el día se da por cerrado
@@ -72,13 +72,24 @@ def main():
                          agregados, eliminados, actualizados)
 
         hasta_monotonic = inicio + args.max_minutos * 60 if args.max_minutos else None
+        try:
+            # A lo más un tercio del tiempo: los días nuevos no deben quedar sin procesar.
+            tope = inicio + args.max_minutos * 20 if args.max_minutos else None
+            nuevas, sin_tiempo = completar_candidatas(cliente, filtro, db, tope)
+        except ErrorApi as e:
+            logging.error("Error de la API que detiene la ejecución: %s", e)
+            raise SystemExit(1)
+        if nuevas or sin_tiempo:
+            logging.info("OC que ahora son candidatas (config nueva): %d descargadas, %d quedan para "
+                         "la próxima ejecución", nuevas, sin_tiempo)
         # Días con fallas de ejecuciones anteriores se reintentan aunque ya hayan
-        # quedado fuera de la ventana (--dias), hasta MAX_INTENTOS.
+        # quedado fuera de la ventana (--dias), hasta MAX_INTENTOS. Van después de la
+        # ventana pedida: un atraso largo no deja sin actualizar los días recientes.
         anteriores = [d for d in db.dias_pendientes() if d < desde]
         if anteriores:
-            logging.info("Reintentando días pendientes de ejecuciones anteriores: %s",
+            logging.info("Días pendientes de ejecuciones anteriores (después de la ventana): %s",
                          ", ".join(map(str, anteriores)))
-        for fecha in [*anteriores, *dias(desde, hasta)]:
+        for fecha in [*dias(desde, hasta), *anteriores]:
             if not args.reprocesar and db.dia_oc_procesado(fecha):
                 logging.info("%s ya procesado, se omite", fecha)
                 continue

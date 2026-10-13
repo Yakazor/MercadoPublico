@@ -51,6 +51,7 @@ def procesar_dia(
     detalle de una OC quedan en `fallidas` y, si se acaba el tiempo
     (`hasta_monotonic`), `interrumpido`: en ambos casos el día no está completo."""
     listado = cliente.ordenes_de_compra(fecha=fecha.strftime("%d%m%Y"), estado=estado).get("Listado") or []
+    db.guardar_listado_oc(fecha, listado)
     candidatas = [oc for oc in listado if filtro.es_candidata(oc.get("Nombre"))]
     log.info("%s: %d OC, %d candidatas por nombre", fecha, len(listado), len(candidatas))
 
@@ -93,6 +94,37 @@ def procesar_dia(
             resultado.items += len(filas)
             resultado.ordenes += 1
     return resultado
+
+
+def candidatas_sin_detalle(db: BaseDatos, filtro: FiltroRubros) -> list[tuple[date, str]]:
+    """OC de días ya procesados que con la config actual son candidatas por nombre
+    pero nunca se descargaron (p. ej. tras agregar "escobas" a palabras_clave)."""
+    con_detalle = db.codigos_con_detalle()
+    return [(fecha, codigo) for fecha, pares in db.listados_oc() if db.dia_oc_procesado(fecha)
+            for codigo, nombre in pares if codigo not in con_detalle and filtro.es_candidata(nombre)]
+
+
+def completar_candidatas(cliente: ClienteMercadoPublico, filtro: FiltroRubros, db: BaseDatos,
+                         hasta_monotonic: float | None = None) -> tuple[int, int]:
+    """Descarga solo las OC de `candidatas_sin_detalle`. Devuelve (descargadas,
+    pendientes). Las que fallan temporalmente se intentan en la próxima ejecución."""
+    faltan = candidatas_sin_detalle(db, filtro)
+    descargadas = 0
+    for i, (fecha, codigo) in enumerate(faltan):
+        if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
+            return descargadas, len(faltan) - i
+        try:
+            det = (cliente.ordenes_de_compra(codigo=codigo).get("Listado") or [None])[0]
+        except ErrorApi as e:
+            if e.fatal:
+                raise
+            if e.temporal:
+                continue
+            det = None  # definitivo: se guarda vacío para no pedirla de nuevo
+        db.guardar_oc(codigo, fecha, compactar_oc(det) if det else {"Codigo": codigo},
+                      filas_orden_compra(det, filtro) if det else [])
+        descargadas += 1
+    return descargadas, 0
 
 
 def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int, int]:

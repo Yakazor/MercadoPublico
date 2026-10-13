@@ -105,6 +105,10 @@ class ClienteMercadoPublico:
                     mensaje = _mensaje(datos, resp)
                     raise ErrorApi(f"{recurso} {visible}: HTTP {resp.status_code} - {mensaje}",
                                    fatal=_es_fatal(resp.status_code, mensaje))
+                elif isinstance(datos, dict) and "ticket" in str(datos.get("Mensaje", "")).lower():
+                    # Ticket rechazado aunque venga como 5xx: reintentar no sirve.
+                    raise ErrorApi(f"{recurso} {visible}: HTTP {resp.status_code} - {datos.get('Mensaje')}",
+                                   fatal=True)
                 else:
                     motivo = f"HTTP {resp.status_code} - {_mensaje(datos, resp)}"
             except requests.RequestException as e:

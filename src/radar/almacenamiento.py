@@ -75,6 +75,13 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_detalle (
     detalle   BLOB                   -- JSON comprimido (zlib)
 );
 
+-- Listado liviano (código y nombre) de las OC de cada día: si config.yaml agrega
+-- palabras clave, permite pedir solo las OC que ahora son candidatas.
+CREATE TABLE IF NOT EXISTS ordenes_compra_listados (
+    fecha   TEXT PRIMARY KEY,
+    listado BLOB                     -- JSON comprimido (zlib) de [[codigo, nombre], ...]
+);
+
 CREATE TABLE IF NOT EXISTS ordenes_compra_intentos (
     fecha     TEXT PRIMARY KEY,      -- días con OC cuyo detalle falló
     intentos  INTEGER,
@@ -179,6 +186,23 @@ class BaseDatos:
             )
             self._reemplazar_items(codigo_oc, filas)
         return len(filas)
+
+    def guardar_listado_oc(self, fecha: date, listado: list[dict], conservar_dias: int = 90) -> None:
+        """Guarda código y nombre de las OC del día y borra listados de más de
+        `conservar_dias` (para días más antiguos queda --reprocesar)."""
+        pares = [[oc.get("Codigo"), oc.get("Nombre")] for oc in listado if oc.get("Codigo")]
+        with self.con:
+            self.con.execute("INSERT OR REPLACE INTO ordenes_compra_listados VALUES (?, ?)",
+                             [fecha.isoformat(), zlib.compress(json.dumps(pares, ensure_ascii=False).encode())])
+            self.con.execute("DELETE FROM ordenes_compra_listados WHERE date(fecha) < date(?, ?)",
+                             [fecha.isoformat(), f"-{conservar_dias} days"])
+
+    def listados_oc(self) -> list[tuple[date, list[list[str]]]]:
+        filas = self.con.execute("SELECT fecha, listado FROM ordenes_compra_listados ORDER BY fecha").fetchall()
+        return [(date.fromisoformat(f), json.loads(zlib.decompress(b))) for f, b in filas]
+
+    def codigos_con_detalle(self) -> set[str]:
+        return {c for (c,) in self.con.execute("SELECT codigo_oc FROM ordenes_compra_detalle")}
 
     def detalles_oc(self) -> list[tuple[str, dict]]:
         filas = self.con.execute("SELECT codigo_oc, detalle FROM ordenes_compra_detalle").fetchall()

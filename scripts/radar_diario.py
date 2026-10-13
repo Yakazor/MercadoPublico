@@ -13,6 +13,7 @@ from radar.cliente_api import ClienteMercadoPublico
 from radar.config import cargar_config, hoy_chile, obtener_ticket, ruta_proyecto
 from radar.filtro import FiltroRubros
 from radar.licitaciones import ResultadoRadar, radar_licitaciones
+from radar.ordenes_compra import reclasificar_items
 
 
 def main():
@@ -42,6 +43,9 @@ def main():
     db = BaseDatos(ruta_proyecto(rutas.get("base_datos", "data/radar.db")))
     try:
         db.guardar_licitaciones(filas)
+        # Los precios de OC también siguen la config.yaml vigente (sin llamar a la API):
+        # el dashboard los publica después de cada corrida.
+        reclasificar_items(db, FiltroRubros.desde_config(config))
         if not args.solo_exportar and not args.limite:
             # Las que fallaron por la API no se revisaron: se conservan tal cual.
             conservar = {f["codigo"] for f in filas} | resultado.fallidas

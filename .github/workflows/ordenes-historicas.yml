@@ -144,13 +144,13 @@ jobs:
           path: data/radar.db
           key: radar-db-${{ (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true') && 'v1' || 'v0' }}-${{ github.run_id }}-${{ github.run_attempt }}
 
-      - name: Respaldo de la base (artefacto, 90 días)
+      - name: Respaldo de la base (artefacto, 30 días)
         if: always() && steps.version.outputs.es_actual == 'true'
         uses: actions/upload-artifact@v6
         with:
           name: radar-db-${{ (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true') && 'v1' || 'v0' }}-${{ github.run_number }}-${{ github.run_attempt }}
           path: data/radar.db
-          retention-days: 90
+          retention-days: 30
           if-no-files-found: ignore
 
       # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
