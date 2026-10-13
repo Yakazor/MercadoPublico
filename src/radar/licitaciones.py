@@ -7,7 +7,7 @@ from datetime import date
 
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros
-from .modelos import fila_licitacion, textos_licitacion
+from .modelos import fila_licitacion, productos_licitacion, textos_licitacion
 
 log = logging.getLogger(__name__)
 
@@ -32,15 +32,18 @@ def detalle(cliente: ClienteMercadoPublico, codigo: str) -> dict | None:
 def clasificar(detalle_licitacion: dict, filtro: FiltroRubros, hoy: date | None = None) -> dict | None:
     """Fila lista para guardar si la licitación pertenece a un rubro; si no, None."""
     descripcion, items, items_onu = textos_licitacion(detalle_licitacion)
+    productos = productos_licitacion(detalle_licitacion)
     nombre = detalle_licitacion.get("Nombre")
-    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items, items_onu=items_onu)
+    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items, items_onu=items_onu, productos=productos)
     if not resultado.coincide:
         return None
     return fila_licitacion(
         detalle_licitacion,
         resultado,
         hoy,
-        alertas=filtro.alertas(nombre, *descripcion, *items, *items_onu),
+        # Cada línea como un solo texto: el "nitrilo" del producto ONU niega el
+        # "libre de polvo, látex" de su descripción.
+        alertas=filtro.alertas(nombre, *descripcion, *productos),
         solo_regulados=resultado.solo_regulados,
     )
 

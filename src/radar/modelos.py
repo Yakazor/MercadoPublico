@@ -75,6 +75,17 @@ def textos_licitacion(detalle: dict) -> tuple[list[str], list[str], list[str]]:
     return descripcion, [t for t in items if t], [t for t in onu if t]
 
 
+def productos_licitacion(detalle: dict) -> list[str]:
+    """Cada línea como un producto: producto ONU + lo que escribió el comprador
+    ("Guantes de examen de nitrilo" + "libre de polvo, látex, talla M")."""
+    lineas = []
+    for item in items_licitacion(detalle):
+        texto = " ".join(t for t in (item.get("NombreProducto"), item.get("Descripcion")) if t)
+        if texto.strip():
+            lineas.append(texto)
+    return lineas
+
+
 def fila_licitacion(
     detalle: dict,
     resultado_filtro,

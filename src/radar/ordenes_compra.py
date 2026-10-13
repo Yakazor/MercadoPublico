@@ -96,12 +96,21 @@ def procesar_dia(
     return resultado
 
 
+MAX_FALLOS_OC = 3
+
+
 def candidatas_sin_detalle(db: BaseDatos, filtro: FiltroRubros) -> list[tuple[date, str]]:
     """OC de días ya procesados que con la config actual son candidatas por nombre
-    pero nunca se descargaron (p. ej. tras agregar "escobas" a palabras_clave)."""
+    pero nunca se descargaron (p. ej. tras agregar "escobas" a palabras_clave). Las
+    que fallaron MAX_FALLOS_OC veces se dejan; primero las nunca intentadas y las
+    más recientes."""
     con_detalle = db.codigos_con_detalle()
-    return [(fecha, codigo) for fecha, pares in db.listados_oc() if db.dia_oc_procesado(fecha)
-            for codigo, nombre in pares if codigo not in con_detalle and filtro.es_candidata(nombre)]
+    fallos = db.fallos_oc()
+    faltan = {codigo: fecha for fecha, pares in db.listados_oc() if db.dia_oc_procesado(fecha)
+              for codigo, nombre in pares
+              if codigo not in con_detalle and fallos.get(codigo, 0) < MAX_FALLOS_OC and filtro.es_candidata(nombre)}
+    orden = sorted(faltan.items(), key=lambda par: (fallos.get(par[0], 0), -par[1].toordinal()))
+    return [(fecha, codigo) for codigo, fecha in orden]
 
 
 def completar_candidatas(cliente: ClienteMercadoPublico, filtro: FiltroRubros, db: BaseDatos,
@@ -119,6 +128,7 @@ def completar_candidatas(cliente: ClienteMercadoPublico, filtro: FiltroRubros, d
             if e.fatal:
                 raise
             if e.temporal:
+                db.sumar_fallo_oc(codigo)
                 continue
             det = None  # definitivo: se guarda vacío para no pedirla de nuevo
         db.guardar_oc(codigo, fecha, compactar_oc(det) if det else {"Codigo": codigo},

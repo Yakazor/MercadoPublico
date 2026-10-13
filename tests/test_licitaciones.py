@@ -2,8 +2,9 @@ from datetime import date
 
 from radar.almacenamiento import BaseDatos
 from radar.cliente_api import ErrorApi
+from radar.config import cargar_config
 from radar.filtro import FiltroRubros
-from radar.licitaciones import radar_licitaciones
+from radar.licitaciones import clasificar, radar_licitaciones
 
 FILTRO = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"]}})
 
@@ -39,3 +40,12 @@ def test_fallidas_se_informan_y_no_se_depuran(tmp_path):
     assert eliminadas == 1   # solo D, que ya no es candidata
     codigos = {c for (c,) in db.con.execute("SELECT codigo FROM licitaciones")}
     assert codigos == {"A", "B", "C"}
+
+
+def test_alerta_de_latex_usa_el_producto_onu_de_la_misma_linea():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    det = {"CodigoExterno": "L", "Nombre": "Adquisición de guantes de nitrilo",
+           "Items": {"Listado": [{"NombreProducto": "Guantes de examen de nitrilo",
+                                  "Descripcion": "Guante de examen libre de polvo, látex, talla M"}]}}
+    fila = clasificar(det, filtro)
+    assert fila and fila["alertas_regulatorias"] is None

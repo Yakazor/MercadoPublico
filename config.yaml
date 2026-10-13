@@ -109,6 +109,13 @@ rubros:
       - insumos clinicos
       - material clinico
       - insumos hospitalarios
+    # Frases de uso que se borran antes de evaluar: "Jeringa 3 ml para
+    # administración de medicamentos" no es una compra de medicamentos.
+    ignorar:
+      - administracion de medicamentos
+      - preparacion de medicamentos
+      - dilucion de medicamentos
+      - carro de medicamentos
     # Claves que nombran una categoría completa: en una OC de un solo ítem sin
     # palabra clave no bastan para clasificarlo por el nombre de la OC ("Compra de
     # insumos médicos" con un monitor o un despacho).
@@ -210,7 +217,9 @@ rubros:
       - cloro
     excluir_en_nombre_salvo_clave_especifica:
       # EPP de soldadura ("bolsas con soldadura estrella" sí se revisan)
-      - soldadura
+      - guantes de soldadura
+      - guantes para soldadura
+      - trabajos de soldadura
       # Cloro para tratamiento de agua o de laboratorio (no es producto de aseo)
       - tratamiento de agua
       - planta de tratamiento

@@ -9,6 +9,7 @@ Genera:
     meta.json          fecha de generación y rango de días de OC procesados
 """
 import argparse
+import hashlib
 import json
 from datetime import datetime
 from pathlib import Path
@@ -19,7 +20,8 @@ import pandas as pd
 import _ruta  # noqa: F401
 from radar.almacenamiento import BaseDatos
 from radar.config import cargar_config, hoy_chile, ruta_proyecto
-from radar.ordenes_compra import resumen_precios
+from radar.filtro import FiltroRubros
+from radar.ordenes_compra import reclasificar_items, resumen_precios
 
 COLUMNAS_LICITACIONES = [
     "codigo", "nombre", "organismo", "region", "comuna", "monto_estimado", "moneda", "tipo", "rubro",
@@ -43,6 +45,9 @@ def main():
     db = BaseDatos(ruta_proyecto(config.get("rutas", {}).get("base_datos", "data/radar.db")))
     try:
         hoy = hoy_chile()
+        # Precios con la config.yaml vigente aunque el último workflow de OC sea anterior
+        # (no llama a la API; en Actions corre después de guardar la base).
+        reclasificar_items(db, FiltroRubros.desde_config(config))
         vigentes = db.licitaciones_vigentes(hoy=hoy).reindex(columns=COLUMNAS_LICITACIONES)
         precios = resumen_precios(db.items_oc())
         dias = [d for (d,) in db.con.execute("SELECT fecha FROM ordenes_compra_dias ORDER BY fecha")]
@@ -50,7 +55,11 @@ def main():
         db.cerrar()
 
     precios = precios.sort_values("monto_total", ascending=False).head(MAX_PRECIOS)
-    precios.insert(0, "id", range(1, len(precios) + 1))  # clave estable de cada fila para el dashboard
+    # Clave estable de cada fila para el dashboard (no cambia con el orden por monto).
+    precios.insert(0, "id", [
+        hashlib.sha1("|".join(str(v) for v in clave).encode()).hexdigest()[:12]
+        for clave in precios[["rubro_nombre", "producto_normalizado", "unidad", "moneda"]].itertuples(index=False)
+    ])
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
     meta = {

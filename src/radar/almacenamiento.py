@@ -82,6 +82,12 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_listados (
     listado BLOB                     -- JSON comprimido (zlib) de [[codigo, nombre], ...]
 );
 
+-- OC recuperadas por config nueva cuyo detalle falló: se dejan tras 3 intentos.
+CREATE TABLE IF NOT EXISTS ordenes_compra_fallos (
+    codigo_oc TEXT PRIMARY KEY,
+    intentos  INTEGER
+);
+
 CREATE TABLE IF NOT EXISTS ordenes_compra_intentos (
     fecha     TEXT PRIMARY KEY,      -- días con OC cuyo detalle falló
     intentos  INTEGER,
@@ -100,7 +106,8 @@ COLUMNAS_NUEVAS = {
 class BaseDatos:
     def __init__(self, ruta: str | Path):
         Path(ruta).parent.mkdir(parents=True, exist_ok=True)
-        self.con = sqlite3.connect(ruta)
+        # Espera hasta 60 s si otra ejecución local está escribiendo.
+        self.con = sqlite3.connect(ruta, timeout=60)
         self.con.executescript(ESQUEMA)
         self._migrar()
 
@@ -200,6 +207,17 @@ class BaseDatos:
     def listados_oc(self) -> list[tuple[date, list[list[str]]]]:
         filas = self.con.execute("SELECT fecha, listado FROM ordenes_compra_listados ORDER BY fecha").fetchall()
         return [(date.fromisoformat(f), json.loads(zlib.decompress(b))) for f, b in filas]
+
+    def sumar_fallo_oc(self, codigo_oc: str) -> int:
+        with self.con:
+            self.con.execute("INSERT INTO ordenes_compra_fallos VALUES (?, 1) "
+                             "ON CONFLICT(codigo_oc) DO UPDATE SET intentos = intentos + 1", [codigo_oc])
+        (n,) = self.con.execute("SELECT intentos FROM ordenes_compra_fallos WHERE codigo_oc = ?",
+                                [codigo_oc]).fetchone()
+        return n
+
+    def fallos_oc(self) -> dict[str, int]:
+        return dict(self.con.execute("SELECT codigo_oc, intentos FROM ordenes_compra_fallos"))
 
     def codigos_con_detalle(self) -> set[str]:
         return {c for (c,) in self.con.execute("SELECT codigo_oc FROM ordenes_compra_detalle")}

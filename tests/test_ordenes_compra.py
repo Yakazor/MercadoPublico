@@ -240,3 +240,14 @@ def test_listados_de_oc_se_conservan_90_dias(tmp_path):
     db.guardar_listado_oc(date(2026, 6, 1), [{"Codigo": "X", "Nombre": "n"}])
     db.guardar_listado_oc(date(2026, 10, 5), [{"Codigo": "Y", "Nombre": "n"}])
     assert [f for f, _ in db.listados_oc()] == [date(2026, 10, 5)]
+
+
+def test_oc_recuperadas_que_fallan_se_dejan_tras_tres_intentos(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    listado = [{"Codigo": "E", "Nombre": "Compra de escobas"}]
+    procesar_dia(ClienteFalso(listado, {}), FILTRO, db, date(2026, 10, 5))
+    db.marcar_dia_oc(date(2026, 10, 5))
+    amplio = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "escobas"]}})
+    for _ in range(3):
+        assert completar_candidatas(ClienteFalso(listado, {}, fallan={"E"}), amplio, db) == (0, 0)
+    assert candidatas_sin_detalle(db, amplio) == []

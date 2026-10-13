@@ -565,3 +565,46 @@ def test_real_soldadura_estrella_en_bolsas_no_excluye(real):
     assert real.evaluar(nombre="Adquisición de bolsas de basura 80x110 con soldadura estrella").coincide
     assert real.evaluar_item("Bolsas de basura", None, None, "BOLSA NEGRA 80X110 SOLDADURA ESTRELLA").coincide
     assert not real.evaluar(nombre="Guantes de soldadura para taller municipal").coincide
+
+
+# --- Segunda revisión del 13-10-2026 -------------------------------------------
+
+@pytest.mark.parametrize("producto,especificacion", [
+    ("Desinfectantes", "Servicio de aseo integral recintos de salud"),
+    ("Desinfectantes", "Servicio de limpieza y desinfección de ambulancias mensual"),
+    ("Desinfectantes", "Cloro gas cilindro 68 kg planta APR"),
+    ("Mascarillas", "Mascarilla laríngea desechable N°4"),
+    ("Jeringas", "Jeringa para inyector de medio de contraste 200 ml"),
+])
+def test_real_producto_generico_no_anula_exclusion_de_la_especificacion(real, producto, especificacion):
+    assert not real.evaluar_item(producto, None, especificacion).coincide
+
+
+def test_real_linea_con_exclusion_dura_no_se_rescata(real):
+    assert not real.evaluar(nombre="Adquisición de insumos clínicos para Imagenología",
+                            items=["Jeringa para inyector de medio de contraste 200 ml"]).coincide
+
+
+@pytest.mark.parametrize("especificacion,esperado", [
+    (None, True),
+    ("Según términos de referencia", True),
+    ("Servicio de consultoría según propuesta técnica", True),
+    ("Sesiones de kinesiología según propuesta", False),
+    ("Microsoft 365 Business Standard según cotización", False),
+    ("Curso manejo defensivo conductores, ver anexo", False),
+    ("Contrato honorarios abogado", False),
+])
+def test_real_respaldo_servicio_solo_con_especificacion_de_tramite(real, especificacion, esperado):
+    r = real.respaldo_servicio("Consultoría Power BI y gestión estratégica", "Servicios de consultoría de gestión",
+                               especificacion)
+    assert r.coincide is esperado
+
+
+@pytest.mark.parametrize("nombre,lineas", [
+    ("Adquisición de guantes de látex", ["GUANTE DE PROCEDIMIENTO, LATEX, TALLA M, CAJA 100"]),
+    ("Adquisición de guantes de procedimiento", ["Guante procedimiento látex talla M"]),
+    ("Adquisición de productos de limpieza", ["Cloro gel 1 L", "Desinfectante amonio cuaternario 5 L"]),
+    ("Adquisición de guantes", ["Guantes de examen de látex | talla M"]),
+])
+def test_real_solo_regulados_por_linea_completa(real, nombre, lineas):
+    assert real.evaluar(nombre=nombre, items=lineas).solo_regulados
