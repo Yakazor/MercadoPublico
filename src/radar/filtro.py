@@ -27,6 +27,13 @@ _CONECTOR_OPCIONAL = r"\s+(?:(?:de|del|en|para|el|la|los|las|al)\s+){0,2}"
 # Solo se aplica fuera del nombre (descripción, ítems, especificaciones).
 _UNIDADES = (r"(?:unidad|departamento|depto|dpto|direccion|division|subdireccion|secretaria|seccion|"
              r"oficina|area|jefatura|gerencia|subgerencia|subdepartamento|coordinacion|encargad[oa]|jef[ea])")
+# "Área/oficina/sección de análisis de datos" suele ser el tema, no quien compra:
+# solo se borran si siguen claves débiles ("Oficina de Control de Gestión").
+_UNIDADES_INFORMALES = {"area", "oficina", "seccion"}
+# "Fortalecer la unidad de gestión estratégica": la unidad es lo que se contrata.
+_VERBOS_UNIDAD = {"fortalecer", "fortalecimiento", "implementar", "implementacion", "crear", "creacion",
+                  "disenar", "diseno", "redisenar", "rediseno", "modernizar", "modernizacion",
+                  "mejorar", "mejoramiento"}
 _SEGMENTOS = re.compile(r"[,;\n]|\s+y\s+|\s+e\s+", re.IGNORECASE)
 
 
@@ -108,7 +115,24 @@ class Rubro:
         ("Depto. de Control de Gestión"). En el nombre "Consultoría para la unidad
         de control de gestión" describe lo que se contrata: se conserva."""
         texto = _quitar(self.ignorar, texto_norm)
-        return texto if es_nombre else _quitar(self.unidades, texto)
+        return texto if es_nombre else self._sin_unidades(texto)
+
+    def _sin_unidades(self, texto: str) -> str:
+        if self.unidades is None or not texto:
+            return texto
+
+        def reemplazo(m: re.Match) -> str:
+            previas = texto[:m.start()].split()[-3:]
+            if _VERBOS_UNIDAD.intersection(previas):
+                return m.group(0)
+            if m.group("unidad") in _UNIDADES_INFORMALES and not self._solo_debiles(m.group("claves")):
+                return m.group(0)
+            return " "
+        return self.unidades.sub(reemplazo, texto)
+
+    def _solo_debiles(self, texto: str) -> bool:
+        return self.debiles is not None and all(
+            self.debiles.fullmatch(normalizar(m.group(0))) for m in self.incluir.finditer(texto))
 
     def _tramos_excluidos(self, texto_norm: str) -> list[tuple[int, int]]:
         return [(m.start(), m.end()) for p in (self.excluir, self.excluir_salvo_clave)
@@ -234,8 +258,8 @@ class FiltroRubros:
                 excluir_salvo_clave=_patron(datos.get("excluir_en_nombre_salvo_clave") or []),
                 ignorar=_patron(datos.get("ignorar") or []),
                 unidades=re.compile(
-                    rf"\b{_UNIDADES}\s+(?:de\s+|del\s+)?(?:la\s+|el\s+|los\s+|las\s+)?(?:{alts})"
-                    rf"(?:\s+(?:y|e)\s+(?:{alts}))*\b") if alts else None,
+                    rf"\b(?P<unidad>{_UNIDADES})\s+(?:de\s+|del\s+)?(?:la\s+|el\s+|los\s+|las\s+)?"
+                    rf"(?P<claves>(?:{alts})(?:\s+(?:y|e)\s+(?:{alts}))*)\b") if alts else None,
                 debiles=_patron(debiles),
                 no_rescatan=_patron(datos.get("no_rescatan") or []),
                 amplias=_patron(datos.get("palabras_amplias") or []),

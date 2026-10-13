@@ -451,3 +451,22 @@ def test_real_respaldo_por_nombre_exige_producto_especifico(real):
 def test_real_ssr_servicio_de_salud_no_se_excluye(real):
     # "SSR" también es la sigla del Servicio de Salud del Reloncaví.
     assert real.evaluar(nombre="Guantes de nitrilo para SSR").coincide
+
+
+@pytest.mark.parametrize("item", [
+    "Servicio de apoyo al área de análisis de datos",
+    "Profesional para la oficina de gestión de procesos",
+    "Fortalecer la sección de análisis de datos",
+    "Consultoría para fortalecer la unidad de gestión estratégica",
+])
+def test_real_unidad_como_tema_del_servicio_no_se_borra(real, item):
+    assert real.evaluar(nombre="Servicio de consultoría", items=[item]).rubro == "consultoria_gestion_bi"
+
+
+def test_real_unidad_compradora_sigue_sin_contar(real):
+    for item in ["Solicitado por la Unidad de Control de Gestión", "Oficina de Control de Gestión",
+                 "Depto. de Gestión Estratégica, edificio central"]:
+        assert not real.evaluar(nombre="Servicio de consultoría", items=[item, "Sesiones de kinesiología"]).coincide
+    assert real.evaluar("Apoyo al área de análisis de datos y visualización de datos",
+                        nombre="Servicio de consultoría").coincide
+    assert real.evaluar_item(None, "Servicios de consultoría de gestión", "Apoyo al área de análisis de datos").coincide

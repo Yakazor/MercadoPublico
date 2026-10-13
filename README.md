@@ -145,7 +145,10 @@ palabra completa ("aseo" no coincide con "paseo").
   ítems están excluidos ("Guante cabritilla soldador"), un nombre genérico como
   "Guantes" se descarta.
 - `ignorar`: nombres de unidades compradoras ("Dirección de Obras Municipales")
-  que no deben contar ni excluir.
+  que no deben contar ni excluir. Fuera del nombre, "Depto./Unidad de <clave>" se
+  ignora solo; "área/oficina/sección de <clave>" solo si la clave es débil, y
+  nunca tras "fortalecer", "implementar", "crear"… ("fortalecer la unidad de
+  gestión estratégica" es lo que se contrata).
 - Para revisar el filtro: `python scripts/resumen_md.py --auditoria` lista todo lo
   detectado con las palabras que coincidieron.
 - `filtro_preliminar_por_nombre: true` pide el detalle solo de las licitaciones
@@ -154,8 +157,10 @@ palabra completa ("aseo" no coincide con "paseo").
 
 En las **órdenes de compra** cada ítem se clasifica por su producto (y la
 categoría ONU si el producto no lo dice; las exclusiones también se revisan en la
-especificación del comprador). En insumos, si la OC tiene un solo ítem genérico,
-se usa el nombre de la OC. En consultoría, la especificación del comprador solo
+especificación del comprador y del proveedor). En insumos, si la OC tiene un solo
+ítem genérico, se usa el nombre de la OC cuando dice qué producto es ("Compra de
+guantes de nitrilo"); no con nombres amplios (`palabras_amplias`: "insumos
+médicos", "artículos de aseo"), que pueden traer un monitor o un despacho. En consultoría, la especificación del comprador solo
 cuenta si el producto es un servicio compatible (`especificacion_si_producto`:
 consultoría, asesoría, software, capacitación…) y los productos ONU genéricos
 (`productos_genericos`: "Servicios de consultoría de gestión") no cuentan solos.
