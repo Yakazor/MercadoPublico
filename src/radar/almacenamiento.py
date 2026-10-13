@@ -1,7 +1,9 @@
 """Persistencia en SQLite y exportación diaria CSV/Excel para Power BI."""
 from __future__ import annotations
 
+import json
 import sqlite3
+import zlib
 from datetime import date, datetime
 from pathlib import Path
 
@@ -63,6 +65,14 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_items (
 CREATE TABLE IF NOT EXISTS ordenes_compra_dias (
     fecha        TEXT PRIMARY KEY,   -- días ya procesados (permite reanudar)
     procesado_en TEXT
+);
+
+-- Detalle compacto de cada OC candidata (también las que no tienen ítems del rubro):
+-- permite reclasificar con otra config.yaml sin volver a descargar.
+CREATE TABLE IF NOT EXISTS ordenes_compra_detalle (
+    codigo_oc TEXT PRIMARY KEY,
+    fecha     TEXT,
+    detalle   BLOB                   -- JSON comprimido (zlib)
 );
 
 CREATE TABLE IF NOT EXISTS ordenes_compra_intentos (
@@ -157,10 +167,27 @@ class BaseDatos:
         """Deja en la base exactamente `filas` para esa OC (borra ítems que ya no
         pertenecen a un rubro o que la OC ya no trae). En una sola transacción."""
         with self.con:
-            self.con.execute("DELETE FROM ordenes_compra_items WHERE codigo_oc = ?", [codigo_oc])
-            for fila in filas:
-                self._insertar_item_oc(fila)
+            self._reemplazar_items(codigo_oc, filas)
         return len(filas)
+
+    def guardar_oc(self, codigo_oc: str, fecha: date, detalle: dict, filas: list[dict]) -> int:
+        """Detalle compacto de la OC + sus ítems del rubro, en una sola transacción."""
+        with self.con:
+            self.con.execute(
+                "INSERT OR REPLACE INTO ordenes_compra_detalle VALUES (?, ?, ?)",
+                [codigo_oc, fecha.isoformat(), zlib.compress(json.dumps(detalle, ensure_ascii=False).encode())],
+            )
+            self._reemplazar_items(codigo_oc, filas)
+        return len(filas)
+
+    def detalles_oc(self) -> list[tuple[str, dict]]:
+        filas = self.con.execute("SELECT codigo_oc, detalle FROM ordenes_compra_detalle").fetchall()
+        return [(codigo, json.loads(zlib.decompress(blob))) for codigo, blob in filas]
+
+    def _reemplazar_items(self, codigo_oc: str, filas: list[dict]) -> None:
+        self.con.execute("DELETE FROM ordenes_compra_items WHERE codigo_oc = ?", [codigo_oc])
+        for fila in filas:
+            self._insertar_item_oc(fila)
 
     def _insertar_item_oc(self, fila: dict) -> None:
         columnas = list(fila)

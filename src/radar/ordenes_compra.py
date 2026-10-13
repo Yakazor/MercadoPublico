@@ -11,7 +11,7 @@ import pandas as pd
 from .almacenamiento import BaseDatos
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros, normalizar
-from .modelos import clasificar_items_oc, filas_orden_compra, textos_alerta_item_oc
+from .modelos import clasificar_items_oc, compactar_oc, filas_orden_compra, textos_alerta_item_oc
 
 log = logging.getLogger(__name__)
 
@@ -84,29 +84,47 @@ def procesar_dia(
             log.warning("Detalle vacío para OC %s", codigo)
             continue
         filas = filas_orden_compra(det, filtro)
-        # Reemplaza siempre: si la OC ya no tiene ítems del rubro, se borran.
-        db.reemplazar_items_oc(codigo, filas)
+        # Reemplaza siempre: si la OC ya no tiene ítems del rubro, se borran. El
+        # detalle se guarda aunque no tenga ítems del rubro (para reclasificar).
+        db.guardar_oc(codigo, fecha, compactar_oc(det), filas)
         if filas:
             resultado.items += len(filas)
             resultado.ordenes += 1
     return resultado
 
 
-def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int]:
-    """Re-evalúa los ítems guardados con el filtro actual, sin llamar a la API.
+def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int, int]:
+    """Re-evalúa las OC guardadas con el filtro actual, sin llamar a la API.
 
-    Usa la misma lógica que la descarga (`clasificar_items_oc`): borra los ítems
-    que ya no pertenecen a un rubro (o cuya OC quedó excluida por nombre) y
-    actualiza rubro/palabras/alertas del resto. Devuelve (actualizados, eliminados)."""
+    Las OC con detalle guardado se reclasifican completas (`filas_orden_compra`):
+    se agregan los ítems que ahora pertenecen a un rubro y se borran los que no.
+    Las OC antiguas, sin detalle, solo pueden actualizarse o borrarse (misma
+    lógica, `clasificar_items_oc`). Devuelve (actualizados, eliminados, agregados)."""
+    antes: dict[str, set] = {}
+    for codigo, correlativo in db.con.execute("SELECT codigo_oc, correlativo FROM ordenes_compra_items"):
+        antes.setdefault(codigo, set()).add(correlativo)
+
+    actualizados = eliminados = agregados = 0
+    detalles = db.detalles_oc()
+    with db.con:
+        for codigo, detalle in detalles:
+            filas = filas_orden_compra(detalle, filtro)
+            previos, nuevos = antes.get(codigo, set()), {f["correlativo"] for f in filas}
+            actualizados += len(previos & nuevos)
+            eliminados += len(previos - nuevos)
+            agregados += len(nuevos - previos)
+            db._reemplazar_items(codigo, filas)
+
+    con_detalle = {codigo for codigo, _ in detalles}
     filas = db.con.execute(
         "SELECT rowid, codigo_oc, nombre_oc, producto, categoria, especificacion_comprador, "
         "especificacion_proveedor FROM ordenes_compra_items"
     ).fetchall()
     por_oc: dict[str, list] = {}
     for fila in filas:
-        por_oc.setdefault(fila[1], []).append(fila)
+        if fila[1] not in con_detalle:
+            por_oc.setdefault(fila[1], []).append(fila)
 
-    actualizados = eliminados = 0
     with db.con:
         for codigo, filas_oc in por_oc.items():
             nombre_oc = filas_oc[0][2]
@@ -127,7 +145,7 @@ def reclasificar_items(db: BaseDatos, filtro: FiltroRubros) -> tuple[int, int]:
                      " | ".join(alertas) if alertas else None, item["rowid"]],
                 )
                 actualizados += 1
-    return actualizados, eliminados
+    return actualizados, eliminados, agregados
 
 
 COLUMNAS_RESUMEN = [

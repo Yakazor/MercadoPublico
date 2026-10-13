@@ -152,6 +152,31 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
     return [(item, r) for item, r in evaluados if r.coincide]
 
 
+_CAMPOS_ITEM_OC = ("Correlativo", "Producto", "Categoria", "EspecificacionComprador",
+                   "EspecificacionProveedor", "Unidad", "Cantidad", "PrecioNeto", "Total")
+
+
+def compactar_oc(detalle: dict) -> dict:
+    """Solo los campos que usa `filas_orden_compra`: se guarda en la base para
+    reclasificar con otra config sin volver a descargar la OC."""
+    comprador = detalle.get("Comprador") or {}
+    proveedor = detalle.get("Proveedor") or {}
+    items = (detalle.get("Items") or {}).get("Listado") or []
+    return {
+        "Codigo": detalle.get("Codigo"),
+        "Nombre": detalle.get("Nombre"),
+        "CodigoLicitacion": detalle.get("CodigoLicitacion"),
+        "Estado": detalle.get("Estado"),
+        "TipoMoneda": detalle.get("TipoMoneda"),
+        "Fechas": {"FechaCreacion": (detalle.get("Fechas") or {}).get("FechaCreacion")},
+        "Comprador": {"NombreOrganismo": comprador.get("NombreOrganismo"),
+                      "RegionUnidad": comprador.get("RegionUnidad")},
+        "Proveedor": {"Nombre": proveedor.get("Nombre"), "RutSucursal": proveedor.get("RutSucursal")},
+        "Items": {"Listado": [{k: item.get(k) for k in _CAMPOS_ITEM_OC if item.get(k) is not None}
+                              for item in items]},
+    }
+
+
 def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
     """Una fila por ítem de la OC QUE PERTENEZCA A UN RUBRO, con su precio unitario.
 

@@ -2,7 +2,7 @@ from datetime import date
 
 from radar.filtro import FiltroRubros
 from radar.config import cargar_config
-from radar.modelos import fila_licitacion, filas_orden_compra, textos_licitacion
+from radar.modelos import compactar_oc, fila_licitacion, filas_orden_compra, textos_licitacion
 
 FILTRO = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"]}})
 
@@ -256,3 +256,38 @@ def test_alertas_de_item_ignoran_publicidad_del_proveedor():
                                  "EspecificacionComprador": "Papel higiénico doble hoja",
                                  "EspecificacionProveedor": "Blanqueado sin cloro, desinfectado", "PrecioNeto": 500}]}}
     assert filas_orden_compra(oc, filtro)[0]["alertas_regulatorias"] is None
+
+
+def test_compactar_oc_conserva_lo_que_usan_las_filas():
+    filtro = FiltroRubros({"pinturas": {"nombre": "Pinturas", "palabras_clave": ["brocha"]}})
+    oc = OC_REAL | {"Nombre": "Compra de brochas"}
+    compacta = compactar_oc(oc)
+    assert "TotalNeto" not in compacta
+    assert filas_orden_compra(compacta, filtro) == filas_orden_compra(oc, filtro)
+
+
+def test_consultoria_revisa_especificacion_solo_en_productos_compatibles():
+    """Corrida real (OC): 'Ingeniería eléctrica', 'Servicios de catering' o
+    'Mantenimiento de hardware' quedaban como BI por la especificación."""
+    filtro = FiltroRubros.desde_config(cargar_config())
+
+    def oc(producto, especificacion):
+        return {"Codigo": "OC", "Nombre": "Asesoría en gestión estratégica", "TipoMoneda": "CLP",
+                "Items": {"Listado": [{"Correlativo": 1, "Producto": producto,
+                                       "EspecificacionComprador": especificacion, "PrecioNeto": 1}]}}
+
+    assert filas_orden_compra(oc("Ingeniería eléctrica", "Asesoría en gestión estratégica y mejora de procesos"),
+                              filtro) == []
+    assert filas_orden_compra(oc("Servicios de catering", "Catering para jornada de plan estratégico"), filtro) == []
+    assert filas_orden_compra(oc("Software de gestión de licencias", "Licencia Power BI Pro anual"), filtro)
+    # Producto ONU genérico: cuenta la especificación, no el nombre del producto.
+    assert filas_orden_compra(oc("Servicios de consultoría de gestión", "Sesiones de kinesiología"), filtro) == []
+    assert filas_orden_compra(oc("Servicios de consultoría de gestión", "Tablero de control en Power BI"), filtro)
+
+
+def test_orden_compra_aseo_con_productos_de_limpieza():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    oc = {"Codigo": "OC-A", "Nombre": "Compra de artículos de aseo para escuelas", "TipoMoneda": "CLP",
+          "Items": {"Listado": [{"Correlativo": i, "Producto": p, "PrecioNeto": 1} for i, p in enumerate(
+              ["Lavalozas", "Limpiadores de pisos", "Escobas", "Traperos", "Paños multiuso", "Cloro"], 1)]}}
+    assert len(filas_orden_compra(oc, filtro)) == 6

@@ -84,8 +84,31 @@ def test_reclasificar_items_con_config_nueva(tmp_path):
     procesar_dia(ClienteFalso([{"Codigo": "A", "Nombre": "Compra de guantes"}],
                               {"A": _oc("A", "Guantes", "Servicios de catering")}), amplio, db, date(2026, 10, 5))
     assert len(db.items_oc()) == 2
-    actualizados, eliminados = reclasificar_items(db, FILTRO)
-    assert (actualizados, eliminados) == (1, 1)
+    assert reclasificar_items(db, FILTRO) == (1, 1, 0)
+    assert list(db.items_oc()["producto"]) == ["Guantes"]
+
+
+def test_reclasificar_agrega_items_que_ahora_son_del_rubro(tmp_path):
+    """El detalle de la OC queda guardado: al ampliar las palabras clave, los ítems
+    descartados en la descarga se recuperan sin volver a llamar a la API."""
+    db = BaseDatos(tmp_path / "r.db")
+    procesar_dia(ClienteFalso([{"Codigo": "A", "Nombre": "Compra de guantes"}],
+                              {"A": _oc("A", "Guantes", "Escobas")}), FILTRO, db, date(2026, 10, 5))
+    assert list(db.items_oc()["producto"]) == ["Guantes"]
+    amplio = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "escobas"]}})
+    assert reclasificar_items(db, amplio) == (1, 0, 1)
+    assert sorted(db.items_oc()["producto"]) == ["Escobas", "Guantes"]
+    # Y vuelve a quitarlos con la config anterior, sin perder el detalle.
+    assert reclasificar_items(db, FILTRO) == (1, 1, 0)
+    assert reclasificar_items(db, amplio) == (1, 0, 1)
+
+
+def test_reclasificar_oc_antigua_sin_detalle(tmp_path):
+    db = BaseDatos(tmp_path / "r.db")
+    base = {"codigo_oc": "V", "nombre_oc": "Compra de guantes", "rubro": "aseo"}
+    db.reemplazar_items_oc("V", [base | {"correlativo": 1, "producto": "Guantes"},
+                                 base | {"correlativo": 2, "producto": "Catering"}])
+    assert reclasificar_items(db, FILTRO) == (1, 1, 0)
     assert list(db.items_oc()["producto"]) == ["Guantes"]
 
 
@@ -111,7 +134,7 @@ def test_reclasificar_purga_oc_cuyo_nombre_quedo_excluido(tmp_path):
     procesar_dia(ClienteFalso([{"Codigo": "A", "Nombre": oc["Nombre"]}], {"A": oc}), sin_exclusiones, db,
                  date(2026, 10, 5))
     assert len(db.items_oc()) == 1
-    assert reclasificar_items(db, FiltroRubros.desde_config(cargar_config())) == (0, 1)
+    assert reclasificar_items(db, FiltroRubros.desde_config(cargar_config())) == (0, 1, 0)
     assert db.items_oc().empty
 
 

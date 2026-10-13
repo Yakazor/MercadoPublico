@@ -139,6 +139,11 @@ palabra completa ("aseo" no coincide con "paseo").
 - `excluir_en_nombre`: descarta siempre (ej. "servicio de aseo", "inspección fiscal").
 - `excluir_en_nombre_salvo_clave`: descarta salvo que el nombre traiga otra palabra
   clave: "Compra de sondas" se descarta, "Gasas, guantes y sondas" no.
+- `no_rescatan`: claves genéricas ("guantes", "cloro") que no anulan esa
+  exclusión: "EPP: guantes y lentes" se descarta, "EPP: guantes de nitrilo y
+  mascarillas" no. Las exclusiones también se revisan en cada ítem: si todos los
+  ítems están excluidos ("Guante cabritilla soldador"), un nombre genérico como
+  "Guantes" se descarta.
 - `ignorar`: nombres de unidades compradoras ("Dirección de Obras Municipales")
   que no deben contar ni excluir.
 - Para revisar el filtro: `python scripts/resumen_md.py --auditoria` lista todo lo
@@ -149,11 +154,20 @@ palabra completa ("aseo" no coincide con "paseo").
 
 En las **órdenes de compra** cada ítem se clasifica por su producto (y la
 categoría ONU si el producto no lo dice; las exclusiones también se revisan en la
-especificación del comprador). Si la OC tiene un solo ítem genérico, se usa el
-nombre de la OC. Solo se guardan los ítems de tus rubros,
-así el catering, los pasajes o un monitor de una OC de "insumos clínicos" no
-entran al cálculo de precios. Si cambias `config.yaml`, la siguiente ejecución
-reclasifica lo ya guardado sin llamar a la API.
+especificación del comprador). En insumos, si la OC tiene un solo ítem genérico,
+se usa el nombre de la OC. En consultoría, la especificación del comprador solo
+cuenta si el producto es un servicio compatible (`especificacion_si_producto`:
+consultoría, asesoría, software, capacitación…) y los productos ONU genéricos
+(`productos_genericos`: "Servicios de consultoría de gestión") no cuentan solos.
+Solo se guardan los ítems de tus rubros, así el catering, los pasajes o un
+monitor de una OC de "insumos clínicos" no entran al cálculo de precios.
+
+La base guarda además el detalle compacto de cada OC revisada (tabla
+`ordenes_compra_detalle`). Si cambias `config.yaml`, la siguiente ejecución
+reclasifica todo sin llamar a la API: agrega los ítems que ahora calzan y quita
+los que ya no. Las OC descargadas antes de esta mejora (sin detalle guardado)
+solo pueden quitarse; para recuperarlas, vuelve a procesar esos días con
+`--reprocesar`.
 
 ## Alertas regulatorias (ISP)
 

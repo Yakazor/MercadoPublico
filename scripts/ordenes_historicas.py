@@ -66,10 +66,10 @@ def main():
     pendientes: list[str] = []
 
     try:
-        actualizados, eliminados = reclasificar_items(db, filtro)
-        if eliminados:
-            logging.info("Reclasificación con config actual: %d ítems eliminados, %d actualizados",
-                         eliminados, actualizados)
+        actualizados, eliminados, agregados = reclasificar_items(db, filtro)
+        if eliminados or agregados:
+            logging.info("Reclasificación con config actual: %d ítems agregados, %d eliminados, %d actualizados",
+                         agregados, eliminados, actualizados)
 
         hasta_monotonic = inicio + args.max_minutos * 60 if args.max_minutos else None
         # Días con fallas de ejecuciones anteriores se reintentan aunque ya hayan
