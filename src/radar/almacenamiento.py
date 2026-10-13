@@ -67,6 +67,15 @@ CREATE TABLE IF NOT EXISTS ordenes_compra_dias (
     procesado_en TEXT
 );
 
+-- Detalle compacto de cada licitación candidata: se reutiliza mientras no cambie
+-- su fecha de cierre en el listado ni pasen `refrescar_detalle_licitacion_dias`.
+CREATE TABLE IF NOT EXISTS licitaciones_detalle (
+    codigo         TEXT PRIMARY KEY,
+    cierre_listado TEXT,
+    descargado     TEXT,
+    detalle        BLOB              -- JSON comprimido (zlib)
+);
+
 -- Detalle compacto de cada OC candidata (también las que no tienen ítems del rubro):
 -- permite reclasificar con otra config.yaml sin volver a descargar.
 CREATE TABLE IF NOT EXISTS ordenes_compra_detalle (
@@ -140,6 +149,31 @@ class BaseDatos:
             )
         self.con.commit()
         return len(filas)
+
+    def guardar_detalle_licitacion(self, codigo: str, cierre_listado: str | None, detalle: dict,
+                                   hoy: date) -> None:
+        with self.con:
+            self.con.execute(
+                "INSERT OR REPLACE INTO licitaciones_detalle VALUES (?, ?, ?, ?)",
+                [codigo, cierre_listado, hoy.isoformat(),
+                 zlib.compress(json.dumps(detalle, ensure_ascii=False).encode())],
+            )
+
+    def detalle_licitacion(self, codigo: str) -> tuple[dict, str | None, date] | None:
+        """(detalle, cierre del listado cuando se descargó, fecha de descarga)."""
+        fila = self.con.execute("SELECT detalle, cierre_listado, descargado FROM licitaciones_detalle "
+                                "WHERE codigo = ?", [codigo]).fetchone()
+        if fila is None:
+            return None
+        return json.loads(zlib.decompress(fila[0])), fila[1], date.fromisoformat(fila[2])
+
+    def podar_detalles_licitacion(self, activas: set[str]) -> int:
+        """Borra los detalles de licitaciones que ya no están activas."""
+        guardadas = [c for (c,) in self.con.execute("SELECT codigo FROM licitaciones_detalle")]
+        sobran = [(c,) for c in guardadas if c not in activas]
+        with self.con:
+            self.con.executemany("DELETE FROM licitaciones_detalle WHERE codigo = ?", sobran)
+        return len(sobran)
 
     def depurar_vigentes(self, conservar: set[str], hoy: date | None = None) -> int:
         """Elimina las vigentes que no están en `conservar` (ya no pasan el filtro,

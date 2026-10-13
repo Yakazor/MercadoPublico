@@ -75,6 +75,28 @@ def textos_licitacion(detalle: dict) -> tuple[list[str], list[str], list[str]]:
     return descripcion, [t for t in items if t], [t for t in onu if t]
 
 
+def compactar_licitacion(detalle: dict) -> dict:
+    """Solo los campos que usan el filtro y `fila_licitacion`: se guarda para no
+    volver a pedir cada día el detalle de una licitación ya conocida."""
+    comprador = detalle.get("Comprador") or {}
+    fechas = detalle.get("Fechas") or {}
+    return {
+        "CodigoExterno": detalle.get("CodigoExterno"),
+        "Nombre": detalle.get("Nombre"),
+        "Descripcion": detalle.get("Descripcion"),
+        "CodigoEstado": detalle.get("CodigoEstado"),
+        "Estado": detalle.get("Estado"),
+        "MontoEstimado": detalle.get("MontoEstimado"),
+        "Moneda": detalle.get("Moneda"),
+        "Tipo": detalle.get("Tipo"),
+        "FechaCierre": detalle.get("FechaCierre"),
+        "Comprador": {k: comprador.get(k) for k in ("NombreOrganismo", "NombreUnidad", "RegionUnidad", "ComunaUnidad")},
+        "Fechas": {k: fechas.get(k) for k in ("FechaCierre", "FechaPublicacion")},
+        "Items": {"Listado": [{k: item.get(k) for k in ("NombreProducto", "Descripcion", "Categoria")}
+                              for item in items_licitacion(detalle)]},
+    }
+
+
 def productos_licitacion(detalle: dict) -> list[str]:
     """Cada línea como un producto: producto ONU + lo que escribió el comprador
     ("Guantes de examen de nitrilo" + "libre de polvo, látex, talla M")."""

@@ -105,6 +105,8 @@ rubros:
       - virutilla
       - bolsas de basura
       - bolsas de residuos
+    # Muestra de OC por día para los precios (más que el resto: es el rubro principal).
+    oc_maximo_por_dia: 200
     palabras_candidatas:
       - insumos clinicos
       - material clinico
@@ -268,6 +270,472 @@ rubros:
       - osteosintesis
       - nebulizador
 
+  mobiliario:
+    nombre: "Mobiliario de oficina, escolar y almacenaje"
+    # La descripción general menciona mobiliario de paso ("incluye mobiliario"):
+    # solo cuentan nombre e ítems.
+    detectar_en_descripcion: false
+    palabras_clave:
+      - mobiliario
+      - muebles
+      - sillas
+      - sillones
+      - sillas de oficina
+      - sillas ergonomicas
+      - sillas escolares
+      - sillas apilables
+      - mesas
+      - mesas escolares
+      - mesas de reunion
+      - mesas de comedor
+      - mesas de casino
+      - mesas plegables
+      - escritorios
+      - estaciones de trabajo
+      - pupitres
+      - cajoneras
+      - credenzas
+      - kardex
+      - archivadores metalicos
+      - muebles archivadores
+      - estantes
+      - estanterias
+      - repisas
+      - lockers
+      - casilleros
+      - armarios
+      - roperos
+      - camarotes
+      - literas
+      - pizarras
+      - pizarrones
+    palabras_amplias:
+      - mobiliario
+      - muebles
+    excluir_en_nombre:
+      - arriendo
+      - arrendamiento
+      - reparacion
+      - mantencion
+      - mantenimiento
+      - tapizado
+      - retapizado
+      - traslado
+      - mudanza
+      - a medida
+      - fabricacion
+      - bienes muebles
+      - remate
+      - mobiliario urbano
+      - escritorio remoto
+      - escritorio virtual
+      # "Mesa" que no es un mueble
+      - mesa de ayuda
+      - mesa de servicio
+      - mesa de partes
+      - mesa tecnica
+      - mesa de dialogo
+      - mesa territorial
+      - mesa barrial
+      - mesa comunal
+      - mesa regional
+    excluir_en_nombre_salvo_clave:
+      # Mobiliario clínico (no elegido) y "mesas de trabajo" como reuniones
+      - sillas de ruedas
+      - sillas de toma de muestras
+      - sillon dental
+      - sillon odontologico
+      - sillon de dialisis
+      - mobiliario clinico
+      - mobiliario hospitalario
+      - mesa quirurgica
+      - mesa de mayo
+      - mesa de examen
+      - mesa ginecologica
+      - mesa de procedimientos
+      - mesas de trabajo
+
+  oficina_libreria:
+    nombre: "Artículos de oficina y librería"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - articulos de oficina
+      - utiles de oficina
+      - materiales de oficina
+      - insumos de oficina
+      - articulos de escritorio
+      - utiles de escritorio
+      - articulos de libreria
+      - materiales de libreria
+      - insumos de libreria
+      - utiles escolares
+      - material escolar
+      - papeleria
+      - resmas
+      - papel fotocopia
+      - papel bond
+      - papel carta
+      - toner
+      - cartuchos de tinta
+      - tintas para impresora
+      - archivadores
+      - carpetas
+      - lapices
+      - lapiz
+      - destacadores
+      - corchetes
+      - corcheteras
+      - perforadoras
+      - notas adhesivas
+      - sobres
+      - cuadernos
+      - etiquetas adhesivas
+      - calculadoras
+      - plumones
+      - cinta adhesiva
+    palabras_amplias:
+      - articulos de oficina
+      - utiles de oficina
+      - materiales de oficina
+      - insumos de oficina
+      - articulos de escritorio
+      - utiles de escritorio
+      - articulos de libreria
+      - materiales de libreria
+      - insumos de libreria
+      - utiles escolares
+      - material escolar
+    excluir_en_nombre:
+      - imprenta
+      - servicio de impresion
+      - servicios de impresion
+      - impresion de
+      - outsourcing
+      - arriendo
+      - arrendamiento
+      - mantencion
+      - reparacion
+      - carpeta asfaltica
+      - carpeta de rodado
+    excluir_en_nombre_salvo_clave:
+      - archivadores metalicos
+      - muebles archivadores
+
+  computacion_electronica:
+    nombre: "Computación y electrónica"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - computadores
+      - computadoras
+      - notebooks
+      - laptops
+      - computadores portatiles
+      - equipos computacionales
+      - equipos de computacion
+      - equipamiento computacional
+      - tablets
+      - monitores
+      - pantallas
+      - televisores
+      - smart tv
+      - proyectores
+      - data show
+      - impresoras
+      - multifuncionales
+      - escaneres
+      - scanner
+      - discos duros
+      - pendrives
+      - memorias usb
+      - teclados
+      - mouse
+      - parlantes
+      - camaras web
+      - webcam
+      - telefonos celulares
+      - celulares
+      - smartphones
+      - telefonos ip
+      - routers
+      - switches
+      - access point
+      - accesorios computacionales
+      - perifericos
+      - componentes computacionales
+      - licencias de software
+      - licencias microsoft
+      - antivirus
+    palabras_amplias:
+      - equipos computacionales
+      - equipos de computacion
+      - equipamiento computacional
+      - accesorios computacionales
+      - perifericos
+      - componentes computacionales
+    excluir_en_nombre:
+      - arriendo
+      - arrendamiento
+      - leasing
+      - mantencion
+      - mantenimiento
+      - reparacion
+      - soporte tecnico
+      - servicio tecnico
+      - desarrollo de software
+      - outsourcing
+      - telefonia movil
+      - planes de telefonia
+      - servicio de telefonia
+    excluir_en_nombre_salvo_clave:
+      # Equipos médicos y EPP que se llaman igual
+      - monitores multiparametro
+      - monitores multiparametricos
+      - monitores de signos vitales
+      - monitores fetales
+      - monitores desfibriladores
+      - monitores cardiacos
+      - pantallas faciales
+      - pantalla de proteccion facial
+
+  ferreteria_herramientas:
+    nombre: "Ferretería y herramientas"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - ferreteria
+      - articulos de ferreteria
+      - materiales de ferreteria
+      - insumos de ferreteria
+      - productos de ferreteria
+      - herramientas
+      - herramientas manuales
+      - herramientas electricas
+      - taladros
+      - atornilladores
+      - esmeriles
+      - sierras electricas
+      - sierra circular
+      - motosierras
+      - martillos
+      - alicates
+      - destornilladores
+      - escaleras de aluminio
+      - escaleras tijera
+      - carretillas
+      - pinturas
+      - esmaltes
+      - brochas
+      - rodillos para pintar
+      - diluyentes
+      - candados
+      - cerraduras
+      - tornillos
+      - pernos
+      - clavos
+      - mangueras
+      - extensiones electricas
+      - alargadores
+      - ampolletas
+    palabras_amplias:
+      - ferreteria
+      - articulos de ferreteria
+      - materiales de ferreteria
+      - insumos de ferreteria
+      - productos de ferreteria
+      - herramientas
+    excluir_en_nombre:
+      - reparacion
+      - mantencion
+      - mantenimiento
+      - arriendo
+      - arrendamiento
+      - servicio de pintura
+      - trabajos de pintura
+      - pintado
+      - demarcacion
+      - taller de pintura
+      - curso de pintura
+      - escaleras mecanicas
+      # "Herramientas" que no son de ferretería (consultoría, software)
+      - herramientas de gestion
+      - herramientas digitales
+      - herramientas tecnologicas
+      - herramientas informaticas
+      - herramientas metodologicas
+    excluir_en_nombre_salvo_clave:
+      # Obras: se descartan salvo que se compren materiales ("ferretería para obras menores")
+      - obras
+      - construccion
+      - pinturas artisticas
+
+  hogar_menaje:
+    nombre: "Electrodomésticos, hogar y menaje"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - electrodomesticos
+      - linea blanca
+      - refrigeradores
+      - frigobar
+      - congeladores
+      - lavadoras
+      - secadoras
+      - hornos microondas
+      - microondas
+      - hervidores
+      - cafeteras
+      - termos
+      - estufas
+      - calefactores
+      - ventiladores
+      - aspiradoras
+      - planchas
+      - licuadoras
+      - batidoras
+      - vajilla
+      - menaje
+      - articulos de menaje
+      - cubiertos
+      - platos
+      - vasos
+      - tazas
+      - ollas
+      - sartenes
+      - utensilios de cocina
+      - ropa de cama
+      - sabanas
+      - frazadas
+      - cobertores
+      - edredones
+      - almohadas
+      - colchones
+      - toallas de bano
+      - cortinas
+    palabras_amplias:
+      - electrodomesticos
+      - linea blanca
+      - menaje
+      - articulos de menaje
+      - ropa de cama
+      - utensilios de cocina
+    excluir_en_nombre:
+      - reparacion
+      - mantencion
+      - mantenimiento
+      - arriendo
+      - arrendamiento
+      - instalacion de aire
+      - servicio de alimentacion
+      - servicios de alimentacion
+      - ventiladores mecanicos
+      - ventilacion mecanica
+    excluir_en_nombre_salvo_clave:
+      # Equipos clínicos que se llaman igual
+      - refrigeradores de vacunas
+      - refrigeradores clinicos
+      - refrigeradores farmaceuticos
+      - congeladores clinicos
+      - colchones antiescaras
+      - colchones clinicos
+      - planchas de zinc
+      - planchas de terciado
+      - planchas de osb
+      - planchas de yeso
+
+  vestuario_textiles:
+    nombre: "Vestuario, uniformes y textiles"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - vestuario
+      - uniformes
+      - ropa
+      - ropa corporativa
+      - ropa de trabajo
+      - poleras
+      - polerones
+      - camisas
+      - pantalones
+      - parkas
+      - chaquetas
+      - cortavientos
+      - chalecos
+      - delantales
+      - buzos
+      - calzado
+      - calzado de seguridad
+      - zapatos de seguridad
+      - zapatillas
+      - botas
+      - gorros
+      - jockeys
+      - mochilas
+      - textiles
+      - telas
+    palabras_amplias:
+      - vestuario
+      - uniformes
+      - ropa
+      - textiles
+      - calzado
+      - ropa de trabajo
+    # Unidades compradoras: "Uniformes para la Dirección de Obras" sí es compra.
+    ignorar:
+      - direccion de obras
+      - direccion de obras municipales
+      - departamento de obras
+    excluir_en_nombre:
+      - lavanderia
+      - lavado de ropa
+      - arriendo
+      - reparacion
+      - habilitacion
+      - antibalas
+      - balisticos
+      - plomados
+      # "Vestuarios" y camarines de un recinto (obra)
+      - construccion
+      - obras
+      - camarines
+    excluir_en_nombre_salvo_clave:
+      - ropa de cama
+
+  deporte_didactico:
+    nombre: "Deporte, juguetes y material didáctico"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - articulos deportivos
+      - implementos deportivos
+      - equipamiento deportivo
+      - material deportivo
+      - balones
+      - pelotas
+      - colchonetas
+      - maquinas de ejercicio
+      - juguetes
+      - material didactico
+      - materiales didacticos
+      - juegos didacticos
+      - juegos de mesa
+      - libros
+      - instrumentos musicales
+    palabras_amplias:
+      - articulos deportivos
+      - implementos deportivos
+      - equipamiento deportivo
+      - material deportivo
+      - material didactico
+      - materiales didacticos
+    excluir_en_nombre:
+      - arriendo
+      - reparacion
+      - mantencion
+      - juegos infantiles
+      - multicancha
+      - cancha
+    excluir_en_nombre_salvo_clave:
+      # Servicios (clases, talleres) salvo que se compren materiales
+      - talleres
+      - clases
+      - escuela deportiva
+
   consultoria_gestion_bi:
     nombre: "Consultoría en gestión, BI y control de gestión"
     # La descripción general suele nombrar unidades ("Depto. de Planificación
@@ -326,6 +794,7 @@ rubros:
       - control de gestion
       - planificacion estrategica
       - indicadores de gestion
+    oc_maximo_por_dia: 100
     palabras_candidatas:
       - consultoria
       - asesoria
@@ -419,6 +888,15 @@ alertas_regulatorias:
 # filtro preliminar por nombre (ahorra llamadas). Con "false" se pide el
 # detalle de todas (mucho más lento).
 filtro_preliminar_por_nombre: true
+
+# Detalle de licitaciones: el de una licitación ya conocida se reutiliza (no se
+# vuelve a pedir) hasta que cambie su fecha de cierre o pasen estos días.
+refrescar_detalle_licitacion_dias: 7
+
+# Órdenes de compra: para los precios basta una muestra. Se piden a lo más estas
+# OC por rubro y día (cada rubro puede cambiarlo con oc_maximo_por_dia).
+ordenes_compra:
+  maximo_por_rubro_y_dia: 60
 
 rutas:
   base_datos: "data/radar.db"

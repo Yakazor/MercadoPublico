@@ -54,6 +54,8 @@ def main():
     finally:
         db.cerrar()
 
+    claves = {datos.get("nombre", clave): clave for clave, datos in (config.get("rubros") or {}).items()}
+    precios.insert(0, "rubro", precios["rubro_nombre"].map(claves))
     precios = precios.sort_values("monto_total", ascending=False).head(MAX_PRECIOS)
     # Clave estable de cada fila para el dashboard (no cambia con el orden por monto).
     precios.insert(0, "id", [

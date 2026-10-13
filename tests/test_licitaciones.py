@@ -49,3 +49,33 @@ def test_alerta_de_latex_usa_el_producto_onu_de_la_misma_linea():
                                   "Descripcion": "Guante de examen libre de polvo, látex, talla M"}]}}
     fila = clasificar(det, filtro)
     assert fila and fila["alertas_regulatorias"] is None
+
+
+
+class ApiLicitaciones:
+    def __init__(self, listado, detalles):
+        self.listado, self.detalles, self.pedidos = listado, detalles, []
+
+    def licitaciones(self, estado=None, codigo=None):
+        if codigo is None:
+            return {"Listado": self.listado}
+        self.pedidos.append(codigo)
+        return {"Listado": [self.detalles[codigo]]}
+
+
+def test_detalle_guardado_se_reutiliza_hasta_que_cambie_el_cierre(tmp_path):
+    filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"]}})
+    db = BaseDatos(tmp_path / "r.db")
+    det = {"CodigoExterno": "A", "Nombre": "Compra de guantes", "Fechas": {"FechaCierre": "2026-10-20T15:00:00"}}
+    api = ApiLicitaciones([{"CodigoExterno": "A", "Nombre": "Compra de guantes", "FechaCierre": "2026-10-20T15:00:00"}],
+                          {"A": det})
+    r = radar_licitaciones(api, filtro, db=db, hoy=date(2026, 10, 13))
+    assert (r.descargadas, r.reutilizadas, len(r.filas)) == (1, 0, 1)
+    r = radar_licitaciones(api, filtro, db=db, hoy=date(2026, 10, 14))
+    assert (r.descargadas, r.reutilizadas, len(r.filas)) == (0, 1, 1) and api.pedidos == ["A"]
+    # Cambió la fecha de cierre en el listado: se vuelve a pedir.
+    api.listado[0]["FechaCierre"] = "2026-10-27T15:00:00"
+    assert radar_licitaciones(api, filtro, db=db, hoy=date(2026, 10, 15)).descargadas == 1
+    # Pasaron los días de refresco: se vuelve a pedir.
+    assert radar_licitaciones(api, filtro, db=db, hoy=date(2026, 10, 25), refrescar_dias=7).descargadas == 1
+    assert db.podar_detalles_licitacion(set()) == 1

@@ -166,7 +166,6 @@ def test_real_insumos_singular_y_abreviaturas(real, nombre):
 
 
 @pytest.mark.parametrize("nombre", [
-    "ADQUISICION ROPA DE TRABAJO Y EPP: ZAPATOS DE SEGURIDAD, GUANTES DE CUERO Y CASCOS",
     "Guantes de soldador y guantes anticorte para taller municipal",
     "Mascarilla laringea desechable",
     "Cloro gas para sistemas de agua potable rural APR",
@@ -233,7 +232,7 @@ def test_real_descripcion_en_consultoria_exige_candidata_y_dos_claves(real):
     assert real.evaluar("Implementar dashboards en Power BI", nombre="Servicio de consultoría").coincide
     # …con una sola clave, o sin candidata en el nombre, no.
     assert not real.evaluar("Implementar un tablero en Power BI", nombre="Servicio de consultoría").coincide
-    assert not real.evaluar("Dashboards en Power BI", nombre="Adquisición de mobiliario").coincide
+    assert not real.evaluar("Dashboards en Power BI", nombre="Adquisición de vehículos").coincide
 
 
 @pytest.mark.parametrize("nombre", [
@@ -363,7 +362,6 @@ def test_real_unidades_dpto_en_items(real):
     "Adquisicion de E.P.P. guantes y lentes",
     "Cloro para A.P.R. Los Maitenes",
     "Compra de guantes de proteccion personal para operarios",
-    "Implementos de seguridad: guantes y botas para operarios",
     "Guantes y lentes de seguridad para funcionarios de obras",
     "Cloro liquido para potabilizacion de agua",
     "Compra de cloro para analizador de cloro residual",
@@ -608,3 +606,56 @@ def test_real_respaldo_servicio_solo_con_especificacion_de_tramite(real, especif
 ])
 def test_real_solo_regulados_por_linea_completa(real, nombre, lineas):
     assert real.evaluar(nombre=nombre, items=lineas).solo_regulados
+
+
+
+def test_real_epp_industrial_es_vestuario_no_insumo_medico(real):
+    """Desde 13-10-2026 hay rubros de reventa además de insumos: el EPP industrial con
+    ropa o calzado es vestuario."""
+    for nombre in ("ADQUISICION ROPA DE TRABAJO Y EPP: ZAPATOS DE SEGURIDAD, GUANTES DE CUERO Y CASCOS",
+                   "Implementos de seguridad: guantes y botas para operarios"):
+        r = real.evaluar(nombre=nombre)
+        assert r.rubro == "vestuario_textiles" and "insumos_medicos_aseo" not in r.rubros, nombre
+
+
+@pytest.mark.parametrize("nombre,rubro", [
+    ("Adquisición de sillas y escritorios para oficinas municipales", "mobiliario"),
+    ("Compra de mobiliario escolar: mesas y sillas", "mobiliario"),
+    ("Suministro de lockers metálicos", "mobiliario"),
+    ("Adquisición de artículos de oficina y resmas de papel", "oficina_libreria"),
+    ("Compra de tóner para impresoras", "oficina_libreria"),
+    ("Adquisición de notebooks y monitores", "computacion_electronica"),
+    ("Compra de proyectores y data show para colegios", "computacion_electronica"),
+    ("Adquisición de herramientas eléctricas: taladros y esmeriles", "ferreteria_herramientas"),
+    ("Compra de pinturas y brochas para mantención de escuela", None),
+    ("Materiales de ferretería para obras menores", "ferreteria_herramientas"),
+    ("Adquisición de electrodomésticos: refrigerador y microondas", "hogar_menaje"),
+    ("Compra de vajilla y menaje para casino", "hogar_menaje"),
+    ("Adquisición de uniformes corporativos y calzado", "vestuario_textiles"),
+    ("Ropa de trabajo para personal de la Dirección de Obras Municipales", "vestuario_textiles"),
+    ("Compra de balones e implementos deportivos", "deporte_didactico"),
+    ("Adquisición de material didáctico y juguetes para jardines infantiles", "deporte_didactico"),
+])
+def test_real_rubros_de_reventa(real, nombre, rubro):
+    assert real.evaluar(nombre=nombre).rubro == rubro, nombre
+
+
+@pytest.mark.parametrize("nombre", [
+    "Servicio de mesa de ayuda informática",
+    "Arriendo de mesas, sillas y toldos para evento",
+    "Reparación de sillas de auditorio",
+    "Mantención de impresoras y fotocopiadoras",
+    "Arriendo de computadores",
+    "Adquisición de monitor multiparámetro para UCI",
+    "Herramientas de gestión para la planificación comunal",
+    "Construcción de vestuarios y camarines estadio municipal",
+    "Servicio de lavandería de ropa hospitalaria",
+    "Instalación de juegos infantiles en plaza",
+    "Adquisición de sillas de ruedas para pacientes",
+    "Ventiladores mecánicos para UCI",
+    "Pavimentación con carpeta asfáltica calle principal",
+    "Remate de bienes muebles dados de baja",
+])
+def test_real_no_son_compras_de_reventa(real, nombre):
+    r = real.evaluar(nombre=nombre)
+    assert not r.coincide, (nombre, r.rubro, r.palabras)

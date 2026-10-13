@@ -6,6 +6,7 @@ Uso:
 """
 import argparse
 import logging
+import time
 
 import _ruta  # noqa: F401
 from radar.almacenamiento import BaseDatos, exportar
@@ -21,26 +22,33 @@ def main():
     p.add_argument("--config", help="ruta alternativa a config.yaml")
     p.add_argument("--solo-exportar", action="store_true",
                    help="no llama a la API: re-exporta lo que ya está en la base")
+    p.add_argument("--max-minutos", type=float,
+                   help="deja de pedir detalles pasado este tiempo (las que falten se conservan)")
     args = p.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    inicio = time.monotonic()
 
     config = cargar_config(args.config)
-    if args.solo_exportar:
-        resultado = ResultadoRadar()
-    else:
-        cliente = ClienteMercadoPublico.desde_config(config, obtener_ticket())
-        resultado = radar_licitaciones(
-            cliente,
-            FiltroRubros.desde_config(config),
-            preliminar_por_nombre=config.get("filtro_preliminar_por_nombre", True),
-            limite=args.limite,
-            hoy=hoy_chile(),
-        )
-    filas = resultado.filas
-
     rutas = config.get("rutas", {})
     db = BaseDatos(ruta_proyecto(rutas.get("base_datos", "data/radar.db")))
     try:
+        if args.solo_exportar:
+            resultado = ResultadoRadar()
+        else:
+            cliente = ClienteMercadoPublico.desde_config(config, obtener_ticket())
+            resultado = radar_licitaciones(
+                cliente,
+                FiltroRubros.desde_config(config),
+                preliminar_por_nombre=config.get("filtro_preliminar_por_nombre", True),
+                limite=args.limite,
+                hoy=hoy_chile(),
+                db=db,
+                refrescar_dias=config.get("refrescar_detalle_licitacion_dias", 7),
+                hasta_monotonic=inicio + args.max_minutos * 60 if args.max_minutos else None,
+            )
+            if not args.limite:
+                db.podar_detalles_licitacion(resultado.activas)
+        filas = resultado.filas
         db.guardar_licitaciones(filas)
         if not args.solo_exportar and not args.limite:
             # Las que fallaron por la API no se revisaron: se conservan tal cual.
@@ -50,7 +58,7 @@ def main():
                 logging.info("Eliminadas de la base (ya no pasan el filtro): %d", eliminadas)
         if resultado.fallidas:
             logging.warning(
-                "%d de %d candidatas sin detalle por errores de la API; se conservan sus datos anteriores.",
+                "%d de %d candidatas sin revisar (errores de la API o sin tiempo); se conservan sus datos anteriores.",
                 len(resultado.fallidas), resultado.candidatas,
             )
         vigentes = db.licitaciones_vigentes(hoy=hoy_chile())

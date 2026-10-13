@@ -1,6 +1,7 @@
 """Órdenes de compra históricas para estimar precios adjudicados por rubro."""
 from __future__ import annotations
 
+import hashlib
 import logging
 import time
 from dataclasses import dataclass, field
@@ -29,12 +30,29 @@ class ResultadoDia:
     ordenes: int = 0
     fallidas: list[str] = field(default_factory=list)   # OC cuyo detalle no se pudo descargar
     candidatas: int = 0
+    omitidas: int = 0                                     # candidatas fuera de la muestra por rubro
     purgadas: int = 0                                     # OC guardadas que ya no son candidatas
     interrumpido: bool = False                            # se acabó el tiempo a mitad del día
 
     @property
     def completo(self) -> bool:
         return not self.fallidas and not self.interrumpido
+
+
+def muestra_oc(candidatas: list[dict], filtro: FiltroRubros) -> list[dict]:
+    """Hasta `oc_maximo_por_dia` OC por rubro (el primero que calza con el nombre).
+    Para los precios basta una muestra, y la API no da para pedir miles de detalles
+    al día. Se eligen por el hash del código: siempre las mismas para un mismo día,
+    así reprocesar o completar eligen igual."""
+    por_rubro: dict[str | None, list[dict]] = {}
+    for oc in sorted(candidatas, key=lambda oc: hashlib.sha1(str(oc.get("Codigo")).encode()).hexdigest()):
+        rubros = filtro.rubros_por_nombre(oc.get("Nombre"))
+        por_rubro.setdefault(rubros[0] if rubros else None, []).append(oc)
+    elegidas = []
+    for clave, ocs in por_rubro.items():
+        maximo = filtro.maximo_oc(clave)
+        elegidas += ocs if maximo is None else ocs[:maximo]
+    return elegidas
 
 
 def procesar_dia(
@@ -53,9 +71,11 @@ def procesar_dia(
     listado = cliente.ordenes_de_compra(fecha=fecha.strftime("%d%m%Y"), estado=estado).get("Listado") or []
     db.guardar_listado_oc(fecha, listado)
     candidatas = [oc for oc in listado if filtro.es_candidata(oc.get("Nombre"))]
-    log.info("%s: %d OC, %d candidatas por nombre", fecha, len(listado), len(candidatas))
+    muestra = muestra_oc(candidatas, filtro)
+    log.info("%s: %d OC, %d candidatas por nombre, %d en la muestra", fecha, len(listado),
+             len(candidatas), len(muestra))
 
-    resultado = ResultadoDia(candidatas=len(candidatas))
+    resultado = ResultadoDia(candidatas=len(candidatas), omitidas=len(candidatas) - len(muestra))
     # OC ya guardadas que con la config actual dejaron de ser candidatas: se borran.
     guardadas = db.codigos_oc()
     codigos_candidatas = {oc.get("Codigo") for oc in candidatas}
@@ -65,7 +85,7 @@ def procesar_dia(
             db.reemplazar_items_oc(codigo, [])
             resultado.purgadas += 1
 
-    for resumen in candidatas:
+    for resumen in muestra:
         if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
             resultado.interrumpido = True
             log.warning("%s: se acabó el tiempo; el día queda pendiente.", fecha)
@@ -106,9 +126,15 @@ def candidatas_sin_detalle(db: BaseDatos, filtro: FiltroRubros) -> list[tuple[da
     más recientes."""
     con_detalle = db.codigos_con_detalle()
     fallos = db.fallos_oc()
-    faltan = {codigo: fecha for fecha, pares in db.listados_oc() if db.dia_oc_procesado(fecha)
-              for codigo, nombre in pares
-              if codigo not in con_detalle and fallos.get(codigo, 0) < MAX_FALLOS_OC and filtro.es_candidata(nombre)}
+    faltan = {}
+    for fecha, pares in db.listados_oc():
+        if not db.dia_oc_procesado(fecha):
+            continue
+        candidatas = [{"Codigo": c, "Nombre": n} for c, n in pares if filtro.es_candidata(n)]
+        for oc in muestra_oc(candidatas, filtro):
+            codigo = oc["Codigo"]
+            if codigo not in con_detalle and fallos.get(codigo, 0) < MAX_FALLOS_OC:
+                faltan[codigo] = fecha
     orden = sorted(faltan.items(), key=lambda par: (fallos.get(par[0], 0), -par[1].toordinal()))
     return [(fecha, codigo) for codigo, fecha in orden]
 

@@ -36,7 +36,7 @@ from radar.almacenamiento import BaseDatos
 from radar.cliente_api import ErrorApi
 from radar.filtro import FiltroRubros
 from radar.ordenes_compra import (COLUMNAS_RESUMEN, candidatas_sin_detalle, completar_candidatas,
-                                  procesar_dia, reclasificar_items)
+                                  muestra_oc, procesar_dia, reclasificar_items)
 
 FILTRO = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes", "cloro"],
                                 "excluir_en_nombre_salvo_clave": ["sonda"]}})
@@ -251,3 +251,23 @@ def test_oc_recuperadas_que_fallan_se_dejan_tras_tres_intentos(tmp_path):
     for _ in range(3):
         assert completar_candidatas(ClienteFalso(listado, {}, fallan={"E"}), amplio, db) == (0, 0)
     assert candidatas_sin_detalle(db, amplio) == []
+
+
+
+def test_muestra_de_oc_por_rubro_es_estable(tmp_path):
+    filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"], "oc_maximo_por_dia": 3},
+                           "bi": {"nombre": "BI", "palabras_clave": ["power bi"]}}, oc_maximo_por_defecto=None)
+    candidatas = [{"Codigo": f"G{i}", "Nombre": "Compra de guantes"} for i in range(10)]
+    candidatas += [{"Codigo": f"B{i}", "Nombre": "Licencias Power BI"} for i in range(4)]
+    muestra = muestra_oc(candidatas, filtro)
+    assert sum(oc["Codigo"].startswith("G") for oc in muestra) == 3
+    assert sum(oc["Codigo"].startswith("B") for oc in muestra) == 4
+    assert [oc["Codigo"] for oc in muestra] == [oc["Codigo"] for oc in muestra_oc(list(reversed(candidatas)), filtro)]
+
+    # procesar_dia descarga solo la muestra y completar no pide las que quedaron fuera.
+    db = BaseDatos(tmp_path / "r.db")
+    detalles = {oc["Codigo"]: _oc(oc["Codigo"], "Guantes") for oc in candidatas[:10]}
+    r = procesar_dia(ClienteFalso(candidatas[:10], detalles), filtro, db, date(2026, 10, 5))
+    assert (r.ordenes, r.omitidas) == (3, 7)
+    db.marcar_dia_oc(date(2026, 10, 5))
+    assert candidatas_sin_detalle(db, filtro) == []

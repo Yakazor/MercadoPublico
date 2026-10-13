@@ -1,10 +1,23 @@
 # Radar de Licitaciones — Mercado Público
 
-Detecta licitaciones activas en ChileCompra para dos rubros y estima precios
+Detecta licitaciones activas en ChileCompra de productos que se pueden comprar y
+revender sin grandes permisos, más un rubro de servicios, y estima precios
 adjudicados a partir de órdenes de compra históricas:
 
 1. **Insumos médicos no regulados y aseo** (guantes, mascarillas, desinfectantes…)
-2. **Consultoría en gestión, BI y control de gestión** (Power BI, dashboards, indicadores…)
+2. **Mobiliario** de oficina, escolar y almacenaje (sillas, escritorios, lockers…)
+3. **Artículos de oficina y librería** (resmas, tóner, archivadores…)
+4. **Computación y electrónica** (notebooks, monitores, impresoras, proyectores…)
+5. **Ferretería y herramientas** (herramientas, pinturas, candados…)
+6. **Electrodomésticos, hogar y menaje** (refrigeradores, vajilla, ropa de cama…)
+7. **Vestuario, uniformes y textiles** (uniformes, calzado, ropa de trabajo…)
+8. **Deporte, juguetes y material didáctico**
+9. **Consultoría en gestión, BI y control de gestión** (servicio propio: Power BI,
+   dashboards, indicadores…)
+
+Quedan fuera los productos que exigen permisos importantes (medicamentos,
+alimentos, químicos peligrosos, combustibles, armas, vehículos), las obras y los
+servicios. Los productos con registro ISP se marcan, no se excluyen.
 
 Los resultados se guardan en SQLite y se exportan a CSV/Excel listos para Power BI.
 
@@ -200,6 +213,17 @@ que se compra es regulado), para filtrarlas en Power BI. En los resúmenes se
 marcan con ⚠ (incluye regulados) y ⚠⚠ (solo regulados). Edita la sección
 `alertas_regulatorias` de `config.yaml` para ajustarlas. Antes de ofertar,
 confirma con el ISP y pide al proveedor el N° de registro de cada producto.
+
+## Escala: detalles guardados y muestra de OC
+
+- **Licitaciones:** el detalle de cada licitación candidata se guarda y se
+  reutiliza; solo se vuelve a pedir si es nueva, si cambió su fecha de cierre en
+  el listado o si pasaron `refrescar_detalle_licitacion_dias` (7). Así el radar
+  diario pide unos cientos de detalles, no miles.
+- **Órdenes de compra:** para los precios basta una muestra. Cada día se piden a
+  lo más `ordenes_compra.maximo_por_rubro_y_dia` OC por rubro (60; insumos 200,
+  consultoría 100, con `oc_maximo_por_dia`). La muestra es estable (por el código
+  de la OC): reprocesar un día elige las mismas.
 
 ## Límites de la API
 

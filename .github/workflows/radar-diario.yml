@@ -26,7 +26,7 @@ jobs:
     permissions:
       contents: write   # publica los JSON del dashboard en la rama "datos"
       actions: read
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -116,7 +116,8 @@ jobs:
           ARGS=""
           [ -n "$LIMITE" ] && ARGS="--limite $LIMITE"
           [ "$SOLO_EXPORTAR" = "true" ] && ARGS="--solo-exportar"
-          python scripts/radar_diario.py $ARGS
+          # Deja ~20 min de margen antes del timeout para guardar la base.
+          python scripts/radar_diario.py $ARGS --max-minutos 95
 
       - name: Guardar base de datos
         if: always() && steps.version.outputs.es_actual == 'true'

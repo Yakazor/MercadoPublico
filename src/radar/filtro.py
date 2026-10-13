@@ -125,6 +125,7 @@ class Rubro:
     # los que se les revisa la especificación del comprador (None = a todos).
     productos_genericos: re.Pattern | None = None
     especificacion_si_producto: re.Pattern | None = None
+    oc_maximo_por_dia: int | None = None           # muestra de OC por día (None = todas)
 
     def base(self, texto_norm: str, es_nombre: bool = False) -> str:
         """Borra frases ignoradas y, fuera del nombre, nombres de unidades
@@ -280,7 +281,8 @@ class FiltroRubros:
     - `alertas(...)`: notas regulatorias (ISP) para los productos mencionados.
     """
 
-    def __init__(self, config_rubros: dict, alertas_regulatorias: list[dict] | None = None):
+    def __init__(self, config_rubros: dict, alertas_regulatorias: list[dict] | None = None,
+                 oc_maximo_por_defecto: int | None = None):
         self.rubros = []
         for clave, datos in (config_rubros or {}).items():
             datos = datos or {}
@@ -310,6 +312,7 @@ class FiltroRubros:
                 usar_clasificacion_onu=bool(datos.get("usar_clasificacion_onu", True)),
                 productos_genericos=_patron(datos.get("productos_genericos") or []),
                 especificacion_si_producto=_patron(datos.get("especificacion_si_producto") or []),
+                oc_maximo_por_dia=datos.get("oc_maximo_por_dia", oc_maximo_por_defecto),
             ))
         self._alertas = []
         for a in alertas_regulatorias or []:
@@ -326,21 +329,26 @@ class FiltroRubros:
 
     @classmethod
     def desde_config(cls, config: dict) -> "FiltroRubros":
-        return cls(config.get("rubros") or {}, config.get("alertas_regulatorias"))
+        return cls(config.get("rubros") or {}, config.get("alertas_regulatorias"),
+                   (config.get("ordenes_compra") or {}).get("maximo_por_rubro_y_dia"))
+
+    def maximo_oc(self, clave: str | None) -> int | None:
+        return next((r.oc_maximo_por_dia for r in self.rubros if r.clave == clave), None)
 
     # -- Licitaciones y nombres -------------------------------------------
     def es_candidata(self, nombre: str | None) -> bool:
         """¿Vale la pena pedir el detalle? Palabra clave o candidata en el nombre,
         sin exclusiones. La decisión final la toma `evaluar`."""
+        return bool(self.rubros_por_nombre(nombre))
+
+    def rubros_por_nombre(self, nombre: str | None) -> list[str]:
+        """Rubros (en el orden de config.yaml) para los que el nombre es candidato."""
         nombre_norm = normalizar(nombre)
         if not nombre_norm:
-            return False
-        for rubro in self.rubros:
-            if rubro.incluir is None or rubro.excluido(nombre_norm):
-                continue
-            if rubro.claves(nombre_norm, es_nombre=True) or rubro.tiene_candidata(nombre_norm):
-                return True
-        return False
+            return []
+        return [rubro.clave for rubro in self.rubros
+                if rubro.incluir is not None and not rubro.excluido(nombre_norm)
+                and (rubro.claves(nombre_norm, es_nombre=True) or rubro.tiene_candidata(nombre_norm))]
 
     def evaluar(self, *descripcion: str | None, nombre: str | None = None, items=(), items_onu=(),
                 productos=()) -> Resultado:
