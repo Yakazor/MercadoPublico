@@ -19,6 +19,9 @@ import unicodedata
 from dataclasses import dataclass, field
 
 _PUNTUACION = re.compile(r"[.\-_/,;:()\[\]\"'“”‘’·•]+")
+_SIGLA = re.compile(r"\b(?:[a-z]\.){2,}")                 # "e.p.p." → "epp"
+# Negaciones para alertas con `negada_si_contiene`: "libre de polvo, látex", "s/ látex".
+_NEGACION = r"\b(?:sin|libres?|exentos?|no|ni|s)(?:\s+\S+){0,3}?\s+"
 _CONECTORES = {"de", "del", "en", "para", "el", "la", "los", "las", "al"}
 _CONECTOR_OPCIONAL = r"\s+(?:(?:de|del|en|para|el|la|los|las|al)\s+){0,2}"
 # Solo se aplica fuera del nombre (descripción, ítems, especificaciones).
@@ -32,8 +35,9 @@ def normalizar(texto: str | None) -> str:
     if not texto:
         return ""
     sin_tildes = unicodedata.normalize("NFKD", str(texto))
-    sin_tildes = "".join(c for c in sin_tildes if not unicodedata.combining(c))
-    return re.sub(r"\s+", " ", _PUNTUACION.sub(" ", sin_tildes.lower())).strip()
+    sin_tildes = "".join(c for c in sin_tildes if not unicodedata.combining(c)).lower()
+    sin_tildes = _SIGLA.sub(lambda m: m.group(0).replace(".", ""), sin_tildes)
+    return re.sub(r"\s+", " ", _PUNTUACION.sub(" ", sin_tildes)).strip()
 
 
 def _alternativa(frase: str) -> str | None:
@@ -93,6 +97,10 @@ class Rubro:
     no_rescatan: re.Pattern | None = None          # claves genéricas que no anulan una exclusión
     detectar_en_descripcion: bool = True
     usar_clasificacion_onu: bool = True            # categoría / producto ONU de Mercado Público
+    # Ítems de OC: productos ONU genéricos que no cuentan como clave, y productos a
+    # los que se les revisa la especificación del comprador (None = a todos).
+    productos_genericos: re.Pattern | None = None
+    especificacion_si_producto: re.Pattern | None = None
 
     def base(self, texto_norm: str, es_nombre: bool = False) -> str:
         """Borra frases ignoradas y, fuera del nombre, nombres de unidades
@@ -133,14 +141,29 @@ class Rubro:
         if self.excluir_salvo_clave is not None and self.excluir_salvo_clave.search(nombre):
             # Una clave genérica ("guantes", "cloro") no rescata: "EPP: guantes y lentes"
             # se descarta; "EPP: guantes, mascarillas y pecheras" no.
-            rescatan = {c for c in self.claves(nombre, es_nombre=True)
-                        if not (self.no_rescatan is not None and self.no_rescatan.fullmatch(c))}
-            return not rescatan
+            return not self.rescatan(self.claves(nombre, es_nombre=True))
         return False
 
     def tiene_candidata(self, nombre_norm: str) -> bool:
         return self.candidatas is not None and bool(
             self.candidatas.search(self.base(nombre_norm, es_nombre=True)))
+
+    def rescatan(self, claves: set[str]) -> set[str]:
+        """Claves que no son genéricas (`no_rescatan`)."""
+        return {c for c in claves if not (self.no_rescatan is not None and self.no_rescatan.fullmatch(c))}
+
+    def claves_items(self, items_norm: list[str]) -> tuple[set[str], bool]:
+        """(claves, todas_excluidas) de las líneas de una licitación. Las líneas
+        excluidas ("Guante cabritilla soldador") no aportan claves; si TODAS lo están,
+        lo que se compra no es del rubro aunque el nombre diga "Guantes"."""
+        lineas = [t for t in items_norm if t]
+        vigentes = [t for t in lineas if not self.excluido(t)]
+        claves = self.sin_debiles_solas(self.claves(" ".join(vigentes)))
+        return claves, bool(lineas) and not vigentes
+
+    def revisa_especificacion(self, producto_norm: str) -> bool:
+        return (not producto_norm or self.especificacion_si_producto is None
+                or bool(self.especificacion_si_producto.search(producto_norm)))
 
 
 @dataclass
@@ -162,9 +185,23 @@ class Alerta:
     patron: re.Pattern
     nota: str
     excepto: re.Pattern | None = None
+    # Si el texto trae alguna de estas frases ("nitrilo"), una negación hasta 3
+    # palabras antes anula la mención: "Guante nitrilo libre de polvo, látex".
+    negada_si: re.Pattern | None = None
+    negada: re.Pattern | None = None
 
     def aplica(self, texto_norm: str) -> bool:
-        return bool(self.patron.search(_quitar(self.excepto, texto_norm)))
+        texto = _quitar(self.excepto, texto_norm)
+        if self.negada_si is not None and self.negada_si.search(texto):
+            texto = _quitar(self.negada, texto)
+        return bool(self.patron.search(texto))
+
+    def quitar(self, texto_norm: str) -> str:
+        """El texto sin las menciones de la alerta (ni sus excepciones o negaciones)."""
+        texto = _quitar(self.excepto, texto_norm)
+        if self.negada_si is not None and self.negada_si.search(texto):
+            texto = _quitar(self.negada, texto)
+        return _quitar(self.patron, texto)
 
 
 class FiltroRubros:
@@ -202,12 +239,18 @@ class FiltroRubros:
                 no_rescatan=_patron(datos.get("no_rescatan") or []),
                 detectar_en_descripcion=bool(datos.get("detectar_en_descripcion", True)),
                 usar_clasificacion_onu=bool(datos.get("usar_clasificacion_onu", True)),
+                productos_genericos=_patron(datos.get("productos_genericos") or []),
+                especificacion_si_producto=_patron(datos.get("especificacion_si_producto") or []),
             ))
         self._alertas = []
         for a in alertas_regulatorias or []:
-            patron = _patron(a.get("palabras") or [])
-            if patron is not None and a.get("nota"):
-                self._alertas.append(Alerta(patron, a["nota"], _patron(a.get("excepto") or [])))
+            alts = _alternativas(a.get("palabras") or [])
+            if alts and a.get("nota"):
+                self._alertas.append(Alerta(
+                    re.compile(rf"\b(?:{alts})\b"), a["nota"], _patron(a.get("excepto") or []),
+                    negada_si=_patron(a.get("negada_si_contiene") or []),
+                    negada=re.compile(rf"{_NEGACION}(?:{alts})\b"),
+                ))
 
     @classmethod
     def desde_config(cls, config: dict) -> "FiltroRubros":
@@ -234,15 +277,21 @@ class FiltroRubros:
         """`items`: texto libre de cada línea; `items_onu`: producto/categoría según el
         clasificador ONU (cuentan solo si el rubro tiene usar_clasificacion_onu)."""
         nombre_norm = normalizar(nombre)
-        items_norm = _unir(items)
+        lineas = [normalizar(t) for t in items if t]
+        items_norm = " ".join(lineas)
         onu = _unir(items_onu)
         libre = _unir(descripcion)
         hallazgos: list[tuple[Rubro, set[str]]] = []
         for rubro in self.rubros:
             if rubro.incluir is None or rubro.excluido(nombre_norm):
                 continue
-            fuertes = (rubro.claves(nombre_norm, es_nombre=True)
-                       | rubro.sin_debiles_solas(rubro.claves(items_norm))
+            en_nombre = rubro.claves(nombre_norm, es_nombre=True)
+            en_items, items_excluidos = rubro.claves_items(lineas)
+            # "Guantes" cuyos ítems son todos "guante cabritilla soldador": se descarta,
+            # salvo que el nombre traiga una clave específica ("Jeringas").
+            if items_excluidos and not rubro.rescatan(en_nombre):
+                continue
+            fuertes = (en_nombre | en_items
                        | (rubro.sin_debiles_solas(rubro.claves(onu)) if rubro.usar_clasificacion_onu else set()))
             en_descripcion = rubro.claves(libre)
             # Descripción: siempre si el rubro lo permite; si no, solo cuando el nombre
@@ -252,10 +301,11 @@ class FiltroRubros:
             if not fuertes and not (descripcion_cuenta and en_descripcion):
                 continue
             hallazgos.append((rubro, fuertes | en_descripcion))
-        segmentos = [*_segmentos(nombre), *(normalizar(t) for t in items)]
-        return self._resultado(hallazgos, f"{nombre_norm} {items_norm} {onu} {libre}", segmentos)
+        return self._resultado(hallazgos, f"{nombre_norm} {items_norm} {onu} {libre}",
+                               _segmentos(nombre), lineas)
 
-    def _resultado(self, hallazgos, texto_norm: str, segmentos: list[str] | None = None) -> Resultado:
+    def _resultado(self, hallazgos, texto_norm: str, segmentos: list[str] | None = None,
+                   lineas: list[str] | None = None) -> Resultado:
         if not hallazgos:
             return Resultado()
         hallazgos.sort(key=lambda h: len(h[1]), reverse=True)
@@ -265,7 +315,7 @@ class FiltroRubros:
             rubro_nombre=principal.nombre,
             rubros=[r.clave for r, _ in hallazgos],
             palabras=sorted({p for _, ps in hallazgos for p in ps}),
-            solo_regulados=self._solo_regulados(principal, texto_norm, segmentos or []),
+            solo_regulados=self._solo_regulados(principal, texto_norm, segmentos or [], lineas or []),
         )
 
     # -- Ítems de órdenes de compra ----------------------------------------
@@ -274,7 +324,10 @@ class FiltroRubros:
         """Un ítem se clasifica por su PRODUCTO; si el producto no trae palabra clave,
         por la categoría ONU (rubros con usar_clasificacion_onu) o por la
         especificación del comprador (rubros sin ella, p. ej. consultoría, donde la
-        categoría ONU "consultoría de gestión" se usa para cualquier servicio).
+        categoría ONU "consultoría de gestión" se usa para cualquier servicio). En
+        esos rubros la especificación solo se revisa si el producto es compatible
+        (`especificacion_si_producto`): "Servicios de catering" para una "jornada de
+        plan estratégico" no es consultoría.
         Las exclusiones se revisan en el producto y en la especificación ("Guantes de
         protección" + "guante de cuero para soldador")."""
         desde_especificacion = not producto
@@ -290,11 +343,18 @@ class FiltroRubros:
                     especificacion_norm and rubro.excluido(especificacion_norm)):
                 excluido = True
                 continue
-            claves = rubro.claves(producto_norm, es_nombre=not desde_especificacion)
+            # "Servicios de consultoría de gestión" (producto ONU de cualquier servicio
+            # profesional) no cuenta por sí mismo: se mira la especificación.
+            generico = rubro.productos_genericos is not None and bool(
+                rubro.productos_genericos.fullmatch(producto_norm))
+            claves = set() if generico else rubro.claves(producto_norm, es_nombre=not desde_especificacion)
             if desde_especificacion:
                 claves = rubro.sin_debiles_solas(claves)
             if not claves:
-                respaldo = categoria_norm if rubro.usar_clasificacion_onu else especificacion_norm
+                if rubro.usar_clasificacion_onu:
+                    respaldo = categoria_norm
+                else:
+                    respaldo = especificacion_norm if rubro.revisa_especificacion(producto_norm) else ""
                 claves = rubro.sin_debiles_solas(rubro.claves(respaldo))
             if claves:
                 hallazgos.append((rubro, claves))
@@ -307,18 +367,22 @@ class FiltroRubros:
         texto = _unir(textos)
         return [a.nota for a in self._alertas if a.aplica(texto)]
 
-    def _solo_regulados(self, rubro: Rubro, texto_norm: str, segmentos: list[str]) -> bool:
-        """True si hay alerta y todo lo que se compra es regulado: cada segmento del
-        nombre o línea con palabra clave tiene también una alerta ("Guantes de examen
-        de látex" → regulado; "Alcohol gel y papel higiénico" → no)."""
+    def _solo_regulados(self, rubro: Rubro, texto_norm: str, segmentos: list[str],
+                        lineas: list[str] = ()) -> bool:
+        """True si hay alerta y todo lo que se compra es regulado: cada línea con
+        palabra clave tiene también una alerta ("Guantes de examen de látex" →
+        regulado; "Alcohol gel y papel higiénico" → no). Si los ítems traen claves,
+        mandan los ítems ("Adquisición de guantes" + ítem "Guantes de látex" →
+        regulado); si no, los segmentos del nombre."""
         if not any(a.aplica(texto_norm) for a in self._alertas):
             return False
-        con_claves = [seg for seg in segmentos if seg and rubro.claves(seg)]
-        if con_claves:
-            return all(any(a.aplica(seg) for a in self._alertas) for seg in con_claves)
+        for partes in (lineas, segmentos):
+            con_claves = [seg for seg in partes if seg and rubro.claves(seg)]
+            if con_claves:
+                return all(any(a.aplica(seg) for a in self._alertas) for seg in con_claves)
         resto = texto_norm
         for a in self._alertas:
-            resto = _quitar(a.patron, _quitar(a.excepto, resto))
+            resto = a.quitar(resto)
         return not rubro.claves(resto)
 
 

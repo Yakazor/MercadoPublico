@@ -357,3 +357,57 @@ def test_real_unidades_dpto_en_items(real):
     r = real.evaluar(nombre="Consultoria para estudio hidrogeologico sector norte",
                      items=["Dpto. de Planificación Estratégica y Control de Gestión"])
     assert not r.coincide
+
+
+@pytest.mark.parametrize("nombre", [
+    "Adquisicion de E.P.P. guantes y lentes",
+    "Cloro para A.P.R. Los Maitenes",
+    "Compra de guantes de proteccion personal para operarios",
+    "Implementos de seguridad: guantes y botas para operarios",
+    "Guantes y lentes de seguridad para funcionarios de obras",
+    "Cloro liquido para potabilizacion de agua",
+    "Compra de cloro para analizador de cloro residual",
+    "Jeringas para inyector de medio de contraste",
+])
+def test_real_epp_agua_y_laboratorio_variantes(real, nombre):
+    assert not real.es_candidata(nombre) and not real.evaluar(nombre=nombre).coincide
+
+
+def test_normalizar_siglas_con_puntos():
+    assert normalizar("E.P.P. y A.P.R.") == "epp y apr"
+    assert normalizar("SERV.ASEO") == "serv aseo"
+
+
+def test_real_items_todos_excluidos_descartan_nombre_generico(real):
+    assert not real.evaluar(nombre="Guantes", items=["Guante cabritilla soldador"]).coincide
+    assert not real.evaluar(nombre="Cloro", items=["Cloro granulado para sistema de agua potable rural"]).coincide
+    assert real.evaluar(nombre="Guantes", items=["Guante nitrilo talla M"]).coincide
+    # Un nombre con clave específica se conserva aunque el ítem traiga "medicamentos".
+    assert real.evaluar(nombre="Jeringas", items=["Jeringa 3 ml para administración de medicamentos"]).coincide
+    # Una línea excluida no aporta palabras.
+    r = real.evaluar(nombre="Insumos médicos", items=["Guante cabritilla soldador", "Gasas 10x10"])
+    assert "guante" not in r.palabras and "gasas" in r.palabras
+
+
+@pytest.mark.parametrize("nombre,items,esperado", [
+    ("Adquisición de guantes", ["Guantes de látex talla M", "Guantes quirúrgicos estériles N° 7"], True),
+    ("Compra de guantes", ["Guante de procedimiento de látex talla S"], True),
+    ("Adquisición de mascarillas", ["Mascarillas N95"], True),
+    ("Adquisición de guantes", ["Guantes de látex talla M", "Guantes de nitrilo talla M"], False),
+])
+def test_real_solo_regulados_mandan_los_items(real, nombre, items, esperado):
+    assert real.evaluar(nombre=nombre, items=items).solo_regulados is esperado
+
+
+@pytest.mark.parametrize("texto", [
+    "Guantes nitrilo libre de polvo, látex", "Guantes nitrilo (libre de polvo/látex)", "Guante nitrilo s/ látex",
+    "Guante de nitrilo talla M, libre de polvo, látex",
+])
+def test_real_latex_negado_en_guantes_de_nitrilo(real, texto):
+    assert real.alertas(texto) == []
+
+
+def test_real_latex_sin_negacion_sigue_alertando(real):
+    assert real.alertas("Guante de procedimiento látex sin polvo")
+    assert real.alertas("Guantes de nitrilo y guantes de látex")
+    assert real.alertas("Guante sin polvo, látex, talla M")
