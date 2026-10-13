@@ -732,3 +732,36 @@ def test_grupos_de_exclusion_compartidos():
     assert f.evaluar(nombre="Clavos de acero").coincide
     with pytest.raises(ValueError):
         FiltroRubros({"x": {"palabras_clave": ["a"], "excluir_grupos": ["no_existe"]}})
+
+
+def test_item_oc_manda_el_rubro_del_producto():
+    rubros = {
+        "aseo": {"nombre": "Aseo", "palabras_clave": ["productos de aseo"]},
+        "vestuario": {"nombre": "Vestuario", "palabras_clave": ["uniformes"]},
+    }
+    r = FiltroRubros(rubros).evaluar_item("Uniformes escolares", "Productos de aseo / Uniformes")
+    assert r.rubro == "vestuario"
+
+
+@pytest.mark.parametrize("producto,categoria,rubro", [
+    # La categoría ONU de la ropa ("…productos de aseo personal") no es aseo.
+    ("Uniformes escolares", "Ropa, maletas y productos de aseo personal / Ropa", "vestuario_textiles"),
+    ("Trajes de hombre", "Ropa, maletas y productos de aseo personal / Ropa", "vestuario_textiles"),
+    ("Papel para fotocopiadora o impresora", "", "oficina_libreria"),
+    ("Planchas a vapor", "", "hogar_menaje"),
+    # Productos clínicos o servicios con nombre de producto de reventa
+    ("Aguja B Braun anestesia punta lapiz 27G", "", None),
+    ("Cinta adhesiva medica 3M microporosa", "", None),
+    ("Dispositivos de sujecion protesica o accesorios", "", None),
+    ("Alargador venoso nemo neonatal 15 cm", "", None),
+    ("Monitores o medidores de colesterol", "", None),
+    ("Almohadillas cojines o almohadas para posicionar el enfermo", "", None),
+    ("Plancha de cinc", "", None),
+    ("Juntas obturadoras textiles", "", None),
+    ("Escritores de libros", "", None),
+    ("Software de desarrollo de plataforma web", "", None),
+    ("Bodegaje de muebles o mobiliario", "", None),
+])
+def test_real_items_oc_de_reventa(real, producto, categoria, rubro):
+    r = real.evaluar_item(producto, categoria)
+    assert r.rubro == rubro, (producto, r.rubro, r.palabras)

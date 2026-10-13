@@ -183,7 +183,9 @@ palabra completa ("aseo" no coincide con "paseo").
 
 En las **órdenes de compra** cada ítem se clasifica por su producto (y la
 categoría ONU si el producto no lo dice; las exclusiones también se revisan en la
-especificación del comprador y del proveedor). En insumos, si la OC tiene un solo
+especificación del comprador y del proveedor). Si el producto calza con un rubro y
+la categoría con otro, manda el producto: "Uniformes escolares" es vestuario aunque
+su categoría ONU sea "Ropa, maletas y productos de aseo personal". En insumos, si la OC tiene un solo
 ítem genérico, se usa el nombre de la OC cuando dice qué producto es ("Compra de
 guantes de nitrilo"); no con nombres amplios (`palabras_amplias`: "insumos
 médicos", "artículos de aseo"), que pueden traer un monitor o un despacho. En consultoría, la especificación del comprador solo

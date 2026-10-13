@@ -83,10 +83,36 @@ grupos_exclusion:
     - medicamentos
     - insulina
     - dosis unitaria
+    - anestesia
+    - biopsia
+    - cinta adhesiva medica
+    - venoso
+    - protesica
+    - protesis
+    - cuidados intensivos
+    - paciente
+    - enfermo
+    - posicionar
+    - respiracion
+    - oxigeno
+    - infusion
+    - restriccion
+    - glucosa
+    - colesterol
+    - medio de contraste
+    - medios de contraste
+    - meglumina
     - ventilados
     - ventilacion mecanica
     - rayos x
     - rx
+
+  # Servicios que llegan como ítem único de una OC cuyo nombre trae un producto.
+  servicios:
+    - desarrollo de plataforma
+    - plataforma web
+    - desarrollo web
+    - bodegaje
 
 rubros:
   insumos_medicos_aseo:
@@ -168,6 +194,9 @@ rubros:
       - preparacion de medicamentos
       - dilucion de medicamentos
       - carro de medicamentos
+      # Categoría ONU de la ropa ("Ropa, maletas y productos de aseo personal"): no
+      # es un producto de aseo.
+      - maletas y productos de aseo personal
     # Claves que nombran una categoría completa: en una OC de un solo ítem sin
     # palabra clave no bastan para clasificarlo por el nombre de la OC ("Compra de
     # insumos médicos" con un monitor o un despacho).
@@ -397,7 +426,7 @@ rubros:
       - reemplazo de mueble
       - viviendas
       - silla rued
-    excluir_grupos: [clinico]
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # "Escritorio" y "mesa" que no son muebles
       - articulos de escritorio
@@ -417,6 +446,7 @@ rubros:
       - mobiliario clinico
       - mobiliario medico
       - mobiliario hospitalario
+      - sillones reclinables de hospital
       - mesa quirurgica
       - mesa de mayo
       - mesa de examen
@@ -442,6 +472,8 @@ rubros:
       - papeleria
       - resmas
       - papel fotocopia
+      - papel para fotocopiadora
+      - papel para impresora
       - papel bond
       - papel carta
       - toner
@@ -498,7 +530,7 @@ rubros:
       - lapiz reutilizable
       - lapiz reutil
       - insul
-    excluir_grupos: [clinico]
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       - archivadores metalicos
       - muebles archivadores
@@ -582,7 +614,7 @@ rubros:
       - ejecutivos de informacion
       - monitores deportivos
       - monitores de talleres
-    excluir_grupos: [clinico]
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # Equipos médicos y EPP que se llaman igual
       - monitores multiparametro
@@ -591,6 +623,10 @@ rubros:
       - monitores fetales
       - monitores desfibriladores
       - monitores des
+      - monitores o medidores
+      # Papel: es de oficina
+      - papel para fotocopiadora o impresora
+      - papel para impresora
       - monitores cardiacos
       - monitores de pacientes
       - pantallas faciales
@@ -664,7 +700,7 @@ rubros:
       - servicio de confeccion
       - radier
       - reconstruccion
-    excluir_grupos: [clinico]
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # Cursos, salvo que se compren las herramientas ("Herramientas para taller de capacitación")
       - capacitacion
@@ -694,7 +730,9 @@ rubros:
       - calefactores
       - ventiladores
       - aspiradoras
-      - planchas
+      - planchas de ropa
+      - planchas a vapor
+      - planchas electricas
       - licuadoras
       - batidoras
       - vajilla
@@ -741,7 +779,9 @@ rubros:
       - lavadoras clinicas
       - termo panel
       - termopanel
-    excluir_grupos: [clinico]
+      - taza de wc
+      - inodoro
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # Equipos clínicos que se llaman igual
       - refrigeradores de vacunas
@@ -782,6 +822,7 @@ rubros:
       - gorros
       - jockeys
       - mochilas
+      - trajes
       - textiles
       - telas
     palabras_amplias:
@@ -819,7 +860,8 @@ rubros:
       - botas de descarga
       - pavlik
       - paquetes de ropa
-    excluir_grupos: [clinico]
+      - juntas obturadoras
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       - ropa de cama
 
@@ -859,10 +901,11 @@ rubros:
       - ediciones
       - fiesta del libro
       - feria del libro
+      - escritores
       - balon de gas
       - balones de gas
       - balon de oxigeno
-    excluir_grupos: [clinico]
+    excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # Servicios (clases, talleres) salvo que se compren materiales
       - talleres

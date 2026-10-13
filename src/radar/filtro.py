@@ -475,6 +475,7 @@ class FiltroRubros:
         proveedor_norm = normalizar(especificacion_proveedor)
         hallazgos = []
         excluidos = set()
+        por_producto: set[str] = set()
         for rubro in self.rubros:
             if rubro.incluir is None:
                 continue
@@ -488,7 +489,9 @@ class FiltroRubros:
             claves = set() if generico else rubro.claves(producto_norm, es_nombre=not desde_especificacion)
             if desde_especificacion:
                 claves = rubro.sin_debiles_solas(claves)
-            if not claves:
+            if claves:
+                por_producto.add(rubro.clave)
+            else:
                 if rubro.usar_clasificacion_onu:
                     respaldo = categoria_norm
                 else:
@@ -496,7 +499,10 @@ class FiltroRubros:
                 claves = rubro.sin_debiles_solas(rubro.claves(respaldo))
             if claves:
                 hallazgos.append((rubro, claves))
-        resultado = self._resultado(hallazgos, [producto_norm, categoria_norm], [producto_norm])
+        # Manda el rubro que nombra el producto: "Uniformes escolares" es vestuario
+        # aunque la categoría ONU ("Ropa, maletas y productos de aseo personal") calce
+        # con aseo.
+        resultado = self._resultado(hallazgos, [producto_norm, categoria_norm], [producto_norm], con_nombre=por_producto)
         resultado.excluidos = excluidos
         resultado.excluido = bool(excluidos) and not resultado.coincide
         return resultado
