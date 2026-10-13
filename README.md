@@ -152,6 +152,13 @@ palabra completa ("aseo" no coincide con "paseo").
 - `excluir_en_nombre`: descarta siempre (ej. "servicio de aseo", "inspección fiscal").
 - `excluir_en_nombre_salvo_clave`: descarta salvo que el nombre traiga otra palabra
   clave: "Compra de sondas" se descarta, "Gasas, guantes y sondas" no.
+- `excluir_grupos`: suma listas compartidas de `grupos_exclusion` a
+  `excluir_en_nombre`. El grupo `clinico` (implantes, catéteres, esterilización,
+  insumos médicos…) lo usan los rubros de reventa: así "Clavo intramedular" no es
+  ferretería ni "Balones de angioplastia" es deporte.
+- Si una licitación calza en varios rubros, el principal es el que tiene claves en
+  el nombre ("Uniformes y otros" con tablets en los ítems es vestuario); entre
+  iguales, el que suma más claves. La columna `rubros_todos` los lista todos.
 - **Criterio de reventa** (insumos y aseo): el radar busca productos que puedas
   comprar y revender tal cual. `especialidades` (angiografía, diálisis,
   traumatología…) marca licitaciones que suelen pedir dispositivos técnicos o de

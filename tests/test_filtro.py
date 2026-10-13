@@ -659,3 +659,76 @@ def test_real_rubros_de_reventa(real, nombre, rubro):
 def test_real_no_son_compras_de_reventa(real, nombre):
     r = real.evaluar(nombre=nombre)
     assert not r.coincide, (nombre, r.rubro, r.palabras)
+
+
+# Falsos positivos del primer radar con los rubros de reventa (13-10-2026).
+@pytest.mark.parametrize("nombre", [
+    "Construcción Sobre Techo Dependencias INCA",
+    "Curso de perfeccionamiento sobre estrategias e instrumentos de evaluación para docentes",
+    "C.S. Insulina Glargina 300 Ui Ml Lápices Desechables",
+    "INSUL GLULI 100UML SIN LAPIZ REUTIL+AG 10000023063",
+    "CONVENIO CLAVO INTRAMEDULAR ARTRODESIS DE RODILLA",
+    "PZM-SUM. TORNILLOS CANULADOS EQ COMODATO",
+    "Convenio de insumos TMT Clavos para el Hospital Provincial de Ovalle",
+    "BALONES DE ANGIOPLASTIA Y STENTS MEDICADOS",
+    "SUMINISTRO DE ENDOP. BALÓN EXPANDIBLE CUBIERTA",
+    "LAVADORAS ULTRASÓNICAS PARA CENTRAL DE ESTERILIZACIÓN APS CASTRO",
+    "SERVICIO LAVADO CORTINAS 1 AÑO M.165 APOYO CLINICO",
+    "Adquisición de 03 puertas de termo panel",
+    "LIC. 91.26 ADQ. VENTILADORES M.T. Y MONITORES DES",
+    "RPH - SENSOR NEONATAL Y ADULTO OXIMETRIA CON MONITORES ASOCIADOS",
+    "Escáner de RX para el Complejo Fronterizo Vergara",
+    "Ejecutivos de información monitores",
+    "CONVENIO DE SUMINISTRO AMPLIFICACIÓN ILUMINACIÓN PANTALLA LED Y COMPLEMENTARIOS",
+    "BOTA DE UNNA 10 A 105 CM X 9 A 10 M 1000022996",
+    "CONVENIO SUMINISTRO PAQUETE DE ROPA PARA TRAUMATOLOGIA HOSPITAL VILLARRICA",
+    "Tarjeta Tipo Gift Card para Vestuario ProRetención",
+    "SERVICIOS DE EDICIONES LIBROS DE DERECHO, UNIVERSIDAD DE TALCA",
+    "Concesión espacio públ. mobiliario publicitario",
+    "RESTAURACION Y REACONDICIONAMIENTO DE MOBILIARIO",
+    "SILLA RUED NEUR ADT RECL-BASC AS VARIOS CM 1000023259",
+    "JGOD PPU 70-2026 AFL030 RADIER Y PINTURA E.A.",
+    "DIPLOMADO EN GESTIÓN FINANCIERA PÚBLICA",
+])
+def test_real_falsos_positivos_de_reventa(real, nombre):
+    r = real.evaluar(nombre=nombre)
+    assert not r.coincide, (nombre, r.rubro, r.palabras)
+
+
+@pytest.mark.parametrize("nombre,rubro", [
+    # "Escritorio" de un computador o de útiles de oficina no es un mueble.
+    ("ADQUISICION COMPUTADORES DE ESCRITORIO PARA DESAM", "computacion_electronica"),
+    ("Adquisición de sobres americanos y carpetas", "oficina_libreria"),
+    ("Adquisición de 10.000 Clavos Gemales", "ferreteria_herramientas"),
+    ("Adquisición de mesa expandible para sala de reuniones", "mobiliario"),
+])
+def test_real_reventa_no_se_pierde(real, nombre, rubro):
+    assert real.evaluar(nombre=nombre).rubro == rubro, nombre
+
+
+def test_real_articulos_de_escritorio_no_son_mobiliario(real):
+    r = real.evaluar(nombre="Adquisición de artículos de librería",
+                     items=["Artículos de escritorio para alumnos"])
+    assert r.rubro == "oficina_libreria"
+    assert "mobiliario" not in r.rubros
+
+
+def test_manda_el_rubro_del_nombre():
+    rubros = {
+        "vestuario": {"nombre": "Vestuario", "palabras_clave": ["uniformes"]},
+        "computacion": {"nombre": "Computación", "palabras_clave": ["tablets", "notebooks", "computadores"]},
+    }
+    r = FiltroRubros(rubros).evaluar(nombre="Adquisición de uniformes y otros",
+                                     items=["Tablets 10 pulgadas", "Notebook 14", "Computadores"])
+    assert r.rubro == "vestuario"
+    assert set(r.rubros) == {"vestuario", "computacion"}
+
+
+def test_grupos_de_exclusion_compartidos():
+    rubros = {"ferreteria": {"nombre": "Ferretería", "palabras_clave": ["clavos"],
+                             "excluir_grupos": ["clinico"]}}
+    f = FiltroRubros(rubros, grupos_exclusion={"clinico": ["intramedular"]})
+    assert not f.evaluar(nombre="Clavo intramedular").coincide
+    assert f.evaluar(nombre="Clavos de acero").coincide
+    with pytest.raises(ValueError):
+        FiltroRubros({"x": {"palabras_clave": ["a"], "excluir_grupos": ["no_existe"]}})

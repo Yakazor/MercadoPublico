@@ -36,8 +36,58 @@ api:
 #   ignorar:             frases que se borran antes de evaluar (nombres de unidades
 #                        compradoras). Los nombres de unidad seguidos de una palabra
 #                        clave ("Departamento de Control de Gestión") se ignoran solos.
+#   excluir_grupos:      listas de `grupos_exclusion` que se suman a excluir_en_nombre.
 # En las órdenes de compra se clasifica CADA ÍTEM por su producto/categoría: solo
 # se guardan (y entran al cálculo de precios) los ítems de tus rubros.
+# Exclusiones compartidas por varios rubros (se usan con `excluir_grupos`).
+grupos_exclusion:
+  # Productos clínicos que se llaman como uno de reventa: clavos y tornillos de
+  # traumatología, balones de angioplastia, lavadoras de esterilización, paquetes de
+  # ropa estéril, monitores de oximetría. Los de reventa los descartan; los insumos
+  # médicos se detectan en su propio rubro.
+  clinico:
+    - insumos clinicos
+    - insumos medicos
+    - insumos medico quirurgicos
+    - quirurgico
+    - quirurgica
+    - cirugia
+    - cardiocirugia
+    - traumatologia
+    - osteosintesis
+    - intramedular
+    - artrodesis
+    - canulados
+    - tmt
+    - tibio
+    - tibial
+    - calcaneo
+    - femoral
+    - hemodinamia
+    - angiografia
+    - angioplastia
+    - cateteres
+    - stents
+    - dilatacion
+    - endoprotesis
+    - endop
+    - medicados
+    - esteril
+    - esterilizacion
+    - consignacion
+    - comodato
+    - dialisis
+    - oximetria
+    - monitorizacion
+    - farmacos
+    - medicamentos
+    - insulina
+    - dosis unitaria
+    - ventilados
+    - ventilacion mecanica
+    - rayos x
+    - rx
+
 rubros:
   insumos_medicos_aseo:
     nombre: "Insumos médicos no regulados y aseo"
@@ -339,7 +389,25 @@ rubros:
       - mesa barrial
       - mesa comunal
       - mesa regional
+      - concesion
+      - mobiliario publicitario
+      - restauracion
+      - reacondicionamiento
+      - empotrado
+      - reemplazo de mueble
+      - viviendas
+      - silla rued
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
+      # "Escritorio" y "mesa" que no son muebles
+      - articulos de escritorio
+      - utiles de escritorio
+      - materiales de escritorio
+      - computadores de escritorio
+      - computador de escritorio
+      - lampara de escritorio
+      - tenis de mesa
+      - juegos de mesa
       # Mobiliario clínico (no elegido) y "mesas de trabajo" como reuniones
       - sillas de ruedas
       - sillas de toma de muestras
@@ -347,6 +415,7 @@ rubros:
       - sillon odontologico
       - sillon de dialisis
       - mobiliario clinico
+      - mobiliario medico
       - mobiliario hospitalario
       - mesa quirurgica
       - mesa de mayo
@@ -387,7 +456,13 @@ rubros:
       - corcheteras
       - perforadoras
       - notas adhesivas
-      - sobres
+      # "Sobre" suelto es preposición ("Curso sobre…", "Sobre techo"): solo frases.
+      - sobres de papel
+      - sobres americanos
+      - sobres de oficio
+      - sobres carta
+      - sobres manila
+      - sobres kraft
       - cuadernos
       - etiquetas adhesivas
       - calculadoras
@@ -417,6 +492,13 @@ rubros:
       - reparacion
       - carpeta asfaltica
       - carpeta de rodado
+      # Lápices de insulina ("INSUL GLULI ... LAPIZ REUTIL")
+      - lapices desechables
+      - lapiz desechable
+      - lapiz reutilizable
+      - lapiz reutil
+      - insul
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
       - archivadores metalicos
       - muebles archivadores
@@ -486,6 +568,21 @@ rubros:
       - telefonia movil
       - planes de telefonia
       - servicio de telefonia
+      - servicio de impresion
+      - servicios de impresion
+      # Equipos de laboratorio y de eventos
+      - criostato
+      - microtomo
+      - impresora de cassettes
+      - amplificacion e iluminacion
+      - amplificacion iluminacion
+      - sistemas de amplificacion
+      - camaras submarinas
+      # "Monitores" que son personas
+      - ejecutivos de informacion
+      - monitores deportivos
+      - monitores de talleres
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
       # Equipos médicos y EPP que se llaman igual
       - monitores multiparametro
@@ -493,6 +590,7 @@ rubros:
       - monitores de signos vitales
       - monitores fetales
       - monitores desfibriladores
+      - monitores des
       - monitores cardiacos
       - monitores de pacientes
       - pantallas faciales
@@ -562,7 +660,15 @@ rubros:
       - herramientas tecnologicas
       - herramientas informaticas
       - herramientas metodologicas
+      - herramientas diagnosticas
+      - servicio de confeccion
+      - radier
+      - reconstruccion
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
+      # Cursos, salvo que se compren las herramientas ("Herramientas para taller de capacitación")
+      - capacitacion
+      - curso
       # Obras: se descartan salvo que se compren materiales ("ferretería para obras menores")
       - obras
       - construccion
@@ -628,6 +734,14 @@ rubros:
       - servicios de alimentacion
       - ventiladores mecanicos
       - ventilacion mecanica
+      - ventiladores hamilton
+      - ventiladores mt
+      - lavado
+      - lavadoras ultrasonicas
+      - lavadoras clinicas
+      - termo panel
+      - termopanel
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
       # Equipos clínicos que se llaman igual
       - refrigeradores de vacunas
@@ -695,6 +809,17 @@ rubros:
       - construccion
       - obras
       - camarines
+      # Beneficios en dinero, no prendas
+      - gift card
+      - tarjeta tipo gift card
+      - vales
+      - administracion de beneficios
+      # Ortopedia y ropa quirúrgica
+      - bota de unna
+      - botas de descarga
+      - pavlik
+      - paquetes de ropa
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
       - ropa de cama
 
@@ -731,6 +856,13 @@ rubros:
       - juegos infantiles
       - multicancha
       - cancha
+      - ediciones
+      - fiesta del libro
+      - feria del libro
+      - balon de gas
+      - balones de gas
+      - balon de oxigeno
+    excluir_grupos: [clinico]
     excluir_en_nombre_salvo_clave:
       # Servicios (clases, talleres) salvo que se compren materiales
       - talleres
@@ -841,6 +973,11 @@ rubros:
       - inspeccion fiscal
       - pavimentacion
       - repavimentacion
+      # Formación académica y trámites sanitarios, no consultoría de gestión
+      - diplomado
+      - resolucion sanitaria
+      - resoluciones sanitarias
+      - gestion documental
     excluir_en_nombre_salvo_clave:
       # "Tablero de control" también es un tablero eléctrico.
       - tablero de control electrico

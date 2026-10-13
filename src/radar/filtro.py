@@ -282,8 +282,9 @@ class FiltroRubros:
     """
 
     def __init__(self, config_rubros: dict, alertas_regulatorias: list[dict] | None = None,
-                 oc_maximo_por_defecto: int | None = None):
+                 oc_maximo_por_defecto: int | None = None, grupos_exclusion: dict | None = None):
         self.rubros = []
+        grupos_exclusion = grupos_exclusion or {}
         for clave, datos in (config_rubros or {}).items():
             datos = datos or {}
             debiles = datos.get("palabras_debiles") or []
@@ -291,6 +292,11 @@ class FiltroRubros:
             alts = _alternativas(claves)
             # "excluir" (formato antiguo) se trata como exclusión en el nombre.
             duras = list(datos.get("excluir_en_nombre") or []) + list(datos.get("excluir") or [])
+            # Listas compartidas entre rubros (p. ej. términos clínicos en los de reventa).
+            for grupo in datos.get("excluir_grupos") or []:
+                if grupo not in grupos_exclusion:
+                    raise ValueError(f"Rubro {clave}: grupo de exclusión desconocido '{grupo}'")
+                duras += list(grupos_exclusion[grupo] or [])
             self.rubros.append(Rubro(
                 clave=clave,
                 nombre=datos.get("nombre", clave),
@@ -330,7 +336,8 @@ class FiltroRubros:
     @classmethod
     def desde_config(cls, config: dict) -> "FiltroRubros":
         return cls(config.get("rubros") or {}, config.get("alertas_regulatorias"),
-                   (config.get("ordenes_compra") or {}).get("maximo_por_rubro_y_dia"))
+                   (config.get("ordenes_compra") or {}).get("maximo_por_rubro_y_dia"),
+                   config.get("grupos_exclusion"))
 
     def maximo_oc(self, clave: str | None) -> int | None:
         return next((r.oc_maximo_por_dia for r in self.rubros if r.clave == clave), None)
@@ -362,6 +369,7 @@ class FiltroRubros:
         onu = _unir(items_onu)
         libre = _unir(descripcion)
         hallazgos: list[tuple[Rubro, set[str]]] = []
+        con_nombre: set[str] = set()
         for rubro in self.rubros:
             if rubro.incluir is None or rubro.excluido(nombre_norm):
                 continue
@@ -388,15 +396,20 @@ class FiltroRubros:
             if not fuertes and not (descripcion_cuenta and en_descripcion):
                 continue
             hallazgos.append((rubro, fuertes | en_descripcion))
+            if en_nombre:
+                con_nombre.add(rubro.clave)
         textos = [nombre_norm, *lineas, *(normalizar(t) for t in items_onu if t),
                   *(normalizar(t) for t in descripcion if t)]
-        return self._resultado(hallazgos, textos, _segmentos(nombre), list(productos or items))
+        return self._resultado(hallazgos, textos, _segmentos(nombre), list(productos or items), con_nombre)
 
     def _resultado(self, hallazgos, textos: list[str], segmentos: list[str] | None = None,
-                   productos: list[str] | None = None) -> Resultado:
+                   productos: list[str] | None = None, con_nombre: set[str] | None = None) -> Resultado:
         if not hallazgos:
             return Resultado()
-        hallazgos.sort(key=lambda h: len(h[1]), reverse=True)
+        # Manda el rubro que nombra lo que se compra: "Uniformes y otros" con tablets
+        # entre los ítems es vestuario aunque computación sume más claves.
+        con_nombre = con_nombre or set()
+        hallazgos.sort(key=lambda h: (h[0].clave in con_nombre, len(h[1])), reverse=True)
         principal = hallazgos[0][0]
         return Resultado(
             rubro=principal.clave,
