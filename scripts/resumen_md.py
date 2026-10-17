@@ -56,7 +56,7 @@ def main():
     if not csv.exists():
         print("No se generó el archivo de licitaciones.")
         return
-    df = pd.read_csv(csv, sep=";", encoding="utf-8-sig")
+    df = pd.read_csv(csv, sep=";", decimal=",", encoding="utf-8-sig")
     if "--auditoria" in sys.argv:
         auditoria(df)
         return

@@ -1,5 +1,7 @@
-# Secretos
+# Secretos (.env.example sí se sube: no trae el valor)
 .env
+.env.*
+!.env.example
 
 # Datos generados
 data/*

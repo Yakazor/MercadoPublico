@@ -69,6 +69,10 @@ def procesar_dia(
     detalle de una OC quedan en `fallidas` y, si se acaba el tiempo
     (`hasta_monotonic`), `interrumpido`: en ambos casos el día no está completo."""
     listado = cliente.ordenes_de_compra(fecha=fecha.strftime("%d%m%Y"), estado=estado).get("Listado") or []
+    # Un día sin ninguna OC en todo el país es una falla de la API, no un dato: no se
+    # marca como procesado ni se pisa el listado guardado.
+    if not listado:
+        raise ErrorApi(f"{fecha}: listado de OC vacío", temporal=True)
     db.guardar_listado_oc(fecha, listado)
     candidatas = [oc for oc in listado if filtro.es_candidata(oc.get("Nombre"))]
     muestra = muestra_oc(candidatas, filtro)

@@ -58,3 +58,14 @@ def test_migra_base_antigua_sin_columnas_nuevas(tmp_path):
                                    "alertas_regulatorias": "y"}])
     assert db.licitaciones_vigentes(date(2026, 10, 10)).loc[0, "alertas_regulatorias"] == "x"
     assert db.items_oc().loc[0, "alertas_regulatorias"] == "y"
+
+
+def test_exportar_neutraliza_formulas_y_usa_coma_decimal(tmp_path):
+    import pandas as pd
+    from radar.almacenamiento import exportar
+    df = pd.DataFrame({"nombre": ["= a lo solicitado", "Resmas"], "monto": [1.5, 2.0]})
+    csv = [r for r in exportar(df, tmp_path, "prueba") if r.suffix == ".csv"][0]
+    texto = csv.read_text(encoding="utf-8-sig")
+    assert "'= a lo solicitado" in texto and "1,5" in texto
+    leido = pd.read_csv(csv, sep=";", decimal=",", encoding="utf-8-sig")
+    assert leido["monto"].tolist() == [1.5, 2.0]

@@ -271,3 +271,11 @@ def test_muestra_de_oc_por_rubro_es_estable(tmp_path):
     assert (r.ordenes, r.omitidas) == (3, 7)
     db.marcar_dia_oc(date(2026, 10, 5))
     assert candidatas_sin_detalle(db, filtro) == []
+
+
+def test_listado_de_oc_vacio_es_error_temporal(tmp_path):
+    import pytest
+    db = BaseDatos(tmp_path / "r.db")
+    with pytest.raises(ErrorApi) as e:
+        procesar_dia(ClienteFalso([], {}), FILTRO, db, date(2026, 10, 5))
+    assert e.value.temporal

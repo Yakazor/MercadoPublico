@@ -318,6 +318,16 @@ class BaseDatos:
         return pd.read_sql_query("SELECT * FROM ordenes_compra_items", self.con)
 
 
+def sin_formulas(df: pd.DataFrame) -> pd.DataFrame:
+    """Textos libres de compradores y proveedores que empiezan con = + - @ ("= a lo
+    solicitado") se exportan con un apóstrofo delante: Excel no los evalúa como fórmula."""
+    df = df.copy()
+    for col in df.columns:
+        if df[col].dtype == object:
+            df[col] = df[col].map(lambda v: "'" + v if isinstance(v, str) and v[:1] in "=+-@" else v)
+    return df
+
+
 def exportar(df: pd.DataFrame, carpeta: str | Path, nombre: str, hoy: date | None = None) -> list[Path]:
     """Exporta CSV + Excel con fecha y una copia fija '<nombre>_actual' para Power BI."""
     carpeta = Path(carpeta)
@@ -327,8 +337,10 @@ def exportar(df: pd.DataFrame, carpeta: str | Path, nombre: str, hoy: date | Non
     for base in (f"{nombre}_{sello}", f"{nombre}_actual"):
         csv = carpeta / f"{base}.csv"
         xlsx = carpeta / f"{base}.xlsx"
-        # utf-8-sig + ';' para que Excel en español abra bien las tildes y columnas.
-        df.to_csv(csv, index=False, sep=";", encoding="utf-8-sig")
-        df.to_excel(xlsx, index=False, sheet_name=nombre[:31])
+        # utf-8-sig + ';' + coma decimal para que Excel y Power BI en español (es-CL)
+        # abran bien tildes, columnas y montos.
+        seguro = sin_formulas(df)
+        seguro.to_csv(csv, index=False, sep=";", decimal=",", encoding="utf-8-sig")
+        seguro.to_excel(xlsx, index=False, sheet_name=nombre[:31])
         rutas += [csv, xlsx]
     return rutas

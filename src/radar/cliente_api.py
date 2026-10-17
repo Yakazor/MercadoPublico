@@ -13,6 +13,9 @@ import time
 import requests
 
 log = logging.getLogger(__name__)
+# urllib3 escribe la URL completa (con ?ticket=) en algunos WARNING, p. ej. "Failed
+# to parse headers": se silencia para que el ticket no quede en ningún log.
+logging.getLogger("urllib3").setLevel(logging.ERROR)
 
 URL_BASE = "https://api.mercadopublico.cl/servicios/v1/publico"
 
