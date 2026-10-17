@@ -2,7 +2,8 @@
 productos parecidos (OC) y el mejor precio encontrado en el mercado chileno.
 
 - `ReferenciasOC`: precio adjudicado en órdenes de compra para el producto de cada
-  ítem (mismo producto ONU o, si no, el más parecido por palabras).
+  ítem (mismo producto ONU o, si no, uno que contenga casi todas sus palabras).
+  Es una referencia: el mismo producto ONU puede mezclar presentaciones.
 - `items_licitacion_presupuesto`: filas de ítems (cantidad, unidad y referencia OC).
 - `armar_presupuesto`: costo de compra, oferta sugerida y margen por ítem, con los
   precios de mercado que se buscaron aparte (`informes/mercado/<codigo>.json`).
@@ -21,7 +22,7 @@ from .modelos import items_licitacion
 IVA = 0.19
 _VACIAS = {"de", "del", "la", "el", "los", "las", "para", "con", "y", "o", "e", "en", "por", "a", "al",
            "x", "un", "una", "uno", "sin", "tipo", "segun", "otros", "otras", "u"}
-SIMILITUD_MINIMA = 0.5
+SIMILITUD_MINIMA = 0.8
 
 
 def _palabras(texto: str) -> set[str]:
@@ -65,13 +66,16 @@ class ReferenciasOC:
                 self._indice[p].append(i)
 
     def buscar(self, producto: str | None, descripcion: str | None = None, rubro: str | None = None) -> Referencia | None:
-        """Mismo producto ONU; si no, el más parecido (Jaccard ≥ 0,5 y 2+ palabras en
-        común) entre el producto y la descripción del ítem, prefiriendo su rubro."""
+        """Mismo producto ONU; si no, uno cuyo nombre contenga casi todas las palabras
+        del producto del ítem (80 %+ y al menos 2: "Guantes de examen" ≈ "Guantes
+        médicos de examen o para usos no quirúrgicos"), prefiriendo su rubro. La
+        descripción no se usa: trae marcas, medidas y códigos que calzan con
+        cualquier cosa ("Catéter venoso … 20 G" no es "Limpiadores de uso general")."""
         exacta = self._exactas.get(normalizar(producto))
         if exacta is not None:
             return self._referencia(exacta, 1.0)
-        buscadas = _palabras(f"{producto or ''} {descripcion or ''}")
-        if not buscadas:
+        buscadas = _palabras(producto or "")
+        if len(buscadas) < 2:
             return None
         candidatas = {i for p in buscadas for i in self._indice.get(p, ())}
         mejor, mejor_nota = None, (0.0, False, 0)
@@ -80,8 +84,7 @@ class ReferenciasOC:
             comunes = buscadas & fila["_palabras"]
             if len(comunes) < 2:
                 continue
-            # Cuánto del producto de la OC aparece en el ítem (la descripción es más larga).
-            similitud = len(comunes) / len(fila["_palabras"])
+            similitud = len(comunes) / len(buscadas)
             nota = (similitud, fila.get("rubro") == rubro, fila.get("n_ordenes") or 0)
             if similitud >= SIMILITUD_MINIMA and nota > mejor_nota:
                 mejor, mejor_nota = fila, nota

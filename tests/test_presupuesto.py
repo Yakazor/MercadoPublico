@@ -82,3 +82,18 @@ def test_prefiere_producto_equivalente_a_uno_aproximado_mas_barato():
     assert armar_presupuesto(items, mercado)["items"][0]["tienda"] == "Igual"
     solo_aprox = [mercado[0]]
     assert armar_presupuesto(items, solo_aprox)["items"][0]["tienda"] == "Otra marca"
+
+
+@pytest.mark.parametrize("producto,descripcion", [
+    ("Catéteres intravenosos periféricos para uso general", "025-1044 CATETER VENOSO PERIFERICO 20 G"),
+    ("Notas de papel autoadhesivo", "Nota adhesiva amarillo fluor, 100 hojas"),
+    ("Lijadoras", "LIJADORA BANDA uso general"),
+])
+def test_referencia_parecida_exige_casi_todas_las_palabras(producto, descripcion):
+    precios = pd.DataFrame([
+        {"rubro": "insumos_medicos_aseo", "producto_normalizado": "limpiadores de uso general", "moneda": "CLP",
+         "precio_mediana": 3710.0, "precio_p25": 3000.0, "n_ordenes": 5},
+        {"rubro": "oficina_libreria", "producto_normalizado": "papel de manualidades autoadhesivo", "moneda": "CLP",
+         "precio_mediana": 4890.0, "precio_p25": 4000.0, "n_ordenes": 5},
+    ])
+    assert ReferenciasOC(precios).buscar(producto, descripcion) is None
