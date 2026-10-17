@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Artifact",
+      "ArtifactData",
+      "WebSearch",
+      "WebFetch",
+      "Workflow",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git clone:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(python3 scripts/*)",
+      "Bash(python3 -m pytest:*)",
+      "mcp__github__actions_list",
+      "mcp__github__actions_get",
+      "mcp__github__actions_run_trigger",
+      "mcp__github__get_job_logs"
+    ]
+  }
+}
