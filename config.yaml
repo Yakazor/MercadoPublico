@@ -106,6 +106,15 @@ grupos_exclusion:
     - ventilacion mecanica
     - rayos x
     - rx
+    - semaglutida
+    - semaglutide
+    - liraglutida
+    - dulaglutida
+    - tirzepatida
+    - cortinas clinicas
+    - traqueostomia
+    - traqueotomia
+    - marcapasos
 
   # Servicios que llegan como ítem único de una OC cuyo nombre trae un producto.
   servicios:
@@ -113,6 +122,14 @@ grupos_exclusion:
     - plataforma web
     - desarrollo web
     - bodegaje
+    - instalacion de cortinas
+    - inst de cortinas
+    - serv mant
+    - mant preventivo
+    - mant correctivo
+    - mantenimiento preventivo
+    - mantenimiento correctivo
+    - preventivo y correctivo
 
 rubros:
   insumos_medicos_aseo:
@@ -260,6 +277,10 @@ rubros:
     # Claves genéricas que no alcanzan para anular una exclusión "salvo clave
     # específica": "EPP: guantes y lentes" se descarta; "EPP: guantes, mascarillas y
     # pecheras" no.
+      - jeringa prellenada
+      - jeringas prellenadas
+      - jeringa precargada
+      - jeringas precargadas
     no_rescatan:
       - guantes
       - cloro
@@ -290,6 +311,8 @@ rubros:
       - formalina
     # Claves que nombran un tipo de producto sin decir cuál (puede ser regulado o
     # no): en especialidades no bastan, y para "solo regulados" mandan las líneas.
+      - oculoplastia
+      - pabellon
     claves_genericas:
       - insumos medicos
       - guantes
@@ -426,6 +449,7 @@ rubros:
       - reemplazo de mueble
       - viviendas
       - silla rued
+      - diseccion
     excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # "Escritorio" y "mesa" que no son muebles
@@ -453,6 +477,9 @@ rubros:
       - mesa ginecologica
       - mesa de procedimientos
       - mesas de trabajo
+      - insumos de escritorio
+      - escaner de escritorio
+      - mobiliario de laboratorio
 
   oficina_libreria:
     nombre: "Artículos de oficina y librería"
@@ -464,6 +491,8 @@ rubros:
       - insumos de oficina
       - articulos de escritorio
       - utiles de escritorio
+      - insumos de escritorio
+      - materiales de escritorio
       - articulos de libreria
       - materiales de libreria
       - insumos de libreria
@@ -512,6 +541,8 @@ rubros:
       - insumos de libreria
       - utiles escolares
       - material escolar
+      - insumos de escritorio
+      - materiales de escritorio
     excluir_en_nombre:
       - imprenta
       - servicio de impresion
@@ -614,6 +645,10 @@ rubros:
       - ejecutivos de informacion
       - monitores deportivos
       - monitores de talleres
+      - contratacion de monitor
+      - coaching
+      - iluminacion escenica
+      - soporte de licencias
     excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # Equipos médicos y EPP que se llaman igual
@@ -781,6 +816,7 @@ rubros:
       - termopanel
       - taza de wc
       - inodoro
+      - caldera
     excluir_grupos: [clinico, servicios]
     excluir_en_nombre_salvo_clave:
       # Equipos clínicos que se llaman igual
@@ -794,6 +830,8 @@ rubros:
       - planchas de terciado
       - planchas de osb
       - planchas de yeso
+      - refrigeradores de farmacia
+      - refrigerador de farmacia
 
   vestuario_textiles:
     nombre: "Vestuario, uniformes y textiles"
@@ -1021,6 +1059,7 @@ rubros:
       - resolucion sanitaria
       - resoluciones sanitarias
       - gestion documental
+      - modalidad saas
     excluir_en_nombre_salvo_clave:
       # "Tablero de control" también es un tablero eléctrico.
       - tablero de control electrico
@@ -1060,7 +1099,7 @@ alertas_regulatorias:
   - palabras: [desinfectantes, cloro, hipoclorito, amonio cuaternario, sanitizantes, toallas desinfectantes]
     excepto: [resistente a desinfectantes, compatible con desinfectantes, sin cloro, libre de cloro,
               libres de cloro, exento de cloro, blanqueado sin cloro, analizador de cloro,
-              medidor de cloro, cloro residual, cloro libre y total]
+              medidor de cloro, cloro residual, cloro libre y total, no desinfectante]
     nota: "Desinfectantes/cloro: registro ISP 'D' (DS 157)"
   - palabras: [jabon liquido, jabon de manos, jabon antibacterial]
     nota: "Jabón de manos: producto de higiene con trámite ISP (DS 239/2002)"
