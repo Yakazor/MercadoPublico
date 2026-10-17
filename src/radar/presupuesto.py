@@ -148,7 +148,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         linea = m.get("linea")
         if linea not in prioridad or nota < prioridad[linea]:
             por_linea[linea], prioridad[linea] = m | {"precio_unitario_neto": precio}, nota
-    filas, costo_total, oferta_total, referencia_total = [], 0.0, 0.0, 0.0
+    filas, costo_total, oferta_total, referencia_total, oferta_con_referencia = [], 0.0, 0.0, 0.0, 0.0
     sin_precio = 0
     for item in items:
         cantidad = _numero(item.get("cantidad")) or 0.0
@@ -164,6 +164,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
             oferta_total += oferta * cantidad
             if ref is not None:
                 referencia_total += ref * cantidad
+                oferta_con_referencia += oferta * cantidad
         filas.append({
             **item,
             "tienda": mejor.get("tienda") if mejor else None,
@@ -186,6 +187,8 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         "oferta_total": oferta_total * (1 + IVA),
         "utilidad": oferta_total - costo_total,
         "referencia_oc_neta": referencia_total or None,
+        # Oferta de los mismos ítems que tienen referencia: es la que se compara con ella.
+        "oferta_con_referencia": oferta_con_referencia or None,
         "margen": margen,
         "otros_costos": otros_costos,
     }

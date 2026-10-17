@@ -104,6 +104,12 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
     ]
     if p["items_sin_precio"]:
         lineas += [f"> {p['items_sin_precio']} ítem(s) sin precio de mercado: no entran en los totales.", ""]
+    if p.get("oferta_con_referencia") and p.get("referencia_oc_neta") and p["oferta_con_referencia"] > p["referencia_oc_neta"]:
+        lineas += [f"> Ojo: en los ítems con referencia, la oferta ({_clp(p['oferta_con_referencia'])}) supera lo que "
+                   f"el Estado pagó en OC ({_clp(p['referencia_oc_neta'])}). Revisa el margen o busca proveedores más baratos.", ""]
+    monto = lic.get("monto_estimado")
+    if monto and lic.get("moneda") in (None, "CLP") and p["oferta_total"] > monto:
+        lineas += [f"> La oferta total supera el monto estimado de la licitación ({_clp(monto)}).", ""]
     lineas += [
         "## Ítems",
         "",
@@ -169,6 +175,10 @@ def main():
         p = armar_presupuesto(por_codigo.get(codigo, []), opciones, args.margen, args.otros_costos)
         (salida / f"{codigo}.md").write_text(markdown(lic, mercado, p), encoding="utf-8")
         tabla = pd.DataFrame(p["items"])
+        dinero = ["ref_mediana", "ref_p25", "costo_unitario_neto", "oferta_unitaria_neta", "subtotal_costo", "subtotal_oferta"]
+        tabla[[c for c in dinero if c in tabla]] = tabla[[c for c in dinero if c in tabla]].round(0)
+        if "margen_vs_referencia" in tabla:
+            tabla["margen_vs_referencia"] = tabla["margen_vs_referencia"].round(3)
         # Punto y coma y coma decimal: Excel en español lo abre bien.
         tabla.to_csv(salida / f"{codigo}.csv", sep=";", decimal=",", index=False, encoding="utf-8-sig")
         resumen.append((lic, mercado, p, codigo in lics))
