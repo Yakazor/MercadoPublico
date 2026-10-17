@@ -46,10 +46,13 @@ Hay tres pedidos posibles:
 7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: `git add informes`,
    `git commit -m "<mensaje en español>"` y `git push origin HEAD:feature/api-mercadopublico`,
    cada uno en su propia llamada (mismos reintentos).
-8. Dashboard: ver «Subir al dashboard» con licitaciones.json, precios.json, items.json y
-   meta.json de `<tmp>/datos` y `<tmp>/mercado.json`.
-9. Resumen de 3–6 líneas: licitaciones vigentes, rango de días de OC, presupuestos con
-   precios y cualquier error.
+8. Resumen de 3–6 líneas (licitaciones vigentes, rango de días de OC, presupuestos con
+   precios y cualquier error). Envíalo con PushNotification **antes** del paso 9, terminado
+   en «Para ver los datos en el dashboard, aprueba la subida en esta sesión».
+9. Dashboard: ver «Subir al dashboard» con licitaciones.json, precios.json, items.json y
+   meta.json de `<tmp>/datos` y `<tmp>/mercado.json`. Subir archivos a un artefacto pide la
+   aprobación del usuario en la app: es el último paso para que todo lo demás ya esté hecho
+   si nadie aprueba. Si una subida se rechaza, no reintentes: termina y dilo.
 
 ## PRECIOS para: <códigos>
 
@@ -62,9 +65,10 @@ Hay tres pedidos posibles:
 4. Guarda el resultado (`{"licitaciones": [...]}`) en `<tmp>/resultado.json` y corre
    `python3 scripts/guardar_mercado.py <tmp>/resultado.json`.
 5. Pasos 6 y 7 de ACTUALIZACIÓN (presupuestos, tests, commit de `informes/` y push).
-6. Dashboard: «Subir al dashboard» con `<tmp>/mercado.json` (y items.json si cambió).
-7. Resumen: por licitación, ítems con precio, costo, oferta total y si supera lo que el
-   Estado pagó o el monto estimado.
+6. Resumen: por licitación, ítems con precio, costo, oferta total y si supera lo que el
+   Estado pagó o el monto estimado. Envíalo con PushNotification antes del paso 7.
+7. Dashboard (último paso, pide aprobación del usuario): «Subir al dashboard» con
+   `<tmp>/mercado.json` (y items.json si cambió).
 
 ## Subir al dashboard
 
