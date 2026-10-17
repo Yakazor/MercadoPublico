@@ -75,12 +75,19 @@ def textos_licitacion(detalle: dict) -> tuple[list[str], list[str], list[str]]:
     return descripcion, [t for t in items if t], [t for t in onu if t]
 
 
+# Sube cuando cambian los campos guardados: los detalles con otra versión se
+# vuelven a pedir (v2: cantidad y unidad de cada ítem, para el presupuesto).
+VERSION_DETALLE_LICITACION = 2
+_CAMPOS_ITEM_LICITACION = ("Correlativo", "NombreProducto", "Descripcion", "Categoria", "Cantidad", "UnidadMedida")
+
+
 def compactar_licitacion(detalle: dict) -> dict:
-    """Solo los campos que usan el filtro y `fila_licitacion`: se guarda para no
-    volver a pedir cada día el detalle de una licitación ya conocida."""
+    """Solo los campos que usan el filtro, `fila_licitacion` y el presupuesto: se
+    guarda para no volver a pedir cada día el detalle de una licitación ya conocida."""
     comprador = detalle.get("Comprador") or {}
     fechas = detalle.get("Fechas") or {}
     return {
+        "_version": VERSION_DETALLE_LICITACION,
         "CodigoExterno": detalle.get("CodigoExterno"),
         "Nombre": detalle.get("Nombre"),
         "Descripcion": detalle.get("Descripcion"),
@@ -92,7 +99,7 @@ def compactar_licitacion(detalle: dict) -> dict:
         "FechaCierre": detalle.get("FechaCierre"),
         "Comprador": {k: comprador.get(k) for k in ("NombreOrganismo", "NombreUnidad", "RegionUnidad", "ComunaUnidad")},
         "Fechas": {k: fechas.get(k) for k in ("FechaCierre", "FechaPublicacion")},
-        "Items": {"Listado": [{k: item.get(k) for k in ("NombreProducto", "Descripcion", "Categoria")}
+        "Items": {"Listado": [{k: item.get(k) for k in _CAMPOS_ITEM_LICITACION}
                               for item in items_licitacion(detalle)]},
     }
 

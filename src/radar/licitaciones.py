@@ -9,7 +9,8 @@ from datetime import date
 from .almacenamiento import BaseDatos
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros
-from .modelos import compactar_licitacion, fila_licitacion, productos_licitacion, textos_licitacion
+from .modelos import (VERSION_DETALLE_LICITACION, compactar_licitacion, fila_licitacion, productos_licitacion,
+                      textos_licitacion)
 
 log = logging.getLogger(__name__)
 
@@ -66,7 +67,8 @@ def radar_licitaciones(
     """Licitaciones activas que calzan con algún rubro, y las que no se pudieron revisar.
 
     Con `db`, el detalle de una licitación ya conocida se reutiliza mientras no
-    cambie su fecha de cierre en el listado ni pasen `refrescar_dias`. Si se acaba
+    cambie su fecha de cierre en el listado ni pasen `refrescar_dias` (y se haya
+    guardado con los campos de la versión actual). Si se acaba
     el tiempo (`hasta_monotonic`), las que faltan quedan como no revisadas."""
     hoy = hoy or date.today()
     activas = listar_activas(cliente)
@@ -86,7 +88,8 @@ def radar_licitaciones(
         codigo = resumen.get("CodigoExterno")
         cierre = resumen.get("FechaCierre")
         guardado = db.detalle_licitacion(codigo) if db is not None else None
-        if guardado and guardado[1] == cierre and (hoy - guardado[2]).days < refrescar_dias:
+        if (guardado and guardado[1] == cierre and (hoy - guardado[2]).days < refrescar_dias
+                and guardado[0].get("_version") == VERSION_DETALLE_LICITACION):
             det = guardado[0]
             resultado.reutilizadas += 1
         else:
