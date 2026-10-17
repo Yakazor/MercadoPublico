@@ -4,6 +4,9 @@ Presupuestos de licitaciones con precios del mercado chileno (tiendas con link) 
 Estado ya pagó en órdenes de compra. Se generan con `scripts/presupuesto.py`; los precios de mercado
 están en `informes/mercado/` con su fecha de consulta.
 
+- [Guía de uso y de postulación a Mercado Público (PDF)](Guia_Radar_Licitaciones.pdf)
+- [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
+
 Actualizado: 2026-10-17. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado |

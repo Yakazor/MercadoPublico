@@ -190,6 +190,9 @@ def main():
         "Estado ya pagó en órdenes de compra. Se generan con `scripts/presupuesto.py`; los precios de mercado",
         "están en `informes/mercado/` con su fecha de consulta.",
         "",
+        "- [Guía de uso y de postulación a Mercado Público (PDF)](Guia_Radar_Licitaciones.pdf)",
+        "- [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)",
+        "",
         f"Actualizado: {date.today().isoformat()}. Margen {_pct(args.margen)}, otros costos "
         f"{_pct(args.otros_costos)}, IVA {_pct(IVA)}.",
         "",

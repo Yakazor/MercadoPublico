@@ -302,6 +302,8 @@ instrucciones en `.claude/RUTINA.md`).
   con lo que el Estado pagó por el mismo producto (mediana de OC) y con el monto
   estimado; si los supera, el informe lo advierte. En el dashboard puedes
   cambiar el margen.
+- **Guía completa** (cómo funciona, cómo usarlo y cómo postular a Mercado Público):
+  `informes/Guia_Radar_Licitaciones.pdf`.
 - **Informes** (`informes/`): `presupuestos/<código>.md|csv`, precios de
   mercado en `mercado/<código>.json` y `grupos_licitaciones.md|csv` (todos los
   segmentos ONU con licitaciones activas vs los rubros del radar, para decidir
