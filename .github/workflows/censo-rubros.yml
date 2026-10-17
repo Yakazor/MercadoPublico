@@ -1,0 +1,59 @@
+name: Censo de grupos de licitaciones
+
+# Manual: Actions → "Censo de grupos de licitaciones" → Run workflow.
+# Pide el detalle de una muestra de licitaciones activas (1 llamada por licitación,
+# ~2,5 s cada una: 1.200 ≈ 50 min) y cuenta por segmento del clasificador ONU
+# cuántas hay, qué monto suman y cuántas detecta el radar. El resultado queda en la
+# rama "censo" (censo.json) y como artefacto (con el detalle de la muestra).
+on:
+  workflow_dispatch:
+    inputs:
+      muestra:
+        description: "Licitaciones a revisar (más = más preciso y más lento)"
+        required: false
+        default: "1200"
+
+# Usa el mismo ticket que el radar y las OC: nunca en paralelo con ellos.
+concurrency:
+  group: radar-db
+  cancel-in-progress: false
+
+jobs:
+  censo:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write   # publica censo.json en la rama "censo"
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Censo
+        env:
+          MP_TICKET: ${{ secrets.MP_TICKET }}
+          MUESTRA: ${{ inputs.muestra || '1200' }}
+        run: python scripts/censo_rubros.py --muestra "$MUESTRA" --salida "$RUNNER_TEMP/censo" --max-minutos 170
+
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: censo-${{ github.run_number }}
+          path: ${{ runner.temp }}/censo
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Publicar censo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/publicar" && cp "$RUNNER_TEMP/censo/censo.json" "$RUNNER_TEMP/publicar/"
+          cd "$RUNNER_TEMP/publicar"
+          git init -q -b censo
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Censo de grupos $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:refs/heads/censo
