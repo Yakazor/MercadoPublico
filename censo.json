@@ -1,0 +1,2201 @@
+{
+ "activas_total": 4879,
+ "procesadas": 1200,
+ "detectadas_por_el_radar": 177,
+ "por_tipo": {
+  "LE": 510,
+  "LP": 321,
+  "LR": 156,
+  "O1": 91,
+  "L1": 90,
+  "CO": 16,
+  "B2": 7,
+  "LS": 4,
+  "I2": 3,
+  "E2": 2
+ },
+ "segmentos": [
+  {
+   "codigo": "72",
+   "segmento": "Servicios de construcción y mantenimiento",
+   "licitaciones": 187,
+   "porcentaje": 15.6,
+   "estimado_activas": 760,
+   "items": 407,
+   "monto_clp_muestra": 63600209494,
+   "monto_clp_estimado": 258587851767,
+   "detectadas": 3,
+   "cobertura": 1.6,
+   "rubros": {
+    "ferreteria_herramientas": 1,
+    "mobiliario": 1,
+    "oficina_libreria": 1
+   },
+   "familias": [
+    {
+     "familia": "Construcción de edificios en general",
+     "licitaciones": 135
+    },
+    {
+     "familia": "Servicios de atención, mantenimiento y reparaciones de edificios",
+     "licitaciones": 52
+    }
+   ],
+   "ejemplos": [
+    "REPARACIONES VARIAS ESCUELA JULIO ALLENDE",
+    "CONSERVACION CAF LICANTEN",
+    "125-26 SERV. INTEGRAL CONTROL CENTRALIZADO CAPLC",
+    "MEJ. PAV. Y AALL LAS PIMPINELAS: MALVAS Y BORGOÑO"
+   ]
+  },
+  {
+   "codigo": "42",
+   "segmento": "Equipamiento y suministros médicos",
+   "licitaciones": 114,
+   "porcentaje": 9.5,
+   "estimado_activas": 464,
+   "items": 793,
+   "monto_clp_muestra": 16185083897,
+   "monto_clp_estimado": 65805853610,
+   "detectadas": 35,
+   "cobertura": 30.7,
+   "rubros": {
+    "insumos_medicos_aseo": 13,
+    "computacion_electronica": 5,
+    "hogar_menaje": 4,
+    "ferreteria_herramientas": 4,
+    "deporte_didactico": 3,
+    "vestuario_textiles": 3,
+    "mobiliario": 2,
+    "oficina_libreria": 1
+   },
+   "familias": [
+    {
+     "familia": "Productos quirúrgicos",
+     "licitaciones": 30
+    },
+    {
+     "familia": "Productos administrados por vía intravenosa y arterial",
+     "licitaciones": 17
+    },
+    {
+     "familia": "Suministros y productos clínicos",
+     "licitaciones": 13
+    },
+    {
+     "familia": "Productos de resucitación, anestesia y respiratorios",
+     "licitaciones": 10
+    },
+    {
+     "familia": "Productos para imágenes y de medicina nuclear",
+     "licitaciones": 10
+    },
+    {
+     "familia": "Productos para exámenes y control de pacientes",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Productos medicinales para deportes, prostéticos y ortopédicos",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Artículos médicos para urgencias y atención en terreno",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Equipamiento para instalaciones médicas",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Productos para la esterilización médica",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Productos para el cuidado de heridas",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Ayuda para personas con discapacidad",
+     "licitaciones": 4
+    }
+   ],
+   "ejemplos": [
+    "Compra por Suministro de Insumos Clínicos para Emergencia",
+    "ELEMENTOS DE ESTIMULACIÓN Y MATERIAL DIDÁCTICO PROGRAMA  RED LOCAL DE APOYOS Y CUIDADOS 2026",
+    "CONV.SUMINISTRO ALIM.ENTERAL BAJADAS Y SUPLEMENTO",
+    "CONVENIO DE SUMINISTRO DE OXIGENO DOMICILIARIO CESFAM DR. V.M. FERNANDEZ"
+   ]
+  },
+  {
+   "codigo": "80",
+   "segmento": "Servicios profesionales, administrativos y consultorías de gestión empresarial",
+   "licitaciones": 114,
+   "porcentaje": 9.5,
+   "estimado_activas": 464,
+   "items": 204,
+   "monto_clp_muestra": 12180130115,
+   "monto_clp_estimado": 49522379026,
+   "detectadas": 6,
+   "cobertura": 5.3,
+   "rubros": {
+    "mobiliario": 2,
+    "oficina_libreria": 1,
+    "ferreteria_herramientas": 1,
+    "consultoria_gestion_bi": 1,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Servicios de recursos humanos",
+     "licitaciones": 47
+    },
+    {
+     "familia": "Servicios para la comercialización y distribución",
+     "licitaciones": 41
+    },
+    {
+     "familia": "Servicios legales",
+     "licitaciones": 11
+    },
+    {
+     "familia": "Consultorías o asesorías en gestión empresarial",
+     "licitaciones": 10
+    },
+    {
+     "familia": "Servicios de apoyo a la administración de empresas",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Servicios inmobiliarios",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO DE PRODUCCIÓN DE EVENTOS.",
+    "SP 774 SERVICIO DE PRODUCCION DE EVENTOS",
+    "LP-19-2026 Diseño Mejoramiento Plaza Bicentenario",
+    "Asesoría Técnica de obras Sistema Fotovoltaico"
+   ]
+  },
+  {
+   "codigo": "10",
+   "segmento": "Consultoria",
+   "licitaciones": 95,
+   "porcentaje": 7.9,
+   "estimado_activas": 386,
+   "items": 105,
+   "monto_clp_muestra": 140625000,
+   "monto_clp_estimado": 571757812,
+   "detectadas": 2,
+   "cobertura": 2.1,
+   "rubros": {
+    "vestuario_textiles": 1,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Consultoria",
+     "licitaciones": 91
+    },
+    {
+     "familia": "Alimento para animales",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Semillas, bulbos y almácigos",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Artículos de talabartería y arreos",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Artículos para mascotas",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "CONSERVACIÓN VARIOS PUENTES Y ALCANTARILLAS LINARES SUR",
+    "Pavimentos Participativos 31 Llam. Agrup 04B La Florida",
+    "AIF Construcción SSR Las Cabras, Comuna de Coihueco",
+    "Conservación Caleta Pichidangui, Comuna Los Vilos"
+   ]
+  },
+  {
+   "codigo": "43",
+   "segmento": "Tecnologías de la información, telecomunicaciones y radiodifusión",
+   "licitaciones": 73,
+   "porcentaje": 6.1,
+   "estimado_activas": 297,
+   "items": 243,
+   "monto_clp_muestra": 21771871153,
+   "monto_clp_estimado": 88520799464,
+   "detectadas": 33,
+   "cobertura": 45.2,
+   "rubros": {
+    "computacion_electronica": 28,
+    "mobiliario": 3,
+    "consultoria_gestion_bi": 1,
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Equipos informáticos y accesorios",
+     "licitaciones": 41
+    },
+    {
+     "familia": "Software",
+     "licitaciones": 24
+    },
+    {
+     "familia": "Equipos, plataformas y accesorios de redes multimedia, voz y datos",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Componentes para tecnología de la información, difusión o telecomunicaciones",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Dispositivos de comunicaciones y accesorios",
+     "licitaciones": 4
+    }
+   ],
+   "ejemplos": [
+    "SC 8832 - ADQUISICIÓN SERVIDORES NAS PARA LA UOH",
+    "CONVENIO SERVICIO DE SOPORTE Y MANTENCIÓN INTEGRAL DEL SISTEMA DE RADIOCOMUNICACION N° 2026-858",
+    "CONTACTABILIDAD Y GESTIÓN DE FILAS SISTEMA APS",
+    "Implementación de la Sala de Crisis"
+   ]
+  },
+  {
+   "codigo": "51",
+   "segmento": "Medicamentos y productos farmacéuticos",
+   "licitaciones": 56,
+   "porcentaje": 4.7,
+   "estimado_activas": 228,
+   "items": 230,
+   "monto_clp_muestra": 33456671961,
+   "monto_clp_estimado": 136029252081,
+   "detectadas": 4,
+   "cobertura": 7.1,
+   "rubros": {
+    "vestuario_textiles": 2,
+    "insumos_medicos_aseo": 1,
+    "oficina_libreria": 1
+   },
+   "familias": [
+    {
+     "familia": "Medicamentos para el sistema nervioso central",
+     "licitaciones": 15
+    },
+    {
+     "familia": "Hormonas y antagonistas hormonales",
+     "licitaciones": 14
+    },
+    {
+     "familia": "Medicamentos para el tracto respiratorio",
+     "licitaciones": 12
+    },
+    {
+     "familia": "Medicamentos anti infecciosos",
+     "licitaciones": 10
+    },
+    {
+     "familia": "Medicamentos para el sistema nervioso autónomo",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Agentes que afectan el agua y los electrolitos",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Medicamentos cardiovasculares",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Agentes antitumorales",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Medicamentos para el sistema gastrointestinal",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Medicamentos hematólicos",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Medicamentos varios",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Medicamentos para los oídos, ojos, nariz y piel",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "CONV.SUMINISTRO ALIM.ENTERAL BAJADAS Y SUPLEMENTO",
+    "CONVENIO DE SUMINISTRO DE URAPIDIL 100MG 20 ML",
+    "C.S. de Fluticasona Furoato 92 mcg  Umeclidinio 5",
+    "LP FAR2 ADQUISICION DE FARMACOS"
+   ]
+  },
+  {
+   "codigo": "85",
+   "segmento": "Salud, servicios sanitarios y alimentación",
+   "licitaciones": 53,
+   "porcentaje": 4.4,
+   "estimado_activas": 215,
+   "items": 226,
+   "monto_clp_muestra": 5590082276,
+   "monto_clp_estimado": 22728342854,
+   "detectadas": 1,
+   "cobertura": 1.9,
+   "rubros": {
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Medicina y servicios de salud",
+     "licitaciones": 46
+    },
+    {
+     "familia": "Prevención y control de enfermedades",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Servicios para el cuidado de la salud de las personas",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Alimentación y nutrición",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Medicina alternativa y holística",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "APC MANTENCIÓN EQUIPOS DE OFTALMOLOGÍA",
+    "173.26 “ADQUISICIÓN DE INTERVENCIONES QUIRÚRGICAS GINECOLÓGICAS EN EL HOSPITAL DE NUEVA IMPERIAL",
+    "COMPRA SERVICIOS PARA REALIZAR EXAMENES PETCT",
+    "SUMINISTRO DE EXÁMENES DE MEDICINA NUCLEAR"
+   ]
+  },
+  {
+   "codigo": "41",
+   "segmento": "Equipamiento para laboratorios",
+   "licitaciones": 45,
+   "porcentaje": 3.8,
+   "estimado_activas": 183,
+   "items": 814,
+   "monto_clp_muestra": 3316724179,
+   "monto_clp_estimado": 13485247726,
+   "detectadas": 13,
+   "cobertura": 28.9,
+   "rubros": {
+    "hogar_menaje": 3,
+    "computacion_electronica": 3,
+    "vestuario_textiles": 2,
+    "ferreteria_herramientas": 2,
+    "insumos_medicos_aseo": 1,
+    "deporte_didactico": 1,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Instrumentos de medida y experimentación",
+     "licitaciones": 25
+    },
+    {
+     "familia": "Equipos e insumos para laboratorio",
+     "licitaciones": 17
+    },
+    {
+     "familia": "Suministros para laboratorios",
+     "licitaciones": 8
+    }
+   ],
+   "ejemplos": [
+    "Suministro Test reportado y Eq. comodato B. Sangre",
+    "REPOSICION PHMETRO Y MANOMETRO HCM",
+    "ADQUISICION DE INSUMOS PARA TÉCNICA AUTOMATIZADA DE INMUNOHISTOQUÍMICA",
+    "REPARACIÓN DEL EQUIPO DE FUSIÓN PERL X-3, DEL DEPARTAMENTO LABORATORIOS"
+   ]
+  },
+  {
+   "codigo": "30",
+   "segmento": "Artículos para estructuras, obras y construcciones",
+   "licitaciones": 45,
+   "porcentaje": 3.8,
+   "estimado_activas": 183,
+   "items": 136,
+   "monto_clp_muestra": 2305698108,
+   "monto_clp_estimado": 9374584225,
+   "detectadas": 9,
+   "cobertura": 20.0,
+   "rubros": {
+    "ferreteria_herramientas": 3,
+    "mobiliario": 2,
+    "hogar_menaje": 1,
+    "oficina_libreria": 1,
+    "vestuario_textiles": 1,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Estructuras prefabricadas",
+     "licitaciones": 15
+    },
+    {
+     "familia": "Construcciones permanentes",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Pavimento para carreteras y caminos",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Puertas, ventanas y vidrios",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Materiales para terminaciones de interiores",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Materiales para terminaciones exteriores",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Hormigón, cemento y yeso",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Artefactos sanitarios",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Suministro de Mezcla Asfáltica en Caliente para colocación de capa de protección Camino Cruce Ruta 5 Puntra-Rio Cajunco-",
+    "ADQUISICIÓN CONTENEDORES BODEGA RESPEL Y CASETA DE GUARDIA PARA TALLER MUNICIPAL",
+    "ADQUISICIÓN INSUMOS DENTALES CESFAM QUILLÓN",
+    "45 toneladas de emulsión imprimante H-784"
+   ]
+  },
+  {
+   "codigo": "73",
+   "segmento": "Servicios de producción y fabricación industrial",
+   "licitaciones": 36,
+   "porcentaje": 3.0,
+   "estimado_activas": 146,
+   "items": 409,
+   "monto_clp_muestra": 1024924035,
+   "monto_clp_estimado": 4167170306,
+   "detectadas": 4,
+   "cobertura": 11.1,
+   "rubros": {
+    "hogar_menaje": 1,
+    "vestuario_textiles": 1,
+    "mobiliario": 1,
+    "computacion_electronica": 1
+   },
+   "familias": [
+    {
+     "familia": "Servicios de apoyo o soporte a la fabricación",
+     "licitaciones": 23
+    },
+    {
+     "familia": "Industrias de plásticos y productos químicos",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Industrias de alimentos y bebidas",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Fabricación de maquinarias y equipos de transporte",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Servicios mecanizados y de procesamiento",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Fabricación de productos eléctricos e instrumentos de precisión",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "118-26 SERV. MANT. EQUIPOS CRÍTICOS Y RELEVANTES",
+    "Mantención Sistema de Sellado de Cápsulas y Prensa",
+    "Adquisición Cloruro de Magnesio Hexahidratado",
+    "VAG161108MANTTO 02 GRUPOS ELECTROGENOSDAG"
+   ]
+  },
+  {
+   "codigo": "76",
+   "segmento": "Servicios de limpieza industrial",
+   "licitaciones": 36,
+   "porcentaje": 3.0,
+   "estimado_activas": 146,
+   "items": 40,
+   "monto_clp_muestra": 25885376773,
+   "monto_clp_estimado": 105245627730,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Servicios de limpieza",
+     "licitaciones": 25
+    },
+    {
+     "familia": "Eliminación y tratamiento de desechos",
+     "licitaciones": 11
+    }
+   ],
+   "ejemplos": [
+    "CONCESIÓN RECOLECCIÓN RESIDUOS DOMICILIARIOS QUEL",
+    "CONVENIO SERVICIO DE ASEO",
+    "SERVICIO DE ASEO PARA  RECINTOS DEPORTIVOS",
+    "Servicio de Aseo de Oficinas Delegaciones"
+   ]
+  },
+  {
+   "codigo": "25",
+   "segmento": "Vehículos y equipamiento en general",
+   "licitaciones": 34,
+   "porcentaje": 2.8,
+   "estimado_activas": 138,
+   "items": 59,
+   "monto_clp_muestra": 4961413815,
+   "monto_clp_estimado": 20172281671,
+   "detectadas": 5,
+   "cobertura": 14.7,
+   "rubros": {
+    "ferreteria_herramientas": 2,
+    "oficina_libreria": 1,
+    "computacion_electronica": 1,
+    "vestuario_textiles": 1
+   },
+   "familias": [
+    {
+     "familia": "Vehículos motorizados",
+     "licitaciones": 19
+    },
+    {
+     "familia": "Componentes para vehículos en general",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Aeronaves",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Componentes para sistemas aeroespaciales",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Embarcaciones",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Equipo de apoyo al transporte",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Bicicletas",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "NEUMATICOS Y OTROS  REPUESTOS",
+    "“SERVICIO DE TRANSPORTE ESCOLAR PARA EE.EE",
+    "ADQUISICIÓN DE 2 DRONES DE ALTO RENDIMIENTO PARA LA MUNICIPALIDAD DE LLANQUIHUE ADEMAS DEL SERVICIO DE CAPACITACIÓN Y TR",
+    "ARRIENDO DE SIMULADOR DE VUELO AERONAVE A-320"
+   ]
+  },
+  {
+   "codigo": "78",
+   "segmento": "Servicios de transporte, almacenaje y correo",
+   "licitaciones": 28,
+   "porcentaje": 2.3,
+   "estimado_activas": 114,
+   "items": 37,
+   "monto_clp_muestra": 4011137396,
+   "monto_clp_estimado": 16308616129,
+   "detectadas": 1,
+   "cobertura": 3.6,
+   "rubros": {
+    "hogar_menaje": 1
+   },
+   "familias": [
+    {
+     "familia": "Transporte de pasajeros",
+     "licitaciones": 11
+    },
+    {
+     "familia": "Servicios de mantención o reparaciones de transportes",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Transporte de correo y carga",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Almacenaje",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Manejo, manipulación y embalaje de material",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "SERV ESPECIALIZADO JOHN DEERE MACK HAMM WIRTGEN",
+    "“SERVICIO DE TRANSPORTE ESCOLAR PARA EE.EE",
+    "GPR CONVENIO SERV. TRANSPORTE SALIDAS PEDAGOGICAS",
+    "Pasajes Nacionales e Internacionales"
+   ]
+  },
+  {
+   "codigo": "81",
+   "segmento": "Servicios basados en ingeniería, ciencias sociales y tecnología de la información",
+   "licitaciones": 28,
+   "porcentaje": 2.3,
+   "estimado_activas": 114,
+   "items": 33,
+   "monto_clp_muestra": 1204530591,
+   "monto_clp_estimado": 4897420628,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Metodologías y tecnologías para mejorar la producción y la fabricación",
+     "licitaciones": 11
+    },
+    {
+     "familia": "Servicios informáticos",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Servicios profesionales de ingeniería",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Servicios relativos a la meteorología y ciencias de la tierra",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO DE OPERACIÓN MANTENIMIENTO Y ACTUALIZACIÓN DE PLATAFORMAS TECNOLÓGICAS DE LA SALA DE CONTROL CENTRALIZADO DEL H",
+    "EXTENSIÓN DE RED AP Y AS VARIAS CALLES ERCILLA",
+    "Servicio fiscalización técnica de obras Agrup.265",
+    "Servicio de Fiscalización Técnica de Obras Agrupacion N°266"
+   ]
+  },
+  {
+   "codigo": "46",
+   "segmento": "Equipos y suministros de defensa, orden público, protección y seguridad",
+   "licitaciones": 25,
+   "porcentaje": 2.1,
+   "estimado_activas": 102,
+   "items": 65,
+   "monto_clp_muestra": 2214954433,
+   "monto_clp_estimado": 9005635564,
+   "detectadas": 13,
+   "cobertura": 52.0,
+   "rubros": {
+    "vestuario_textiles": 6,
+    "ferreteria_herramientas": 3,
+    "hogar_menaje": 1,
+    "oficina_libreria": 1,
+    "computacion_electronica": 1,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Seguridad y protección personal",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Seguridad, vigilancia y detección",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Seguridad y control público",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Protección contra incendios",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Equipos para orden público",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Armas ligeras y munición",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "PROVISIÓN E INSTALACIÓN DE SEÑALES VERTICALES DEM",
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA",
+    "SERV MANTENIMIENTO TRANSMISION DE DATOS CAMARAS",
+    "LITA - ARTICULOS DE MANIOBRAS"
+   ]
+  },
+  {
+   "codigo": "60",
+   "segmento": "Instrumentos musicales, juegos, juguetes, artesanías y materiales educativos",
+   "licitaciones": 22,
+   "porcentaje": 1.8,
+   "estimado_activas": 89,
+   "items": 87,
+   "monto_clp_muestra": 356423625,
+   "monto_clp_estimado": 1449159057,
+   "detectadas": 22,
+   "cobertura": 100.0,
+   "rubros": {
+    "deporte_didactico": 19,
+    "mobiliario": 2,
+    "computacion_electronica": 1
+   },
+   "familias": [
+    {
+     "familia": "Juguetes y juegos",
+     "licitaciones": 14
+    },
+    {
+     "familia": "Materiales, artículos y suministros didácticos profesionales y para el desarrollo personal",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Equipos de arte y manualidades, accesorios y suministros",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Instrumentos musicales, piezas y accesorios",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICIÓN DE JUGUETES O REGALOS PARA NAVIDAD",
+    "ADQUISICIÓN DE ESPEJOS MÓVILES - LIC OSCAR CASTRO",
+    "MEJ. PLAZAS BELLAVISTA LOS LINGUES Y MILLAHUE",
+    "MATERIAL DIDACTICO PARA JARDINES INFANTILES VTF"
+   ]
+  },
+  {
+   "codigo": "83",
+   "segmento": "Servicios básicos y de información pública",
+   "licitaciones": 20,
+   "porcentaje": 1.7,
+   "estimado_activas": 81,
+   "items": 54,
+   "monto_clp_muestra": 2193606754,
+   "monto_clp_estimado": 8918839461,
+   "detectadas": 1,
+   "cobertura": 5.0,
+   "rubros": {
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Servicios básicos",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Telecomunicaciones",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Bibliotecas y otros centros de información pública",
+     "licitaciones": 3
+    }
+   ],
+   "ejemplos": [
+    "Serv. Distr. Agua Potable en Camiones Aljibes DPR",
+    "TELEFONÍA FIJA Y RED PRIVADA DE DATOS",
+    "SERVICIO DE INTERNET DEDICADO",
+    "DRG AFTA -  SERVICIO ELECTRICIDAD GENERADORES"
+   ]
+  },
+  {
+   "codigo": "53",
+   "segmento": "Ropa, maletas y productos de aseo personal",
+   "licitaciones": 20,
+   "porcentaje": 1.7,
+   "estimado_activas": 81,
+   "items": 33,
+   "monto_clp_muestra": 521181842,
+   "monto_clp_estimado": 2119038505,
+   "detectadas": 20,
+   "cobertura": 100.0,
+   "rubros": {
+    "vestuario_textiles": 14,
+    "computacion_electronica": 2,
+    "insumos_medicos_aseo": 2,
+    "deporte_didactico": 2
+   },
+   "familias": [
+    {
+     "familia": "Ropa",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Calzado",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Artículos de baño o tocador",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Maletas, bolsos de mano, mochilas y estuches",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Suministros y accesorios de costura",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Convenio Uniformes Administrativos",
+    "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS POR CONVENIOS",
+    "Suministro de Insumos de uso en Traumatología II",
+    "Soluciones de diferentes vías de administración G7"
+   ]
+  },
+  {
+   "codigo": "40",
+   "segmento": "Equipamiento para el acondicionamiento, distribución y filtrado de fluidos",
+   "licitaciones": 20,
+   "porcentaje": 1.7,
+   "estimado_activas": 81,
+   "items": 88,
+   "monto_clp_muestra": 344521525,
+   "monto_clp_estimado": 1400767099,
+   "detectadas": 5,
+   "cobertura": 25.0,
+   "rubros": {
+    "mobiliario": 2,
+    "hogar_menaje": 2,
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Control de temperatura y ventilación",
+     "licitaciones": 10
+    },
+    {
+     "familia": "Control y distribución de líquidos y gases",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Filtros y purificación industrial",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Bombas y compresores industriales",
+     "licitaciones": 3
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICIÓN DE MOBILIARIO PARA ESPACIOS COMUNES DEL EDIFICIO DE OFICINAS DOCENTES Y DE POSTGRADO. CAMPUS OSORNO",
+    "SETS TÉRMICOS METÁLICOS PARA RECONOCIMIENTO DE LOS AFILIADOS Y AFILIADAS ACTIVOS DEL SERVICIO DE BIENESTAR QUE CUMPLEN A",
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA",
+    "Adquisición de Mobiliario destinado a los EE"
+   ]
+  },
+  {
+   "codigo": "56",
+   "segmento": "Muebles y mobiliario",
+   "licitaciones": 18,
+   "porcentaje": 1.5,
+   "estimado_activas": 73,
+   "items": 141,
+   "monto_clp_muestra": 274947389,
+   "monto_clp_estimado": 1117890260,
+   "detectadas": 17,
+   "cobertura": 94.4,
+   "rubros": {
+    "mobiliario": 12,
+    "computacion_electronica": 3,
+    "deporte_didactico": 1,
+    "hogar_menaje": 1
+   },
+   "familias": [
+    {
+     "familia": "Muebles de alojamiento",
+     "licitaciones": 16
+    },
+    {
+     "familia": "Muebles comerciales e industriales",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Mobiliario y accesorios institucional, escolar y educativo",
+     "licitaciones": 4
+    }
+   ],
+   "ejemplos": [
+    "Habilitación de Biblioteca e Instalación de mobiliario en Regimén cerrado de Coronel",
+    "ADQUISICIÓN DE MOBILIARIO PARA ESPACIOS COMUNES DEL EDIFICIO DE OFICINAS DOCENTES Y DE POSTGRADO. CAMPUS OSORNO",
+    "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS POR CONVENIOS",
+    "Adquisición de Mobiliario destinado a los EE"
+   ]
+  },
+  {
+   "codigo": "31",
+   "segmento": "Artículos de fabricación y producción",
+   "licitaciones": 18,
+   "porcentaje": 1.5,
+   "estimado_activas": 73,
+   "items": 122,
+   "monto_clp_muestra": 164906819,
+   "monto_clp_estimado": 670483642,
+   "detectadas": 12,
+   "cobertura": 66.7,
+   "rubros": {
+    "ferreteria_herramientas": 6,
+    "oficina_libreria": 4,
+    "computacion_electronica": 2
+   },
+   "familias": [
+    {
+     "familia": "Artículos de ferretería",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Cintas adhesivas y selladores",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Cuerdas, cadenas, cables, alambres y correas",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Pinturas, diluyentes y accesorios para pintado",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Materia prima en planchas, barras o tubos",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Juntas, empaquetaduras y sellos industriales",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Cubiertas, cajas y envoltorios",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Óptica industrial",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Productos refractarios",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "CONVENIO DE SUMINISTRO E INSTALACIÓN DE EMPAVONADOS Y SEÑALÉTICAS PARA EL HOSPITAL PROVINCIAL MARGA MARGA",
+    "LITA - ARTICULOS DE MANIOBRAS",
+    "ADQUISICIÓN DE INSUMOS AGROPECUARIOS PARA LA EJECUCIÓN DE 8 ACTIVIDADES FORMATIVAS DEL PROGRAMA PDTI QUEPE DE LOS TERRIT",
+    "ADQUISICION HERRAMIENTAS TECNOLOGICAS TACTICA AUDIOVISUAL DE REGISTRO Y SOPORTE LOGISTICO SEGURIDAD PUBLICA"
+   ]
+  },
+  {
+   "codigo": "44",
+   "segmento": "Equipos, accesorios y suministros de oficina",
+   "licitaciones": 17,
+   "porcentaje": 1.4,
+   "estimado_activas": 69,
+   "items": 37,
+   "monto_clp_muestra": 61600485,
+   "monto_clp_estimado": 250457307,
+   "detectadas": 13,
+   "cobertura": 76.5,
+   "rubros": {
+    "oficina_libreria": 5,
+    "mobiliario": 3,
+    "computacion_electronica": 3,
+    "vestuario_textiles": 2
+   },
+   "familias": [
+    {
+     "familia": "Maquinarias, suministros y accesorios de oficina",
+     "licitaciones": 11
+    },
+    {
+     "familia": "Accesorios de oficina y escritorio",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Suministros de oficina",
+     "licitaciones": 3
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO INTEGRAL DE REGISTRO Y GESTIÓN DE ASISTENCIA CON ADQUISICIÓN DE RELOJES BIOMÉTRICOS PARA CORMUDESI POR 24 MESES",
+    "INSUMOS - ESTRAT. VINC. TERRITORIAL -PGMA. APS UNI",
+    "SERVICIO ARRIENDO DE SOFWARE DE ASISTENCIA CLOUD",
+    "Adquisición de Mobiliario destinado a los EE"
+   ]
+  },
+  {
+   "codigo": "82",
+   "segmento": "Servicios editoriales, de diseño, publicidad, gráficos y artistas",
+   "licitaciones": 17,
+   "porcentaje": 1.4,
+   "estimado_activas": 69,
+   "items": 40,
+   "monto_clp_muestra": 815529278,
+   "monto_clp_estimado": 3315806123,
+   "detectadas": 4,
+   "cobertura": 23.5,
+   "rubros": {
+    "deporte_didactico": 2,
+    "vestuario_textiles": 1,
+    "oficina_libreria": 1
+   },
+   "familias": [
+    {
+     "familia": "Publicidad",
+     "licitaciones": 8
+    },
+    {
+     "familia": "Servicios de impresión y reproducción",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Escritura y traducciones",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Fotografía",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Servicio de re-impresión del libro: Redes del coleccionismo. El rol de coleccionistas, museos y objetos precolombinos en",
+    "ARRIENDO DE SOPORTE MÁS TELA PUBLICITARIA SC 4450",
+    "Letreros publicitarios Piscina Alcalde Godoy",
+    "Corrección de respuestas a preguntas abiertas incluidas en las pruebas del SNE de Aprendizajes"
+   ]
+  },
+  {
+   "codigo": "86",
+   "segmento": "Educación, formación, entrenamiento y capacitación",
+   "licitaciones": 16,
+   "porcentaje": 1.3,
+   "estimado_activas": 65,
+   "items": 44,
+   "monto_clp_muestra": 126641714,
+   "monto_clp_estimado": 514904101,
+   "detectadas": 1,
+   "cobertura": 6.2,
+   "rubros": {
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Sistemas educativos complementarios",
+     "licitaciones": 12
+    },
+    {
+     "familia": "Servicios educativos especializados",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Formación profesional",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Servicios de orientación y tecnología educativa",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Curso de Formación para Vigilantes Privados",
+    "Servicio integral Capacitacion del programa 2026",
+    "SERVICIOS SALIDA PEDAG.ALUMNO LICEO RAHUE OSORNO.",
+    "SERVICIOS DE CAPACITACION VARIAS TEMATICAS HGGB"
+   ]
+  },
+  {
+   "codigo": "90",
+   "segmento": "Servicios de Viajes, alimentación, alojamiento y entretenimiento",
+   "licitaciones": 16,
+   "porcentaje": 1.3,
+   "estimado_activas": 65,
+   "items": 19,
+   "monto_clp_muestra": 119754689,
+   "monto_clp_estimado": 486902606,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Restaurantes y catering",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Instalaciones hoteleras, alojamientos y centros de eventos",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Entretenimiento",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Asistencia para viajes",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "CELEBRACIÓN DÍA DEL FUNCIONARIO MUNICIPAL 2026",
+    "SALIDA PEDAGOGICA LERO FONDOS SEP",
+    "SERVICIO DE ALIMENTACIÓN PAC PARA EL HOSPITAL DE CAUQUENES",
+    "Servicio de Coffee Break Catering y similares"
+   ]
+  },
+  {
+   "codigo": "26",
+   "segmento": "Maquinaria para generación y distribución de energía",
+   "licitaciones": 16,
+   "porcentaje": 1.3,
+   "estimado_activas": 65,
+   "items": 47,
+   "monto_clp_muestra": 152222222,
+   "monto_clp_estimado": 618910185,
+   "detectadas": 6,
+   "cobertura": 37.5,
+   "rubros": {
+    "computacion_electronica": 3,
+    "ferreteria_herramientas": 2,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Transmisión de energía eléctrica, mecánica y cinética",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Alambres y cables eléctricos y electrónicos",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Generación de energía",
+     "licitaciones": 4
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS POR CONVENIOS",
+    "ADQUISICIÓN E INSTALACIÓN DE SISTEMAS FOTOVOLTAICOS CON INYECCIÓN A LA RED EN EL MARCO DEL CONCURSO FONDO DE ACCESO A LA",
+    "ADQUISICION HERRAMIENTAS TECNOLOGICAS TACTICA AUDIOVISUAL DE REGISTRO Y SOPORTE LOGISTICO SEGURIDAD PUBLICA",
+    "ADQUISICION DE  BATERIAS RECARGABLES DE 12 VOLTS"
+   ]
+  },
+  {
+   "codigo": "93",
+   "segmento": "Organizaciones y consultorías políticas, demográficas, económicas, sociales y de administración pública",
+   "licitaciones": 14,
+   "porcentaje": 1.2,
+   "estimado_activas": 57,
+   "items": 17,
+   "monto_clp_muestra": 121013001,
+   "monto_clp_estimado": 492018693,
+   "detectadas": 1,
+   "cobertura": 7.1,
+   "rubros": {
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Desarrollo social, demográfico y comunitario",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Ayuda y asistencia humanitaria",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Tributación",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "CONSULTOR DE ESTUDIO Y DISEÑO CICLOVIAS G.AVENIDA",
+    "CONTRATACIÓN SERVICIOS DE ALIMENTACIÓN PARA PROGRAMAS DEL INSTITUTO NACIONAL DE DEPORTES REGIÓN DE O´HIGGINS.",
+    "Celebración Día de la Educación Municipal 2026",
+    "Contr. suministro abarrotes jugos embutidos y pan"
+   ]
+  },
+  {
+   "codigo": "49",
+   "segmento": "Equipos, suministros y accesorios deportivos y recreativos",
+   "licitaciones": 14,
+   "porcentaje": 1.2,
+   "estimado_activas": 57,
+   "items": 111,
+   "monto_clp_muestra": 127054222,
+   "monto_clp_estimado": 516581292,
+   "detectadas": 10,
+   "cobertura": 71.4,
+   "rubros": {
+    "deporte_didactico": 6,
+    "oficina_libreria": 1,
+    "mobiliario": 1,
+    "ferreteria_herramientas": 1,
+    "vestuario_textiles": 1
+   },
+   "familias": [
+    {
+     "familia": "Coleccionismo y condecoraciones o premios",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Equipos deportivos para canchas",
+     "licitaciones": 4
+    },
+    {
+     "familia": "Otros deportes",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Equipos y accesorios de deportes",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Juegos y equipos de tiro y mesa",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Equipos y suministros de recreación, parques infantiles, natación y de spa",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Equipos de gimnasia y boxeo",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Equipos para entrenamiento físico",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Implementos Deportivos - Unidad de Deportes",
+    "CE-Material de Enseñanza No Fungible VTF Set Musical SC 61253",
+    "INSUMOS - ESTRAT. VINC. TERRITORIAL -PGMA. APS UNI",
+    "Adquisición de Mobiliario destinado a los EE"
+   ]
+  },
+  {
+   "codigo": "70",
+   "segmento": "Servicios agrícolas, pesqueros, forestales y relacionados con la fauna",
+   "licitaciones": 14,
+   "porcentaje": 1.2,
+   "estimado_activas": 57,
+   "items": 14,
+   "monto_clp_muestra": 444306275,
+   "monto_clp_estimado": 1806475263,
+   "detectadas": 2,
+   "cobertura": 14.3,
+   "rubros": {
+    "vestuario_textiles": 2
+   },
+   "familias": [
+    {
+     "familia": "Horticultura",
+     "licitaciones": 7
+    },
+    {
+     "familia": "Cultivos forestales",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Producción, administración y protección de cultivos",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Servicios de ganadería",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Preparación, administración y protección del terreno y el suelo",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO DE MANTENCIÓN RIEGO Y REPLANTE REFORESTACIÓN 13 HA SECTOR SAN JOSÉ COMUNA DE LONGAVÍ PERIODO 2026 - 2027",
+    "SERVICIO DE MANTENCIÓN Y MANEJO DE ARBOLADO URBANO DE LA COMUNA DE HUECHURABA",
+    "SERV. ARRIENDO MOTONIVELADORA CON OPERADOR",
+    "ADQUISICION TERRENO CESFAM LA ESTRELLA"
+   ]
+  },
+  {
+   "codigo": "22",
+   "segmento": "Maquinaria para construcción y edificación",
+   "licitaciones": 13,
+   "porcentaje": 1.1,
+   "estimado_activas": 53,
+   "items": 17,
+   "monto_clp_muestra": 1743213751,
+   "monto_clp_estimado": 7087616578,
+   "detectadas": 1,
+   "cobertura": 7.7,
+   "rubros": {
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Maquinaria pesada de construcción",
+     "licitaciones": 13
+    }
+   ],
+   "ejemplos": [
+    "ARRIENDO CAMION ESTANQUE ASFALTO PROVINCIA LIMARI",
+    "ADQUISICION DE MAQUINARIAS MUNICIPALESNATALES",
+    "ADQUISICIÓN MINICARGADOR FRONTAL Y ACCESORIOS PARA LA MUNICIPALIDAD DE LAS CONDES",
+    "Adquisición de Mobiliario Urbano"
+   ]
+  },
+  {
+   "codigo": "39",
+   "segmento": "Artículos eléctricos y de iluminación",
+   "licitaciones": 13,
+   "porcentaje": 1.1,
+   "estimado_activas": 53,
+   "items": 35,
+   "monto_clp_muestra": 593574320,
+   "monto_clp_estimado": 2413374255,
+   "detectadas": 4,
+   "cobertura": 30.8,
+   "rubros": {
+    "computacion_electronica": 2,
+    "oficina_libreria": 1,
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Artefactos y accesorios de iluminación",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Equipamiento y artículos eléctricos",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Artículos de iluminación",
+     "licitaciones": 3
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO CONEXIONES ELECTRICAS DE VIVIENDAS",
+    "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS POR CONVENIOS",
+    "LITA - ARTICULOS DE MANIOBRAS",
+    "ADQUISICION HERRAMIENTAS TECNOLOGICAS TACTICA AUDIOVISUAL DE REGISTRO Y SOPORTE LOGISTICO SEGURIDAD PUBLICA"
+   ]
+  },
+  {
+   "codigo": "52",
+   "segmento": "Muebles, accesorios, electrodomésticos y productos electrónicos",
+   "licitaciones": 13,
+   "porcentaje": 1.1,
+   "estimado_activas": 53,
+   "items": 44,
+   "monto_clp_muestra": 73352280,
+   "monto_clp_estimado": 298238145,
+   "detectadas": 12,
+   "cobertura": 92.3,
+   "rubros": {
+    "hogar_menaje": 4,
+    "mobiliario": 3,
+    "computacion_electronica": 3,
+    "deporte_didactico": 1,
+    "ferreteria_herramientas": 1
+   },
+   "familias": [
+    {
+     "familia": "Equipos y accesorios audiovisuales",
+     "licitaciones": 10
+    },
+    {
+     "familia": "Aparatos electrodomésticos",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Tratamientos de ventanas",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Utensilios y baterías de cocina, vajillas y otros productos de uso doméstico",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA",
+    "ADQUISICIÓN DE 100 GPS TRACKER CON PLATAFORMA INTEGRADA GEOESPACIAL Y DE TRAZABILIDAD Y SU RESPECTIVO EQUIPAMIENTO EJECU",
+    "CORTINAS CLÍNICAS BLANCAS - SC. 212 CESFAM RSM",
+    "Convenio de suministros para adquisición de audífonos para pérdida auditiva en pacientes con problema de salud GES 56"
+   ]
+  },
+  {
+   "codigo": "23",
+   "segmento": "Maquinaria para fabricación y transformación industrial",
+   "licitaciones": 12,
+   "porcentaje": 1.0,
+   "estimado_activas": 49,
+   "items": 15,
+   "monto_clp_muestra": 7220003,
+   "monto_clp_estimado": 29355331,
+   "detectadas": 8,
+   "cobertura": 66.7,
+   "rubros": {
+    "ferreteria_herramientas": 4,
+    "hogar_menaje": 3,
+    "computacion_electronica": 1
+   },
+   "familias": [
+    {
+     "familia": "Maquinaria y suministros de procesos industriales",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Maquinaria y suministros para talleres",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Equipos para alimentos y bebidas",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Maquinaria para transformación de materias primas",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Equipamiento para el procesamiento de madera y aserrado",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO ARRIENDO POR DIA DE MAQUINARIA FRESADORA",
+    "Molinete Electromagnético",
+    "Sol 22 Adquisición de Repuestos de Desgaste y Soportes para Motoniveladora Caterpillar 140K - Vialidad Chiloé",
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA"
+   ]
+  },
+  {
+   "codigo": "24",
+   "segmento": "Equipamiento para manejo y estiba de materiales",
+   "licitaciones": 12,
+   "porcentaje": 1.0,
+   "estimado_activas": 49,
+   "items": 31,
+   "monto_clp_muestra": 117506529,
+   "monto_clp_estimado": 477761962,
+   "detectadas": 8,
+   "cobertura": 66.7,
+   "rubros": {
+    "hogar_menaje": 2,
+    "oficina_libreria": 2,
+    "mobiliario": 1,
+    "ferreteria_herramientas": 1,
+    "computacion_electronica": 1,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Recipientes para almacenamiento",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Refrigeración industrial",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Maquinaria para manejo de materiales",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Materiales para envasado",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Adquisición de Mobiliario destinado a los EE",
+    "ELEMENTOS DE RANCHO PARA EL CAMPAMENTO DE LICENCIA",
+    "CAMION HIDROELEVADORALZAHOMBRE",
+    "ADQUISICIÓN DE CUBOS DE ESPUMA PARA FOSO DEPORTIVO DEL SALÓN DE GIMNASIA ARTÍSTICA DEL COMPLEJO DEPORTIVO HERMÓGENES LIZ"
+   ]
+  },
+  {
+   "codigo": "14",
+   "segmento": "Productos de papel",
+   "licitaciones": 11,
+   "porcentaje": 0.9,
+   "estimado_activas": 45,
+   "items": 125,
+   "monto_clp_muestra": 688687779,
+   "monto_clp_estimado": 2800089730,
+   "detectadas": 7,
+   "cobertura": 63.6,
+   "rubros": {
+    "oficina_libreria": 3,
+    "deporte_didactico": 2,
+    "insumos_medicos_aseo": 1,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Productos de papel",
+     "licitaciones": 11
+    }
+   ],
+   "ejemplos": [
+    "TARJETAS GIFT CARD PRORETENCION AÑO 2026 DAEM RENGO",
+    "INSUMOS - ESTRAT. VINC. TERRITORIAL -PGMA. APS UNI",
+    "PPTA 88-26 “ADQUISICIÓN DE TOALLAS DE PAPEL PAPEL HIGIÉNICO Y JABÓN DE GLICERINA CON DISPENSADORES”",
+    "Servicio de provisión de tarjetas o aplicación electrónica de alimentación para las brigadas de prevención y combate de "
+   ]
+  },
+  {
+   "codigo": "11",
+   "segmento": "Productos derivados de minerales, plantas y animales",
+   "licitaciones": 11,
+   "porcentaje": 0.9,
+   "estimado_activas": 45,
+   "items": 23,
+   "monto_clp_muestra": 200228038,
+   "monto_clp_estimado": 814093833,
+   "detectadas": 5,
+   "cobertura": 45.5,
+   "rubros": {
+    "vestuario_textiles": 2,
+    "ferreteria_herramientas": 2,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Tierra y piedra",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Minerales y metales",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Productos no comestibles de origen vegetal",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Tejidos y materiales de cuero",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Productos no comestibles de origen animal",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICIÓN DE TELAS PARA LA CONFECCIÓN DE ROPA HOSPITALARIA PARA EL NHCV",
+    "SUM. 5.500M3 MATERIAL PETREO  PINTO DRV ÑUBLE",
+    "Adquisición de Insumos Estación Experimental Oromo",
+    "ADQUISICIÓN DE MATERIALES PARA LA REPARACIÓN URGENTE DE LA RED VIAL POR DAÑOS CLIMÁTICOS"
+   ]
+  },
+  {
+   "codigo": "84",
+   "segmento": "Servicios financieros, pensiones y seguros",
+   "licitaciones": 11,
+   "porcentaje": 0.9,
+   "estimado_activas": 45,
+   "items": 11,
+   "monto_clp_muestra": 693639263,
+   "monto_clp_estimado": 2820221637,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Seguros y jubilación",
+     "licitaciones": 9
+    },
+    {
+     "familia": "Banca e inversiones",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "SEGUROS DE VEHÍCULOS PARA FLOTA",
+    "Leaseback financiero Municipalidad Quinchao",
+    "SEGURO ACCIDENTES TEST EVENT MUNDIAL OO.EE",
+    "SEGURO COMPLEMENTARIO DE SALUD DENTAL Y CATASTRÓFICO PARA FUNCIONARIOS DE LA UNIVERSIDAD DE LOS LAGOS"
+   ]
+  },
+  {
+   "codigo": "45",
+   "segmento": "Equipos y suministros de imprenta, fotográficos y audiovisuales",
+   "licitaciones": 9,
+   "porcentaje": 0.8,
+   "estimado_activas": 37,
+   "items": 18,
+   "monto_clp_muestra": 29045956,
+   "monto_clp_estimado": 118096015,
+   "detectadas": 6,
+   "cobertura": 66.7,
+   "rubros": {
+    "computacion_electronica": 3,
+    "hogar_menaje": 1,
+    "ferreteria_herramientas": 1,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Equipos de composición y presentación audiovisual",
+     "licitaciones": 5
+    },
+    {
+     "familia": "Equipos de video, filmación o fotografía",
+     "licitaciones": 5
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS POR CONVENIOS",
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA",
+    "ADQUISICION HERRAMIENTAS TECNOLOGICAS TACTICA AUDIOVISUAL DE REGISTRO Y SOPORTE LOGISTICO SEGURIDAD PUBLICA",
+    "Servicio de Monitoreo e Inteligencia de Medios"
+   ]
+  },
+  {
+   "codigo": "12",
+   "segmento": "Productos químicos industriales",
+   "licitaciones": 8,
+   "porcentaje": 0.7,
+   "estimado_activas": 33,
+   "items": 580,
+   "monto_clp_muestra": 976730089,
+   "monto_clp_estimado": 3971221753,
+   "detectadas": 6,
+   "cobertura": 75.0,
+   "rubros": {
+    "ferreteria_herramientas": 2,
+    "computacion_electronica": 1,
+    "oficina_libreria": 1,
+    "insumos_medicos_aseo": 1,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Compuestos y mezclas",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Colorantes",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Metales y gases",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Materiales explosivos",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Ceras y aceites",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "PP 38-2026 Reactivos Sección de Hematologí",
+    "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS POR CONVENIOS",
+    "TONER Y TINTAS PARA EL DEPARTAMENTRO DE SALUD",
+    "PP 48.2026 PARA LA ADQUISICIÓN BAJO MODALIDAD DE SUMINISTRO DE REACTIVOS PARA LA SECCIÓN BACTERIOLOGÍA E102RT9."
+   ]
+  },
+  {
+   "codigo": "91",
+   "segmento": "Servicios de cuidado personal y domésticos",
+   "licitaciones": 8,
+   "porcentaje": 0.7,
+   "estimado_activas": 33,
+   "items": 8,
+   "monto_clp_muestra": 622167675,
+   "monto_clp_estimado": 2529630072,
+   "detectadas": 4,
+   "cobertura": 50.0,
+   "rubros": {
+    "vestuario_textiles": 4
+   },
+   "familias": [
+    {
+     "familia": "Servicio doméstico y de cuidados",
+     "licitaciones": 8
+    }
+   ],
+   "ejemplos": [
+    "TARJETA O TICKET ELECTRONICO DE VESTUARIO PARA EQUIPOS FRONTERA",
+    "“ADQUISICIÓN UNIFORME PARA FUNCIONARIOS MUNICIPALES AÑO 2026”",
+    "SERVICIOS DE SALA CUNA PARA FUNCIONARIOSAS DE LA",
+    "SERVICIO LAVADO CORTINAS 1 AÑO M.165 APOYO CLINICO"
+   ]
+  },
+  {
+   "codigo": "92",
+   "segmento": "Servicios de defensa nacional, orden público y seguridad",
+   "licitaciones": 8,
+   "porcentaje": 0.7,
+   "estimado_activas": 33,
+   "items": 8,
+   "monto_clp_muestra": 909200000,
+   "monto_clp_estimado": 3696655667,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Orden público y seguridad",
+     "licitaciones": 6
+    },
+    {
+     "familia": "Seguridad y protección personal",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "SERVICIO DE SEGURIDAD: VIGILANTES Y MANTENCION CIRCUITO CERRADO DE TELEVISION CCTV PARA COMPLEJO DEPORTIVO HERMOGENES LI",
+    "MANTENIMIENTO PREV Y CORRECT CENTRAL DE INCENDIOS",
+    "SERVICIO DE VIGILANCIA SAG AEROPUERTO",
+    "GUARDIAS DE SEGURIDAD PARA RECINTOS DEPORTIVOS"
+   ]
+  },
+  {
+   "codigo": "50",
+   "segmento": "Alimentos, bebidas y tabaco",
+   "licitaciones": 7,
+   "porcentaje": 0.6,
+   "estimado_activas": 28,
+   "items": 48,
+   "monto_clp_muestra": 332243443,
+   "monto_clp_estimado": 1350846465,
+   "detectadas": 1,
+   "cobertura": 14.3,
+   "rubros": {
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Chocolates, azúcares, edulcorantes y productos de confitería",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Alimentos preparados y conservados",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Frutas, verduras y frutos secos",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Productos de panadería",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Bebidas",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Productos lácteos y huevos",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Aceites y grasas comestibles",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Cereales y Legumbres",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Condimentos y preservantes",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICION DE BOLSAS DE GOLOSINAS",
+    "COMPRA ABARROTES MES JULIO ALIMENTACION",
+    "SERVICIO DE PROVISION DE SUMINISTRO DE FRUTAS Y VE",
+    "Convenio de suministro de pan fresco"
+   ]
+  },
+  {
+   "codigo": "15",
+   "segmento": "Combustibles, lubricantes y anticorrosivos",
+   "licitaciones": 6,
+   "porcentaje": 0.5,
+   "estimado_activas": 24,
+   "items": 9,
+   "monto_clp_muestra": 122186765,
+   "monto_clp_estimado": 496791021,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Combustibles líquidos",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Lubricantes y anticorrosivos",
+     "licitaciones": 3
+    }
+   ],
+   "ejemplos": [
+    "SUMINISTRO DE COMBUSTIBLE",
+    "Adquisición de aceites lubricantes de motor 15W-40 aceites de transmisión SAE 30 y aceites para sistemas hidráulicos SAE",
+    "Convenio de Suministro de Combustible",
+    "CONTRATO DE SUMINISTRO DE MANTENIMIENTO VEHICULAR"
+   ]
+  },
+  {
+   "codigo": "32",
+   "segmento": "Artículos de electrónica",
+   "licitaciones": 5,
+   "porcentaje": 0.4,
+   "estimado_activas": 20,
+   "items": 7,
+   "monto_clp_muestra": 27613026,
+   "monto_clp_estimado": 112269963,
+   "detectadas": 3,
+   "cobertura": 60.0,
+   "rubros": {
+    "oficina_libreria": 1,
+    "hogar_menaje": 1,
+    "mobiliario": 1
+   },
+   "familias": [
+    {
+     "familia": "Circuitos electrónicos",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Diodos, transistores y semiconductores",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Componentes y hardware electrónicos",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Condensadores, resistores y componentes eléctricos",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "LITA - ARTICULOS DE MANIOBRAS",
+    "DISEÑO Y EJECUICION PILETA  AGUA  PLAZA P GUANACO",
+    "Servicio LME - arriendo de lectores huella digital",
+    "Confección de 9 calefactores eléctricos de caldera de Sala de Térmica Hospital de Tocopilla"
+   ]
+  },
+  {
+   "codigo": "55",
+   "segmento": "Productos impresos y publicaciones",
+   "licitaciones": 5,
+   "porcentaje": 0.4,
+   "estimado_activas": 20,
+   "items": 33,
+   "monto_clp_muestra": 75860650,
+   "monto_clp_estimado": 308436759,
+   "detectadas": 1,
+   "cobertura": 20.0,
+   "rubros": {
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Etiquetado y accesorios",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Medios impresos",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "“CONVENIO DE SUMINISTRO BRAZALETES DE IDENTIFICACIÓN DE PACIENTES PARA UNIDADES DE EMERGENCIA DE LOS HOSPITALES COMUNITA",
+    "SERVICIO DE MONITOREO DE PRENSA Y REDES SOCIALES",
+    "Bibliografía Pedagogía educación parvularia mención inglés",
+    "Balizas demarcadoras para  Paso  Pehuenche"
+   ]
+  },
+  {
+   "codigo": "47",
+   "segmento": "Equipos y suministros de limpieza",
+   "licitaciones": 5,
+   "porcentaje": 0.4,
+   "estimado_activas": 20,
+   "items": 63,
+   "monto_clp_muestra": 1084108333,
+   "monto_clp_estimado": 4407803796,
+   "detectadas": 4,
+   "cobertura": 80.0,
+   "rubros": {
+    "insumos_medicos_aseo": 3,
+    "computacion_electronica": 1
+   },
+   "familias": [
+    {
+     "familia": "Suministros de limpieza",
+     "licitaciones": 3
+    },
+    {
+     "familia": "Equipo de limpieza",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "PPTA 88-26 “ADQUISICIÓN DE TOALLAS DE PAPEL PAPEL HIGIÉNICO Y JABÓN DE GLICERINA CON DISPENSADORES”",
+    "ADQ. DE LUTOCARES PLASTICOS PARA DEPTO.DE ASEO",
+    "CE ADQUISICIÓN DE MATERIAL DE ASEO",
+    "Funcionamiento y Habilitación de nueva Bodega HDS"
+   ]
+  },
+  {
+   "codigo": "27",
+   "segmento": "Herramientas y maquinaria en general",
+   "licitaciones": 4,
+   "porcentaje": 0.3,
+   "estimado_activas": 16,
+   "items": 5,
+   "monto_clp_muestra": 2305282,
+   "monto_clp_estimado": 9372894,
+   "detectadas": 4,
+   "cobertura": 100.0,
+   "rubros": {
+    "ferreteria_herramientas": 3,
+    "hogar_menaje": 1
+   },
+   "familias": [
+    {
+     "familia": "Herramientas manuales",
+     "licitaciones": 4
+    }
+   ],
+   "ejemplos": [
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA",
+    "MAQUINARIA AGRICOLA COMITÉ PRODUCTIVO NEFF",
+    "GORE 2026- REQ.34 SUMIN.DE MATERIALES DE CONSTRUCC",
+    "SEGUNDO LLAMADO PARA SEGURIDAD PUBLICA"
+   ]
+  },
+  {
+   "codigo": "48",
+   "segmento": "Maquinarias, equipos y suministros para la industria de servicios",
+   "licitaciones": 4,
+   "porcentaje": 0.3,
+   "estimado_activas": 16,
+   "items": 9,
+   "monto_clp_muestra": 18315246,
+   "monto_clp_estimado": 74466736,
+   "detectadas": 3,
+   "cobertura": 75.0,
+   "rubros": {
+    "hogar_menaje": 2,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Equipos para servicios de alimentación institucional",
+     "licitaciones": 4
+    }
+   ],
+   "ejemplos": [
+    "ADQ DE EQUIPOS MENORES DPTO. CRIMINALISTICA",
+    "SERVICIO DE APROVISIONAMIENTO DE AGUA PURIFICADA PARA LAS DD.TT.MM.",
+    "Equipamiento especialidades TP liceos SLEP Aysén",
+    "DRG AFTA REQUIERE  EQUIPAMIENTO ALIMENTACION"
+   ]
+  },
+  {
+   "codigo": "77",
+   "segmento": "Servicios medioambientales",
+   "licitaciones": 3,
+   "porcentaje": 0.2,
+   "estimado_activas": 12,
+   "items": 3,
+   "monto_clp_muestra": 46406000,
+   "monto_clp_estimado": 188679062,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Gestión medioambiental",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Seguimiento, control y rehabilitación de la contaminación",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "CONCESIÓN MOBILIARIO URBANO INTELIGENTE",
+    "Monitoreo Glaciar Noroccidental Chillán 2026-27",
+    "Convenio de Revisión y Certificación SEC GAS"
+   ]
+  },
+  {
+   "codigo": "21",
+   "segmento": "Maquinaria para agricultura, pesca y silvicultura",
+   "licitaciones": 3,
+   "porcentaje": 0.2,
+   "estimado_activas": 12,
+   "items": 5,
+   "monto_clp_muestra": 0,
+   "monto_clp_estimado": 0,
+   "detectadas": 2,
+   "cobertura": 66.7,
+   "rubros": {
+    "ferreteria_herramientas": 1,
+    "deporte_didactico": 1
+   },
+   "familias": [
+    {
+     "familia": "Maquinaria para agricultura, silvicultura y paisaje",
+     "licitaciones": 2
+    },
+    {
+     "familia": "Equipo de pesca y acuicultura",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "MAQUINARIA AGRICOLA COMITÉ PRODUCTIVO NEFF",
+    "ADQUISICIÓN DE LÍNEA DE RIEGO POR GOTEO AUTOCOMPEN",
+    "Equipamiento especialidades TP liceos SLEP Aysén"
+   ]
+  },
+  {
+   "codigo": "54",
+   "segmento": "Productos para relojería, joyería y gemas",
+   "licitaciones": 2,
+   "porcentaje": 0.2,
+   "estimado_activas": 8,
+   "items": 5,
+   "monto_clp_muestra": 1933333,
+   "monto_clp_estimado": 7860611,
+   "detectadas": 2,
+   "cobertura": 100.0,
+   "rubros": {
+    "computacion_electronica": 2
+   },
+   "familias": [
+    {
+     "familia": "Joyería",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Relojes",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICION DE JOYASRELOJES Y BOLIGRAFOS PARA PREMIACIÓN DIA DEL FUNCIONARIO MUNICIPAL AÑO 2026",
+    "ADQUISICIÓN DE RECONOCIMIENTOS PARA FUNCIONARIOS"
+   ]
+  },
+  {
+   "codigo": "13",
+   "segmento": "Resinas, cauchos, espumas y elastómeros",
+   "licitaciones": 2,
+   "porcentaje": 0.2,
+   "estimado_activas": 8,
+   "items": 4,
+   "monto_clp_muestra": 70455289,
+   "monto_clp_estimado": 286459462,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Caucho y elastómeros",
+     "licitaciones": 2
+    }
+   ],
+   "ejemplos": [
+    "ADQUISICION DE TUBOS CORRUGADO PAD PROV. LIMARI.",
+    "REPUESTOS PARA CONTINUIDAD AUTOCLAVES SLP 10033023"
+   ]
+  },
+  {
+   "codigo": "71",
+   "segmento": "Servicios de perforación de minería, petróleo y gas",
+   "licitaciones": 2,
+   "porcentaje": 0.2,
+   "estimado_activas": 8,
+   "items": 2,
+   "monto_clp_muestra": 0,
+   "monto_clp_estimado": 0,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Servicios de mantenimiento, construcción y perforación de pozos",
+     "licitaciones": 1
+    },
+    {
+     "familia": "Servicios de recuperación de pozos de gas y petróleo",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "Instalación Estanques y Tuberías Socoroma Putre",
+    "SERVICIO DE LIMPIEZA DE BAÑOS QUIMICOS TIPO CASETA EN FAENA Y LIMPIEZA DE FOSAS SEPTICAS EN CAMPAMENTOS MOVILES"
+   ]
+  },
+  {
+   "codigo": "94",
+   "segmento": "Organizaciones sociales, laborales y clubes",
+   "licitaciones": 1,
+   "porcentaje": 0.1,
+   "estimado_activas": 4,
+   "items": 1,
+   "monto_clp_muestra": 35000000,
+   "monto_clp_estimado": 142304167,
+   "detectadas": 0,
+   "cobertura": 0.0,
+   "rubros": {},
+   "familias": [
+    {
+     "familia": "Organizaciones, asociaciones y movimientos cívicos",
+     "licitaciones": 1
+    }
+   ],
+   "ejemplos": [
+    "ASISTENCIA TÉCNICA MRV COMPOSTAJE Y VALORIZACIÓN DE FOM PROGRAMA BIP: 40073836-0"
+   ]
+  }
+ ],
+ "generado": "2026-10-17T01:16:20-03:00",
+ "rubros_config": {
+  "insumos_medicos_aseo": "Insumos médicos no regulados y aseo",
+  "mobiliario": "Mobiliario de oficina, escolar y almacenaje",
+  "oficina_libreria": "Artículos de oficina y librería",
+  "computacion_electronica": "Computación y electrónica",
+  "ferreteria_herramientas": "Ferretería y herramientas",
+  "hogar_menaje": "Electrodomésticos, hogar y menaje",
+  "vestuario_textiles": "Vestuario, uniformes y textiles",
+  "deporte_didactico": "Deporte, juguetes y material didáctico",
+  "consultoria_gestion_bi": "Consultoría en gestión, BI y control de gestión"
+ }
+}
