@@ -335,3 +335,29 @@ def test_consultoria_generica_con_especificacion_de_tramite_usa_el_nombre():
         {"Correlativo": 3, "Producto": "Servicios de catering", "EspecificacionComprador": "Según cotización", "PrecioNeto": 1},
     ]}}
     assert [f["correlativo"] for f in filas_orden_compra(oc, filtro)] == [1, 2]
+
+
+def test_respaldo_por_nombre_no_aplica_a_medicamento_ni_servicio():
+    from radar.modelos import clasificar_items_oc
+    filtro = FiltroRubros.desde_config(cargar_config())
+    medicamento = [{"Producto": "Mitomicina",
+                    "Categoria": "Medicamentos y productos farmacéuticos / Antineoplásicos"}]
+    assert clasificar_items_oc("MITOMICINA 40 MG JERINGA", medicamento, filtro) == []
+    servicio = [{"Producto": "Servicios de impresión industrial digital"}]
+    assert clasificar_items_oc("Impresión de libros para biblioteca", servicio, filtro) == []
+    marca = [{"Producto": "NITRIDERM M CAJA 100"}]
+    assert [r.rubro for _, r in clasificar_items_oc("Compra de guantes de nitrilo", marca, filtro)] == [
+        "insumos_medicos_aseo"]
+
+
+def test_segmento_onu_no_clasifica():
+    filtro = FiltroRubros.desde_config(cargar_config())
+    r = filtro.evaluar_item("Champú", "Ropa, maletas y productos de aseo personal / Productos de aseo personal / Champú")
+    assert r.rubro != "vestuario_textiles"
+
+
+def test_unidad_medida_de_oc():
+    detalle = {"Codigo": "1-1-SE26", "Nombre": "Guantes", "Items": {"Listado": [
+        {"Correlativo": 1, "Producto": "Guantes de nitrilo", "UnidadMedida": "Caja", "Cantidad": 2, "PrecioNeto": 5000}]}}
+    compacto = compactar_oc(detalle)
+    assert filas_orden_compra(compacto, FILTRO)[0]["unidad"] == "Caja"

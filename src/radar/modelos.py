@@ -7,6 +7,8 @@ from __future__ import annotations
 
 from datetime import date, datetime
 
+from radar.filtro import normalizar, sin_segmento_onu
+
 ESTADOS_LICITACION = {
     5: "Publicada",
     6: "Cerrada",
@@ -71,7 +73,7 @@ def textos_licitacion(detalle: dict) -> tuple[list[str], list[str], list[str]]:
     items, onu = [], []
     for item in items_licitacion(detalle):
         items.append(item.get("Descripcion"))
-        onu += [item.get("NombreProducto"), item.get("Categoria")]
+        onu += [item.get("NombreProducto"), sin_segmento_onu(item.get("Categoria"))]
     return descripcion, [t for t in items if t], [t for t in onu if t]
 
 
@@ -190,7 +192,11 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
         por_nombre = filtro.respaldo_por_nombre(nombre_oc)
         # Solo si el ítem no está excluido en ESE rubro ("bajo impacto ambiental"
         # excluye en consultoría, no en aseo).
-        if por_nombre.coincide and por_nombre.rubro not in evaluados[0][1].excluidos:
+        # Tampoco si el ítem mismo es un servicio o su categoría está excluida en ese
+        # rubro ("MITOMICINA 40 MG JERINGA" con el ítem "Mitomicina", categoría
+        # "Medicamentos…": la jeringa del nombre no lo hace insumo).
+        if (por_nombre.coincide and por_nombre.rubro not in evaluados[0][1].excluidos
+                and not _item_descarta_respaldo(filtro, por_nombre.rubro, evaluados[0][0])):
             evaluados = [(evaluados[0][0], por_nombre)]
     # Servicios: "Servicios de consultoría de gestión" + "según términos de referencia"
     # en una OC "Consultoría en gestión estratégica" toma el rubro del nombre (también
@@ -203,6 +209,13 @@ def clasificar_items_oc(nombre_oc: str | None, items: list[dict], filtro) -> lis
     return [(item, r) for item, r in evaluados if r.coincide]
 
 
+def _item_descarta_respaldo(filtro, clave_rubro: str, item: dict) -> bool:
+    if normalizar(item.get("Producto")).startswith("servicio"):
+        return True
+    categoria = normalizar(item.get("Categoria"))
+    return bool(categoria) and any(r.clave == clave_rubro and r.excluido(categoria) for r in filtro.rubros)
+
+
 def _respaldo_servicio(filtro, nombre_oc: str, item: dict, resultado):
     por_servicio = filtro.respaldo_servicio(nombre_oc, item.get("Producto"), item.get("EspecificacionComprador"))
     if por_servicio.coincide and por_servicio.rubro not in resultado.excluidos:
@@ -211,7 +224,7 @@ def _respaldo_servicio(filtro, nombre_oc: str, item: dict, resultado):
 
 
 _CAMPOS_ITEM_OC = ("Correlativo", "Producto", "Categoria", "EspecificacionComprador",
-                   "EspecificacionProveedor", "Unidad", "Cantidad", "PrecioNeto", "Total")
+                   "EspecificacionProveedor", "Unidad", "UnidadMedida", "Cantidad", "PrecioNeto", "Total")
 
 
 def compactar_oc(detalle: dict) -> dict:
@@ -279,7 +292,7 @@ def filas_orden_compra(detalle: dict, filtro) -> list[dict]:
                 "categoria": item.get("Categoria"),
                 "especificacion_comprador": item.get("EspecificacionComprador"),
                 "especificacion_proveedor": item.get("EspecificacionProveedor"),
-                "unidad": _texto(item.get("Unidad")),
+                "unidad": _texto(item.get("Unidad") or item.get("UnidadMedida")),
                 "cantidad": cantidad,
                 "precio_unitario_neto": precio,
                 "total_item": total,

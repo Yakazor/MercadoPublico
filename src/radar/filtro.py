@@ -377,7 +377,8 @@ class FiltroRubros:
             en_items, items_excluidos = rubro.claves_items(lineas)
             # "Guantes" cuyos ítems son todos "guante cabritilla soldador": se descarta,
             # salvo que el nombre traiga una clave específica ("Jeringas").
-            if items_excluidos and not rubro.rescatan(en_nombre):
+            # Las claves amplias del nombre ("insumos médicos") no rescatan.
+            if items_excluidos and not rubro.concretas(rubro.rescatan(en_nombre)):
                 continue
             # "Insumos médicos para angiografía": deciden los ítems escritos por el
             # comprador; no cuentan las claves genéricas del nombre, la descripción
@@ -470,7 +471,7 @@ class FiltroRubros:
         medicamentos" sí)."""
         desde_especificacion = not producto
         producto_norm = normalizar(producto or especificacion)
-        categoria_norm = normalizar(categoria)
+        categoria_norm = normalizar(sin_segmento_onu(categoria))
         especificacion_norm = normalizar(especificacion)
         proveedor_norm = normalizar(especificacion_proveedor)
         hallazgos = []
@@ -568,3 +569,12 @@ def _de_tramite(rubro: Rubro, especificacion_norm: str) -> bool:
 def _segmentos(texto: str | None) -> list[str]:
     """Partes de un nombre separadas por comas, ";" o "y": "Alcohol gel, papel y cloro"."""
     return [normalizar(p) for p in _SEGMENTOS.split(texto or "") if p and p.strip()]
+
+
+def sin_segmento_onu(categoria: str | None) -> str | None:
+    """Categoría ONU sin su primer nivel: "Ropa, maletas y productos de aseo personal /
+    Productos de aseo / Champú" junta productos de varios rubros en el segmento, y su
+    "Ropa" no hace vestuario a un champú."""
+    if not categoria or "/" not in categoria:
+        return categoria
+    return "/".join(categoria.split("/")[1:]).strip()

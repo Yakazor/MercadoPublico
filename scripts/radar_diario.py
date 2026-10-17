@@ -16,6 +16,22 @@ from radar.filtro import FiltroRubros
 from radar.licitaciones import ResultadoRadar, radar_licitaciones
 
 
+def listado_completo(activas: set[str], vigentes, minimo: float = 0.8) -> bool:
+    """False si el listado de activas viene vacío o recortado (falla de la API): en
+    ese caso no se borra nada de la base ni de la caché de detalles."""
+    if not activas:
+        logging.warning("El listado de activas vino vacío: no se depura la base.")
+        return False
+    if vigentes is None or vigentes.empty or "codigo" not in vigentes:
+        return True
+    proporcion = vigentes["codigo"].isin(activas).mean()
+    if proporcion < minimo:
+        logging.warning("Solo %.0f%% de las vigentes guardadas aparece en el listado de activas: "
+                        "no se depura la base (¿listado recortado?).", proporcion * 100)
+        return False
+    return True
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--limite", type=int, help="máximo de detalles a consultar (pruebas)")
@@ -27,6 +43,7 @@ def main():
     args = p.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     inicio = time.monotonic()
+    listado_ok = False
 
     config = cargar_config(args.config)
     rutas = config.get("rutas", {})
@@ -46,11 +63,12 @@ def main():
                 refrescar_dias=config.get("refrescar_detalle_licitacion_dias", 7),
                 hasta_monotonic=inicio + args.max_minutos * 60 if args.max_minutos else None,
             )
-            if not args.limite:
+            listado_ok = listado_completo(resultado.activas, db.licitaciones_vigentes(hoy=hoy_chile()))
+            if not args.limite and listado_ok:
                 db.podar_detalles_licitacion(resultado.activas)
         filas = resultado.filas
         db.guardar_licitaciones(filas)
-        if not args.solo_exportar and not args.limite:
+        if not args.solo_exportar and not args.limite and listado_ok:
             # Las que fallaron por la API no se revisaron: se conservan tal cual.
             conservar = {f["codigo"] for f in filas} | resultado.fallidas
             eliminadas = db.depurar_vigentes(conservar, hoy=hoy_chile())
