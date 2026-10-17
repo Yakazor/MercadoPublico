@@ -57,6 +57,7 @@ def opciones_mercado(mercado: dict) -> list[dict]:
     for item in mercado.get("items") or []:
         for n, op in enumerate(item.get("opciones") or [], 1):
             filas.append({
+                "clave": f"{mercado.get('codigo')}|{item.get('linea')}|{n}",
                 "codigo": mercado.get("codigo"),
                 "linea": item.get("linea"),
                 "opcion": n,

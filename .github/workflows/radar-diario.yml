@@ -144,6 +144,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python scripts/publicar_datos.py --salida "$RUNNER_TEMP/datos"
+          # Presupuestos con los precios de mercado guardados en informes/mercado/ y
+          # la referencia OC del día (mercado.json alimenta el simulador del dashboard).
+          python scripts/presupuesto.py --items "$RUNNER_TEMP/datos/items.json" \
+            --licitaciones "$RUNNER_TEMP/datos/licitaciones.json" \
+            --salida "$RUNNER_TEMP/datos/presupuestos" --indice "$RUNNER_TEMP/datos/presupuestos/README.md" \
+            --mercado-json "$RUNNER_TEMP/datos/mercado.json"
           cd "$RUNNER_TEMP/datos"
           git init -q -b datos
           git add -A
