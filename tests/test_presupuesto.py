@@ -71,3 +71,14 @@ def test_armar_presupuesto_usa_el_precio_mas_bajo_y_suma_iva():
     assert p["oferta_neta"] == pytest.approx(21600)
     assert p["oferta_total"] == pytest.approx(21600 * (1 + IVA))
     assert p["utilidad"] == pytest.approx(3600)
+
+
+def test_prefiere_producto_equivalente_a_uno_aproximado_mas_barato():
+    items = [{"linea": 1, "cantidad": 1}]
+    mercado = [
+        {"linea": 1, "tienda": "Otra marca", "precio_unitario_neto": 500, "coincidencia": "aproximada"},
+        {"linea": 1, "tienda": "Igual", "precio_unitario_neto": 800, "coincidencia": "exacta"},
+    ]
+    assert armar_presupuesto(items, mercado)["items"][0]["tienda"] == "Igual"
+    solo_aprox = [mercado[0]]
+    assert armar_presupuesto(items, solo_aprox)["items"][0]["tienda"] == "Otra marca"

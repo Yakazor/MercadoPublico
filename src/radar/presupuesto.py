@@ -134,14 +134,17 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
       (mediana adjudicada) es menor, se informa que el margen no alcanza;
     - todo en CLP neto; el total con IVA se agrega al final.
     """
-    por_linea = {}
+    # El más barato entre los productos iguales o equivalentes; uno solo "aproximado"
+    # (otra marca o medida) se usa cuando no hay otro.
+    por_linea, prioridad = {}, {}
     for m in mercado:
         precio = _numero(m.get("precio_unitario_neto"))
         if precio is None or precio <= 0:
             continue
-        actual = por_linea.get(m.get("linea"))
-        if actual is None or precio < actual["precio_unitario_neto"]:
-            por_linea[m.get("linea")] = m | {"precio_unitario_neto": precio}
+        nota = (0 if m.get("coincidencia") in ("exacta", "equivalente") else 1, precio)
+        linea = m.get("linea")
+        if linea not in prioridad or nota < prioridad[linea]:
+            por_linea[linea], prioridad[linea] = m | {"precio_unitario_neto": precio}, nota
     filas, costo_total, oferta_total, referencia_total = [], 0.0, 0.0, 0.0
     sin_precio = 0
     for item in items:
