@@ -323,7 +323,7 @@ def sin_formulas(df: pd.DataFrame) -> pd.DataFrame:
     solicitado") se exportan con un apóstrofo delante: Excel no los evalúa como fórmula."""
     df = df.copy()
     for col in df.columns:
-        if df[col].dtype == object:
+        if pd.api.types.is_object_dtype(df[col]) or pd.api.types.is_string_dtype(df[col]):
             df[col] = df[col].map(lambda v: "'" + v if isinstance(v, str) and v[:1] in "=+-@" else v)
     return df
 
