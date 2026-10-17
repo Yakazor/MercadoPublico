@@ -18,6 +18,11 @@ on:
         required: false
         default: ""
 
+# Mismo ticket que el radar y las OC: nunca en paralelo con ellos.
+concurrency:
+  group: radar-db
+  cancel-in-progress: false
+
 jobs:
   probar:
     runs-on: ubuntu-24.04

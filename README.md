@@ -33,10 +33,23 @@ src/radar/
   filtro.py                 # detección de rubro por palabras clave
   modelos.py                # mapeo JSON → columnas (único archivo a ajustar si cambia la API)
   almacenamiento.py         # SQLite + exportación CSV/Excel
+  presupuesto.py            # costo, oferta e IVA por licitación vs referencia OC
+  censo.py                  # muestra de activas agrupada por segmento ONU
 scripts/
   probar_api.py             # una llamada real: muestra la estructura del JSON
   radar_diario.py           # ejecución diaria del radar
   ordenes_historicas.py     # precios adjudicados por rubro
+  publicar_datos.py         # JSON del dashboard (rama datos)
+  seleccionar_mercado.py    # elige las licitaciones a cotizar en el mercado
+  guardar_mercado.py        # guarda los precios de mercado encontrados
+  presupuesto.py            # informes de presupuesto (informes/presupuestos)
+  censo_rubros.py           # censo de grupos de licitaciones
+  informe_grupos.py         # informe de grupos (informes/grupos_licitaciones)
+dashboard/index.html        # copia de la página del dashboard
+informes/                   # presupuestos, precios de mercado y grupos (se versiona)
+.claude/RUTINA.md           # instrucciones de la rutina de actualización
+.claude/workflows/          # búsqueda de precios de mercado en Chile
+.github/workflows/          # radar, OC, censo y prueba de la API
 tests/                      # pruebas sin conexión a la API
 data/                       # base y exportaciones (no se versiona)
 ```
@@ -105,7 +118,7 @@ procesados se saltan: puedes cortar y reanudar. Usa `--reprocesar` para forzar
 la descarga. `python scripts/resumen_oc.py --texto` muestra el resumen en pantalla.
 
 Desde GitHub: **Actions → Órdenes de compra históricas → Run workflow** (por
-defecto, últimos 7 días). Además corre solo cada sábado y revisa los últimos 21
+defecto, últimos 7 días). Además corre solo todos los días y revisa los últimos 21
 días: los ya procesados se saltan y se reintentan los que quedaron pendientes.
 Un día cuyas OC fallan por errores de la API no se marca como procesado (se
 reintenta hasta 3 veces). Las fechas se calculan con la hora de Chile.
@@ -251,8 +264,49 @@ inválido, código inexistente) no se reintentan.
 ## Conectar Power BI
 
 *Obtener datos → Texto/CSV* → `data/exportaciones/licitaciones_actual.csv`
-(delimitador punto y coma, UTF-8) o *Excel* → `licitaciones_actual.xlsx`.
+(delimitador punto y coma, UTF-8, coma decimal: configuración regional es-CL) o *Excel* → `licitaciones_actual.xlsx`.
 Para análisis históricos, conecta directo a `data/radar.db` vía ODBC de SQLite.
+
+## Automatización en GitHub
+
+Todo corre en GitHub Actions con el secret `MP_TICKET` (Settings → Secrets and
+variables → Actions → New repository secret; nunca en el código ni en `.env`
+subido):
+
+| Workflow | Cuándo | Qué hace |
+|---|---|---|
+| `radar-diario.yml` | días hábiles en la mañana, manual o push a `.github/disparar/actualizar.txt` | radar + publica los JSON del dashboard en la rama `datos` |
+| `ordenes-historicas.yml` | todos los días, manual o el mismo push | OC de los últimos 21 días + precios + presupuestos |
+| `censo-rubros.yml` | manual | censo de grupos (rama `censo`) |
+| `probar-api.yml` | manual | una llamada de prueba |
+
+Los cuatro comparten el grupo de concurrencia `radar-db`: nunca llaman a
+la API en paralelo con el mismo ticket. La base SQLite se guarda entre corridas
+como caché/artefacto.
+
+## Dashboard, rutina y presupuestos
+
+El dashboard (artefacto de Claude) lee los JSON de la rama `datos` que sube la
+**rutina «Actualizar Radar de Licitaciones»** (días hábiles 8:50, hora de Chile;
+instrucciones en `.claude/RUTINA.md`).
+
+- **Actualizar ahora:** dispara la rutina: push a `actualizar.txt` → radar y OC
+  en Actions → presupuestos → sube los datos al dashboard (20–80 min).
+- **Simular:** eliges las licitaciones (máx. 5) y la rutina busca precios en
+  tiendas chilenas (workflow `.claude/workflows/precios-mercado-chile.js`, con
+  links). Así solo se cotiza lo que te interesa: buscar cuesta tiempo y plan.
+- **Presupuesto:** costo = opción más barata exacta o equivalente × 1,05 (otros
+  costos); oferta = costo × (1 + margen, 20% por defecto) + IVA 19%. Se compara
+  con lo que el Estado pagó por el mismo producto (mediana de OC) y con el monto
+  estimado; si los supera, el informe lo advierte. En el dashboard puedes
+  cambiar el margen.
+- **Informes** (`informes/`): `presupuestos/<código>.md|csv`, precios de
+  mercado en `mercado/<código>.json` y `grupos_licitaciones.md|csv` (todos los
+  segmentos ONU con licitaciones activas vs los rubros del radar, para decidir
+  si agregar grupos).
+
+Los precios de mercado vienen de resultados de búsqueda y no se verifican
+abriendo cada tienda: revisa el link antes de cotizar.
 
 ## Pruebas
 
