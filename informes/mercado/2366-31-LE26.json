@@ -1,0 +1,435 @@
+{
+ "codigo": "2366-31-LE26",
+ "nombre": "TONER SIMILAR-EQUIV. HP Y BROTHER IMP. - SC N.45",
+ "fecha_consulta": "2026-10-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tóner HP 230X Negro (W2300X), 7.500 págs, LJ Pro 4201/4203/4301/4303",
+   "nota": "Eliminé la opción alternativa de TodoToner porque su URL es la ficha del 230X CYAN, no la del negro. La búsqueda no encontró una ficha propia del negro (SKU LS1468TNC) y los precios que aparecen no coinciden entre sí ($49.990, $54.990 y $79.980). Además, la serie alternativa 230X de TodoToner declara unas 5.500 impresiones, menos que las 7.500 que pide la licitación. Las búsquedas muestran en Vstore un alternativo G&G 230X negro de 7.500 págs a unos $58.900, pero no obtuve el link directo a la ficha, así que no lo agregué. Quedan solo originales, muy por encima de la referencia de OC ($63.613 neto). No pude abrir ninguna página: WebFetch y el proxy rechazaron todos los dominios. Los precios coinciden con los fragmentos de búsqueda, pero ninguno está verificado.",
+   "opciones": [
+    {
+     "tienda": "Alcaplus Computación",
+     "producto_mercado": "HP Tóner 230X Negro LaserJet W2300X",
+     "url": "https://alcaplus.cl/hp-toner-230x-negro-laserjet-w2300x/",
+     "precio": 177900,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 149495.8,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original HP. La búsqueda confirma $177.900 (antes $259.900), unas 20 unidades online, y que la tienda declara precios con IVA. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "DG Insumos",
+     "producto_mercado": "TONER HP 230X NEGRO ORIGINAL W2300X",
+     "url": "https://www.dgainsumos.cl/products/toner-hp-230x-negro-original",
+     "precio": 215780,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 181327.73,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original, 7.500 págs. La búsqueda confirma $215.780 y 5 unidades disponibles. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Winpy",
+     "producto_mercado": "Tóner Original HP LaserJet 230X (7.500 páginas, Negro)",
+     "url": "https://www.winpy.cl/venta/toner-original-hp-laserjet-230x-7-500-paginas-negro/",
+     "precio": 224960,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 189042.02,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Agregada desde un resultado de búsqueda: $224.960, unas 27 unidades en stock. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Tóner HP 230X Amarillo (W2302X), 5.500 págs",
+   "nota": "Solo hay originales confiables, muy por encima de la referencia de OC ($63.613 neto). TodoToner tiene una ficha alternativa 230X amarilla (https://www.todotoner.cl/toner/toner-alternativo/hp/230x-yellow-alto-rendimiento-ppc), pero la búsqueda da precios inconsistentes (cerca de $49.990) y antes figuraba sin stock, así que no la incluí. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "Dimerc Multivendor",
+     "producto_mercado": "Toner W2302X 230X Amarillo Hasta 5500 Paginas",
+     "url": "https://multivendor.dimerc.cl/products/toner-w2302x-230x-amarillo-hasta-5500-paginas",
+     "precio": 219899,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 184789.08,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original HP. La búsqueda confirma $219.899 con 1 unidad disponible, así que no alcanza para las 15 que se piden. La misma ficha en Dipy aparece a $255.780 o $268.496 según la captura. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Alcaplus Computación",
+     "producto_mercado": "HP Tóner 230X Amarillo LaserJet W2302X",
+     "url": "https://alcaplus.cl/hp-toner-230x-amarillo-laserjet-w2302x/",
+     "precio": 259900,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 218403.36,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original. El precio de búsqueda no cuadra: el informe original dice $259.900 y otro fragmento dice $233.900 (antes $280.700), con 12 unidades. Dejé $259.900 como cifra conservadora. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "DG Insumos",
+     "producto_mercado": "TÓNER HP 230X AMARILLO ORIGINAL W2302X",
+     "url": "https://www.dgainsumos.cl/products/toner-hp-230x-amarillo-original",
+     "precio": 262406,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 220509.24,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original. La búsqueda confirma $262.406 y 5 unidades. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Tóner HP 230X Cyan (W2301X), 5.500 págs",
+   "nota": "Hay un alternativo en TodoToner, pero su precio varía entre páginas. Los originales van de unos $233.900 a $262.406. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "TodoToner",
+     "producto_mercado": "HP 230X Cyan W2301X Con Chip Alto Rendimiento Toner Alternativo (PPC)",
+     "url": "https://www.todotoner.cl/toner/toner-alternativo/hp/230x-cyan-alto-rendimiento-ppc",
+     "precio": 54990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46210.08,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Alternativo con chip, unas 5.500 impresiones, para 4203/MFP4303. Los datos estructurados de la ficha indican $54.990 más $2.990 de despacho. Otros listados de la tienda muestran $49.990 y $79.980, y en esta URL también aparece el SKU del negro (LS1468TNC), así que hay que confirmar color, precio y stock. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Notebookstore",
+     "producto_mercado": "Cartucho de Toner HP 230X color Cián LaserJet (W2301X)",
+     "url": "https://notebookstore.cl/hp-230x-cian-toner-w2301x",
+     "precio": 238592,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 200497.48,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original. La búsqueda confirma $238.592 pagando con transferencia y $246.990 con otros medios. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Tóner W2301X 230X Cian Hasta 5500 Paginas - HP",
+     "url": "https://www.dipy.cl/products/toner-w2301x-230x-cian-hasta-5500-paginas",
+     "precio": 252738,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 212384.87,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original. La búsqueda confirma $252.738. Alcaplus muestra el mismo producto a $233.900 en un listado y a $269.900 en su ficha, que tiene unos 600 días. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Tóner HP 230X Magenta (W2303X), 5.500 págs",
+   "nota": "El alternativo de TodoToner tiene precios inconsistentes ($34.990, $49.990, $54.990 y $89.990 según la página) y aparecía agotado. Los originales van de unos $242.000 a $280.000: Notebookstore muestra $251.990 pero agotado, y Mundotoner $280.000. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "TodoToner",
+     "producto_mercado": "HP 230X Magenta W2303X Con Chip Alto Rendimiento Toner Alternativo (PPC)",
+     "url": "https://www.todotoner.cl/toner/toner-alternativo/hp/230x-magenta-alto-rendimiento-ppc",
+     "precio": 89990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Estaba AGOTADO en la consulta anterior. Dejé el precio más alto visto ($89.990) como presupuesto conservador; la búsqueda también muestra $49.990 y $34.990. Hay que confirmar precio y reposición. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "DG Insumos",
+     "producto_mercado": "TÓNER HP 230X MAGENTA ORIGINAL W2303X",
+     "url": "https://www.dgainsumos.cl/products/toner-hp-230x-magenta-original-w2303x",
+     "precio": 262406,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 220509.24,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original, compatible con 4201/4301. La búsqueda confirma $262.406 y 5 unidades. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Tóner W2303X 230X Magenta Hasta 5500 Paginas - HP",
+     "url": "https://dipy.cl/products/toner-w2303x-230x-magenta-hasta-5500-paginas",
+     "precio": 267198,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 224536.13,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original. Otro fragmento de búsqueda muestra $257.549 (neto $216.428); dejé el precio informado. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Tóner Brother TN-419 Negro, 9.000 págs, MFC-L8900CDW",
+   "nota": "Cambié la opción de TodoToner a su ficha PPC (tn-419-black-ppc), que la búsqueda muestra a $29.990. La URL anterior (tn-419-black-1, $35.990) venía de una página de categoría. En la misma tienda aparecen otras variantes a $26.990 (LS635TNC) y $32.990 (PPC Gold). No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "Moctoner",
+     "producto_mercado": "TONER BROTHER TN419 ALTERNATIVO NEGRO",
+     "url": "https://moctoner.cl/products/toner-brother-tn419-alternativo-negro",
+     "precio": 29990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Alternativo. La búsqueda confirma un precio de oferta de $29.990, 9.000 págs y compatibilidad con MFC-L8900CDW. Stock no confirmado. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "TodoToner",
+     "producto_mercado": "Brother TN-419 Black | Toner Alternativo PPC",
+     "url": "https://www.todotoner.cl/toner/toner-alternativo/brother/tn-419-black-ppc",
+     "precio": 29990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Alternativo de 9.000 impresiones. Según la búsqueda, la ficha indica $29.990 más $2.990 de despacho. Reemplaza la URL anterior tn-419-black-1 a $35.990. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Vstore",
+     "producto_mercado": "Tóner Original Brother TN-419BK Negro 9.000 Páginas",
+     "url": "https://www.vstore.cl/toner-brother-tn-419-bk-original",
+     "precio": 95900,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 80588.24,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original Brother. La búsqueda confirma $95.900 (Ariex vende el original a $119.000). No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Tóner Brother TN-419 Amarillo, 9.000 págs, MFC-L8900CDW",
+   "nota": "No encontré otros alternativos amarillos con ficha y precio: ni Inkpact ni Ariex tienen ficha del amarillo en los resultados. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "TodoToner",
+     "producto_mercado": "Brother TN-419 Yellow | Toner Alternativo PPC",
+     "url": "https://www.todotoner.cl/toner/toner-alternativo/brother/tn-419-yellow-ppc",
+     "precio": 29990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "9.000 impresiones. La búsqueda confirma $29.990 más $2.990 de despacho; la versión PPC Gold cuesta $34.990. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Laser Chile",
+     "producto_mercado": "Brother Tóner TN-419Y Amarillo Impresoras Láser Color",
+     "url": "https://laserchile.com/producto/toner-brother-original-tn-419y-yellow/",
+     "precio": 177990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 149571.43,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original. La búsqueda confirma $177.990 (antes $210.000). No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Comaac",
+     "producto_mercado": "Tóner Brother TN-419Y Amarillo Original",
+     "url": "https://www.comaac.cl/toner-brother-tn-419-amarillo-original",
+     "precio": 179990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 151252.1,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original, 9.000 págs. El resumen de búsqueda menciona $177.990, pero no queda claro si es de Comaac o de Laser Chile; dejé el precio informado. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Tóner Brother TN-419 Cyan, 9.000 págs, MFC-L8900CDW",
+   "nota": "Hay tres alternativos de 9.000 págs. El original cuesta unos $176.990 a $199.990. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "Inkpact",
+     "producto_mercado": "Brother TN 419 Cyan Cartucho de Tóner Alternativo de Súper Alto Rendimiento 9.000 Páginas",
+     "url": "https://inkpact.cl/product/toner-alternativo-brother-tn-419-cyan/",
+     "precio": 13990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Marca My Toner. La búsqueda confirma un precio rebajado de $13.990 (antes $27.990) y 6 meses de garantía. La ficha lista HL-L8360CDW, HL-L9310CDW y MFC-L9570CDW, pero no menciona la MFC-L8900CDW, aunque es el mismo código TN-419. La oferta podría no estar vigente. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Ariex",
+     "producto_mercado": "Toner Brother Tn-419 Cyan Alternativo",
+     "url": "https://ariex.cl/producto/toner-brother-tn-419-tn419-cyan-alternativo/",
+     "precio": 24990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21000.0,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "9.000 págs al 5%. La búsqueda confirma $24.990 (SKU TLLRBRTN419CYAS). No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "TodoToner",
+     "producto_mercado": "Brother TN-419 Cyan | Toner Alternativo PPC",
+     "url": "https://www.todotoner.cl/toner/toner-alternativo/brother/tn-419-cyan-ppc",
+     "precio": 29990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "9.000 impresiones. La búsqueda muestra $29.990 en una página y $26.990 en otra; despacho $2.990. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Tóner Brother TN-419 Magenta, 9.000 págs, MFC-L8900CDW",
+   "nota": "Solo hay dos alternativos con ficha; Inkpact no tiene el magenta en los resultados. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "Ariex",
+     "producto_mercado": "Toner Brother Tn-419 Magenta Alternativo",
+     "url": "https://ariex.cl/producto/toner-brother-tn-419-magenta-tn419/",
+     "precio": 23590,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 19823.53,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "9.000 págs al 5%. La búsqueda confirma $23.590 y 10 unidades disponibles, lo que alcanza justo para las 10 pedidas. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "TodoToner",
+     "producto_mercado": "Brother TN-419 Magenta | Toner Alternativo PPC",
+     "url": "https://www.todotoner.cl/toner/toner-alternativo/brother/tn-419-magenta-ppc",
+     "precio": 29990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "9.000 impresiones. La búsqueda muestra $29.990 en una página y $26.990 en otra; despacho $2.990. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Tóner Brother TN-3609XXL, 11.000 págs, DCP-L5510DN / MFC-L6915DW",
+   "nota": "Ojo con alternativos de menor rendimiento: Vstore Logic ($60.900) dice 10.000 u 11.000 págs según la parte de la ficha. TodoToner tiene un alternativo PPC (LS1418TNC) a $39.990 o $44.990, pero su ficha (tn-3609) no confirma que sea XXL de 11.000 págs, así que no lo incluí. No pude abrir ninguna página porque WebFetch y el proxy rechazaron todos los dominios.",
+   "opciones": [
+    {
+     "tienda": "Tiendas JC Retail Chile",
+     "producto_mercado": "Toner Brother TN 3609 XXL DCP-L5510DN/L5660DN/L5915DW/L6915DW/HL5210DN/HL6415D Negro Alternativo Premium",
+     "url": "https://www.tiendasjcretailchile.cl/producto/toner-brother-tn-3609-xxl-dcp-l5510dn-l5660dn-l5915dw-l6915dw-hl5210dn-hl6415d-negro-alternativo-premium/",
+     "precio": 49990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "La búsqueda confirma $49.990 con IVA incluido, 11.000 págs y 3 meses de garantía; la marca es Logic o G&G según stock. La publicación tiene unos 134 días. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Inkpact",
+     "producto_mercado": "Tóner Alternativo Brother TN 3609XXL / Con Chip",
+     "url": "https://inkpact.cl/product/toner-alternativo-brother-tn3609xxl-con-chip/",
+     "precio": 56600,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47563.03,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Con chip, unas 11.000 págs al 5%. La búsqueda confirma $56.600 (antes $87.077). No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Cintegral",
+     "producto_mercado": "TONER BROTHER TN-3609XXL SUPER ALTO RENDIMIENTO",
+     "url": "https://cintegral.cl/producto/11282/toner-brother-tn3609xxl-super-alto-rendimiento/",
+     "precio": 138990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 116798.32,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "contenido": "1 unidad",
+     "nota": "Original Brother. La búsqueda confirma $138.990 (TodoToner vende el original a $139.990). No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  }
+ ],
+ "verificacion": "No pude abrir ninguna página. WebFetch falló en todos los dominios (getaddrinfo ENOTFOUND, también con google.com) y curl recibió 403 del proxy. Por eso todas las opciones quedan con verificado=false. Las revisé con búsquedas web restringidas a cada tienda: todas las URL aparecen en resultados reales y casi todos los precios coinciden con los fragmentos. Los cálculos de neto (precio / 1,19) y de unidades_equivalentes = 1 estaban bien.\n\nCambios:\n- Línea 1: eliminé la opción TodoToner \"230X Black\". Su URL era la ficha del 230X CYAN, no hay ficha propia del negro, el precio no coincide entre páginas ($49.990, $54.990, $79.980) y la serie declara unas 5.500 págs frente a las 7.500 pedidas. Agregué Winpy ($224.960), que salió en la búsqueda. La línea queda solo con originales.\n- Línea 5: cambié la URL de TodoToner de la página de categoría (tn-419-black-1, $35.990) a la ficha tn-419-black-ppc a $29.990.\n\nPrecios que no cuadran entre fuentes:\n- Alcaplus amarillo: $259.900 o $233.900.\n- Dipy magenta: $267.198 o $257.549.\n- Comaac TN-419Y: $179.990 o $177.990.\n- TodoToner 230X magenta: entre $34.990 y $89.990, y estaba agotado.\n\nEn estos casos dejé el precio informado y anoté la diferencia. También anoté el stock insuficiente de Dimerc amarillo (1 unidad)."
+}

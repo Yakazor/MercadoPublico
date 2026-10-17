@@ -1,0 +1,499 @@
+{
+ "codigo": "2460-137-LE26",
+ "nombre": "Adquisición de Insumos de Escritorio",
+ "fecha_consulta": "2026-10-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Corchetera metálica 26/6, yunque cerrado, 13-14 cm, base plástica, tipo Maped (90 un)",
+   "opciones": [
+    {
+     "tienda": "Librería Bulnes",
+     "producto_mercado": "Corchetera MAPED med26/6+ Corchete",
+     "url": "https://libreriabulnes.cl/tienda/corchetera-maped-med26-6-corchete/",
+     "precio": 3350,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2815.13,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página: WebFetch no resuelve DNS y el proxy rechaza el host. Una búsqueda indexada confirma $3.350, 19 unidades disponibles (no alcanzan para 90) y estas características: metálica, abre 180°, profundidad 61 mm, hasta 25 hojas. No confirma el largo de 13-14 cm ni el yunque cerrado.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Roian",
+     "producto_mercado": "Corchetera Maped Essential 24-26/6 Mediana",
+     "url": "https://roian.cl/producto/corchetera-maped-essential-24-26-6-mediana/",
+     "precio": 3790,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3184.87,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda indexada muestra la URL y el precio de $3.790. No confirma el stock ni el largo de 13-14 cm.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Nacional (nacional.cl)",
+     "producto_mercado": "Corchetera Essential Medida 24-26/6 Maped",
+     "url": "https://nacional.cl/corchetera-essential-medida-24-266-maped",
+     "precio": 5490,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4613.45,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "CORREGIDO. Ninguna búsqueda respalda los $3.290 informados. En el listado de colección de nacional.cl el producto figura a $5.990 (precio habitual) y en el buscador a $5.490, AGOTADO en ambos casos. Usé $5.490. Ninguna búsqueda devolvió la URL exacta de la ficha, aunque sigue el formato de otras URL reales del sitio. No pude abrirla por bloqueo de red.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "No pude abrir ninguna página: WebFetch falla con DNS ENOTFOUND y el proxy rechaza los hosts .cl. Contrasté cada opción con búsquedas restringidas al dominio, así que todas quedan con verificado=false. Ninguna tienda muestra stock para 90 unidades; hay que cotizar volumen. Jumbo lista una 'Corchetera Maped 26/6 + corchetes' a $6.490."
+  },
+  {
+   "linea": 2,
+   "producto": "Corchetes corrientes 26/6, caja 5.000 un, tipo Torre (300 cajas)",
+   "opciones": [
+    {
+     "tienda": "Torre (tienda oficial torre.cl)",
+     "producto_mercado": "Caja Corchetes N°26/6 5000 Unid. Colon",
+     "url": "https://www.torre.cl/catalogo/caja-corchetes-n26-6-5000-unid-colon/",
+     "precio": 890,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 747.9,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda indexada confirma $890 (SKU 11702, EAN 7806505520721). En bloques de productos relacionados aparece también a $903 y $860. Asumí IVA incluido porque es una tienda al público.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Buale",
+     "producto_mercado": "Corchetes 26/6 5000 Und. - Torre",
+     "url": "https://www.buale.cl/producto/corchetes-26-6-5000-und-torre-2/",
+     "precio": 890,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 747.9,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma un precio mayorista de $890 y un precio de oferta de $990. El mayorista puede exigir un mínimo, aunque 300 cajas probablemente lo cumple.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Torre (tienda oficial torre.cl)",
+     "producto_mercado": "Caja Corchetes N°26/6 - 5000 Unid. Barra Entera",
+     "url": "https://www.torre.cl/catalogo/caja-corchetes-n26-6-5000-unid-barra-entera/",
+     "precio": 990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 831.93,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 con existencias (SKU 11696).",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "La referencia de OC es $673,5 neto, menor que el mejor precio al público encontrado ($748 neto)."
+  },
+  {
+   "linea": 3,
+   "producto": "Corchetes C5050 cromado Rapid, cassette 5.000 un (25 cartuchos)",
+   "opciones": [
+    {
+     "tienda": "Dimerc (multivendor)",
+     "producto_mercado": "Corchete Cassette 5000 Un C5050E - Rapid",
+     "url": "https://multivendor.dimerc.cl/products/corchete-cassette-p-c5050e-5000-un-rapid",
+     "precio": 35041,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 29446.22,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $35.041, AGOTADO, para la corchetera eléctrica R5050E (Rapid SKU R396639). No está claro si el precio incluye IVA. dimercplus.dimerc.cl tiene el mismo producto sin precio ni stock visible.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "Es la única oferta chilena con precio, y está agotada. Hay que cotizar con un distribuidor de Rapid."
+  },
+  {
+   "linea": 4,
+   "producto": "Corchete 23/10 galvanizado, caja 1.000 un (80 cajas)",
+   "opciones": [
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Corchete Especial 23/10 1000 Un - ISOFIT",
+     "url": "https://www.dipy.cl/products/corchete-especial-23-10-1000-un",
+     "precio": 482,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 405.04,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $482 (SKU 121351), AGOTADO. No confirma que sea galvanizado.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Torre (tienda oficial torre.cl)",
+     "producto_mercado": "Caja Corchetes N°23/10 - 1000 Unid.",
+     "url": "https://www.torre.cl/catalogo/caja-corchetes-n23-10-1000-unid/",
+     "precio": 1290,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1084.03,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.290 con existencias.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Librería Comercial",
+     "producto_mercado": "CAJA 1000 CORCHETES 23/10 KANGARO",
+     "url": "https://libreriacomercial.cl/corcheteras-y-accs/2586-caja-1000-corchetes-2310-kangaro.html",
+     "precio": 1450,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1218.49,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma el precio web exclusivo de $1.450 IVA incluido (precio base $1.890, -23%). La tienda está en el Valle del Aconcagua y el despacho gratis aplica solo allí.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "Ninguna opción está verificada en la página por el bloqueo de red. Dipy aparece AGOTADO. Dipy también lista un 'Corchete Semi Industrial 23/10 1000 Un' marca Torre, pero la búsqueda no mostró su precio."
+  },
+  {
+   "linea": 5,
+   "producto": "Corchete 44/7 para máquina eléctrica Rapid, caja 5.000 un (600 cajas)",
+   "opciones": [],
+   "nota": "Con búsquedas en Dipy, Dimerc, Mercado Libre, La Secretaria, Dimeiggs, Prisa, Torre y otras no encontré ninguna tienda chilena que publique el Rapid 44/7 con precio. La Secretaria vende el Rapid 66/7 de 5000 un a $2.436 (+IVA), pero es otro corchete y no sirve sin confirmar la máquina. Hay que cotizar con un distribuidor de Rapid y confirmar el modelo de la corchetera eléctrica."
+  },
+  {
+   "linea": 6,
+   "producto": "Corchete Rapid 5080, cassette 5.000 un (30 cartuchos)",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile (TUBAZAR.CL)",
+     "producto_mercado": "Corchete Rapid 5080 Para Corchetera Electrica 5000un.",
+     "url": "https://articulo.mercadolibre.cl/MLC-524503182-corchete-rapid-5080-para-corchetera-electrica-5000un-_JM",
+     "precio": 19990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "REEMPLAZA la opción de $19.000, que apuntaba a una página de listado (listado.mercadolibre.cl/corchetes-rapid) y no a una ficha. La búsqueda atribuye $19.990 al vendedor TUBAZAR.CL en esta publicación, pero esa atribución sale de un resumen de búsqueda. No pude abrir la ficha ni confirmar stock. Vendedor de marketplace.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Corchete Cassette 5000 Un C5080E - RAPID",
+     "url": "https://www.dipy.cl/products/corchete-cassette-p-c5080e-5000-un-rapid",
+     "precio": 27848,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 23401.68,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $27.848 para la corchetera eléctrica 5080E.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Corchetes Rapid Cassette 5.000 Un. 5080",
+     "url": "https://articulo.mercadolibre.cl/MLC-2216555722-corchetes-rapid-cassette-5000-un-5080-_JM",
+     "precio": 28800,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 24201.68,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $28.800 en 12 cuotas sin interés. Vendedor de marketplace.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "Otra publicación de Mercado Libre aparece a $28.040 con envío gratis, pero no tengo su URL. En una licitación anterior (2460-14-R125) se adjudicó a $22.500 por caja."
+  },
+  {
+   "linea": 7,
+   "producto": "Corchete HD70 Optima, caja 2.500 un (30 cajas)",
+   "opciones": [
+    {
+     "tienda": "SP Digital",
+     "producto_mercado": "Corchetes Rapid Optima HD70, Medida 3/8\" Contiene 2.500 piezas",
+     "url": "https://www.spdigital.cl/corchete-optima-70-high-capacity-medida-38-contiene-2500-piezas/",
+     "precio": 3520,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2957.98,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $3.360 con transferencia y $3.520 con otros medios de pago; usé el mayor.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Tienda ACCO Brands (Swingline)",
+     "producto_mercado": "Corchetes Swingline 3/8\" Optima High Capacity Caja 2500 Unidades",
+     "url": "https://www.tienda-accobrands.cl/products/corchete-medida-3-8-contiene-2500-unidades-swingline",
+     "precio": 4269,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3587.39,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "CORREGIDO: la búsqueda muestra $4.269 (-15%) en la ficha, no $3.990. La página de la marca muestra $8.971, y las de marca y categoría lo marcan AGOTADO. Trae tiras de 125 y sirve hasta 70 hojas. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Corchetes Rapid 5025E/5020, caja 2 cassettes x 1.500 un (12)",
+   "opciones": [
+    {
+     "tienda": "Milenaria Chile",
+     "producto_mercado": "Cassette de Corchetes Rapid R5025 Caja de 2 Unidades",
+     "url": "https://www.milenariachile.cl/catalog/product/view/id/16945/s/cassette-de-corchetes-rapid-r5025-caja-de-2-unidades/category/379/",
+     "precio": 22941,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 19278.15,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $22.941, disponible (SKU 600965). La ficha no aclara si el precio incluye IVA.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "Tomé 1 unidad de la licitación = 1 caja de 2 x 1.500. Si 'Cartucho' significa un solo cassette, hay que dividir por 2. En Mercado Libre (MLC36263895, 2x1500 5025) el producto figura no disponible. Dimerc lista el cassette para 5025E/5020E sin precio."
+  },
+  {
+   "linea": 9,
+   "producto": "Set banderas adhesivas 44 x 12 mm, tipo 3M 683-4 (1.000 packs)",
+   "opciones": [
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Banderitas Adhesivas Tape Flags 683-4 Señal Mini Colores Surtidos",
+     "url": "https://www.dipy.cl/products/banderitas-adhesivas-tape-flags-683-4-se-al-mini-colores-surtidos",
+     "precio": 5451,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4580.67,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. Las búsquedas dan precios contradictorios para la 683-4 Post-it en Dipy: $4.988 bruto ($4.192+IVA), $5.306 (SKU R305224) y $5.451 (posiblemente la variante neón). Dejé $5.451 como cota conservadora. Trae 4 colores y 140 un.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "La Secretaria",
+     "producto_mercado": "BANDERITAS 4 COL N683-4AB NEON 3M 140UNi",
+     "url": "https://lasecretaria.cl/notas-adhesivas/154-banderitas-4-col-n683-4ab-neon-3m-140uni.html",
+     "precio": 4866,
+     "iva_incluido": false,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4866.0,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $4.866 + IVA (precio neto).",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dimeiggs",
+     "producto_mercado": "Banderitas Adhesivas 683-4 Colores Surtido Post It",
+     "url": "https://www.dimeiggs.cl/banderitas-adh-tape-flags-683-4-senal-mini-c-surt/p",
+     "precio": 5890,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4949.58,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $5.890 c/u desde 3 unidades; el precio normal es $6.290.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "La 3M 683-4 trae 4 colores y 140 banderas, mientras la descripción pide 5 colores 'tipo 683-4'. Igual la marqué exacta porque es el modelo de referencia. Los sets Dimerc ($1.861, agotado) y Fultons ($1.357, 4 un) son otros formatos y no verifiqué su cantidad."
+  },
+  {
+   "linea": 10,
+   "producto": "Nota adhesiva amarillo flúor 38 x 50 mm, 100 hojas, tipo 3M 653 (996 un)",
+   "opciones": [
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Nota Adhesiva 653 Amarillo Neon 51X38 Mm Block 12 Un 100 Hojas (Fultons)",
+     "url": "https://www.dipy.cl/products/nota-adhesiva-653-amarillo-neon-51x38-mm-block-12-un-100-hojas",
+     "precio": 2921,
+     "iva_incluido": true,
+     "unidades_equivalentes": 12,
+     "precio_unitario_neto": 204.55,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "AGREGADA en esta verificación. Es marca Fultons, amarillo neón (cumple 'flúor'), 51x38 mm, 12 blocs de 100 hojas. La búsqueda indexada muestra $2.921 (SKU 554917) con stock y un sub-embalaje de 2 a $5.843. No pude abrir la ficha. No hay datos de que sean removibles ni de que no se curven.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Nota Adhesiva 12 Un X 100 Hojas 3.5 X 4.8 Cm Amarillo 653",
+     "url": "https://www.dipy.cl/products/nota-adhesiva-post-it-653-block-100hj-amarillo-12un-3m",
+     "precio": 9345,
+     "iva_incluido": true,
+     "unidades_equivalentes": 12,
+     "precio_unitario_neto": 654.41,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $9.345 por 12 blocs Post-it 653 (en otro listado, $9.400). El título dice 51x38 mm y la descripción 3,8x5 cm. Es amarillo canario, no neón.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dimeiggs",
+     "producto_mercado": "Notas Adhesiva 1 5 X 2 Cm 100 Hjs 12 Unidades Amarillo 653 Post 3M",
+     "url": "https://www.dimeiggs.cl/notas-adh-1-5-x-2-100h-x-12un-amarillo-653-post/p",
+     "precio": 10990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 12,
+     "precio_unitario_neto": 769.61,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda muestra $10.990 y $5.990 en la misma ficha (el agente previo vio $7.290). El precio vigente no está claro y dejé $10.990 como cota conservadora.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "Dipy también tiene un 653 Rhein amarillo pastel (2 blocs a $522) y uno Imerc/Fultons amarillo a $182 por bloc, pero no confirman el color flúor y, en el caso Imerc, tampoco la medida. Por eso los dejé fuera. La referencia de OC ($4.890) parece corresponder a otro formato."
+  },
+  {
+   "linea": 11,
+   "producto": "Nota adhesiva amarillo flúor 76 x 76 mm, 100 hojas, tipo 3M 654 (996 un)",
+   "opciones": [
+    {
+     "tienda": "Dimeiggs",
+     "producto_mercado": "Nota Adhesiva 76 x 76 Mm 100 Hojas 1 Unidad Amarillo Fultons",
+     "url": "https://www.dimeiggs.cl/nota-adhesiva-654-76x76-mm-100-hojas-1-unidad-amarillo-fultons-34199/p",
+     "precio": 690,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 579.83,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "AGREGADA en esta verificación. Es marca Fultons, 76x76 mm, 100 hojas, amarillo. El precio de unos $690 sale de un resumen de búsqueda y no pude abrir la ficha. No confirma que el color sea flúor.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Nota adhesiva Post-it 654 amarillo 76x76 100 hojas",
+     "url": "https://www.dipy.cl/collections/nota-adhesiva",
+     "precio": 1671,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1404.2,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "La URL es un listado de colección, no la ficha. La búsqueda confirma $1.671 para la referencia. No pude abrir la página. Dipy tiene además la ficha 'dipy.cl/products/nota-adh-654-block-100hj-amarillo-76x76mm', que puede no ser Post-it.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Dimeiggs",
+     "producto_mercado": "Nota Adhesiva Post-It 654 100 Hojas 1 Unidad Amarillo Post It",
+     "url": "https://www.dimeiggs.cl/nota-adh-post-it-654-block-100hj-amarillo-3cm/p",
+     "precio": 1990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.990 desde 3 unidades; el precio normal es $2.290. El distribuidor de Dimeiggs lo muestra a $1.920.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Nota Adhesiva 3M Post-It 654 Amarillo 76x76 mm 100 Hojas, 1 Un",
+     "url": "https://www.lider.cl/supermercado/product/sku/321045/3m-post-it-amarillo-1-un",
+     "precio": 2190,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1840.34,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $2.190; otra ficha de Lider (super.lider.cl/ip/00002120015577) muestra $2.590.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Taco apuntes blanco 9 x 9 cm, 500 hojas, tipo Mardini (200 un)",
+   "opciones": [
+    {
+     "tienda": "Embalados",
+     "producto_mercado": "TACO BLANCO 9*9 500 HOJAS",
+     "url": "https://embalados.cl/producto/taco-blanco-99-500-hojas/",
+     "precio": 810,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 680.67,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 c/u y $810 desde 6 unidades. Es otra marca, no Mardini, y no confirma el alto de 4 cm.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Durban",
+     "producto_mercado": "TACO ANOTE BLANCO 09X09CM 33GR 500 HOJAS ARON/REM",
+     "url": "https://www.durban.cl/index.php/Inicio/Detalles?codigo=02074026",
+     "precio": 850,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 714.29,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "CORREGIDO a $850: según la búsqueda, ese es el tramo desde 200 unidades, que coincide con la cantidad pedida ($894 c/u para 1-199). Otra captura muestra $1.336, así que el precio no es estable. No pude abrir la página.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Lapizarra Librería",
+     "producto_mercado": "Taco de Papel Blanco 9x9cm. 500Hj.",
+     "url": "https://lapizarralibreria.cl/block-de-apuntes-y-prepicado/tacos-de-papel-blanco-9x9cm-500hj/",
+     "precio": 1150,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 966.39,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.150 (con 966 en los datos estructurados, que coincide con el neto). En otra sección del sitio aparece agotado.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "No encontré la marca Mardini con precio publicado."
+  },
+  {
+   "linea": 13,
+   "producto": "Cinta para calculadora Olympia-Casio 13 mm x 6 m, bicolor (20 un)",
+   "opciones": [
+    {
+     "tienda": "Dipy",
+     "producto_mercado": "Cinta Para Sumadora Rb-02 Para Calculadora Dr 120, 140, 210, 240, 270",
+     "url": "https://www.dipy.cl/products/cinta-para-sumadora-rb-02-para-calculadora-dr-120-140-210-240-270",
+     "precio": 4161,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3496.64,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $4.161 para la Casio RB-02 negro/rojo. No confirma 13 mm, 6 m ni la compatibilidad con Olympia.",
+     "fecha_consulta": "2026-10-17"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Cinta Bicolor Casio Rb-02 De 13 Mm Para Sumadora",
+     "url": "https://www.mercadolibre.cl/cinta-bicolor-casio-rb02-de-13-mm-para-sumadora/up/MLCU75799397",
+     "precio": 11900,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10000.0,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $11.900 en 12 cuotas sin interés, 13 mm, con garantía de fábrica de 6 meses. Vendedor de marketplace.",
+     "fecha_consulta": "2026-10-17"
+    }
+   ],
+   "nota": "No encontré una cinta genérica Olympia/Casio de 13 mm x 6 m con precio. En Mercado Libre aparece una cinta bicolor Casio/Elca en pack de 5 a $7.800, pero no confirmé el modelo ni tengo su URL."
+  }
+ ],
+ "verificacion": "No pude abrir ninguna página: WebFetch falla con DNS ENOTFOUND para todos los dominios (incluso example.com), y curl a través del proxy recibe 403 en los hosts .cl. Por eso todas las opciones quedan con verificado=false. Contrasté cada URL y precio con búsquedas WebSearch restringidas al dominio de la tienda, y todas las URL, salvo la de Nacional, aparecieron tal cual en los resultados. Correcciones: (1) Nacional, línea 1: ninguna búsqueda respalda los $3.290; el producto figura AGOTADO a $5.490-$5.990, así que bajó al último lugar con $5.490 y la URL sin confirmar. (2) ACCO, línea 7: el precio de ficha es $4.269, no $3.990, y figura agotado; quedó reordenado. (3) Durban, línea 12: el tramo de 200+ unidades es $850; recalculé el neto a $714. (4) Línea 6: eliminé la opción de $19.000 porque apuntaba a una página de listado de Mercado Libre, no a una ficha; la reemplacé por la publicación MLC-524503182 a $19.990 (TUBAZAR.CL, atribución tomada de la búsqueda). (5) Agregué alternativas equivalentes más baratas que aparecieron en las búsquedas: la línea 10 tiene una Fultons amarillo neón 12 x 100 hojas a $2.921 en Dipy ($205 neto por bloc), y la línea 11 una Fultons 76x76 a $690 en Dimeiggs. (6) Anoté inconsistencias de precio en Dipy 683-4 ($4.988-$5.451) y Dimeiggs 653 ($5.990 vs $10.990); en ambas usé el valor más alto como cota conservadora. Confirmé el resto de precios y existencias (incluidos los agotados de Dipy 23/10 y Dimerc C5050E). La línea 5 (Rapid 44/7) sigue sin opciones. Reordené de menor a mayor precio_unitario_neto."
+}
