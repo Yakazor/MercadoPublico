@@ -1,0 +1,1015 @@
+<style>
+  .rl { font-family: var(--font-anthropic-sans); display: grid; gap: var(--cds-gap-lg); min-width: 0; }
+  .rl * { min-width: 0; }
+  .rl [hidden] { display: none !important; }
+  .rl-head { display: grid; gap: var(--cds-gap-xs); }
+  .rl-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+  .rl-takeaway { margin: 0; font-size: var(--cds-font-size-body); }
+  .rl-fresh { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .rl-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: var(--cds-gap-md); }
+  .rl-kpi { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); display: grid; gap: var(--cds-gap-xs); align-content: start; }
+  .rl-kpi-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .rl-kpi-valor { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; line-height: 1.1; overflow-wrap: anywhere; }
+  .rl-kpi-valor.rl-urgente { color: var(--color-bad); }
+  .rl-kpi-valor.rl-bien { color: var(--color-ok); }
+  .rl-tabs { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); border-bottom: 1px solid var(--color-border-line); }
+  .rl-tab { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: var(--cds-pad-sm) var(--cds-pad-xs); font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg-muted); cursor: pointer; }
+  .rl-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); }
+  .rl-tab:focus-visible, .rl th button:focus-visible, .rl-boton:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+  .rl-pagina { display: grid; gap: var(--cds-gap-md); }
+  .rl-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--cds-gap-sm); }
+  .rl-card h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .rl-nota { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .rl-controles { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; }
+  .rl-controles input, .rl-controles select { font: inherit; font-size: var(--cds-font-size-body); padding: var(--cds-pad-xs) var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); max-width: 100%; }
+  .rl-controles input[type="search"] { flex: 1 1 12rem; }
+  .rl-controles select.rl-ancho { flex: 1 1 18rem; }
+  .rl-controles label { display: inline-flex; gap: var(--cds-gap-xs); align-items: center; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .rl-boton { font: inherit; font-size: var(--cds-font-size-caption); padding: 2px var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); cursor: pointer; white-space: nowrap; }
+  .rl-boton:hover { border-color: var(--color-fg-muted); }
+  .rl-boton.rl-con-precios { border-color: var(--color-ok); }
+  .rl-leyenda { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .rl-leyenda span { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); }
+  .rl-punto { width: .625rem; height: .625rem; border-radius: 50%; display: inline-block; flex: none; }
+  .rl-grafico { position: relative; min-height: 13rem; }
+  .rl-dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); }
+  .rl-barras { display: grid; gap: var(--cds-gap-sm); min-height: 6rem; align-content: start; }
+  .rl-barra-fila { all: unset; display: grid; grid-template-columns: minmax(0, 13rem) minmax(2rem, 1fr) auto; gap: var(--cds-gap-sm); align-items: center; cursor: pointer; font-size: var(--cds-font-size-caption); border-radius: var(--cds-radius); padding: 2px 4px; }
+  .rl-barra-fila:hover, .rl-barra-fila[aria-pressed="true"] { background: var(--color-bg); }
+  .rl-barra-fila:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+  .rl-barra-fila .rl-num { font-variant-numeric: tabular-nums; }
+  .rl-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; }
+  .rl-tip-titulo { color: var(--cds-text-secondary); }
+  .rl-caja { max-height: 34rem; overflow: auto; }
+  .rl table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .rl th { position: sticky; top: 0; background: var(--color-panel); text-align: left; z-index: 1; }
+  .rl th button { all: unset; cursor: pointer; font-weight: var(--cds-font-weight-medium); color: var(--color-fg); }
+  .rl th[aria-sort="ascending"] button::after { content: " ↑"; }
+  .rl th[aria-sort="descending"] button::after { content: " ↓"; }
+  .rl td, .rl th { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+  .rl tfoot td { font-weight: var(--cds-font-weight-medium); border-bottom: 0; }
+  .rl .rl-num { text-align: right; white-space: nowrap; }
+  .rl td.rl-nombre { min-width: 12rem; overflow-wrap: anywhere; }
+  .rl td.rl-nombre .rl-punto { margin-right: var(--cds-gap-xs); vertical-align: middle; }
+  .rl .rl-desc { display: block; color: var(--color-fg-muted); }
+  .rl a { color: inherit; }
+  .rl .rl-urgente { color: var(--color-bad); font-weight: var(--cds-font-weight-medium); }
+  .rl .rl-pronto { color: var(--color-warn); }
+  .rl .rl-reg { color: var(--color-warn); white-space: nowrap; }
+  .rl .rl-mal { color: var(--color-bad); }
+  .rl .rl-ok { color: var(--color-ok); }
+  .rl-celda-barra { display: grid; grid-template-columns: minmax(3rem, 1fr) auto; gap: var(--cds-gap-sm); align-items: center; min-width: 9rem; }
+  .rl-barra { height: .5rem; border-radius: 999px; }
+  .rl-vacio { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .rl-aviso { margin: 0; padding: var(--cds-pad-sm) var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); font-size: var(--cds-font-size-caption); }
+  .rl-info { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+  .rl-info b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+  .rl-elegidas { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; padding: var(--cds-pad-sm) var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); font-size: var(--cds-font-size-caption); }
+  .rl-actualizar { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; }
+  .rl-actualizar .rl-boton { font-size: var(--cds-font-size-body); padding: var(--cds-pad-xs) var(--cds-pad-md); }
+  .rl-actualizar .rl-boton[disabled] { opacity: .6; cursor: progress; }
+  [data-dash-source-state=empty] { color: transparent; }
+  [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+  @media (max-width: 42rem) { .rl .rl-angosto { display: none; } }
+</style>
+
+<div class="rl">
+  <header class="rl-head" id="resumen">
+    <h1>Radar de Licitaciones</h1>
+    <p class="rl-takeaway">
+      <span class="dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span> licitaciones vigentes en tus rubros;
+      <span class="dash-skeleton" data-source="resumen" data-field="cierran_7" data-row="0">—</span> cierran en 7 días o menos.
+    </p>
+    <p class="rl-fresh">
+      Datos del <span class="dash-skeleton" data-source="meta" data-field="generado" data-row="0">—</span> ·
+      precios de órdenes de compra del <span data-source="meta" data-field="oc_desde" data-row="0">—</span>
+      al <span data-source="meta" data-field="oc_hasta" data-row="0">—</span>
+      (<span data-source="meta" data-field="oc_dias" data-row="0">—</span> días)
+    </p>
+    <div class="rl-actualizar" id="actualizar">
+      <button type="button" class="rl-boton" id="boton-actualizar">Actualizar ahora</button>
+      <span class="rl-nota" id="estado-actualizar" role="status">Se actualiza solo de lunes a viernes a las 8:50 (licitaciones, órdenes de compra, precios de mercado y presupuestos). El botón lo hace ahora; tarda entre 30 y 60 minutos.</span>
+    </div>
+  </header>
+
+  <section class="rl-kpis" id="indicadores" aria-label="Indicadores">
+    <div class="rl-kpi"><span class="rl-kpi-label">Vigentes</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span></div>
+    <div class="rl-kpi"><span class="rl-kpi-label">Cierran en ≤ 7 días</span><span class="rl-kpi-valor rl-urgente dash-skeleton" data-source="resumen" data-field="cierran_7" data-row="0">—</span></div>
+    <div class="rl-kpi"><span class="rl-kpi-label">Monto estimado visible (CLP)</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="monto_clp" data-row="0">—</span></div>
+    <div class="rl-kpi"><span class="rl-kpi-label">Solo productos con registro ISP</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="solo_regulados" data-row="0">—</span></div>
+  </section>
+
+  <nav class="rl-tabs" role="tablist" aria-label="Secciones">
+    <button class="rl-tab" role="tab" id="tab-licitaciones" aria-controls="licitaciones" aria-selected="true">Licitaciones</button>
+    <button class="rl-tab" role="tab" id="tab-simulador" aria-controls="simulador" aria-selected="false">Simulador de presupuesto</button>
+    <button class="rl-tab" role="tab" id="tab-precios" aria-controls="precios" aria-selected="false">Precios adjudicados</button>
+  </nav>
+
+  <section class="rl-pagina" id="licitaciones" role="tabpanel" aria-labelledby="tab-licitaciones">
+    <div class="rl-dos">
+      <div class="rl-card" id="rubros">
+        <h2>Vigentes por rubro</h2>
+        <p class="rl-nota">Haz clic en un rubro para filtrar la tabla.</p>
+        <div class="rl-barras" id="barras-rubro" data-source="por_rubro"></div>
+      </div>
+      <div class="rl-card" id="plazos">
+        <h2>Cierres por plazo</h2>
+        <p class="rl-nota">Licitaciones vigentes según los días que faltan para el cierre (contados desde hoy), por rubro.</p>
+        <div class="rl-leyenda" id="leyenda-plazos" aria-hidden="true"></div>
+        <div class="rl-grafico" id="grafico-plazos" data-source="por_plazo"></div>
+      </div>
+    </div>
+
+    <div class="rl-card" id="tabla-licitaciones">
+      <h2>Licitaciones vigentes</h2>
+      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público. Marca las licitaciones que te interesan y pide sus precios de mercado: solo se buscan las que elijas. «Simular» abre el presupuesto (borde verde: ya tiene precios).</p>
+      <div class="rl-controles">
+        <input type="search" id="buscar-lic" placeholder="Buscar licitación, organismo, región…" aria-label="Buscar licitaciones">
+        <select id="rubro-lic" aria-label="Rubro" data-source="por_rubro"><option value="">Todos los rubros</option></select>
+        <label><input type="checkbox" id="pronto-lic"> Solo cierres en ≤ 7 días</label>
+        <label><input type="checkbox" id="noreg-lic"> Ocultar solo regulados</label>
+        <label><input type="checkbox" id="precios-lic"> Solo con precios de mercado</label>
+      </div>
+      <div class="rl-elegidas" id="elegidas" hidden>
+        <span id="elegidas-texto"></span>
+        <button type="button" class="rl-boton" id="elegidas-buscar">Buscar precios de las elegidas</button>
+        <button type="button" class="rl-boton" id="elegidas-limpiar">Quitar selección</button>
+        <span class="rl-nota" id="elegidas-estado" role="status"></span>
+      </div>
+      <div class="rl-caja">
+        <table id="lic" data-source="licitaciones" data-row-key="codigo">
+          <thead><tr>
+            <th><span class="rl-nota" title="Elegir para buscar precios">Elegir</span></th>
+            <th class="rl-num" data-source="licitaciones_hoy" data-field="dias"><button data-col="dias">Días</button></th>
+            <th data-field="codigo"><button data-col="codigo">Código</button></th>
+            <th data-field="nombre"><button data-col="nombre">Nombre</button></th>
+            <th class="rl-angosto" data-field="organismo"><button data-col="organismo">Organismo</button></th>
+            <th class="rl-angosto" data-field="region"><button data-col="region">Región</button></th>
+            <th class="rl-num" data-field="monto_estimado"><button data-col="monto_estimado">Monto estimado</button></th>
+            <th class="rl-angosto" data-field="fecha_cierre"><button data-col="fecha_cierre">Cierre</button></th>
+            <th data-source="regulacion" data-field="regulacion"><button data-col="regulacion">Registro ISP</button></th>
+            <th>Presupuesto</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="rl-vacio" id="lic-vacio" hidden>Ninguna licitación coincide con los filtros.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rl-pagina" id="simulador" role="tabpanel" aria-labelledby="tab-simulador" hidden>
+    <div class="rl-card" id="sim-cabecera">
+      <h2>Simulador de presupuesto</h2>
+      <p class="rl-nota">El costo de cada ítem es el precio más bajo encontrado en tiendas chilenas para ese producto (o uno equivalente), en neto (sin IVA) y por la unidad que pide la licitación, más 5 % de otros costos (despacho, garantías). La oferta suma tu margen; el IVA (19 %) va aparte. «Ref. OC» es lo que el Estado pagó en órdenes de compra por ese producto (mediana): si tu oferta la supera, es difícil ganar.</p>
+      <div class="rl-controles">
+        <select id="sim-lic" class="rl-ancho" aria-label="Licitación a simular" data-source="licitaciones"></select>
+        <label>Margen
+          <select id="sim-margen" aria-label="Margen">
+            <option value="0.1">10 %</option><option value="0.15">15 %</option><option value="0.2" selected>20 %</option>
+            <option value="0.25">25 %</option><option value="0.3">30 %</option>
+          </select>
+        </label>
+      </div>
+      <p class="rl-info" id="sim-info"></p>
+    </div>
+
+    <p class="rl-aviso" id="sim-aviso" hidden></p>
+    <div class="rl-elegidas" id="sim-pedir" hidden>
+      <button type="button" class="rl-boton" id="sim-pedir-boton">Buscar precios de mercado de esta licitación</button>
+      <span class="rl-nota" id="sim-pedir-estado" role="status">Busca cada ítem en tiendas chilenas (con links) y arma el presupuesto. Tarda entre 10 y 20 minutos.</span>
+    </div>
+
+    <section class="rl-kpis" id="sim-totales" aria-label="Totales del presupuesto">
+      <div class="rl-kpi"><span class="rl-kpi-label">Costo de compra (neto)</span><span class="rl-kpi-valor" data-source="presupuesto_totales" data-field="costo_neto">—</span></div>
+      <div class="rl-kpi"><span class="rl-kpi-label">Oferta (neto)</span><span class="rl-kpi-valor" data-source="presupuesto_totales" data-field="oferta_neta">—</span></div>
+      <div class="rl-kpi"><span class="rl-kpi-label">IVA 19 %</span><span class="rl-kpi-valor" data-source="presupuesto_totales" data-field="iva">—</span></div>
+      <div class="rl-kpi"><span class="rl-kpi-label">Oferta total</span><span class="rl-kpi-valor" data-source="presupuesto_totales" data-field="oferta_total">—</span></div>
+      <div class="rl-kpi"><span class="rl-kpi-label">Utilidad estimada</span><span class="rl-kpi-valor rl-bien" data-source="presupuesto_totales" data-field="utilidad">—</span></div>
+      <div class="rl-kpi"><span class="rl-kpi-label">Ref. OC de esos ítems (neto)</span><span class="rl-kpi-valor" data-source="presupuesto_totales" data-field="referencia_oc">—</span></div>
+    </section>
+
+    <div class="rl-card" id="sim-items-card">
+      <h2>Ítems del presupuesto</h2>
+      <p class="rl-nota" id="sim-items-nota">Cantidades y unidades según la licitación. El nombre de la tienda abre el producto.</p>
+      <div class="rl-caja">
+        <table id="sim-items" data-source="presupuesto" data-row-key="clave">
+          <thead><tr>
+            <th class="rl-num" data-field="linea">Línea</th>
+            <th data-field="producto">Producto</th>
+            <th class="rl-num" data-field="cantidad">Cantidad</th>
+            <th class="rl-num" data-field="precio_mercado_neto">Precio mercado neto / u</th>
+            <th data-field="tienda">Tienda</th>
+            <th class="rl-num" data-field="subtotal_costo">Subtotal costo</th>
+            <th class="rl-num" data-field="oferta_unitaria">Oferta / u</th>
+            <th class="rl-num" data-field="subtotal_oferta">Subtotal oferta</th>
+            <th class="rl-num rl-angosto" data-field="ref_mediana">Ref. OC / u</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <table id="sim-solo-items" data-source="items" data-row-key="codigo,linea" hidden>
+          <thead><tr>
+            <th class="rl-num" data-field="linea">Línea</th>
+            <th data-field="producto">Producto</th>
+            <th class="rl-num" data-field="cantidad">Cantidad</th>
+            <th data-field="unidad">Unidad</th>
+            <th class="rl-num" data-field="ref_mediana">Ref. OC / u (mediana)</th>
+            <th class="rl-num rl-angosto" data-field="ref_n_ordenes">OC</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="rl-vacio" id="sim-vacio" hidden>Esta licitación no trae ítems en los datos.</p>
+      </div>
+    </div>
+
+    <div class="rl-card" id="sim-opciones-card">
+      <h2>Todas las opciones encontradas</h2>
+      <p class="rl-nota">Precios publicados en tiendas chilenas el día de la consulta: pueden cambiar. «Verificado» = se abrió la página y el precio coincidía.</p>
+      <div class="rl-caja">
+        <table id="sim-opciones" data-source="mercado" data-row-key="clave">
+          <thead><tr>
+            <th class="rl-num" data-field="linea">Línea</th>
+            <th data-field="tienda">Tienda</th>
+            <th data-field="producto_mercado">Producto en la tienda</th>
+            <th class="rl-num" data-field="precio">Precio publicado</th>
+            <th class="rl-num" data-field="precio_unitario_neto">Neto por unidad pedida</th>
+            <th class="rl-angosto" data-field="coincidencia">Coincidencia</th>
+            <th class="rl-angosto" data-field="verificado">Verificado</th>
+            <th class="rl-angosto" data-field="fecha_consulta">Consulta</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="rl-vacio" id="sim-opciones-vacio" hidden>Sin opciones de mercado para esta licitación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rl-pagina" id="precios" role="tabpanel" aria-labelledby="tab-precios" hidden>
+    <div class="rl-card" id="tabla-precios">
+      <h2>Precios adjudicados por producto</h2>
+      <p class="rl-nota">Precio unitario neto en órdenes de compra (sin OC canceladas). La mediana es el precio típico; p25–p75, el rango de la mitad central. Las unidades varían (unidad, caja, paquete): compara dentro de un mismo producto.</p>
+      <div class="rl-controles">
+        <input type="search" id="buscar-pre" placeholder="Buscar producto…" aria-label="Buscar productos">
+        <select id="rubro-pre" aria-label="Rubro" data-source="precios"><option value="">Todos los rubros</option></select>
+      </div>
+      <div class="rl-caja">
+        <table id="pre" data-source="precios" data-row-key="id">
+          <thead><tr>
+            <th data-field="producto_normalizado"><button data-col="producto_normalizado">Producto</button></th>
+            <th class="rl-num" data-field="precio_mediana"><button data-col="precio_mediana">Mediana</button></th>
+            <th class="rl-num rl-angosto" data-field="precio_p25"><button data-col="precio_p25">p25</button></th>
+            <th class="rl-num rl-angosto" data-field="precio_p75"><button data-col="precio_p75">p75</button></th>
+            <th class="rl-num" data-field="n_ordenes"><button data-col="n_ordenes">OC</button></th>
+            <th class="rl-num rl-angosto" data-field="n_proveedores"><button data-col="n_proveedores">Proveedores</button></th>
+            <th data-field="monto_total"><button data-col="monto_total">Monto adjudicado</button></th>
+            <th data-source="regulacion_precios" data-field="regulacion"><button data-col="regulacion">Registro ISP</button></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="rl-vacio" id="pre-vacio" hidden>Ningún producto coincide con la búsqueda.</p>
+        <p class="rl-vacio" id="pre-mas" hidden><button class="rl-boton" id="pre-todo">Mostrar todos</button></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Cálculos a partir de las fuentes (los lectores ven su fórmula en Fuentes).
+  dash.calc('licitaciones_hoy', {
+    inputs: ['licitaciones'],
+    title: 'Días al cierre, desde hoy',
+    description: 'Días que faltan para el cierre contados desde la fecha de hoy del lector; marca las que ya cerraron.',
+    fn: (licitaciones) => {
+      const ahora = new Date();
+      const hoy = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
+      return licitaciones.map((l) => {
+        const cierre = new Date(String(l.fecha_cierre || '').replace(' ', 'T'));
+        if (isNaN(cierre)) return { codigo: l.codigo, dias: l.dias_restantes ?? null, cerrada: false };
+        const dia = new Date(cierre.getFullYear(), cierre.getMonth(), cierre.getDate());
+        return { codigo: l.codigo, dias: Math.round((dia - hoy) / 86400000), cerrada: cierre < ahora };
+      });
+    },
+  });
+
+  dash.calc('resumen', {
+    inputs: ['licitaciones', 'licitaciones_hoy'],
+    title: 'Resumen de vigentes',
+    description: 'Cuenta las licitaciones que siguen abiertas hoy por plazo y registro ISP, y suma sus montos en pesos.',
+    fn: (licitaciones, licitaciones_hoy) => {
+      const hoy = new Map(licitaciones_hoy.map((h) => [h.codigo, h]));
+      const abiertas = licitaciones.filter((l) => !(hoy.get(l.codigo) || {}).cerrada);
+      return [{
+        vigentes: abiertas.length,
+        cierran_7: abiertas.filter((l) => { const d = (hoy.get(l.codigo) || {}).dias; return d != null && d <= 7; }).length,
+        monto_clp: abiertas.filter((l) => (l.moneda || 'CLP') === 'CLP').reduce((s, l) => s + (Number(l.monto_estimado) || 0), 0),
+        solo_regulados: abiertas.filter((l) => Number(l.solo_regulados) === 1).length,
+      }];
+    },
+  });
+
+  dash.calc('por_rubro', {
+    inputs: ['licitaciones', 'licitaciones_hoy'],
+    title: 'Vigentes por rubro',
+    description: 'Cuenta las licitaciones abiertas hoy de cada rubro.',
+    fn: (licitaciones, licitaciones_hoy) => {
+      const cerrada = new Set(licitaciones_hoy.filter((h) => h.cerrada).map((h) => h.codigo));
+      const abiertas = licitaciones.filter((l) => !cerrada.has(l.codigo));
+      const nombres = new Map(abiertas.map((l) => [l.rubro, l.rubro_nombre]));
+      return [...nombres].map(([rubro, rubro_nombre]) => ({
+        rubro, rubro_nombre, n: abiertas.filter((l) => l.rubro === rubro).length,
+      })).sort((a, b) => b.n - a.n);
+    },
+  });
+
+  dash.calc('por_plazo', {
+    inputs: ['licitaciones', 'licitaciones_hoy'],
+    title: 'Vigentes por plazo de cierre',
+    description: 'Cuenta las licitaciones abiertas hoy por tramo de días al cierre y rubro.',
+    fn: (licitaciones, licitaciones_hoy) => {
+      const hoy = new Map(licitaciones_hoy.map((h) => [h.codigo, h]));
+      const abiertas = licitaciones.filter((l) => !(hoy.get(l.codigo) || {}).cerrada);
+      const tramos = [['0–3 días', 0, 3], ['4–7', 4, 7], ['8–14', 8, 14], ['15–30', 15, 30], ['31 o más', 31, Infinity]];
+      const rubros = [...new Set(abiertas.map((l) => l.rubro))];
+      return tramos.flatMap(([plazo, desde, hasta]) => rubros.map((rubro) => ({
+        plazo, rubro,
+        n: abiertas.filter((l) => {
+          const d = (hoy.get(l.codigo) || {}).dias;
+          return l.rubro === rubro && d != null && d >= desde && d <= hasta;
+        }).length,
+      })));
+    },
+  });
+
+  dash.calc('regulacion', {
+    inputs: ['licitaciones'],
+    title: 'Registro ISP por licitación',
+    description: 'Solo regulados: todo lo que se compra exige registro ISP; incluye: parte de lo que se compra.',
+    fn: (licitaciones) => licitaciones.map((l) => ({
+      codigo: l.codigo,
+      regulacion: Number(l.solo_regulados) === 1 ? 'Solo regulados' : (l.alertas_regulatorias ? 'Incluye' : ''),
+    })),
+  });
+
+  dash.calc('regulacion_precios', {
+    inputs: ['precios'],
+    title: 'Registro ISP por producto',
+    description: 'Marca los productos cuya mayoría de compras tiene una alerta regulatoria.',
+    fn: (precios) => precios.map((p) => ({ id: p.id, regulacion: p.alertas_regulatorias ? 'Sí' : '' })),
+  });
+
+  dash.calc('presupuesto', {
+    inputs: ['items', 'mercado'],
+    title: 'Presupuesto por ítem',
+    description: 'Por ítem: el precio de mercado más bajo entre productos iguales o equivalentes (si no hay, el aproximado) + 5 % de otros costos; la oferta suma un margen de 10 a 30 %.',
+    fn: (items, mercado) => {
+      const OTROS_COSTOS = 0.05;
+      const MARGENES = [0.1, 0.15, 0.2, 0.25, 0.3];
+      const mejor = new Map();
+      for (const m of mercado) {
+        const precio = Number(m.precio_unitario_neto);
+        if (!(precio > 0)) continue;
+        const clave = m.codigo + '|' + m.linea;
+        const rango = m.coincidencia === 'exacta' || m.coincidencia === 'equivalente' ? 0 : 1;
+        const actual = mejor.get(clave);
+        if (!actual || rango < actual.rango || (rango === actual.rango && precio < actual.precio)) {
+          mejor.set(clave, { ...m, precio, rango });
+        }
+      }
+      const conMercado = new Set(mercado.map((m) => m.codigo));
+      return items.filter((i) => conMercado.has(i.codigo)).flatMap((i) => {
+        const m = mejor.get(i.codigo + '|' + i.linea);
+        const cantidad = Number(i.cantidad) || 0;
+        const costo = m ? m.precio * (1 + OTROS_COSTOS) : null;
+        return MARGENES.map((margen) => ({
+          clave: i.codigo + '|' + i.linea + '|' + margen,
+          codigo: i.codigo, linea: i.linea, margen,
+          producto: i.producto, descripcion: i.descripcion, cantidad, unidad: i.unidad,
+          tienda: m ? m.tienda : null, url: m ? m.url : null, coincidencia: m ? m.coincidencia : null,
+          precio_mercado_neto: m ? m.precio : null,
+          costo_unitario: costo,
+          subtotal_costo: costo == null ? null : costo * cantidad,
+          oferta_unitaria: costo == null ? null : costo * (1 + margen),
+          subtotal_oferta: costo == null ? null : costo * (1 + margen) * cantidad,
+          ref_mediana: i.ref_mediana ?? null,
+        }));
+      });
+    },
+  });
+
+  dash.calc('presupuesto_totales', {
+    inputs: ['presupuesto'],
+    title: 'Totales del presupuesto',
+    description: 'Suma por licitación y margen: costo neto, oferta neta, IVA 19 %, oferta total, utilidad y lo que el Estado pagó en OC por los mismos ítems.',
+    fn: (presupuesto) => {
+      const IVA = 0.19;
+      const grupos = new Map();
+      for (const p of presupuesto) {
+        const clave = p.codigo + '|' + p.margen;
+        if (!grupos.has(clave)) grupos.set(clave, { clave, codigo: p.codigo, margen: p.margen, items: 0, items_con_precio: 0,
+          costo_neto: 0, oferta_neta: 0, referencia_oc: 0, oferta_con_referencia: 0 });
+        const g = grupos.get(clave);
+        g.items += 1;
+        if (p.subtotal_costo == null) continue;
+        g.items_con_precio += 1;
+        g.costo_neto += p.subtotal_costo;
+        g.oferta_neta += p.subtotal_oferta;
+        if (p.ref_mediana != null) {
+          g.referencia_oc += p.ref_mediana * p.cantidad;
+          g.oferta_con_referencia += p.subtotal_oferta;
+        }
+      }
+      return [...grupos.values()].map((g) => ({
+        ...g, iva: g.oferta_neta * IVA, oferta_total: g.oferta_neta * (1 + IVA), utilidad: g.oferta_neta - g.costo_neto,
+        referencia_oc: g.referencia_oc || null, oferta_con_referencia: g.oferta_con_referencia || null,
+      }));
+    },
+  });
+</script>
+
+<script>
+  (() => {
+    // Color fijo por rubro (orden de config.yaml); el noveno va en gris.
+    const ORDEN_RUBROS = ['insumos_medicos_aseo', 'mobiliario', 'oficina_libreria', 'computacion_electronica',
+      'ferreteria_herramientas', 'hogar_menaje', 'vestuario_textiles', 'deporte_didactico', 'consultoria_gestion_bi'];
+    const colorRubro = (clave) => {
+      const i = ORDEN_RUBROS.indexOf(clave);
+      return i >= 0 && i < dash.colors.length ? dash.colors[i] : 'var(--color-fg-muted)';
+    };
+    let ordenRubros = [];
+    let rubroElegido = '';
+    let simulada = '';
+    const elegidas = new Set();
+    let preTodo = false;
+
+    const entero = new Intl.NumberFormat('es-CL', { maximumFractionDigits: 0 });
+    const decimal = new Intl.NumberFormat('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const compacto = new Intl.NumberFormat('es-CL', { notation: 'compact', maximumFractionDigits: 1 });
+    const esClp = (m) => !m || m === 'CLP';
+    const nombreMoneda = (m) => ({ CLF: 'UF' })[m] || m;
+    const pesos = (v) => (v == null || v === '' || isNaN(Number(v)) ? '—' : '$' + entero.format(Math.round(Number(v))));
+    const monto = (v, moneda) => (v == null || v === '' || isNaN(Number(v)) ? ''
+      : esClp(moneda) ? '$' + entero.format(Number(v)) : decimal.format(Number(v)) + ' ' + nombreMoneda(moneda));
+    const fecha = (texto, conHora) => {
+      if (!texto) return '';
+      const t = String(texto);
+      // "2026-10-02" sin hora es un día de Chile, no medianoche UTC.
+      const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(t) ? t + 'T00:00:00' : t.replace(' ', 'T'));
+      if (isNaN(d)) return t;
+      const opciones = conHora ? { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }
+        : { day: 'numeric', month: 'short', year: 'numeric' };
+      return d.toLocaleString('es-CL', opciones);
+    };
+    const sinTildes = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const fichaSegura = (url) => (typeof url === 'string' && url.startsWith('https://www.mercadopublico.cl/') ? url : null);
+    const linkSeguro = (url) => (typeof url === 'string' && /^https:\/\/[^\s"'<>]+$/.test(url) ? url : null);
+    const enlace = (texto, url) => {
+      const seguro = linkSeguro(url);
+      if (!seguro) return document.createTextNode(texto || '');
+      const a = document.createElement('a');
+      a.href = seguro; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = texto || 'ver';
+      return a;
+    };
+    const valorMarca = (v) => String(v).replace(/%/g, '%25').replace(/&/g, '%26').replace(/=/g, '%3D');
+
+    // Pestañas (con enlace: #licitaciones, #simulador o #precios).
+    const tabs = [...document.querySelectorAll('.rl-tab')];
+    const mostrar = (id, enlazar) => {
+      tabs.forEach((t) => {
+        const activa = t.getAttribute('aria-controls') === id;
+        t.setAttribute('aria-selected', String(activa));
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !activa;
+      });
+      if (enlazar) dash.setLink(id);
+      dibujar();
+    };
+    tabs.forEach((t) => t.addEventListener('click', () => mostrar(t.getAttribute('aria-controls'), true)));
+
+    // Tablas: orden por columna y filtros locales.
+    const estado = {
+      lic: { col: 'dias', dir: 1 },
+      pre: { col: 'monto_total', dir: -1 },
+    };
+    const comparar = (col, dir) => (a, b) => {
+      const x = a[col], y = b[col];
+      if (x == null || x === '') return 1;
+      if (y == null || y === '') return -1;
+      return (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), 'es')) * dir;
+    };
+    // Montos en monedas distintas no se comparan: primero pesos, luego el resto.
+    const compararMonto = (col, dir, campoMoneda) => (a, b) => (esClp(a[campoMoneda]) !== esClp(b[campoMoneda])
+      ? (esClp(a[campoMoneda]) ? -1 : 1) : comparar(col, dir)(a, b));
+    const ordenable = (tablaId) => {
+      const tabla = document.getElementById(tablaId);
+      tabla.querySelectorAll('th button').forEach((b) => b.addEventListener('click', () => {
+        const e = estado[tablaId];
+        e.dir = e.col === b.dataset.col ? -e.dir : 1;
+        e.col = b.dataset.col;
+        dibujar();
+      }));
+    };
+    ordenable('lic');
+    ordenable('pre');
+    const marcarOrden = (tablaId) => {
+      const e = estado[tablaId];
+      document.querySelectorAll(`#${tablaId} th`).forEach((th) => {
+        const b = th.querySelector('button');
+        if (b) th.setAttribute('aria-sort', b.dataset.col === e.col ? (e.dir === 1 ? 'ascending' : 'descending') : 'none');
+      });
+    };
+    document.getElementById('rubro-lic').addEventListener('change', (e) => { rubroElegido = e.target.value; });
+    let espera = null;
+    const pronto = () => { clearTimeout(espera); espera = setTimeout(dibujar, 180); };
+    ['buscar-lic', 'buscar-pre'].forEach((id) => document.getElementById(id).addEventListener('input', () => { preTodo = false; pronto(); }));
+    ['rubro-lic', 'pronto-lic', 'noreg-lic', 'precios-lic', 'rubro-pre', 'sim-margen'].forEach((id) =>
+      document.getElementById(id).addEventListener('change', () => dibujar()));
+    document.getElementById('sim-lic').addEventListener('change', (e) => { simulada = e.target.value; dibujar(); });
+    document.getElementById('pre-todo').addEventListener('click', () => { preTodo = true; dibujar(); });
+
+    const celda = (tr, texto, clase) => {
+      const td = tr.insertCell();
+      td.textContent = texto;
+      if (clase) td.className = clase;
+      return td;
+    };
+    const codigosConMercado = () => {
+      const m = dash.data('mercado');
+      return new Set(m.status === 'ok' ? m.data.map((r) => r.codigo) : []);
+    };
+
+    const simular = (codigo) => {
+      simulada = codigo;
+      mostrar('simulador', true);
+      document.getElementById('sim-cabecera').scrollIntoView({ block: 'start' });
+    };
+
+    function tablaLicitaciones() {
+      const g = dash.data('licitaciones');
+      const hoy = dash.data('licitaciones_hoy');
+      const reg = dash.data('regulacion');
+      const tbody = document.querySelector('#lic tbody');
+      const vacio = document.getElementById('lic-vacio');
+      if (g.status !== 'ok') { tbody.replaceChildren(); vacio.hidden = true; return; }
+      const regPorCodigo = new Map((reg.status === 'ok' ? reg.data : []).map((r) => [r.codigo, r.regulacion]));
+      const hoyPorCodigo = new Map((hoy.status === 'ok' ? hoy.data : []).map((h) => [h.codigo, h]));
+      const conMercado = codigosConMercado();
+      const q = sinTildes(document.getElementById('buscar-lic').value.trim());
+      const rubro = document.getElementById('rubro-lic').value;
+      const pronto7 = document.getElementById('pronto-lic').checked;
+      const noreg = document.getElementById('noreg-lic').checked;
+      const soloPrecios = document.getElementById('precios-lic').checked;
+      const e = estado.lic;
+      const filas = g.data
+        .map((l) => {
+          const h = hoyPorCodigo.get(l.codigo) || {};
+          return { ...l, dias: h.dias ?? l.dias_restantes ?? null, cerrada: !!h.cerrada, regulacion: regPorCodigo.get(l.codigo) || '' };
+        })
+        .filter((l) => !l.cerrada)
+        .filter((l) => !rubro || l.rubro === rubro)
+        .filter((l) => !pronto7 || (l.dias != null && l.dias <= 7))
+        .filter((l) => !noreg || Number(l.solo_regulados) !== 1)
+        .filter((l) => !soloPrecios || conMercado.has(l.codigo))
+        .filter((l) => !q || sinTildes([l.nombre, l.organismo, l.region, l.codigo].join(' ')).includes(q))
+        .sort(e.col === 'monto_estimado' ? compararMonto(e.col, e.dir, 'moneda') : comparar(e.col, e.dir));
+      tbody.replaceChildren();
+      for (const l of filas) {
+        const tr = tbody.insertRow();
+        tr.dataset.key = l.codigo;
+        const tdElegir = tr.insertCell();
+        if (!conMercado.has(l.codigo)) {
+          const caja = document.createElement('input');
+          caja.type = 'checkbox';
+          caja.checked = elegidas.has(l.codigo);
+          caja.setAttribute('aria-label', `Elegir ${l.codigo} para buscar precios`);
+          caja.addEventListener('change', () => { if (caja.checked) elegidas.add(l.codigo); else elegidas.delete(l.codigo); barraElegidas(); });
+          tdElegir.append(caja);
+        }
+        const dias = l.dias;
+        celda(tr, dias == null ? '' : String(dias), 'rl-num' + (dias != null && dias <= 3 ? ' rl-urgente' : dias != null && dias <= 7 ? ' rl-pronto' : ''));
+        const tdCodigo = tr.insertCell();
+        const url = fichaSegura(l.url);
+        tdCodigo.append(url ? enlace(l.codigo, url) : document.createTextNode(l.codigo));
+        tdCodigo.style.whiteSpace = 'nowrap';
+        const tdNombre = celda(tr, '', 'rl-nombre');
+        const punto = document.createElement('i');
+        punto.className = 'rl-punto';
+        punto.style.background = colorRubro(l.rubro);
+        tdNombre.append(punto, document.createTextNode(l.nombre || ''));
+        celda(tr, l.organismo || '', 'rl-angosto');
+        celda(tr, l.region || '', 'rl-angosto');
+        celda(tr, monto(l.monto_estimado, l.moneda), 'rl-num');
+        celda(tr, fecha(l.fecha_cierre, true), 'rl-angosto');
+        celda(tr, l.regulacion, 'rl-reg');
+        const tdBoton = tr.insertCell();
+        const boton = document.createElement('button');
+        boton.type = 'button';
+        boton.className = 'rl-boton' + (conMercado.has(l.codigo) ? ' rl-con-precios' : '');
+        boton.textContent = 'Simular';
+        boton.setAttribute('aria-label', `Simular presupuesto de ${l.codigo}` + (conMercado.has(l.codigo) ? ' (con precios de mercado)' : ''));
+        boton.addEventListener('click', () => simular(l.codigo));
+        tdBoton.append(boton);
+      }
+      vacio.hidden = filas.length > 0;
+      marcarOrden('lic');
+    }
+
+    function simulador() {
+      const lics = dash.data('licitaciones');
+      const items = dash.data('items');
+      const mercado = dash.data('mercado');
+      const pres = dash.data('presupuesto');
+      const tot = dash.data('presupuesto_totales');
+      const conMercado = codigosConMercado();
+      const hoy = dash.data('licitaciones_hoy');
+      const cerradas = new Set((hoy.status === 'ok' ? hoy.data : []).filter((h) => h.cerrada).map((h) => h.codigo));
+      const todas = (lics.status === 'ok' ? lics.data : []).filter((l) => !cerradas.has(l.codigo) || l.codigo === simulada);
+      // Selector: primero las que tienen precios de mercado (las ya cerradas no se ofrecen).
+      const sel = document.getElementById('sim-lic');
+      const ordenadas = [...todas].sort((a, b) => (conMercado.has(b.codigo) - conMercado.has(a.codigo))
+        || String(a.fecha_cierre || '').localeCompare(String(b.fecha_cierre || '')));
+      if (!simulada && ordenadas.length) simulada = ordenadas[0].codigo;
+      sel.replaceChildren(...ordenadas.map((l) => new Option(
+        (conMercado.has(l.codigo) ? '✓ ' : '') + l.codigo + ' · ' + String(l.nombre || '').slice(0, 90), l.codigo)));
+      sel.value = simulada;
+      const lic = todas.find((l) => l.codigo === simulada);
+      const margen = Number(document.getElementById('sim-margen').value);
+
+      // Datos de la licitación.
+      const info = document.getElementById('sim-info');
+      info.replaceChildren();
+      if (lic) {
+        const parte = (etiqueta, campo, valor) => {
+          const s = document.createElement('span');
+          const b = document.createElement('b');
+          b.textContent = valor;
+          b.dataset.source = 'licitaciones'; b.dataset.field = campo; b.dataset.where = 'codigo=' + valorMarca(lic.codigo);
+          s.append(document.createTextNode(etiqueta + ' '), b);
+          return s;
+        };
+        info.append(parte('Organismo:', 'organismo', lic.organismo || '—'), parte('Región:', 'region', lic.region || '—'),
+          parte('Cierre:', 'fecha_cierre', fecha(lic.fecha_cierre, true) || '—'),
+          parte('Monto estimado:', 'monto_estimado', monto(lic.monto_estimado, lic.moneda) || 'no informado'));
+        const ficha = fichaSegura(lic.url);
+        if (ficha) info.append(enlace('Ver en Mercado Público', ficha));
+        info.append(enlace('Informe en el repositorio',
+          'https://github.com/Yakazor/MercadoPublico/blob/feature/api-mercadopublico/informes/presupuestos/' + encodeURIComponent(lic.codigo) + '.md'));
+      }
+
+      // ¿Tiene precios de mercado?
+      const tiene = conMercado.has(simulada);
+      const aviso = document.getElementById('sim-aviso');
+      const tablaPres = document.getElementById('sim-items');
+      const tablaItems = document.getElementById('sim-solo-items');
+      const vacio = document.getElementById('sim-vacio');
+      const misItems = items.status === 'ok' ? items.data.filter((i) => i.codigo === simulada) : [];
+      tablaPres.hidden = !tiene;
+      tablaItems.hidden = tiene;
+      document.getElementById('sim-totales').hidden = !tiene;
+      if (tiene) document.getElementById('sim-pedir').hidden = true;
+      document.getElementById('sim-opciones-card').hidden = !tiene;
+
+      if (!tiene) {
+        aviso.hidden = !lic;
+        aviso.textContent = lic ? `Aún no hay precios de mercado para ${lic.codigo}. Usa el botón de abajo (o pídeme en el chat «busca precios de ${lic.codigo}»). Mientras, ves sus ítems y lo que el Estado ya pagó por productos parecidos.` : '';
+        document.getElementById('sim-pedir').hidden = !lic;
+        const tbody = tablaItems.querySelector('tbody');
+        tbody.replaceChildren();
+        for (const i of misItems) {
+          const tr = tbody.insertRow();
+          tr.dataset.key = valorMarca(i.codigo) + ',' + valorMarca(i.linea);
+          celda(tr, String(i.linea), 'rl-num');
+          const td = celda(tr, '', 'rl-nombre');
+          td.append(document.createTextNode(i.producto || ''));
+          if (i.descripcion) { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = i.descripcion; td.append(d); }
+          celda(tr, i.cantidad == null ? '' : entero.format(i.cantidad), 'rl-num');
+          celda(tr, i.unidad || '');
+          celda(tr, i.ref_mediana == null ? '—' : pesos(i.ref_mediana), 'rl-num');
+          celda(tr, i.ref_n_ordenes == null ? '' : entero.format(i.ref_n_ordenes), 'rl-num rl-angosto');
+        }
+        vacio.hidden = items.status !== 'ok' || misItems.length > 0;
+        return;
+      }
+
+      // Totales del margen elegido.
+      const fila = (tot.status === 'ok' ? tot.data : []).find((t) => t.codigo === simulada && t.margen === margen);
+      document.querySelectorAll('#sim-totales [data-source="presupuesto_totales"]').forEach((el) => {
+        el.dataset.where = 'clave=' + valorMarca(simulada + '|' + margen);
+        el.textContent = fila ? pesos(fila[el.dataset.field]) : '—';
+      });
+      const sinPrecio = fila ? fila.items - fila.items_con_precio : 0;
+      const partes = [];
+      if (sinPrecio > 0) partes.push(`${sinPrecio} de ${fila.items} ítems sin precio de mercado (no entran en los totales; puedes pedirme que los busque de nuevo).`);
+      if (fila && fila.referencia_oc && fila.oferta_con_referencia > fila.referencia_oc) {
+        partes.push(`Ojo: en los ítems con referencia, tu oferta (${pesos(fila.oferta_con_referencia)}) supera lo que el Estado pagó (${pesos(fila.referencia_oc)}). Baja el margen o busca proveedores más baratos.`);
+      }
+      if (fila && lic && esClp(lic.moneda) && Number(lic.monto_estimado) > 0 && fila.oferta_total > Number(lic.monto_estimado)) {
+        partes.push(`Tu oferta total supera el monto estimado de la licitación (${monto(lic.monto_estimado, lic.moneda)}).`);
+      }
+      aviso.hidden = partes.length === 0;
+      aviso.textContent = partes.join(' ');
+
+      // Ítems.
+      const filas = (pres.status === 'ok' ? pres.data : []).filter((p) => p.codigo === simulada && p.margen === margen);
+      const tbody = tablaPres.querySelector('tbody');
+      tbody.replaceChildren();
+      for (const p of filas) {
+        const tr = tbody.insertRow();
+        tr.dataset.key = p.clave;
+        celda(tr, String(p.linea), 'rl-num');
+        const td = celda(tr, '', 'rl-nombre');
+        td.append(document.createTextNode(p.producto || ''));
+        if (p.descripcion) { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = p.descripcion; td.append(d); }
+        celda(tr, (p.cantidad ? entero.format(p.cantidad) : '') + (p.unidad ? ' ' + p.unidad : ''), 'rl-num');
+        celda(tr, pesos(p.precio_mercado_neto), 'rl-num');
+        const tdTienda = tr.insertCell();
+        tdTienda.append(p.tienda ? enlace(p.tienda, p.url) : document.createTextNode('sin precio'));
+        if (p.coincidencia === 'aproximada') { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = 'producto aproximado'; tdTienda.append(d); }
+        celda(tr, pesos(p.subtotal_costo), 'rl-num');
+        const tdOferta = celda(tr, pesos(p.oferta_unitaria), 'rl-num');
+        if (p.oferta_unitaria != null && p.ref_mediana != null) tdOferta.classList.add(p.oferta_unitaria > p.ref_mediana ? 'rl-mal' : 'rl-ok');
+        celda(tr, pesos(p.subtotal_oferta), 'rl-num');
+        celda(tr, pesos(p.ref_mediana), 'rl-num rl-angosto');
+      }
+
+      // Opciones encontradas.
+      const opciones = (mercado.status === 'ok' ? mercado.data : []).filter((m) => m.codigo === simulada)
+        .sort((a, b) => (a.linea - b.linea) || ((a.precio_unitario_neto ?? Infinity) - (b.precio_unitario_neto ?? Infinity)));
+      const tOp = document.querySelector('#sim-opciones tbody');
+      tOp.replaceChildren();
+      for (const m of opciones) {
+        const tr = tOp.insertRow();
+        tr.dataset.key = m.clave;
+        celda(tr, String(m.linea), 'rl-num');
+        const td = tr.insertCell();
+        td.append(enlace(m.tienda || 'ver', m.url));
+        celda(tr, m.producto_mercado || '', 'rl-nombre');
+        celda(tr, pesos(m.precio) + (m.iva_incluido === true ? ' c/IVA' : m.iva_incluido === false ? ' + IVA' : ''), 'rl-num');
+        celda(tr, pesos(m.precio_unitario_neto), 'rl-num');
+        celda(tr, m.coincidencia || '', 'rl-angosto');
+        celda(tr, m.verificado ? 'sí' : 'no', 'rl-angosto');
+        celda(tr, fecha(m.fecha_consulta, false), 'rl-angosto');
+      }
+      document.getElementById('sim-opciones-vacio').hidden = opciones.length > 0;
+      vacio.hidden = true;
+    }
+
+    function tablaPrecios() {
+      const g = dash.data('precios');
+      const reg = dash.data('regulacion_precios');
+      const tbody = document.querySelector('#pre tbody');
+      const vacio = document.getElementById('pre-vacio');
+      const mas = document.getElementById('pre-mas');
+      if (g.status !== 'ok') { tbody.replaceChildren(); vacio.hidden = true; mas.hidden = true; return; }
+      const regPorId = new Map((reg.status === 'ok' ? reg.data : []).map((r) => [r.id, r.regulacion]));
+      const q = sinTildes(document.getElementById('buscar-pre').value.trim());
+      const rubro = document.getElementById('rubro-pre').value;
+      const e = estado.pre;
+      const filas = g.data
+        .map((p) => ({ ...p, regulacion: regPorId.get(p.id) || '' }))
+        .filter((p) => !rubro || p.rubro_nombre === rubro)
+        .filter((p) => !q || sinTildes(p.producto_normalizado).includes(q))
+        .sort(['monto_total', 'precio_mediana', 'precio_p25', 'precio_p75'].includes(e.col)
+          ? compararMonto(e.col, e.dir, 'moneda') : comparar(e.col, e.dir));
+      const LIMITE = 400;
+      const visibles = preTodo ? filas : filas.slice(0, LIMITE);
+      const maxClp = d3.max(filas.filter((p) => esClp(p.moneda)), (p) => Number(p.monto_total)) || 1;
+      tbody.replaceChildren();
+      for (const p of visibles) {
+        const tr = tbody.insertRow();
+        tr.dataset.key = p.id;
+        const tdProd = celda(tr, '', 'rl-nombre');
+        const punto = document.createElement('i');
+        punto.className = 'rl-punto';
+        punto.style.background = colorRubro(p.rubro || claveDeNombre.get(p.rubro_nombre));
+        tdProd.append(punto, document.createTextNode(p.producto_normalizado || ''));
+        celda(tr, monto(p.precio_mediana, p.moneda), 'rl-num');
+        celda(tr, monto(p.precio_p25, p.moneda), 'rl-num rl-angosto');
+        celda(tr, monto(p.precio_p75, p.moneda), 'rl-num rl-angosto');
+        celda(tr, entero.format(p.n_ordenes || 0), 'rl-num');
+        celda(tr, entero.format(p.n_proveedores || 0), 'rl-num rl-angosto');
+        const tdMonto = tr.insertCell();
+        const caja = document.createElement('div');
+        caja.className = 'rl-celda-barra';
+        const pista = document.createElement('div');
+        if (esClp(p.moneda)) {
+          const barra = document.createElement('div');
+          barra.className = 'rl-barra';
+          barra.style.width = Math.max(2, 100 * Number(p.monto_total) / maxClp) + '%';
+          barra.style.background = colorRubro(p.rubro || claveDeNombre.get(p.rubro_nombre));
+          pista.append(barra);
+        }
+        const valor = document.createElement('span');
+        valor.className = 'rl-num';
+        valor.textContent = monto(p.monto_total, p.moneda);
+        caja.append(pista, valor);
+        tdMonto.append(caja);
+        celda(tr, p.regulacion, 'rl-reg');
+      }
+      vacio.hidden = filas.length > 0;
+      mas.hidden = visibles.length >= filas.length;
+      document.getElementById('pre-todo').textContent = `Mostrar los ${entero.format(filas.length)} productos`;
+      marcarOrden('pre');
+    }
+
+    function graficoPlazos() {
+      const caja = document.getElementById('grafico-plazos');
+      const g = dash.data('por_plazo');
+      caja.replaceChildren();
+      if (g.status !== 'ok' || !caja.clientWidth) return;
+      const filas = g.data;
+      const plazos = [...new Set(filas.map((r) => r.plazo))];
+      const rubros = ordenRubros.filter((r) => filas.some((f) => f.rubro === r));
+      const pilas = d3.stack().keys(rubros).value((d, k) => d[k])(
+        plazos.map((plazo) => Object.fromEntries([['plazo', plazo], ...rubros.map((r) => [r, (filas.find((f) => f.plazo === plazo && f.rubro === r) || {}).n || 0])])));
+      const ancho = caja.clientWidth, alto = 208;
+      const margen = { top: 8, right: 8, bottom: 28, left: 32 };
+      const x = d3.scaleBand(plazos, [margen.left, ancho - margen.right]).padding(0.3);
+      const maximo = d3.max(pilas, (s) => d3.max(s, (d) => d[1])) || 1;
+      const y = d3.scaleLinear([0, maximo], [alto - margen.bottom, margen.top]).nice();
+      const svg = d3.select(caja).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${ancho} ${alto}`).attr('role', 'img')
+        .attr('aria-label', 'Licitaciones vigentes por plazo de cierre y rubro');
+      svg.append('g').attr('transform', `translate(${margen.left},0)`)
+        .call(d3.axisLeft(y).ticks(Math.min(5, maximo)).tickFormat(d3.format('d')).tickSize(-(ancho - margen.left - margen.right)))
+        .attr('font-size', null).attr('font-family', null)
+        .call((a) => a.select('.domain').remove())
+        .call((a) => a.selectAll('line').attr('stroke', 'var(--cds-chart-grid)'))
+        .call((a) => a.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)'));
+      svg.append('g').attr('transform', `translate(0,${alto - margen.bottom})`)
+        .call(d3.axisBottom(x).tickSize(0).tickPadding(8))
+        .attr('font-size', null).attr('font-family', null)
+        .call((a) => a.select('.domain').attr('stroke', 'var(--cds-chart-axis)'))
+        .call((a) => a.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)'));
+      const tip = d3.select(caja).append('div').attr('class', 'rl-tip').style('opacity', 0);
+      svg.append('g').selectAll('g').data(pilas).join('g').attr('fill', (s) => colorRubro(s.key))
+        .selectAll('rect').data((s) => s.map((d) => ({ ...d, rubro: s.key }))).join('rect')
+        .attr('x', (d) => x(d.data.plazo)).attr('width', x.bandwidth())
+        .attr('y', (d) => y(d[1])).attr('height', (d) => Math.max(0, y(d[0]) - y(d[1])))
+        .on('mousemove', (event, d) => {
+          const [mx, my] = d3.pointer(event, caja);
+          tip.style('opacity', 1).html('');
+          tip.append('div').attr('class', 'rl-tip-titulo').text(d.data.plazo);
+          rubros.filter((r) => d.data[r]).forEach((r) => tip.append('div').text(`${nombreDeClave.get(r) || r}: ${d.data[r]}`));
+          const w = tip.node().offsetWidth;
+          tip.style('left', Math.min(Math.max(0, mx + 12), ancho - w) + 'px').style('top', Math.max(0, my - 40) + 'px');
+        })
+        .on('mouseleave', () => tip.style('opacity', 0));
+    }
+
+    const claveDeNombre = new Map();
+    const nombreDeClave = new Map();
+
+    function rubros() {
+      const g = dash.data('por_rubro');
+      const filas = g.status === 'ok' ? g.data : [];
+      ordenRubros = filas.map((r) => r.rubro);
+      filas.forEach((r) => { claveDeNombre.set(r.rubro_nombre, r.rubro); nombreDeClave.set(r.rubro, r.rubro_nombre); });
+      const caja = document.getElementById('barras-rubro');
+      caja.replaceChildren();
+      const maximo = d3.max(filas, (r) => r.n) || 1;
+      for (const r of filas) {
+        const fila = document.createElement('button');
+        fila.className = 'rl-barra-fila';
+        fila.dataset.key = r.rubro;
+        fila.setAttribute('aria-pressed', String(rubroElegido === r.rubro));
+        const nombre = document.createElement('span');
+        nombre.textContent = r.rubro_nombre;
+        const pista = document.createElement('div');
+        const barra = document.createElement('div');
+        barra.className = 'rl-barra';
+        barra.style.width = Math.max(2, 100 * r.n / maximo) + '%';
+        barra.style.background = colorRubro(r.rubro);
+        pista.append(barra);
+        const n = document.createElement('span');
+        n.className = 'rl-num';
+        n.textContent = entero.format(r.n);
+        fila.append(nombre, pista, n);
+        fila.addEventListener('click', () => {
+          rubroElegido = rubroElegido === r.rubro ? '' : r.rubro;
+          document.getElementById('rubro-lic').value = rubroElegido;
+          dibujar();
+        });
+        caja.append(fila);
+      }
+      const selLic = document.getElementById('rubro-lic');
+      selLic.replaceChildren(new Option('Todos los rubros', ''), ...filas.map((r) => new Option(r.rubro_nombre, r.rubro)));
+      selLic.value = rubroElegido;
+      const pre = dash.data('precios');
+      const nombresPrecios = [...new Set((pre.status === 'ok' ? pre.data : []).map((p) => p.rubro_nombre).filter(Boolean))].sort();
+      const selPre = document.getElementById('rubro-pre');
+      const actual = selPre.value;
+      selPre.replaceChildren(new Option('Todos los rubros', ''), ...nombresPrecios.map((n) => new Option(n, n)));
+      selPre.value = nombresPrecios.includes(actual) ? actual : '';
+      const leyenda = document.getElementById('leyenda-plazos');
+      leyenda.replaceChildren(...filas.map((r) => {
+        const item = document.createElement('span');
+        const punto = document.createElement('i');
+        punto.className = 'rl-punto';
+        punto.style.background = colorRubro(r.rubro);
+        item.append(punto, document.createTextNode(r.rubro_nombre));
+        return item;
+      }));
+    }
+
+    function textos() {
+      const r = dash.data('resumen');
+      const m = dash.data('meta');
+      const fila = r.status === 'ok' ? r.data[0] : null;
+      const terminado = (s) => s !== 'loading';
+      document.querySelectorAll('[data-source="resumen"]').forEach((el) => {
+        const v = fila ? fila[el.dataset.field] : null;
+        el.textContent = v == null ? '—' : el.dataset.field === 'monto_clp'
+          ? (v >= 10000 ? '$' + compacto.format(v) : '$' + entero.format(v)) : entero.format(v);
+        if (terminado(r.status)) el.classList.remove('dash-skeleton');
+      });
+      const meta = m.status === 'ok' ? m.data[0] : null;
+      document.querySelectorAll('[data-source="meta"]').forEach((el) => {
+        const v = meta ? meta[el.dataset.field] : null;
+        el.textContent = v == null ? '—' : el.dataset.field === 'generado' ? fecha(v, true)
+          : el.dataset.field === 'oc_dias' ? String(v) : fecha(v, false);
+        if (terminado(m.status)) el.classList.remove('dash-skeleton');
+      });
+    }
+
+    function dibujar() {
+      rubros();
+      textos();
+      if (!document.getElementById('licitaciones').hidden) {
+        graficoPlazos();
+        tablaLicitaciones();
+      }
+      if (!document.getElementById('simulador').hidden) simulador();
+      if (!document.getElementById('precios').hidden) tablaPrecios();
+    }
+
+    // Rutina de Claude (instrucciones en .claude/RUTINA.md del repositorio): el disparo
+    // programado o "Actualizar ahora" actualiza licitaciones, OC y presupuestos; "Buscar
+    // precios" le manda a la misma sesión solo las licitaciones que elegiste.
+    const RUTINA = 'trig_01DtbqBbzE4aZVmpAnVjPWXQ';
+    const SESION = 'session_01HLDCoyYdPYrisrzMmkrTvQ';
+    const REPO_ACTIONS = 'https://github.com/Yakazor/MercadoPublico/actions';
+    const MAX_ELEGIDAS = 5;
+    const decir = (el, texto, link) => {
+      el.replaceChildren(document.createTextNode(texto));
+      if (link) el.append(' ', enlace(link[0], link[1]));
+    };
+    async function dispararRutina(codigos, boton, estadoEl, okTexto) {
+      const texto = codigos.length ? 'Busca precios de mercado para: ' + codigos.join(', ') : '';
+      boton.disabled = true;
+      decir(estadoEl, 'Enviando el pedido…');
+      let mcp = null;
+      try { mcp = window.claude && window.claude.use ? await window.claude.use('mcp') : null; } catch (e) { mcp = null; }
+      const sinBoton = 'Desde esta vista no se puede enviar el pedido. Pídemelo en el chat' + (texto ? ` («${texto}»)` : ' («actualiza el radar»)') + ' o corre los workflows en';
+      if (!mcp) { decir(estadoEl, sinBoton, ['GitHub Actions', REPO_ACTIONS]); boton.disabled = false; return false; }
+      try {
+        if (codigos.length) {
+          await mcp.callTool('Claude Code Remote', 'send_message', { session_id: SESION, message:
+            `Pedido: PRECIOS para: ${codigos.join(', ')}. Primero git fetch origin feature/api-mercadopublico && git checkout feature/api-mercadopublico && git reset --hard origin/feature/api-mercadopublico; luego sigue la sección «PRECIOS» y «Subir al dashboard» de .claude/RUTINA.md solo para esas licitaciones. Responde en español con el resumen.` });
+        } else {
+          await mcp.callTool('Claude Code Remote', 'fire_trigger', { trigger_id: RUTINA });
+        }
+        const hora = new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+        decir(estadoEl, `Pedido enviado a las ${hora}. ${okTexto}`);
+        boton.disabled = false;
+        return true;
+      } catch (e) {
+        const code = e && e.code;
+        if (code === 'server_not_connected') decir(estadoEl, 'Para usar el botón agrega el conector «Claude Code Remote» en claude.ai (Configuración → Conectores) y vuelve a intentar. También puedes pedírmelo en el chat.');
+        else if (code === 'needs_reauth') decir(estadoEl, 'El conector «Claude Code Remote» pide volver a iniciar sesión en claude.ai (Configuración → Conectores).');
+        else if (code === 'approval_required') decir(estadoEl, 'Hay que aprobar el permiso que pide claude.ai para enviar el pedido; vuelve a apretar el botón y acepta.');
+        else if (code === 'not_granted' || code === 'capability_disabled') decir(estadoEl, sinBoton, ['GitHub Actions', REPO_ACTIONS]);
+        else if (code === 'tool_error') decir(estadoEl, 'El pedido no se pudo iniciar (puede que ya haya uno corriendo). Revisa en unos minutos o pídemelo en el chat.');
+        else decir(estadoEl, 'No se confirmó si el pedido partió (la conexión falló). Espera unos minutos antes de volver a apretar.');
+        boton.disabled = false;
+        return false;
+      }
+    }
+
+    const botonActualizar = document.getElementById('boton-actualizar');
+    botonActualizar.addEventListener('click', () => dispararRutina([], botonActualizar, document.getElementById('estado-actualizar'),
+      'Tarda entre 30 y 60 minutos; cuando termine cambia la fecha de «Datos del» arriba (recarga la página).'));
+
+    function barraElegidas() {
+      const barra = document.getElementById('elegidas');
+      barra.hidden = elegidas.size === 0;
+      const exceso = elegidas.size > MAX_ELEGIDAS;
+      document.getElementById('elegidas-texto').textContent = `${elegidas.size} elegida${elegidas.size === 1 ? '' : 's'}`
+        + (exceso ? ` (máximo ${MAX_ELEGIDAS} por pedido, para controlar tiempo y costo)` : '');
+      document.getElementById('elegidas-buscar').disabled = exceso;
+    }
+    document.getElementById('elegidas-limpiar').addEventListener('click', () => { elegidas.clear(); barraElegidas(); dibujar(); });
+    const botonElegidas = document.getElementById('elegidas-buscar');
+    botonElegidas.addEventListener('click', async () => {
+      const codigos = [...elegidas];
+      const ok = await dispararRutina(codigos, botonElegidas,
+        document.getElementById('elegidas-estado'),
+        `Busco precios de ${codigos.length} licitación${codigos.length === 1 ? '' : 'es'}: tarda entre 10 y 20 minutos cada una. Cuando termine aparecen con borde verde y en el simulador (recarga la página).`);
+      if (ok) { elegidas.clear(); dibujar(); document.getElementById('elegidas').hidden = false; document.getElementById('elegidas-texto').textContent = ''; }
+    });
+    const botonSim = document.getElementById('sim-pedir-boton');
+    botonSim.addEventListener('click', () => dispararRutina([simulada], botonSim,
+      document.getElementById('sim-pedir-estado'),
+      'Busco sus precios: tarda entre 10 y 20 minutos. Cuando termine verás el presupuesto aquí (recarga la página).'));
+
+    dash.onData(dibujar);
+    const inicial = location.hash.slice(1);
+    if (['precios', 'licitaciones', 'simulador'].includes(inicial)) mostrar(inicial, false);
+  })();
+</script>
