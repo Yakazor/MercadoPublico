@@ -291,7 +291,9 @@ El dashboard (artefacto de Claude) lee los JSON de la rama `datos` que sube la
 instrucciones en `.claude/RUTINA.md`).
 
 - **Actualizar ahora:** dispara la rutina: push a `actualizar.txt` → radar y OC
-  en Actions → presupuestos → sube los datos al dashboard (20–80 min).
+  en Actions → presupuestos → sube los datos al dashboard (20–80 min). Subir
+  archivos a un artefacto pide tu aprobación en la app de Claude: la rutina deja
+  todo lo demás hecho, te avisa y la subida es el último paso.
 - **Simular:** eliges las licitaciones (máx. 5) y la rutina busca precios en
   tiendas chilenas (workflow `.claude/workflows/precios-mercado-chile.js`, con
   links). Así solo se cotiza lo que te interesa: buscar cuesta tiempo y plan.
