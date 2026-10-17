@@ -22,20 +22,30 @@ Hay tres pedidos posibles:
 
 ## ACTUALIZACIÓN
 
+0. Dependencias (una vez por sesión): `pip install -q -r requirements.txt pytest`.
 1. Repo al día: `git fetch origin feature/api-mercadopublico && git checkout feature/api-mercadopublico && git reset --hard origin/feature/api-mercadopublico`.
 2. Anota el sha de la rama datos: `git ls-remote origin refs/heads/datos`.
-3. Dispara los workflows (radar y OC) con un push al archivo disparador:
-   `date -u +%Y-%m-%dT%H:%MZ > .github/disparar/actualizar.txt && git add .github/disparar/actualizar.txt && git commit -m "Actualizar radar (rutina)" && git push origin HEAD:feature/api-mercadopublico`.
-   Si el push falla por red, reintenta hasta 4 veces (esperas de 2, 4, 8 y 16 s). Si falla
-   por permisos, sigue con los últimos datos publicados y dilo en el resumen.
+3. Dispara los workflows (radar y OC) con un push al archivo disparador. Cada paso va en
+   su propia llamada, sin `;`, `&&`, `cd` ni pipes (así calzan con los permisos de
+   `.claude/settings.json`; un comando compuesto lo bloquea el modo automático):
+   1. Con la herramienta Write, escribe en `.github/disparar/actualizar.txt` la fecha y
+      hora UTC actual (`AAAA-MM-DDTHH:MMZ`).
+   2. Bash: `git add .github/disparar/actualizar.txt`
+   3. Bash: `git commit -m "Actualizar radar (rutina)"`
+   4. Bash: `git push origin HEAD:feature/api-mercadopublico`
+   Si el push falla por red, reintenta hasta 4 veces (esperas de 2, 4, 8 y 16 s); si lo
+   rechaza porque la rama avanzó, `git pull --rebase origin feature/api-mercadopublico` y
+   vuelve a hacer push. Si falla por permisos, sigue con los últimos datos publicados y
+   dilo en el resumen.
 4. Espera a que la rama datos cambie: el radar publica primero (5–20 min) y las OC
    después (2–60 min). Revisa `git ls-remote origin refs/heads/datos` cada 3 minutos con
    un loop de Bash en segundo plano (nunca un sleep largo en primer plano), hasta ver dos
    cambios o 100 minutos en total.
 5. Clona la rama datos: `git clone -q --depth 1 --branch datos https://github.com/Yakazor/MercadoPublico.git <tmp>/datos`.
 6. Presupuestos: `python3 scripts/presupuesto.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --mercado-json <tmp>/mercado.json`.
-7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`, commit en español solo de
-   `informes/` y push (mismos reintentos).
+7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: `git add informes`,
+   `git commit -m "<mensaje en español>"` y `git push origin HEAD:feature/api-mercadopublico`,
+   cada uno en su propia llamada (mismos reintentos).
 8. Dashboard: ver «Subir al dashboard» con licitaciones.json, precios.json, items.json y
    meta.json de `<tmp>/datos` y `<tmp>/mercado.json`.
 9. Resumen de 3–6 líneas: licitaciones vigentes, rango de días de OC, presupuestos con
@@ -43,7 +53,7 @@ Hay tres pedidos posibles:
 
 ## PRECIOS para: <códigos>
 
-1. Pasos 1 y 5 de ACTUALIZACIÓN (sin disparar workflows).
+1. Pasos 0, 1 y 5 de ACTUALIZACIÓN (sin disparar workflows).
 2. `python3 scripts/seleccionar_mercado.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --salida <tmp>/lote.json --codigos <códigos separados por coma>`.
 3. Corre el workflow guardado `precios-mercado-chile` (`.claude/workflows/precios-mercado-chile.js`)
    con args `{"hoy": "<AAAA-MM-DD>", "archivo": "<tmp>/lote.json", "lote": [{"codigo", "nombre"} de cada licitación de lote.json]}`.
