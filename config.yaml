@@ -199,6 +199,25 @@ rubros:
       - bolsas de basura
       - bolsas de residuos
     # Muestra de OC por día para los precios (más que el resto: es el rubro principal).
+      - andadores
+      - andador
+      - bastones ortopedicos
+      - muletas
+      - cojin antiescaras
+      - cojines antiescaras
+      - termometros digitales
+      - termometro digital
+      - esfigmomanometros
+      - esfigmomanometro
+      - fonendoscopios
+      - estetoscopios
+      - tallimetros
+      - basureros
+      - contenedores de basura
+      - contenedores de residuos
+      - papeleros
+      - carros de aseo
+      - carro de aseo
     oc_maximo_por_dia: 200
     palabras_candidatas:
       - insumos clinicos
@@ -610,6 +629,24 @@ rubros:
       - licencias de software
       - licencias microsoft
       - antivirus
+      - servidores
+      - servidor
+      - almacenamiento nas
+      - nas
+      - ups
+      - discos ssd
+      - radios portatiles
+      - radios de comunicacion
+      - equipos de radiocomunicacion
+      - microfonos
+      - camaras fotograficas
+      - amplificadores de audio
+      - consola de audio
+      - equipos de audio
+      - telon de proyeccion
+      - relojes control de asistencia
+      - relojes biometricos
+      - reloj biometrico
     palabras_amplias:
       - equipos computacionales
       - equipos de computacion
@@ -705,6 +742,24 @@ rubros:
       - extensiones electricas
       - alargadores
       - ampolletas
+      - herramientas de jardin
+      - articulos de jardineria
+      - cortacesped
+      - cortadora de pasto
+      - desbrozadora
+      - desbrozadoras
+      - orilladora
+      - riego por goteo
+      - aspersores
+      - transpaleta
+      - transpaletas
+      - carros de carga
+      - carro de carga
+      - cajas organizadoras
+      - contenedores plasticos
+      - pallets plasticos
+      - estanterias metalicas
+      - racks de bodega
     palabras_amplias:
       - ferreteria
       - articulos de ferreteria
@@ -789,6 +844,19 @@ rubros:
       - colchones
       - toallas de bano
       - cortinas
+      - purificadores de aire
+      - deshumidificadores
+      - aire acondicionado portatil
+      - dispensadores de agua
+      - dispensador de agua
+      - equipamiento de cocina
+      - cocinas industriales
+      - cocina industrial
+      - freidoras
+      - hornos industriales
+      - horno industrial
+      - batidora industrial
+      - termos industriales
     palabras_amplias:
       - electrodomesticos
       - linea blanca
@@ -796,6 +864,7 @@ rubros:
       - articulos de menaje
       - ropa de cama
       - utensilios de cocina
+      - equipamiento de cocina
     excluir_en_nombre:
       - reparacion
       - mantencion
@@ -922,6 +991,12 @@ rubros:
       - juegos de mesa
       - libros
       - instrumentos musicales
+      - trofeos
+      - medallas
+      - galvanos
+      - copas deportivas
+      - estatuillas
+      - articulos de premiacion
     palabras_amplias:
       - articulos deportivos
       - implementos deportivos
@@ -949,6 +1024,358 @@ rubros:
       - talleres
       - clases
       - escuela deportiva
+
+  # --- Rubros agregados tras el censo de grupos (segmentos ONU 30, 39, 26, 13, 22,
+  # 41, 25, 15, 23, 46): productos que se compran y revenden sin permisos grandes.
+  construccion_electricos:
+    nombre: "Materiales de construcción, eléctricos e iluminación"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - materiales de construccion
+      - materiales para construccion
+      - insumos de construccion
+      - cemento
+      - sacos de cemento
+      - yeso
+      - planchas de yeso
+      - volcanita
+      - fibrocemento
+      - planchas de zinc
+      - planchas osb
+      - terciado
+      - madera dimensionada
+      - pino dimensionado
+      - ceramicas
+      - porcelanato
+      - pegamento para ceramica
+      - fragüe
+      - puertas
+      - ventanas
+      - vidrios
+      - griferia
+      - griferias
+      - artefactos sanitarios
+      - lavamanos
+      - inodoros
+      - tuberias
+      - tubos de pvc
+      - tubos corrugados
+      - canerias
+      - fittings
+      - materiales electricos
+      - materiales de electricidad
+      - insumos electricos
+      - cables electricos
+      - conductores electricos
+      - enchufes
+      - interruptores
+      - tableros electricos
+      - luminarias
+      - focos led
+      - tubos led
+      - paneles led
+      - reflectores led
+      - iluminacion led
+      - articulos de iluminacion
+      - baterias
+      - baterias recargables
+      - pilas
+      - generador electrico
+      - generadores electricos
+      - grupo electrogeno
+      - betonera
+      - placa compactadora
+    palabras_amplias:
+      - materiales de construccion
+      - materiales para construccion
+      - insumos de construccion
+      - materiales electricos
+      - materiales de electricidad
+      - insumos electricos
+    excluir_en_nombre:
+      - obra
+      - obras
+      - construccion de
+      - reposicion de
+      - conservacion
+      - mejoramiento
+      - habilitacion
+      - instalacion
+      - mantencion
+      - mantenimiento
+      - reparacion
+      - arriendo
+      - arrendamiento
+      - servicio
+      - proyecto electrico
+      - conexiones electricas
+      - empalme
+      - alumbrado publico
+      - fotovoltaico
+      - fotovoltaicos
+      - asfalto
+      - mezcla asfaltica
+      - emulsion
+      - hormigon premezclado
+      - pavimento
+      - pavimentos
+      - aridos
+      - material petreo
+      - puertas automaticas
+      # A medida: se fabrican, no se revenden
+      - termo panel
+      - termopanel
+      - a medida
+      - ventanas de oportunidad
+      - ventana de atencion
+      - baterias de cocina
+      - bateria de cocina
+      - baterias de test
+      - bateria de test
+      - bateria de pruebas
+      - baterias de pruebas
+      - bateria psicometrica
+    excluir_grupos: [clinico, servicios]
+    excluir_en_nombre_salvo_clave:
+      - vivienda
+      - viviendas
+
+  laboratorio:
+    nombre: "Instrumental e insumos de laboratorio (sin reactivos)"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - material de laboratorio
+      - materiales de laboratorio
+      - insumos de laboratorio
+      - articulos de laboratorio
+      - instrumental de laboratorio
+      - equipamiento de laboratorio
+      - equipos de laboratorio
+      - material de vidrio
+      - vidrieria de laboratorio
+      - matraces
+      - probetas
+      - vasos precipitados
+      - pipetas
+      - micropipetas
+      - puntas para micropipeta
+      - tubos de ensayo
+      - placas petri
+      - gradillas
+      - microscopio
+      - microscopios
+      - estereoscopio
+      - lupas
+      - balanza analitica
+      - balanzas analiticas
+      - balanza de precision
+      - balanzas de precision
+      - phmetro
+      - phmetros
+      - termometros
+      - termohigrometros
+      - data logger
+      - dataloggers
+      - manometro
+      - manometros
+      - agitador magnetico
+      - agitadores magneticos
+      - placa calefactora
+      - centrifuga
+      - centrifugas
+      - estufa de cultivo
+      - bano termoregulado
+      - instrumentos de medicion
+      - instrumentos de medida
+      - kit de ciencias
+      - laboratorio de ciencias
+    palabras_amplias:
+      - material de laboratorio
+      - materiales de laboratorio
+      - insumos de laboratorio
+      - articulos de laboratorio
+      - equipamiento de laboratorio
+      - equipos de laboratorio
+      - instrumentos de medicion
+      - instrumentos de medida
+    excluir_en_nombre:
+      - reactivos
+      - reactivo
+      - examenes
+      - examen de
+      - test reportado
+      - comodato
+      - tecnica automatizada
+      - inmunohistoquimica
+      - hematologia
+      - bacteriologia
+      - microbiologia clinica
+      - banco de sangre
+      - pcr
+      - calibracion
+      - certificacion
+      - mantencion
+      - mantenimiento
+      - reparacion
+      - arriendo
+      - servicio
+      - analisis de
+      - toma de muestras
+      - laboratorio clinico
+      - mobiliario de laboratorio
+    excluir_grupos: [clinico, servicios]
+
+  repuestos_vehiculos:
+    nombre: "Repuestos, neumáticos, lubricantes y accesorios vehiculares"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - repuestos
+      - repuestos automotrices
+      - repuestos para vehiculos
+      - repuestos vehiculares
+      - repuestos de maquinaria
+      - neumaticos
+      - neumatico
+      - camaras de neumatico
+      - baterias para vehiculos
+      - bateria para vehiculo
+      - baterias automotrices
+      - lubricantes
+      - aceites lubricantes
+      - aceite de motor
+      - aceites de motor
+      - aceite hidraulico
+      - aceites hidraulicos
+      - grasas lubricantes
+      - liquido de frenos
+      - refrigerante para motor
+      - filtros de aceite
+      - filtros de aire
+      - filtros de combustible
+      - pastillas de freno
+      - plumillas
+      - accesorios para vehiculos
+      - accesorios vehiculares
+      - bicicletas
+      - cascos para motocicleta
+    palabras_amplias:
+      - repuestos
+      - accesorios para vehiculos
+      - accesorios vehiculares
+    excluir_en_nombre:
+      - adquisicion de vehiculo
+      - adquisicion de vehiculos
+      - adquisicion de camion
+      - adquisicion de camioneta
+      - adquisicion de ambulancia
+      - arriendo
+      - arrendamiento
+      - leasing
+      - mantencion
+      - mantenimiento
+      - reparacion
+      - servicio
+      - transporte
+      - combustible
+      - combustibles
+      - petroleo
+      - gasolina
+      - diesel
+      - parafina
+      - kerosene
+      - lubricantes oculares
+      - lubricante ocular
+      - lubricante vaginal
+      - lubricantes vaginales
+      - repuestos medicos
+      - repuestos de equipos medicos
+      - autoclave
+      - autoclaves
+      - dron
+      - drones
+      - aeronave
+      - aeronaves
+      - simulador
+    excluir_grupos: [clinico, servicios]
+
+  seguridad_epp:
+    nombre: "Seguridad, EPP, señalética y protección contra incendios"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - elementos de proteccion personal
+      - elementos de proteccion
+      - equipos de proteccion personal
+      - articulos de seguridad
+      - implementos de seguridad
+      - epp
+      - cascos de seguridad
+      - lentes de seguridad
+      - antiparras
+      - protectores auditivos
+      - fonos auditivos
+      - guantes de seguridad
+      - guantes de trabajo
+      - arnes de seguridad
+      - chalecos reflectantes
+      - chaleco reflectante
+      - chalecos geologos
+      - conos de seguridad
+      - conos viales
+      - cinta de peligro
+      - barreras peatonales
+      - senaletica
+      - senaleticas
+      - letreros de seguridad
+      - extintores
+      - extintor
+      - gabinetes de incendio
+      - detectores de humo
+      - detector de humo
+      - luces de emergencia
+      - camaras de seguridad
+      - camaras de vigilancia
+      - botiquines
+      - botiquin
+      - kits de emergencia
+      - kit de emergencia
+    palabras_amplias:
+      - elementos de proteccion personal
+      - elementos de proteccion
+      - equipos de proteccion personal
+      - articulos de seguridad
+      - implementos de seguridad
+      - epp
+    excluir_en_nombre:
+      - servicio de seguridad
+      - servicios de seguridad
+      - guardias
+      - vigilantes
+      - vigilancia de
+      - monitoreo
+      - recarga de extintores
+      - mantencion de extintores
+      - mantencion
+      - mantenimiento
+      - reparacion
+      - instalacion de camaras
+      - instalacion de senaletica
+      - provision e instalacion
+      - suministro e instalacion
+      - sistema de televigilancia
+      - cctv
+      - capacitacion
+      - curso
+      - armamento
+      - armas
+      - municion
+      - municiones
+      - chalecos antibalas
+      - antibalas
+      - balisticos
+      - senaletica vial
+      - demarcacion
+      - senales verticales
+    excluir_grupos: [clinico, servicios]
 
   consultoria_gestion_bi:
     nombre: "Consultoría en gestión, BI y control de gestión"
@@ -1003,6 +1430,15 @@ rubros:
       - reportabilidad
     # Débiles: también son nombres de unidades o frases de informes ("reporte con
     # indicadores de gestión"). Cuentan en el nombre; en ítems, solo junto a otra clave.
+      - capacitacion en power bi
+      - curso de power bi
+      - capacitacion en excel
+      - curso de excel
+      - excel avanzado
+      - capacitacion en indicadores
+      - capacitacion en control de gestion
+      - capacitacion en analisis de datos
+      - curso de analisis de datos
     palabras_debiles:
       - tablero de control
       - control de gestion

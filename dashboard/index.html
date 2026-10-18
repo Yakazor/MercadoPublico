@@ -427,12 +427,16 @@
 
 <script>
   (() => {
-    // Color fijo por rubro (orden de config.yaml); el noveno va en gris.
+    // Color fijo por rubro (orden de config.yaml): los 8 de la paleta y 5 tonos propios,
+    // legibles en tema claro y oscuro.
     const ORDEN_RUBROS = ['insumos_medicos_aseo', 'mobiliario', 'oficina_libreria', 'computacion_electronica',
-      'ferreteria_herramientas', 'hogar_menaje', 'vestuario_textiles', 'deporte_didactico', 'consultoria_gestion_bi'];
+      'ferreteria_herramientas', 'hogar_menaje', 'vestuario_textiles', 'deporte_didactico',
+      'construccion_electricos', 'laboratorio', 'repuestos_vehiculos', 'seguridad_epp', 'consultoria_gestion_bi'];
+    const COLORES_EXTRA = ['#9a7b4f', '#4f8a8b', '#8c6bb1', '#c0504d', '#6b7a8f'];
     const colorRubro = (clave) => {
       const i = ORDEN_RUBROS.indexOf(clave);
-      return i >= 0 && i < dash.colors.length ? dash.colors[i] : 'var(--color-fg-muted)';
+      if (i < 0) return 'var(--color-fg-muted)';
+      return i < dash.colors.length ? dash.colors[i] : COLORES_EXTRA[(i - dash.colors.length) % COLORES_EXTRA.length];
     };
     let ordenRubros = [];
     let rubroElegido = '';

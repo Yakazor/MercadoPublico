@@ -12,8 +12,16 @@ adjudicados a partir de órdenes de compra históricas:
 6. **Electrodomésticos, hogar y menaje** (refrigeradores, vajilla, ropa de cama…)
 7. **Vestuario, uniformes y textiles** (uniformes, calzado, ropa de trabajo…)
 8. **Deporte, juguetes y material didáctico**
-9. **Consultoría en gestión, BI y control de gestión** (servicio propio: Power BI,
-   dashboards, indicadores…)
+9. **Materiales de construcción, eléctricos e iluminación** (cemento, yeso, cables,
+   luminarias, baterías…; sin obras ni instalación)
+10. **Instrumental e insumos de laboratorio** (material de vidrio, microscopios,
+    balanzas, pHmetros…; sin reactivos ni equipos en comodato)
+11. **Repuestos, neumáticos, lubricantes y accesorios vehiculares** (sin vehículos
+    ni combustibles)
+12. **Seguridad, EPP, señalética y protección contra incendios** (cascos, conos,
+    extintores, botiquines…; sin guardias ni armamento)
+13. **Consultoría en gestión, BI y control de gestión** (servicio propio: Power BI,
+    dashboards, indicadores, cursos de Excel/Power BI…)
 
 Quedan fuera los productos que exigen permisos importantes (medicamentos,
 alimentos, químicos peligrosos, combustibles, armas, vehículos), las obras y los

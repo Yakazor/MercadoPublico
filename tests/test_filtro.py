@@ -100,7 +100,7 @@ def test_real_casos_del_primer_radar(real):
     assert real.evaluar(nombre="SUMINISTRO ALCOHOL GEL 70% CO DISPENSADOR").rubro == "insumos_medicos_aseo"
     assert not real.evaluar(nombre="SERVICIOS DE ASEO PARA SLEP PUNILLA CORDIILLERA").coincide
     assert not real.evaluar(nombre="ASESORIA A LA INSPECCION FISCAL, RUTA 23-CH").coincide
-    assert not real.evaluar(nombre="EPP Depto. Aseo y Ornato").coincide
+    assert real.evaluar(nombre="EPP Depto. Aseo y Ornato").rubro == "seguridad_epp"
     assert not real.evaluar(nombre="ADQUISICIÓN DE GUANTES TÁCTICOS MOTORISTA").coincide
 
 
@@ -253,13 +253,10 @@ def test_real_insumos_variantes(real, nombre):
     "Serv de Aseo con provision de insumos de aseo", "SERV.ASEO E INSUMOS DE ASEO CESFAM",
     "SERV.DE ASEO CON INSUMOS DE ASEO", "Serv de Limpieza y productos de limpieza",
     "SERV.LIMPIEZA Y PRODUCTOS DE LIMPIEZA", "Servs. de aseo e insumos de aseo",
-    "Guantes de seguridad para personal de operaciones",
-    "Adquisicion de EPP: guantes de seguridad y cascos para cuadrilla",
     "Cloro para sistemas APR comuna",
     "Adquisición de cloro para sistemas de agua potable rural",
     # Decisión: "agua potable"/"APR" excluye siempre (también este caso mixto, poco frecuente).
     "Cloro y articulos de aseo para comite de agua potable rural",
-    "Adquisicion de EPP: guantes, lentes y cascos para cuadrilla",
     "Guante cabritilla soldador",
 ])
 def test_real_exclusiones_variantes(real, nombre):
@@ -337,8 +334,6 @@ def test_real_solo_regulados_por_segmento(real, nombre, esperado):
 
 
 @pytest.mark.parametrize("nombre", [
-    "Adquisicion de EPP: guantes y lentes",
-    "Elementos de proteccion personal: guantes, lentes y zapatos",
     "Cloro granulado para tratamiento de agua",
     "Hipoclorito y cloro para planta de tratamiento de agua",
     "Cloro para sistema de agua rural",
@@ -359,16 +354,31 @@ def test_real_unidades_dpto_en_items(real):
 
 
 @pytest.mark.parametrize("nombre", [
-    "Adquisicion de E.P.P. guantes y lentes",
     "Cloro para A.P.R. Los Maitenes",
     "Compra de guantes de proteccion personal para operarios",
-    "Guantes y lentes de seguridad para funcionarios de obras",
     "Cloro liquido para potabilizacion de agua",
     "Compra de cloro para analizador de cloro residual",
     "Jeringas para inyector de medio de contraste",
 ])
 def test_real_epp_agua_y_laboratorio_variantes(real, nombre):
     assert not real.es_candidata(nombre) and not real.evaluar(nombre=nombre).coincide
+
+
+@pytest.mark.parametrize("nombre", [
+    "Adquisicion de EPP: guantes y lentes",
+    "Elementos de proteccion personal: guantes, lentes y zapatos",
+    "Adquisicion de E.P.P. guantes y lentes",
+    "Guantes y lentes de seguridad para funcionarios de obras",
+    "Guantes de seguridad para personal de operaciones",
+    "Adquisicion de EPP: guantes de seguridad y cascos para cuadrilla",
+    "EPP Depto. Aseo y Ornato",
+    "Adquisicion de EPP: guantes, lentes y cascos para cuadrilla",
+])
+def test_real_epp_es_seguridad_no_insumo_medico(real, nombre):
+    """El EPP de trabajo (guantes de seguridad, lentes, cascos) es su propio rubro de
+    reventa, no un insumo médico."""
+    r = real.evaluar(nombre=nombre)
+    assert r.rubro == "seguridad_epp", (nombre, r.rubro, r.palabras)
 
 
 def test_normalizar_siglas_con_puntos():
@@ -765,3 +775,55 @@ def test_item_oc_manda_el_rubro_del_producto():
 def test_real_items_oc_de_reventa(real, producto, categoria, rubro):
     r = real.evaluar_item(producto, categoria)
     assert r.rubro == rubro, (producto, r.rubro, r.palabras)
+
+
+# --- Rubros agregados tras el censo de grupos -------------------------------
+
+@pytest.mark.parametrize("nombre,rubro", [
+    ("Adquisición de materiales de construcción para viviendas de emergencia", "construccion_electricos"),
+    ("Compra de cemento y planchas de yeso cartón", "construccion_electricos"),
+    ("ADQUISICION DE BATERIAS RECARGABLES DE 12 VOLTS", "construccion_electricos"),
+    ("Adquisición de luminarias y focos LED para gimnasio", "construccion_electricos"),
+    ("Materiales eléctricos para departamento de operaciones", "construccion_electricos"),
+    ("REPOSICION PHMETRO Y MANOMETRO HCM", "laboratorio"),
+    ("Material de laboratorio para liceo técnico", "laboratorio"),
+    ("Microscopios para laboratorio de ciencias", "laboratorio"),
+    ("NEUMATICOS Y OTROS REPUESTOS", "repuestos_vehiculos"),
+    ("Adquisición de aceites lubricantes de motor 15W-40 y aceites hidráulicos", "repuestos_vehiculos"),
+    ("Repuestos para motoniveladora Caterpillar", "repuestos_vehiculos"),
+    ("Extintores y señalética de evacuación", "seguridad_epp"),
+    ("Conos viales y chalecos reflectantes", "seguridad_epp"),
+    ("ADQUISICIÓN DE TROFEOS Y MEDALLAS PARA CAMPEONATO", "deporte_didactico"),
+    ("Herramientas de jardín y cortacésped para áreas verdes", "ferreteria_herramientas"),
+    ("Equipamiento de cocina para casino", "hogar_menaje"),
+    ("Servidores NAS y UPS para la universidad", "computacion_electronica"),
+    ("Curso de Excel avanzado y Power BI para funcionarios", "consultoria_gestion_bi"),
+])
+def test_real_rubros_nuevos_detectan(real, nombre, rubro):
+    r = real.evaluar(nombre=nombre)
+    assert r.rubro == rubro, (nombre, r.rubro, r.palabras)
+
+
+@pytest.mark.parametrize("nombre", [
+    # Obras, servicios, instalación o material a granel: no es reventa
+    "Suministro de Mezcla Asfáltica en Caliente para capa de protección",
+    "SUM. 5.500M3 MATERIAL PETREO PINTO DRV ÑUBLE",
+    "SERVICIO CONEXIONES ELECTRICAS DE VIVIENDAS",
+    "Adquisición e instalación de sistemas fotovoltaicos",
+    "Construcción de sede social con materiales de construcción",
+    "Suministro Test reportado y Eq. comodato B. Sangre",
+    "PP 38-2026 Reactivos Sección de Hematología",
+    "ADQUISICION DE INSUMOS PARA TÉCNICA AUTOMATIZADA DE INMUNOHISTOQUÍMICA",
+    "Mantención de equipos de laboratorio",
+    "Adquisición de camioneta 4x4 para la municipalidad",
+    "SUMINISTRO DE COMBUSTIBLE",
+    "Servicio de mantención y repuestos de flota",
+    "SERVICIO DE SEGURIDAD: VIGILANTES Y CCTV",
+    "Recarga de extintores edificio consistorial",
+    "PROVISIÓN E INSTALACIÓN DE SEÑALES VERTICALES",
+    "Adquisición de chalecos antibalas",
+    "Batería de test psicométricos",
+])
+def test_real_rubros_nuevos_descartan(real, nombre):
+    r = real.evaluar(nombre=nombre)
+    assert not r.coincide, (nombre, r.rubro, r.palabras)
