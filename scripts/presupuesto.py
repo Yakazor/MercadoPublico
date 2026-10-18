@@ -70,10 +70,22 @@ def opciones_mercado(mercado: dict) -> list[dict]:
                 "precio_unitario_neto": op.get("precio_unitario_neto"),
                 "coincidencia": op.get("coincidencia"),
                 "verificado": op.get("verificado"),
+                "verificado_en": op.get("verificado_en"),
+                "verificacion_pagina": op.get("verificacion_pagina"),
                 "fecha_consulta": op.get("fecha_consulta") or mercado.get("fecha_consulta"),
                 "nota": op.get("nota"),
             })
     return filas
+
+
+def _verificado(op: dict) -> str:
+    """«sí (fecha)» si la página de la tienda mostró el precio; si no, por qué no."""
+    if op.get("verificado"):
+        return f"sí ({op.get('verificado_en')})" if op.get("verificado_en") else "sí"
+    motivo = op.get("verificacion_pagina")
+    if not motivo:
+        return "no (aún no se abre la página)"
+    return "no: " + _celda(motivo.split(": ", 1)[-1])
 
 
 def markdown(lic: dict, mercado: dict, p: dict) -> str:
@@ -136,7 +148,7 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
             lineas.append(
                 f"| {op['linea']} | {_link(op.get('tienda'), op.get('url'))} | {_celda(op.get('producto_mercado'))[:100]} | "
                 f"{_clp(op.get('precio'))}{iva} | {_clp(op.get('precio_unitario_neto'))} | {_celda(op.get('coincidencia'))} | "
-                f"{'sí' if op.get('verificado') else 'no'} |")
+                f"{_verificado(op)} |")
     notas = [f"- Línea {i.get('linea')}: {_celda(i.get('nota'))}" for i in mercado.get("items") or [] if i.get("nota")]
     if notas:
         lineas += ["", "## Notas de la búsqueda", "", *notas]

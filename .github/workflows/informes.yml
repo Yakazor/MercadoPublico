@@ -1,0 +1,60 @@
+name: Verificar precios e informes PDF
+
+# Cada vez que cambian los precios de mercado o los presupuestos (la rutina de Claude
+# los sube a informes/), GitHub abre la página de cada tienda para verificar el precio
+# (el entorno de Claude no puede abrir sitios .cl), rehace los presupuestos con esa
+# verificación y regenera los PDF de informes/pdf/. El push que hace este workflow
+# usa GITHUB_TOKEN, así que no vuelve a dispararlo.
+on:
+  push:
+    paths:
+      - "informes/mercado/**"
+      - "informes/presupuestos/*.md"
+      - "informes/grupos_licitaciones.md"
+      - "informes/README.md"
+      - "scripts/verificar_precios.py"
+      - "scripts/informes_pdf.py"
+  workflow_dispatch:
+
+concurrency:
+  group: informes
+  cancel-in-progress: false
+
+jobs:
+  informes:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt playwright
+      - run: python -m playwright install --with-deps chromium
+
+      - name: Verificar precios en las páginas de las tiendas
+        run: python scripts/verificar_precios.py
+
+      - name: Presupuestos con la verificación
+        run: |
+          git clone -q --depth 1 --branch datos "https://github.com/${{ github.repository }}.git" "$RUNNER_TEMP/datos"
+          python scripts/presupuesto.py --items "$RUNNER_TEMP/datos/items.json" \
+            --licitaciones "$RUNNER_TEMP/datos/licitaciones.json"
+
+      - name: Informes en PDF
+        run: python scripts/informes_pdf.py
+
+      - name: Guardar informes
+        run: |
+          git add informes
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Informes: precios verificados en las tiendas y PDF actualizados"
+          for i in 1 2 3; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

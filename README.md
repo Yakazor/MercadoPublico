@@ -287,6 +287,7 @@ subido):
 | `ordenes-historicas.yml` | todos los días, manual o el mismo push | OC de los últimos 21 días + precios + presupuestos |
 | `censo-rubros.yml` | manual | censo de grupos (rama `censo`) |
 | `probar-api.yml` | manual | una llamada de prueba |
+| `informes.yml` | cuando cambian los precios o presupuestos de `informes/` | abre cada tienda para verificar el precio, rehace los presupuestos y los PDF de `informes/pdf/` |
 
 Los cuatro comparten el grupo de concurrencia `radar-db`: nunca llaman a
 la API en paralelo con el mismo ticket. La base SQLite se guarda entre corridas
@@ -317,8 +318,11 @@ instrucciones en `.claude/RUTINA.md`).
   segmentos ONU con licitaciones activas vs los rubros del radar, para decidir
   si agregar grupos).
 
-Los precios de mercado vienen de resultados de búsqueda y no se verifican
-abriendo cada tienda: revisa el link antes de cotizar.
+Los precios de mercado vienen de resultados de búsqueda (el entorno de Claude no
+puede abrir sitios .cl). El workflow `informes.yml` abre cada link desde GitHub y
+marca «Verificado: sí» solo si la página muestra ese precio (±3 %); si no, el
+presupuesto dice qué encontró (otro precio, HTTP 403 o precio cargado con
+JavaScript). Igual revisa stock y despacho antes de cotizar.
 
 ## Pruebas
 
