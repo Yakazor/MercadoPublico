@@ -11,5 +11,10 @@
    "nota": "Sin precio chileno de medallas por pack.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

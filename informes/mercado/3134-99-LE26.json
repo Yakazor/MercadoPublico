@@ -11,5 +11,10 @@
    "nota": "Sin precio chileno para servidor rack de las bases.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

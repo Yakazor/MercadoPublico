@@ -18,5 +18,10 @@
    "nota": "Segunda pasada: bases técnicas no disponibles; sin precios CLP de tiendas chilenas (solo USD/EUR/PYG).",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

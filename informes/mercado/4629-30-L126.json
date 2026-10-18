@@ -18,5 +18,10 @@
    "nota": "Sin resultado chileno confiable con precio en las búsquedas realizadas.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

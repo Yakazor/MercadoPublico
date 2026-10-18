@@ -11,5 +11,10 @@
    "nota": "Global sin detalle de materiales ('según bases'); se buscó referencia genérica (cable/interruptor Sodimac) pero no hay ítem concreto que cotizar.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

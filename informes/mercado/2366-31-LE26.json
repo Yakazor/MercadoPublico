@@ -189,7 +189,7 @@
      "nota": "Estaba AGOTADO en la consulta anterior. Dejé el precio más alto visto ($89.990) como presupuesto conservador; la búsqueda también muestra $49.990 y $34.990. Hay que confirmar precio y reposición. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 71414.0,
-     "verificacion_pagina": "2026-10-18: no se pudo abrir la página (ReadTimeout)."
+     "verificacion_pagina": "2026-10-18: no se pudo abrir la página (ConnectionError)."
     },
     {
      "tienda": "DG Insumos",

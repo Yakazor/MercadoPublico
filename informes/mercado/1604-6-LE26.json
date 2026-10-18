@@ -11,5 +11,10 @@
    "nota": "Medida de neumático solo en bases técnicas (no disponible); no se puede buscar.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

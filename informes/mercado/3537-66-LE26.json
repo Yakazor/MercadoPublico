@@ -312,5 +312,10 @@
    "nota": "Segunda pasada: sin resultados de Mercado Libre Chile ni tiendas chilenas con precio en CLP para este repuesto (solo ML Argentina/Perú/México, Europa, avisos de camiones). Único hallazgo chileno: Falabella/Top Repuestos par amortiguadores delanteros Hilux 2wd 84/94 $38.490 (modelo/año distinto, descartado).",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

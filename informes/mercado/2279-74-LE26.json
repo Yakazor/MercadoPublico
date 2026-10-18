@@ -11,5 +11,10 @@
    "nota": "Ítem Global sin detalle (formato N°4); búsqueda de filtro 3M 6003 sin precio CLP de tienda chilena.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

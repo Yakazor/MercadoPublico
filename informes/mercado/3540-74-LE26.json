@@ -41,9 +41,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Licitación exige original Mercedes; esta es plumilla 26\" de repuesto equivalente en medida. Precio visto en listado de Sodimac.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     }
    ]
   },
@@ -154,9 +157,12 @@
      "unidades_equivalentes": 0.5,
      "precio_unitario_neto": 25193.28,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "1 juego = 2 plumillas; medida 26\" supuesta.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     }
    ]
   },
@@ -202,5 +208,10 @@
    "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 2,
+  "verificadas": 2
+ }
 }

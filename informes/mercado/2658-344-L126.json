@@ -46,5 +46,10 @@
    "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -39,5 +39,10 @@
    "nota": "Software/suscripción; precio oficial solo en USD (sin tienda chilena con precio en CLP) y cantidad de licencias no especificada; sin opciones.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

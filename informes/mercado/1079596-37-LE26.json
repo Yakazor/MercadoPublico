@@ -11,5 +11,10 @@
    "nota": "DJI TB65/BS65: solo tiendas extranjeras en resultados; excluido.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -88,8 +88,8 @@
      "verificado": false,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma un precio mayorista de $890 y un precio de oferta de $990. El mayorista puede exigir un mínimo, aunque 300 cajas probablemente lo cumple.",
      "fecha_consulta": "2026-10-17",
-     "precio_pagina": 790.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $790, no $890: puede haber cambiado."
+     "precio_pagina": 990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $990, no $890: puede haber cambiado."
     },
     {
      "tienda": "Torre (tienda oficial torre.cl)",
@@ -179,9 +179,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma el precio web exclusivo de $1.450 IVA incluido (precio base $1.890, -23%). La tienda está en el Valle del Aconcagua y el despacho gratis aplica solo allí.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 1450.0,
-     "verificacion_pagina": "2026-10-18: no se pudo abrir la página (ConnectTimeout)."
+     "verificacion_pagina": "2026-10-18: la página muestra $1.450."
     }
    ],
    "nota": "Ninguna opción está verificada en la página por el bloqueo de red. Dipy aparece AGOTADO. Dipy también lista un 'Corchete Semi Industrial 23/10 1000 Un' marca Torre, pero la búsqueda no mostró su precio."
