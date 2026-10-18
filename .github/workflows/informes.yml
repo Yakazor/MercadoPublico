@@ -27,7 +27,11 @@ jobs:
       contents: write
     timeout-minutes: 120
     steps:
+      # La punta de la rama, no el commit que disparó: si otra corrida ya guardó informes,
+      # se parte de ellos y no hay conflictos al guardar.
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
@@ -56,7 +60,8 @@ jobs:
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git commit -q -m "Informes: precios verificados en las tiendas y PDF actualizados"
           for i in 1 2 3; do
-            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            # Los informes son generados: ante un conflicto gana la versión de esta corrida.
+            git pull -q --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
             git rebase --abort 2>/dev/null || true
             sleep $((i * 5))
           done
