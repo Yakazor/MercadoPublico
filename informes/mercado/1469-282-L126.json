@@ -1,0 +1,58 @@
+{
+ "codigo": "1469-282-L126",
+ "nombre": "SILLONES PARA FUNCIONARIOS DE LA DIRECCIÓN DE COMUNICACIONES CORPORATIVAS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sillas para trabajar",
+   "consulta": "sillón ergonómico oficina ejecutivo; silla ejecutiva ergonómica soporte lumbar",
+   "nota": "El monto estimado ($1.060.000 por 2 sillones, unos $530.000 c/u) apunta a sillones de gama alta: revisa en las bases la especificación exigida antes de ofertar un modelo económico.",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Silla Ejecutiva Ergonómica Liverpool con soporte lumbar negra",
+     "url": "https://www.lider.cl/ip/home-office/silla-ejecutiva-ergonomica-liverpool-con-soporte-lumbar-color-negro/00046064404422",
+     "precio": 61990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 52092.44,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio de oferta (antes $112.990).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla Escritorio Ergonómica Belisa Black",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/silla-ejecutiva",
+     "precio": 129990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 109235.29,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio del listado de Sodimac (no ficha del producto).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla gerencial de cuero con pata de acero",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/silla-ejecutiva",
+     "precio": 129990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 109235.29,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta (antes $259.990); listado de Sodimac.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}
