@@ -19,9 +19,9 @@
      "verificado": true,
      "nota": "No pude abrir la página: WebFetch no resuelve DNS y el proxy rechaza el host. Una búsqueda indexada confirma $3.350, 19 unidades disponibles (no alcanzan para 90) y estas características: metálica, abre 180°, profundidad 61 mm, hasta 25 hojas. No confirma el largo de 13-14 cm ni el yunque cerrado.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 3350.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $3.350."
+     "verificacion_pagina": "2026-10-18: la página muestra $3.350."
     },
     {
      "tienda": "Roian",
@@ -37,7 +37,7 @@
      "fecha_consulta": "2026-10-17",
      "verificado_en": "2026-10-17",
      "precio_pagina": 3790.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $3.790."
+     "verificacion_pagina": "2026-10-18: no se pudo abrir la página (ConnectTimeout)."
     },
     {
      "tienda": "Nacional (nacional.cl)",
@@ -51,7 +51,7 @@
      "verificado": false,
      "nota": "CORREGIDO. Ninguna búsqueda respalda los $3.290 informados. En el listado de colección de nacional.cl el producto figura a $5.990 (precio habitual) y en el buscador a $5.490, AGOTADO en ambos casos. Usé $5.490. Ninguna búsqueda devolvió la URL exacta de la ficha, aunque sigue el formato de otras URL reales del sitio. No pude abrirla por bloqueo de red.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-17: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 404."
     }
    ],
    "nota": "No pude abrir ninguna página: WebFetch falla con DNS ENOTFOUND y el proxy rechaza los hosts .cl. Contrasté cada opción con búsquedas restringidas al dominio, así que todas quedan con verificado=false. Ninguna tienda muestra stock para 90 unidades; hay que cotizar volumen. Jumbo lista una 'Corchetera Maped 26/6 + corchetes' a $6.490."
@@ -72,9 +72,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda indexada confirma $890 (SKU 11702, EAN 7806505520721). En bloques de productos relacionados aparece también a $903 y $860. Asumí IVA incluido porque es una tienda al público.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 890.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $890."
+     "verificacion_pagina": "2026-10-18: la página muestra $890."
     },
     {
      "tienda": "Buale",
@@ -89,7 +89,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma un precio mayorista de $890 y un precio de oferta de $990. El mayorista puede exigir un mínimo, aunque 300 cajas probablemente lo cumple.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $990, no $890: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $990, no $890: puede haber cambiado."
     },
     {
      "tienda": "Torre (tienda oficial torre.cl)",
@@ -103,9 +103,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 con existencias (SKU 11696).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $990."
+     "verificacion_pagina": "2026-10-18: la página muestra $990."
     }
    ],
    "nota": "La referencia de OC es $673,5 neto, menor que el mejor precio al público encontrado ($748 neto)."
@@ -126,7 +126,7 @@
      "verificado": false,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $35.041, AGOTADO, para la corchetera eléctrica R5050E (Rapid SKU R396639). No está claro si el precio incluye IVA. dimercplus.dimerc.cl tiene el mismo producto sin precio ni stock visible.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Es la única oferta chilena con precio, y está agotada. Hay que cotizar con un distribuidor de Rapid."
@@ -147,9 +147,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $482 (SKU 121351), AGOTADO. No confirma que sea galvanizado.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 482.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $482."
+     "verificacion_pagina": "2026-10-18: la página muestra $482."
     },
     {
      "tienda": "Torre (tienda oficial torre.cl)",
@@ -163,9 +163,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.290 con existencias.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 1290.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $1.290."
+     "verificacion_pagina": "2026-10-18: la página muestra $1.290."
     },
     {
      "tienda": "Librería Comercial",
@@ -181,7 +181,7 @@
      "fecha_consulta": "2026-10-17",
      "verificado_en": "2026-10-17",
      "precio_pagina": 1450.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $1.450."
+     "verificacion_pagina": "2026-10-18: no se pudo abrir la página (ConnectTimeout)."
     }
    ],
    "nota": "Ninguna opción está verificada en la página por el bloqueo de red. Dipy aparece AGOTADO. Dipy también lista un 'Corchete Semi Industrial 23/10 1000 Un' marca Torre, pero la búsqueda no mostró su precio."
@@ -208,7 +208,7 @@
      "verificado": false,
      "nota": "REEMPLAZA la opción de $19.000, que apuntaba a una página de listado (listado.mercadolibre.cl/corchetes-rapid) y no a una ficha. La búsqueda atribuye $19.990 al vendedor TUBAZAR.CL en esta publicación, pero esa atribución sale de un resumen de búsqueda. No pude abrir la ficha ni confirmar stock. Vendedor de marketplace.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-17: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Dipy",
@@ -222,9 +222,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $27.848 para la corchetera eléctrica 5080E.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 27848.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $27.848."
+     "verificacion_pagina": "2026-10-18: la página muestra $27.848."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -238,7 +238,7 @@
      "verificado": false,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $28.800 en 12 cuotas sin interés. Vendedor de marketplace.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-17: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "Otra publicación de Mercado Libre aparece a $28.040 con envío gratis, pero no tengo su URL. En una licitación anterior (2460-14-R125) se adjudicó a $22.500 por caja."
@@ -259,9 +259,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $3.360 con transferencia y $3.520 con otros medios de pago; usé el mayor.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 3520.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $3.520."
+     "verificacion_pagina": "2026-10-18: la página muestra $3.520."
     },
     {
      "tienda": "Tienda ACCO Brands (Swingline)",
@@ -275,9 +275,9 @@
      "verificado": true,
      "nota": "CORREGIDO: la búsqueda muestra $4.269 (-15%) en la ficha, no $3.990. La página de la marca muestra $8.971, y las de marca y categoría lo marcan AGOTADO. Trae tiras de 125 y sirve hasta 70 hojas. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 4269.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $4.269."
+     "verificacion_pagina": "2026-10-18: la página muestra $4.269."
     }
    ]
   },
@@ -297,9 +297,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $22.941, disponible (SKU 600965). La ficha no aclara si el precio incluye IVA.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 22941.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $22.941."
+     "verificacion_pagina": "2026-10-18: la página muestra $22.941."
     }
    ],
    "nota": "Tomé 1 unidad de la licitación = 1 caja de 2 x 1.500. Si 'Cartucho' significa un solo cassette, hay que dividir por 2. En Mercado Libre (MLC36263895, 2x1500 5025) el producto figura no disponible. Dimerc lista el cassette para 5025E/5020E sin precio."
@@ -321,7 +321,7 @@
      "nota": "No pude abrir la página por bloqueo de red. Las búsquedas dan precios contradictorios para la 683-4 Post-it en Dipy: $4.988 bruto ($4.192+IVA), $5.306 (SKU R305224) y $5.451 (posiblemente la variante neón). Dejé $5.451 como cota conservadora. Trae 4 colores y 140 un.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2326.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.326, no $5.451: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $2.326, no $5.451: puede haber cambiado."
     },
     {
      "tienda": "La Secretaria",
@@ -336,7 +336,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $4.866 + IVA (precio neto).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 50000.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $50.000, no $4.866: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $50.000, no $4.866: puede haber cambiado."
     },
     {
      "tienda": "Dimeiggs",
@@ -351,7 +351,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $5.890 c/u desde 3 unidades; el precio normal es $6.290.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 6290.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $6.290, no $5.890: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $6.290, no $5.890: puede haber cambiado."
     }
    ],
    "nota": "La 3M 683-4 trae 4 colores y 140 banderas, mientras la descripción pide 5 colores 'tipo 683-4'. Igual la marqué exacta porque es el modelo de referencia. Los sets Dimerc ($1.861, agotado) y Fultons ($1.357, 4 un) son otros formatos y no verifiqué su cantidad."
@@ -373,7 +373,7 @@
      "nota": "AGREGADA en esta verificación. Es marca Fultons, amarillo neón (cumple 'flúor'), 51x38 mm, 12 blocs de 100 hojas. La búsqueda indexada muestra $2.921 (SKU 554917) con stock y un sub-embalaje de 2 a $5.843. No pude abrir la ficha. No hay datos de que sean removibles ni de que no se curven.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 3099.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $3.099, no $2.921: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $3.099, no $2.921: puede haber cambiado."
     },
     {
      "tienda": "Dipy",
@@ -387,9 +387,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $9.345 por 12 blocs Post-it 653 (en otro listado, $9.400). El título dice 51x38 mm y la descripción 3,8x5 cm. Es amarillo canario, no neón.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 9345.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $9.345."
+     "verificacion_pagina": "2026-10-18: la página muestra $9.345."
     },
     {
      "tienda": "Dimeiggs",
@@ -403,9 +403,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda muestra $10.990 y $5.990 en la misma ficha (el agente previo vio $7.290). El precio vigente no está claro y dejé $10.990 como cota conservadora.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $10.990."
+     "verificacion_pagina": "2026-10-18: la página muestra $10.990."
     }
    ],
    "nota": "Dipy también tiene un 653 Rhein amarillo pastel (2 blocs a $522) y uno Imerc/Fultons amarillo a $182 por bloc, pero no confirman el color flúor y, en el caso Imerc, tampoco la medida. Por eso los dejé fuera. La referencia de OC ($4.890) parece corresponder a otro formato."
@@ -426,9 +426,9 @@
      "verificado": true,
      "nota": "AGREGADA en esta verificación. Es marca Fultons, 76x76 mm, 100 hojas, amarillo. El precio de unos $690 sale de un resumen de búsqueda y no pude abrir la ficha. No confirma que el color sea flúor.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 690.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $690."
+     "verificacion_pagina": "2026-10-18: la página muestra $690."
     },
     {
      "tienda": "Dipy",
@@ -442,9 +442,9 @@
      "verificado": true,
      "nota": "La URL es un listado de colección, no la ficha. La búsqueda confirma $1.671 para la referencia. No pude abrir la página. Dipy tiene además la ficha 'dipy.cl/products/nota-adh-654-block-100hj-amarillo-76x76mm', que puede no ser Post-it.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 1641.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $1.641."
+     "verificacion_pagina": "2026-10-18: la página muestra $1.641."
     },
     {
      "tienda": "Dimeiggs",
@@ -459,7 +459,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.990 desde 3 unidades; el precio normal es $2.290. El distribuidor de Dimeiggs lo muestra a $1.920.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2290.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.290, no $1.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $2.290, no $1.990: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -474,7 +474,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $2.190; otra ficha de Lider (super.lider.cl/ip/00002120015577) muestra $2.590.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2390.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.390, no $2.190: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $2.390, no $2.190: puede haber cambiado."
     }
    ]
   },
@@ -495,7 +495,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 c/u y $810 desde 6 unidades. Es otra marca, no Mardini, y no confirma el alto de 4 cm.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $990, no $810: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $990, no $810: puede haber cambiado."
     },
     {
      "tienda": "Durban",
@@ -510,7 +510,7 @@
      "nota": "CORREGIDO a $850: según la búsqueda, ese es el tramo desde 200 unidades, que coincide con la cantidad pedida ($894 c/u para 1-199). Otra captura muestra $1.336, así que el precio no es estable. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 1296.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $1.296, no $850: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $1.296, no $850: puede haber cambiado."
     },
     {
      "tienda": "Lapizarra Librería",
@@ -525,7 +525,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.150 (con 966 en los datos estructurados, que coincide con el neto). En otra sección del sitio aparece agotado.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 966.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $966, no $1.150: puede haber cambiado."
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $966, no $1.150: puede haber cambiado."
     }
    ],
    "nota": "No encontré la marca Mardini con precio publicado."
@@ -546,9 +546,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $4.161 para la Casio RB-02 negro/rojo. No confirma 13 mm, 6 m ni la compatibilidad con Olympia.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 4161.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $4.161."
+     "verificacion_pagina": "2026-10-18: la página muestra $4.161."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -562,7 +562,7 @@
      "verificado": false,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $11.900 en 12 cuotas sin interés, 13 mm, con garantía de fábrica de 6 meses. Vendedor de marketplace.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-17: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "No encontré una cinta genérica Olympia/Casio de 13 mm x 6 m con precio. En Mercado Libre aparece una cinta bicolor Casio/Elca en pack de 5 a $7.800, pero no confirmé el modelo ni tengo su URL."
@@ -570,7 +570,7 @@
  ],
  "verificacion": "No pude abrir ninguna página: WebFetch falla con DNS ENOTFOUND para todos los dominios (incluso example.com), y curl a través del proxy recibe 403 en los hosts .cl. Por eso todas las opciones quedan con verificado=false. Contrasté cada URL y precio con búsquedas WebSearch restringidas al dominio de la tienda, y todas las URL, salvo la de Nacional, aparecieron tal cual en los resultados. Correcciones: (1) Nacional, línea 1: ninguna búsqueda respalda los $3.290; el producto figura AGOTADO a $5.490-$5.990, así que bajó al último lugar con $5.490 y la URL sin confirmar. (2) ACCO, línea 7: el precio de ficha es $4.269, no $3.990, y figura agotado; quedó reordenado. (3) Durban, línea 12: el tramo de 200+ unidades es $850; recalculé el neto a $714. (4) Línea 6: eliminé la opción de $19.000 porque apuntaba a una página de listado de Mercado Libre, no a una ficha; la reemplacé por la publicación MLC-524503182 a $19.990 (TUBAZAR.CL, atribución tomada de la búsqueda). (5) Agregué alternativas equivalentes más baratas que aparecieron en las búsquedas: la línea 10 tiene una Fultons amarillo neón 12 x 100 hojas a $2.921 en Dipy ($205 neto por bloc), y la línea 11 una Fultons 76x76 a $690 en Dimeiggs. (6) Anoté inconsistencias de precio en Dipy 683-4 ($4.988-$5.451) y Dimeiggs 653 ($5.990 vs $10.990); en ambas usé el valor más alto como cota conservadora. Confirmé el resto de precios y existencias (incluidos los agotados de Dipy 23/10 y Dimerc C5050E). La línea 5 (Rapid 44/7) sigue sin opciones. Reordené de menor a mayor precio_unitario_neto.",
  "verificacion_paginas": {
-  "fecha": "2026-10-17",
+  "fecha": "2026-10-18",
   "opciones": 31,
   "verificadas": 16
  }
