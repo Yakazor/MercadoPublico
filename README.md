@@ -299,18 +299,18 @@ El dashboard (artefacto de Claude) lee los JSON de la rama `datos` que sube la
 **rutina «Actualizar Radar de Licitaciones»** (días hábiles 8:50, hora de Chile;
 instrucciones en `.claude/RUTINA.md`).
 
-- **Actualizar ahora:** dispara la rutina: push a `actualizar.txt` → radar y OC
-  en Actions → presupuestos → sube los datos al dashboard (20–80 min). Subir
-  archivos a un artefacto pide tu aprobación en la app de Claude: la rutina deja
-  todo lo demás hecho, te avisa y la subida es el último paso.
-- **Lanzador del Radar** (https://claude.ai/artifact/ESxwT22kMNenFRPEYoHwqw,
-  copia en `dashboard/lanzador.html`): los botones del dashboard lo abren con las
-  licitaciones elegidas y desde ahí un clic envía el pedido a la rutina por el
-  conector «Claude Code Remote» de claude.ai (el dashboard, por ser de un tipo
-  predefinido, no puede declarar conectores).
-- **Simular:** eliges las licitaciones (máx. 5) y la rutina busca precios en
-  tiendas chilenas (workflow `.claude/workflows/precios-mercado-chile.js`, con
-  links). Así solo se cotiza lo que te interesa: buscar cuesta tiempo y plan.
+- **Un solo artefacto:** el dashboard. claude.ai no deja que una página le mande
+  mensajes a una sesión de Claude (lo rechaza con `blocked_by_policy`), así que los
+  pedidos se hacen en el chat: «actualiza el radar» o «busca precios de <códigos>».
+  Los botones del dashboard copian ese texto. Subir archivos al dashboard pide tu
+  aprobación en la app de Claude: la rutina deja todo lo demás hecho, te avisa y
+  la subida es el último paso.
+- **Simular:** cualquier licitación muestra su presupuesto al tiro. Si ya tiene
+  precios de tiendas (buscados por Claude con el workflow
+  `.claude/workflows/precios-mercado-chile.js`, con links) se usan esos; si no,
+  cada ítem se estima con lo que el Estado pagó en órdenes de compra: oferta =
+  mediana pagada y costo = lo máximo que puedes pagar para tu margen. Solo quedan
+  sin valor los ítems sin tiendas ni OC parecidas.
 - **Presupuesto:** costo = opción más barata exacta o equivalente × 1,05 (otros
   costos); oferta = costo × (1 + margen, 20% por defecto) + IVA 19%. Se compara
   con lo que el Estado pagó por el mismo producto (mediana de OC) y con el monto

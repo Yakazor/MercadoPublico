@@ -86,10 +86,7 @@
       al <span data-source="meta" data-field="oc_hasta" data-row="0">—</span>
       (<span data-source="meta" data-field="oc_dias" data-row="0">—</span> días)
     </p>
-    <div class="rl-actualizar" id="actualizar">
-      <button type="button" class="rl-boton" id="boton-actualizar">Actualizar ahora</button>
-      <span class="rl-nota" id="estado-actualizar" role="status">Se actualiza solo de lunes a viernes a las 8:50 (licitaciones, órdenes de compra y presupuestos; los precios de mercado se buscan solo para las licitaciones que elijas en el simulador). El botón lo hace ahora; tarda entre 30 y 80 minutos. Al final te llega un aviso: aprueba en la app de Claude la subida de los datos a este dashboard.</span>
-    </div>
+    <p class="rl-nota" id="actualizar">Se actualiza solo de lunes a viernes a las 8:50 (licitaciones, órdenes de compra y presupuestos). Para actualizar antes o buscar precios en tiendas, pídeselo a Claude en el chat.</p>
   </header>
 
   <section class="rl-kpis" id="indicadores" aria-label="Indicadores">
@@ -122,7 +119,7 @@
 
     <div class="rl-card" id="tabla-licitaciones">
       <h2>Licitaciones vigentes</h2>
-      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público. Marca las licitaciones que te interesan y pide sus precios de mercado: solo se buscan las que elijas. «Simular» abre el presupuesto (borde verde: ya tiene precios).</p>
+      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
       <div class="rl-controles">
         <input type="search" id="buscar-lic" placeholder="Buscar licitación, organismo, región…" aria-label="Buscar licitaciones">
         <select id="rubro-lic" aria-label="Rubro" data-source="por_rubro"><option value="">Todos los rubros</option></select>
@@ -132,14 +129,14 @@
       </div>
       <div class="rl-elegidas" id="elegidas" hidden>
         <span id="elegidas-texto"></span>
-        <button type="button" class="rl-boton" id="elegidas-buscar">Buscar precios de las elegidas</button>
+        <button type="button" class="rl-boton" id="elegidas-buscar">Copiar pedido de precios</button>
         <button type="button" class="rl-boton" id="elegidas-limpiar">Quitar selección</button>
         <span class="rl-nota" id="elegidas-estado" role="status"></span>
       </div>
       <div class="rl-caja">
         <table id="lic" data-source="licitaciones" data-row-key="codigo">
           <thead><tr>
-            <th><span class="rl-nota" title="Elegir para buscar precios">Elegir</span></th>
+            <th><span class="rl-nota" title="Elegir para pedir precios de tiendas">Elegir</span></th>
             <th class="rl-num" data-source="licitaciones_hoy" data-field="dias"><button data-col="dias">Días</button></th>
             <th data-field="codigo"><button data-col="codigo">Código</button></th>
             <th data-field="nombre"><button data-col="nombre">Nombre</button></th>
@@ -160,7 +157,7 @@
   <section class="rl-pagina" id="simulador" role="tabpanel" aria-labelledby="tab-simulador" hidden>
     <div class="rl-card" id="sim-cabecera">
       <h2>Simulador de presupuesto</h2>
-      <p class="rl-nota">El costo de cada ítem es el precio más bajo encontrado en tiendas chilenas para ese producto (o uno equivalente), en neto (sin IVA) y por la unidad que pide la licitación, más 5 % de otros costos (despacho, garantías). La oferta suma tu margen; el IVA (19 %) va aparte. «Ref. OC» es lo que el Estado pagó en órdenes de compra por ese producto (mediana): si tu oferta la supera, es difícil ganar.</p>
+      <p class="rl-nota">Cada ítem se calcula con la mejor fuente disponible. <b>Tienda:</b> el costo es el precio más bajo encontrado en tiendas chilenas (neto, por la unidad pedida) más 5 % de otros costos (despacho, garantías), y la oferta le suma tu margen. <b>OC del Estado:</b> si aún no hay precios de tiendas, la oferta es lo que el Estado pagó en órdenes de compra por ese producto (mediana) y el costo es lo máximo que puedes pagar para ganar tu margen. El IVA (19 %) va aparte.</p>
       <div class="rl-controles">
         <select id="sim-lic" class="rl-ancho" aria-label="Licitación a simular" data-source="licitaciones"></select>
         <label>Margen
@@ -175,8 +172,8 @@
 
     <p class="rl-aviso" id="sim-aviso" hidden></p>
     <div class="rl-elegidas" id="sim-pedir" hidden>
-      <button type="button" class="rl-boton" id="sim-pedir-boton">Buscar precios de mercado de esta licitación</button>
-      <span class="rl-nota" id="sim-pedir-estado" role="status">Busca cada ítem en tiendas chilenas (con links) y arma el presupuesto. Tarda entre 10 y 20 minutos.</span>
+      <button type="button" class="rl-boton" id="sim-pedir-boton">Copiar pedido de precios de tiendas</button>
+      <span class="rl-nota" id="sim-pedir-estado" role="status">Pégalo en el chat con Claude: busca cada ítem en tiendas chilenas (con links) y deja el presupuesto aquí.</span>
     </div>
 
     <section class="rl-kpis" id="sim-totales" aria-label="Totales del presupuesto">
@@ -197,23 +194,12 @@
             <th class="rl-num" data-field="linea">Línea</th>
             <th data-field="producto">Producto</th>
             <th class="rl-num" data-field="cantidad">Cantidad</th>
-            <th class="rl-num" data-field="precio_mercado_neto">Precio mercado neto / u</th>
-            <th data-field="tienda">Tienda</th>
+            <th class="rl-num" data-field="costo_unitario">Costo neto / u</th>
+            <th data-field="tienda">Fuente</th>
             <th class="rl-num" data-field="subtotal_costo">Subtotal costo</th>
             <th class="rl-num" data-field="oferta_unitaria">Oferta / u</th>
             <th class="rl-num" data-field="subtotal_oferta">Subtotal oferta</th>
             <th class="rl-num rl-angosto" data-field="ref_mediana">Ref. OC / u</th>
-          </tr></thead>
-          <tbody></tbody>
-        </table>
-        <table id="sim-solo-items" data-source="items" data-row-key="codigo,linea" hidden>
-          <thead><tr>
-            <th class="rl-num" data-field="linea">Línea</th>
-            <th data-field="producto">Producto</th>
-            <th class="rl-num" data-field="cantidad">Cantidad</th>
-            <th data-field="unidad">Unidad</th>
-            <th class="rl-num" data-field="ref_mediana">Ref. OC / u (mediana)</th>
-            <th class="rl-num rl-angosto" data-field="ref_n_ordenes">OC</th>
           </tr></thead>
           <tbody></tbody>
         </table>
@@ -359,7 +345,7 @@
   dash.calc('presupuesto', {
     inputs: ['items', 'mercado'],
     title: 'Presupuesto por ítem',
-    description: 'Por ítem: el precio de mercado más bajo entre productos iguales o equivalentes (si no hay, el aproximado) + 5 % de otros costos; la oferta suma un margen de 10 a 30 %.',
+    description: 'Por ítem: con precios de tienda, costo = el más bajo entre productos iguales o equivalentes (si no hay, el aproximado) + 5 % de otros costos, y oferta = costo + margen de 10 a 30 %. Sin precios de tienda, oferta = mediana de lo que el Estado pagó en OC y costo = el máximo que deja ese margen.',
     fn: (items, mercado) => {
       const OTROS_COSTOS = 0.05;
       const MARGENES = [0.1, 0.15, 0.2, 0.25, 0.3];
@@ -374,23 +360,27 @@
           mejor.set(clave, { ...m, precio, rango });
         }
       }
-      const conMercado = new Set(mercado.map((m) => m.codigo));
-      return items.filter((i) => conMercado.has(i.codigo)).flatMap((i) => {
+      return items.flatMap((i) => {
         const m = mejor.get(i.codigo + '|' + i.linea);
+        const ref = Number(i.ref_mediana) > 0 ? Number(i.ref_mediana) : null;
         const cantidad = Number(i.cantidad) || 0;
-        const costo = m ? m.precio * (1 + OTROS_COSTOS) : null;
-        return MARGENES.map((margen) => ({
-          clave: i.codigo + '|' + i.linea + '|' + margen,
-          codigo: i.codigo, linea: i.linea, margen,
-          producto: i.producto, descripcion: i.descripcion, cantidad, unidad: i.unidad,
-          tienda: m ? m.tienda : null, url: m ? m.url : null, coincidencia: m ? m.coincidencia : null,
-          precio_mercado_neto: m ? m.precio : null,
-          costo_unitario: costo,
-          subtotal_costo: costo == null ? null : costo * cantidad,
-          oferta_unitaria: costo == null ? null : costo * (1 + margen),
-          subtotal_oferta: costo == null ? null : costo * (1 + margen) * cantidad,
-          ref_mediana: i.ref_mediana ?? null,
-        }));
+        const fuente = m ? 'tienda' : ref != null ? 'oc' : null;
+        return MARGENES.map((margen) => {
+          const costo = m ? m.precio * (1 + OTROS_COSTOS) : ref != null ? ref / (1 + margen) : null;
+          const oferta = m ? costo * (1 + margen) : ref;
+          return {
+            clave: i.codigo + '|' + i.linea + '|' + margen,
+            codigo: i.codigo, linea: i.linea, margen, fuente,
+            producto: i.producto, descripcion: i.descripcion, cantidad, unidad: i.unidad,
+            tienda: m ? m.tienda : null, url: m ? m.url : null, coincidencia: m ? m.coincidencia : null,
+            precio_mercado_neto: m ? m.precio : null,
+            costo_unitario: costo,
+            subtotal_costo: costo == null ? null : costo * cantidad,
+            oferta_unitaria: oferta,
+            subtotal_oferta: oferta == null ? null : oferta * cantidad,
+            ref_mediana: ref, ref_n_ordenes: i.ref_n_ordenes ?? null, ref_similitud: i.ref_similitud ?? null, ref_producto: i.ref_producto || null,
+          };
+        });
       });
     },
   });
@@ -398,23 +388,26 @@
   dash.calc('presupuesto_totales', {
     inputs: ['presupuesto'],
     title: 'Totales del presupuesto',
-    description: 'Suma por licitación y margen: costo neto, oferta neta, IVA 19 %, oferta total, utilidad y lo que el Estado pagó en OC por los mismos ítems.',
+    description: 'Suma por licitación y margen: costo neto, oferta neta, IVA 19 %, oferta total, utilidad y lo que el Estado pagó en OC por los mismos ítems; cuenta cuántos ítems salen de tiendas y cuántos de OC.',
     fn: (presupuesto) => {
       const IVA = 0.19;
       const grupos = new Map();
       for (const p of presupuesto) {
         const clave = p.codigo + '|' + p.margen;
         if (!grupos.has(clave)) grupos.set(clave, { clave, codigo: p.codigo, margen: p.margen, items: 0, items_con_precio: 0,
-          costo_neto: 0, oferta_neta: 0, referencia_oc: 0, oferta_con_referencia: 0 });
+          items_tienda: 0, items_oc: 0, costo_neto: 0, oferta_neta: 0, referencia_oc: 0, oferta_con_referencia: 0 });
         const g = grupos.get(clave);
         g.items += 1;
         if (p.subtotal_costo == null) continue;
         g.items_con_precio += 1;
+        if (p.fuente === 'tienda') g.items_tienda += 1; else g.items_oc += 1;
         g.costo_neto += p.subtotal_costo;
         g.oferta_neta += p.subtotal_oferta;
-        if (p.ref_mediana != null) {
-          g.referencia_oc += p.ref_mediana * p.cantidad;
+        if (p.ref_mediana != null) g.referencia_oc += p.ref_mediana * p.cantidad;
+        // Solo los ítems con precio de tienda se comparan con la OC (en los de OC la oferta es la OC).
+        if (p.fuente === 'tienda' && p.ref_mediana != null) {
           g.oferta_con_referencia += p.subtotal_oferta;
+          g.referencia_tienda = (g.referencia_tienda || 0) + p.ref_mediana * p.cantidad;
         }
       }
       return [...grupos.values()].map((g) => ({
@@ -582,7 +575,7 @@
           const caja = document.createElement('input');
           caja.type = 'checkbox';
           caja.checked = elegidas.has(l.codigo);
-          caja.setAttribute('aria-label', `Elegir ${l.codigo} para buscar precios`);
+          caja.setAttribute('aria-label', `Elegir ${l.codigo} para pedir precios de tiendas`);
           caja.addEventListener('change', () => { if (caja.checked) elegidas.add(l.codigo); else elegidas.delete(l.codigo); barraElegidas(); });
           tdElegir.append(caja);
         }
@@ -657,58 +650,42 @@
           'https://github.com/Yakazor/MercadoPublico/blob/feature/api-mercadopublico/informes/presupuestos/' + encodeURIComponent(lic.codigo) + '.md'));
       }
 
-      // ¿Tiene precios de mercado?
+      // Presupuesto: con precios de tienda o, si faltan, estimado con las OC.
       const tiene = conMercado.has(simulada);
       const aviso = document.getElementById('sim-aviso');
       const tablaPres = document.getElementById('sim-items');
-      const tablaItems = document.getElementById('sim-solo-items');
       const vacio = document.getElementById('sim-vacio');
       const misItems = items.status === 'ok' ? items.data.filter((i) => i.codigo === simulada) : [];
-      tablaPres.hidden = !tiene;
-      tablaItems.hidden = tiene;
-      document.getElementById('sim-totales').hidden = !tiene;
-      if (tiene) document.getElementById('sim-pedir').hidden = true;
+      document.getElementById('sim-pedir').hidden = !lic;
       document.getElementById('sim-opciones-card').hidden = !tiene;
 
-      if (!tiene) {
-        aviso.hidden = !lic;
-        aviso.textContent = lic ? `Aún no hay precios de mercado para ${lic.codigo}. Usa el botón de abajo (o pídeme en el chat «busca precios de ${lic.codigo}»). Mientras, ves sus ítems y lo que el Estado ya pagó por productos parecidos.` : '';
-        document.getElementById('sim-pedir').hidden = !lic;
-        const tbody = tablaItems.querySelector('tbody');
-        tbody.replaceChildren();
-        for (const i of misItems) {
-          const tr = tbody.insertRow();
-          tr.dataset.key = valorMarca(i.codigo) + ',' + valorMarca(i.linea);
-          celda(tr, String(i.linea), 'rl-num');
-          const td = celda(tr, '', 'rl-nombre');
-          td.append(document.createTextNode(i.producto || ''));
-          if (i.descripcion) { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = i.descripcion; td.append(d); }
-          celda(tr, i.cantidad == null ? '' : entero.format(i.cantidad), 'rl-num');
-          celda(tr, i.unidad || '');
-          celda(tr, i.ref_mediana == null ? '—' : pesos(i.ref_mediana), 'rl-num');
-          celda(tr, i.ref_n_ordenes == null ? '' : entero.format(i.ref_n_ordenes), 'rl-num rl-angosto');
-        }
-        vacio.hidden = items.status !== 'ok' || misItems.length > 0;
-        return;
-      }
-
-      // Totales del margen elegido.
       const fila = (tot.status === 'ok' ? tot.data : []).find((t) => t.codigo === simulada && t.margen === margen);
+      const hayValores = !!(fila && fila.items_con_precio > 0);
+      tablaPres.hidden = misItems.length === 0;
+      document.getElementById('sim-totales').hidden = !hayValores;
       document.querySelectorAll('#sim-totales [data-source="presupuesto_totales"]').forEach((el) => {
         el.dataset.where = 'clave=' + valorMarca(simulada + '|' + margen);
         el.textContent = fila ? pesos(fila[el.dataset.field]) : '—';
       });
-      const sinPrecio = fila ? fila.items - fila.items_con_precio : 0;
       const partes = [];
-      if (sinPrecio > 0) partes.push(`${sinPrecio} de ${fila.items} ítems sin precio de mercado (no entran en los totales; puedes pedirme que los busque de nuevo).`);
-      if (fila && fila.referencia_oc && fila.oferta_con_referencia > fila.referencia_oc) {
-        partes.push(`Ojo: en los ítems con referencia, tu oferta (${pesos(fila.oferta_con_referencia)}) supera lo que el Estado pagó (${pesos(fila.referencia_oc)}). Baja el margen o busca proveedores más baratos.`);
+      if (lic && !hayValores && misItems.length) {
+        partes.push(`Ningún ítem de ${lic.codigo} tiene precios de tiendas ni compras parecidas del Estado en las órdenes de compra revisadas: no se puede estimar. Copia el pedido de abajo y pégalo en el chat para buscar precios en tiendas.`);
+      } else if (fila && fila.items_oc > 0) {
+        partes.push(`${fila.items_oc} de ${fila.items} ítems estimados con lo que el Estado pagó en OC (sin precios de tiendas todavía): la oferta es la mediana pagada y el costo, lo máximo que puedes pagar para tu margen. La OC es de productos parecidos y puede venir en otra unidad: revísala antes de ofertar.`);
       }
-      if (fila && lic && esClp(lic.moneda) && Number(lic.monto_estimado) > 0 && fila.oferta_total > Number(lic.monto_estimado)) {
+      const sinPrecio = fila ? fila.items - fila.items_con_precio : 0;
+      if (hayValores && sinPrecio > 0) partes.push(`${sinPrecio} de ${fila.items} ítems sin precio (no entran en los totales).`);
+      if (fila && fila.referencia_tienda && fila.oferta_con_referencia > fila.referencia_tienda) {
+        partes.push(`Ojo: en los ítems con precio de tienda, tu oferta (${pesos(fila.oferta_con_referencia)}) supera lo que el Estado pagó (${pesos(fila.referencia_tienda)}). Baja el margen o busca proveedores más baratos.`);
+      }
+      if (hayValores && lic && esClp(lic.moneda) && Number(lic.monto_estimado) > 0 && fila.oferta_total > Number(lic.monto_estimado)) {
         partes.push(`Tu oferta total supera el monto estimado de la licitación (${monto(lic.monto_estimado, lic.moneda)}).`);
       }
       aviso.hidden = partes.length === 0;
       aviso.textContent = partes.join(' ');
+      document.getElementById('sim-items-nota').textContent = tiene
+        ? 'Cantidades y unidades según la licitación. El nombre de la tienda abre el producto.'
+        : 'Cantidades y unidades según la licitación. Sin precios de tiendas todavía: los valores salen de las órdenes de compra del Estado.';
 
       // Ítems.
       const filas = (pres.status === 'ok' ? pres.data : []).filter((p) => p.codigo === simulada && p.margen === margen);
@@ -722,16 +699,30 @@
         td.append(document.createTextNode(p.producto || ''));
         if (p.descripcion) { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = p.descripcion; td.append(d); }
         celda(tr, (p.cantidad ? entero.format(p.cantidad) : '') + (p.unidad ? ' ' + p.unidad : ''), 'rl-num');
-        celda(tr, pesos(p.precio_mercado_neto), 'rl-num');
-        const tdTienda = tr.insertCell();
-        tdTienda.append(p.tienda ? enlace(p.tienda, p.url) : document.createTextNode('sin precio'));
-        if (p.coincidencia === 'aproximada') { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = 'producto aproximado'; tdTienda.append(d); }
+        const tdCosto = celda(tr, pesos(p.costo_unitario), 'rl-num');
+        if (p.fuente === 'oc') { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = 'máximo para tu margen'; tdCosto.append(d); }
+        const tdFuente = tr.insertCell();
+        if (p.fuente === 'tienda') {
+          tdFuente.append(enlace(p.tienda, p.url));
+          if (p.coincidencia === 'aproximada') { const d = document.createElement('span'); d.className = 'rl-desc'; d.textContent = 'producto aproximado'; tdFuente.append(d); }
+        } else if (p.fuente === 'oc') {
+          tdFuente.append(document.createTextNode('OC del Estado'));
+          const d = document.createElement('span'); d.className = 'rl-desc';
+          d.textContent = 'mediana de «' + (p.ref_producto || p.producto || '') + '»'
+            + (p.ref_n_ordenes ? ` en ${entero.format(p.ref_n_ordenes)} órdenes` : '')
+            + (p.ref_similitud != null && p.ref_similitud < 1 ? ' (producto parecido)' : '');
+          tdFuente.append(d);
+        } else {
+          tdFuente.append(document.createTextNode('sin precio'));
+        }
         celda(tr, pesos(p.subtotal_costo), 'rl-num');
         const tdOferta = celda(tr, pesos(p.oferta_unitaria), 'rl-num');
-        if (p.oferta_unitaria != null && p.ref_mediana != null) tdOferta.classList.add(p.oferta_unitaria > p.ref_mediana ? 'rl-mal' : 'rl-ok');
+        if (p.fuente === 'tienda' && p.ref_mediana != null) tdOferta.classList.add(p.oferta_unitaria > p.ref_mediana ? 'rl-mal' : 'rl-ok');
         celda(tr, pesos(p.subtotal_oferta), 'rl-num');
         celda(tr, pesos(p.ref_mediana), 'rl-num rl-angosto');
       }
+      vacio.hidden = items.status !== 'ok' || misItems.length > 0;
+      if (!tiene) return;
 
       // Opciones encontradas.
       const opciones = (mercado.status === 'ok' ? mercado.data : []).filter((m) => m.codigo === simulada)
@@ -752,7 +743,6 @@
         celda(tr, fecha(m.fecha_consulta, false), 'rl-angosto');
       }
       document.getElementById('sim-opciones-vacio').hidden = opciones.length > 0;
-      vacio.hidden = true;
     }
 
     function tablaPrecios() {
@@ -943,32 +933,21 @@
       if (!document.getElementById('precios').hidden) tablaPrecios();
     }
 
-    // Rutina de Claude (instrucciones en .claude/RUTINA.md del repositorio): el disparo
-    // programado o "Actualizar ahora" actualiza licitaciones, OC y presupuestos; "Buscar
-    // precios" le manda a la misma sesión solo las licitaciones que elegiste.
-    const RUTINA = 'trig_01DtbqBbzE4aZVmpAnVjPWXQ';
-    const SESION = 'session_01HLDCoyYdPYrisrzMmkrTvQ';
-    const REPO_ACTIONS = 'https://github.com/Yakazor/MercadoPublico/actions';
+    // Esta página no puede escribirle a Claude (claude.ai no deja que un artefacto le mande
+    // mensajes a una sesión), así que los pedidos de precios de tiendas se copian para
+    // pegarlos en el chat.
     const MAX_ELEGIDAS = 5;
-    const decir = (el, texto, link) => {
-      el.replaceChildren(document.createTextNode(texto));
-      if (link) el.append(' ', enlace(link[0], link[1]));
-    };
-    // Los pedidos los envía el Lanzador del Radar (una página propia que puede usar el
-    // conector «Claude Code Remote»; este dashboard no puede declararlo). Las licitaciones
-    // elegidas viajan en el # del link (solo letras, dígitos, guiones y ~ llegan al hash).
-    const LANZADOR = 'https://claude.ai/artifact/ESxwT22kMNenFRPEYoHwqw';
-    async function dispararRutina(codigos, boton, estadoEl, okTexto) {
-      const href = LANZADOR + (codigos.length ? '#' + codigos.join('~') : '');
-      decir(estadoEl, codigos.length
-        ? `Para enviar el pedido de ${codigos.join(', ')} abre el lanzador (se abre con esas licitaciones cargadas) y aprieta «Enviar pedido de precios». ${okTexto}`
-        : `Abre el lanzador y aprieta «Actualizar ahora». ${okTexto}`, ['Abrir el Lanzador del Radar', href]);
-      return true;
+    async function copiarPedido(codigos, estadoEl) {
+      const texto = 'busca precios de ' + codigos.join(', ');
+      let copiado = false;
+      try { await navigator.clipboard.writeText(texto); copiado = true; } catch (e) { /* sin portapapeles */ }
+      estadoEl.replaceChildren();
+      const b = document.createElement('b');
+      b.textContent = texto;
+      b.style.userSelect = 'all';
+      estadoEl.append(document.createTextNode(copiado ? 'Copiado: «' : 'Copia este texto: «'), b,
+        document.createTextNode('». Pégalo en el chat con Claude; en 10 a 30 minutos los precios de tiendas aparecen aquí (recarga la página).'));
     }
-
-    const botonActualizar = document.getElementById('boton-actualizar');
-    botonActualizar.addEventListener('click', () => dispararRutina([], botonActualizar, document.getElementById('estado-actualizar'),
-      'Tarda entre 30 y 80 minutos; cuando termine cambia la fecha de «Datos del» arriba (recarga la página).'));
 
     function barraElegidas() {
       const barra = document.getElementById('elegidas');
@@ -980,17 +959,9 @@
     }
     document.getElementById('elegidas-limpiar').addEventListener('click', () => { elegidas.clear(); barraElegidas(); dibujar(); });
     const botonElegidas = document.getElementById('elegidas-buscar');
-    botonElegidas.addEventListener('click', async () => {
-      const codigos = [...elegidas];
-      const ok = await dispararRutina(codigos, botonElegidas,
-        document.getElementById('elegidas-estado'),
-        `Después tarda entre 10 y 30 minutos; cuando termine aparecen con borde verde y en el simulador (recarga la página).`);
-      if (ok) { elegidas.clear(); dibujar(); document.getElementById('elegidas').hidden = false; document.getElementById('elegidas-texto').textContent = ''; }
-    });
-    const botonSim = document.getElementById('sim-pedir-boton');
-    botonSim.addEventListener('click', () => dispararRutina([simulada], botonSim,
-      document.getElementById('sim-pedir-estado'),
-      'Después tarda entre 10 y 30 minutos; cuando termine verás el presupuesto aquí (recarga la página).'));
+    botonElegidas.addEventListener('click', () => copiarPedido([...elegidas], document.getElementById('elegidas-estado')));
+    document.getElementById('sim-pedir-boton').addEventListener('click', () =>
+      copiarPedido([simulada], document.getElementById('sim-pedir-estado')));
 
     dash.onData(dibujar);
     const inicial = location.hash.slice(1);

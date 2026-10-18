@@ -8,7 +8,7 @@ name: Órdenes de compra históricas
 on:
   schedule:
     - cron: "11 9 * * *"
-  # "Actualizar ahora" (botón del dashboard / rutina de Claude): un push que solo
+  # "Actualizar ahora" (rutina de Claude): un push que solo
   # cambia .github/disparar/actualizar.txt lanza la corrida sin la API de GitHub.
   push:
     branches: [feature/api-mercadopublico]

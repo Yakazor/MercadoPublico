@@ -10,10 +10,10 @@ sigue los pasos desde el principio aunque esta conversación tenga pedidos anter
 
 Hay tres pedidos posibles:
 
-- **ACTUALIZACIÓN** (la rutina programada y el botón «Actualizar ahora»): datos de la
+- **ACTUALIZACIÓN** (la rutina programada o «actualiza el radar» en el chat): datos de la
   API, órdenes de compra, presupuestos y dashboard. **No** busca precios de mercado
   nuevos: cuestan tiempo y plan, y el usuario elige qué licitaciones presupuestar.
-- **PRECIOS para: <códigos>** (botón «Buscar precios» del dashboard o pedido en el chat):
+- **PRECIOS para: <códigos>** (pedido en el chat; el dashboard copia el texto «busca precios de …»):
   busca precios de mercado solo para esas licitaciones (máximo 5; si piden más, haz las
   5 primeras y dilo).
 - **PRUEBA**: no cambies nada; prueba cada herramienta (git push --dry-run, Artifact

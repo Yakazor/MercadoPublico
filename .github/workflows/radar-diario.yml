@@ -5,7 +5,7 @@ name: Radar diario de licitaciones
 on:
   schedule:
     - cron: "7 11 * * 1-5"
-  # "Actualizar ahora" (botón del dashboard / rutina de Claude): un push que solo
+  # "Actualizar ahora" (rutina de Claude): un push que solo
   # cambia .github/disparar/actualizar.txt lanza la corrida sin la API de GitHub.
   push:
     branches: [feature/api-mercadopublico]
