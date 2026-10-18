@@ -1,0 +1,177 @@
+<title>Lanzador del Radar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  /* Layout: una columna estrecha, dos acciones como bloques con su estado debajo. */
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --fg: #18202b; --muted: #5a6575; --line: #d8dde5;
+    --accent: #1f4f8f; --accent-fg: #ffffff; --ok: #1f7a46; --warn: #9a5b00; --bad: #b42318;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #11161d; --panel: #1a212b; --fg: #e6ebf2; --muted: #9aa6b6; --line: #2c3644;
+    --accent: #6ea3e6; --accent-fg: #0d1520; --ok: #5cc48a; --warn: #e0a64a; --bad: #ff8a80; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #11161d; --panel: #1a212b; --fg: #e6ebf2; --muted: #9aa6b6; --line: #2c3644;
+    --accent: #6ea3e6; --accent-fg: #0d1520; --ok: #5cc48a; --warn: #e0a64a; --bad: #ff8a80; color-scheme: dark }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.5;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .pagina { max-width: 640px; margin: 0 auto; padding-block: 28px 40px; display: grid; gap: 20px; }
+  h1 { font-size: 24px; font-weight: 600; margin: 0; text-wrap: balance; }
+  .bajada { margin: 4px 0 0; color: var(--muted); }
+  .accion { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: grid; gap: 12px; }
+  h2 { font-size: 16px; font-weight: 600; margin: 0; }
+  .accion p { margin: 0; color: var(--muted); }
+  label { font-size: 13px; font-weight: 500; letter-spacing: .02em; }
+  input { font: 500 15px var(--mono); padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg); color: var(--fg); width: 100%; box-sizing: border-box; }
+  .fila { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  button { font: 600 14px var(--sans); padding: 9px 16px; border-radius: 6px; border: 1px solid var(--accent);
+    background: var(--accent); color: var(--accent-fg); cursor: pointer; }
+  button.secundario { background: transparent; color: var(--accent); }
+  button:disabled { opacity: .55; cursor: wait; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .estado { font-size: 14px; min-height: 1.5em; }
+  .estado.ok { color: var(--ok); } .estado.aviso { color: var(--warn); } .estado.error { color: var(--bad); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font: 500 13px var(--mono); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+  .nota { font-size: 13px; color: var(--muted); margin: 0; }
+  a { color: var(--accent); }
+</style>
+
+<main class="pagina">
+  <header>
+    <h1>Lanzador del Radar</h1>
+    <p class="bajada">Envía pedidos a la rutina de Claude que mantiene tu Radar de Licitaciones. La primera vez claude.ai te pide permiso para usar el conector «Claude Code Remote».</p>
+  </header>
+
+  <section class="accion" aria-labelledby="t-precios">
+    <h2 id="t-precios">Buscar precios de mercado</h2>
+    <p>Claude busca en tiendas chilenas cada ítem de las licitaciones elegidas (máximo 5), guarda el presupuesto en el repositorio y GitHub verifica cada precio en la página de la tienda. Tarda entre 10 y 30 minutos.</p>
+    <label for="codigos">Códigos de licitación (separados por coma o espacio)</label>
+    <input id="codigos" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="3890-217-E226, 2366-31-LE26">
+    <div class="chips" id="chips" aria-live="polite"></div>
+    <div class="fila"><button id="b-precios" type="button">Enviar pedido de precios</button></div>
+    <div class="estado" id="e-precios" role="status"></div>
+  </section>
+
+  <section class="accion" aria-labelledby="t-actualizar">
+    <h2 id="t-actualizar">Actualizar ahora</h2>
+    <p>Corre el radar y las órdenes de compra en GitHub y rehace los presupuestos (30 a 80 minutos). Ocurre sola de lunes a viernes a las 8:50.</p>
+    <div class="fila"><button id="b-actualizar" class="secundario" type="button">Actualizar ahora</button></div>
+    <div class="estado" id="e-actualizar" role="status"></div>
+  </section>
+
+  <p class="nota">Al terminar, la rutina te avisa en el teléfono. Para ver los datos nuevos en el dashboard aprueba la subida en la sesión «Rutina: Actualizar Radar de Licitaciones» de la app de Claude. Si el envío no funciona, pídelo en el chat («busca precios de 3890-217-E226») o corre los workflows en <a href="https://github.com/Yakazor/MercadoPublico/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>.</p>
+</main>
+
+<script>
+  (() => {
+    const SERVIDOR = 'Claude Code Remote';
+    const SESION = 'session_01HLDCoyYdPYrisrzMmkrTvQ';
+    const RUTINA = 'trig_01DtbqBbzE4aZVmpAnVjPWXQ';
+    const DASHBOARD = 'https://claude.ai/artifact/AUMtv926GXLeg1H82EDWrn';
+    const MAX = 5;
+    const CODIGO = /^\d{1,8}-\d{1,5}-[A-Z0-9]{2,6}$/;
+
+    const $ = (id) => document.getElementById(id);
+    const input = $('codigos');
+
+    // El dashboard abre esta página con #COD1~COD2 (solo letras, dígitos y guiones llegan al hash).
+    try {
+      const h = decodeURIComponent((location.hash || '').slice(1));
+      if (h) input.value = h.split('~').join(', ');
+    } catch (e) { /* sin hash */ }
+
+    const leerCodigos = () => [...new Set(input.value.toUpperCase().split(/[\s,;~]+/).filter(Boolean))];
+    function pintarChips() {
+      const chips = $('chips');
+      chips.replaceChildren(...leerCodigos().map((c) => {
+        const s = document.createElement('span');
+        s.className = 'chip';
+        s.textContent = CODIGO.test(c) ? c : c + ' (?)';
+        return s;
+      }));
+    }
+    input.addEventListener('input', pintarChips);
+    pintarChips();
+
+    const decir = (el, texto, clase) => { el.textContent = texto; el.className = 'estado ' + (clase || ''); };
+
+    function explicarError(e) {
+      const code = e && e.code;
+      switch (code) {
+        case 'approval_required':
+        case 'not_in_manifest':
+          return ['El envío necesita tu permiso para usar «Claude Code Remote». Vuelve a apretar el botón y acepta el aviso de claude.ai.', 'aviso'];
+        case 'server_not_connected':
+        case 'needs_reauth':
+          return ['claude.ai no tiene disponible «Claude Code Remote» en esta vista. Abre la página desde claude.ai con tu cuenta, o pídelo en el chat.', 'error'];
+        case 'not_granted':
+        case 'capability_disabled':
+        case 'capability_removed':
+          return ['Esta vista no puede enviar pedidos. Ábrela desde claude.ai con tu cuenta, o pídelo en el chat.', 'error'];
+        case 'blocked_by_policy':
+          return ['La política de tu organización bloquea este envío. Pídelo en el chat.', 'error'];
+        case 'tool_error':
+          return ['La rutina no aceptó el pedido (puede que ya haya uno corriendo). Revisa en unos minutos o pídelo en el chat.', 'error'];
+        case 'server_unavailable':
+        case 'upstream_error':
+          return ['No se confirmó si el pedido llegó. Espera unos minutos antes de volver a enviarlo.', 'aviso'];
+        default:
+          return ['No se pudo enviar el pedido. Pídelo en el chat.', 'error'];
+      }
+    }
+
+    let mcpPromesa = null;
+    const obtenerMcp = () => (mcpPromesa ||= (window.claude && window.claude.use
+      ? window.claude.use('mcp').catch(() => null) : Promise.resolve(null)));
+
+    async function enviar(boton, estado, tool, args, okTexto) {
+      boton.disabled = true;
+      decir(estado, 'Enviando…');
+      const mcp = await obtenerMcp();
+      if (!mcp) {
+        decir(estado, 'Esta vista no puede enviar pedidos. Ábrela desde claude.ai con tu cuenta, o pídelo en el chat.', 'error');
+        boton.disabled = false;
+        return;
+      }
+      try {
+        await mcp.callTool(SERVIDOR, tool, args, { cache: false });
+        const hora = new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+        decir(estado, `Pedido enviado a las ${hora}. ${okTexto}`, 'ok');
+      } catch (e) {
+        const [texto, clase] = explicarError(e);
+        decir(estado, texto, clase);
+      } finally {
+        boton.disabled = false;
+      }
+    }
+
+    $('b-precios').addEventListener('click', () => {
+      const estado = $('e-precios');
+      const codigos = leerCodigos();
+      const malos = codigos.filter((c) => !CODIGO.test(c));
+      if (!codigos.length) return decir(estado, 'Escribe al menos un código de licitación.', 'aviso');
+      if (malos.length) return decir(estado, `Revisa estos códigos: ${malos.join(', ')}. El formato es como 3890-217-E226.`, 'aviso');
+      if (codigos.length > MAX) return decir(estado, `Elige hasta ${MAX} licitaciones por pedido (escribiste ${codigos.length}).`, 'aviso');
+      const mensaje =
+        `Pedido del usuario desde el Lanzador del Radar: PRECIOS para: ${codigos.join(', ')}. ` +
+        'Trae la rama al día (git fetch origin feature/api-mercadopublico, git checkout feature/api-mercadopublico y ' +
+        'git reset --hard origin/feature/api-mercadopublico, cada uno en su propia llamada) y sigue la sección «PRECIOS» ' +
+        'de .claude/RUTINA.md solo para esas licitaciones. El usuario te autoriza a subir mercado.json (y items.json si ' +
+        `cambió) a SU dashboard ${DASHBOARD} como último paso, según «Subir al dashboard». Responde en español con el resumen.`;
+      enviar($('b-precios'), estado, 'send_message', { session_id: SESION, message: mensaje },
+        'La rutina te avisa cuando termine (10 a 30 minutos).');
+    });
+
+    $('b-actualizar').addEventListener('click', () => {
+      const texto = 'Pedido del usuario desde el Lanzador del Radar: ACTUALIZACIÓN ahora. El usuario te autoriza a subir ' +
+        `licitaciones.json, precios.json, items.json, meta.json y mercado.json a SU dashboard ${DASHBOARD} como último paso.`;
+      enviar($('b-actualizar'), $('e-actualizar'), 'fire_trigger', { trigger_id: RUTINA, text: texto },
+        'Tarda entre 30 y 80 minutos; al final aprueba la subida al dashboard.');
+    });
+  })();
+</script>

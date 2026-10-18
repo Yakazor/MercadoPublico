@@ -303,6 +303,11 @@ instrucciones en `.claude/RUTINA.md`).
   en Actions → presupuestos → sube los datos al dashboard (20–80 min). Subir
   archivos a un artefacto pide tu aprobación en la app de Claude: la rutina deja
   todo lo demás hecho, te avisa y la subida es el último paso.
+- **Lanzador del Radar** (https://claude.ai/artifact/ESxwT22kMNenFRPEYoHwqw,
+  copia en `dashboard/lanzador.html`): los botones del dashboard lo abren con las
+  licitaciones elegidas y desde ahí un clic envía el pedido a la rutina por el
+  conector «Claude Code Remote» de claude.ai (el dashboard, por ser de un tipo
+  predefinido, no puede declarar conectores).
 - **Simular:** eliges las licitaciones (máx. 5) y la rutina busca precios en
   tiendas chilenas (workflow `.claude/workflows/precios-mercado-chile.js`, con
   links). Así solo se cotiza lo que te interesa: buscar cuesta tiempo y plan.

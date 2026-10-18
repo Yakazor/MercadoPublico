@@ -954,41 +954,21 @@
       el.replaceChildren(document.createTextNode(texto));
       if (link) el.append(' ', enlace(link[0], link[1]));
     };
+    // Los pedidos los envía el Lanzador del Radar (una página propia que puede usar el
+    // conector «Claude Code Remote»; este dashboard no puede declararlo). Las licitaciones
+    // elegidas viajan en el # del link (solo letras, dígitos, guiones y ~ llegan al hash).
+    const LANZADOR = 'https://claude.ai/artifact/ESxwT22kMNenFRPEYoHwqw';
     async function dispararRutina(codigos, boton, estadoEl, okTexto) {
-      const texto = codigos.length ? 'Busca precios de mercado para: ' + codigos.join(', ') : '';
-      boton.disabled = true;
-      decir(estadoEl, 'Enviando el pedido…');
-      let mcp = null;
-      try { mcp = window.claude && window.claude.use ? await window.claude.use('mcp') : null; } catch (e) { mcp = null; }
-      const sinBoton = 'Desde esta vista no se puede enviar el pedido. Pídemelo en el chat' + (texto ? ` («${texto}»)` : ' («actualiza el radar»)') + ' o corre los workflows en';
-      if (!mcp) { decir(estadoEl, sinBoton, ['GitHub Actions', REPO_ACTIONS]); boton.disabled = false; return false; }
-      try {
-        if (codigos.length) {
-          await mcp.callTool('Claude Code Remote', 'send_message', { session_id: SESION, message:
-            `Pedido: PRECIOS para: ${codigos.join(', ')}. Primero git fetch origin feature/api-mercadopublico && git checkout feature/api-mercadopublico && git reset --hard origin/feature/api-mercadopublico; luego sigue la sección «PRECIOS» y «Subir al dashboard» de .claude/RUTINA.md solo para esas licitaciones. Responde en español con el resumen.` });
-        } else {
-          await mcp.callTool('Claude Code Remote', 'fire_trigger', { trigger_id: RUTINA });
-        }
-        const hora = new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
-        decir(estadoEl, `Pedido enviado a las ${hora}. ${okTexto}`);
-        boton.disabled = false;
-        return true;
-      } catch (e) {
-        const code = e && e.code;
-        // El conector que usa el botón no está disponible en claude.ai: el pedido va por chat.
-        if (code === 'server_not_connected' || code === 'needs_reauth') decir(estadoEl, sinBoton.replace(' o corre los workflows en', '. La actualización automática de lunes a viernes sigue funcionando; también puedes correr los workflows en'), ['GitHub Actions', REPO_ACTIONS]);
-        else if (code === 'approval_required') decir(estadoEl, 'Hay que aprobar el permiso que pide claude.ai para enviar el pedido; vuelve a apretar el botón y acepta.');
-        else if (code === 'not_granted' || code === 'capability_disabled') decir(estadoEl, sinBoton, ['GitHub Actions', REPO_ACTIONS]);
-        else if (code === 'tool_error') decir(estadoEl, 'El pedido no se pudo iniciar (puede que ya haya uno corriendo). Revisa en unos minutos o pídemelo en el chat.');
-        else decir(estadoEl, 'No se confirmó si el pedido partió (la conexión falló). Espera unos minutos antes de volver a apretar.');
-        boton.disabled = false;
-        return false;
-      }
+      const href = LANZADOR + (codigos.length ? '#' + codigos.join('~') : '');
+      decir(estadoEl, codigos.length
+        ? `Para enviar el pedido de ${codigos.join(', ')} abre el lanzador (se abre con esas licitaciones cargadas) y aprieta «Enviar pedido de precios». ${okTexto}`
+        : `Abre el lanzador y aprieta «Actualizar ahora». ${okTexto}`, ['Abrir el Lanzador del Radar', href]);
+      return true;
     }
 
     const botonActualizar = document.getElementById('boton-actualizar');
     botonActualizar.addEventListener('click', () => dispararRutina([], botonActualizar, document.getElementById('estado-actualizar'),
-      'Tarda entre 30 y 60 minutos; cuando termine cambia la fecha de «Datos del» arriba (recarga la página).'));
+      'Tarda entre 30 y 80 minutos; cuando termine cambia la fecha de «Datos del» arriba (recarga la página).'));
 
     function barraElegidas() {
       const barra = document.getElementById('elegidas');
@@ -1004,13 +984,13 @@
       const codigos = [...elegidas];
       const ok = await dispararRutina(codigos, botonElegidas,
         document.getElementById('elegidas-estado'),
-        `Busco precios de ${codigos.length} licitación${codigos.length === 1 ? '' : 'es'}: tarda entre 10 y 20 minutos cada una. Cuando termine aparecen con borde verde y en el simulador (recarga la página).`);
+        `Después tarda entre 10 y 30 minutos; cuando termine aparecen con borde verde y en el simulador (recarga la página).`);
       if (ok) { elegidas.clear(); dibujar(); document.getElementById('elegidas').hidden = false; document.getElementById('elegidas-texto').textContent = ''; }
     });
     const botonSim = document.getElementById('sim-pedir-boton');
     botonSim.addEventListener('click', () => dispararRutina([simulada], botonSim,
       document.getElementById('sim-pedir-estado'),
-      'Busco sus precios: tarda entre 10 y 20 minutos. Cuando termine verás el presupuesto aquí (recarga la página).'));
+      'Después tarda entre 10 y 30 minutos; cuando termine verás el presupuesto aquí (recarga la página).'));
 
     dash.onData(dibujar);
     const inicial = location.hash.slice(1);
