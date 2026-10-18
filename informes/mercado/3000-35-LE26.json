@@ -26,9 +26,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 5873.95,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio de listado; diámetro (6 cm vs 60 cm pedido) sin confirmar.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 6990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $6.990."
     }
    ]
   },
@@ -47,9 +50,12 @@
      "unidades_equivalentes": 2,
      "precio_unitario_neto": 4197.48,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Se vende por par: 2 vendas.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 10000.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $10.000."
     },
     {
      "tienda": "Paris",
@@ -63,7 +69,8 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Se vende por par: 2 vendas.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -82,9 +89,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 13436.97,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Largo 68 cm no confirmado en resultado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 15990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $15.990."
     },
     {
      "tienda": "Paris",
@@ -98,7 +108,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Largo 68 cm no confirmado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -124,9 +135,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 10075.63,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Listado; no se indica si es engomada.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $11.990."
     },
     {
      "tienda": "Paris (Ultimate Fitness)",
@@ -140,7 +154,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Cemento con cubierta plástica, no goma.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -154,7 +169,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Cemento, no confirma engomada.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -173,9 +189,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio 'desde' del listado; no confirma engomada.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     }
    ]
   },
@@ -194,9 +213,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 13436.97,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio 'desde' del listado; no confirma engomada.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 15741.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $15.741."
     }
    ]
   },
@@ -229,9 +251,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 8394.96,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Incluye accesorios; el mismo producto con otros vendedores desde $31.690.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 9990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $9.990."
     },
     {
      "tienda": "Falabella (FITNICS)",
@@ -243,9 +268,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 15949.58,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Colores/kg exactos no confirmados.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 18980.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $18.980."
     }
    ]
   },
@@ -301,7 +329,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Precio de listado; talla M no confirmada.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Lider (LINEASPORT.CL)",
@@ -315,7 +344,9 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Cabezal con mica no confirmado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 17490.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $17.490, no $16.490: puede haber cambiado."
     }
    ]
   },
@@ -404,9 +435,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 5873.95,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio de listado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 6990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $6.990."
     },
     {
      "tienda": "Falabella (Toolpro)",
@@ -418,9 +452,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 49571.43,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Marca profesional, mucho más cara.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 60000.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $60.000."
     }
    ]
   },
@@ -441,7 +478,9 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Medidas exactas no confirmadas.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 89900.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $89.900, no $70.990: puede haber cambiado."
     }
    ]
   },
@@ -476,7 +515,8 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Revestimiento de goma no confirmado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -504,7 +544,9 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Orificio olímpico 50 mm, no preolímpico; pack de 4 asumido.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 34990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $34.990, no $31.990: puede haber cambiado."
     }
    ]
   },
@@ -609,7 +651,8 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Carga 1-20 kg; placas de acero no confirmadas.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -642,9 +685,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 42008.4,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Fútbol sala, no se confirma 4 capas/450 g.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 50000.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $50.000."
     }
    ]
   },
@@ -721,9 +767,15 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "No es el Tango; marca Train similar, termosellado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 22,
+  "verificadas": 11
+ }
 }

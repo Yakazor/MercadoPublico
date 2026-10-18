@@ -11,5 +11,10 @@
    "nota": "Ítem es un cóctel para ceremonia (servicio), no un producto de aseo; no aplica.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

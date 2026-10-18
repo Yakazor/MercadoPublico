@@ -22,7 +22,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Sin teclado ni mouse; spec del comprador no conocida.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Paris (CompuElite)",
@@ -36,9 +37,15 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Sin teclado ni mouse; spec del comprador no conocida.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 2,
+  "verificadas": 0
+ }
 }

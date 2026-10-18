@@ -81,5 +81,10 @@
    "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

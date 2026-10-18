@@ -19,9 +19,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 307554.62,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Especificación del comprador no definida",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 360990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $360.990."
     }
    ]
   },
@@ -47,9 +50,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 75621.85,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Panel VA",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 90000.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $90.000."
     },
     {
      "tienda": "Lider (GASEI)",
@@ -61,12 +67,20 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 84025.21,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 99990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $99.990."
     }
    ],
    "nota": "Especificación no definida; se asume 24\"."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 3,
+  "verificadas": 3
+ }
 }

@@ -22,9 +22,15 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Solo cubre un componente (grapas/corchetera); el kit completo está en decreto de bases no visible.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 404."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

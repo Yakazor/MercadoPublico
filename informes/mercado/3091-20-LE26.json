@@ -18,5 +18,10 @@
    "nota": "Global con presupuesto máx. $5.000.000; sin detalle; sin precios chilenos.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -26,12 +26,20 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 307554.62,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Especificación del comprador no definida",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 360990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $360.990."
     }
    ],
    "nota": "Según bases; se asume tablet 11\"."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

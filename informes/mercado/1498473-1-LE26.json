@@ -60,5 +60,10 @@
    "opciones": [],
    "nota": "No se encontraron precios en tiendas chilenas para estas colecciones editoriales específicas; requiere cotización con editoriales/distribuidoras."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -11,5 +11,10 @@
    "nota": "Global según EETT no disponibles; no se puede cotizar.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

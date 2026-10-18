@@ -35,9 +35,9 @@
      "verificado": true,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda indexada muestra la URL y el precio de $3.790. No confirma el stock ni el largo de 13-14 cm.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-17",
+     "verificado_en": "2026-10-18",
      "precio_pagina": 3790.0,
-     "verificacion_pagina": "2026-10-18: no se pudo abrir la página (ConnectTimeout)."
+     "verificacion_pagina": "2026-10-18: la página muestra $3.790."
     },
     {
      "tienda": "Nacional (nacional.cl)",
@@ -88,8 +88,8 @@
      "verificado": false,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma un precio mayorista de $890 y un precio de oferta de $990. El mayorista puede exigir un mínimo, aunque 300 cajas probablemente lo cumple.",
      "fecha_consulta": "2026-10-17",
-     "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $990, no $890: puede haber cambiado."
+     "precio_pagina": 790.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $790, no $890: puede haber cambiado."
     },
     {
      "tienda": "Torre (tienda oficial torre.cl)",

@@ -25,5 +25,10 @@
    "nota": "Especificación en bases técnicas (modelos no indicados); no se puede buscar.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

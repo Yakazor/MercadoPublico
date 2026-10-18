@@ -11,5 +11,10 @@
    "nota": "Servicio de provisión e instalación de estación de trabajo; sin especificación.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

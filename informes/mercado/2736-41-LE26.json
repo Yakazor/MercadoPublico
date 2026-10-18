@@ -20,9 +20,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 92428.57,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Cubre solo el monitor; el resto de los artículos del ítem no está cotizado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 109990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $109.990."
     },
     {
      "tienda": "Paris",
@@ -36,9 +39,15 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Cubre solo el monitor.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 2,
+  "verificadas": 1
+ }
 }

@@ -21,7 +21,8 @@
      "coincidencia": "exacta",
      "verificado": false,
      "nota": "Mango plástico; también publicado en Paris.cl",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -40,9 +41,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 42008.4,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio visto entre 49.990 y 66.515",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 49990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -54,9 +58,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 52550.42,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 62535.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $62.535."
     }
    ],
    "nota": "No se confirmó rueda de caucho macizo en los resultados; verificar ficha."
@@ -78,7 +85,9 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Vendedor externo; mango no confirmado",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 2490.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $2.490, no $2.890: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -90,9 +99,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 6714.29,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Mango no confirmado en resultado",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 7990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $7.990."
     }
    ]
   },
@@ -111,9 +123,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Forjado no confirmado",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     }
    ]
   },
@@ -132,9 +147,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     }
    ],
    "nota": "No se encontró modelo de 28 pulgadas exacto."
@@ -154,9 +172,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 5033.61,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 5990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $5.990."
     }
    ]
   },
@@ -175,9 +196,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4193.28,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 4990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $4.990."
     },
     {
      "tienda": "Sodimac",
@@ -189,9 +213,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 10920.17,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $12.990."
     }
    ]
   },
@@ -226,7 +253,9 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "18\" en vez de 16\"",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 7990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $7.990, no $7.690: puede haber cambiado."
     }
    ],
    "nota": "No hay modelo de 16\" en Sodimac; solo 18\" y 24\"."
@@ -246,9 +275,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 100831.93,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Publicación patrocinada de vendedor externo",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 120900.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $120.900."
     }
    ],
    "nota": "Se asume tineta de 4 galones."
@@ -270,7 +302,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Medida 60x90 en vez de 45x90",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -284,7 +317,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Medida 60x90",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ],
    "nota": "No se encontró 45x90; solo 60x90 (aproximada)."
@@ -306,7 +340,9 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 18990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $18.990, no $17.990: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -318,9 +354,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 26882.35,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 31990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $31.990."
     }
    ]
   },
@@ -339,12 +378,20 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 1672.27,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 1990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $1.990."
     }
    ],
    "nota": "No se encontró tipo abanico con cerdas largas."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 17,
+  "verificadas": 11
+ }
 }

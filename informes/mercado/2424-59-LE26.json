@@ -19,9 +19,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 5873.95,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 6990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $6.990."
     },
     {
      "tienda": "Sodimac",
@@ -33,12 +36,20 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 11756.3,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 13990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $13.990."
     }
    ],
    "nota": "Ítem global; se muestra solo referencia unitaria del producto principal."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 2,
+  "verificadas": 2
+ }
 }

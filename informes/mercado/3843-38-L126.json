@@ -11,5 +11,10 @@
    "opciones": [],
    "nota": "No se hallaron precios en tiendas chilenas; requiere cotizar con distribuidores."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

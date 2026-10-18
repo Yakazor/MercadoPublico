@@ -11,5 +11,10 @@
    "nota": "Vestuario sin detalle de prendas ni tallas.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

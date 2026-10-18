@@ -27,9 +27,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 546134.45,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Se asume Global = 1 contrabajo.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 649900.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $649.900."
     }
    ]
   },
@@ -40,5 +43,10 @@
    "nota": "Sin precios en CLP en resultados (solo tiendas alemanas; el blog de Mercado Libre Chile no muestra precios).",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

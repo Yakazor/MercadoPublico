@@ -11,5 +11,10 @@
    "opciones": [],
    "nota": "Sin resultados: se alcanzó el límite de búsquedas de la sesión (session limit) antes de buscar este ítem; queda pendiente. Además el ítem remite a bases/listado adjunto sin detalle del producto."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

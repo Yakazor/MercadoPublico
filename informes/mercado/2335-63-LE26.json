@@ -20,9 +20,12 @@
      "unidades_equivalentes": 50,
      "precio_unitario_neto": 201.51,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Gasa no tejida, no tejida+algodón; no se confirma vencimiento >24 meses.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $11.990."
     }
    ]
   },
@@ -44,7 +47,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Gasa no tejida + algodón; el comprador pide gasa tejida. Vencimiento no confirmado. Precio de listado, hay ofertas ~3.490.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -73,7 +77,8 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Se asume unidad de licitación = sobre x2 (50 por caja). Si la unidad fuera la gasa, dividir por 2. Precio de listado, se vio también a ~3.350.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Falabella (Cranberry)",
@@ -85,9 +90,12 @@
      "unidades_equivalentes": 50,
      "precio_unitario_neto": 78.82,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Se asume unidad = sobre x2.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 4690.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $4.690."
     }
    ]
   },
@@ -107,9 +115,12 @@
      "unidades_equivalentes": 50,
      "precio_unitario_neto": 201.51,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Misma medida y tipo; empaque no confirmado como sobre x2.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $11.990."
     },
     {
      "tienda": "Salcobrand",
@@ -121,9 +132,12 @@
      "unidades_equivalentes": 6,
      "precio_unitario_neto": 700.14,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio farmacia; no se confirma que sea no tejida.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 4999.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $4.999."
     }
    ]
   },
@@ -143,9 +157,12 @@
      "unidades_equivalentes": 50,
      "precio_unitario_neto": 262.02,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Rotación 360° estéril; en Mercado Libre se vio el mismo producto entre $11.990 y $13.390.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 15590.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $15.590."
     }
    ]
   },
@@ -188,7 +205,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "No se confirma 100% silicona grado médico ni conexión hermética. Licitación pide \"Caja\" (tamaño no indicado); precio por sonda individual. Rango visto $3.200-4.700.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -217,7 +235,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "No se confirma sin polvo ni grado de examinación; verificar. Marcas Tresor/Semper Care $7.990-8.390 en el mismo listado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Falabella",
@@ -229,9 +248,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 3773.11,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Uso piscina/general; verificar sin polvo y grado examinación.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 4490.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $4.490."
     }
    ]
   },
@@ -253,7 +275,9 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Precio con 31% de descuento en listado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 5990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $5.990, no $6.190: puede haber cambiado."
     },
     {
      "tienda": "Falabella (PuntoMed)",
@@ -267,7 +291,9 @@
      "coincidencia": "equivalente",
      "verificado": false,
      "nota": "Listado Falabella.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 5990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $5.990, no $6.590: puede haber cambiado."
     }
    ]
   },
@@ -289,7 +315,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Verificar sin polvo y uso médico.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -311,7 +338,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Material no indicado en la publicación (podría ser látex, no sintético).",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Falabella",
@@ -323,9 +351,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 56789.92,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Policloropreno = sintético sin látex; listado de categoría, verificar vendedor y marca.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 67580.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $67.580."
     }
    ]
   },
@@ -347,7 +378,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Material/polvo no confirmados (probable látex); precio con cupón de $5.000 según listado.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -361,9 +393,15 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Material no confirmado (sintético vs látex); en otro listado $35.000.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 17,
+  "verificadas": 7
+ }
 }

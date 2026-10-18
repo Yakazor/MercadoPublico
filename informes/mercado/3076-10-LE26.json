@@ -19,9 +19,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 28487.39,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Colores/formato según bases no detallado",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 33950.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $33.950."
     },
     {
      "tienda": "Sodimac",
@@ -35,10 +38,17 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 40000.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $40.000, no $37.990: puede haber cambiado."
     }
    ],
    "nota": "Supuesto: esmalte 1 galón."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 2,
+  "verificadas": 1
+ }
 }

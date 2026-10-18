@@ -19,9 +19,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 17638.66,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Vendedor Andesland; sin logo ni especificación de seguridad",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 20990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $20.990."
     }
    ]
   },
@@ -47,9 +50,12 @@
      "unidades_equivalentes": 2,
      "precio_unitario_neto": 12180.67,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 28990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $28.990."
     }
    ],
    "nota": "Solo se halló pack de 2 softshell; no equivale a impermeable total."
@@ -78,7 +84,9 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 10990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $10.990, no $8.990: puede haber cambiado."
     }
    ],
    "nota": "Solo se halló capa de agua (una pieza), no traje de dos piezas."
@@ -90,5 +98,10 @@
    "opciones": [],
    "nota": "Sin precios chilenos públicos; requiere cotización con distribuidores."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 3,
+  "verificadas": 2
+ }
 }

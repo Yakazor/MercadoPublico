@@ -19,9 +19,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 11756.3,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Hoja/mango 130 cm; verificar largo de hoja 15-20 cm",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 13990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $13.990."
     },
     {
      "tienda": "Ferretería Saint Germain (Sodimac.cl)",
@@ -33,9 +36,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 14277.31,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Mango de eucalipto, largo no confirmado",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 16990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $16.990."
     }
    ]
   },
@@ -54,9 +60,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4193.28,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Largo/material del mango no confirmado (pide mango metal 120 cm)",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 4990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $4.990."
     }
    ]
   },
@@ -75,9 +84,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Tipo de corte y capacidad 35-40 mm no confirmados",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     },
     {
      "tienda": "Sodimac",
@@ -89,9 +101,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 14243.7,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio en listado entre 16.950 y 18.950; modelo y capacidad no confirmados",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 16990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $16.990."
     }
    ]
   },
@@ -110,9 +125,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 9092.44,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Marca no Truper; largo de mango no confirmado",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 10990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $10.990."
     }
    ]
   },
@@ -147,7 +165,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Medida distinta y sin UV confirmado; cotizar fabricante de rafia para 200 un.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -168,7 +187,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Asume 10 pares por pack (no aclarado); cabritilla sin recubrimiento nitrilo",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Falabella (Metalfer)",
@@ -180,9 +200,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4453.78,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Descarne, más largo (soldador)",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 5300.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $5.300."
     }
    ]
   },
@@ -201,9 +224,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4193.28,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Largo 2,44 m, no 2,60 m",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 4890.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $4.890."
     },
     {
      "tienda": "Easy",
@@ -217,7 +243,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Largo 2,4 m, no 2,60 m",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -236,9 +263,12 @@
      "unidades_equivalentes": 0.6,
      "precio_unitario_neto": 12313.73,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Equivale a 0,6 de rollo de 100 m; la bases aceptan 4.000 m totales",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $8.990."
     },
     {
      "tienda": "Easy",
@@ -252,7 +282,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Equivale a 0,1 de rollo de 100 m",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -273,9 +304,15 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Versión lente claro; se pide gris humo. Confirmar disponibilidad gris",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 14,
+  "verificadas": 9
+ }
 }

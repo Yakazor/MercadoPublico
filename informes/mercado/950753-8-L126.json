@@ -11,5 +11,10 @@
    "nota": "Servicio de impresión/imprenta a medida; requiere cotización con imprentas, no hay precio de tienda.",
    "opciones": []
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

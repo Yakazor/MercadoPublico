@@ -27,9 +27,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 42008.4,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Silla escritorio infantil Gato Just Home; la licitación pide escritorios y sillas según bases (no visibles).",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 49990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -41,9 +44,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 58815.13,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio de listado; especificación real está en bases técnicas (no visibles).",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 69990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $69.990."
     }
    ]
   },
@@ -63,9 +69,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 302512.61,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Supuesto: 1 equipo 12000 BTU; no incluye instalación (Sodimac cobra aprox. 129.990 aparte).",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 359990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $359.990."
     },
     {
      "tienda": "Sodimac",
@@ -77,9 +86,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 363857.14,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Supuesto: 1 equipo 12000 BTU; sin instalación.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 430990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $430.990."
     }
    ]
   },
@@ -99,11 +111,19 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 20159.66,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio visto en listado de escaños y bancos de jardín (modelo no identificado); medidas y material según bases no verificados.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 23990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $23.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 5,
+  "verificadas": 5
+ }
 }

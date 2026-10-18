@@ -20,9 +20,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 27722.69,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Sin logos impresos; la impresión personalizada se cotiza aparte.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 32990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $32.990."
     },
     {
      "tienda": "Paris",
@@ -36,7 +39,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Sin logos impresos; lona impermeable UV.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificacion_pagina": "2026-10-18: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -58,7 +62,9 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Precio de página de listado; medidas exactas pedidas en anexo no verificadas.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "precio_pagina": 21990.0,
+     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $21.990, no $22.990: puede haber cambiado."
     }
    ]
   },
@@ -78,11 +84,19 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Silla plegable Colvin vista en listado; especificaciones del anexo no verificadas.",
-     "fecha_consulta": "2026-10-18"
+     "fecha_consulta": "2026-10-18",
+     "verificado_en": "2026-10-18",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-18: la página muestra $14.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-18",
+  "opciones": 4,
+  "verificadas": 2
+ }
 }
