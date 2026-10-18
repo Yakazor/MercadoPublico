@@ -8,15 +8,15 @@ El radar, con los 9 rubros de config.yaml, detecta 177 de las 1.200 licitaciones
 
 | Rubro | Palabras clave | Vigentes hoy |
 |---|---:|---:|
-| Insumos médicos no regulados y aseo | 60 | 50 |
-| Mobiliario de oficina, escolar y almacenaje | 33 | 34 |
-| Artículos de oficina y librería | 41 | 15 |
-| Computación y electrónica | 40 | 56 |
-| Ferretería y herramientas | 34 | 26 |
-| Electrodomésticos, hogar y menaje | 40 | 15 |
+| Insumos médicos no regulados y aseo | 60 | 47 |
+| Mobiliario de oficina, escolar y almacenaje | 33 | 30 |
+| Artículos de oficina y librería | 43 | 15 |
+| Computación y electrónica | 40 | 53 |
+| Ferretería y herramientas | 34 | 25 |
+| Electrodomésticos, hogar y menaje | 40 | 8 |
 | Vestuario, uniformes y textiles | 26 | 51 |
-| Deporte, juguetes y material didáctico | 15 | 52 |
-| Consultoría en gestión, BI y control de gestión | 42 | 3 |
+| Deporte, juguetes y material didáctico | 15 | 53 |
+| Consultoría en gestión, BI y control de gestión | 42 | 2 |
 
 ## Grupos que podrías agregar
 
@@ -165,4 +165,4 @@ Ordenados por cantidad de licitaciones. «Detecta el radar» es la parte de ese 
 - **71 Servicios de perforación de minería, petróleo y gas:** Servicios de mantenimiento, construcción y perforación de pozos (1); Servicios de recuperación de pozos de gas y petróleo (1)
 - **94 Organizaciones sociales, laborales y clubes:** Organizaciones, asociaciones y movimientos cívicos (1)
 
-_Generado con `scripts/informe_grupos.py` a partir del censo (`scripts/censo_rubros.py`, workflow «Censo de grupos de licitaciones»). Actualizado: 2026-10-17._
+_Generado con `scripts/informe_grupos.py` a partir del censo (`scripts/censo_rubros.py`, workflow «Censo de grupos de licitaciones»). Actualizado: 2026-10-18._
