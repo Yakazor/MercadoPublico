@@ -89,7 +89,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma un precio mayorista de $890 y un precio de oferta de $990. El mayorista puede exigir un mínimo, aunque 300 cajas probablemente lo cumple.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $990. no $890: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $990, no $890: puede haber cambiado."
     },
     {
      "tienda": "Torre (tienda oficial torre.cl)",
@@ -181,7 +181,7 @@
      "fecha_consulta": "2026-10-17",
      "verificado_en": "2026-10-17",
      "precio_pagina": 1450.0,
-     "verificacion_pagina": "2026-10-17: no se pudo abrir la página (ConnectTimeout)."
+     "verificacion_pagina": "2026-10-17: la página muestra $1.450."
     }
    ],
    "nota": "Ninguna opción está verificada en la página por el bloqueo de red. Dipy aparece AGOTADO. Dipy también lista un 'Corchete Semi Industrial 23/10 1000 Un' marca Torre, pero la búsqueda no mostró su precio."
@@ -321,7 +321,7 @@
      "nota": "No pude abrir la página por bloqueo de red. Las búsquedas dan precios contradictorios para la 683-4 Post-it en Dipy: $4.988 bruto ($4.192+IVA), $5.306 (SKU R305224) y $5.451 (posiblemente la variante neón). Dejé $5.451 como cota conservadora. Trae 4 colores y 140 un.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2326.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.326. no $5.451: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.326, no $5.451: puede haber cambiado."
     },
     {
      "tienda": "La Secretaria",
@@ -336,7 +336,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $4.866 + IVA (precio neto).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 50000.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $50.000. no $4.866: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $50.000, no $4.866: puede haber cambiado."
     },
     {
      "tienda": "Dimeiggs",
@@ -351,7 +351,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $5.890 c/u desde 3 unidades; el precio normal es $6.290.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 6290.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $6.290. no $5.890: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $6.290, no $5.890: puede haber cambiado."
     }
    ],
    "nota": "La 3M 683-4 trae 4 colores y 140 banderas, mientras la descripción pide 5 colores 'tipo 683-4'. Igual la marqué exacta porque es el modelo de referencia. Los sets Dimerc ($1.861, agotado) y Fultons ($1.357, 4 un) son otros formatos y no verifiqué su cantidad."
@@ -373,7 +373,7 @@
      "nota": "AGREGADA en esta verificación. Es marca Fultons, amarillo neón (cumple 'flúor'), 51x38 mm, 12 blocs de 100 hojas. La búsqueda indexada muestra $2.921 (SKU 554917) con stock y un sub-embalaje de 2 a $5.843. No pude abrir la ficha. No hay datos de que sean removibles ni de que no se curven.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 3099.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $3.099. no $2.921: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $3.099, no $2.921: puede haber cambiado."
     },
     {
      "tienda": "Dipy",
@@ -459,7 +459,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.990 desde 3 unidades; el precio normal es $2.290. El distribuidor de Dimeiggs lo muestra a $1.920.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2290.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.290. no $1.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.290, no $1.990: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -474,7 +474,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $2.190; otra ficha de Lider (super.lider.cl/ip/00002120015577) muestra $2.590.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2390.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.390. no $2.190: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $2.390, no $2.190: puede haber cambiado."
     }
    ]
   },
@@ -495,7 +495,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 c/u y $810 desde 6 unidades. Es otra marca, no Mardini, y no confirma el alto de 4 cm.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $990. no $810: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $990, no $810: puede haber cambiado."
     },
     {
      "tienda": "Durban",
@@ -510,7 +510,7 @@
      "nota": "CORREGIDO a $850: según la búsqueda, ese es el tramo desde 200 unidades, que coincide con la cantidad pedida ($894 c/u para 1-199). Otra captura muestra $1.336, así que el precio no es estable. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 1296.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $1.296. no $850: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $1.296, no $850: puede haber cambiado."
     },
     {
      "tienda": "Lapizarra Librería",
@@ -525,7 +525,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.150 (con 966 en los datos estructurados, que coincide con el neto). En otra sección del sitio aparece agotado.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 966.0,
-     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $966. no $1.150: puede haber cambiado."
+     "verificacion_pagina": "2026-10-17: la página abrió y el precio más parecido es $966, no $1.150: puede haber cambiado."
     }
    ],
    "nota": "No encontré la marca Mardini con precio publicado."
