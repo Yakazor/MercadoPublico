@@ -1,0 +1,67 @@
+{
+ "codigo": "3890-217-E226",
+ "nombre": "ADQ. SILLAS EJEC. PARA UNIDADES MUNICIPALES FREIRE",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sillas de escritorio ejecutivas (precio por silla; la cantidad está en las bases)",
+   "nota": "La línea viene como «1 Global» con presupuesto de $2.300.000 IVA incluido: el presupuesto muestra el costo de UNA silla. Revisa en las bases cuántas sillas piden y sus especificaciones (respaldo, brazos, malla o cuero) y multiplica.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla Escritorio Ergonómica Nora negra",
+     "url": "https://www.sodimac.cl/sodimac-cl/seleccion/silla-ejecutiva",
+     "precio": 49990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio del listado de búsqueda de Sodimac (página de selección, no ficha del producto).",
+     "precio_unitario_neto": 42008.4,
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla Escritorio Ejecutiva Malla negra",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat1050046/sillas-de-escritorio",
+     "precio": 64990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio del listado de categoría de Sodimac.",
+     "precio_unitario_neto": 54613.45,
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla Escritorio PC Ergonómica Leon negra",
+     "url": "https://www.sodimac.cl/sodimac-cl/seleccion/silla-ejecutiva",
+     "precio": 109990,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Gama media-alta.",
+     "precio_unitario_neto": 92428.57,
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Silla ejecutiva oficina Vic verde claro",
+     "url": "https://www.lider.cl/ip/articulos-de-oficina-y-papeleria/silla-ejecutiva-oficina-vic-verde-claro/00073637223458",
+     "precio": 119900,
+     "iva_incluido": true,
+     "unidades_equivalentes": 1,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Garantía 24 meses según el resultado de búsqueda.",
+     "precio_unitario_neto": 100756.3,
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

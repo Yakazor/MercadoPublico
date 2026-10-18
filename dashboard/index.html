@@ -975,8 +975,8 @@
         return true;
       } catch (e) {
         const code = e && e.code;
-        if (code === 'server_not_connected') decir(estadoEl, 'Para usar el botón agrega el conector «Claude Code Remote» en claude.ai (Configuración → Conectores) y vuelve a intentar. También puedes pedírmelo en el chat.');
-        else if (code === 'needs_reauth') decir(estadoEl, 'El conector «Claude Code Remote» pide volver a iniciar sesión en claude.ai (Configuración → Conectores).');
+        // El conector que usa el botón no está disponible en claude.ai: el pedido va por chat.
+        if (code === 'server_not_connected' || code === 'needs_reauth') decir(estadoEl, sinBoton.replace(' o corre los workflows en', '. La actualización automática de lunes a viernes sigue funcionando; también puedes correr los workflows en'), ['GitHub Actions', REPO_ACTIONS]);
         else if (code === 'approval_required') decir(estadoEl, 'Hay que aprobar el permiso que pide claude.ai para enviar el pedido; vuelve a apretar el botón y acepta.');
         else if (code === 'not_granted' || code === 'capability_disabled') decir(estadoEl, sinBoton, ['GitHub Actions', REPO_ACTIONS]);
         else if (code === 'tool_error') decir(estadoEl, 'El pedido no se pudo iniciar (puede que ya haya uno corriendo). Revisa en unos minutos o pídemelo en el chat.');

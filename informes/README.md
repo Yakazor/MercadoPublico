@@ -12,5 +12,6 @@ Actualizado: 2026-10-18. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado |
 |---|---|---|---:|---:|---:|---:|---:|
+| [3890-217-E226](presupuestos/3890-217-E226.md) ADQ. SILLAS EJEC. PARA UNIDADES MUNICIPALES FREIRE | Mobiliario de oficina, escolar y almacenaje | 2026-10-23 | 1/1 | $44.109 | $62.987 | $8.822 | $2.300.000 |
 | [2366-31-LE26](presupuestos/2366-31-LE26.md) TONER SIMILAR-EQUIV. HP Y BROTHER IMP. - SC N.45 | Artículos de oficina y librería | 2026-10-23 | 9/9 | $8.863.266 | $12.656.744 | $1.772.653 | $29.393.000 |
 | [2460-137-LE26](presupuestos/2460-137-LE26.md) Adquisición de Insumos de Escritorio | Artículos de oficina y librería | 2026-10-26 | 12/13 | $8.020.211 | $11.452.862 | $1.604.042 | $7.470.140 |
