@@ -181,7 +181,7 @@
      "fecha_consulta": "2026-10-17",
      "verificado_en": "2026-10-17",
      "precio_pagina": 1450.0,
-     "verificacion_pagina": "2026-10-17: la página muestra $1.450."
+     "verificacion_pagina": "2026-10-17: no se pudo abrir la página (ConnectTimeout)."
     }
    ],
    "nota": "Ninguna opción está verificada en la página por el bloqueo de red. Dipy aparece AGOTADO. Dipy también lista un 'Corchete Semi Industrial 23/10 1000 Un' marca Torre, pero la búsqueda no mostró su precio."
