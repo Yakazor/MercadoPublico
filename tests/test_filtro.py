@@ -798,6 +798,13 @@ def test_real_items_oc_de_reventa(real, producto, categoria, rubro):
     ("Equipamiento de cocina para casino", "hogar_menaje"),
     ("Servidores NAS y UPS para la universidad", "computacion_electronica"),
     ("Curso de Excel avanzado y Power BI para funcionarios", "consultoria_gestion_bi"),
+    # Siguen entrando (radar del 18-10)
+    ("ADQUISICION 10 BATERIAS TB65 Y 01 ESTACION CARGA", "construccion_electricos"),
+    ("ADQ. PUERTAS PARA DEPENDENCIAS DE LA DEAOPERPOL", "construccion_electricos"),
+    ("Adquisición de Tubos Corrugados PAD HDPE", "construccion_electricos"),
+    ("Suministro de Neumáticos para Vehículos Fiscales", "repuestos_vehiculos"),
+    ("SP 780 ADQUISICION DE ELEMENTOS DE PROTECCION PERSONAL", "seguridad_epp"),
+    ("INSUMOS LABORATORIO FISICA SEDE CHILOÉ", "laboratorio"),
 ])
 def test_real_rubros_nuevos_detectan(real, nombre, rubro):
     r = real.evaluar(nombre=nombre)
@@ -823,6 +830,18 @@ def test_real_rubros_nuevos_detectan(real, nombre, rubro):
     "PROVISIÓN E INSTALACIÓN DE SEÑALES VERTICALES",
     "Adquisición de chalecos antibalas",
     "Batería de test psicométricos",
+    # Vistos en el radar del 18-10 con los 13 rubros
+    "SUMINISTRO DE COMBUSTIBLE PARA MAQUINARIA Y GRUPOS ELECTRÓGENOS DE LA MUNICIPALIDAD",
+    "PPTA 332-26 CONT SERV LIMPIEZA VIDRIOS EN ALTURA",
+    "REP. Y REV. FIBRA VIDRIO PISCINA C.R. RALUNCO",
+    "SERVICIO DE RECAMBIO DE 60 CÁMARAS DE SEGURIDAD",
+    "DISEÑO CONSTRUCCIÓN PARQUE PUERTA NORTE DE CHILE",
+    "CONSTRUCCION LUMINARIAS ORNAMENTALES EJE SERRANO -VALLENAR",
+    "Construcción Estaciones de Carga de Bicicletas",
+    "GBA INT (001-002-002) 92 GMC SERV. RESTAURACIÓN PUERTAS INMUEBLE FACH",
+    "PP 88 INST. LUMINARIAS Y CAMARAS TIERRAS BLANCAS",
+    "REPOSICIÓN E INTALACIÓN DE LUMINARIAS PÚBLICAS",
+    "RAM REPUESTO CAMARA CEREC Nº 181420 COFACH",
 ])
 def test_real_rubros_nuevos_descartan(real, nombre):
     r = real.evaluar(nombre=nombre)

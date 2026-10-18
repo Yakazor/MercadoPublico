@@ -1093,6 +1093,19 @@ rubros:
       - materiales de electricidad
       - insumos electricos
     excluir_en_nombre:
+      # Obras, servicios y abreviaturas vistas en el radar (CONSTRUCCION LUMINARIAS, SERV., INST., REP. Y REV.)
+      - construccion luminarias
+      - construccion estaciones
+      - diseno
+      - serv
+      - inst
+      - intalacion
+      - reposicion e instalacion
+      - restauracion
+      - rep y rev
+      - limpieza
+      - combustible
+      - combustibles
       - obra
       - obras
       - construccion de
@@ -1263,6 +1276,13 @@ rubros:
       - accesorios para vehiculos
       - accesorios vehiculares
     excluir_en_nombre:
+      # Repuestos de equipos que no son vehículos
+      - construccion estaciones
+      - construccion de
+      - cerec
+      - dental
+      - insumos impresion
+      - insumos de impresion
       - adquisicion de vehiculo
       - adquisicion de vehiculos
       - adquisicion de camion
@@ -1346,6 +1366,9 @@ rubros:
       - implementos de seguridad
       - epp
     excluir_en_nombre:
+      # Recambio de cámaras: servicio
+      - servicio de recambio
+      - recambio de camaras
       - servicio de seguridad
       - servicios de seguridad
       - guardias
