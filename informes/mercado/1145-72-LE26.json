@@ -1,0 +1,22 @@
+{
+ "codigo": "1145-72-LE26",
+ "nombre": "Adquisición de Servidores alto rendimiento ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Servidores",
+   "consulta": "servidor Dell PowerEdge T150 precio Chile; servidor torre Xeon 32GB PC Factory precio; servidor Dell PowerEdge T160 PC Factory precio; servidor Lenovo ThinkSystem ST50 PC Factory CLP; servidor HPE ProLiant ML30 Gen11 precio Chile",
+   "nota": "Segunda pasada: bases técnicas no disponibles; sin precios CLP de tiendas chilenas (solo USD/EUR/PYG).",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Servidores",
+   "consulta": "servidor Dell PowerEdge T150 precio Chile; servidor torre Xeon 32GB PC Factory precio; servidor Dell PowerEdge T160 PC Factory precio; servidor Lenovo ThinkSystem ST50 PC Factory CLP; servidor HPE ProLiant ML30 Gen11 precio Chile",
+   "nota": "Segunda pasada: bases técnicas no disponibles; sin precios CLP de tiendas chilenas (solo USD/EUR/PYG).",
+   "opciones": []
+  }
+ ]
+}

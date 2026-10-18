@@ -1,0 +1,176 @@
+{
+ "codigo": "2098-155-LE26",
+ "nombre": "ADQUISICION DE FOCOS Y PANELES LED",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Iluminación empotrada",
+   "consulta": "cinta LED 220V 100 metros 6000K precio Chile Sodimac",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Tira/cinta LED 2835 220V rollo 10 m",
+     "url": "https://listado.mercadolibre.cl/cinta-led",
+     "precio": 13927,
+     "iva_incluido": true,
+     "contenido": "Rollo 10 m",
+     "unidades_equivalentes": 0.1,
+     "precio_unitario_neto": 117033.61,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Solo 10 m (no 100 m); equivalencia 0.1 rollo de 100 m; no confirma 120 LED ni 6000K.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Iluminación empotrada",
+   "consulta": "cinta LED / panel LED (sin resultado específico)",
+   "opciones": [],
+   "nota": "Sin resultado confiable en las búsquedas hechas."
+  },
+  {
+   "linea": 3,
+   "producto": "Iluminación empotrada",
+   "consulta": "foco LED embutido redondo precio Easy Chile",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Foco panel LED embutido redondo 5W luz fría",
+     "url": "https://www.easy.cl/foco-panel-led-embutido-redondo-1-luz-fria-5w-1118010/p",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Potencia no especificada por el comprador.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Foco LED embutido redondo 7W luz fría",
+     "url": "https://www.easy.cl/foco-led-embutido-redondo-1-luz-fria-7w-1118011/p",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Iluminación empotrada",
+   "consulta": "panel LED embutido 60x60 precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Panel LED empotrado Halux 60x60 36W luz fría",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10094/Focos-y-paneles-led",
+     "precio": 12890,
+     "iva_incluido": true,
+     "contenido": "1 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10831.93,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Página de listado; medida/potencia no especificadas por comprador.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Iluminación empotrada",
+   "consulta": "cinta LED / panel LED (sin resultado específico)",
+   "opciones": [],
+   "nota": "Sin resultado confiable en las búsquedas hechas."
+  },
+  {
+   "linea": 6,
+   "producto": "Iluminación empotrada",
+   "consulta": "panel LED embutido 60x60 precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Panel LED empotrado Halux 60x60 36W luz fría",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10094/Focos-y-paneles-led",
+     "precio": 12890,
+     "iva_incluido": true,
+     "contenido": "1 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10831.93,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Página de listado; medida/potencia no especificadas por comprador.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Iluminación empotrada",
+   "consulta": "ampolleta LED dicroica GU10 luz cálida precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Pack 3 ampolletas LED GU10 4.3W luz cálida DAIRU",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat259945/Ampolletas",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "Pack 3",
+     "unidades_equivalentes": 3,
+     "precio_unitario_neto": 2518.21,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Página de listado.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Iluminación empotrada",
+   "consulta": "cinta LED / panel LED (sin resultado específico)",
+   "opciones": [],
+   "nota": "Sin resultado confiable en las búsquedas hechas."
+  },
+  {
+   "linea": 9,
+   "producto": "Iluminación empotrada",
+   "consulta": "cinta LED / panel LED (sin resultado específico)",
+   "opciones": [],
+   "nota": "Sin resultado confiable en las búsquedas hechas."
+  },
+  {
+   "linea": 10,
+   "producto": "Iluminación empotrada",
+   "consulta": "foco LED embutido redondo precio Easy Chile",
+   "opciones": [
+    {
+     "tienda": "Easy (marketplace Ventas Click Chile)",
+     "producto_mercado": "Foco panel LED sobrepuesto redondo 18W luz fría",
+     "url": "https://www.easy.cl/foco-panel-led-sobrepuesto-redondo-luz-fria-18-watt-mkz70zma72/p",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "18W y luz fría; se piden 24W.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

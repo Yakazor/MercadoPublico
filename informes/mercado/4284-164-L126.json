@@ -1,0 +1,36 @@
+{
+ "codigo": "4284-164-L126",
+ "nombre": "Servicio de alimentación galvanos y flores para celebración del día del funcionario municipal 2026 SEGUN NUMERAL 5 B.A.G Bases administrativas Generales",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Servicios de catering",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "Sin resultado chileno confiable con precio en las búsquedas realizadas.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Galvanos",
+   "consulta": "chaleco salvavidas adulto precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Chaleco salvavidas adulto Aquaplast",
+     "url": "https://www.falabella.com/falabella-cl/shop/chaleco-salvavidas",
+     "precio": 19820,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16655.46,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Especificación del ítem no vista; precio desde listado (rango 19.820-23.990).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

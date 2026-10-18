@@ -1,0 +1,22 @@
+{
+ "codigo": "768-21-LE26",
+ "nombre": "ADQUISICIÓN 02 SERVIDORES",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Servidores",
+   "consulta": "Dell PowerEdge R760xs precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Servidores",
+   "consulta": "Synology RS822RP+ precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  }
+ ]
+}

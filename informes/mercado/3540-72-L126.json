@@ -1,0 +1,134 @@
+{
+ "codigo": "3540-72-L126",
+ "nombre": "Lubricantes y grasa para vehículos y maquinarias (P.2408-2409)",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Lubricantes de uso general",
+   "consulta": "aceite 5W30 sintético bidón 4 litros precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Aceite motor Lubex 5W30 SN DPF sintético 4 L",
+     "url": "https://www.lider.cl/ip/lubricantes-y-aditivos/aceite-motor-lubex-5w30-sn-dpf-sintetico-4-litros/00331428045763",
+     "precio": 25890,
+     "iva_incluido": true,
+     "contenido": "4 litros",
+     "unidades_equivalentes": 4,
+     "precio_unitario_neto": 5439.08,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio por litro; la bases piden cajas de 4 bidones de 4 L (confirmar).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Aceite motor Wolver Ultratec C3 5W-30 4 L",
+     "url": "https://www.lider.cl/ip/lubricantes-y-aditivos/aceite-motor-wolver-ultratec-c3-5w-30-4-litros-100-sintetico-20-000km/00426036094093",
+     "precio": 25900,
+     "iva_incluido": true,
+     "contenido": "4 litros",
+     "unidades_equivalentes": 4,
+     "precio_unitario_neto": 5441.18,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio por litro.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Aceite motor Shell Helix Ultra 5W30 4 L",
+     "url": "https://www.lider.cl/ip/lubricantes-y-aditivos/aceite-motor-shell-helix-ultra-5w30-4-litros/00501198703184",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "4 litros",
+     "unidades_equivalentes": 4,
+     "precio_unitario_neto": 8401.26,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio por litro; marca premium.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Grasa",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "Sin resultado chileno confiable con precio en las búsquedas realizadas.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Lubricantes de uso general",
+   "consulta": "aceite 15W40 tambor 208 litros precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Aceite motor Lubex 15W40 CF4 4 L",
+     "url": "https://www.lider.cl/ip/lubricantes-y-aditivos/aceite-motor-lubex-15w40-cf4-4-litros/00869583126600",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "4 litros",
+     "unidades_equivalentes": 4,
+     "precio_unitario_neto": 3359.24,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Envase 4 L, no tambor 208 L; precio por litro de referencia.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Valvoline All Engine 15W40 balde 19 L",
+     "url": "https://www.falabella.com/falabella-cl/brand/VALVOLINE",
+     "precio": 85990,
+     "iva_incluido": true,
+     "contenido": "19 litros",
+     "unidades_equivalentes": 19,
+     "precio_unitario_neto": 3803.18,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Balde 19 L, no tambor; URL de listado de marca.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Lubricantes de uso general",
+   "consulta": "aceite 75W90 balde 19 litros precio Chile",
+   "opciones": [
+    {
+     "tienda": "Easy (marketplace)",
+     "producto_mercado": "Aceite Hyundai transmisión 75W90 GL-5 1 L",
+     "url": "https://www.easy.cl/aceite-para-transmisi-n-hyundai-75w90-gl-5-1-litro-mk56efe05i/p",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "1 litro",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Envase 1 L, no balde 19 L.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy (marketplace)",
+     "producto_mercado": "Aceite Vistony 75W90 GL-4 full sintético 1 L",
+     "url": "https://www.easy.cl/aceite-vistony-75w90-gl-4-full-sint-tico-1-litro-mk7pi6gac2/p",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 litro",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Envase 1 L, GL-4.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

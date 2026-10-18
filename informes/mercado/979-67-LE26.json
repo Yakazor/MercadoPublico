@@ -1,0 +1,1551 @@
+{
+ "codigo": "979-67-LE26",
+ "nombre": "Adquisición de materiales construcción para plaza de pesaje de la Dirección de Vialidad",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Concreto hormigón 25 kg",
+   "consulta": "cemento 25 kg precio Sodimac",
+   "nota": "Se asume cemento gris en saco de 25 kg.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Cemento Transex 25 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat102653/Cemento-y-Morteros",
+     "precio": 4690,
+     "iva_incluido": true,
+     "contenido": "saco 25 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3941.18,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio lista; oferta 4.456",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Cemento Polpaico 25 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/saco-cemento-25-kg",
+     "precio": 5090,
+     "iva_incluido": true,
+     "contenido": "saco 25 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4277.31,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio lista; oferta 4.886",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Cemento Bio Bio 25 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/bolsa-de-cemento-25-kg",
+     "precio": 5090,
+     "iva_incluido": true,
+     "contenido": "saco 25 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4277.31,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio lista; oferta 4.886",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Caja chuqui sobrepuesta",
+   "consulta": "caja chuqui sobrepuesta precio Sodimac Easy",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Pack 30 caja chuqui sobrepuesta PVC con tornillos",
+     "url": "https://www.easy.cl/pack-30-caja-chuqui-sobrepuesta-pvc-con-tornillos-certificada-mkxhky0ic0/p",
+     "precio": 19980,
+     "iva_incluido": true,
+     "contenido": "pack 30",
+     "unidades_equivalentes": 30,
+     "precio_unitario_neto": 559.66,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy (marketplace)",
+     "producto_mercado": "Caja Chuqui Sobrepuesta Crompton 125x85x50 mm libre de halógenos",
+     "url": "https://www.easy.cl/caja-chuqui-sobrepuesta-crompton-125x85x50mm-libre-de-halogenos-mknh9odvtz/p",
+     "precio": 999,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 839.5,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Vendedor tercero en Easy",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BTICINO Caja Chuqui Sobrepuesta Blanca ABS",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/cajas-chuqui",
+     "precio": 1460,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1226.89,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio lista; oferta 1.314",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Tomacorriente simple 10 A",
+   "consulta": "tomacorriente simple 10A precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bticino Tomacorriente Simple 16 A Blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10990/Tomacorrientes",
+     "precio": 3090,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Es 16 A, no 10 A; no se halló precio del 10 A simple",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Huincha Aisladora Eléctrica Negra 18mm X 10mts",
+   "consulta": "huincha aisladora 18mm x 10m negra precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "TOPEX cinta aisladora negra 19 mm x 20 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat959641/cintas-aisladoras-electricas",
+     "precio": 1390,
+     "iva_incluido": true,
+     "contenido": "1 rollo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1168.07,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "19mm x 20m",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "3M cinta aisladora uso general negra 19 mm x 18 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat959641/cintas-aisladoras-electricas",
+     "precio": 2190,
+     "iva_incluido": true,
+     "contenido": "1 rollo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1840.34,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "19mm x 18m",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Huincha Aisladora Eléctrica Roja 18mm X 10mts",
+   "consulta": "huincha aisladora roja",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "3M cinta aisladora roja 19 mm x 18 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat959641/cintas-aisladoras-electricas",
+     "precio": 2490,
+     "iva_incluido": true,
+     "contenido": "1 rollo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2092.44,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "19mm x 18m",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Tarugo de nylon con tope M6",
+   "consulta": "tarugo nylon con tope M6 precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "FIXSER Tarugo de nylon con tope M6 100 un",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11034/Tarugos-para-Concreto",
+     "precio": 2890,
+     "iva_incluido": true,
+     "contenido": "100 unidades",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 24.29,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio lista; otro precio 2.312",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Tarugo de nylon con tope M8",
+   "consulta": "tarugo nylon M8",
+   "nota": "No se halló M8 con tope.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Sodimac)",
+     "producto_mercado": "Tarugo de nylon 8 mm 120 unidades",
+     "url": "https://www.falabella.com/falabella-cl/brand/RH",
+     "precio": 4490,
+     "iva_incluido": true,
+     "contenido": "120 unidades",
+     "unidades_equivalentes": 120,
+     "precio_unitario_neto": 31.44,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin tope confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Tarugo para internit 6mm (paloma)",
+   "consulta": "tarugo paloma internit",
+   "nota": "Sin precio confiable de tarugo paloma 6 mm en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 9,
+   "producto": "Brochas 2\"",
+   "consulta": "brocha 2 3 4 pulgadas precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Brocha económica Mas 2\" cerda sintética",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/brocha-2%22",
+     "precio": 2190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1840.34,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "KOLOR brocha multiuso 2\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11100/Brochas",
+     "precio": 2789,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2343.7,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Brochas 3\"",
+   "consulta": "brocha 2 3 4 pulgadas precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Brocha económica 3\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/brocha-3",
+     "precio": 2910,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2445.38,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "KOLOR brocha multiuso 3\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11100/Brochas",
+     "precio": 3843,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3229.41,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Brochas 4\"",
+   "consulta": "brocha 2 3 4 pulgadas precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Brocha económica 4\" filamento sintético",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11100/Brochas",
+     "precio": 3190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2680.67,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "DANMI brocha 4\" mango plástico",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11100/Brochas",
+     "precio": 3490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2932.77,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Rodillo chiporro 5x18 cm",
+   "consulta": "rodillo chiporro 5x18 cm precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "LIZCAL Rodillo chiporro 5x18 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/marca/LIZCAL",
+     "precio": 6850,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5756.3,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio lista; oferta 6.165",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Rodillo 5cm chiporro Lizcal",
+     "url": "https://www.easy.cl/rodillo-5cm-chiporro-lizcal-105704/p",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Cinta para enmascarar 50 mm 50 m",
+   "consulta": "cinta masking 48mm 50m precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "TESA cinta de enmascarar 48 mm x 50 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat2960094/cintas-de-enmascarar",
+     "precio": 5290,
+     "iva_incluido": true,
+     "contenido": "1 rollo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4445.38,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "48 mm vs 50 mm pedidos",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Cinta reflectante autoadhesiva rojo/ blanco  45 mt de largo y 5 cm de ancho, grado diamante",
+   "consulta": "cinta reflectante rojo blanco 5cm 45m",
+   "nota": "Rojo/blanco grado diamante no hallado con precio.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Cinta reflectante roja 5 cm x 45 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG36096/Cinta-reflectante",
+     "precio": 20990,
+     "iva_incluido": true,
+     "contenido": "1 rollo 45 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 17638.66,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Solo roja, grado diamante no confirmado",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Cinta reflectante roja 5 cm x 50 m",
+     "url": "https://www.easy.cl/cinta-reflectante-rojo-5-cms-x-50-metros-mkqpakr7dk/p",
+     "precio": 24490,
+     "iva_incluido": true,
+     "contenido": "1 rollo 50 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20579.83,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Solo roja, 50 m, grado no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 15,
+   "producto": "Discos Corta Metal Extra Fino 4 1/2 1mm",
+   "consulta": "disco corte metal 4 1/2 1mm precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BAUKER disco corte 4 1/2\" x 1 mm pack 50",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-de-corte-4-1-2f2",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "pack 50",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 335.97,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "UBERMANN disco corte inox 4 1/2\" x 1 mm pack 50",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-de-corte-4-1-2f2",
+     "precio": 23990,
+     "iva_incluido": true,
+     "contenido": "pack 50",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 403.19,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BOSCH Standard 4 1/2\" x 1 mm pack 25",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-de-corte-4-1-2f2",
+     "precio": 26490,
+     "iva_incluido": true,
+     "contenido": "pack 25",
+     "unidades_equivalentes": 25,
+     "precio_unitario_neto": 890.42,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta vista 12.990",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Discos Corta Metal 4 1/2 1,2mm",
+   "consulta": "disco corte 4 1/2",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BAUKER disco corte 4 1/2\" x 1 mm pack 50",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-de-corte-4-1-2f2",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "pack 50",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 335.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "1 mm en vez de 1,2 mm",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 17,
+   "producto": "Disco de desbaste 4 1/2",
+   "consulta": "disco desbaste 4 1/2 precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Stanley disco desbaste 4,5\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-desbaste-4-1-2",
+     "precio": 1990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Rasta disco desbaste 4,5\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-desbaste-4-1-2",
+     "precio": 2190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1840.34,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Makita disco desbaste 4 1/2\" 6 mm",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-desbaste-4-1-2",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3352.94,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 18,
+   "producto": "Discos traslapados 4 1/2 grano 60",
+   "consulta": "disco traslapado flap 4 1/2 grano 60",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bosch disco flap/traslapado metal 4 1/2\" grano 60",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG36372/Disco-Flap",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta vista 2.811",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (SBD)",
+     "producto_mercado": "DeWalt zirconio flap 4 1/2\" grano 60",
+     "url": "https://www.falabella.com/falabella-cl/shop/disco-flap",
+     "precio": 5090,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4277.31,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 19,
+   "producto": "Discos traslapados 4 1/2 grano 120",
+   "consulta": "disco traslapado grano 120",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bosch disco flap/traslapado metal 4 1/2\" grano 120",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG36372/Disco-Flap",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta vista 2.811",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 20,
+   "producto": "Disco de desbaste 7\" 6mm",
+   "consulta": "disco desbaste 7 6mm",
+   "nota": "Sin precio de disco desbaste 7\" 6 mm en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 21,
+   "producto": "Silicona acrílica pintable blanco 290ML",
+   "consulta": "silicona acrílica pintable",
+   "nota": "Solo se vio sellador acrílico Lanco 300 ml sin precio.",
+   "opciones": []
+  },
+  {
+   "linea": 22,
+   "producto": "Tirafondo Cabeza Hex. 5/16 X 6 Pulgadas",
+   "consulta": "tirafondo 5/16 x 6",
+   "nota": "No se halló tirafondo 5/16 x 6\" (máx. 4-5\").",
+   "opciones": []
+  },
+  {
+   "linea": 23,
+   "producto": "Tarugo de plástico Nº 12",
+   "consulta": "tarugo plástico N12",
+   "nota": "Sin resultados para tarugo plástico N°12.",
+   "opciones": []
+  },
+  {
+   "linea": 24,
+   "producto": "Golilla galvanizada 24x12x1,3mm",
+   "consulta": "golilla galvanizada 24x12x1,3",
+   "nota": "No se halló medida exacta.",
+   "opciones": []
+  },
+  {
+   "linea": 25,
+   "producto": "Caja de derivación embutida plástico",
+   "consulta": "caja derivación embutida plástico precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bticino caja de distribución embutida 105x61 mm set 6",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/cajas-chuqui",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "set 6",
+     "unidades_equivalentes": 6,
+     "precio_unitario_neto": 558.82,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida/uso por confirmar",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Caja Chuqui empotrada Lexo",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/cajas-chuqui",
+     "precio": 2490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2092.44,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Caja embutida chuqui, no confirmada como de derivación",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 26,
+   "producto": "Tomacorriente doble 10 A (Conexión única)",
+   "consulta": "tomacorriente doble 10A precio Easy",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Placa armada tomacorriente doble 10A 2P+T Schneider Génesis blanco",
+     "url": "https://www.easy.cl/placa-armada-tomacorriente-doble-10a-2pt-genesis-blanco-schneider-174072/p",
+     "precio": 2690,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2260.5,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Conjunto enchufe doble 10A blanco Kalop",
+     "url": "https://www.easy.cl/conjunto-enchufe-doble-10am-blanco-kalop-927703/p",
+     "precio": 3710,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3117.65,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 27,
+   "producto": "Tomacorriente triple 10 A (Conexión única)",
+   "consulta": "tomacorriente triple 10A",
+   "nota": "Sin precio confiable de tomacorriente triple 10 A en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 28,
+   "producto": "Tomacorriente Doble 10/16a Hydrobox Exterior Ip55 250v Sec",
+   "consulta": "tomacorriente doble hydrobox exterior IP55 precio",
+   "opciones": [
+    {
+     "tienda": "Falabella (Sodimac)",
+     "producto_mercado": "LEXO tomacorriente doble 10A IP55 blanco exterior",
+     "url": "https://www.falabella.com/falabella-cl/shop/enchufe-exterior-con-tapa",
+     "precio": 8090,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6798.32,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en listado desordenado; confirmar que corresponde a este modelo",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 29,
+   "producto": "Interruptor simple (9/12) 10 A",
+   "consulta": "interruptor simple 9/12 10A precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Schneider Génesis interruptor simple 9/12 10A blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/interruptor-9-12",
+     "precio": 1750,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1470.59,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bticino Luzica interruptor simple 9/12 10A blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/interruptor-9-12",
+     "precio": 2020,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1697.48,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta 1.717",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Halux Clio interruptor simple 9/12 10A blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/interruptor-9-12",
+     "precio": 2090,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1756.3,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 30,
+   "producto": "Interruptor triple (9/32) 10 A",
+   "consulta": "interruptor triple 9/32 10A precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Karson interruptor triple 9/32 10A blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/interruptor-9-32",
+     "precio": 2790,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2344.54,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bticino Luzica interruptor triple 9/32 10A",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/interruptor-9-32",
+     "precio": 3030,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2546.22,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Placa armada interruptor triple 10A 9/32 Luzica Bticino",
+     "url": "https://www.easy.cl/placa-armada-interruptor-triple-10a-932-luzica-blanco-bticino-1227397/p",
+     "precio": 3790,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3184.87,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 31,
+   "producto": "Amarra Negra 250 x 4.5 mm",
+   "consulta": "amarra negra 250 x 4.5 precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "FIXSER amarra negra 3,6 x 250 mm pack 25",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat960970/amarracables",
+     "precio": 2090,
+     "iva_incluido": true,
+     "contenido": "pack 25",
+     "unidades_equivalentes": 25,
+     "precio_unitario_neto": 70.25,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Ancho 3,6 mm vs 4,5 mm",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 32,
+   "producto": "Amarra Negra 400 x 7.5 mm",
+   "consulta": "amarra negra 400 x 7.5",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "3M amarra negra UV 381 x 7,62 mm pack 100",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat960970/amarracables",
+     "precio": 27990,
+     "iva_incluido": true,
+     "contenido": "pack 100",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 235.21,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "381 mm vs 400 mm; caro",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 33,
+   "producto": "Huincha Aisladora Eléctrica Amarilla 18mm X 10mts",
+   "consulta": "huincha aisladora amarilla/azul",
+   "nota": "Solo se halló Olens (colores por confirmar); 3M amarilla/azul no apareció.",
+   "opciones": []
+  },
+  {
+   "linea": 34,
+   "producto": "Huincha Aisladora Eléctrica Azul 18mm X 10mts",
+   "consulta": "huincha aisladora amarilla/azul",
+   "nota": "Solo se halló Olens (colores por confirmar); 3M amarilla/azul no apareció.",
+   "opciones": []
+  },
+  {
+   "linea": 35,
+   "producto": "Huincha Aisladora Eléctrica Verde 18mm X 10mts",
+   "consulta": "huincha aisladora verde",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "3M cinta aisladora verde 19 mm x 18 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat959641/cintas-aisladoras-electricas",
+     "precio": 2490,
+     "iva_incluido": true,
+     "contenido": "1 rollo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2092.44,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "19mm x 18m",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 36,
+   "producto": "Huincha aisladora 3m goma 3mts",
+   "consulta": "huincha aisladora 3M",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "3M cinta aisladora uso general negra 19 mm x 18 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat959641/cintas-aisladoras-electricas",
+     "precio": 2190,
+     "iva_incluido": true,
+     "contenido": "1 rollo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1840.34,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Descripción ambigua ('3m goma 3mts'); se asume cinta 3M",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 37,
+   "producto": "Tornillo Cab Hex C/golilla de 12x3/4 autoperforante",
+   "consulta": "tornillo autoperforante 12 x largos",
+   "nota": "Solo se hallaron precios de 12x1\"; este largo sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 38,
+   "producto": "Tornillo Cab Hex C/golilla de 12x1\" autoperforante",
+   "consulta": "tornillo autoperforante hex 12x1 precio",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Autoperforante hex zincado con golilla 12 x 1 Mamut 100 un",
+     "url": "https://www.easy.cl/tornillo-autoperforante-hexagonal-zbr-t-6-con-golilla-12-x-1-mamut-144846/p",
+     "precio": 10140,
+     "iva_incluido": true,
+     "contenido": "100 unidades",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 85.21,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 39,
+   "producto": "Tornillo Cab Hex C/golilla de 12x1 1/2\" autoperforante",
+   "consulta": "tornillo autoperforante 12 x largos",
+   "nota": "Solo se hallaron precios de 12x1\"; este largo sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 40,
+   "producto": "Tornillo Cab Hex C/golilla de 12x2\" autoperforante",
+   "consulta": "tornillo autoperforante 12 x largos",
+   "nota": "Solo se hallaron precios de 12x1\"; este largo sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 41,
+   "producto": "Tornillo Cab Hex C/golilla de 12x3\" autoperforante",
+   "consulta": "tornillo autoperforante 12 x largos",
+   "nota": "Solo se hallaron precios de 12x1\"; este largo sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 42,
+   "producto": "Tornillo Volcanita 6 x 1/2\"",
+   "consulta": "tornillo volcanita 6x1/2, 6x2",
+   "nota": "Sin precio para esta medida.",
+   "opciones": []
+  },
+  {
+   "linea": 43,
+   "producto": "Tornillo Volcanita 6 x 1\"",
+   "consulta": "tornillo volcanita 6x1 caja precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Tornillo volcanita N6 x 1 balde 1000 Imporper",
+     "url": "https://www.easy.cl/tornillo-volcanita-n6-x-1-roscalata-gruesa-zincado-balde-1000-unidades-punta-imporper-750295/p",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "balde 1000",
+     "unidades_equivalentes": 1000,
+     "precio_unitario_neto": 12.6,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Tornillo volcanita zincado CRS 6x1\" caja 100 (Diartek)",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/tornillo-volcanita",
+     "precio": 2088,
+     "iva_incluido": true,
+     "contenido": "caja 100",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 17.55,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio con -50% (antes 4.177)",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 44,
+   "producto": "Tornillo Volcanita 6 x 2\"",
+   "consulta": "tornillo volcanita 6x1/2, 6x2",
+   "nota": "Sin precio para esta medida.",
+   "opciones": []
+  },
+  {
+   "linea": 45,
+   "producto": "Roscalata 6x1/2\"",
+   "consulta": "roscalata",
+   "nota": "Sin precio confiable para esta medida (solo 8x1 1/2\").",
+   "opciones": []
+  },
+  {
+   "linea": 46,
+   "producto": "Roscalata 6x1\"",
+   "consulta": "roscalata",
+   "nota": "Sin precio confiable para esta medida (solo 8x1 1/2\").",
+   "opciones": []
+  },
+  {
+   "linea": 47,
+   "producto": "Roscalata 6x1 1/4\"",
+   "consulta": "roscalata",
+   "nota": "Sin precio confiable para esta medida (solo 8x1 1/2\").",
+   "opciones": []
+  },
+  {
+   "linea": 48,
+   "producto": "Roscalata 8x1\"",
+   "consulta": "roscalata",
+   "nota": "Sin precio confiable para esta medida (solo 8x1 1/2\").",
+   "opciones": []
+  },
+  {
+   "linea": 49,
+   "producto": "Roscalata 8x1 1/4\"",
+   "consulta": "roscalata",
+   "nota": "Sin precio confiable para esta medida (solo 8x1 1/2\").",
+   "opciones": []
+  },
+  {
+   "linea": 50,
+   "producto": "Roscalata 8x1 1/2\"",
+   "consulta": "tornillo roscalata 8x1 1/2 precio",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Roscalata ranura combinada 8 x 1 1/2\" Mamut 100 un",
+     "url": "https://www.easy.cl/roscalata-8-x-1-12-mamut-148716/p",
+     "precio": 6490,
+     "iva_incluido": true,
+     "contenido": "100 unidades",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 54.54,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "URL asociada por nombre; verificar",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 51,
+   "producto": "Roscalata 8x2\"",
+   "consulta": "roscalata",
+   "nota": "Sin precio confiable para esta medida (solo 8x1 1/2\").",
+   "opciones": []
+  },
+  {
+   "linea": 52,
+   "producto": "Bisagra con Doble Ala 90° 20mm x 94mm largo y 400kg",
+   "consulta": "bisagra doble ala 90 400 kg",
+   "nota": "Sin proveedor chileno con precio.",
+   "opciones": []
+  },
+  {
+   "linea": 53,
+   "producto": "Esmalte sintético blanco",
+   "consulta": "esmalte sintético blanco galón precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "REVOR Esmalte sintético 1 gal brillante blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/pintura-blanca-brillante",
+     "precio": 28990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 24361.34,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta 24.642",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "SIPA Esmalte sintético 1 gal brillante blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/pintura-blanca-brillante",
+     "precio": 31990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 26882.35,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "CERESITA Esmalte sintético 1 gal brillante blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/pintura-blanca-brillante",
+     "precio": 34590,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 29067.23,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 54,
+   "producto": "Esmalte sintético naranjo",
+   "consulta": "esmalte sintético naranjo",
+   "nota": "Sin precio de color naranjo.",
+   "opciones": []
+  },
+  {
+   "linea": 55,
+   "producto": "Esmalte al agua Blanco",
+   "consulta": "esmalte al agua blanco 4 galones precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Sipa esmalte al agua mate blanco 4 gl",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/pintura-blanca-esmalte-al-agua",
+     "precio": 56962,
+     "iva_incluido": true,
+     "contenido": "4 galones",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47867.23,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "'Desde' en listado; tineta supuesta 4 gl",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (Sodimac)",
+     "producto_mercado": "Passol esmalte al agua 4 gl blanco mate",
+     "url": "https://www.falabella.com/falabella-cl/brand/QUIMICA%20PASSOL",
+     "precio": 56990,
+     "iva_incluido": true,
+     "contenido": "4 galones",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47890.76,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Tineta supuesta 4 gl",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 56,
+   "producto": "Pintura antióxido opaco",
+   "consulta": "antióxido opaco galón precio Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Ceresita Económico antióxido 1 gl mate gris",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat359414/Anticorrosivas",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Color gris; color pedido no especificado",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "SIPA pintura antióxido 1 gl mate negro",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat359414/Anticorrosivas",
+     "precio": 24990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21000.0,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta 21.242",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Ceresita Estructural 1 gl mate rojo",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat359414/Anticorrosivas",
+     "precio": 25070,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21067.23,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 57,
+   "producto": "Discos Corta Metal 7\" 1,6 mm",
+   "consulta": "disco corte metal 7 1,6mm precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bosch pack 25 discos corte 7\" 1,6 mm inox",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-de-corte-7-pulgadas",
+     "precio": 34690,
+     "iva_incluido": true,
+     "contenido": "pack 25",
+     "unidades_equivalentes": 25,
+     "precio_unitario_neto": 1166.05,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "DeWalt DW44602 disco corte metal/inox 7\" x 1/16\"",
+     "url": "https://www.easy.cl/disco-de-corte-metal-dw44602-7-871119/p",
+     "precio": 1990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio oferta; normal 2.890",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 58,
+   "producto": "Fotocelda Control de Luminaria + Base 220V 10A",
+   "consulta": "fotocelda con base 220V 10A precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac (vendedor externo)",
+     "producto_mercado": "Fotocelda Kuangye 220V 10A",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/fotocelda",
+     "precio": 6590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5537.82,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Vendedor marketplace; confirmar base incluida y origen",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 59,
+   "producto": "Funda Manga Termocontraible 4mm 5mts Termoretractil",
+   "consulta": "manga termocontraíble precio Chile",
+   "nota": "Sin precios por medida.",
+   "opciones": []
+  },
+  {
+   "linea": 60,
+   "producto": "Funda Manga Termocontraible 6mm 5mts Termoretractil",
+   "consulta": "manga termocontraíble precio Chile",
+   "nota": "Sin precios por medida.",
+   "opciones": []
+  },
+  {
+   "linea": 61,
+   "producto": "Funda Manga Termocontraible 10mm 5mts Termoretractil",
+   "consulta": "manga termocontraíble precio Chile",
+   "nota": "Sin precios por medida.",
+   "opciones": []
+  },
+  {
+   "linea": 62,
+   "producto": "Funda Manga Termocontraible 13mm 5mts Termoretractil",
+   "consulta": "manga termocontraíble precio Chile",
+   "nota": "Sin precios por medida.",
+   "opciones": []
+  },
+  {
+   "linea": 63,
+   "producto": "Caja Estanca Derivación 80x80x50mm Conos",
+   "consulta": "caja estanca derivación 80x80x50 conos",
+   "opciones": [
+    {
+     "tienda": "Easy (marketplace)",
+     "producto_mercado": "Pack 6 caja estanca derivación DRL IP40 80x80x50 conos",
+     "url": "https://www.easy.cl/pack-6-caja-estanca-derivacion-drl-ip40-80x80x50mm-conos-sec-gris-mky37o3dpu/p",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "pack 6",
+     "unidades_equivalentes": 6,
+     "precio_unitario_neto": 1259.1,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 64,
+   "producto": "Caja Estanca Derivación 100x100x70mm Conos",
+   "consulta": "caja estanca 100x100x70 conos",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Pack 6 caja estanca derivación IP40 100x100x70 conos",
+     "url": "https://www.paris.cl/pack-6-caja-estanca-derivacion-ip40-100x100x70mm-conos-sec-gris-MKSGOREEIH.html",
+     "precio": 14890,
+     "iva_incluido": true,
+     "contenido": "pack 6",
+     "unidades_equivalentes": 6,
+     "precio_unitario_neto": 2085.43,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (ElectroChavez)",
+     "producto_mercado": "Pack 10 caja estanca 100x100x70 conos",
+     "url": "https://www.falabella.com/falabella-cl/shop/caja-estanca",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "pack 10",
+     "unidades_equivalentes": 10,
+     "precio_unitario_neto": 2520.17,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 65,
+   "producto": "Electrodo 6011 3/32",
+   "consulta": "electrodo 6011 3/32 kilo precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bauker electrodo 6011 3/32\" 1,5 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat419002/electrodos-y-alambres-para-soldar",
+     "precio": 3108,
+     "iva_incluido": true,
+     "contenido": "1,5 kg",
+     "unidades_equivalentes": 1.5,
+     "precio_unitario_neto": 1741.18,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bauker electrodo 6011 3/32\" 5 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat419002/electrodos-y-alambres-para-soldar",
+     "precio": 17179,
+     "iva_incluido": true,
+     "contenido": "5 kg",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 2887.23,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre (H&P)",
+     "producto_mercado": "Electrodo 6011 3/32 1 kg",
+     "url": "https://www.mercadolibre.cl/tienda/soldaduras-h-p",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3352.94,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 66,
+   "producto": "Electrodo 7018 1/8\"",
+   "consulta": "electrodo 7018 1/8",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Bauker electrodo 7018 1/8\" 5 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat419002/electrodos-y-alambres-para-soldar",
+     "precio": 12884,
+     "iva_incluido": true,
+     "contenido": "5 kg",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 2165.38,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre",
+     "producto_mercado": "Electrodo 7018 1/8 caja 5 kg",
+     "url": "https://www.mercadolibre.cl/tienda/soldaduras-h-p",
+     "precio": 17990,
+     "iva_incluido": true,
+     "contenido": "5 kg",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 3023.53,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Indura electrodo 7018 1/8\" 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat419002/electrodos-y-alambres-para-soldar",
+     "precio": 6469,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5436.13,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Marca premium",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 67,
+   "producto": "Fierro ángulo 50x50x3mm 6 metros",
+   "consulta": "ángulo acero 50x50x3 6 metros precio",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Perfil ángulo 50x50x3 mm 6 m (13,44 kg)",
+     "url": "https://www.easy.cl/perfil-angulo-50x50x3-mm-6-m-1344-kg-119211/p",
+     "precio": 18690,
+     "iva_incluido": true,
+     "contenido": "barra 13,44 kg",
+     "unidades_equivalentes": 13.44,
+     "precio_unitario_neto": 1168.59,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio por kg = precio/13,44",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 68,
+   "producto": "Plancha de Acero Diamantada de 3x1000x3000mm",
+   "consulta": "plancha diamantada / plana laminada",
+   "nota": "Sin precio confiable (planchas diamantadas de acero no halladas; plana 63x5 sin resultado).",
+   "opciones": []
+  },
+  {
+   "linea": 69,
+   "producto": "Fierro plana laminada 63x5mmx6m",
+   "consulta": "plancha diamantada / plana laminada",
+   "nota": "Sin precio confiable (planchas diamantadas de acero no halladas; plana 63x5 sin resultado).",
+   "opciones": []
+  },
+  {
+   "linea": 70,
+   "producto": "Hexagonal hilo completo con Tuerca y Golilla plana 1/4\" x 2\" Cabeza Galvanizado",
+   "consulta": "perno hexagonal 1/4 x 2 tuerca golilla galvanizado",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Perno hexagonal 1/4 x 2\" negro Imporper 25 un",
+     "url": "https://www.easy.cl/perno-hexagonal-14-x-2-negro-25-unidades-imporper-1164468/p",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "25 unidades",
+     "unidades_equivalentes": 25,
+     "precio_unitario_neto": 201.34,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Negro, sin galvanizar; tuerca/golilla no confirmadas",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "FIXSER perno 1/4 x 2\" con tuerca y golilla pack 5",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG35039/Pernos",
+     "precio": 1590,
+     "iva_incluido": true,
+     "contenido": "pack 5",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 267.23,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Galvanizado no confirmado; kit =1 perno+tuerca+golilla",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

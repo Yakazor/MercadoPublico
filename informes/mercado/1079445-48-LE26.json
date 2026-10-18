@@ -1,0 +1,44 @@
+{
+ "codigo": "1079445-48-LE26",
+ "nombre": "ADQ. PUERTAS PARA DEPENDENCIAS DE LA DEAOPERPOL",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Puertas de madera",
+   "consulta": "puerta interior madera 80 cm precio Sodimac Easy",
+   "nota": "Especificación no indicada; referencia aproximada de puerta interior 80x200 cm.",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Puerta interior terciado 80x200 cm Igal",
+     "url": "https://www.easy.cl/puerta-interior-terciado-80x200-cm-igal-1046202/p",
+     "precio": 22990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 19319.33,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin perforar ni pintar; medida/modelo por confirmar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Puerta de eucalipto natural HOLZTEK (rango $24.642-$34.842)",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/puertas-de-madera",
+     "precio": 24642,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20707.56,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio mínimo del rango mostrado; medida/modelo por confirmar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

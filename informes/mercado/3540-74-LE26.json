@@ -1,0 +1,206 @@
+{
+ "codigo": "3540-74-LE26",
+ "nombre": "Repuestos y filtros para camiones y bus",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Transmisión por correa",
+   "consulta": "correa accesorios Freightliner precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Retenes de filtro o accesorios",
+   "consulta": "retén 125x150x15 eje trasero camión Mercedes Benz precio",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Bombas hidráulicas",
+   "consulta": "electrobomba lavaparabrisas 24v camión Mercedes Benz precio Mercado Libre Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Plumillas limpiaparabrisas",
+   "consulta": "plumilla limpiaparabrisas 26 pulgadas precio Sodimac",
+   "nota": "Aproximada: no es OEM Mercedes.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Plumilla Bosch Aerofit Multiclip 26\" (aftermarket, no OEM Mercedes)",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat348884/Plumillas",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 plumilla",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Licitación exige original Mercedes; esta es plumilla 26\" de repuesto equivalente en medida. Precio visto en listado de Sodimac.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Amortiguadores para camiones",
+   "consulta": "amortiguadores delanteros camión Mercedes Benz Atego precio Chile; juego amortiguadores camión delantero Mercedes Benz mercadolibre.cl línea pesada",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 6,
+   "producto": "Conjuntos de cilindro de dirección",
+   "consulta": "cilindro dirección camión Mercedes Benz precio Chile repuestos",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 7,
+   "producto": "Pernos de sujeción",
+   "consulta": "Merben repuestos camiones Mercedes Benz precio filtro",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 8,
+   "producto": "Tuercas de inserción",
+   "consulta": "Merben repuestos camiones Mercedes Benz precio filtro",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 9,
+   "producto": "Suspensión de dirección",
+   "consulta": "amortiguadores delanteros camión Mercedes Benz Atego precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 10,
+   "producto": "Tuercas de anclaje",
+   "consulta": "espárrago perno rueda trasero camión Mercedes Benz A0004013771 precio",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 11,
+   "producto": "Tuercas de anclaje",
+   "consulta": "tuerca rueda A3854000124 Mercedes precio",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 12,
+   "producto": "Llantas o ruedas para camiones",
+   "consulta": "llanta camión 1200R24 precio Chile; llanta camión 24 pulgadas acero precio Chile Mercedes Benz",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 13,
+   "producto": "Pernos de anclaje",
+   "consulta": "Merben repuestos camiones Mercedes Benz precio filtro",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 14,
+   "producto": "Tuercas de anclaje",
+   "consulta": "Merben repuestos camiones Mercedes Benz precio filtro",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 15,
+   "producto": "Pernos de anclaje",
+   "consulta": "Merben repuestos camiones Mercedes Benz precio filtro",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 16,
+   "producto": "Tuercas de anclaje",
+   "consulta": "Merben repuestos camiones Mercedes Benz precio filtro",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 17,
+   "producto": "Amortiguadores para camiones",
+   "consulta": "amortiguadores delanteros camión Mercedes Benz Atego precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 18,
+   "producto": "Plumillas limpiaparabrisas",
+   "consulta": "plumilla limpiaparabrisas 26 pulgadas precio Sodimac",
+   "nota": "Aproximada: no es OEM Mercedes.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Plumilla Bosch Aerofit Multiclip 26\" (aftermarket, no OEM Mercedes)",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat348884/Plumillas",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 plumilla",
+     "unidades_equivalentes": 0.5,
+     "precio_unitario_neto": 25193.28,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "1 juego = 2 plumillas; medida 26\" supuesta.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 19,
+   "producto": "Filtros de aceite",
+   "consulta": "filtro aceite camión Mercedes Benz precio Chile mercadolibre.cl",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 20,
+   "producto": "Filtros de combustible",
+   "consulta": "filtro combustible camión Mercedes Benz precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 21,
+   "producto": "Filtros de aire",
+   "consulta": "filtro aire camión Mercedes Benz precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 22,
+   "producto": "Membranas de filtro",
+   "consulta": "filtro aire camión Mercedes Benz precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 23,
+   "producto": "Filtros de absorción",
+   "consulta": "filtro aire camión Mercedes Benz precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 24,
+   "producto": "Filtros de aceite",
+   "consulta": "filtro aceite camión Mercedes Benz precio Chile mercadolibre.cl",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  }
+ ]
+}

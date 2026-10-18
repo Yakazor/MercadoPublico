@@ -1,0 +1,21 @@
+{
+ "codigo": "3708-43-LE26",
+ "nombre": "SUMINISTRO DE NEUMÁTICOS PARA FLOTA MUNICIPAL",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Neumáticos para camiones pesados",
+   "consulta": "neumático 265/70 R16 precio Neumáticos Chile",
+   "opciones": [],
+   "nota": "Medida de camión no definida; sin resultado adecuado."
+  },
+  {
+   "linea": 2,
+   "producto": "Neumáticos para camionetas o automóviles",
+   "consulta": "neumático 205/55 R16 precio Lider Chile",
+   "opciones": []
+  }
+ ]
+}

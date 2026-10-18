@@ -1,0 +1,15 @@
+{
+ "codigo": "1145-73-LE26",
+ "nombre": "Adquisición de neumáticos maquinarias extintoras",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Neumáticos para camiones pesados",
+   "consulta": "neumático 14-17.5 R4 precio Chile mercadolibre; neumático camión carro bomba aeropuerto 385/65R22.5 precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  }
+ ]
+}

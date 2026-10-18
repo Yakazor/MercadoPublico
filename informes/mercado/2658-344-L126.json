@@ -1,0 +1,50 @@
+{
+ "codigo": "2658-344-L126",
+ "nombre": "REPUESTOS VARIOS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Parachoques para automóviles",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Parachoques para automóviles",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Parachoques para automóviles",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Parachoques para automóviles",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Parachoques para automóviles",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
+   "opciones": []
+  },
+  {
+   "linea": 6,
+   "producto": "Parachoques para automóviles",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "No se pueden identificar repuestos por N° de parte (maquinaria, no parachoques); sin precio confiable.",
+   "opciones": []
+  }
+ ]
+}

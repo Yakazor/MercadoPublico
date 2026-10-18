@@ -1,0 +1,15 @@
+{
+ "codigo": "1079596-37-LE26",
+ "nombre": "ADQUISICION 10 BATERIAS TB65 Y 01 ESTACION  CARGA",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Soportes de batería",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "DJI TB65/BS65: solo tiendas extranjeras en resultados; excluido.",
+   "opciones": []
+  }
+ ]
+}

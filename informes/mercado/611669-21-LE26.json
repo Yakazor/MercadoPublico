@@ -1,0 +1,50 @@
+{
+ "codigo": "611669-21-LE26",
+ "nombre": "ADQUISICIÓN DE REPUESTOS DE SERVIDORES",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Discos duros",
+   "consulta": "servidor NAS / disco NAS precio Chile",
+   "opciones": [],
+   "nota": "Repuesto específico IBM/Lenovo; sin precios chilenos en resultados."
+  },
+  {
+   "linea": 2,
+   "producto": "Discos duros",
+   "consulta": "servidor NAS / disco NAS precio Chile",
+   "opciones": [],
+   "nota": "Repuesto específico IBM/Lenovo; sin precios chilenos en resultados."
+  },
+  {
+   "linea": 3,
+   "producto": "Discos duros",
+   "consulta": "servidor NAS / disco NAS precio Chile",
+   "opciones": [],
+   "nota": "Repuesto específico IBM/Lenovo; sin precios chilenos en resultados."
+  },
+  {
+   "linea": 4,
+   "producto": "Servidores",
+   "consulta": "servidor NAS / disco NAS precio Chile",
+   "opciones": [],
+   "nota": "Repuesto específico IBM/Lenovo; sin precios chilenos en resultados."
+  },
+  {
+   "linea": 5,
+   "producto": "Servidores",
+   "consulta": "servidor NAS / disco NAS precio Chile",
+   "opciones": [],
+   "nota": "Repuesto específico IBM/Lenovo; sin precios chilenos en resultados."
+  },
+  {
+   "linea": 6,
+   "producto": "Servidores",
+   "consulta": "servidor NAS / disco NAS precio Chile",
+   "opciones": [],
+   "nota": "Repuesto específico IBM/Lenovo; sin precios chilenos en resultados."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "codigo": "2099-55-L126",
+ "nombre": "ADQUISICION DE EQUIPOS PARA LOS LABORATORIOS DE LA SECRETARÍA REGIONAL MINISTERIAL DE SALUD XII REGIÓN DE MAGALLANES Y ANTÁRTICA CHILENA",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Calefactores de higienización o accesorios",
+   "consulta": "balanza analítica precio Chile; medidor de sobremesa pH precio Chile",
+   "opciones": [],
+   "nota": "Sin precios chilenos en resultados (solo España)."
+  },
+  {
+   "linea": 2,
+   "producto": "Servicios de fabricación de equipos de laboratorio",
+   "consulta": "balanza analítica precio Chile; medidor de sobremesa pH precio Chile",
+   "opciones": [],
+   "nota": "Sin precios chilenos en resultados (solo España)."
+  },
+  {
+   "linea": 3,
+   "producto": "Servicios de fabricación de equipos de laboratorio",
+   "consulta": "balanza analítica precio Chile; medidor de sobremesa pH precio Chile",
+   "opciones": [],
+   "nota": "Sin precios chilenos en resultados (solo España)."
+  },
+  {
+   "linea": 4,
+   "producto": "Servicios de fabricación de equipos de laboratorio",
+   "consulta": "balanza analítica precio Chile; medidor de sobremesa pH precio Chile",
+   "opciones": [],
+   "nota": "Sin precios chilenos en resultados (solo España)."
+  }
+ ]
+}

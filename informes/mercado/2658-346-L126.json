@@ -1,0 +1,22 @@
+{
+ "codigo": "2658-346-L126",
+ "nombre": "NEUMATICOS Y OTROS  REPUESTOS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Neumáticos para camiones pesados",
+   "consulta": "neumático 14-17.5 R4 precio Chile mercadolibre",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Llantas o ruedas para camiones",
+   "consulta": "llanta camión 24 pulgadas acero precio Chile Mercedes Benz",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  }
+ ]
+}

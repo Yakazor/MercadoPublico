@@ -1,0 +1,15 @@
+{
+ "codigo": "2705-62-L126",
+ "nombre": "Adquisicion de medallas SC 4427",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Medallas",
+   "consulta": "búsquedas por tipo de producto en tiendas chilenas",
+   "nota": "Sin precio chileno de medallas por pack.",
+   "opciones": []
+  }
+ ]
+}

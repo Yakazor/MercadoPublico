@@ -1,0 +1,22 @@
+{
+ "codigo": "889473-62-LE26",
+ "nombre": "SC 8832 - ADQUISICIÓN SERVIDORES NAS PARA LA UOH",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Servidores",
+   "consulta": "servidor NAS Synology precio Chile; disco NAS 8TB precio Chile",
+   "opciones": [],
+   "nota": "Especificaciones en bases técnicas no disponibles; resultados solo extranjeros."
+  },
+  {
+   "linea": 2,
+   "producto": "Discos duros",
+   "consulta": "servidor NAS Synology precio Chile; disco NAS 8TB precio Chile",
+   "opciones": [],
+   "nota": "Especificaciones en bases técnicas no disponibles; resultados solo extranjeros."
+  }
+ ]
+}

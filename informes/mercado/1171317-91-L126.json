@@ -1,0 +1,15 @@
+{
+ "codigo": "1171317-91-L126",
+ "nombre": "ADQUISICIÓN DE MATERIALES ELÉCTRICOS CHILLÁN",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Suministro de electricidad trifásica",
+   "consulta": "materiales eléctricos Sodimac cable 2.5mm interruptor precio",
+   "nota": "Global sin detalle de materiales ('según bases'); se buscó referencia genérica (cable/interruptor Sodimac) pero no hay ítem concreto que cotizar.",
+   "opciones": []
+  }
+ ]
+}

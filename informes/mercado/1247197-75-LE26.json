@@ -1,0 +1,22 @@
+{
+ "codigo": "1247197-75-LE26",
+ "nombre": "ADQUISICIÓN DE SERVIDORES COMPUTACIONALES",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Servidores",
+   "consulta": "servidor rack 2U HPE ProLiant DL380 precio PC Factory SP Digital",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Servidores",
+   "consulta": "servidor rack 1U Lenovo ThinkSystem SR250 precio Chile",
+   "nota": "Segunda pasada: búsquedas específicas sin precio en pesos de vendedor chileno para este repuesto (solo resultados de España/otros países, autos livianos o sin precio); requiere cotización a distribuidor de repuestos de camiones.",
+   "opciones": []
+  }
+ ]
+}

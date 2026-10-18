@@ -1,0 +1,43 @@
+{
+ "codigo": "2446-315-LE26",
+ "nombre": "ADQUISICIÓN DE LICENCIAS DE SOFTWARE INSTITUCIONAL",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Paquetes de software para oficinas",
+   "consulta": "Adobe Creative Cloud licencia precio Chile CLP",
+   "nota": "Software/suscripción; precio oficial solo en USD (sin tienda chilena con precio en CLP) y cantidad de licencias no especificada; sin opciones.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Paquetes de software para oficinas",
+   "consulta": "Claude Team plan precio por usuario Chile",
+   "nota": "Software/suscripción; precio oficial solo en USD (sin tienda chilena con precio en CLP) y cantidad de licencias no especificada; sin opciones.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Paquetes de software para oficinas",
+   "consulta": "AnyDesk licencia precio Chile",
+   "nota": "Software/suscripción; precio oficial solo en USD (sin tienda chilena con precio en CLP) y cantidad de licencias no especificada; sin opciones.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Paquetes de software para oficinas",
+   "consulta": "Power BI Pro licencia precio CLP Chile",
+   "nota": "Software/suscripción; precio oficial solo en USD (sin tienda chilena con precio en CLP) y cantidad de licencias no especificada; sin opciones.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Paquetes de software para oficinas",
+   "consulta": "Runway AI suscripción precio plan",
+   "nota": "Software/suscripción; precio oficial solo en USD (sin tienda chilena con precio en CLP) y cantidad de licencias no especificada; sin opciones.",
+   "opciones": []
+  }
+ ]
+}
