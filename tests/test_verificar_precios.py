@@ -48,3 +48,9 @@ def test_verificar_opcion_marca_y_explica():
     op = {"url": "https://tienda.cl/x", "precio": 5000}
     verificar_opcion(op, _Sesion(_Resp(200, "<html>sin precio</html>")), "2026-10-18")
     assert "JavaScript" in op["verificacion_pagina"]
+
+
+def test_mensaje_precio_distinto_conserva_la_coma():
+    op = {"url": "https://tienda.cl/x", "precio": 119900}
+    verificar_opcion(op, _Sesion(_Resp(200, "<span>$129.900</span>")), "2026-10-18")
+    assert "$129.900, no $119.900" in op["verificacion_pagina"]

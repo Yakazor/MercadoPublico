@@ -74,6 +74,10 @@ def comparar(precio_publicado: float, encontrados: list[float]) -> tuple[bool, f
     return abs(cercano - precio_publicado) <= TOLERANCIA * precio_publicado, cercano
 
 
+def _pesos(v: float) -> str:
+    return "$" + f"{v:,.0f}".replace(",", ".")
+
+
 def verificar_opcion(op: dict, sesion: requests.Session, hoy: str) -> dict:
     url = op.get("url")
     if not (isinstance(url, str) and url.startswith("https://")):
@@ -95,7 +99,7 @@ def verificar_opcion(op: dict, sesion: requests.Session, hoy: str) -> dict:
         op["verificado"] = True
         op["verificado_en"] = hoy
         op["precio_pagina"] = cercano
-        op["verificacion_pagina"] = f"{hoy}: la página muestra ${cercano:,.0f}.".replace(",", ".")
+        op["verificacion_pagina"] = f"{hoy}: la página muestra {_pesos(cercano)}."
     elif cercano is None:
         op["verificado"] = False
         op["verificacion_pagina"] = (f"{hoy}: la página abrió, pero no muestra el precio en el HTML "
@@ -103,8 +107,8 @@ def verificar_opcion(op: dict, sesion: requests.Session, hoy: str) -> dict:
     else:
         op["verificado"] = False
         op["precio_pagina"] = cercano
-        op["verificacion_pagina"] = (f"{hoy}: la página abrió y el precio más parecido es ${cercano:,.0f}, "
-                                     f"no ${precio:,.0f}: puede haber cambiado.").replace(",", ".")
+        op["verificacion_pagina"] = (f"{hoy}: la página abrió y el precio más parecido es {_pesos(cercano)}, "
+                                     f"no {_pesos(precio)}: puede haber cambiado.")
     return op
 
 
