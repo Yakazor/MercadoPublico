@@ -1,0 +1,43 @@
+{
+ "codigo": "1236-22-LE26",
+ "nombre": "REQ. N°149_IMPLEMENTOS DEPORTIVOS_DPS_CEM _SNCD ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tienda de deporte",
+   "consulta": "sin búsqueda",
+   "nota": "Pack global sin detalle de artículos (según bases).",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Tienda de deporte",
+   "consulta": "sin búsqueda",
+   "nota": "Pack global sin detalle de artículos.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Trofeos",
+   "consulta": "sin búsqueda",
+   "nota": "Premiación global sin detalle.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Tienda de deporte",
+   "consulta": "sin búsqueda",
+   "nota": "Implementación deportiva global sin detalle.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Tienda de deporte",
+   "consulta": "sin búsqueda",
+   "nota": "Implementación deportiva global sin detalle.",
+   "opciones": []
+  }
+ ]
+}

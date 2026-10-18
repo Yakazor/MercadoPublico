@@ -1,0 +1,266 @@
+{
+ "codigo": "594965-30-LE26",
+ "nombre": "ADQ.TEXTILES ROPA DE CAMA JARDINES INF. OHIGGINS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Cobertor acolchado o plumón",
+   "consulta": "cobertor cuna acolchado algodón precio Chile; cobertor cuna acolchado algodón 110x100 precio Chile",
+   "nota": "Solo aparecen protectores/bumpers de cuna y cubrecamas de otra medida; sin cobertor acolchado 110x100 con precio en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Mantas o frazadas",
+   "consulta": "frazada polar cuna precio Chile; frazada polar cuna 80x100 precio Chile",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Lider (vendedor Myl Todo Hogar)",
+     "producto_mercado": "Manta Nido Polar 127x152 cm",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/manta-nido-polar-127x152-cm-textura-suave-y-termica/00046369407449",
+     "precio": 9490,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7974.79,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida mayor a la pedida (80x100); color/bordes no confirmados.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Manta polar Crusec 150 x 200 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/manta-polar",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida mayor a la pedida (80x100); precio con descuento en listado; color/estampado no confirmado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Manta polar Benetton 150 x 130 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/manta-polar",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida distinta a la pedida (80x100); sin confirmar bordes enguinchados ni color pastel liso.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Sábanas",
+   "consulta": "juego de sábanas cuna algodón precio Chile",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Juego de sábanas cuna 200 hilos 100% algodón diseño letra vintage R",
+     "url": "https://www.easy.cl/juego-sabanas-cuna-200-hilos-letra-vintage-r-diseno-1373969/p",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 juego (bajera, encimera, funda)",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Tiene diseño (se pide liso pastel).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Mantas o frazadas",
+   "consulta": "frazada polar cuna precio Chile; frazada polar cuna 80x100 precio Chile",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Lider (vendedor Myl Todo Hogar)",
+     "producto_mercado": "Manta Nido Polar 127x152 cm",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/manta-nido-polar-127x152-cm-textura-suave-y-termica/00046369407449",
+     "precio": 9490,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7974.79,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida mayor a la pedida (100x130); color/bordes no confirmados.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Manta polar Crusec 150 x 200 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/manta-polar",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida mayor a la pedida (100x130); precio con descuento en listado; color/estampado no confirmado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Manta polar Benetton 150 x 130 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/manta-polar",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida distinta a la pedida (100x130); sin confirmar bordes enguinchados ni color pastel liso.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Sábanas",
+   "consulta": "sábanas 1 plaza algodón juego precio Lider",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Lider (vendedor MEI LI SPA)",
+     "producto_mercado": "Sábanas 1 plaza celeste",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/sabanas-1-plaza-celeste/00045086333922",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 juego",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Composición (algodón >=50%) y medida para catre/colchoneta no confirmadas.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (vendedor Switchmarket)",
+     "producto_mercado": "Juego sábanas 1 plaza 144 hilos varios colores",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/juego-sabanas-1-plaza-144-hilos-varios-colores/00045044562013",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 juego",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Cobertor acolchado o plumón",
+   "consulta": "cobertor cuna acolchado algodón precio Chile; cobertor cuna acolchado algodón 110x100 precio Chile",
+   "nota": "Solo aparecen protectores/bumpers de cuna y cubrecamas de otra medida; sin cobertor acolchado 110x100 con precio en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 7,
+   "producto": "Mantas o frazadas",
+   "consulta": "frazada polar cuna precio Chile; frazada polar cuna 80x100 precio Chile",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Lider (vendedor Myl Todo Hogar)",
+     "producto_mercado": "Manta Nido Polar 127x152 cm",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/manta-nido-polar-127x152-cm-textura-suave-y-termica/00046369407449",
+     "precio": 9490,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7974.79,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida mayor a la pedida (100x150); color/bordes no confirmados.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Manta polar Crusec 150 x 200 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/manta-polar",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida mayor a la pedida (100x150); precio con descuento en listado; color/estampado no confirmado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Manta polar Benetton 150 x 130 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/manta-polar",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 manta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida distinta a la pedida (100x150); sin confirmar bordes enguinchados ni color pastel liso.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Sábanas",
+   "consulta": "sábanas 1 plaza algodón juego (compartida)",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Lider (vendedor MEI LI SPA)",
+     "producto_mercado": "Sábanas 1 plaza celeste",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/sabanas-1-plaza-celeste/00045086333922",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 juego",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Composición (algodón >=50%) y medida para catre/colchoneta no confirmadas.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (vendedor Switchmarket)",
+     "producto_mercado": "Juego sábanas 1 plaza 144 hilos varios colores",
+     "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/juego-sabanas-1-plaza-144-hilos-varios-colores/00045044562013",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 juego",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

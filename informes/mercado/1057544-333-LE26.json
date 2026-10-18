@@ -1,0 +1,85 @@
+{
+ "codigo": "1057544-333-LE26",
+ "nombre": "Compra por Suministro de Insumos Clínicos para la Unidad de Paciente Crítico Adulto",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tubos de traqueotomía",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Tubos de traqueotomía",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Tubos de traqueotomía",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Tubos de traqueotomía",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Cánula médico nasal",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 6,
+   "producto": "Cánula médico nasal",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 7,
+   "producto": "Cánula médico nasal",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 8,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 9,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 10,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 11,
+   "producto": "Tubos nasogástricos",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  }
+ ]
+}

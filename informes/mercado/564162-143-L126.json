@@ -1,0 +1,72 @@
+{
+ "codigo": "564162-143-L126",
+ "nombre": "Solicitud N° 93872 - EQUIPAMIENTO COMPUTACIONAL - 16 / 644",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Computadores portátiles tipo Tablet PC",
+   "consulta": "tablet Samsung Galaxy Tab A9 precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Tableta Samsung Galaxy Tab A9+ 5G 11\" 64GB",
+     "url": "https://www.lider.cl/ip/computadores-y-tablets/tableta-samsung-galaxy-tab-a9-5g-11-64gb-android-2024-grafito/00088727682480",
+     "precio": 365990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 307554.62,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Especificación del comprador no definida",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Computadores portátiles tipo Tablet PC",
+   "consulta": "lápiz digital tablet",
+   "opciones": [],
+   "nota": "Sin precio de lápiz compatible."
+  },
+  {
+   "linea": 3,
+   "producto": "Monitores o pantallas de visualización en cristal líquido (LCD)",
+   "consulta": "monitor 24 pulgadas IPS precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Monitor ViewSonic VA240A-H 24\" FHD",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/monitor-24-pulgadas",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Panel VA",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (GASEI)",
+     "producto_mercado": "Monitor Master-G MGME2450 24\" FHD IPS 144Hz",
+     "url": "https://www.lider.cl/ip/accesorios-computacion/monitor-de-pc-24-full-hd-ips-144hz-5-5ms-mgme2450-master-g/00780874851672",
+     "precio": 99990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 84025.21,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Especificación no definida; se asume 24\"."
+  }
+ ]
+}

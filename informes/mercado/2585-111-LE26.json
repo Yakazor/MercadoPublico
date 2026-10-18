@@ -1,0 +1,799 @@
+{
+ "codigo": "2585-111-LE26",
+ "nombre": "ADQ. HERRAMIENTAS Y MATERIALES DE FERRETERIA DIPRESEH ORD. N°692 IMA ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Papeles de lija",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 2,
+   "producto": "Enlucido de yeso",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 3,
+   "producto": "Enlucido de yeso",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 4,
+   "producto": "Guantes protectores",
+   "consulta": "guantes látex talla M",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Guantes de látex talla M x50 (Obopekal)",
+     "url": "https://www.falabella.com/falabella-cl/shop/guantes-latex",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "50 guantes (25 pares)",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 100.67,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Solo talla M; guante suelto contado como unidad, ajustar si la licitación cuenta pares (x2)",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Cemento",
+   "consulta": "cemento blanco 1 kg",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Cemento blanco Iberica 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10923/Cemento",
+     "precio": 1990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio de listado, varía 1.790-2.190",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Tornillos para madera",
+   "consulta": "tornillo madera 1/2 cabeza plana",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Tornillo madera aglomerada 6x1/2 Easy Fix cabeza plana",
+     "url": "https://www.easy.cl/tornillo-madera-aglomerada-6-x-12-easy-fix-436332/p",
+     "precio": 580,
+     "iva_incluido": true,
+     "contenido": "caja 12 unidades",
+     "unidades_equivalentes": 12,
+     "precio_unitario_neto": 40.62,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Se asume unidad = 1 tornillo; rosca gruesa no confirmada",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Revestimiento o láminas de madera",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 8,
+   "producto": "Revestimiento o láminas de madera",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 9,
+   "producto": "Esmeriladoras",
+   "consulta": "esmeril de banco 75 mm 120w",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Esmeril de banco eléctrico Bauker 75 mm 120 W",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34395/Esmeril-de-banco",
+     "precio": 54990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46210.08,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Pulidoras",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 11,
+   "producto": "Máscaras o filtros de respirador o accesorios",
+   "consulta": "mascarilla N95 caja 10",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Respirador 3M N95 con válvula Cool Flow 8511 caja 10",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/mascarilla-n95",
+     "precio": 23890,
+     "iva_incluido": true,
+     "contenido": "caja 10 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20075.63,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Incluye válvula",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Cofres, cajas o armarios para herramientas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 13,
+   "producto": "Cuerda de extensión",
+   "consulta": "alargador carrete 100 m 4 tomas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Carrete alargador Schuko 4 tomas 40 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat959631/Alargadores-y-Extensiones",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 carrete 40 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No hay de 100 m en resultados; largo máximo encontrado 40 m",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Cubiertas y cajas de plástico",
+   "consulta": "organizador plástico 38 L",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Caja organizadora 38 L Suprema Reyplast con ruedas",
+     "url": "https://www.easy.cl/caja-organizadora-38-litros-suprema-reyplast-1143814/p",
+     "precio": 7990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6714.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medidas 35x51x28 cm vs 40x50 pedido",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Caja organizadora Suprema 38 L Reyplast",
+     "url": "https://www.lider.cl/ip/decoracion/caja-organizadora-suprema-38-litros-/00097540045788",
+     "precio": 13493,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11338.66,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 15,
+   "producto": "Soldadura",
+   "consulta": "soldadura 6011 3/32 1 kg",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre",
+     "producto_mercado": "Electrodo 6011 3/32 1 kg H&P",
+     "url": "https://www.mercadolibre.cl/tienda/soldaduras-h-p",
+     "precio": 3671,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3084.87,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Página de tienda oficial",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Electrodo 6011 3/32 1 kg M&H",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/soldadura-6011-de-3-32",
+     "precio": 4313,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3624.37,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Electrodo 6011 3/32 1 kg H&P",
+     "url": "https://www.falabella.com/falabella-cl/seller/SOLDADURAS%20H%26P%20CHILE",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Discos abrasivos",
+   "consulta": "disco corte metal 4 1/2",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Disco corte metal 4 1/2 Rasta 115x2,0x22",
+     "url": "https://www.falabella.com/falabella-cl/brand/RASTA",
+     "precio": 1990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Disco corte metal 4,5 Bosch",
+     "url": "https://sodimac.falabella.com/sodimac-cl/category/CATG36369/Discos-de-Corte",
+     "precio": 2626,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2206.72,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 17,
+   "producto": "Equipo de carga",
+   "consulta": "carro acero 300 kg 91x60",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Carro de acero 300 kg ProChef 91x61 cm",
+     "url": "https://www.paris.cl/carro-de-acero-para-300-kg-prochef-91x61-cm-MKCEQSBGKZ.html",
+     "precio": 59990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 50411.76,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Asociación URL-precio por título; verificar",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 18,
+   "producto": "Perfiles de acero",
+   "consulta": "perfil cuadrado 30x30x2 6 m",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil cuadrado 30x30x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/perfil-cuadrado",
+     "precio": 11690,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9823.53,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Perfil cuadrado 30x30x2 mm 6 m 10,08 kg",
+     "url": "https://www.easy.cl/perfil-cuadrado-30x30x2-mm-6-m-1008-kg-119263/p",
+     "precio": 14590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12260.5,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 19,
+   "producto": "Ángulos de acero",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 20,
+   "producto": "Acero en placas labrada",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 21,
+   "producto": "Azulejos o baldosas de cerámica",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 22,
+   "producto": "Cofres, cajas o armarios para herramientas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 23,
+   "producto": "Tenazas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 24,
+   "producto": "Tenazas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 25,
+   "producto": "Tenazas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 26,
+   "producto": "Cortadores de metal",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 27,
+   "producto": "Lentes de protección",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 28,
+   "producto": "Reglas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 29,
+   "producto": "Bolsas de basura",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 30,
+   "producto": "Delantales protectores",
+   "consulta": "pechera mezclilla",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Pechera delantal mezclilla jeans talla única",
+     "url": "https://www.easy.cl/pechera-delantal-mezclilla-jeans-cocina-asados-mkno54zyru/p",
+     "precio": 7990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6714.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo 75 cm y tirantes no confirmados",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 31,
+   "producto": "Palas para basura",
+   "consulta": "set pala + escobilla",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Aileda pala mini con escobillón kit 21,5x31 cm",
+     "url": "https://www.lider.cl/ip/accesorios-de-aseo/aileda-pala-mini-con-escobillon-para-limpieza-kit-azul-21-5x31cm/00690202306199",
+     "precio": 2475,
+     "iva_incluido": true,
+     "contenido": "1 kit",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2079.83,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida 21,5x31 vs 21,5x16",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 32,
+   "producto": "Escobillones",
+   "consulta": "escobillón interior",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Escobillón multiuso Virutex tradicional fibra media",
+     "url": "https://super.lider.cl/browse/limpieza-y-aseo/accesorios-aseo/escobillones-y-palas/43390617_61764352_74663905",
+     "precio": 3290,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2764.71,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Material no confirmado como plástico",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 33,
+   "producto": "Bolsas de basura",
+   "consulta": "bolsa basura 80x110",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Bolsa basura grande Virutex 80x110 rollo 10 un",
+     "url": "https://super.lider.cl/browse/limpieza-y-aseo/ma-s-sustentables/bolsas-y-envoltorios/43390617_56006489_58661930",
+     "precio": 1650,
+     "iva_incluido": true,
+     "contenido": "rollo 10 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1386.55,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Bolsa basura grande Basulip 80x110 10 un",
+     "url": "https://www.easy.cl/bolsa-de-basura-grande-80-x-110-cm-basulip-120481/p",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "rollo 10 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 34,
+   "producto": "Pinturas al esmalte",
+   "consulta": "esmalte sintético galón",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Esmalte sintético Revor brillante 1 galón",
+     "url": "https://sodimac.cl/sodimac-cl/lista/CATG11126/Esmaltes-Sinteticos/",
+     "precio": 24642,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20707.56,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Listado muestra blanco; colores y anticorrosiva por confirmar",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Esmalte sintético Ceresita semibrillante 1 galón",
+     "url": "https://sodimac.cl/sodimac-cl/lista/CATG11126/Esmaltes-Sinteticos/",
+     "precio": 29402,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 24707.56,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Idem",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 35,
+   "producto": "Rodillos de pintar",
+   "consulta": "rodillo chiporro 5x12",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Rodillo chiporro 5x12 cm Lizcal",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34417/rodillos",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5033.61,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 36,
+   "producto": "Brochas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 37,
+   "producto": "Pinturas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 38,
+   "producto": "Diluyentes para pinturas y barnices",
+   "consulta": "diluyente 1 L",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Diluyente sintético 1 L Dideval",
+     "url": "https://www.easy.cl/diluyente-sintetico-1-litro-dideval-103290/p",
+     "precio": 2490,
+     "iva_incluido": true,
+     "contenido": "1 L",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2092.44,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "DP-100 no confirmado",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Diluyente sintético 1 L Química Universal",
+     "url": "https://sodimac.cl/sodimac-cl/lista/CATG10837/Diluyentes-Solventes-y-Limpiadores/",
+     "precio": 2590,
+     "iva_incluido": true,
+     "contenido": "1 L",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2176.47,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 39,
+   "producto": "Taladro de mano o empuje",
+   "consulta": "taladro inalámbrico 20V CLX228",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Makita Kit Taladro Percutor + Atornillador CLX228",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34399/Taladros-Inalambricos",
+     "precio": 184990,
+     "iva_incluido": true,
+     "contenido": "1 kit",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 155453.78,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 40,
+   "producto": "Tablas de madera",
+   "consulta": "terciado 9 mm 122x244",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Terciado estructural pino 9 mm 122x244",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10759/Plancha-de-terciado",
+     "precio": 16390,
+     "iva_incluido": true,
+     "contenido": "1 plancha",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13773.11,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado muestra 15.550-18.980 según página",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 41,
+   "producto": "Colas",
+   "consulta": "cola fría madera 1 kg",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Afix cola fría madera pintable 1 kg",
+     "url": "https://www.easy.cl/cola-fria-madera-pintable-bolsa-1-kg-1192545/p",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3352.94,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Afix cola fría madera rápida 1 kg",
+     "url": "https://www.paris.cl/cola-fria-madera-rapida-1-kg-EA007ONXUP.html",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 42,
+   "producto": "Azulejos o baldosas de cerámica",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 43,
+   "producto": "Azulejos o baldosas de cerámica",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 44,
+   "producto": "Azulejos o baldosas de cerámica",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 45,
+   "producto": "Azulejos o baldosas de cerámica",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 46,
+   "producto": "Brocas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 47,
+   "producto": "Brocas",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 48,
+   "producto": "Madeja de fibra y goma",
+   "consulta": "sin búsqueda específica",
+   "opciones": [],
+   "nota": "Sin resultado confiable con precio en búsquedas de esta sesión"
+  },
+  {
+   "linea": 49,
+   "producto": "Esmeriladoras",
+   "consulta": "esmeril angular inalámbrico 4 1/2",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Esmeril angular inalámbrico Bauker 20V solo herramienta",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/esmeril-angular-inalambrico",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "solo herramienta",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin batería ni cargador",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Kit esmeril angular 4 1/2 20V Ingco batería 4Ah",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/esmeril-angular-inalambrico",
+     "precio": 109990,
+     "iva_incluido": true,
+     "contenido": "kit",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 92428.57,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

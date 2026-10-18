@@ -1,0 +1,58 @@
+{
+ "codigo": "2771-64-LE26",
+ "nombre": "ADQUISICION DE JUGUETES NAVIDAD EN CHIGUAYANTE 2026",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Juguetes didácticos",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: juguete didáctico Paris / Lider precio",
+   "nota": "Referencia de precios de juguetes didácticos; compra masiva real requiere mayorista (no cotizado).",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Carros de arrastre tren didáctico",
+     "url": "https://www.paris.cl/carros-de-arrastre-tren-didactico-968992999.html",
+     "precio": 7990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6714.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio oferta; juguete tipo de referencia (rangos etarios por definir).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Juguete de aprendizaje Mi Primer Musical",
+     "url": "https://www.paris.cl/juguete-de-aprendizaje-mi-primer-musical-684412999.html",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio oferta; desde 12 meses.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Juego de apilar bloques con equilibrio",
+     "url": "https://www.lider.cl/ip/juegos-de-mesa/juego-de-apilar-bloques-con-equilibrio/00046738987920",
+     "precio": 12950,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10882.35,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Vendedor externo (Luz de Luciérnaga); confirmar origen del envío.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "codigo": "5349-131-L126",
+ "nombre": "ADQUISICION DE ESCÁNER DE ESCRITORIO ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Escáner",
+   "consulta": "escáner de escritorio documentos Epson WorkForce DS-530 precio",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Escáner Epson WorkForce DS-530 II ADF 1200dpi USB 3.0",
+     "url": "https://articulo.mercadolibre.cl/MLC-2177476586-escaner-epson-workforce-ds-530-ii-adf-1200dpi-usb-30-blanco-_JM",
+     "precio": 499990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 420159.66,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio aproximado ($479.990-$499.990 en publicaciones activas según resultado); verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "SP Digital",
+     "producto_mercado": "Escáner Epson WorkForce DS-530 ADF 50 hojas 600 dpi 35 ppm",
+     "url": "https://www.spdigital.cl/esc%C3%A1ner-epson-workforce-ds-530-alimentador-autom%C3%A1tico-de-50-hojas-600-dpi-35ppm/",
+     "precio": 536990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 451252.1,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio con Webpay/tarjeta ($518.830 transferencia). Especificaciones técnicas del hospital no disponibles.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

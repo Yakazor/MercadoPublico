@@ -1,0 +1,94 @@
+{
+ "codigo": "2765-60-LE26",
+ "nombre": "Adquisición Vestuario para Funcionarios de Segurid",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Uniformes corporativos",
+   "consulta": "polera piqué manga larga",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Polera algodón piqué manga larga hombre",
+     "url": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-larga-hombre/00046050350173",
+     "precio": 20990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 17638.66,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Vendedor Andesland; sin logo ni especificación de seguridad",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Uniformes corporativos",
+   "consulta": "polera piqué manga corta",
+   "opciones": [],
+   "nota": "No se encontró precio de manga corta en los resultados."
+  },
+  {
+   "linea": 3,
+   "producto": "Uniformes corporativos",
+   "consulta": "pantalón outdoor impermeable",
+   "opciones": [
+    {
+     "tienda": "Falabella (AGW)",
+     "producto_mercado": "Pack 2 pantalones outdoor hombre impermeable softshell",
+     "url": "https://www.falabella.com/falabella-cl/collection/pantalon-trekking-hombre",
+     "precio": 28990,
+     "iva_incluido": true,
+     "contenido": "Pack de 2",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 12180.67,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Solo se halló pack de 2 softshell; no equivale a impermeable total."
+  },
+  {
+   "linea": 4,
+   "producto": "Uniformes corporativos",
+   "consulta": "chaqueta geóloga",
+   "opciones": [],
+   "nota": "No se encontró precio confiable."
+  },
+  {
+   "linea": 5,
+   "producto": "Uniformes corporativos",
+   "consulta": "traje de agua PVC",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Capa de agua impermeable PVC azul con gorro",
+     "url": "https://www.lider.cl/ip/ropa-deportiva/capa-de-agua-impermeable-pvc-azul-con-gorro/00046901570830",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Solo se halló capa de agua (una pieza), no traje de dos piezas."
+  },
+  {
+   "linea": 6,
+   "producto": "Chalecos antibalas",
+   "consulta": "chaleco antibala nivel IIIA",
+   "opciones": [],
+   "nota": "Sin precios chilenos públicos; requiere cotización con distribuidores."
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "codigo": "1725-222-LE26",
+ "nombre": "ADQ. E INST. SIST. BARRAS COLGADO VESTUARIO BAFONA",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Colgadores",
+   "consulta": "barra colgadora de ropa metálica",
+   "opciones": [
+    {
+     "tienda": "Sodimac (DVP)",
+     "producto_mercado": "Barra extensible 140 a 250 cm para colgar ropa",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat4850410/percheros",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No incluye instalación ni sistema completo",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Es un sistema instalado para bodegas; solo se muestra barra extensible como referencia de material, sin instalación."
+  }
+ ]
+}

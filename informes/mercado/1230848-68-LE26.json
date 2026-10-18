@@ -1,0 +1,37 @@
+{
+ "codigo": "1230848-68-LE26",
+ "nombre": "ADQUISICIÓN DE COMPUTADORES E IMPRESORAS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Computadores de escritorio",
+   "consulta": "All in One HP ProOne 440 G9",
+   "opciones": [
+    {
+     "tienda": "SP Digital",
+     "producto_mercado": "AIO HP ProOne 440 G9, Core i5-12500, 8GB RAM, SSD 512GB, W11 Pro",
+     "url": "https://www.spdigital.cl/hp-proone-desktop-intel-core-i5-i5-12500/",
+     "precio": 992190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 833773.11,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Bases técnicas (numeral 3.4.1) no disponibles; se toma AIO HP ProOne 440 G9 como referencia. Verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Especificación en adjunto no disponible; referencia con computador all-in-one de uso institucional."
+  },
+  {
+   "linea": 2,
+   "producto": "Impresora Inkjet para aplicaciones comerciales de imprimir",
+   "consulta": "impresora inkjet multifuncional tinta continua oficina",
+   "opciones": [],
+   "nota": "Modelo/especificaciones en adjunto no disponibles; Brother DCP-T230 aparece entre 110 y 170 mil según tienda, pero sin ficha con precio asociado. Sin opciones."
+  }
+ ]
+}

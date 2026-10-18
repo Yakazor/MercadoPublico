@@ -1,0 +1,44 @@
+{
+ "codigo": "612-44-LE26",
+ "nombre": "Adquisición de 3 Workstations teclado y mouse",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Computadores de escritorio",
+   "consulta": "workstation estación de trabajo PC Factory Ryzen 9 32GB RTX precio",
+   "nota": "Especificación detallada no disponible; opciones son workstations de referencia (sin teclado/mouse, Windows sin activar). Precio por unidad.",
+   "opciones": [
+    {
+     "tienda": "Paris (CompuElite)",
+     "producto_mercado": "PC Workstation AMD Ryzen 9 9950X3D 32GB RTX 5060 8GB",
+     "url": "https://www.paris.cl/pc-workstation-amd-ryzen-9-9950x3d-32gb-rtx-5060-8gb-or-pcw128-MKAVLG9NG4.html",
+     "precio": 2799280,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2352336.13,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin teclado ni mouse; spec del comprador no conocida.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris (CompuElite)",
+     "producto_mercado": "PC Workstation AMD Ryzen 9 9950X3D 32GB RTX 5060 Ti 16GB",
+     "url": "https://www.paris.cl/pc-workstation-amd-ryzen-9-9950x3d-32gb-rtx-5060-ti-16gb-or-pcw138-MKHHH2TRZV.html",
+     "precio": 3153040,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2649613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin teclado ni mouse; spec del comprador no conocida.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

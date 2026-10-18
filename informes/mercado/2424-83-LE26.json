@@ -1,0 +1,30 @@
+{
+ "codigo": "2424-83-LE26",
+ "nombre": "KIT ARTICULOS DE FERRETERIA - 104 - 105 - 106 - 3821 - 3845 - 3868 - N.C.V",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Grapas de ferretería",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: corchetes 26/6 Jumbo/Lider",
+   "nota": "Precio de listado/ficha de tienda; especificación exacta pendiente de revisar.",
+   "opciones": [
+    {
+     "tienda": "Jumbo",
+     "producto_mercado": "Corchetera Maped 26/6 con corchetes",
+     "url": "https://www.jumbo.cl/corchetera-maped-26-6-corchetes/p",
+     "precio": 6490,
+     "iva_incluido": true,
+     "contenido": "corchetera + corchetes",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5453.78,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Solo cubre un componente (grapas/corchetera); el kit completo está en decreto de bases no visible.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "codigo": "4307-4-LE26",
+ "nombre": "ADQUISICION DE UNIFORMES Y OTROS LICEO C-44",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Uniformes escolares",
+   "consulta": "-",
+   "opciones": [],
+   "nota": "Según bases y anexos (uniformes y zapatillas); no detallado."
+  },
+  {
+   "linea": 2,
+   "producto": "Computadores portátiles tipo Tablet PC",
+   "consulta": "tablet Samsung Galaxy Tab A9 precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Tableta Samsung Galaxy Tab A9+ 5G 11\" 64GB",
+     "url": "https://www.lider.cl/ip/computadores-y-tablets/tableta-samsung-galaxy-tab-a9-5g-11-64gb-android-2024-grafito/00088727682480",
+     "precio": 365990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 307554.62,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Especificación del comprador no definida",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Según bases; se asume tablet 11\"."
+  }
+ ]
+}

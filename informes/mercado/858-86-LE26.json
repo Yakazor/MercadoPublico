@@ -1,0 +1,22 @@
+{
+ "codigo": "858-86-LE26",
+ "nombre": "Materiales Acreditación e Impresoras Test Event ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Impresión de papelería o formularios comerciales",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Material de acreditaciones/arriendo de impresoras: global sin detalle; no se puede buscar.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Servidores de impresora",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Material de acreditaciones/arriendo de impresoras: global sin detalle; no se puede buscar.",
+   "opciones": []
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "codigo": "761391-145-LE26",
+ "nombre": "EA-219-EDU-DAS-ADQ. DE MOCHILAS PARA LA E.A",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Mochilas",
+   "consulta": "mochila escolar precio Chile Falabella Paris reforzada; mochila escolar Sodimac Ripley Paris Chile precio negra 30 litros",
+   "nota": "Bases técnicas no disponibles (medidas, color, logo); se cotizaron mochilas genéricas de 30 L.",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Mochila Cross River Negro 30 Litros National Geographic",
+     "url": "https://www.falabella.com/falabella-cl/shop/mochila-30-litros",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 mochila",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Especificación de las bases no confirmada.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (vendedor Getway - Globalmarket)",
+     "producto_mercado": "Mochila Fort Myer Negro 30 Litros National Geographic",
+     "url": "https://www.lider.cl/ip/camping/mochila-fort-myer-negro-30-litros-national-geographic/00742730539974",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 mochila",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Especificación de las bases no confirmada.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

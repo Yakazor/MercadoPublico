@@ -1,0 +1,30 @@
+{
+ "codigo": "1415863-3-LE26",
+ "nombre": "SERV DE SUMINISTRO CALZADO DE SEGURIDAD",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Batas de protección",
+   "consulta": "calzado de seguridad punta de acero",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Zapatilla de seguridad punta de acero antiperforación Vidita",
+     "url": "https://www.sodimac.cl/sodimac-cl/seleccion/zapato-de-seguridad-hombre",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Dieléctrico no confirmado; precio por par",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Ítem global sin detalle de modelos ni cantidades; se muestra referencia de un par de zapato de seguridad."
+  }
+ ]
+}

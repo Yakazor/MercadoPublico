@@ -1,0 +1,44 @@
+{
+ "codigo": "2424-59-LE26",
+ "nombre": "CONTRATO DE SUMINISTRO PARA LA ADQUISICIÓN DE ARTÍCULOS DE FERRETERÍA-PMR",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Válvulas de descarga",
+   "consulta": "válvula de descarga WC precio Sodimac Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Válvula de descarga WC 4,8 L CORONA",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11065/Reparacion-de-bano",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Válvula descarga dual FANALOZA",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/valvula-de-descarga-wc",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Ítem global; se muestra solo referencia unitaria del producto principal."
+  }
+ ]
+}

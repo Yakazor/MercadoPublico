@@ -1,0 +1,30 @@
+{
+ "codigo": "1048-81-LE26",
+ "nombre": "ADQ. VESTUARIO Y EPP PERSONAL LUMINARIA - 3ER LLAMADO",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Chalecos de protección",
+   "consulta": "chaleco reflectante seguridad geólogo precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Chaleco reflectante geólogo naranjo (ALASKA)",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110302593/Chaleco-Reflectivo-Geologo/110317857",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio ($11.990 para chalecos ALASKA reflectantes) tomado de resumen de búsqueda; el listado \"según listado adjunto\" no es conocido. Verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Ítem remite a listado adjunto; se supone chaleco reflectante de seguridad."
+  }
+ ]
+}

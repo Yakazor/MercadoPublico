@@ -1,0 +1,78 @@
+{
+ "codigo": "1242028-21-L126",
+ "nombre": "Adquisición de uniformes de primavera-verano para colaboradores de la Corporación SEMCO",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Abrigos y chaquetas para hombre",
+   "consulta": "polar térmico hombre delgado precio Chile; polar hombre Lider",
+   "opciones": [
+    {
+     "tienda": "Lider (Kannu)",
+     "producto_mercado": "Polar hombre Valle de la Luna half zipper",
+     "url": "https://www.lider.cl/browse/hombre/vestuario/polar-y-chiporros/25730587_46444018_74380363",
+     "precio": 17592,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 14783.19,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Cuello/zipper distinto; precio por talla única de listado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Abrigos y chaquetas para mujer",
+   "consulta": "polar térmico delgado mujer",
+   "opciones": [],
+   "nota": "Sin resultado de polar mujer delgado con precio."
+  },
+  {
+   "linea": 3,
+   "producto": "Camisetas",
+   "consulta": "polera piqué manga corta hombre precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider (Southern Brands)",
+     "producto_mercado": "Polera piqué premium UV50 manga corta hombre",
+     "url": "https://www.lider.cl/ip/vestuario/polera-pique-premium-manga-corta-hombre-uv50-certificada/00073718676427",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Colores azul marino/negro; sin bordado/logo",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Camisetas",
+   "consulta": "polera piqué mujer",
+   "opciones": [],
+   "nota": "Sin resultado de polera piqué mujer con precio."
+  },
+  {
+   "linea": 5,
+   "producto": "Pantalones y short para hombre",
+   "consulta": "pantalón outdoor delgado hombre secado rápido precio Chile",
+   "opciones": [],
+   "nota": "Único precio claro (Lider Atakama desmontable $71.990) es muy distinto/caro; descartado."
+  },
+  {
+   "linea": 6,
+   "producto": "Pantalones y short para mujer",
+   "consulta": "pantalón outdoor mujer",
+   "opciones": [],
+   "nota": "Sin resultado confiable."
+  }
+ ]
+}

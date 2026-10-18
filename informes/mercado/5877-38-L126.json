@@ -1,0 +1,30 @@
+{
+ "codigo": "5877-38-L126",
+ "nombre": "SEREMI DE LOS RÍOS REQUIERE LA ADQUISICIÓN DE ARTÍCULOS Y HERRAMIENTAS PARA LA HABILITACIÓN DE LA SALA DE MAESTRANZA DEL EDIFICIO CECREA VALDIVIA.",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Conjuntos generales de herramientas",
+   "consulta": "set herramientas maestranza taller Sodimac precio juego herramientas 100 piezas; set herramientas 100 piezas Easy Sodimac Chile caja herramientas maestranza",
+   "nota": "Lista de artículos no detallada; se cotizó un set de herramientas manuales como referencia parcial.",
+   "opciones": [
+    {
+     "tienda": "Sodimac (vendedor TUS HERRAMIENTAS)",
+     "producto_mercado": "Makita set herramientas manuales 120 piezas E-08713",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat327554/set-de-herramientas-manuales",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 set 120 piezas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Referencia parcial; no se conoce el listado exacto de la sala de maestranza.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

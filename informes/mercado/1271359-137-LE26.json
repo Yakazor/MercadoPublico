@@ -1,0 +1,36 @@
+{
+ "codigo": "1271359-137-LE26",
+ "nombre": "ADQ. DE ARTICULOS DEPORTIVOS Y OTROS – DIREDUC",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Juegos clásicos",
+   "consulta": "sin búsqueda",
+   "nota": "Canasta sin contenido detallado.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Cuerdas, anillas o accesorios gimnásticos para trepar",
+   "consulta": "sin búsqueda",
+   "nota": "Canasta sin contenido detallado.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Prendas de deporte y buzos de hombre",
+   "consulta": "buzo deportivo hombre polerón pantalón precio Chile Decathlon",
+   "nota": "Canasta sin detalle de cantidades/tallas; no se puede cotizar.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Arcos de fútbol",
+   "consulta": "arco de fútbol baby fútbol precio Chile",
+   "nota": "Canasta sin detalle; referencia: Lider pack 2 arcos baby fútbol metálico 3x2 m $219.990, pero no se confirma lo que incluye la canasta.",
+   "opciones": []
+  }
+ ]
+}

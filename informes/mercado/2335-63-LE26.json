@@ -1,0 +1,369 @@
+{
+ "codigo": "2335-63-LE26",
+ "nombre": "INSUMOS CLINICOS OP 553-554-555-556",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "apósito gasa estéril 10x10 cm precio Chile",
+   "nota": "El comprador pide apósito de gasa tejida + algodón; solo se encontró gasa no tejida 10x10 (aproximada). Sin aposito 10x10 con algodón en resultados.",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Apósito de gasa no tejida 10x10 cm estéril, 50 unidades",
+     "url": "https://www.lider.cl/ip/salud-y-bienestar/aposito-de-gasa-no-tejida-10x10cm-esteril-50-unidades/00474860628865",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "50 unidades",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 201.51,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Gasa no tejida, no tejida+algodón; no se confirma vencimiento >24 meses.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "apósito gasa estéril 10x10 cm precio Chile; apósito gasa no tejida algodón estéril 10x20 precio",
+   "nota": "No se encontró medida 10x20 con precio en Chile. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Apósito gasa no tejida + algodón estéril 10x20, bolsa x10 (Cranberry)",
+     "url": "https://articulo.mercadolibre.cl/MLC-549483392-aposito-gasa-no-tejida-algodon-esteril-10x20-bolsa-x10-_JM",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "Bolsa 10 unidades",
+     "unidades_equivalentes": 10,
+     "precio_unitario_neto": 335.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Gasa no tejida + algodón; el comprador pide gasa tejida. Vencimiento no confirmado. Precio de listado, hay ofertas ~3.490.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "apósito gasa estéril 10x10 cm precio Chile",
+   "nota": "No se encontró medida 10x25 con precio en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "gasa estéril no tejida 10x10 sobre x 2 Nemo precio Chile; gasa no tejida estéril 7.5x7.5 sobre x2 precio",
+   "nota": "No se encontró gasa 7.5x7.5 sobre x2 (tipo Nemo) con precio. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Gasa no tejida estéril 7,5x7,5 cm, caja 50 sobres x 2 un",
+     "url": "https://articulo.mercadolibre.cl/MLC-505623606-gasa-no-tejida-esteril-75-x-75-cm-caja-x-50-sobres-x-2-un-_JM",
+     "precio": 3790,
+     "iva_incluido": true,
+     "contenido": "Caja 50 sobres x 2 gasas",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 63.7,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Se asume unidad de licitación = sobre x2 (50 por caja). Si la unidad fuera la gasa, dividir por 2. Precio de listado, se vio también a ~3.350.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (Cranberry)",
+     "producto_mercado": "Gasa no tejida estéril 7,5x7,5 cm Cranberry, 50 sobres x 2 un",
+     "url": "https://www.falabella.com/falabella-cl/product/116975507/Gasa-No-Tejida-Esteril-7,5x7,5cm-Cranberry-50-Sobres-X-2-Un./116975508",
+     "precio": 4690,
+     "iva_incluido": true,
+     "contenido": "Caja 50 sobres x 2 gasas",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 78.82,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Se asume unidad = sobre x2.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "gasa estéril no tejida 10x10 sobre x 2 Nemo precio Chile",
+   "nota": "No apareció Nemo sobre x2; la opción es gasa no tejida estéril 10x10 en paquete de 50 (sin confirmar formato de sobre x2).",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Apósito de gasa no tejida 10x10 cm estéril, 50 unidades (Primus)",
+     "url": "https://www.lider.cl/ip/salud-y-bienestar/aposito-de-gasa-no-tejida-10x10cm-esteril-50-unidades/00474860628865",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "50 unidades",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 201.51,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Misma medida y tipo; empaque no confirmado como sobre x2.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Salcobrand",
+     "producto_mercado": "Gasa esterilizada 10x10 cm Allbriefs, 6 unidades",
+     "url": "https://salcobrand.cl/products/gasa-esterilizada-10x10cm-allbriefs-6-unidades",
+     "precio": 4999,
+     "iva_incluido": true,
+     "contenido": "6 unidades",
+     "unidades_equivalentes": 6,
+     "precio_unitario_neto": 700.14,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio farmacia; no se confirma que sea no tejida.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Agujas mariposa",
+   "consulta": "llave de 3 vías con giro 360 precio Chile; llave 3 vías stopcock descartable estéril precio",
+   "nota": "Solo un aviso de Yapo (usuario) con precio ambiguo (caja x50 vs unidad); se descarta por no ser confiable. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Cranberry)",
+     "producto_mercado": "Llave 3 pasos rotación 360° estéril Cranberry, caja x50",
+     "url": "https://www.falabella.com/falabella-cl/product/122921401/Llave-3-Pasos-Rotacion-360-Esteril-Cranberry-Caja-X50-Unid.%E2%80%A6",
+     "precio": 15590,
+     "iva_incluido": true,
+     "contenido": "Caja 50 unidades",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 262.02,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Rotación 360° estéril; en Mercado Libre se vio el mismo producto entre $11.990 y $13.390.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Soportes para aparatos quirúrgicos en la bandeja",
+   "consulta": "sin búsqueda específica",
+   "nota": "Kit de bandeja de curación; no se encontró precio.",
+   "opciones": []
+  },
+  {
+   "linea": 8,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "apósito gasa estéril 10x10 cm precio Chile",
+   "nota": "No se encontró apósito estéril 10x25 con precio.",
+   "opciones": []
+  },
+  {
+   "linea": 9,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "apósito gasa estéril 10x10 cm precio Chile",
+   "nota": "No se encontró gasa 5x5 con precio.",
+   "opciones": []
+  },
+  {
+   "linea": 10,
+   "producto": "Sondas quirúrgicas",
+   "consulta": "sonda Foley silicona 2 vías Fr16 precio Chile; sonda Foley 2 vías silicona 100% Fr 16 Chile distribuidor; sonda Foley 2 vías silicona 16 precio",
+   "nota": "Sin precios chilenos en resultados. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Sonda Foley silicona/silastic Fr16 2 vías (unidad, listado)",
+     "url": "https://listado.mercadolibre.cl/salud-equipamiento-medico/sonda-foley-silastic-16",
+     "precio": 3395,
+     "iva_incluido": true,
+     "contenido": "1 sonda",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2852.94,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No se confirma 100% silicona grado médico ni conexión hermética. Licitación pide \"Caja\" (tamaño no indicado); precio por sonda individual. Rango visto $3.200-4.700.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Sondas quirúrgicas",
+   "consulta": "sonda Foley silicona 2 vías Fr16 precio Chile",
+   "nota": "Sin precios chilenos en resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 12,
+   "producto": "Guantes médicos de examen o para usos no quirúrgicos",
+   "consulta": "guantes de nitrilo caja 100 mercadolibre.cl; guantes nitrilo caja 100 talla S precio",
+   "nota": "No se encontró nitrilo sin polvo talla S con precio chileno confirmado. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Guantes nitrilo negro talla S, caja 100 (listado)",
+     "url": "https://listado.mercadolibre.cl/guantes-nitrilo-talla-s",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "Caja 100",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3352.94,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No se confirma sin polvo ni grado de examinación; verificar. Marcas Tresor/Semper Care $7.990-8.390 en el mismo listado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Guantes nitrilo azul talla S, 100 un (Only Pool)",
+     "url": "https://www.falabella.com/falabella-cl/shop/guantes-nitrilo",
+     "precio": 4490,
+     "iva_incluido": true,
+     "contenido": "Caja 100",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3773.11,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Uso piscina/general; verificar sin polvo y grado examinación.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Guantes médicos de examen o para usos no quirúrgicos",
+   "consulta": "guantes látex examinación empolvado caja 100 talla S Chile precio",
+   "nota": "Ambas opciones vienen de la página de listado de Falabella (vendedores marketplace).",
+   "opciones": [
+    {
+     "tienda": "Falabella (MULTISTORE)",
+     "producto_mercado": "Guantes látex Tresor con polvo talla S, caja 100",
+     "url": "https://www.falabella.com/falabella-cl/shop/guantes-latex",
+     "precio": 6190,
+     "iva_incluido": true,
+     "contenido": "Caja 100 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio con 31% de descuento en listado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (PuntoMed)",
+     "producto_mercado": "Guantes látex Health Touch con polvo talla S, caja 100",
+     "url": "https://www.falabella.com/falabella-cl/shop/guantes-latex",
+     "precio": 6590,
+     "iva_incluido": true,
+     "contenido": "Caja 100 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5537.82,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado Falabella.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Guantes médicos de examen o para usos no quirúrgicos",
+   "consulta": "guantes de nitrilo caja 100 mercadolibre.cl",
+   "nota": "Listado de Mercado Libre Chile con guantes de nitrilo talla M caja 100 (Tresor) a 11.990; no se confirma 'sin polvo' ni que sea grado examinación.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Guantes nitrilo desechables talla M caja 100 (Tresor, listado)",
+     "url": "https://listado.mercadolibre.cl/guantes-desechables-gloveworks-hd-de-nitrilo-naranja-caja-de-pulgadas",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "Caja 100 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Verificar sin polvo y uso médico.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 15,
+   "producto": "Guantes médicos de examen o para usos no quirúrgicos",
+   "consulta": "guante quirúrgico sintético estéril sin polvo talla 6.5 caja 50 pares Chile; guante quirúrgico sintético estéril sin polvo talla 6 precio",
+   "nota": "Sin proveedores chilenos en resultados. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Guante quirúrgico estéril talla 6 Cranberry, caja 50 pares",
+     "url": "https://listado.mercadolibre.cl/guantes-quirurgicos-talla-6",
+     "precio": 19980,
+     "iva_incluido": true,
+     "contenido": "Caja 50 pares",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16789.92,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Material no indicado en la publicación (podría ser látex, no sintético).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Guante quirúrgico policloropreno estéril talla 6, caja 50 pares",
+     "url": "https://www.falabella.com/falabella-cl/category/CATG34550/Guantes-quirurgicos?f.product.brandName=cranberry",
+     "precio": 67580,
+     "iva_incluido": true,
+     "contenido": "Caja 50 pares",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 56789.92,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Policloropreno = sintético sin látex; listado de categoría, verificar vendedor y marca.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Guantes médicos de examen o para usos no quirúrgicos",
+   "consulta": "guante quirúrgico sintético estéril sin polvo talla 6.5 caja 50 pares Chile; guantes quirúrgicos estériles talla 6.5 caja 50 pares precio",
+   "nota": "Sin proveedores chilenos en resultados. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Guante quirúrgico estéril talla 6,5, caja 50 pares",
+     "url": "https://listado.mercadolibre.cl/guantes-esteriles-6-5",
+     "precio": 17990,
+     "iva_incluido": true,
+     "contenido": "Caja 50 pares",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15117.65,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Material/polvo no confirmados (probable látex); precio con cupón de $5.000 según listado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Guante quirúrgico estéril Nipro talla 6,5, caja 50 pares",
+     "url": "https://listado.mercadolibre.cl/guante-quirurgico-esteril",
+     "precio": 26350,
+     "iva_incluido": true,
+     "contenido": "Caja 50 pares",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 22142.86,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Material no confirmado (sintético vs látex); en otro listado $35.000.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

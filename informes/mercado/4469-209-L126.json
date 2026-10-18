@@ -1,0 +1,64 @@
+{
+ "codigo": "4469-209-L126",
+ "nombre": "SC 40658 (JRA) - ADQ DE COCINA MONTESSORI Y SILLAS DE PARVULO.",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Jardines infantiles o salas cunas",
+   "consulta": "silla párvulo madera coihue barniz natural",
+   "opciones": [],
+   "nota": "No se encontró silla de párvulo de coihue con precio en tiendas chilenas; requiere cotizar con carpinterías."
+  },
+  {
+   "linea": 2,
+   "producto": "Jardines infantiles o salas cunas",
+   "consulta": "cocina Montessori de madera",
+   "opciones": [
+    {
+     "tienda": "Falabella (Sapitoskids)",
+     "producto_mercado": "Cocina de madera con accesorios tipo Montessori",
+     "url": "https://www.falabella.com/falabella-cl/shop/cocina-montessori",
+     "precio": 21990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 18478.99,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Tamaño pequeño, marca genérica",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (Bandú)",
+     "producto_mercado": "Cocina de juguete de madera con accesorios",
+     "url": "https://www.lider.cl/browse/juguetes-y-entretencion/juguetes-para-bebes/juguetes-de-madera/31281781_18154041_81113958",
+     "precio": 75490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 63436.97,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (Kidscool, vendida por Sodimac)",
+     "producto_mercado": "Cocina Montessori con accesorios rosa/blanca",
+     "url": "https://www.falabella.com/falabella-cl/shop/cocina-montessori",
+     "precio": 81990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 68899.16,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

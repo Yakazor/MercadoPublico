@@ -1,0 +1,113 @@
+{
+ "codigo": "1480067-24-L126",
+ "nombre": "PTR S - 105 INSUMOS MEDICOS ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "pasta/hidrogel con plata, alginato plata (Mercado Libre)",
+   "opciones": [],
+   "nota": "Producto equivalente probable: Askina Calgitrol Paste 15 g (https://www.mercadolibre.cl/askina-calgitrol-paste-15-grs-hidrogel-plata/up/MLCU16337865); la búsqueda no mostró precio. Sin opciones."
+  },
+  {
+   "linea": 2,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "pasta/hidrogel con plata, alginato plata (Mercado Libre)",
+   "opciones": [],
+   "nota": "Tul con plata (TLC-Ag, p. ej. Urgotul Ag/Physiotulle Ag) no encontrado con precio en la búsqueda. Sin opciones."
+  },
+  {
+   "linea": 3,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "venda compresiva corto estiramiento 10 cm x 5 m (Mercado Libre)",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Venda compresiva corto estiramiento Jobst Comprilan 10 cm x 5 m",
+     "url": "https://listado.mercadolibre.cl/vendas-de-compresion",
+     "precio": 8592,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7220.17,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en resultado de búsqueda (listado); ficha no identificada. Verificar ancho requerido.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "(misma búsqueda que línea 3)",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Venda compresiva corto estiramiento Jobst Comprilan 10 cm x 5 m",
+     "url": "https://listado.mercadolibre.cl/vendas-de-compresion",
+     "precio": 8592,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7220.17,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Mismo producto que línea 3; precio visto en listado. Verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Vendas o apósitos compresores",
+   "consulta": "pasta/hidrogel con plata, alginato plata (Mercado Libre)",
+   "opciones": [],
+   "nota": "Fieltro de descarga (caja 50) no encontrado con precio. Sin opciones."
+  },
+  {
+   "linea": 6,
+   "producto": "Productos médicos autolíticos de desbridamiento",
+   "consulta": "pasta/hidrogel con plata, alginato plata (Mercado Libre)",
+   "opciones": [],
+   "nota": "Gel NaCl 0,9% con plata (caja 10) no encontrado con precio; solo hidrogeles con plata de 15 g sin precio visible. Sin opciones."
+  },
+  {
+   "linea": 7,
+   "producto": "Lubricantes personales o gelatinas del examen",
+   "consulta": "gel conductor ecografía electrocardiograma 250 ml",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Gel conductor Dieco-gel 250 ml, pack 12",
+     "url": "https://listado.mercadolibre.cl/gel-conductor-para-electrocardiogramas",
+     "precio": 33990,
+     "iva_incluido": true,
+     "contenido": "Pack 12 x 250 ml",
+     "unidades_equivalentes": 12,
+     "precio_unitario_neto": 2380.25,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Pack de 12 visto en resultados ($33.990 y $40.990 según vendedor); verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Gel conductor Dieco-gel 250 ml (Difem)",
+     "url": "https://listado.mercadolibre.cl/gel-conductor-para-electrocardiogramas",
+     "precio": 3490,
+     "iva_incluido": true,
+     "contenido": "1 aplicador 250 ml",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2932.77,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio más frecuente en listados (rango 2.990-3.990); ficha no identificada. Verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "codigo": "5215-35-LE26",
+ "nombre": "COMPUTADORES",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Computadores de escritorio",
+   "consulta": "All in One HP ProOne 440 G9 (SP Digital, PC Factory)",
+   "opciones": [
+    {
+     "tienda": "SP Digital",
+     "producto_mercado": "AIO HP ProOne 440 G9, Core i5-12500, 8GB RAM, SSD 512GB, W11 Pro",
+     "url": "https://www.spdigital.cl/hp-proone-desktop-intel-core-i5-i5-12500/",
+     "precio": 992190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 833773.11,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio con Webpay/otros medios ($949.460 transferencia) según resultado de búsqueda; SP Digital tiene varias fichas de esta configuración con precios distintos. Verificar RAM/CPU requeridas en adjunto.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

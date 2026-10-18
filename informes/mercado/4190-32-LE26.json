@@ -1,0 +1,44 @@
+{
+ "codigo": "4190-32-LE26",
+ "nombre": "Instrumentos Musicales",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tambores",
+   "consulta": "timbales sinfónicos precio Chile; timpani pedal set Chile precio; timbales orquestales timpani juego precio Chile tienda instrumentos",
+   "nota": "Solo timbales latinos en Falabella (no sinfónicos); timpani de pedal sin precio en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Contrabajos",
+   "consulta": "contrabajo 3/4 precio Chile",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Falabella (Musicchile)",
+     "producto_mercado": "Livorno Contrabajo 3/4 Lib-500",
+     "url": "https://www.falabella.com/falabella-cl/shop/contrabajo",
+     "precio": 649900,
+     "iva_incluido": true,
+     "contenido": "1 contrabajo",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 546134.45,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Se asume Global = 1 contrabajo.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Atriles de pie",
+   "consulta": "atril partitura metálico precio Chile; atril para partituras plegable precio Chile; atril partitura plegable mercadolibre falabella sonar",
+   "nota": "Sin precios en CLP en resultados (solo tiendas alemanas; el blog de Mercado Libre Chile no muestra precios).",
+   "opciones": []
+  }
+ ]
+}

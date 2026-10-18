@@ -1,0 +1,974 @@
+{
+ "codigo": "2446-307-LE26",
+ "nombre": "P.P413-2026 MATERIALES Y HERRAMIENTAS MANT ESTADIO",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de busqueda; GitHub los verifica abriendo cada pagina.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Discos abrasivos",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Sin busqueda; no se encontro opcion.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Brocas",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No hay set Makita de 14 piezas en tiendas chilenas en resultados (solo set de 4 brocas, no equivalente).",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Brocas",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Solo se hallo broca paleta individual Makita en Easy, sin precio.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Destornilladores",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Solo oferta de otra marca importada (Lider/nocnoc, 72.990); descartada.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Conjuntos generales de herramientas",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallo juego de 151 piezas en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 6,
+   "producto": "Conjuntos generales de herramientas",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Sin resultados de set de 120 piezas en Chile (no buscado por separado).",
+   "opciones": []
+  },
+  {
+   "linea": 7,
+   "producto": "Llaves ajustables",
+   "consulta": "llave ajustable 12 pulgadas precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac (OV Import)",
+     "producto_mercado": "MAKAWA Llave Francesa Ajustable 12\" Mk-0257",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/llaves-francesas",
+     "precio": 6500,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5462.18,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio con 35% dcto (antes 9.990); vendedor externo. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BAUKER Llave Francesa/Ajustable 12\" Acero",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/llave-ajustable",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Cintas métricas",
+   "consulta": "huincha de medir 5 m punta magnetica",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Karson Huincha de medir 5 metros",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10870/Huinchas-de-medir",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No se confirma punta magnetica ni caja ABS con goma. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "STANLEY Huincha de medir 5 metros",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10870/Huinchas-de-medir",
+     "precio": 8790,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7386.55,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio con 19% dcto (antes 10.890). No se confirma punta magnetica. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Cintas métricas",
+   "consulta": "huincha de medir 10 metros Stanley Powerlock",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Centroherramientas)",
+     "producto_mercado": "Huincha de medir Powerlock 10 m Stanley 33-463S",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10870/Huinchas-de-medir",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio con 30% dcto. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (Urban Comercial)",
+     "producto_mercado": "Huincha Medir 10 Mts Powerlock Stanley 33-463S",
+     "url": "https://www.lider.cl/ip/herramientas/huincha-medir-10-mts-powerlock-stanley-33-463s/00007617433463",
+     "precio": 21990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 18478.99,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Guantes protectores",
+   "consulta": "guantes IGX 620 termico anti impacto Iron X",
+   "opciones": [
+    {
+     "tienda": "Falabella (Segurycel)",
+     "producto_mercado": "Guante IGX 620 Termico Anti-Impacto Iron X",
+     "url": "https://www.falabella.com/falabella-cl/brand/IRON%20X",
+     "precio": 14584,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12255.46,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio visto en listado de marca; vendedor Segurycel. Verificar talla.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Kit de grapadora",
+   "consulta": "engrapadora industrial trabajo pesado grapas 10 mm",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BAUKER engrapadora trabajo pesado",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10887/Engrapadoras-y-grapas",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Capacidad de grapa no confirmada. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "UBERMANN engrapadora trabajo pesado",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10887/Engrapadoras-y-grapas",
+     "precio": 25990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21840.34,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Capacidad de grapa no confirmada. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Grapas",
+   "consulta": "grapas 10 mm caja 1000",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "UBERMANN grapa T50 10 mm caja 1000",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/grapa",
+     "precio": 5516,
+     "iva_incluido": true,
+     "contenido": "1000 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4635.29,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado muestra 6.490 y 5.516 (normal/oferta). Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Rapid N 53 galvanizada 10 mm caja 1080",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/grapa",
+     "precio": 7216,
+     "iva_incluido": true,
+     "contenido": "1080 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6063.87,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado muestra 8.490 y 7.216. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Mordaza de banco",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Solo prensas caiman/esquineras, no tipo G.",
+   "opciones": []
+  },
+  {
+   "linea": 14,
+   "producto": "Mordaza de banco",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Solo prensas caiman/esquineras, no tipo G.",
+   "opciones": []
+  },
+  {
+   "linea": 15,
+   "producto": "Martillos",
+   "consulta": "martillo carpintero 16 oz mango fibra",
+   "opciones": [
+    {
+     "tienda": "Ripley (Makawa)",
+     "producto_mercado": "Makawa MK-3093 martillo carpintero 16 oz",
+     "url": "https://simple.ripley.cl/ferreteria/herramientas-manuales/martillos-y-mazos",
+     "precio": 5500,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4621.85,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio rebajado (antes 7.990). Material del mango no indicado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Ripley (Total Tools)",
+     "producto_mercado": "Total THCH61016L martillo carpintero 16 oz mango fibra",
+     "url": "https://simple.ripley.cl/ferreteria/herramientas-manuales/martillos-y-mazos",
+     "precio": 13500,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11344.54,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio rebajado (antes 20.990).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Varillas del nivel de aceite o tubos de aceite",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallaron niveles de aluminio 80 cm con iman en tiendas chilenas.",
+   "opciones": []
+  },
+  {
+   "linea": 17,
+   "producto": "Mangueras especiales",
+   "consulta": "manguera de nivel transparente 20 metros",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Manguera Rehau Rauclair Cristal 6 mm x 20 m",
+     "url": "https://www.easy.cl/manguera-6-mm-x-20-m-rauclair-cristal-transparente-rehau-1323055/p",
+     "precio": 11090,
+     "iva_incluido": true,
+     "contenido": "20 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9319.33,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Ficha indica uso como manguera para nivel; diametro 6 mm.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris (Easy)",
+     "producto_mercado": "Manguera Rehau Rauclair 12 mm x 20 m",
+     "url": "https://www.paris.cl/manguera-12mm-x-20-m-rauclar-rehau-EACSFM4F7B.html",
+     "precio": 12390,
+     "iva_incluido": true,
+     "contenido": "20 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10411.76,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 18,
+   "producto": "Brochas",
+   "consulta": "brocha multiuso 2 pulgadas Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Brocha Economica Mas 2\" filamentos sinteticos",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/brocha-2%22",
+     "precio": 2125,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1785.71,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado muestra 2.125 y 1.913 (normal/oferta). Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "KOLOR Brocha Multiuso 2\" cerdas naturales",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/brocha-2%22",
+     "precio": 2789,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2343.7,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listado muestra 2.789 y 2.510. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 19,
+   "producto": "Brochas",
+   "consulta": "brocha multiuso 3 pulgadas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Brocha Economica Mas 3\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/brocha-3",
+     "precio": 2910,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2445.38,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado muestra 2.910 y 2.619. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "KOLOR Brocha Multiuso 3\" pintura y barniz",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/brocha-3",
+     "precio": 3843,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3229.41,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listado muestra 3.843 y 3.459. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 20,
+   "producto": "Rodillos de pintar",
+   "consulta": "rodillo chiporro 18 cm",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Lizcal rodillo chiporro 5x18 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34417/rodillos",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Oferta 6.291 segun listado. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Hela rodillo 18 cm chiporro pelo largo natural",
+     "url": "https://www.easy.cl/rodillo-18-cm-chiporro-pelo-largo-natural-blanco-1391776/p",
+     "precio": 7990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6714.29,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 21,
+   "producto": "Discos abrasivos",
+   "consulta": "disco lija velcro 125 mm grano 120 pack 10",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "EBERLEIN lija velcro con malla 125 mm grano 120",
+     "url": "https://listado.mercadolibre.cl/lijas-de-malla-abierta",
+     "precio": 13800,
+     "iva_incluido": true,
+     "contenido": "cantidad por pack no confirmada",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No se confirma que el pack sea de 10 unidades. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 22,
+   "producto": "Calafateos",
+   "consulta": "pistola calafatera profesional antigoteo",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "TOPEX Pistola calafatera antigoteo mango fibra profesional",
+     "url": "https://sodimac.cl/sodimac-cl/lista/CATG11046/Pistola-calafatera/",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "TOPEX Pistola calafatera profesional antigoteo con empuje",
+     "url": "https://sodimac.cl/sodimac-cl/lista/CATG11046/Pistola-calafatera/",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 23,
+   "producto": "Alicates de guardalínea",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Klein sin precio en tiendas chilenas en resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 24,
+   "producto": "Sopletes",
+   "consulta": "kit soplete gas guantes escobilla 1200C",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "PROVIDUS Kit soplete gas guantes escobilla 1200C",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat905643/Sopletes,-Gas-y-Accesorios",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listado muestra 19.990 y 17.991. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 25,
+   "producto": "Sopletes",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallo precio del balon de gas 190 g por separado.",
+   "opciones": []
+  },
+  {
+   "linea": 26,
+   "producto": "Cuchillas o conjuntos de cuchillas de maquinaria",
+   "consulta": "disco diamantado 4 1/2 Dewalt pack 3",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "DEWALT Pack 3 Discos Diamantados 4 1/2\"",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-diamantado-4-1-2",
+     "precio": 21828,
+     "iva_incluido": true,
+     "contenido": "pack de 3",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 18342.86,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "No se confirma que sea para hormigon. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 27,
+   "producto": "Cuchillas o conjuntos de cuchillas de maquinaria",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallaron discos Dewalt 7\" en tiendas chilenas.",
+   "opciones": []
+  },
+  {
+   "linea": 28,
+   "producto": "Cuchillas o conjuntos de cuchillas de maquinaria",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallaron discos Dewalt 9\" en tiendas chilenas.",
+   "opciones": []
+  },
+  {
+   "linea": 29,
+   "producto": "Cuchillas o conjuntos de cuchillas de maquinaria",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallo disco diamantado continuo 4 1/2 para ceramica con precio en Chile.",
+   "opciones": []
+  },
+  {
+   "linea": 30,
+   "producto": "Goznes",
+   "consulta": "pomel 1 pulgada bisagra",
+   "opciones": [
+    {
+     "tienda": "Sodimac / Easy",
+     "producto_mercado": "LIOI Pomel 1\" x 4 3/4\" (2 un)",
+     "url": "https://www.easy.cl/pomel-con-golilla-1-x-434-lioi-382777/p",
+     "precio": 14790,
+     "iva_incluido": true,
+     "contenido": "2 un",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 6214.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo 4 3/4\" (mayor al tipico); no hay pomel 1\" generico simple en resultados.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 31,
+   "producto": "Tornillos roscalata",
+   "consulta": "tornillo autoperforante hexagonal 2 pulgadas caja 100",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mamut Tornillo Autoperforante Metal 2\" 100 un",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/tornillo-hexagonal",
+     "precio": 8552,
+     "iva_incluido": true,
+     "contenido": "caja 100 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7186.55,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Listado muestra 10.690 y 8.552. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 32,
+   "producto": "Perfiles de acero",
+   "consulta": "perfil cuadrado 40x40x2 6 m",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil cuadrado acero 40x40x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/perfil-tubular-cuadrado",
+     "precio": 13939,
+     "iva_incluido": true,
+     "contenido": "6 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11713.45,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listado muestra 14.370 y 13.939.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Perfil cuadrado 40x40x2 mm 6 m",
+     "url": "https://www.easy.cl/perfil-cuadrado-40x40x2-mm-6-m-1386-kg-119265/p",
+     "precio": 14370,
+     "iva_incluido": true,
+     "contenido": "6 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12075.63,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 33,
+   "producto": "Perfiles de acero",
+   "consulta": "perfil cuadrado 20x20x2 6 m",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil cuadrado acero 20x20x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/perfil-tubular-cuadrado",
+     "precio": 7042,
+     "iva_incluido": true,
+     "contenido": "6 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5917.65,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listado muestra 7.260 y 7.042.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Perfil cuadrado 20x20x2 mm 6 m",
+     "url": "https://www.easy.cl/perfil-cuadrado-20x20x2-mm-6-m-63-kg-119257/p",
+     "precio": 7390,
+     "iva_incluido": true,
+     "contenido": "6 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6210.08,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 34,
+   "producto": "Ángulos de acero",
+   "consulta": "angulo 30x30x3 6 m",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Angulo laminado 30x30x3 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/angulo-30x30x2",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "6 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "URL de listado de angulos; el 30x30x3 laminado aparece en la busqueda a 13.990 (el plegado a 8.790 no cumple). Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 35,
+   "producto": "Aleación ferrosa",
+   "consulta": "fierro cuadrado macizo 14 mm 6 m",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Fierro liso cuadrado 12x12 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/fierro-cuadrado",
+     "precio": 11985,
+     "iva_incluido": true,
+     "contenido": "6 m",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10071.43,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No se encontro 14 mm; medida de 12 mm.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 36,
+   "producto": "Pinturas de látex",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "No se hallo latex amarillo rey antihongos inoloro en tineta.",
+   "opciones": []
+  },
+  {
+   "linea": 37,
+   "producto": "Pinturas acrílicas",
+   "consulta": "pintura alto trafico amarillo galon Cerecita",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Pintura piso alto trafico amarillo 1 galon Tricolor",
+     "url": "https://www.easy.cl/pintura-piso-1-galon-alto-trafico-amarillo-tricolor-448024/p",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 galon",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Ficha tecnica a solicitar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Cerecita Pintura Alto Trafico Contrastante amarillo RAL 1003 1 gl",
+     "url": "https://www.sodimac.cl/sodimac-cl/marca/CERESITA",
+     "precio": 52990,
+     "iva_incluido": true,
+     "contenido": "1 galon",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 44529.41,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Se debe adjuntar ficha tecnica.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 38,
+   "producto": "Pinturas de látex",
+   "consulta": "latex Sipa extracubriente blanco tineta",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "SIPA Latex Extracubriente Tineta 4 galones mate blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/pintura-latex-blanco",
+     "precio": 75774,
+     "iva_incluido": true,
+     "contenido": "4 galones",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 63675.63,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listados muestran 79.762/75.774 y 78.166/66.441. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 39,
+   "producto": "Pinturas al esmalte",
+   "consulta": "busqueda sin resultados utilizables",
+   "nota": "Solo se hallo SW gris en 1/4 galon (24.990 en Easy) y otros colores en galon; sin precio del galon gris.",
+   "opciones": []
+  },
+  {
+   "linea": 40,
+   "producto": "Esmeriladoras",
+   "consulta": "esmeril angular 9 pulgadas 2200W",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "UBERMANN Esmeril angular 9\" 2200 W",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/esmeril-de-9-pulgadas",
+     "precio": 129990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 109235.29,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Caracteristicas (cable 2 m, mango, guarda) no verificadas.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BOSCH Esmeril angular 9\" 2200 W",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/esmeril-de-9-pulgadas",
+     "precio": 139990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 117638.66,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Caracteristicas no verificadas.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "MAKITA Esmeril angular 9\" 2200 W",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/esmeril-de-9-pulgadas",
+     "precio": 149990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 126042.02,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Caracteristicas no verificadas.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 41,
+   "producto": "Cuchillas o conjuntos de cuchillas de maquinaria",
+   "consulta": "disco corte metal 9 pulgadas 230x2,5x22",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Disco corte metal 9\" Indura",
+     "url": "https://www.easy.cl/disco-corte-metal-9-cp-indura-823835/p",
+     "precio": 1990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Diametro 229 mm; espesor no confirmado; precio rebajado (antes 3.090).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 42,
+   "producto": "Alfombras para exterior",
+   "consulta": "rollo pasto sintetico 35 mm 4x25 m",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "PYRAMID Garden pasto sintetico 35 mm rollo 4x25 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat860002/Pasto-sintetico",
+     "precio": 839990,
+     "iva_incluido": true,
+     "contenido": "rollo 100 m2",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 705873.95,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio con 25% dcto segun listado. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 43,
+   "producto": "Adhesivos químicos",
+   "consulta": "adhesivo de contacto Agorex 1 galon",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Agorex adhesivo de contacto Pren 1 galon",
+     "url": "https://www.easy.cl/adhesivo-de-contacto-1-galon-pren-agorex-892247/p",
+     "precio": 35990,
+     "iva_incluido": true,
+     "contenido": "1 galon",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 30243.7,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Orientado a PVC/cubrepisos.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Agorex adhesivo de contacto Flex 125 1 galon",
+     "url": "https://www.easy.cl/adhesivo-de-contacto-1-galon-flex-125-agorex-892250/p",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 galon (3,8 L)",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Adhesivo de contacto 1 gl (Agorex)",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11042/Adhesivo-de-Contacto",
+     "precio": 45990,
+     "iva_incluido": true,
+     "contenido": "1 galon",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 38647.06,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Listado muestra 45.990 y 43.690. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 44,
+   "producto": "Cuchillas o conjuntos de cuchillas de maquinaria",
+   "consulta": "caja 50 discos corte 4 1/2 Bosch",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile (Oviedo Ferreterias)",
+     "producto_mercado": "50 Discos Corte Std Metal 4 1/2 115x1,0 mm Bosch",
+     "url": "https://listado.mercadolibre.cl/disco-corte-4-1-2",
+     "precio": 12115,
+     "iva_incluido": true,
+     "contenido": "caja 50 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10180.67,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Precio con 39% dcto (lista 19.989).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "BAUKER caja 50 discos de corte 4 1/2",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/disco-de-corte-4-1-2f2",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "caja 50 un",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

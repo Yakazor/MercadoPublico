@@ -1,0 +1,44 @@
+{
+ "codigo": "691944-28-LE26",
+ "nombre": "Propuesta Nº27 Adquisición cortaviento para trabajadores PMU",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Ropa reflectante o accesorios",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: cortaviento hombre packable Falabella",
+   "nota": "Precio de listado/ficha de tienda; especificación exacta pendiente de revisar.",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Cortaviento hombre Starter",
+     "url": "https://www.falabella.com/falabella-cl/product/883779497/cortaviento-hombre-starter/883779504",
+     "precio": 36990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31084.03,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No se confirma si es packable, capucha elasticada ni reflectante; solo modelo hombre.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Cortaviento unisex packable Le Vrai 4.0",
+     "url": "https://www.lider.cl/ip/vestuario/cortaviento-unisex-packable-le-vrai-4-0-claude-white/00803085962178",
+     "precio": 52492,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 44110.92,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Unisex; no confirma capucha elasticada ni detalle reflectante; precio muy superior a ref. fiscal.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "codigo": "2736-41-LE26",
+ "nombre": "Monitor impresoras disco duro y otros.",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Soportes para monitor",
+   "consulta": "monitor 24 pulgadas precio Chile PC Factory",
+   "nota": "Ítem global (monitores, impresoras, escáner, SSD, etc.); solo se cotizó el monitor 24\" como referencia parcial.",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Monitor Pivot AOC 24\" IPS FHD 75Hz 24P2U",
+     "url": "https://www.lider.cl/ip/accesorios-computacion/monitor-pivot-aoc-24-ips-fhd-75hz-24p2u/00692340892601",
+     "precio": 109990,
+     "iva_incluido": true,
+     "contenido": "1 monitor",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 92428.57,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Cubre solo el monitor; el resto de los artículos del ítem no está cotizado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Monitor Master-G MGME2440 24\" FHD IPS 100Hz",
+     "url": "https://www.paris.cl/monitor-master-g-mgme2440-24-fhd-led-ips-100hz-MKGKJZN1LH.html",
+     "precio": 116990,
+     "iva_incluido": true,
+     "contenido": "1 monitor",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 98310.92,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Cubre solo el monitor.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

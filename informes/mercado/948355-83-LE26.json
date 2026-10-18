@@ -1,0 +1,43 @@
+{
+ "codigo": "948355-83-LE26",
+ "nombre": "ADQUISICIÓN DE INSUMOS MÉDICOS POR SISTEMA DE SUMINISTRO PARA EL HOSPITAL DIPRECA",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sostenes o aparatos vasculares o de compresión",
+   "consulta": "cinta vascular silicona vessel loop Chile",
+   "nota": "Sin vendedor chileno con precio; producto clínico se cotiza con distribuidores (ej. DeRoyal) y requiere registro ISP.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Sostenes o aparatos vasculares o de compresión",
+   "consulta": "cinta vascular silicona vessel loop Chile",
+   "nota": "Sin vendedor chileno con precio; producto clínico se cotiza con distribuidores (ej. DeRoyal) y requiere registro ISP.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Sostenes o aparatos vasculares o de compresión",
+   "consulta": "cinta vascular silicona vessel loop Chile",
+   "nota": "Sin vendedor chileno con precio; producto clínico se cotiza con distribuidores (ej. DeRoyal) y requiere registro ISP.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Sondas de drenaje para la aspiración quirúrgica",
+   "consulta": "equipo aspiración continua 15FR 400 cc sonda precio Chile",
+   "nota": "Sin precios chilenos (resultados solo de aspiradoras domésticas); producto clínico se cotiza con distribuidores de insumos médicos y requiere registro ISP.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Bolsas de drenaje o depósitos para el drenaje médico de incisión",
+   "consulta": "bolsa drenaje abdominal válvula antirreflujo estéril precio Chile; bolsa colectora drenaje estéril válvula antirreflujo precio Chile insumos médicos",
+   "nota": "Solo precios de Brasil; sin precio en Chile.",
+   "opciones": []
+  }
+ ]
+}

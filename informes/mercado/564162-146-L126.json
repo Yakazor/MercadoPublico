@@ -1,0 +1,65 @@
+{
+ "codigo": "564162-146-L126",
+ "nombre": "Solicitud N°93724 - Desktop, monitor, teclado y mouse CC11 / PS1845",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Computadores personales",
+   "consulta": "computador desktop PC Factory precio Chile Core i5 16GB",
+   "opciones": [],
+   "nota": "Resultados: PC gamer en Paris (CompuElite) y Centrale sin precio; no corresponde a desktop de oficina; especificación no definida."
+  },
+  {
+   "linea": 2,
+   "producto": "Monitores de vídeo",
+   "consulta": "monitor 24 pulgadas IPS precio Chile PC Factory",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Monitor ViewSonic VA240A-H 24\" FHD",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/monitor-24-pulgadas",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Panel VA",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (GASEI)",
+     "producto_mercado": "Monitor Master-G MGME2450 24\" FHD IPS 144Hz",
+     "url": "https://www.lider.cl/ip/accesorios-computacion/monitor-de-pc-24-full-hd-ips-144hz-5-5ms-mgme2450-master-g/00780874851672",
+     "precio": 99990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 84025.21,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Especificación del monitor no definida; se asume 24\" FHD."
+  },
+  {
+   "linea": 3,
+   "producto": "Teclados",
+   "consulta": "teclado español USB precio Chile",
+   "opciones": [],
+   "nota": "Sin precio chileno (solo kit MK120 Paris sin precio visible)."
+  },
+  {
+   "linea": 4,
+   "producto": "Trackballs y mouse de computador",
+   "consulta": "mouse óptico USB precio Chile",
+   "opciones": [],
+   "nota": "Sin precio chileno."
+  }
+ ]
+}

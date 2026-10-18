@@ -1,0 +1,29 @@
+{
+ "codigo": "3675-8-L126",
+ "nombre": "TONER Y TINTAS PARA EL DEPARTAMENTRO DE SALUD",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tóner",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Especificación en bases técnicas (modelos no indicados); no se puede buscar.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Tintas",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Especificación en bases técnicas (modelos no indicados); no se puede buscar.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Tintas",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Especificación en bases técnicas (modelos no indicados); no se puede buscar.",
+   "opciones": []
+  }
+ ]
+}

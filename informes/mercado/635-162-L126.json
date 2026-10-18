@@ -1,0 +1,140 @@
+{
+ "codigo": "635-162-L126",
+ "nombre": "ADQUISICIÓN DE HERRAMIENTAS PARA DIAGNÓSTICO Y CONTROL DE INFRAESTRUCTURAS, OT 5905",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Anemómetros",
+   "consulta": "anemómetro digital portátil hélice precio Chile",
+   "opciones": [],
+   "nota": "Solo resultado: testo 405i (termoanemómetro, no hélice) a $214.990 enviado desde EE.UU.; descartado."
+  },
+  {
+   "linea": 2,
+   "producto": "Termómetros de mano",
+   "consulta": "termohigrómetro digital portátil precio Chile",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Escuadras",
+   "consulta": "escuadra metálica 90° carpintero precio Chile",
+   "opciones": [],
+   "nota": "Sin precio chileno de escuadra."
+  },
+  {
+   "linea": 4,
+   "producto": "Herramientas del inclinómetro de Slickline",
+   "consulta": "inclinómetro digital nivel digital brazo angular precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Inclinómetro digital LCD RAGNAR",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/nivel-digital",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio con 26% dto.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Manómetro",
+   "consulta": "manómetro analógico portátil precio Chile Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Manómetro PGIC 0-7 bar fluidos",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/manometro",
+     "precio": 6590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5537.82,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Rango según specs adjuntas no conocido",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Martillos",
+   "consulta": "martillo geológico precio Chile",
+   "opciones": [],
+   "nota": "Sin resultados comerciales."
+  },
+  {
+   "linea": 7,
+   "producto": "Martillos",
+   "consulta": "martillo geológico precio Chile",
+   "opciones": [],
+   "nota": "Sin resultados comerciales para martillo telescópico."
+  },
+  {
+   "linea": 8,
+   "producto": "Mochilas",
+   "consulta": "mochila portaherramientas precio Chile Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mochila para herramientas Ingco",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/mochila-para-herramientas",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mochila herramientas Stanley 35x16x44",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/mochila-para-herramientas",
+     "precio": 50390,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42344.54,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Sensores o transmisores de nivel",
+   "consulta": "inclinómetro digital nivel digital brazo angular precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Nivel digital 2 en 1 UBERMANN",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/nivel-digital",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Brazo angular abatible no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

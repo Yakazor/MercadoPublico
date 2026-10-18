@@ -1,0 +1,44 @@
+{
+ "codigo": "1434-29-LE26",
+ "nombre": "ADQUISICIÓN DE MENAJE E IMPLEMENTOS PARA CASINOS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Platos y cubiertos de servicio",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: juego de cubiertos Sodimac precio",
+   "nota": "Precio de listado/ficha de tienda; especificación exacta pendiente de revisar.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Set 16 cubiertos acero inoxidable Casa Bonita",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat317784/cubiertos",
+     "precio": 5690,
+     "iva_incluido": true,
+     "contenido": "set 16 cubiertos acero inoxidable",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4781.51,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Supuesto: 1 set de cubiertos por 'Global'; platos y detalle (anexos A-F) no visibles.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Set 24 cubiertos acero inoxidable Idetex",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat317784/cubiertos",
+     "precio": 21990,
+     "iva_incluido": true,
+     "contenido": "set 24 piezas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 18478.99,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Supuesto: 1 set por 'Global'; no incluye platos.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

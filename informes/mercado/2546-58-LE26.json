@@ -1,0 +1,115 @@
+{
+ "codigo": "2546-58-LE26",
+ "nombre": "PROP PUBL N84 HERRAMIENTAS ELECTRICAS Y MANUALES",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Carretilla hidráulica",
+   "consulta": "pinza para soleras de hormigón",
+   "opciones": [],
+   "nota": "No se encontró pinza para soleras/cordones con precio en Chile."
+  },
+  {
+   "linea": 2,
+   "producto": "Taladro de mano o empuje",
+   "consulta": "taladro percutor",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Taladro percutor eléctrico 13 mm 900 W Bauker",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/taladro-percutor",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Taladro percutor inalámbrico 13 mm 20 V brushless Ubermann",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/taladro-percutor",
+     "precio": 79900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 67142.86,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Taladro percutor inalámbrico 13 mm 20 V DeWalt 2 baterías",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/taladro-percutor",
+     "precio": 134990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 113436.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Detalle en bases no disponible; se listan taladros percutores de uso general."
+  },
+  {
+   "linea": 3,
+   "producto": "Lijadoras",
+   "consulta": "lijadora de banda eléctrica",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Lijadora de banda eléctrica 920 W Wesco",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/5431476/lijadora-de-banda-electrica-920w",
+     "precio": 75590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 63521.01,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Lijadora de banda 900 W Stanley",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34403/Lijadora-de-banda",
+     "precio": 76990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 64697.48,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Lijadora de banda 920 W Bauker",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34403/Lijadora-de-banda",
+     "precio": 84990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 71420.17,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Detalle en bases no disponible."
+  }
+ ]
+}

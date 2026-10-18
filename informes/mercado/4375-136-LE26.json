@@ -1,0 +1,36 @@
+{
+ "codigo": "4375-136-LE26",
+ "nombre": "CONVENIO PRODUCTOS DE ASEO PARA HGGB",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Detergentes surfactantes",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Mopa de rayón 16 oz: solo hallazgos en EE.UU.; en Chile solo mopas de otros materiales. 2ª pasada: solo mopas EE.UU./Canadá; sin precio chileno.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Detergentes surfactantes",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Removedor de cera 20 L: sin precio chileno en resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Detergentes surfactantes",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Mantenedor de piso 20 L con equipo de dilución: sin precio chileno encontrado.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Detergentes surfactantes",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "Palo de aluminio para mopa: listados de Mercado Libre sin precio visible.",
+   "opciones": []
+  }
+ ]
+}

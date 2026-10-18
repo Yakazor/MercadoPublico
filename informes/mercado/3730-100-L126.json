@@ -1,0 +1,88 @@
+{
+ "codigo": "3730-100-L126",
+ "nombre": "ADQUISICION DE TOLDOS. MESAS Y SILLAS ",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Toldos",
+   "consulta": "2 búsquedas web (tiendas chilenas)",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Toldo plegable 3x3 Just Home Collection",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/toldo-3x3",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin logos impresos; la impresión personalizada se cotiza aparte.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Toldo carpa plegable 3x3 mts azul",
+     "url": "https://www.paris.cl/toldo-carpa-plegable-3x3-mts-azul-MK4T619472.html",
+     "precio": 70990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 59655.46,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin logos impresos; lona impermeable UV.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Mesas",
+   "consulta": "2 búsquedas web (tiendas chilenas)",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa plegable tipo maleta 180 cm Just Home Collection (blanca)",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat964307/mesas-plegables",
+     "precio": 22990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 19319.33,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de página de listado; medidas exactas pedidas en anexo no verificadas.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Sillas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: silla plegable Sodimac precio",
+   "nota": "Precio de listado/ficha de tienda; especificación exacta pendiente de revisar.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla plegable Colvin",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG19055/Silla-plegable",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Silla plegable Colvin vista en listado; especificaciones del anexo no verificadas.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "codigo": "3000-37-LE26",
+ "nombre": "SILLONES Y SILLAS DE ESCRITORIO DAF PREVENCIÓN",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sillas",
+   "consulta": "silla ergonómica oficina respaldo malla (Sodimac/Falabella/Paris/Ripley)",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Silla oficina ergonómica Ikemma Ergo Pro",
+     "url": "https://www.paris.cl/silla-oficina-ergon-mica-silla-escritorio-ejecutivo-ikemma-ergo-pro-MK1XITPYPS.html",
+     "precio": 54990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46210.08,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Bases con características técnicas no disponibles; verificar que cumpla (respaldo, mecanismo, brazos).",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Silla de oficina ergonómica reclinable respaldo alto (Global Latin Group)",
+     "url": "https://www.paris.cl/silla-de-oficina-ergonomica-reclinable-con-respaldo-alto-MKDEY28ZFM.html",
+     "precio": 102990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 86546.22,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Verificar contra las especificaciones de las bases.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Las especificaciones están en las bases (no disponibles); se ofrecen sillas ergonómicas de malla de referencia."
+  },
+  {
+   "linea": 2,
+   "producto": "Sillas",
+   "consulta": "silla visita sala de reuniones apilable",
+   "opciones": [
+    {
+     "tienda": "Ripley",
+     "producto_mercado": "Silla polipropileno negra apilable base metálica",
+     "url": "https://simple.ripley.cl/silla-polipropileno-negra-apilable-base-metalica-mpm00012952602",
+     "precio": 26990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 22680.67,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Silla de visita/reunión apilable básica; verificar según bases.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Especificaciones en bases (no disponibles); opción básica de referencia."
+  },
+  {
+   "linea": 3,
+   "producto": "Sillas",
+   "consulta": "silla visita sala de reuniones apilable",
+   "opciones": [
+    {
+     "tienda": "Ripley",
+     "producto_mercado": "Silla polipropileno negra apilable base metálica",
+     "url": "https://simple.ripley.cl/silla-polipropileno-negra-apilable-base-metalica-mpm00012952602",
+     "precio": 26990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 22680.67,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Silla de visita/reunión apilable básica; verificar según bases.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Especificaciones en bases (no disponibles); opción básica de referencia."
+  }
+ ]
+}

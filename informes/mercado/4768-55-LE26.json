@@ -1,0 +1,44 @@
+{
+ "codigo": "4768-55-LE26",
+ "nombre": "ADQUISICION DE JUGUETES DE NAVIDAD 2026",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Juguetes táctiles",
+   "consulta": "juguetes navidad niños precio Chile mayorista; juguetes Lider Falabella Chile precio $9.990",
+   "nota": "Juguete genérico de Navidad sin especificación; ref_mediana alta (23.670). Se listan juguetes económicos de Lider como referencia; no se halló mayorista.",
+   "opciones": [
+    {
+     "tienda": "Lider (vendedor Leon Import SpA)",
+     "producto_mercado": "Juguete Nutria Relajante, Compañera de Respiración",
+     "url": "https://www.lider.cl/ip/juguetes-para-bebes/juguetes-nutria-relajante-companera-de-respiracion-juguete-nutria-relajante-companera-de-respiracion/00401239042205",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Para bebés/niños pequeños; edad objetivo del programa no especificada.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (vendedor HFCTOYS)",
+     "producto_mercado": "Muñeca de 29 cm con silla, mamadera y accesorios",
+     "url": "https://www.lider.cl/ip/munecas-y-accesorios/muneca-de-29-cm-con-silla-mamadera-y-accesorios/00489706575406",
+     "precio": 10990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9235.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Un solo tipo de juguete; la compra real requiere variedad por edad/género.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

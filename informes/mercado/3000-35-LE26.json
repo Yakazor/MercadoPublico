@@ -1,0 +1,729 @@
+{
+ "codigo": "3000-35-LE26",
+ "nombre": "Implementos Deportivos - Unidad de Deportes",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "TABLA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 2,
+   "producto": "FIDEOS",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Fideo/tallarín flotador de espuma 150 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat8320004/Flotadores-e-Inflables",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; diámetro (6 cm vs 60 cm pedido) sin confirmar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "VENDA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Lider (DeporteMania)",
+     "producto_mercado": "Vendas boxeo Everlast 4,5 m velcro, par",
+     "url": "https://www.lider.cl/ip/disciplinas/vendas-boxeo-everlast-4-5-metros-velcro-unisex-par/00046196265015",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 4197.48,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Se vende por par: 2 vendas.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Vendas boxeo Everlast 4,5 m MMA fitness velcro",
+     "url": "https://www.paris.cl/vendas-boxeo-everlast-45-metros-mma-fitness-velcro-MK1OQY2T83.html",
+     "precio": 10990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 4617.65,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Se vende por par: 2 vendas.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "STEP AEROBICO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Lider (Telotenemos.cl)",
+     "producto_mercado": "Step aeróbico 2 niveles antideslizante",
+     "url": "https://www.lider.cl/ip/fitness/step-banco-aerobic-fitness-crosfit-2-niveles-antideslizante/00064976244754",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo 68 cm no confirmado en resultado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Step aeróbico ajustable 2 niveles Overfit",
+     "url": "https://www.paris.cl/step-aerobico-ajustable-2-niveles-antideslizante-overfit-MKIROAFNDU.html",
+     "precio": 22990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 19319.33,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo 68 cm no confirmado.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "PESAS RUSA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 6,
+   "producto": "PESAS RUSA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Falabella (K FIT)",
+     "producto_mercado": "Pesa rusa kettlebell 6 kg",
+     "url": "https://www.falabella.com/falabella-cl/shop/pesas-rusas",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Listado; no se indica si es engomada.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Paris (Ultimate Fitness)",
+     "producto_mercado": "Kettlebell pesa rusa 6 kg cemento cubierta plástica",
+     "url": "https://www.paris.cl/kettlebell-pesa-rusa-6-kg-MKLNQ1C2O7.html",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Cemento con cubierta plástica, no goma.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Kettlebell pesa rusa cemento 6 kg",
+     "url": "https://www.easy.cl/kettlebell-mancuerna-pesa-rusa-cemento-6-kg-negro-mkb2o76jp9/p",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Cemento, no confirma engomada.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "PESAS RUSA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Pesa rusa kettlebell 8 kg (desde $14.990)",
+     "url": "https://www.falabella.com/falabella-cl/shop/pesas-rusas",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio 'desde' del listado; no confirma engomada.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "PESAS RUSA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Pesa rusa kettlebell 10 kg (desde $15.990)",
+     "url": "https://www.falabella.com/falabella-cl/shop/pesas-rusas",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio 'desde' del listado; no confirma engomada.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "BANDA ELASTICA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 10,
+   "producto": "BANDA ELASTICA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 11,
+   "producto": "BANDAS ELáSTICAS DE RESISTENCIA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Lider (Puntostore)",
+     "producto_mercado": "Pack 5 bandas elásticas con 11 accesorios",
+     "url": "https://www.lider.cl/ip/fitness/pack-5-bandas-elasticas-resistencia-con-11-accesorios-puntostore/00476000770010",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 set",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Incluye accesorios; el mismo producto con otros vendedores desde $31.690.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (FITNICS)",
+     "producto_mercado": "Power Band set 5 bandas látex",
+     "url": "https://www.falabella.com/falabella-cl/shop/bandas-elasticas-de-resistencia",
+     "precio": 18980,
+     "iva_incluido": true,
+     "contenido": "1 set",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15949.58,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Colores/kg exactos no confirmados.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "PERCHERA DE CONTACTO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 13,
+   "producto": "PERCHERA DE CONTACTO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 14,
+   "producto": "ESCUDO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 15,
+   "producto": "TABLA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 16,
+   "producto": "CABEZAL",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 17,
+   "producto": "CABEZAL",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre",
+     "producto_mercado": "Cabezal casco artes marciales WKF Boomfit",
+     "url": "https://listado.mercadolibre.cl/cabezal-boxeo",
+     "precio": 11989,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10074.79,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; talla M no confirmada.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Lider (LINEASPORT.CL)",
+     "producto_mercado": "Casco de taekwondo profesional talla M",
+     "url": "https://www.lider.cl/ip/disciplinas/casco-de-taekwondo-profesional-talla-m/00046961928349",
+     "precio": 16490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13857.14,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Cabezal con mica no confirmado.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 18,
+   "producto": "PROTECTOR INGUINAL FEMENINO TALLA S, MATERIAL EN PU, FLEXIBLE, ELASTICADO PARA M",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 19,
+   "producto": "PROTECTOR INGUINAL FEMENINO TALLA M, MATERIAL EN PU, FLEXIBLE, ELASTICADO PARA M",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 20,
+   "producto": "PROTECTOR INGUINAL FEMENINO TALLA L, MATERIAL EN PU, FLEXIBLE, ELASTICADO PARA M",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 21,
+   "producto": "PROTECTOR INGUINAL MASCULINO TALLA XS, MATERIAL EN PU, FLEXIBLE, ELASTICADO PARA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 22,
+   "producto": "PROTECTOR INGUINAL MASCULINO TALLA M, MATERIAL EN PU, FLEXIBLE, ELASTICADO PARA ",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 23,
+   "producto": "PROTECTOR INGUINAL MASCULINO TALLA L, MATERIAL EN PU, FLEXIBLE, ELASTICADO PARA ",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 24,
+   "producto": "VENDA RIGIDA 5 CM X 4.5 MTR",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 25,
+   "producto": "CAJON SALTO PLIOMETRICO DE MADERA 30 X 40 X 40",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 26,
+   "producto": "CAJON SALTO PLIOMETRICO DE MADERA  40 X 50 X 60",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 27,
+   "producto": "CAJON SALTO PLIOMETRICO DE MADERA 50 X 60 X 70",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 28,
+   "producto": "HUINCHA CINTA METRICA 100 METROS PARA MEDIR CON MANILLA Y JALADOR",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (OFERTABKN)",
+     "producto_mercado": "Huincha cinta métrica 100 m con manilla y jalador",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat100003/Huinchas-Reglas-y-Escuadras",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio de listado.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (Toolpro)",
+     "producto_mercado": "Milwaukee cinta métrica carrete 100 m fibra de vidrio",
+     "url": "https://www.falabella.com/falabella-cl/shop/cinta-de-fibra-de-vidrio",
+     "precio": 58990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 49571.43,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Marca profesional, mucho más cara.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 29,
+   "producto": "PESA DIGITAL",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Lider (TOPMEDIC)",
+     "producto_mercado": "Báscula balanza inteligente bioimpedancia Bluetooth 8 sensores Senssun",
+     "url": "https://www.lider.cl/ip/salud-y-bienestar/bascula-balanza-inteligente-bioimpedancia-bluetooth-8-sensores/00046209742468",
+     "precio": 70990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 59655.46,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Medidas exactas no confirmadas.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 30,
+   "producto": "ESTACA DE AGILIDAD",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 31,
+   "producto": "VALLAS DE ENTRENAMIENTO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 32,
+   "producto": "PALETAS + PELOTAS DE PING PONG ",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Paletas ping pong madera set 2 raquetas + 3 pelotas",
+     "url": "https://www.paris.cl/paletas-de-ping-ping-3-pelotas-set-de-2-raquetas-de-madera-MK6HN88BBA.html",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 set",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Revestimiento de goma no confirmado.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 33,
+   "producto": "DISCO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 34,
+   "producto": "DISCO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (SDFIT)",
+     "producto_mercado": "Disco engomado 5 kg Eco Rubber pack 4x, barra olímpica",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/cat2880056/Discos-y-Barras",
+     "precio": 31990,
+     "iva_incluido": true,
+     "contenido": "pack 4",
+     "unidades_equivalentes": 4,
+     "precio_unitario_neto": 6720.59,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Orificio olímpico 50 mm, no preolímpico; pack de 4 asumido.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 35,
+   "producto": "DISCO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 36,
+   "producto": "DISCO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 37,
+   "producto": "BARRA PRE-OLIMPICA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 38,
+   "producto": "BARRA PRE-OLIMPICA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 39,
+   "producto": "CABLE",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 40,
+   "producto": "RED DE FUTBOL",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 41,
+   "producto": "BALóN",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 42,
+   "producto": "BALóN",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 43,
+   "producto": "BALóN",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 44,
+   "producto": "ARCO DE MINIFUTBOL",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 45,
+   "producto": "CINTA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 46,
+   "producto": "AROS",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 47,
+   "producto": "CHALECO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Paris (Ultimate Fitness)",
+     "producto_mercado": "Chaleco peso 20 kg intercambiable Pro",
+     "url": "https://www.paris.cl/chaleco-peso-20-kg-peso-intercambiable-pro-MKRBD0M64G.html",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Carga 1-20 kg; placas de acero no confirmadas.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 48,
+   "producto": "CINTURON",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 49,
+   "producto": "BALóN",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 50,
+   "producto": "BALóN",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Lider (Safe Sport Gear)",
+     "producto_mercado": "Balón fútbol sala The House Ball tamaño 4",
+     "url": "https://www.lider.cl/ip/disciplinas/balon-de-futbol-sala-safe-sport-gear-the-house-ball-tamano-4/00019685270037",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Fútbol sala, no se confirma 4 capas/450 g.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 51,
+   "producto": "BADMINTON",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 52,
+   "producto": "CRONOMETRO",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 53,
+   "producto": "PRESAS DE ESCALADA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 54,
+   "producto": "CUERDA",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 55,
+   "producto": "POLEAS SIMPLES",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 56,
+   "producto": "ARNES",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 57,
+   "producto": "CASCO DE SEGURIDAD",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 58,
+   "producto": "MOSQUETON",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [],
+   "nota": "Sin resultado confiable de tienda chilena con precio en las búsquedas."
+  },
+  {
+   "linea": 59,
+   "producto": "BALóN",
+   "consulta": "Búsquedas web por tipo de producto en tiendas chilenas",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Balón fútbol Train Nexus N°5 termosellado",
+     "url": "https://www.paris.cl/pelota-balon-futbol-5-profesional-train-nexus-termosellado-MKUU4DR84B.html",
+     "precio": 36790,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 30915.97,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No es el Tango; marca Train similar, termosellado.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

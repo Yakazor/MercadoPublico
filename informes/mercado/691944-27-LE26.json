@@ -1,0 +1,52 @@
+{
+ "codigo": "691944-27-LE26",
+ "nombre": "Propuesta Nº26 Adquisición pantalón y poleras para trabajadores PMU Línea cuenca del carbón Segundo semestre 2026",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Pantalones protectores",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Pantalón cargo ripstop táctico Ekol (poliéster/algodón) negro",
+     "url": "https://www.paris.cl/pantalon-tactico-militar-cargo-outdoor-airsort-militar-MKQM4WP1DR.html",
+     "precio": 38210,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 32109.24,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Sin elastano ni refuerzo Oxford declarado; solo negro.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Camisas protectoras",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: sin precios chilenos hallados",
+   "nota": "",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Polera hombre piqué manga larga filtro UV 60% algodón 40% poliéster",
+     "url": "https://www.paris.cl/polera-hombre-pique-manga-larga-premium-casual-filtro-uv-MKGY36P5WP.html",
+     "precio": 13590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11420.17,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "No es 100% poliéster ni tiene detalle reflectivo; para compra por volumen conviene proveedor de ropa de trabajo.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,424 @@
+{
+ "codigo": "5413-83-LE26",
+ "nombre": "ADQUISICIÓN DE MOBILIARIO PARA ESPACIOS COMUNES DEL EDIFICIO DE OFICINAS DOCENTES Y DE POSTGRADO. CAMPUS OSORNO",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf redondo tipo isla soft seating: solo se halló un pouf genérico en Falabella (aproximado).",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Pouf redondo de lino beige (vendedor tercero)",
+     "url": "https://www.falabella.com/falabella-cl/shop/puff-beige",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Mesas",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Mesa de centro genérica; sin precio verificable de la misma especificación.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa de centro Nora blanco 100x55x45 cm",
+     "url": "https://sodimac.cl/sodimac-cl/lista/cat3148/Mesas-de-centro/",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado de categoría Mesas de centro; material/medidas del comprador no detallados.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa de centro Alba café 104x55.6x47 cm",
+     "url": "https://sodimac.cl/sodimac-cl/lista/cat3148/Mesas-de-centro/",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado de categoría Mesas de centro.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Mesa de centro de vidrio rectangular 100 cm (listado)",
+     "url": "https://listado.mercadolibre.cl/mesa-de-centro-de-vidrio-y-madera-falabella-mesas",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; medidas/material del comprador no detallados (bases adjuntas).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 7,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 8,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 9,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 10,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 11,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 12,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf redondo tipo isla soft seating: solo se halló un pouf genérico en Falabella (aproximado).",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Pouf redondo de lino beige (vendedor tercero)",
+     "url": "https://www.falabella.com/falabella-cl/shop/puff-beige",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf redondo tipo isla soft seating: solo se halló un pouf genérico en Falabella (aproximado).",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Pouf redondo de lino beige (vendedor tercero)",
+     "url": "https://www.falabella.com/falabella-cl/shop/puff-beige",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": [
+    {
+     "tienda": "Sodimac (DECOOUTLET)",
+     "producto_mercado": "Sofá modular 4 cuerpos Laos 203x82x150 cm gris",
+     "url": "https://www.sodimac.cl/sodimac-cl/marca/DECOOUTLET",
+     "precio": 207790,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 174613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Línea outlet, stock limitado; es sofá modular de 4 cuerpos, no el sofá/pouf Flower individual. Solo referencia.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 15,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": [
+    {
+     "tienda": "Sodimac (DECOOUTLET)",
+     "producto_mercado": "Sofá modular 4 cuerpos Laos 203x82x150 cm gris",
+     "url": "https://www.sodimac.cl/sodimac-cl/marca/DECOOUTLET",
+     "precio": 207790,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 174613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Línea outlet, stock limitado; es sofá modular de 4 cuerpos, no el sofá/pouf Flower individual. Solo referencia.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 17,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 18,
+   "producto": "Mesas",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Mesa de centro genérica; sin precio verificable de la misma especificación.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa de centro Nora blanco 100x55x45 cm",
+     "url": "https://sodimac.cl/sodimac-cl/lista/cat3148/Mesas-de-centro/",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado de categoría Mesas de centro; material/medidas del comprador no detallados.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa de centro Alba café 104x55.6x47 cm",
+     "url": "https://sodimac.cl/sodimac-cl/lista/cat3148/Mesas-de-centro/",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado de categoría Mesas de centro.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Mesa de centro de vidrio rectangular 100 cm (listado)",
+     "url": "https://listado.mercadolibre.cl/mesa-de-centro-de-vidrio-y-madera-falabella-mesas",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; medidas/material del comprador no detallados (bases adjuntas).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 19,
+   "producto": "Mesas",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Mesa de centro genérica; sin precio verificable de la misma especificación.",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa de centro Nora blanco 100x55x45 cm",
+     "url": "https://sodimac.cl/sodimac-cl/lista/cat3148/Mesas-de-centro/",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado de categoría Mesas de centro; material/medidas del comprador no detallados.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Mesa de centro Alba café 104x55.6x47 cm",
+     "url": "https://sodimac.cl/sodimac-cl/lista/cat3148/Mesas-de-centro/",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado de categoría Mesas de centro.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Mesa de centro de vidrio rectangular 100 cm (listado)",
+     "url": "https://listado.mercadolibre.cl/mesa-de-centro-de-vidrio-y-madera-falabella-mesas",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; medidas/material del comprador no detallados (bases adjuntas).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 20,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf redondo tipo isla soft seating: solo se halló un pouf genérico en Falabella (aproximado).",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Pouf redondo de lino beige (vendedor tercero)",
+     "url": "https://www.falabella.com/falabella-cl/shop/puff-beige",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 21,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 22,
+   "producto": "Sofás",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pouf/sofá modular Flower (tipo Woud Flora) sin distribuidor chileno ni precio en CLP en los resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 23,
+   "producto": "Superficies o estaciones de trabajo o mueble de computación",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Mueble de recepción de vidrio: sin resultados chilenos con precio.",
+   "opciones": []
+  },
+  {
+   "linea": 24,
+   "producto": "Muebles o escritorio no modular",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "No se encontraron precios confiables en Chile para esta especificación.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Mobitat)",
+     "producto_mercado": "Cajonera metálica para carpetas con ruedas y llave Mobitat",
+     "url": "https://www.falabella.com/falabella-cl/brand/MOBITAT",
+     "precio": 117120,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 98420.17,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio de página de marca; con ruedas y para carpetas, no confirmado 4 cajones ni sin cubierta.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 25,
+   "producto": "Conductos de aluminio",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pasacables de aluminio: listados de Mercado Libre Chile (PANDA CHILE) sin precio visible en la búsqueda.",
+   "opciones": []
+  },
+  {
+   "linea": 26,
+   "producto": "Conductos de aluminio",
+   "consulta": "búsquedas estándar en tiendas chilenas; 2ª pasada: búsquedas en Sodimac/Falabella/Ripley/Mercado Libre",
+   "nota": "Pasacables de aluminio: listados de Mercado Libre Chile (PANDA CHILE) sin precio visible en la búsqueda.",
+   "opciones": []
+  }
+ ]
+}

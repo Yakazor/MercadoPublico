@@ -1,0 +1,36 @@
+{
+ "codigo": "3841-32-LE26",
+ "nombre": "ADQUISICIÓN DE INSUMOS MATERIALES VESTUARIO Y CONTRATACIÓN DE SERVICIOS DE CAPACITACIÓN Y GIRA TÉCNICA PARA EL PROGRAMA PRODESAL PEMUCO",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Servicios de asesoría de horticultura",
+   "consulta": "",
+   "nota": "Servicio de asesoría técnica/día de campo; sin producto cotizable. Ítem global sin especificación en la licitación.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Vestuario",
+   "consulta": "",
+   "nota": "Vestuario \"según anexo\" sin detalle (prenda, talla, cantidad); no cotizable sin el anexo. Ítem global sin especificación en la licitación.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Lápiz pasta",
+   "consulta": "",
+   "nota": "Lápiz pasta \"según anexo\" sin cantidades ni marca; no se cotizó una unidad suelta por no ser representativa del ítem. Ítem global sin especificación en la licitación.",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Sets de frascos veterinarios",
+   "consulta": "",
+   "nota": "Insumos veterinarios/riego/gira \"Global\" sin detalle; no cotizable. Ítem global sin especificación en la licitación.",
+   "opciones": []
+  }
+ ]
+}

@@ -1,0 +1,281 @@
+{
+ "codigo": "2585-156-LE26",
+ "nombre": "ADQ. HERRAMIENTAS MENORES Y OTROS DIMAO ORD N° 9142026 LSV IMA",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Azadones",
+   "consulta": "azadón mango madera Truper Sodimac; azadón forjado mango madera Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac (vía Falabella)",
+     "producto_mercado": "Azadón forjado con mango 130 cm Tramontina",
+     "url": "https://www.falabella.com/falabella-cl/shop/azadon",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Hoja/mango 130 cm; verificar largo de hoja 15-20 cm",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Ferretería Saint Germain (Sodimac.cl)",
+     "producto_mercado": "Azadón con mango madera eucalipto 3 lbs",
+     "url": "https://www.sodimac.cl/sodimac-cl/vendedor/ferreteria%20saint%20germain%20spa",
+     "precio": 16990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 14277.31,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Mango de eucalipto, largo no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Barras de cava",
+   "consulta": "escoba metálica jardín 22 dientes precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Barrehojas 22 dientes metal RAYUN",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat326760/palas",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo/material del mango no confirmado (pide mango metal 120 cm)",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Tijeras de podar",
+   "consulta": "tijerón de poda dos manos bypass precio Chile Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Tijerón poda hojas forjadas ERGO",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat4850552/Kit-de-tijera-%2B-tijeron-para-jardin-2-piezas-negro",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Tipo de corte y capacidad 35-40 mm no confirmados",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Tijerón de poda de altura TRUPER",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat4850552/tijera-bypass-para-jardin-20-cm-de-aluminio-negro",
+     "precio": 16950,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 14243.7,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio en listado entre 16.950 y 18.950; modelo y capacidad no confirmados",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Palas",
+   "consulta": "pala punta huevo mango madera Truper precio Chile; pala punta huevo Sodimac",
+   "opciones": [
+    {
+     "tienda": "Ferrar (vía Falabella)",
+     "producto_mercado": "Pala punta huevo mango largo madera",
+     "url": "https://www.falabella.com/falabella-cl/shop/pala-mango-largo",
+     "precio": 10820,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9092.44,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Marca no Truper; largo de mango no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Horquetas",
+   "consulta": "horquilla jardín 4 dientes mango madera precio Chile Sodimac",
+   "opciones": [],
+   "nota": "Sin precio chileno confiable en resultados."
+  },
+  {
+   "linea": 6,
+   "producto": "Segadora de césped",
+   "consulta": "serrucho poda curvo Truper STP-12PL precio Chile",
+   "opciones": [],
+   "nota": "Sin precio chileno en resultados."
+  },
+  {
+   "linea": 7,
+   "producto": "Sacos para empaquetado",
+   "consulta": "saco polipropileno 50x80 cm 25 kg precio Chile",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Saco escombros polipropileno Polisak 60x90 cm",
+     "url": "https://www.easy.cl/saco-escombros-1-unidad-polisak-118571/p",
+     "precio": 490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 411.76,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida distinta y sin UV confirmado; cotizar fabricante de rafia para 200 un.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Guantes protectores",
+   "consulta": "guantes cabritilla descarne trabajo precio Chile par",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Guante cabritilla s/forro blanco, pack 10",
+     "url": "https://www.easy.cl/guante-cabritilla-sforro-l-blanco-10-un-1496174/p",
+     "precio": 17990,
+     "iva_incluido": true,
+     "contenido": "pack 10",
+     "unidades_equivalentes": 10,
+     "precio_unitario_neto": 1511.76,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Asume 10 pares por pack (no aclarado); cabritilla sin recubrimiento nitrilo",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella (Metalfer)",
+     "producto_mercado": "Guantes descarne soldador",
+     "url": "https://www.falabella.com/falabella-cl/shop/guantes-descarne",
+     "precio": 5300,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4453.78,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Descarne, más largo (soldador)",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Vigas de madera",
+   "consulta": "polín impregnado pino 2,60 m 3\" 4\" precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Polín impregnado pino 7,5-10 cm x 2,44 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/polin-impregnado-3-a-4",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo 2,44 m, no 2,60 m",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Polín torneado impregnado 3\" x 2,4 m",
+     "url": "https://www.easy.cl/polin-torneado-impregnado-3-24-m-213021/p",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Largo 2,4 m, no 2,60 m",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Cuerda de poliéster",
+   "consulta": "cuerda sisal yute 6 mm rollo 100 m precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Cuerda yute y cáñamo 6 mm 60 m",
+     "url": "https://www.lider.cl/ip/selecciona-tu-proyecto/cuerda-de-yute-y-canamo-de-6mm-y-60-metros-soga-rustica-de-1-8kg-marron/00780067819940",
+     "precio": 8792,
+     "iva_incluido": true,
+     "contenido": "60 m",
+     "unidades_equivalentes": 0.6,
+     "precio_unitario_neto": 12313.73,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Equivale a 0,6 de rollo de 100 m; la bases aceptan 4.000 m totales",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Yute torcido 6 mm 10 m natural",
+     "url": "https://www.easy.cl/yute-torcido-6mm-10-m-natural-1151909/p",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "10 m",
+     "unidades_equivalentes": 0.1,
+     "precio_unitario_neto": 50336.13,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Equivale a 0,1 de rollo de 100 m",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Lentes de protección",
+   "consulta": "lentes seguridad sobrelente Steelpro Top Gun óptico precio Chile",
+   "opciones": [
+    {
+     "tienda": "Ripley",
+     "producto_mercado": "Lente seguridad Top Gun óptico claro AF Ultra",
+     "url": "https://simple.ripley.cl/ferreteria/seguridad-personal/proteccion-ocular",
+     "precio": 3990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3352.94,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Versión lente claro; se pide gris humo. Confirmar disponibilidad gris",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

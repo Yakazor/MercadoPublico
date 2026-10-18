@@ -1,0 +1,50 @@
+{
+ "codigo": "1057544-344-LE26",
+ "nombre": "Compra por Suministro de Insumos Clínicos para Emergencia",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Catéteres intravenosos periféricos para uso general",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 3,
+   "producto": "Catéteres intravenosos periféricos para uso general",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos. (Mercado Libre Chile: tienda Menval ofrece catéter 22G Nipro pack 50, sin precio visible.)",
+   "opciones": []
+  },
+  {
+   "linea": 4,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 5,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  },
+  {
+   "linea": 6,
+   "producto": "Mascarillas de oxígeno médicas o piezas",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: consultas por producto + Dimerc/Mercado Libre Chile",
+   "nota": "Segunda pasada: sin precios chilenos confiables en resultados de búsqueda (resultados de otros países o artículos clínicos); requiere cotizar con distribuidor de insumos médicos.",
+   "opciones": []
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "codigo": "1211839-73-LE26",
+ "nombre": "MOCHILAS DE VIAJE PARA AFILIADOS DE BIENESTAR APS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Mochilas",
+   "consulta": "mochila de viaje 40 litros",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Mochila de viaje/uso diario 40 L genérica",
+     "url": "https://www.falabella.com/falabella-cl/shop/mochila-40-litros",
+     "precio": 15900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13361.34,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Mochila deportiva/trekking 40 L negra genérica",
+     "url": "https://www.falabella.com/falabella-cl/shop/mochila-40-litros",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Mochila Klimber Ajusco 40 L gris",
+     "url": "https://www.falabella.com/falabella-cl/shop/mochila-40-litros",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Especificaciones mínimas están en bases técnicas (no disponibles); se asume mochila de viaje de ~40 L."
+  }
+ ]
+}

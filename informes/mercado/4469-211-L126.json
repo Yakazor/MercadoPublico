@@ -1,0 +1,22 @@
+{
+ "codigo": "4469-211-L126",
+ "nombre": "SC 40681-40683 (JRA) - IMPRESION DE 2 LIBROS DPTO DE ARTES INTEGRADAS VCM UPA 2493",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Impresión de publicaciones",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: servicio de impresión (no producto de tienda)",
+   "nota": "Servicio de impresión/imprenta a medida; requiere cotización con imprentas, no hay precio de tienda.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Impresión de publicaciones",
+   "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: servicio de impresión (no producto de tienda)",
+   "nota": "Servicio de impresión/imprenta a medida; requiere cotización con imprentas, no hay precio de tienda.",
+   "opciones": []
+  }
+ ]
+}

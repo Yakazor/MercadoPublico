@@ -1,0 +1,36 @@
+{
+ "codigo": "960858-4-L126",
+ "nombre": "ADQUISICIÓN DE LIBROS Y MATERIAL DE ENSEÑANZA PARA ESCUELA MIGUEL HUENTELEN DE COLLIPULLI",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Libros de actividades de lectura",
+   "consulta": "-",
+   "opciones": [],
+   "nota": "Libros según bases; sin detalle."
+  },
+  {
+   "linea": 2,
+   "producto": "Cartulina metálica",
+   "consulta": "cartulina metálica pliego precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (Zumba SPA)",
+     "producto_mercado": "Cartulina metálica ArteColor 10 pliegos",
+     "url": "https://www.falabella.com/falabella-cl/shop/pliego-de-cartulina",
+     "precio": 3490,
+     "iva_incluido": true,
+     "contenido": "10 pliegos",
+     "unidades_equivalentes": 10,
+     "precio_unitario_neto": 293.28,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Unidad asumida = 1 pliego; tamaño no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "codigo": "1480067-23-L126",
+ "nombre": "PTR S - 104  SUMINISTRO DE INSUMOS MEDICOS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "apósito colágeno/ORC plata (sin resultados chilenos)",
+   "nota": "Producto especializado (tipo Promogran/Systagenix); sin precio chileno.",
+   "opciones": []
+  },
+  {
+   "linea": 2,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "apósito Hidrofibra carboximetilcelulosa 10x10 precio Chile Aquacel; apósito hidrofibra carboximetilcelulosa 10x10 Aquacel precio",
+   "nota": "Solo precios extranjeros. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Aquacel Extra 10x10 hidrofibra, caja 10 (Convatec)",
+     "url": "https://listado.mercadolibre.cl/aquacel",
+     "precio": 55125,
+     "iva_incluido": true,
+     "contenido": "Caja 10 unidades",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46323.53,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio con descuento visto en listado (lista $69.990); se asume caja de 10. Verificar que sea la versión sin plata con adhesivo.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "miel de ulmo gel apósito 30 g NHF precio Chile",
+   "nota": "Se encontró Ulmoplus de 100 g (no 30 g); aproximada por formato.",
+   "opciones": [
+    {
+     "tienda": "Salcobrand",
+     "producto_mercado": "Ulmoplus gel miel de ulmo NHF 100 g",
+     "url": "https://salcobrand.cl/products/ulmoplus",
+     "precio": 12324,
+     "iva_incluido": true,
+     "contenido": "100 g (precio internet)",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10356.3,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Formato 100 g vs pomo 30 g pedido; precio farmacia $14.499.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "ácidos grasos hiperoxigenados 20 ml precio Chile",
+   "nota": "Linovera 30 ml; el comprador acepta 20 a 30 ml.",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Linovera 30 ml aceite hidratante (AGHO)",
+     "url": "https://www.paris.cl/linovera-30ml-aceite-hidratante-electromedicina-MKJZRBHVGZ.html",
+     "precio": 24990,
+     "iva_incluido": true,
+     "contenido": "30 ml",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21000.0,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Verificar composición (silicona, vitamina E).",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "apósito miel manuka alginato precio Chile",
+   "nota": "Solo precios extranjeros.",
+   "opciones": []
+  },
+  {
+   "linea": 6,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "sin búsqueda",
+   "nota": "Apósito PHMB/Ringer especializado; sin resultados.",
+   "opciones": []
+  },
+  {
+   "linea": 7,
+   "producto": "Vendas o vendajes para uso general",
+   "consulta": "sin búsqueda; apósito espuma plata 10x10 precio",
+   "nota": "Apósito espuma antibacteriano tipo Lifecorp; sin resultados. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Apósito espuma hidrofílica + plata 10x10, 1 unidad",
+     "url": "https://www.mercadolibre.cl/aposito-espuma-hidrofila--plata-10x10-1-unidad-foto-ref/up/MLCU3163839430",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Espuma con plata, no tiene azul de metileno/violeta de genciana (tipo Lifecorp); producto distinto en activo.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "codigo": "4469-219-L126",
+ "nombre": "S.C. N° 40791-40793 (P.C) ADQUISICIÓN DE PROYECTOR , TABLET Y OTROS ; PROY. UPA RED 25994",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Proyectores de video",
+   "consulta": "BenQ MW826STH",
+   "opciones": [],
+   "nota": "No apareció tienda chilena con precio en los resultados."
+  },
+  {
+   "linea": 2,
+   "producto": "Computadores portátiles tipo Tablet PC",
+   "consulta": "Galaxy Tab A11 8.7 4GB 64GB",
+   "opciones": [],
+   "nota": "Única opción es variante LTE de vendedor externo con envío desde EE.UU."
+  },
+  {
+   "linea": 3,
+   "producto": "Notebook, laptop o computador portátil excepto Tablet PC",
+   "consulta": "Kindle Paperwhite 12ª gen 16GB 2024",
+   "opciones": [
+    {
+     "tienda": "Lider (VYSE GLOBAL)",
+     "producto_mercado": "EReader Kindle Paperwhite 12ª Gen 16GB 2024 negro",
+     "url": "https://www.lider.cl/ip/computadores-y-tablets/ereader-kindle-paperwhite-12-gen-16gb-negro-2024/00023500652102",
+     "precio": 199990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 168058.82,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Color negro; marketplace",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Vendedores externos con envío desde EE.UU."
+  }
+ ]
+}

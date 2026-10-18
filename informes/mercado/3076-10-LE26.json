@@ -1,0 +1,44 @@
+{
+ "codigo": "3076-10-LE26",
+ "nombre": "ADQUISICIÓN DE PINTURAS",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Pinturas al esmalte",
+   "consulta": "esmalte sintético galón Sodimac Chile precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Esmalte sintético Ceresita brillante blanco 1 galón",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG36184/Pinturas-esmalte",
+     "precio": 33900,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 28487.39,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Colores/formato según bases no detallado",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Esmalte sintético Tricolor brillante blanco 1 galón",
+     "url": "https://www.sodimac.cl/sodimac-cl/marca/TRICOLOR",
+     "precio": 37990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31924.37,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Supuesto: esmalte 1 galón."
+  }
+ ]
+}

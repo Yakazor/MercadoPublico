@@ -1,0 +1,222 @@
+{
+ "codigo": "1057544-338-LE26",
+ "nombre": "Suministro de Insumos Clínicos para Diversos Servicios Clínicos",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Chalecos y chaquetas de sujeción",
+   "consulta": "chaleco esternotomía precio Chile",
+   "opciones": [],
+   "nota": "Búsqueda sin resultados de chalecos post-esternotomía en tiendas chilenas (solo chalecos térmicos/sensoriales no equivalentes)."
+  },
+  {
+   "linea": 2,
+   "producto": "Chalecos y chaquetas de sujeción",
+   "consulta": "chaleco esternotomía precio Chile (misma búsqueda que línea 1)",
+   "opciones": [],
+   "nota": "Sin resultados de chaleco post-esternotomía talla XL en tiendas chilenas."
+  },
+  {
+   "linea": 3,
+   "producto": "Accesorios o suministros de analizadores de banco de sangre",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "Sin resultados: se alcanzó el límite de búsquedas de la sesión (session limit) antes de buscar este ítem; queda pendiente."
+  },
+  {
+   "linea": 4,
+   "producto": "Cánulas o accesorios para catéteres intravenosos o arteriales",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "No se encontraron precios confiables en tiendas chilenas con las búsquedas realizadas; el ítem remite a bases/adjuntos o producto muy específico. Sin opciones."
+  },
+  {
+   "linea": 5,
+   "producto": "Accesorios o suministros de analizadores de banco de sangre",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "Sin resultados: se alcanzó el límite de búsquedas de la sesión (session limit) antes de buscar este ítem; queda pendiente."
+  },
+  {
+   "linea": 6,
+   "producto": "Agujas para anestesia",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "No se encontraron precios confiables en tiendas chilenas con las búsquedas realizadas; el ítem remite a bases/adjuntos o producto muy específico. Sin opciones."
+  },
+  {
+   "linea": 7,
+   "producto": "Agujas para anestesia",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "No se encontraron precios confiables en tiendas chilenas con las búsquedas realizadas; el ítem remite a bases/adjuntos o producto muy específico. Sin opciones."
+  },
+  {
+   "linea": 8,
+   "producto": "Vendajes germicidas",
+   "consulta": "Aquacel Ag 5x5 precio Chile",
+   "opciones": [],
+   "nota": "Solo precios de Alemania, Australia y EAU (excluidos); sin distribuidor chileno en resultados."
+  },
+  {
+   "linea": 9,
+   "producto": "Cremas o ungüentos hidrofílicos",
+   "consulta": "pasta Nuprep 114 gr precio Chile; Nuprep gel abrasivo electrodos (Mercado Libre)",
+   "opciones": [],
+   "nota": "No apareció Nuprep en tiendas chilenas; solo geles conductores para TENS (no equivalentes a gel abrasivo)."
+  },
+  {
+   "linea": 10,
+   "producto": "Unidades de electroencefalografía (EEG) o accesorios",
+   "consulta": "pasta Ten20 electroencefalograma (Mercado Libre)",
+   "opciones": [],
+   "nota": "Sin resultados de pasta Ten20 en tiendas chilenas."
+  },
+  {
+   "linea": 11,
+   "producto": "Toallas de esterilización",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "Sin resultados: se alcanzó el límite de búsquedas de la sesión (session limit) antes de buscar este ítem; queda pendiente."
+  },
+  {
+   "linea": 12,
+   "producto": "Pipetas Pasteur o de transferencia",
+   "consulta": "puntas pipeta amarillas 200 ul bolsa 1000 (Mercado Libre)",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Puntas amarillas 200 µL sin corona, bolsa 1000 unidades",
+     "url": "https://listado.mercadolibre.cl/puntas-para-pipetas-de-laboratorio",
+     "precio": 10990,
+     "iva_incluido": true,
+     "contenido": "Bolsa 1000 unidades",
+     "unidades_equivalentes": 1000,
+     "precio_unitario_neto": 9.24,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en listado de Mercado Libre; URL es la página de listado (no ficha). Otro vendedor a $12.490.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Puntas amarillas 200 µL sin corona, bolsa 1000 unidades (otro vendedor)",
+     "url": "https://listado.mercadolibre.cl/puntas-para-pipetas-de-laboratorio",
+     "precio": 12490,
+     "iva_incluido": true,
+     "contenido": "Bolsa 1000 unidades",
+     "unidades_equivalentes": 1000,
+     "precio_unitario_neto": 10.5,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en listado de Mercado Libre; URL es la página de listado.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "No se encontró ficha con precio; precios tomados de la página de listado de Mercado Libre. Verificar."
+  },
+  {
+   "linea": 13,
+   "producto": "Puntas y ganchos quirúrgicos",
+   "consulta": "puntas pipeta azules 1000 ul 1 ml (Mercado Libre)",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Puntas azules 100-1000 µL sin corona, bolsa 500",
+     "url": "https://listado.mercadolibre.cl/puntas-para-pipetas-de-laboratorio",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "Bolsa 500 unidades",
+     "unidades_equivalentes": 500,
+     "precio_unitario_neto": 16.79,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en listado de Mercado Libre; URL es la página de listado. Otro vendedor a $10.480.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Se interpretan como puntas de micropipeta de 1000 uL. Ficha sin precio visible: https://articulo.mercadolibre.cl/MLC-1098972687-500-puntas-azules-de-pipeta-1000-ul-sin-filtro-esteril-_JM (Wantong, bolsa 500, estériles). Precio de la opción tomado de la página de listado; verificar."
+  },
+  {
+   "linea": 14,
+   "producto": "Tubos o contenedores de almacenamiento de sangre en vacío",
+   "consulta": "tubo khan 12x75 polipropileno; Tubo De Ensayo Khan 12x75mm Caja 100 precio (Mercado Libre)",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Tubo de ensayo Khan polipropileno PP 12x75 mm, 5000 unidades",
+     "url": "https://listado.mercadolibre.cl/salud-equipamiento-medico/equipamiento-medico/material-laboratorio/tubos-ensayo/nuevo-en-santiago-rm-metropolitana/",
+     "precio": 140000,
+     "iva_incluido": true,
+     "contenido": "5000 unidades",
+     "unidades_equivalentes": 5000,
+     "precio_unitario_neto": 23.53,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en resultados de búsqueda; la URL de la ficha no se identificó, se indica la página de listado de tubos de ensayo. Verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Tubo polipropileno PP 12x75 mm, 500 unidades",
+     "url": "https://listado.mercadolibre.cl/salud-equipamiento-medico/equipamiento-medico/material-laboratorio/tubos-ensayo/nuevo-en-santiago-rm-metropolitana/",
+     "precio": 15000,
+     "iva_incluido": true,
+     "contenido": "500 unidades",
+     "unidades_equivalentes": 500,
+     "precio_unitario_neto": 25.21,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio visto en resultados de búsqueda; URL de listado, ficha no identificada. Verificar.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Tubo De Ensayo Khan 12x75mm Caja 100 Und. (vidrio soda, LaborGläser)",
+     "url": "https://articulo.mercadolibre.cl/MLC-2389882132-tubo-de-ensayo-khan-12x75mm-caja-100-und-_JM",
+     "precio": 14000,
+     "iva_incluido": true,
+     "contenido": "Caja 100 unidades",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 117.65,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Es de vidrio, no polipropileno.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Las dos primeras opciones (PP) tienen precio visto en la página de listado, sin ficha identificada; la tercera es ficha de vidrio. Verificar."
+  },
+  {
+   "linea": 15,
+   "producto": "Accesorios para jeringas",
+   "consulta": "búsqueda sin resultados útiles",
+   "opciones": [],
+   "nota": "Sin resultados: se alcanzó el límite de búsquedas de la sesión (session limit) antes de buscar este ítem; queda pendiente."
+  },
+  {
+   "linea": 16,
+   "producto": "Filtros o intercambiadores de humedad o calor del ventilador",
+   "consulta": "filtro viral bacteriano espirometría (Mercado Libre); filtro viral bacteriano pack 10 unidades",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre Chile",
+     "producto_mercado": "Filtro viral bacteriano en línea, ajuste universal",
+     "url": "https://articulo.mercadolibre.cl/MLC-483260685-filtro-viral-bacteriano-en-linea-de-ajuste-universal-para-_JM",
+     "precio": 35990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 30243.7,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio tomado del título del resultado; no se confirmó si es estéril ni su conector (para espirometría/ventilación). Verificar.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "También existen packs de 10 (https://articulo.mercadolibre.cl/MLC-1265743717-filtro-hme-viral-bacteriano-pack-10-unidades-_JM) sin precio visible en la búsqueda."
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "codigo": "1113265-16-LE26",
+ "nombre": "ADQUISICIÓN DE PROYECTORES",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Proyectores multimedia",
+   "consulta": "proyector WXGA 3600 lúmenes HDMI VGA precio Chile; proyector WXGA 3600 lúmenes HDMI precio",
+   "nota": "Solo tiendas extranjeras (Acer S1386WH, BenQ EW600 cumplen spec); sin precio chileno. [2ª pasada] Opciones de listados chilenos.",
+   "opciones": [
+    {
+     "tienda": "SP Digital",
+     "producto_mercado": "Proyector ViewSonic PA503W DLP WXGA 3600 lúmenes, HDMI/VGA",
+     "url": "https://www.spdigital.cl/products/view/58594",
+     "precio": 469990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 394949.58,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Precio por transferencia (con tarjeta $486.440). Cumple WXGA, DLP y 3.600 lúmenes; resto de conectividad exigida no verificada. Pide 15 unidades.",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Proyector ViewSonic PA503W DLP WXGA 3600 lúmenes",
+     "url": "https://www.falabella.com/falabella-cl/product/114030286/Viewsonic-Proyector-PA503W,-DLP,-WXGA,-3600-Lumenes,-PA503W/114030287",
+     "precio": 746990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 627722.69,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Mismo modelo, más caro.",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "codigo": "1033392-3-L126",
+ "nombre": "Adquisición de juguetes de navidad 2026 para hijos de funcionarios afiliados al Servicio de Bienestar.",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Juguetes didácticos",
+   "consulta": "juguetes didácticos niños precio Chile Lider",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Caja de herramientas de madera tipo Montessori",
+     "url": "https://www.lider.cl/browse/Mundo-Bebe/Actividades-y-Estimulacion/Juguetes-Didacticos/40094495_80102111_71038261",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Edad de destino no definida",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  }
+ ]
+}

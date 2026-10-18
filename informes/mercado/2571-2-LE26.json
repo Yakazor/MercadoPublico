@@ -1,0 +1,350 @@
+{
+ "codigo": "2571-2-LE26",
+ "nombre": "Materiales de ferretería PEE Nvos cupos 2026",
+ "fecha_consulta": "2026-10-18",
+ "verificacion": "Precios tomados de resultados de búsqueda; GitHub los verifica abriendo cada página.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Hojas de sierra",
+   "consulta": "barre hojas metálico tensor 15 dientes con mango",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Barrehojas 15 dientes regulable metálico Roots",
+     "url": "https://www.easy.cl/barrehojas-15-dientes-regulable-metalico-9003998/p",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "Mango plástico; también publicado en Paris.cl",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Carretilla hidráulica",
+   "consulta": "carretilla 90 litros rueda maciza",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Doer/Bilder)",
+     "producto_mercado": "Carretilla concretera 90 lts DOER",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10778/Carretillas",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Precio visto entre 49.990 y 66.515",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Carretilla acero 90 litros ALEMANY",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10778/Carretillas",
+     "precio": 62535,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 52550.42,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "No se confirmó rueda de caucho macizo en los resultados; verificar ficha."
+  },
+  {
+   "linea": 3,
+   "producto": "Barredora de suelos",
+   "consulta": "rastrillo metálico con mango",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Tecnoshop)",
+     "producto_mercado": "Rastrillo metálico recto 40 cm 16 dientes genérico",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat3240011/Rastrillos",
+     "precio": 2890,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2428.57,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Vendedor externo; mango no confirmado",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Rastrillo metálico 14 dientes ERGO",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat3240011/Rastrillos",
+     "precio": 7990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6714.29,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Mango no confirmado en resultado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Horquetas",
+   "consulta": "horqueta pastera 4 dientes mango largo",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Horqueta pastera 4 dientes mango madera Rayun",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11183/Horquetas",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Forjado no confirmado",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Tijeras de podar",
+   "consulta": "tijerón de poda dos manos",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Tijerón de poda hojas forjadas ERGO",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11180/Tijeras-de-Podar",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "No se encontró modelo de 28 pulgadas exacto."
+  },
+  {
+   "linea": 6,
+   "producto": "Tijeras de podar",
+   "consulta": "tijera césped",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Tijerón cortacésped mango de madera ERGO",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat4850552/tijeras-jardin",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5033.61,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Tijeras de podar",
+   "consulta": "tijera de podar",
+   "opciones": [
+    {
+     "tienda": "Sodimac (DANMI)",
+     "producto_mercado": "Tijera podar profesional 8 pulgadas DANMI",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11180/Tijeras-de-Podar",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Tijera de podar profesional Tramontina",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11180/Tijeras-de-Podar",
+     "precio": 12995,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10920.17,
+     "coincidencia": "exacta",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Palas",
+   "consulta": "pala redonda 45 Truper",
+   "opciones": [],
+   "nota": "Ripley Chile lista Pala Redonda Lady 45 Truper (https://simple.ripley.cl/pala-redonda-lady-45-truper-mpm10000071255) pero la búsqueda no mostró precio; no se incluye."
+  },
+  {
+   "linea": 9,
+   "producto": "Palas",
+   "consulta": "pala cuadrada mango largo",
+   "opciones": [],
+   "nota": "No se encontró precio confiable."
+  },
+  {
+   "linea": 10,
+   "producto": "Machetes",
+   "consulta": "machete rozón 16 pulgadas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Machete jardín 18 pulgadas ERGO",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/machete",
+     "precio": 7690,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6462.18,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "18\" en vez de 16\"",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "No hay modelo de 16\" en Sodimac; solo 18\" y 24\"."
+  },
+  {
+   "linea": 11,
+   "producto": "Pinturas de base acuosa",
+   "consulta": "esmalte al agua gris tineta 4 galones",
+   "opciones": [
+    {
+     "tienda": "Sodimac (BAUM)",
+     "producto_mercado": "Esmalte al agua Gris Plata 16-P 4 galones BAUM",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG12096/Esmaltes-al-Agua",
+     "precio": 119990,
+     "iva_incluido": true,
+     "contenido": "1 tineta 4 gl",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 100831.93,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "Publicación patrocinada de vendedor externo",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "Se asume tineta de 4 galones."
+  },
+  {
+   "linea": 12,
+   "producto": "Sacos para empaquetado",
+   "consulta": "saco polipropileno 45x90",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Saco multiusos 60x90 cm pack 10 unidades",
+     "url": "https://www.easy.cl/saco-multiusos-60x90-cm-10-unidades-1455510/p",
+     "precio": 3690,
+     "iva_incluido": true,
+     "contenido": "10 unidades",
+     "unidades_equivalentes": 10,
+     "precio_unitario_neto": 310.08,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida 60x90 en vez de 45x90",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Saco escombros Polisak 1 unidad",
+     "url": "https://www.easy.cl/saco-escombros-1-unidad-polisak-118571/p",
+     "precio": 490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 411.76,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Medida 60x90",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "No se encontró 45x90; solo 60x90 (aproximada)."
+  },
+  {
+   "linea": 13,
+   "producto": "Pinturas al esmalte",
+   "consulta": "anticorrosivo negro galón",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Baumart)",
+     "producto_mercado": "Anticorrosivo alquídico negro 1 gl PASSOL",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat359414/Anticorrosivas",
+     "precio": 17990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15117.65,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Anticorrosivo Aquatech mate negro 1 gl CERESITA",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat359414/Anticorrosivas",
+     "precio": 31990,
+     "iva_incluido": true,
+     "contenido": "1 galón",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 26882.35,
+     "coincidencia": "equivalente",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Escobillones",
+   "consulta": "escobillón abanico cerdas plásticas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Escobillón multiuso tradicional Virutex",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10603/Escobas-y-palas",
+     "precio": 1990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1672.27,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "",
+     "fecha_consulta": "2026-10-18"
+    }
+   ],
+   "nota": "No se encontró tipo abanico con cerdas largas."
+  }
+ ]
+}
