@@ -23,13 +23,13 @@
      "nota": "Edad de destino no definida",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $14.990, no $13.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $14.990, no $13.990: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-18",
+  "fecha": "2026-10-19",
   "opciones": 1,
   "verificadas": 0
  }

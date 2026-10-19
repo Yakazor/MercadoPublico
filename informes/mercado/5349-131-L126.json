@@ -22,7 +22,7 @@
      "verificado": false,
      "nota": "Precio aproximado ($479.990-$499.990 en publicaciones activas según resultado); verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-19: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "SP Digital",
@@ -37,15 +37,15 @@
      "verificado": true,
      "nota": "Precio con Webpay/tarjeta ($518.830 transferencia). Especificaciones técnicas del hospital no disponibles.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 542180.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $542.180."
+     "verificacion_pagina": "2026-10-19: la página muestra $542.180."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-18",
+  "fecha": "2026-10-19",
   "opciones": 2,
   "verificadas": 1
  }

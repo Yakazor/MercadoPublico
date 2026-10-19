@@ -45,7 +45,7 @@
      "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 62990.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
     }
    ]
   },
@@ -68,9 +68,9 @@
      "verificado": true,
      "nota": "Precio de listado de categoría Mesas de centro; material/medidas del comprador no detallados.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 64990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $64.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $64.990."
     },
     {
      "tienda": "Sodimac",
@@ -85,9 +85,9 @@
      "verificado": true,
      "nota": "Precio de listado de categoría Mesas de centro.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $69.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $69.990."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -102,7 +102,7 @@
      "verificado": false,
      "nota": "Precio de listado; medidas/material del comprador no detallados (bases adjuntas).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-19: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -168,7 +168,7 @@
      "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 62990.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
     }
    ]
   },
@@ -192,7 +192,7 @@
      "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 62990.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
     }
    ]
   },
@@ -215,9 +215,9 @@
      "verificado": true,
      "nota": "Línea outlet, stock limitado; es sofá modular de 4 cuerpos, no el sofá/pouf Flower individual. Solo referencia.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 209990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $209.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $209.990."
     }
    ]
   },
@@ -240,9 +240,9 @@
      "verificado": true,
      "nota": "Línea outlet, stock limitado; es sofá modular de 4 cuerpos, no el sofá/pouf Flower individual. Solo referencia.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 209990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $209.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $209.990."
     }
    ]
   },
@@ -279,9 +279,9 @@
      "verificado": true,
      "nota": "Precio de listado de categoría Mesas de centro; material/medidas del comprador no detallados.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 64990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $64.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $64.990."
     },
     {
      "tienda": "Sodimac",
@@ -296,9 +296,9 @@
      "verificado": true,
      "nota": "Precio de listado de categoría Mesas de centro.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $69.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $69.990."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -313,7 +313,7 @@
      "verificado": false,
      "nota": "Precio de listado; medidas/material del comprador no detallados (bases adjuntas).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-19: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -336,9 +336,9 @@
      "verificado": true,
      "nota": "Precio de listado de categoría Mesas de centro; material/medidas del comprador no detallados.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 64990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $64.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $64.990."
     },
     {
      "tienda": "Sodimac",
@@ -353,9 +353,9 @@
      "verificado": true,
      "nota": "Precio de listado de categoría Mesas de centro.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $69.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $69.990."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -370,7 +370,7 @@
      "verificado": false,
      "nota": "Precio de listado; medidas/material del comprador no detallados (bases adjuntas).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-19: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -394,7 +394,7 @@
      "nota": "Precio de listado; color y diámetro no coinciden necesariamente con isla pouf soft seating.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 62990.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $62.990, no $64.990: puede haber cambiado."
     }
    ]
   },
@@ -438,9 +438,9 @@
      "verificado": true,
      "nota": "Precio de página de marca; con ruedas y para carpetas, no confirmado 4 cajones ni sin cubierta.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 117120.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $117.120."
+     "verificacion_pagina": "2026-10-19: la página muestra $117.120."
     }
    ]
   },
@@ -460,7 +460,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-18",
+  "fecha": "2026-10-19",
   "opciones": 16,
   "verificadas": 9
  }

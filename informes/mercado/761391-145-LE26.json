@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Especificación de las bases no confirmada.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-18",
+     "verificado_en": "2026-10-19",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-18: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-19: la página muestra $29.990."
     },
     {
      "tienda": "Lider (vendedor Getway - Globalmarket)",
@@ -41,13 +41,13 @@
      "nota": "Especificación de las bases no confirmada.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 32000.0,
-     "verificacion_pagina": "2026-10-18: la página abrió y el precio más parecido es $32.000, no $32.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $32.000, no $32.990: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-18",
+  "fecha": "2026-10-19",
   "opciones": 2,
   "verificadas": 1
  }
