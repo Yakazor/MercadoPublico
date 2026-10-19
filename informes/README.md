@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-10-18. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-10-19. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado |
 |---|---|---|---:|---:|---:|---:|---:|
