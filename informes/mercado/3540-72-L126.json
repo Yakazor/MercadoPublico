@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "Precio por litro; la bases piden cajas de 4 bidones de 4 L (confirmar).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 25900.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $25.900."
+     "verificacion_pagina": "2026-10-20: la página muestra $25.900."
     },
     {
      "tienda": "Lider",
@@ -39,9 +39,9 @@
      "verificado": true,
      "nota": "Precio por litro.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 25900.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $25.900."
+     "verificacion_pagina": "2026-10-20: la página muestra $25.900."
     },
     {
      "tienda": "Lider",
@@ -56,9 +56,9 @@
      "verificado": true,
      "nota": "Precio por litro; marca premium.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 39665.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $39.665."
+     "verificacion_pagina": "2026-10-20: la página muestra $39.665."
     }
    ]
   },
@@ -88,7 +88,7 @@
      "nota": "Envase 4 L, no tambor 208 L; precio por litro de referencia.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 16495.0,
-     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $16.495, no $15.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $16.495, no $15.990: puede haber cambiado."
     },
     {
      "tienda": "Falabella",
@@ -103,9 +103,9 @@
      "verificado": true,
      "nota": "Balde 19 L, no tambor; URL de listado de marca.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 88000.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $88.000."
+     "verificacion_pagina": "2026-10-20: la página muestra $88.000."
     }
    ]
   },
@@ -127,7 +127,7 @@
      "verificado": false,
      "nota": "Envase 1 L, no balde 19 L.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy (marketplace)",
@@ -142,13 +142,13 @@
      "verificado": false,
      "nota": "Envase 1 L, GL-4.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 7,
   "verificadas": 4
  }

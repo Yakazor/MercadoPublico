@@ -24,7 +24,7 @@
      "nota": "Precio de oferta (antes $112.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 60000.0,
-     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado.",
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado.",
      "verificado_en": "2026-10-18"
     },
     {
@@ -40,9 +40,9 @@
      "verificado": true,
      "nota": "Precio del listado de Sodimac (no ficha del producto).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 129990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $129.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $129.990."
     },
     {
      "tienda": "Sodimac",
@@ -57,15 +57,15 @@
      "verificado": true,
      "nota": "Oferta (antes $259.990); listado de Sodimac.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 129990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $129.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $129.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 3,
   "verificadas": 2
  }

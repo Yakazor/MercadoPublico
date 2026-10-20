@@ -22,7 +22,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45). Talla 36 no listada en la ficha.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -44,7 +44,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45). Talla 37 no listada en la ficha.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -66,7 +66,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45). Talla 38 no listada en la ficha.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -88,7 +88,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -110,7 +110,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -132,7 +132,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -154,7 +154,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -176,7 +176,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -198,7 +198,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -220,7 +220,7 @@
      "verificado": false,
      "nota": "V-Flex dieléctrico pero NO antiestático según ficha; tallas 39 a 44 (sin 36-38 ni 45). Talla 45 no listada en la ficha.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -270,7 +270,7 @@
      "verificado": false,
      "nota": "Modelo 6200 (talla M) en vez de 6300; no se encontró precio chileno del 6300.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -313,7 +313,7 @@
      "verificado": false,
      "nota": "Se asume unidad = 1 guante (si la licitación entiende par, confirmar); talla L.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -336,7 +336,7 @@
      "nota": "Color negro no confirmado; precio por par; URL de listado.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $8.990, no $7.190: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $8.990, no $7.190: puede haber cambiado."
     }
    ]
   },
@@ -379,7 +379,7 @@
      "verificado": false,
      "nota": "Contenido según ficha; confirmar contra especificación técnica adjunta.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -401,9 +401,9 @@
      "verificado": true,
      "nota": "Marca Redline, no Steelpro; mismo modelo Spy Flex Plus. Precio del listado Protección de Ojos.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 3251.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $3.251."
+     "verificacion_pagina": "2026-10-20: la página muestra $3.251."
     }
    ]
   },
@@ -425,9 +425,9 @@
      "verificado": true,
      "nota": "Marca Redline, no Steelpro; mismo modelo Spy Flex Plus visor claro.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 3251.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $3.251."
+     "verificacion_pagina": "2026-10-20: la página muestra $3.251."
     }
    ]
   },
@@ -454,7 +454,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 16,
   "verificadas": 2
  }

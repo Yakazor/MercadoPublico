@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Precio oferta; juguete tipo de referencia (rangos etarios por definir).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Paris",
@@ -38,7 +38,7 @@
      "verificado": false,
      "nota": "Precio oferta; desde 12 meses.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -50,19 +50,19 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 10882.35,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "Vendedor externo (Luz de Luciérnaga); confirmar origen del envío.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-19",
-     "precio_pagina": 13000.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $13.000."
+     "precio_pagina": 10990.0,
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $10.990, no $12.950: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 3,
-  "verificadas": 1
+  "verificadas": 0
  }
 }

@@ -21,9 +21,9 @@
      "nota": "Precio del listado de búsqueda de Sodimac (página de selección, no ficha del producto).",
      "precio_unitario_neto": 42008.4,
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -37,9 +37,9 @@
      "nota": "Precio del listado de categoría de Sodimac.",
      "precio_unitario_neto": 54613.45,
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 64990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $64.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $64.990."
     },
     {
      "tienda": "Sodimac",
@@ -53,9 +53,9 @@
      "nota": "Gama media-alta.",
      "precio_unitario_neto": 92428.57,
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 109990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $109.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $109.990."
     },
     {
      "tienda": "Lider",
@@ -65,19 +65,20 @@
      "iva_incluido": true,
      "unidades_equivalentes": 1,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "nota": "Garantía 24 meses según el resultado de búsqueda.",
      "precio_unitario_neto": 100756.3,
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 129900.0,
-     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $129.900, no $119.900: puede haber cambiado."
+     "precio_pagina": 116990.0,
+     "verificacion_pagina": "2026-10-20: la página muestra $116.990.",
+     "verificado_en": "2026-10-20"
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 4,
-  "verificadas": 3
+  "verificadas": 4
  }
 }

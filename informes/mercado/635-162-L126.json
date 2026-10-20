@@ -42,9 +42,9 @@
      "verificado": true,
      "nota": "Precio con 26% dto.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $13.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $13.990."
     }
    ]
   },
@@ -66,9 +66,9 @@
      "verificado": true,
      "nota": "Rango según specs adjuntas no conocido",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 6590.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $6.590."
+     "verificacion_pagina": "2026-10-20: la página muestra $6.590."
     }
    ]
   },
@@ -104,9 +104,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $29.990."
     },
     {
      "tienda": "Sodimac",
@@ -121,9 +121,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $49.990."
     }
    ]
   },
@@ -145,15 +145,15 @@
      "verificado": true,
      "nota": "Brazo angular abatible no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 39990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $39.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $39.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 5,
   "verificadas": 5
  }

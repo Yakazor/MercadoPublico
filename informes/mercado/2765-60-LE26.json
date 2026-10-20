@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "Vendedor Andesland; sin logo ni especificación de seguridad",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 20990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $20.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $20.990."
     }
    ]
   },
@@ -53,9 +53,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 28990.0,
-     "verificacion_pagina": "2026-10-19: la página muestra $28.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $28.990."
     }
    ],
    "nota": "Solo se halló pack de 2 softshell; no equivale a impermeable total."
@@ -86,7 +86,7 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-19: la página abrió y el precio más parecido es $10.990, no $8.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $10.990, no $8.990: puede haber cambiado."
     }
    ],
    "nota": "Solo se halló capa de agua (una pieza), no traje de dos piezas."
@@ -100,7 +100,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-19",
+  "fecha": "2026-10-20",
   "opciones": 3,
   "verificadas": 2
  }
