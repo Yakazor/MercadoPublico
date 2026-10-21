@@ -829,8 +829,8 @@
      "verificado": true,
      "nota": "Precio visto en listado desordenado; confirmar que corresponde a este modelo",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 8290.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $8.290.",
+     "precio_pagina": 8090.0,
+     "verificacion_pagina": "2026-10-21: la página muestra $8.090.",
      "verificado_en": "2026-10-21"
     }
    ]
@@ -1389,8 +1389,8 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-21",
-     "precio_pagina": 25050.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $25.050."
+     "precio_pagina": 25000.0,
+     "verificacion_pagina": "2026-10-21: la página muestra $25.000."
     }
    ]
   },

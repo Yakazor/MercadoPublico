@@ -65,12 +65,12 @@
      "iva_incluido": true,
      "unidades_equivalentes": 1,
      "coincidencia": "exacta",
-     "verificado": true,
+     "verificado": false,
      "nota": "Garantía 24 meses según el resultado de búsqueda.",
      "precio_unitario_neto": 100756.3,
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 116990.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $116.990.",
+     "precio_pagina": 129900.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $129.900, no $119.900: puede haber cambiado.",
      "verificado_en": "2026-10-21"
     }
    ]
@@ -79,6 +79,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-21",
   "opciones": 4,
-  "verificadas": 4
+  "verificadas": 3
  }
 }

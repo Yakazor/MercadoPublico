@@ -85,11 +85,11 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 747.9,
      "coincidencia": "exacta",
-     "verificado": true,
+     "verificado": false,
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma un precio mayorista de $890 y un precio de oferta de $990. El mayorista puede exigir un mínimo, aunque 300 cajas probablemente lo cumple.",
      "fecha_consulta": "2026-10-17",
-     "precio_pagina": 890.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $890.",
+     "precio_pagina": 790.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $790, no $890: puede haber cambiado.",
      "verificado_en": "2026-10-21"
     },
     {
@@ -338,7 +338,7 @@
      "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $4.866 + IVA (precio neto).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 50000.0,
-     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $50.000, no $4.866: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 404."
     },
     {
      "tienda": "Dimeiggs",
@@ -580,6 +580,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-21",
   "opciones": 31,
-  "verificadas": 23
+  "verificadas": 22
  }
 }

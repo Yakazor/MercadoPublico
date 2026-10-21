@@ -226,11 +226,11 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 11338.66,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 13500.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $13.500.",
+     "precio_pagina": 13989.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $13.989, no $13.493: puede haber cambiado.",
      "verificado_en": "2026-10-21"
     }
    ]
@@ -326,8 +326,8 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 1990.0,
-     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $1.990, no $2.626: puede haber cambiado."
+     "precio_pagina": 3145.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $3.145, no $2.626: puede haber cambiado."
     }
    ]
   },
@@ -368,12 +368,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 9823.53,
      "coincidencia": "exacta",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-21",
-     "precio_pagina": 11690.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $11.690."
+     "precio_pagina": 11004.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $11.004, no $11.690: puede haber cambiado."
     },
     {
      "tienda": "Easy",
@@ -874,6 +874,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-21",
   "opciones": 32,
-  "verificadas": 20
+  "verificadas": 18
  }
 }

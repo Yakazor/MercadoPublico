@@ -486,11 +486,11 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 44783,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "Medidas exactas no confirmadas. Precio actualizado al que mostró la página el 2026-10-20 (antes $70.990).",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 53292.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $53.292.",
+     "precio_pagina": 50459.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $50.459, no $53.292: puede haber cambiado.",
      "verificado_en": "2026-10-21"
     }
    ],
@@ -793,6 +793,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-21",
   "opciones": 22,
-  "verificadas": 13
+  "verificadas": 12
  }
 }

@@ -137,7 +137,7 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-21",
      "precio_pagina": 4999.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $4.999."
+     "verificacion_pagina": "2026-10-21: no se pudo abrir la página (ConnectionError)."
     }
    ]
   },
