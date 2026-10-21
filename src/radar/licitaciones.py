@@ -9,8 +9,8 @@ from datetime import date
 from .almacenamiento import BaseDatos
 from .cliente_api import ClienteMercadoPublico, ErrorApi
 from .filtro import FiltroRubros
-from .modelos import (VERSION_DETALLE_LICITACION, compactar_licitacion, fila_licitacion, productos_licitacion,
-                      textos_licitacion)
+from .modelos import (VERSION_DETALLE_LICITACION, compactar_licitacion, fila_licitacion, items_licitacion,
+                      productos_licitacion, textos_licitacion)
 
 log = logging.getLogger(__name__)
 
@@ -40,7 +40,9 @@ def clasificar(detalle_licitacion: dict, filtro: FiltroRubros, hoy: date | None 
     descripcion, items, items_onu = textos_licitacion(detalle_licitacion)
     productos = productos_licitacion(detalle_licitacion)
     nombre = detalle_licitacion.get("Nombre")
-    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items, items_onu=items_onu, productos=productos)
+    productos_onu = [item.get("NombreProducto") for item in items_licitacion(detalle_licitacion)]
+    resultado = filtro.evaluar(*descripcion, nombre=nombre, items=items, items_onu=items_onu, productos=productos,
+                               productos_onu=productos_onu)
     if not resultado.coincide:
         return None
     return fila_licitacion(

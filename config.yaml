@@ -58,6 +58,9 @@ compra_agil:
 #                        compradoras). Los nombres de unidad seguidos de una palabra
 #                        clave ("Departamento de Control de Gestión") se ignoran solos.
 #   excluir_grupos:      listas de `grupos_exclusion` que se suman a excluir_en_nombre.
+#                        También se buscan en el producto ONU de cada línea: si TODAS
+#                        son del grupo ("Sondas quirúrgicas", "Servicios de catering"),
+#                        la compra no es del rubro aunque el nombre diga "balón".
 # En las órdenes de compra se clasifica CADA ÍTEM por su producto/categoría: solo
 # se guardan (y entran al cálculo de precios) los ítems de tus rubros.
 # Exclusiones compartidas por varios rubros (se usan con `excluir_grupos`).

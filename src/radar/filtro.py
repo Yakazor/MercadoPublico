@@ -126,6 +126,9 @@ class Rubro:
     productos_genericos: re.Pattern | None = None
     especificacion_si_producto: re.Pattern | None = None
     oc_maximo_por_dia: int | None = None           # muestra de OC por día (None = todas)
+    # Listas compartidas (grupos_exclusion) que también se buscan en el producto ONU de
+    # cada línea: "Sonda Foley con balón" es "Sondas quirúrgicas" aunque diga "balón".
+    excluir_onu: re.Pattern | None = None
 
     def base(self, texto_norm: str, es_nombre: bool = False) -> str:
         """Borra frases ignoradas y, fuera del nombre, nombres de unidades
@@ -226,6 +229,14 @@ class Rubro:
         claves = self.sin_debiles_solas(self.claves(" ".join(vigentes)))
         return claves, bool(lineas) and not vigentes
 
+    def onu_excluido(self, productos_onu_norm: list[str]) -> bool:
+        """¿TODAS las líneas son, según su producto ONU, de un grupo excluido
+        ("Trocares quirúrgicos", "Servicios de catering")? Con una sola línea del
+        rubro, la compra mixta se revisa igual."""
+        productos = [t for t in productos_onu_norm if t]
+        return self.excluir_onu is not None and bool(productos) and all(
+            self.excluir_onu.search(t) for t in productos)
+
     def revisa_especificacion(self, producto_norm: str) -> bool:
         return (not producto_norm or self.especificacion_si_producto is None
                 or bool(self.especificacion_si_producto.search(producto_norm)))
@@ -293,10 +304,12 @@ class FiltroRubros:
             # "excluir" (formato antiguo) se trata como exclusión en el nombre.
             duras = list(datos.get("excluir_en_nombre") or []) + list(datos.get("excluir") or [])
             # Listas compartidas entre rubros (p. ej. términos clínicos en los de reventa).
+            de_grupos = []
             for grupo in datos.get("excluir_grupos") or []:
                 if grupo not in grupos_exclusion:
                     raise ValueError(f"Rubro {clave}: grupo de exclusión desconocido '{grupo}'")
-                duras += list(grupos_exclusion[grupo] or [])
+                de_grupos += list(grupos_exclusion[grupo] or [])
+            duras += de_grupos
             self.rubros.append(Rubro(
                 clave=clave,
                 nombre=datos.get("nombre", clave),
@@ -319,6 +332,7 @@ class FiltroRubros:
                 productos_genericos=_patron(datos.get("productos_genericos") or []),
                 especificacion_si_producto=_patron(datos.get("especificacion_si_producto") or []),
                 oc_maximo_por_dia=datos.get("oc_maximo_por_dia", oc_maximo_por_defecto),
+                excluir_onu=_patron(de_grupos),
             ))
         self._alertas = []
         for a in alertas_regulatorias or []:
@@ -358,20 +372,26 @@ class FiltroRubros:
                 and (rubro.claves(nombre_norm, es_nombre=True) or rubro.tiene_candidata(nombre_norm))]
 
     def evaluar(self, *descripcion: str | None, nombre: str | None = None, items=(), items_onu=(),
-                productos=()) -> Resultado:
+                productos=(), productos_onu=()) -> Resultado:
         """`items`: texto libre de cada línea; `items_onu`: producto/categoría según el
         clasificador ONU (cuentan solo si el rubro tiene usar_clasificacion_onu);
         `productos`: cada línea completa (producto ONU + descripción) para decidir si
-        todo lo que se compra es regulado (por defecto, `items`)."""
+        todo lo que se compra es regulado (por defecto, `items`); `productos_onu`: el
+        producto ONU de cada línea, donde se buscan los grupos de exclusión."""
         nombre_norm = normalizar(nombre)
         lineas = [normalizar(t) for t in items if t]
         items_norm = " ".join(lineas)
         onu = _unir(items_onu)
+        productos_onu_norm = [normalizar(t) for t in productos_onu]
         libre = _unir(descripcion)
         hallazgos: list[tuple[Rubro, set[str]]] = []
         con_nombre: set[str] = set()
         for rubro in self.rubros:
             if rubro.incluir is None or rubro.excluido(nombre_norm):
+                continue
+            # El producto ONU dice qué es aunque el nombre no: "TROCAR ... CAMISA" es
+            # "Trocares quirúrgicos", no vestuario.
+            if rubro.onu_excluido(productos_onu_norm):
                 continue
             en_nombre = rubro.claves(nombre_norm, es_nombre=True)
             en_items, items_excluidos = rubro.claves_items(lineas)

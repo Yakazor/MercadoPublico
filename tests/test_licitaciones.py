@@ -79,3 +79,10 @@ def test_detalle_guardado_se_reutiliza_hasta_que_cambie_el_cierre(tmp_path):
     # Pasaron los días de refresco: se vuelve a pedir.
     assert radar_licitaciones(api, filtro, db=db, hoy=date(2026, 10, 25), refrescar_dias=7).descargadas == 1
     assert db.podar_detalles_licitacion(set()) == 1
+
+
+def test_clasificar_revisa_el_producto_onu_de_cada_linea():
+    detalle = {"CodigoExterno": "1-1-LE26", "Nombre": "Convenio de Suministro de Balones Vasculares",
+               "Items": {"Listado": [{"Correlativo": 1, "NombreProducto": "Juegos o catéteres introductores vasculares",
+                                      "Descripcion": "Balón de angioplastia 3 mm"}]}}
+    assert clasificar(detalle, FiltroRubros.desde_config(cargar_config()), date(2026, 10, 21)) is None
