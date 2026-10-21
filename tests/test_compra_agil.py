@@ -112,6 +112,24 @@ def test_fecha_chile_quita_la_z():
     assert fecha_chile(None) is None
 
 
+def test_fecha_cierre_real_sin_t_ni_segundos():
+    # Formato real de fechas.fecha_cierre: "2026-10-23 15:00" (hora de Chile).
+    assert fecha_chile("2026-10-23 15:00") == "2026-10-23T15:00:00"
+    payload = _detalle("X").json()["payload"]
+    payload["fechas"]["fecha_cierre"] = "2026-10-23 15:00"
+    c = _cliente([_pagina(["X"], 1, 1), _ok(payload)])
+    r = radar_compra_agil(c, FILTRO, hoy=date(2026, 10, 21))
+    assert r.filas[0]["fecha_cierre"] == "2026-10-23 15:00:00" and r.filas[0]["dias_restantes"] == 2
+
+
+def test_monto_en_utm_no_se_toma_como_pesos_y_region_de_respaldo():
+    payload = _detalle("U").json()["payload"]
+    payload["presupuesto"] = {"moneda": "UTM", "monto_disponible": 50}
+    payload["institucion"] = {"organismo_comprador": "X", "region": 8, "nombre_region": None}
+    det = como_licitacion(payload)
+    assert det["MontoEstimado"] is None and det["Comprador"]["RegionUnidad"] == "Región 8"
+
+
 def test_como_licitacion_y_presupuesto():
     det = como_licitacion(_detalle("1-2-COT26").json()["payload"])
     assert det["Tipo"] == "Compra Ágil" and det["MontoEstimado"] == 850000 and det["Llamado"] == 1
@@ -129,13 +147,24 @@ def test_radar_clasifica_y_descarta():
     assert r.publicadas == 2 and r.candidatas == 1      # B no pasa el filtro por nombre: sin detalle
     assert [f["codigo"] for f in r.filas] == ["A"]
     fila = r.filas[0]
-    assert fila["tipo"] == "Compra Ágil" and fila["url"] is None and fila["llamado"] == 1
+    assert fila["tipo"] == "Compra Ágil" and fila["llamado"] == 1
+    assert fila["url"] == "https://buscador.mercadopublico.cl/ficha?code=A"
     assert fila["dias_restantes"] == 2 and fila["rubro"] == "aseo"
     assert set(r.detalles) == {"A"}
 
 
-def test_cuota_agotada_guarda_lo_obtenido():
-    c = _cliente([_pagina(["A", "B"], 1, 1), _detalle("A"), _error(429, "Se ha alcanzado el límite")])
+def test_429_espera_una_vez_y_reintenta(monkeypatch):
+    esperas = []
+    monkeypatch.setattr(compra_agil.time, "sleep", esperas.append)
+    c = _cliente([_error(429, "límite"), _pagina(["A"], 1, 1)])
+    c.max_espera_429 = 600
+    assert c.listado()["items"][0]["codigo"] == "A"
+    assert 600 in esperas
+
+
+def test_429_repetido_guarda_lo_obtenido():
+    c = _cliente([_pagina(["A", "B"], 1, 1), _detalle("A"), _error(429, "Se ha alcanzado el límite"),
+                  _error(429, "Se ha alcanzado el límite")])
     r = radar_compra_agil(c, FILTRO, hoy=date(2026, 10, 21))
     assert [f["codigo"] for f in r.filas] == ["A"]
     assert r.fallidas == {"B"} and "429" in r.detenida

@@ -122,7 +122,7 @@
 
     <div class="rl-card" id="tabla-licitaciones">
       <h2>Licitaciones y Compras Ágiles vigentes</h2>
-      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público (las Compras Ágiles no tienen enlace: búscalas por código en Mercado Público, sección Compra Ágil). En Compra Ágil se cotiza el total con IVA y despacho; «1er llamado» es solo para empresas de menor tamaño. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
+      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público (si la ficha de una Compra Ágil no abre, búscala por código en la sección Compra Ágil). En Compra Ágil se cotiza el total con IVA y despacho; «1er llamado» es solo para empresas de menor tamaño. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
       <div class="rl-controles">
         <input type="search" id="buscar-lic" placeholder="Buscar licitación, organismo, región…" aria-label="Buscar licitaciones">
         <select id="tipo-lic" aria-label="Tipo de compra"><option value="">Licitaciones y Compras Ágiles</option><option value="agil">Solo Compras Ágiles</option><option value="licitacion">Solo licitaciones</option></select>
@@ -461,7 +461,8 @@
       return d.toLocaleString('es-CL', opciones);
     };
     const sinTildes = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-    const fichaSegura = (url) => (typeof url === 'string' && url.startsWith('https://www.mercadopublico.cl/') ? url : null);
+    const fichaSegura = (url) => (typeof url === 'string'
+      && (url.startsWith('https://www.mercadopublico.cl/') || url.startsWith('https://buscador.mercadopublico.cl/')) ? url : null);
     const linkSeguro = (url) => (typeof url === 'string' && /^https:\/\/[^\s"'<>]+$/.test(url) ? url : null);
     const enlace = (texto, url) => {
       const seguro = linkSeguro(url);

@@ -75,6 +75,10 @@ def main():
     if agiles and agiles.get("filas"):
         filas_ca = pd.DataFrame(agiles["filas"]).reindex(columns=COLUMNAS_LICITACIONES)
         filas_ca = filas_ca[~filas_ca["codigo"].isin(vigentes["codigo"])]
+        # Las que cerraron entre la búsqueda y la publicación ya no se ofrecen.
+        ahora = datetime.now(ZoneInfo("America/Santiago")).replace(tzinfo=None)
+        cierre = pd.to_datetime(filas_ca["fecha_cierre"], errors="coerce")
+        filas_ca = filas_ca[cierre.isna() | (cierre > ahora)]
         vigentes = pd.concat([vigentes, filas_ca], ignore_index=True)
         vigentes["llamado"] = pd.to_numeric(vigentes["llamado"], errors="coerce").astype("Int64")
         detalles |= agiles.get("detalles") or {}

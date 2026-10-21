@@ -94,8 +94,7 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
     lineas = [
         f"# Presupuesto: {_celda(lic.get('nombre'))}",
         "",
-        # Compra Ágil no tiene ficha con enlace estable: se busca por código en Mercado Público.
-        f"- **Compra Ágil:** {codigo} (búscala por código en Mercado Público; se cotiza el TOTAL con IVA y despacho)"
+        f"- **Compra Ágil:** {_link(codigo, lic.get('url'))} (se cotiza el TOTAL con IVA y despacho)"
         if agil else f"- **Licitación:** [{codigo}]({URL_LICITACION.format(codigo)})",
         f"- **Organismo:** {_celda(lic.get('organismo'))} ({_celda(lic.get('region'))})",
         f"- **Cierre:** {lic.get('fecha_cierre') or '—'} · **Monto estimado:** "

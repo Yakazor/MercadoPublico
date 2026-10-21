@@ -4,8 +4,10 @@ La API v2 es distinta de la de licitaciones (v1):
 - URL base `https://api2.mercadopublico.cl`, recursos `/v2/compra-agil` (listado)
   y `/v2/compra-agil/{codigo}` (detalle con productos solicitados);
 - el ticket va en el encabezado HTTP `ticket`, no en la URL;
-- cuota diaria por ticket (HTTP 429 al agotarla: se detiene la corrida);
-- las fechas vienen en hora de Chile aunque traigan "Z" al final;
+- HTTP 429 es un límite de ritmo (token bucket) que se recupera en minutos: se
+  espera lo que diga Retry-After (una vez por corrida) y, si vuelve, se corta;
+- las fechas vienen en hora de Chile aunque traigan "Z" al final; `fecha_cierre`
+  llega como "2026-10-23 15:00" (sin "T" ni segundos);
 - páginas de 50 pueden cortarse con HTTP 504: se usa un tamaño menor y, ante un
   504, se reintenta la página con 10.
 
@@ -19,6 +21,7 @@ import logging
 import time
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -31,6 +34,7 @@ logging.getLogger("urllib3").setLevel(logging.ERROR)
 
 URL_BASE = "https://api2.mercadopublico.cl"
 TIPO = "Compra Ágil"
+URL_FICHA = "https://buscador.mercadopublico.cl/ficha?code={}"
 TAMANO_MINIMO = 10   # mínimo de la API y tamaño que no se corta con 504
 
 
@@ -43,6 +47,7 @@ class ClienteCompraAgil:
         pausa: float = 4.0,
         reintentos: int = 3,
         espera_inicial: float = 5.0,
+        max_espera_429: float = 900,
     ):
         self.ticket = ticket
         self.base_url = base_url.rstrip("/")
@@ -53,6 +58,8 @@ class ClienteCompraAgil:
         self._sesion = requests.Session()
         self._ultima_llamada = 0.0
         self.llamadas = 0
+        self.max_espera_429 = max_espera_429
+        self._esperado_429 = False
 
     @classmethod
     def desde_config(cls, config: dict, ticket: str) -> "ClienteCompraAgil":
@@ -64,6 +71,7 @@ class ClienteCompraAgil:
             pausa=ca.get("pausa_entre_llamadas_segundos", 4.0),
             reintentos=ca.get("reintentos", 3),
             espera_inicial=ca.get("espera_inicial_reintento_segundos", 5.0),
+            max_espera_429=ca.get("max_espera_429_segundos", 900),
         )
 
     def listado(self, **params) -> dict:
@@ -77,7 +85,8 @@ class ClienteCompraAgil:
         url = f"{self.base_url}{recurso}"
         consulta = {k: v for k, v in params.items() if v is not None}
         espera = self.espera_inicial
-        for intento in range(self.reintentos + 1):
+        intento = 0
+        while True:
             transcurrido = time.monotonic() - self._ultima_llamada
             if transcurrido < self.pausa:
                 time.sleep(self.pausa - transcurrido)
@@ -92,7 +101,15 @@ class ClienteCompraAgil:
                 if resp.status_code in (401, 403):
                     raise ErrorApi(f"{recurso}: HTTP {resp.status_code} - {mensaje}", fatal=True)
                 if resp.status_code == 429:
-                    # Cuota diaria agotada: reintentar hoy no sirve.
+                    # Límite de ritmo: se recupera en minutos. Una sola espera por corrida
+                    # (acotada) para no comerse el tiempo del workflow; si vuelve, se corta.
+                    retry = str((getattr(resp, "headers", None) or {}).get("Retry-After") or "")
+                    pausa_429 = float(retry) if retry.isdigit() else self.max_espera_429
+                    if not self._esperado_429 and pausa_429 <= self.max_espera_429:
+                        self._esperado_429 = True
+                        log.warning("%s: HTTP 429 (límite de ritmo). Se espera %.0f s y se reintenta.", recurso, pausa_429)
+                        time.sleep(pausa_429)
+                        continue
                     raise ErrorApi(f"{recurso}: HTTP 429 - {mensaje}", temporal=True, fatal=True)
                 if resp.status_code in (400, 404):
                     raise ErrorApi(f"{recurso} {consulta}: HTTP {resp.status_code} - {mensaje}")
@@ -107,7 +124,7 @@ class ClienteCompraAgil:
             log.warning("%s: %s. Reintento en %.0f s", recurso, motivo, espera)
             time.sleep(espera)
             espera *= 2
-        raise AssertionError("inalcanzable")
+            intento += 1
 
 
 class ErrorPaginaGrande(Exception):
@@ -130,19 +147,27 @@ def _mensaje(datos, resp) -> str:
 
 
 def fecha_chile(valor) -> str | None:
-    """"2026-10-21T15:00:00Z" → "2026-10-21T15:00:00" (la "Z" es engañosa: es hora de Chile)."""
+    """"2026-10-23 15:00" o "2026-10-23T15:00:00Z" → "2026-10-23T15:00:00" (hora de
+    Chile: la "Z" es engañosa)."""
     if not valor:
         return None
-    texto = str(valor).strip()
-    if texto.endswith("Z"):
-        texto = texto[:-1]
+    texto = str(valor).strip().removesuffix("Z").replace(" ", "T", 1)
+    if len(texto) == 16:          # "2026-10-23T15:00": sin segundos
+        texto += ":00"
     return texto[:19]
 
 
+def ahora_chile() -> datetime:
+    return datetime.now(ZoneInfo("America/Santiago")).replace(tzinfo=None)
+
+
 def listar_publicadas(cliente: ClienteCompraAgil, regiones: list[int] | None = None, dias_publicacion: int = 15,
-                      tamano_pagina: int = 25, max_paginas: int = 200, ahora: datetime | None = None) -> list[dict]:
-    """Compras Ágiles abiertas a cotización publicadas en los últimos `dias_publicacion` días."""
-    ahora = ahora or datetime.now()
+                      tamano_pagina: int = 25, max_paginas: int = 200, ahora: datetime | None = None,
+                      hasta_monotonic: float | None = None) -> list[dict]:
+    """Compras Ágiles abiertas a cotización publicadas en los últimos `dias_publicacion` días.
+
+    `ahora` en hora de Chile: la API compara su hora de Chile marcada con "Z"."""
+    ahora = ahora or ahora_chile()
     params = {
         "estado": "publicada",
         "publicado_desde": (ahora - timedelta(days=dias_publicacion)).strftime("%Y-%m-%dT00:00:00Z"),
@@ -151,12 +176,16 @@ def listar_publicadas(cliente: ClienteCompraAgil, regiones: list[int] | None = N
     }
     items, pagina, tamano = [], 1, tamano_pagina
     while pagina <= max_paginas:
+        if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
+            log.warning("Sin tiempo: el listado quedó en la página %d (incompleto).", pagina - 1)
+            break
         try:
             payload = cliente.listado(**params, tamano_pagina=tamano, numero_pagina=pagina)
         except ErrorPaginaGrande:
             # Mismas filas desde el principio con páginas de 10 (cambia la numeración).
             log.warning("HTTP 504 con páginas de %d: se sigue con páginas de %d.", tamano, TAMANO_MINIMO)
             pagina = (pagina - 1) * tamano // TAMANO_MINIMO + 1
+            max_paginas = max_paginas * tamano // TAMANO_MINIMO   # mismo tope de compras
             tamano = TAMANO_MINIMO
             continue
         items += payload.get("items") or []
@@ -188,8 +217,10 @@ def como_licitacion(ca: dict) -> dict:
     presupuesto = ca.get("presupuesto") or ca.get("montos") or {}
     entrega = ca.get("entrega") or {}
     convocatoria = ca.get("convocatoria") or {}
-    monto = presupuesto.get("monto_disponible_clp") or presupuesto.get("monto_disponible") \
-        or presupuesto.get("presupuesto_estimado")
+    # Sin monto en pesos, el disponible solo sirve si viene en CLP (hay compras en UTM).
+    monto = presupuesto.get("monto_disponible_clp")
+    if monto is None and (presupuesto.get("moneda") or "CLP").strip().upper() == "CLP":
+        monto = presupuesto.get("monto_disponible") or presupuesto.get("presupuesto_estimado")
     productos = ca.get("productos_solicitados") or []
     return {
         "CodigoExterno": ca.get("codigo"),
@@ -202,7 +233,8 @@ def como_licitacion(ca: dict) -> dict:
         "Comprador": {
             "NombreOrganismo": institucion.get("organismo_comprador"),
             "NombreUnidad": institucion.get("unidad_compra"),
-            "RegionUnidad": institucion.get("nombre_region"),
+            "RegionUnidad": institucion.get("nombre_region")
+            or (f"Región {institucion['region']}" if institucion.get("region") else None),
             "ComunaUnidad": None,
         },
         "Fechas": {"FechaCierre": fecha_chile(fechas.get("fecha_cierre")),
@@ -227,8 +259,7 @@ def fila_compra_agil(det: dict, filtro: FiltroRubros, hoy: date | None = None) -
     if fila is None:
         return None
     return fila | {
-        # Compra Ágil no tiene una ficha pública con enlace estable: se busca por código.
-        "url": None,
+        "url": URL_FICHA.format(requests.utils.quote(str(det.get("CodigoExterno")), safe="")),
         "llamado": det.get("Llamado"),
         "plazo_entrega_dias": det.get("PlazoEntregaDias"),
         "direccion_entrega": det.get("DireccionEntrega"),
@@ -251,7 +282,10 @@ def radar_compra_agil(cliente: ClienteCompraAgil, filtro: FiltroRubros, regiones
                       hasta_monotonic: float | None = None) -> ResultadoCompraAgil:
     """Compras Ágiles abiertas de tus rubros: listado → filtro por nombre → detalle → filtro completo."""
     resultado = ResultadoCompraAgil()
-    publicadas = listar_publicadas(cliente, regiones, dias_publicacion, tamano_pagina, max_paginas)
+    # El listado usa a lo más la mitad del tiempo: el resto es para los detalles.
+    mitad = (time.monotonic() + (hasta_monotonic - time.monotonic()) / 2) if hasta_monotonic is not None else None
+    publicadas = listar_publicadas(cliente, regiones, dias_publicacion, tamano_pagina, max_paginas,
+                                   hasta_monotonic=mitad)
     resultado.publicadas = len(publicadas)
     candidatas = [c for c in publicadas if filtro.es_candidata(c.get("nombre"))]
     # Las que cierran antes, primero: si se acaba la cuota, quedan las más urgentes.
