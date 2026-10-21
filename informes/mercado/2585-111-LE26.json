@@ -37,17 +37,18 @@
      "precio": 5990,
      "iva_incluido": true,
      "contenido": "50 guantes (25 pares)",
-     "unidades_equivalentes": 50,
-     "precio_unitario_neto": 100.67,
+     "unidades_equivalentes": 25,
+     "precio_unitario_neto": 201.34,
      "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Solo talla M; guante suelto contado como unidad, ajustar si la licitación cuenta pares (x2)",
+     "nota": "Solo talla M; guante suelto contado como unidad, ajustar si la licitación cuenta pares (x2) Auditoría: la licitación pide pares; 50 guantes = 25 pares.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 5990.0,
      "verificacion_pagina": "2026-10-20: la página muestra $5.990."
     }
-   ]
+   ],
+   "nota": "[Auditoría 2026-10-21] Unidad = par de guantes: se corrigió la conversión, que contaba guantes sueltos."
   },
   {
    "linea": 5,

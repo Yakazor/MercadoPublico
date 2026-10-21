@@ -24,26 +24,30 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 33950.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $33.950."
+     "verificacion_pagina": "2026-10-20: la página muestra $33.950.",
+     "descartado": true,
+     "motivo_descarte": "La línea es la compra completa de pinturas según bases: un galón de esmalte no la representa."
     },
     {
      "tienda": "Sodimac",
      "producto_mercado": "Esmalte sintético Tricolor brillante blanco 1 galón",
      "url": "https://www.sodimac.cl/sodimac-cl/marca/TRICOLOR",
-     "precio": 37990,
+     "precio": 35990.0,
      "iva_incluido": true,
      "contenido": "1 galón",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 31924.37,
+     "precio_unitario_neto": 30243.7,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "",
+     "nota": "Precio actualizado al que mostró la página el 2026-10-20 (antes $37.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $37.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $37.990: puede haber cambiado.",
+     "descartado": true,
+     "motivo_descarte": "La línea es la compra completa de pinturas según bases: un galón de esmalte no la representa."
     }
    ],
-   "nota": "Supuesto: esmalte 1 galón."
+   "nota": "Supuesto: esmalte 1 galón. [Auditoría 2026-10-21] Cantidad 1 = toda la compra: el detalle de pinturas y cantidades está en las bases."
   }
  ],
  "verificacion_paginas": {

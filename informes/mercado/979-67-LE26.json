@@ -19,9 +19,9 @@
      "contenido": "saco 25 kg",
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 3941.18,
-     "coincidencia": "equivalente",
+     "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Precio lista; oferta 4.456",
+     "nota": "Precio lista; oferta 4.456 Se pide hormigón/concreto preparado de 25 kg; el saco es de cemento (otro producto).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 4690.0,
@@ -36,9 +36,9 @@
      "contenido": "saco 25 kg",
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4277.31,
-     "coincidencia": "equivalente",
+     "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Precio lista; oferta 4.886",
+     "nota": "Precio lista; oferta 4.886 Se pide hormigón/concreto preparado de 25 kg; el saco es de cemento (otro producto).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 5090.0,
@@ -53,9 +53,9 @@
      "contenido": "saco 25 kg",
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4277.31,
-     "coincidencia": "equivalente",
+     "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Precio lista; oferta 4.886",
+     "nota": "Precio lista; oferta 4.886 Se pide hormigón/concreto preparado de 25 kg; el saco es de cemento (otro producto).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 5090.0,
@@ -1677,7 +1677,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "[Auditoría 2026-10-21] La unidad dice kilogramo pero la descripción pide barras de 6 m: confirmar en las bases si son 10 kg o 10 barras."
   },
   {
    "linea": 68,
@@ -1729,7 +1730,8 @@
      "precio_pagina": 1690.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $1.690, no $1.590: puede haber cambiado."
     }
-   ]
+   ],
+   "nota": "[Auditoría 2026-10-21] Kit = perno + tuerca + golilla: la opción es solo el perno (falta cotizar tuerca y golilla)."
   }
  ],
  "verificacion_paginas": {

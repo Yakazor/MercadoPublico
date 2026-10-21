@@ -24,10 +24,12 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $14.990.",
+     "descartado": true,
+     "motivo_descarte": "Se pide un sistema de barras de colgado instalado en bodegas; una barra extensible doméstica no lo representa."
     }
    ],
-   "nota": "Es un sistema instalado para bodegas; solo se muestra barra extensible como referencia de material, sin instalación."
+   "nota": "Es un sistema instalado para bodegas; solo se muestra barra extensible como referencia de material, sin instalación. [Auditoría 2026-10-21] Incluye instalación: cotizar con un proveedor de sistemas de almacenaje (no es reventa simple)."
   }
  ],
  "verificacion_paginas": {

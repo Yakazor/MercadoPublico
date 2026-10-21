@@ -13,19 +13,20 @@
      "tienda": "Lider",
      "producto_mercado": "Caja de herramientas de madera tipo Montessori",
      "url": "https://www.lider.cl/browse/Mundo-Bebe/Actividades-y-Estimulacion/Juguetes-Didacticos/40094495_80102111_71038261",
-     "precio": 13990,
+     "precio": 14990.0,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 11756.3,
+     "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Edad de destino no definida",
+     "nota": "Edad de destino no definida Precio actualizado al que mostró la página el 2026-10-20 (antes $13.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 14990.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $14.990, no $13.990: puede haber cambiado."
     }
-   ]
+   ],
+   "nota": "[Auditoría 2026-10-21] El monto da unos $15.000 con IVA por juguete: con precio de tienda la oferta lo supera; cotizar con mayorista."
   }
  ],
  "verificacion_paginas": {

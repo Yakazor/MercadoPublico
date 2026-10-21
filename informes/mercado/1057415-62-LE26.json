@@ -43,7 +43,7 @@
    "linea": 6,
    "producto": "Uniformes de seguridad",
    "consulta": "polera pique manga larga trabajo azul marino",
-   "nota": "Solo se encontró una pieza del kit.",
+   "nota": "Solo se encontró una pieza del kit. [Auditoría 2026-10-21] Kit: cotizar todas las prendas del kit (ver descripción); la opción encontrada era solo una polera.",
    "opciones": [
     {
      "tienda": "Lider (vendedor Andesland)",
@@ -60,7 +60,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 20990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $20.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $20.990.",
+     "descartado": true,
+     "motivo_descarte": "Cubre una sola prenda de un kit de 3 o 4 prendas (poleras, pantalón y chaqueta)."
     }
    ]
   },
@@ -68,7 +70,7 @@
    "linea": 7,
    "producto": "Uniformes para el personal sanitario",
    "consulta": "uniforme clínico conjunto top y pantalón azul rey; pijama clínico azul rey conjunto top pantalón precio Chile; pantalón clínico scrub azul rey Chile",
-   "nota": "",
+   "nota": "[Auditoría 2026-10-21] Kit = 2 tops + 1 pantalón: el conjunto Cherokee trae 1 top + 1 pantalón, falta un top (costo real mayor).",
    "opciones": [
     {
      "tienda": "Mercado Libre (Acuarela MED)",
@@ -83,7 +85,9 @@
      "verificado": false,
      "nota": "Solo la prenda superior en azul rey; faltan 1 top y el pantalón (pantalón Ripholia $23.828-$25.900 en la misma tienda).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
+     "descartado": true,
+     "motivo_descarte": "Es una sola prenda superior; el kit pide 2 tops y 1 pantalón."
     },
     {
      "tienda": "Falabella (vendedor MyScrubs)",
@@ -108,7 +112,7 @@
    "linea": 8,
    "producto": "Uniformes para el personal sanitario",
    "consulta": "uniforme clínico conjunto top y pantalón azul rey; pijama clínico azul rey conjunto top pantalón precio Chile; pantalón clínico scrub azul rey Chile",
-   "nota": "",
+   "nota": "[Auditoría 2026-10-21] Kit = 2 tops + 1 pantalón: el conjunto Cherokee trae 1 top + 1 pantalón, falta un top (costo real mayor).",
    "opciones": [
     {
      "tienda": "Mercado Libre (Acuarela MED)",
@@ -123,7 +127,9 @@
      "verificado": false,
      "nota": "Solo la prenda superior en azul rey; faltan 1 top y el pantalón (pantalón Ripholia $23.828-$25.900 en la misma tienda).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
+     "descartado": true,
+     "motivo_descarte": "Es una sola prenda superior; el kit pide 2 tops y 1 pantalón."
     },
     {
      "tienda": "Falabella (vendedor MyScrubs)",
@@ -148,7 +154,7 @@
    "linea": 9,
    "producto": "Uniformes para el personal sanitario",
    "consulta": "uniforme clínico conjunto top y pantalón; pijama clínico conjunto precio Chile",
-   "nota": "Color específico no confirmado en resultados.",
+   "nota": "Color específico no confirmado en resultados. [Auditoría 2026-10-21] Kit = 2 tops + 1 pantalón: el conjunto cotizado trae 1 top + 1 pantalón, falta un top (costo real mayor). Revisar color y si es modelo de hombre o mujer.",
    "opciones": [
     {
      "tienda": "Falabella (vendedor MyScrubs)",
@@ -173,7 +179,7 @@
    "linea": 10,
    "producto": "Uniformes para el personal sanitario",
    "consulta": "uniforme clínico conjunto top y pantalón; pijama clínico conjunto precio Chile",
-   "nota": "Color específico no confirmado en resultados.",
+   "nota": "Color específico no confirmado en resultados. [Auditoría 2026-10-21] Kit = 2 tops + 1 pantalón: el conjunto cotizado trae 1 top + 1 pantalón, falta un top (costo real mayor). Revisar color y si es modelo de hombre o mujer.",
    "opciones": [
     {
      "tienda": "Falabella (vendedor MyScrubs)",
@@ -198,7 +204,7 @@
    "linea": 11,
    "producto": "Uniformes para el personal sanitario",
    "consulta": "uniforme clínico conjunto top y pantalón; pijama clínico conjunto precio Chile",
-   "nota": "Color específico no confirmado en resultados.",
+   "nota": "Color específico no confirmado en resultados. [Auditoría 2026-10-21] Kit = 2 tops + 1 pantalón: el conjunto cotizado trae 1 top + 1 pantalón, falta un top (costo real mayor). Revisar color y si es modelo de hombre o mujer.",
    "opciones": [
     {
      "tienda": "Falabella (vendedor MyScrubs)",
@@ -223,7 +229,7 @@
    "linea": 12,
    "producto": "Uniformes para el personal sanitario",
    "consulta": "uniforme clínico conjunto top y pantalón; pijama clínico conjunto precio Chile",
-   "nota": "Color específico no confirmado en resultados.",
+   "nota": "Color específico no confirmado en resultados. [Auditoría 2026-10-21] Kit = 2 tops + 1 pantalón: el conjunto cotizado trae 1 top + 1 pantalón, falta un top (costo real mayor). Revisar color y si es modelo de hombre o mujer.",
    "opciones": [
     {
      "tienda": "Falabella (vendedor MyScrubs)",
@@ -255,7 +261,7 @@
    "linea": 14,
    "producto": "Uniformes varios",
    "consulta": "polera polo piqué azul marino manga corta",
-   "nota": "",
+   "nota": "[Auditoría 2026-10-21] Kit: cotizar todas las prendas del kit (ver descripción); la opción encontrada era solo una polera.",
    "opciones": [
     {
      "tienda": "Lider",
@@ -272,7 +278,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 22990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $22.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $22.990.",
+     "descartado": true,
+     "motivo_descarte": "Cubre una sola prenda de un kit de 3 o 4 prendas (poleras, pantalón y chaqueta)."
     }
    ]
   }
