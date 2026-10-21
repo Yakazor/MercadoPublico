@@ -33,7 +33,8 @@
      "precio_pagina": 6990.0,
      "verificacion_pagina": "2026-10-20: la página muestra $6.990."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 3,
@@ -72,7 +73,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 4,
@@ -111,7 +113,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 5,
@@ -172,7 +175,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 7,
@@ -196,7 +200,8 @@
      "precio_pagina": 14990.0,
      "verificacion_pagina": "2026-10-20: la página muestra $14.990."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 8,
@@ -220,7 +225,8 @@
      "precio_pagina": 15990.0,
      "verificacion_pagina": "2026-10-20: la página muestra $15.990."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 9,
@@ -275,7 +281,8 @@
      "precio_pagina": 18980.0,
      "verificacion_pagina": "2026-10-20: la página muestra $18.980."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 12,
@@ -336,19 +343,21 @@
      "tienda": "Lider (LINEASPORT.CL)",
      "producto_mercado": "Casco de taekwondo profesional talla M",
      "url": "https://www.lider.cl/ip/disciplinas/casco-de-taekwondo-profesional-talla-m/00046961928349",
-     "precio": 16490,
+     "precio": 17490,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 13857.14,
+     "precio_unitario_neto": 14697,
      "coincidencia": "aproximada",
-     "verificado": false,
-     "nota": "Cabezal con mica no confirmado.",
+     "verificado": true,
+     "nota": "Cabezal con mica no confirmado. Precio actualizado al que mostró la página el 2026-10-20 (antes $16.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 17490.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $17.490, no $16.490: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $17.490.",
+     "verificado_en": "2026-10-20"
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 18,
@@ -446,20 +455,21 @@
      "tienda": "Falabella (Toolpro)",
      "producto_mercado": "Milwaukee cinta métrica carrete 100 m fibra de vidrio",
      "url": "https://www.falabella.com/falabella-cl/shop/cinta-de-fibra-de-vidrio",
-     "precio": 58990,
+     "precio": 60000,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 49571.43,
+     "precio_unitario_neto": 50420,
      "coincidencia": "equivalente",
      "verificado": true,
-     "nota": "Marca profesional, mucho más cara.",
+     "nota": "Marca profesional, mucho más cara. Precio actualizado al que mostró la página el 2026-10-20 (antes $58.990).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 60000.0,
      "verificacion_pagina": "2026-10-20: la página muestra $60.000."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 29,
@@ -470,19 +480,21 @@
      "tienda": "Lider (TOPMEDIC)",
      "producto_mercado": "Báscula balanza inteligente bioimpedancia Bluetooth 8 sensores Senssun",
      "url": "https://www.lider.cl/ip/salud-y-bienestar/bascula-balanza-inteligente-bioimpedancia-bluetooth-8-sensores/00046209742468",
-     "precio": 70990,
+     "precio": 53292,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 59655.46,
+     "precio_unitario_neto": 44783,
      "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "Medidas exactas no confirmadas.",
+     "verificado": true,
+     "nota": "Medidas exactas no confirmadas. Precio actualizado al que mostró la página el 2026-10-20 (antes $70.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 53292.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $53.292, no $70.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $53.292.",
+     "verificado_en": "2026-10-20"
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 30,
@@ -518,7 +530,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 33,
@@ -543,12 +556,13 @@
      "precio_unitario_neto": 6720.59,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Orificio olímpico 50 mm, no preolímpico; pack de 4 asumido.",
+     "nota": "Orificio olímpico 50 mm, no preolímpico; pack de 4 asumido. La página (listado de Sodimac) mostró $34.990 como precio más parecido; no se pudo confirmar que sea este producto ni que el precio sea por pack de 4 discos, así que no se actualizó.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 34990.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $34.990, no $31.990: puede haber cambiado."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el pack de 4 discos es un supuesto no confirmado (si el precio fuera por 1 disco, el costo por unidad sería 4 veces mayor) y es orificio olímpico, no preolímpico: confirmar en la ficha antes de ofertar."
   },
   {
    "linea": 35,
@@ -654,7 +668,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 48,
@@ -679,20 +694,21 @@
      "tienda": "Lider (Safe Sport Gear)",
      "producto_mercado": "Balón fútbol sala The House Ball tamaño 4",
      "url": "https://www.lider.cl/ip/disciplinas/balon-de-futbol-sala-safe-sport-gear-the-house-ball-tamano-4/00019685270037",
-     "precio": 49990,
+     "precio": 48990,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 42008.4,
+     "precio_unitario_neto": 41168,
      "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Fútbol sala, no se confirma 4 capas/450 g.",
+     "nota": "Fútbol sala, no se confirma 4 capas/450 g. Precio actualizado al que mostró la página el 2026-10-20 (antes $49.990).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 48990.0,
      "verificacion_pagina": "2026-10-20: la página muestra $48.990."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
   },
   {
    "linea": 51,
@@ -770,12 +786,13 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien. Auditoría 2026-10-21: esta línea (100 balones) es ~70 % de la oferta y usa el precio al detalle de un balón Train Nexus (aproximado al «similar a Train Tango»): cotizar por volumen."
   }
  ],
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 22,
-  "verificadas": 11
+  "verificadas": 13
  }
 }

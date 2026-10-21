@@ -24,7 +24,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 6990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $6.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $6.990.",
+     "descartado": true,
+     "motivo_descarte": "Contrato de suministro global de ferretería: una válvula de descarga no lo representa."
     },
     {
      "tienda": "Sodimac",
@@ -41,10 +43,12 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $13.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $13.990.",
+     "descartado": true,
+     "motivo_descarte": "Contrato de suministro global de ferretería: una válvula de descarga no lo representa."
     }
    ],
-   "nota": "Ítem global; se muestra solo referencia unitaria del producto principal."
+   "nota": "Ítem global; se muestra solo referencia unitaria del producto principal. [Auditoría 2026-10-21] Suministro global: el listado de artículos y cantidades está en las bases."
   }
  ],
  "verificacion_paginas": {

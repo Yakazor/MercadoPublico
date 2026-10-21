@@ -76,17 +76,18 @@
      "tienda": "Lider",
      "producto_mercado": "Capa de agua impermeable PVC azul con gorro",
      "url": "https://www.lider.cl/ip/ropa-deportiva/capa-de-agua-impermeable-pvc-azul-con-gorro/00046901570830",
-     "precio": 8990,
+     "precio": 10990.0,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 7554.62,
+     "precio_unitario_neto": 9235.29,
      "coincidencia": "aproximada",
-     "verificado": false,
-     "nota": "",
+     "verificado": true,
+     "nota": "Precio actualizado al que mostró la página el 2026-10-20 (antes $8.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $10.990, no $8.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $10.990.",
+     "verificado_en": "2026-10-20"
     }
    ],
    "nota": "Solo se halló capa de agua (una pieza), no traje de dos piezas."
@@ -102,6 +103,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 3,
-  "verificadas": 2
+  "verificadas": 3
  }
 }

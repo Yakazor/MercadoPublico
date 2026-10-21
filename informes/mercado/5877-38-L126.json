@@ -8,7 +8,7 @@
    "linea": 1,
    "producto": "Conjuntos generales de herramientas",
    "consulta": "set herramientas maestranza taller Sodimac precio juego herramientas 100 piezas; set herramientas 100 piezas Easy Sodimac Chile caja herramientas maestranza",
-   "nota": "Lista de artículos no detallada; se cotizó un set de herramientas manuales como referencia parcial.",
+   "nota": "Lista de artículos no detallada; se cotizó un set de herramientas manuales como referencia parcial. [Auditoría 2026-10-21] Cantidad 1 = toda la compra: el listado de artículos está en las bases.",
    "opciones": [
     {
      "tienda": "Sodimac (vendedor TUS HERRAMIENTAS)",
@@ -24,7 +24,9 @@
      "nota": "Referencia parcial; no se conoce el listado exacto de la sala de maestranza.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 83990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $83.990, no $89.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $83.990, no $89.990: puede haber cambiado.",
+     "descartado": true,
+     "motivo_descarte": "La línea es todo el equipamiento de la sala de maestranza: un set de herramientas no la representa."
     }
    ]
   }

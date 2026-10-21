@@ -15,7 +15,7 @@
    "linea": 2,
    "producto": "Mobiliario",
    "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: escritorio infantil silla Sodimac",
-   "nota": "Precio de listado/ficha de tienda; especificación exacta pendiente de revisar.",
+   "nota": "Precio de listado/ficha de tienda; especificación exacta pendiente de revisar. [Auditoría 2026-10-21] Línea global: cantidades y modelos en las bases técnicas.",
    "opciones": [
     {
      "tienda": "Sodimac",
@@ -32,7 +32,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $49.990.",
+     "descartado": true,
+     "motivo_descarte": "Línea global de escritorios y sillas: un producto suelto no la representa."
     },
     {
      "tienda": "Sodimac",
@@ -49,7 +51,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $69.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $69.990.",
+     "descartado": true,
+     "motivo_descarte": "Línea global de escritorios y sillas: un producto suelto no la representa."
     }
    ]
   },
@@ -57,7 +61,7 @@
    "linea": 3,
    "producto": "Aires acondicionados",
    "consulta": "2 búsquedas web (tiendas chilenas)",
-   "nota": "",
+   "nota": "[Auditoría 2026-10-21] Incluye instalación (servicio): cantidades y potencia en las bases; requiere instalador autorizado.",
    "opciones": [
     {
      "tienda": "Falabella",
@@ -74,7 +78,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 359990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $359.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $359.990.",
+     "descartado": true,
+     "motivo_descarte": "Línea global de provisión E INSTALACIÓN de aires acondicionados: un equipo sin instalación no la representa."
     },
     {
      "tienda": "Sodimac",
@@ -91,7 +97,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 430990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $430.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $430.990.",
+     "descartado": true,
+     "motivo_descarte": "Línea global de provisión E INSTALACIÓN de aires acondicionados: un equipo sin instalación no la representa."
     }
    ]
   },

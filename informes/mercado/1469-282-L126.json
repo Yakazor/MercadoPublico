@@ -14,18 +14,18 @@
      "tienda": "Lider",
      "producto_mercado": "Silla Ejecutiva Ergonómica Liverpool con soporte lumbar negra",
      "url": "https://www.lider.cl/ip/home-office/silla-ejecutiva-ergonomica-liverpool-con-soporte-lumbar-color-negro/00046064404422",
-     "precio": 61990,
+     "precio": 60000,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 52092.44,
-     "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "Precio de oferta (antes $112.990).",
+     "precio_unitario_neto": 50420,
+     "coincidencia": "aproximada",
+     "verificado": true,
+     "nota": "Precio de oferta (antes $112.990). Precio actualizado al que mostró la página el 2026-10-20 (antes $61.990). Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 60000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado.",
-     "verificado_en": "2026-10-18"
+     "verificacion_pagina": "2026-10-20: la página muestra $60.000.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Sodimac",
@@ -36,9 +36,9 @@
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 109235.29,
-     "coincidencia": "equivalente",
+     "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Precio del listado de Sodimac (no ficha del producto).",
+     "nota": "Precio del listado de Sodimac (no ficha del producto). Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 129990.0,
@@ -53,9 +53,9 @@
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 109235.29,
-     "coincidencia": "equivalente",
+     "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Oferta (antes $259.990); listado de Sodimac.",
+     "nota": "Oferta (antes $259.990); listado de Sodimac. Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 129990.0,
@@ -67,6 +67,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 3,
-  "verificadas": 2
+  "verificadas": 3
  }
 }

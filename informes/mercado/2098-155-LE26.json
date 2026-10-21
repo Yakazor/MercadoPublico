@@ -24,7 +24,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
-   ]
+   ],
+   "nota": "[Auditoría 2026-10-21] Cada unidad es un rollo de 100 m: con rollos de 10 m al detalle esta línea sola cuesta unos $29 M neto y explica que la oferta supere el monto. No se encontró precio chileno de rollo de 100 m; cotizar con un distribuidor de iluminación."
   },
   {
    "linea": 2,

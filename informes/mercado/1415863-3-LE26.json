@@ -24,10 +24,12 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 15000.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $15.000."
+     "verificacion_pagina": "2026-10-20: la página muestra $15.000.",
+     "descartado": true,
+     "motivo_descarte": "Suministro global de calzado de seguridad: un par no representa la línea."
     }
    ],
-   "nota": "Ítem global sin detalle de modelos ni cantidades; se muestra referencia de un par de zapato de seguridad."
+   "nota": "Ítem global sin detalle de modelos ni cantidades; se muestra referencia de un par de zapato de seguridad. [Auditoría 2026-10-21] Línea global: modelos, tallas y cantidades están en las bases."
   }
  ],
  "verificacion_paginas": {

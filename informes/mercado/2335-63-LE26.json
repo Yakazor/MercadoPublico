@@ -103,7 +103,7 @@
    "linea": 5,
    "producto": "Vendas o apósitos compresores",
    "consulta": "gasa estéril no tejida 10x10 sobre x 2 Nemo precio Chile",
-   "nota": "No apareció Nemo sobre x2; la opción es gasa no tejida estéril 10x10 en paquete de 50 (sin confirmar formato de sobre x2).",
+   "nota": "No apareció Nemo sobre x2; la opción es gasa no tejida estéril 10x10 en paquete de 50 (sin confirmar formato de sobre x2). [Auditoría 2026-10-21] Unidad = sobre de 2 gasas (como en la línea 4): se corrigió la conversión, que contaba gasas sueltas.",
    "opciones": [
     {
      "tienda": "Lider",
@@ -112,11 +112,11 @@
      "precio": 11990,
      "iva_incluido": true,
      "contenido": "50 unidades",
-     "unidades_equivalentes": 50,
-     "precio_unitario_neto": 201.51,
+     "unidades_equivalentes": 25.0,
+     "precio_unitario_neto": 403.03,
      "coincidencia": "equivalente",
      "verificado": true,
-     "nota": "Misma medida y tipo; empaque no confirmado como sobre x2.",
+     "nota": "Misma medida y tipo; empaque no confirmado como sobre x2. Auditoría: la unidad de la licitación es el sobre de 2 gasas; 50 gasas = 25 sobres.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 11990.0,
@@ -129,11 +129,11 @@
      "precio": 4999,
      "iva_incluido": true,
      "contenido": "6 unidades",
-     "unidades_equivalentes": 6,
-     "precio_unitario_neto": 700.14,
+     "unidades_equivalentes": 3.0,
+     "precio_unitario_neto": 1400.28,
      "coincidencia": "aproximada",
      "verificado": true,
-     "nota": "Precio farmacia; no se confirma que sea no tejida.",
+     "nota": "Precio farmacia; no se confirma que sea no tejida. Auditoría: la unidad de la licitación es el sobre de 2 gasas; 6 gasas = 3 sobres.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 4999.0,
@@ -191,7 +191,7 @@
    "linea": 10,
    "producto": "Sondas quirúrgicas",
    "consulta": "sonda Foley silicona 2 vías Fr16 precio Chile; sonda Foley 2 vías silicona 100% Fr 16 Chile distribuidor; sonda Foley 2 vías silicona 16 precio",
-   "nota": "Sin precios chilenos en resultados. [2ª pasada] Opciones de listados chilenos.",
+   "nota": "Sin precios chilenos en resultados. [2ª pasada] Opciones de listados chilenos. [Auditoría 2026-10-21] La licitación pide cajas de sondas; la opción es 1 sonda: confirmar cuántas trae cada caja (el costo puede ser varias veces mayor).",
    "opciones": [
     {
      "tienda": "Mercado Libre Chile",
@@ -267,33 +267,35 @@
      "tienda": "Falabella (MULTISTORE)",
      "producto_mercado": "Guantes látex Tresor con polvo talla S, caja 100",
      "url": "https://www.falabella.com/falabella-cl/shop/guantes-latex",
-     "precio": 6190,
+     "precio": 5990.0,
      "iva_incluido": true,
      "contenido": "Caja 100 unidades",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 5201.68,
+     "precio_unitario_neto": 5033.61,
      "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "Precio con 31% de descuento en listado.",
+     "verificado": true,
+     "nota": "Precio con 31% de descuento en listado. Precio actualizado al que mostró la página el 2026-10-20 (antes $6.190).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $5.990, no $6.190: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $5.990.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Falabella (PuntoMed)",
      "producto_mercado": "Guantes látex Health Touch con polvo talla S, caja 100",
      "url": "https://www.falabella.com/falabella-cl/shop/guantes-latex",
-     "precio": 6590,
+     "precio": 5990.0,
      "iva_incluido": true,
      "contenido": "Caja 100 unidades",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 5537.82,
+     "precio_unitario_neto": 5033.61,
      "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "Listado Falabella.",
+     "verificado": true,
+     "nota": "Listado Falabella. Precio actualizado al que mostró la página el 2026-10-20 (antes $6.590).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $5.990, no $6.590: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $5.990.",
+     "verificado_en": "2026-10-20"
     }
    ]
   },
@@ -301,7 +303,7 @@
    "linea": 14,
    "producto": "Guantes médicos de examen o para usos no quirúrgicos",
    "consulta": "guantes de nitrilo caja 100 mercadolibre.cl",
-   "nota": "Listado de Mercado Libre Chile con guantes de nitrilo talla M caja 100 (Tresor) a 11.990; no se confirma 'sin polvo' ni que sea grado examinación.",
+   "nota": "Listado de Mercado Libre Chile con guantes de nitrilo talla M caja 100 (Tresor) a 11.990; no se confirma 'sin polvo' ni que sea grado examinación. [Auditoría 2026-10-21] La opción de talla M cuesta 3 veces la de talla S (línea 12): buscar una caja de nitrilo M más barata.",
    "opciones": [
     {
      "tienda": "Mercado Libre Chile",
@@ -402,6 +404,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 17,
-  "verificadas": 7
+  "verificadas": 9
  }
 }

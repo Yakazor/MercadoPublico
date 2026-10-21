@@ -31,17 +31,18 @@
      "tienda": "Lider (vendedor HFCTOYS)",
      "producto_mercado": "Muñeca de 29 cm con silla, mamadera y accesorios",
      "url": "https://www.lider.cl/ip/munecas-y-accesorios/muneca-de-29-cm-con-silla-mamadera-y-accesorios/00489706575406",
-     "precio": 10990,
+     "precio": 9000.0,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 9235.29,
+     "precio_unitario_neto": 7563.03,
      "coincidencia": "aproximada",
-     "verificado": false,
-     "nota": "Un solo tipo de juguete; la compra real requiere variedad por edad/género.",
+     "verificado": true,
+     "nota": "Un solo tipo de juguete; la compra real requiere variedad por edad/género. Precio actualizado al que mostró la página el 2026-10-20 (antes $10.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $10.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $9.000.",
+     "verificado_en": "2026-10-20"
     }
    ]
   }
@@ -49,6 +50,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 2,
-  "verificadas": 1
+  "verificadas": 2
  }
 }

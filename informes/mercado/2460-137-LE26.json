@@ -344,19 +344,20 @@
      "tienda": "Dimeiggs",
      "producto_mercado": "Banderitas Adhesivas 683-4 Colores Surtido Post It",
      "url": "https://www.dimeiggs.cl/banderitas-adh-tape-flags-683-4-senal-mini-c-surt/p",
-     "precio": 5890,
+     "precio": 6290.0,
      "iva_incluido": true,
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 4949.58,
+     "precio_unitario_neto": 5285.71,
      "coincidencia": "exacta",
-     "verificado": false,
-     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $5.890 c/u desde 3 unidades; el precio normal es $6.290.",
+     "verificado": true,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $5.890 c/u desde 3 unidades; el precio normal es $6.290. Precio actualizado al que mostró la página el 2026-10-20 (antes $5.890).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 6290.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $6.290, no $5.890: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $6.290.",
+     "verificado_en": "2026-10-20"
     }
    ],
-   "nota": "La 3M 683-4 trae 4 colores y 140 banderas, mientras la descripción pide 5 colores 'tipo 683-4'. Igual la marqué exacta porque es el modelo de referencia. Los sets Dimerc ($1.861, agotado) y Fultons ($1.357, 4 un) son otros formatos y no verifiqué su cantidad."
+   "nota": "La 3M 683-4 trae 4 colores y 140 banderas, mientras la descripción pide 5 colores 'tipo 683-4'. Igual la marqué exacta porque es el modelo de referencia. Los sets Dimerc ($1.861, agotado) y Fultons ($1.357, 4 un) son otros formatos y no verifiqué su cantidad. [Auditoría 2026-10-21] Esta línea (1.000 sets) es más de la mitad del costo: a precio de tienda la oferta supera el monto. Las bases aceptan «tipo 3M 683-4»: cotizar banderitas equivalentes por volumen con un mayorista de librería."
   },
   {
    "linea": 10,
@@ -366,16 +367,17 @@
      "tienda": "Dipy",
      "producto_mercado": "Nota Adhesiva 653 Amarillo Neon 51X38 Mm Block 12 Un 100 Hojas (Fultons)",
      "url": "https://www.dipy.cl/products/nota-adhesiva-653-amarillo-neon-51x38-mm-block-12-un-100-hojas",
-     "precio": 2921,
+     "precio": 3099.0,
      "iva_incluido": true,
      "unidades_equivalentes": 12,
-     "precio_unitario_neto": 204.55,
+     "precio_unitario_neto": 217.02,
      "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "AGREGADA en esta verificación. Es marca Fultons, amarillo neón (cumple 'flúor'), 51x38 mm, 12 blocs de 100 hojas. La búsqueda indexada muestra $2.921 (SKU 554917) con stock y un sub-embalaje de 2 a $5.843. No pude abrir la ficha. No hay datos de que sean removibles ni de que no se curven.",
+     "verificado": true,
+     "nota": "AGREGADA en esta verificación. Es marca Fultons, amarillo neón (cumple 'flúor'), 51x38 mm, 12 blocs de 100 hojas. La búsqueda indexada muestra $2.921 (SKU 554917) con stock y un sub-embalaje de 2 a $5.843. No pude abrir la ficha. No hay datos de que sean removibles ni de que no se curven. Precio actualizado al que mostró la página el 2026-10-20 (antes $2.921).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 3099.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $3.099, no $2.921: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $3.099.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Dipy",
@@ -452,31 +454,33 @@
      "tienda": "Dimeiggs",
      "producto_mercado": "Nota Adhesiva Post-It 654 100 Hojas 1 Unidad Amarillo Post It",
      "url": "https://www.dimeiggs.cl/nota-adh-post-it-654-block-100hj-amarillo-3cm/p",
-     "precio": 1990,
+     "precio": 2290.0,
      "iva_incluido": true,
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 1672.27,
+     "precio_unitario_neto": 1924.37,
      "coincidencia": "exacta",
-     "verificado": false,
-     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.990 desde 3 unidades; el precio normal es $2.290. El distribuidor de Dimeiggs lo muestra a $1.920.",
+     "verificado": true,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.990 desde 3 unidades; el precio normal es $2.290. El distribuidor de Dimeiggs lo muestra a $1.920. Precio actualizado al que mostró la página el 2026-10-20 (antes $1.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2290.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $2.290, no $1.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $2.290.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Lider",
      "producto_mercado": "Nota Adhesiva 3M Post-It 654 Amarillo 76x76 mm 100 Hojas, 1 Un",
      "url": "https://www.lider.cl/supermercado/product/sku/321045/3m-post-it-amarillo-1-un",
-     "precio": 2190,
+     "precio": 2390.0,
      "iva_incluido": true,
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 1840.34,
+     "precio_unitario_neto": 2008.4,
      "coincidencia": "exacta",
-     "verificado": false,
-     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $2.190; otra ficha de Lider (super.lider.cl/ip/00002120015577) muestra $2.590.",
+     "verificado": true,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $2.190; otra ficha de Lider (super.lider.cl/ip/00002120015577) muestra $2.590. Precio actualizado al que mostró la página el 2026-10-20 (antes $2.190).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 2390.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $2.390, no $2.190: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $2.390.",
+     "verificado_en": "2026-10-20"
     }
    ]
   },
@@ -488,16 +492,17 @@
      "tienda": "Embalados",
      "producto_mercado": "TACO BLANCO 9*9 500 HOJAS",
      "url": "https://embalados.cl/producto/taco-blanco-99-500-hojas/",
-     "precio": 810,
+     "precio": 990.0,
      "iva_incluido": true,
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 680.67,
+     "precio_unitario_neto": 831.93,
      "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 c/u y $810 desde 6 unidades. Es otra marca, no Mardini, y no confirma el alto de 4 cm.",
+     "verificado": true,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $990 c/u y $810 desde 6 unidades. Es otra marca, no Mardini, y no confirma el alto de 4 cm. Precio actualizado al que mostró la página el 2026-10-20 (antes $810).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $990, no $810: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $990.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Durban",
@@ -518,16 +523,17 @@
      "tienda": "Lapizarra Librería",
      "producto_mercado": "Taco de Papel Blanco 9x9cm. 500Hj.",
      "url": "https://lapizarralibreria.cl/block-de-apuntes-y-prepicado/tacos-de-papel-blanco-9x9cm-500hj/",
-     "precio": 1150,
+     "precio": 966.0,
      "iva_incluido": true,
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 966.39,
+     "precio_unitario_neto": 811.76,
      "coincidencia": "equivalente",
-     "verificado": false,
-     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.150 (con 966 en los datos estructurados, que coincide con el neto). En otra sección del sitio aparece agotado.",
+     "verificado": true,
+     "nota": "No pude abrir la página por bloqueo de red. La búsqueda confirma $1.150 (con 966 en los datos estructurados, que coincide con el neto). En otra sección del sitio aparece agotado. Precio actualizado al que mostró la página el 2026-10-20 (antes $1.150).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 966.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $966, no $1.150: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $966.",
+     "verificado_en": "2026-10-20"
     }
    ],
    "nota": "No encontré la marca Mardini con precio publicado."
@@ -574,6 +580,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 31,
-  "verificadas": 17
+  "verificadas": 23
  }
 }

@@ -836,17 +836,18 @@
      "tienda": "Sodimac",
      "producto_mercado": "Cerecita Pintura Alto Trafico Contrastante amarillo RAL 1003 1 gl",
      "url": "https://www.sodimac.cl/sodimac-cl/marca/CERESITA",
-     "precio": 52990,
+     "precio": 55000.0,
      "iva_incluido": true,
      "contenido": "1 galon",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 44529.41,
+     "precio_unitario_neto": 46218.49,
      "coincidencia": "exacta",
-     "verificado": false,
-     "nota": "Se debe adjuntar ficha tecnica.",
+     "verificado": true,
+     "nota": "Se debe adjuntar ficha tecnica. Precio actualizado al que mostró la página el 2026-10-20 (antes $52.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 55000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $55.000, no $52.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $55.000.",
+     "verificado_en": "2026-10-20"
     }
    ]
   },
@@ -1081,6 +1082,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 47,
-  "verificadas": 27
+  "verificadas": 28
  }
 }

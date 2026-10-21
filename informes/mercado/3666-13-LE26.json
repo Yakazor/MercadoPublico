@@ -8,7 +8,7 @@
    "linea": 1,
    "producto": "Juguetes didácticos",
    "consulta": "2 búsquedas web (tiendas chilenas); segunda pasada: juguete didáctico Paris / Lider precio",
-   "nota": "Referencia de precios de juguetes didácticos; compra masiva real requiere mayorista (no cotizado).",
+   "nota": "Referencia de precios de juguetes didácticos; compra masiva real requiere mayorista (no cotizado). Auditoría 2026-10-21: 2.740 juguetes por $12 M son ~$4.380 con IVA por juguete; revisar en las bases el desglose por rango etario y tipo, y cotizar con un mayorista.",
    "opciones": [
     {
      "tienda": "Paris",
@@ -23,7 +23,9 @@
      "verificado": false,
      "nota": "Precio oferta; juguete tipo de referencia (rangos etarios por definir).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403.",
+     "descartado": true,
+     "motivo_descarte": "La línea (cantidad 1) es la compra de 2.740 juguetes de distintos rangos etarios: el precio de un juguete no representa la línea."
     },
     {
      "tienda": "Paris",
@@ -38,7 +40,9 @@
      "verificado": false,
      "nota": "Precio oferta; desde 12 meses.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403.",
+     "descartado": true,
+     "motivo_descarte": "La línea (cantidad 1) es la compra de 2.740 juguetes de distintos rangos etarios: el precio de un juguete no representa la línea."
     },
     {
      "tienda": "Lider",
@@ -55,7 +59,9 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-19",
      "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $10.990, no $12.950: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $10.990, no $12.950: puede haber cambiado.",
+     "descartado": true,
+     "motivo_descarte": "La línea (cantidad 1) es la compra de 2.740 juguetes de distintos rangos etarios: el precio de un juguete no representa la línea."
     }
    ]
   }

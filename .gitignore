@@ -14,3 +14,7 @@ __pycache__/
 venv/
 .pytest_cache/
 *.egg-info/
+
+# Órdenes de compra al proveedor: traen RUT y datos personales (solo se sube el ejemplo)
+proveedores/ordenes_proveedor/*
+!proveedores/ordenes_proveedor/ejemplo.json
