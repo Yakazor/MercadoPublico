@@ -2,7 +2,7 @@
 vende la mercadería después de aceptar la OC del Estado.
 
 - `crear_orden(datos)`: planilla Excel lista para imprimir o exportar a PDF. Sin datos
-  es la plantilla en blanco; con datos (ver `ordenes_proveedor/ejemplo.json`) es la
+  es la plantilla en blanco; con datos (ver `proveedores/ordenes_proveedor/ejemplo.json`) es la
   orden llena. Subtotales, IVA y total son fórmulas.
 - `validar(datos)`: lista de datos que faltan para enviar la orden.
 - `siguiente_numero(carpeta, anio)`: correlativo OC-AAAA-NNN según las órdenes guardadas.

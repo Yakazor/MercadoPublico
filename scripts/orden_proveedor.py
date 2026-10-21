@@ -1,17 +1,17 @@
 """Llena la orden de compra al proveedor con los datos de un JSON.
 
 Uso:
-    python scripts/orden_proveedor.py --datos ordenes_proveedor/OC-2026-001.json [--pdf]
+    python scripts/orden_proveedor.py --datos proveedores/ordenes_proveedor/OC-2026-001.json [--pdf]
     python scripts/orden_proveedor.py --plantilla persona_natural   # plantilla en blanco
     python scripts/orden_proveedor.py --siguiente                   # próximo número OC-AAAA-NNN
 
 Lee:
-    ordenes_proveedor/<numero>.json   datos de la orden (formato: ordenes_proveedor/ejemplo.json)
+    proveedores/ordenes_proveedor/<numero>.json   datos de la orden (formato: ejemplo.json en esa carpeta)
 Escribe:
-    ordenes_proveedor/<numero>.xlsx   la orden llena (y .pdf con --pdf, si hay LibreOffice)
-    plantillas/Plantilla_Orden_de_Compra_<tipo>.xlsx   con --plantilla
+    proveedores/ordenes_proveedor/<numero>.xlsx   la orden llena (y .pdf con --pdf, si hay LibreOffice)
+    proveedores/plantillas/Plantilla_Orden_de_Compra_<tipo>.xlsx   con --plantilla
 
-Las órdenes llenas traen RUT y datos personales: `ordenes_proveedor/` no se sube al
+Las órdenes llenas traen RUT y datos personales: `proveedores/ordenes_proveedor/` no se sube al
 repositorio (solo el ejemplo). Con LibreOffice instalado el .xlsx se recalcula para que
 los totales se vean también en visores que no calculan fórmulas.
 """
@@ -27,8 +27,9 @@ import _ruta  # noqa: F401
 from radar.config import RAIZ
 from radar.orden_proveedor import crear_orden, siguiente_numero, validar
 
-CARPETA = RAIZ / "ordenes_proveedor"
-PLANTILLAS = RAIZ / "plantillas"
+PROVEEDORES = RAIZ / "proveedores"
+CARPETA = PROVEEDORES / "ordenes_proveedor"
+PLANTILLAS = PROVEEDORES / "plantillas"
 NOMBRE_PLANTILLA = {"persona_natural": "Persona_Natural", "empresa": "Empresa"}
 
 

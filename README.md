@@ -61,9 +61,10 @@ scripts/
 dashboard/index.html        # copia de la página del dashboard
 informes/                   # presupuestos, precios de mercado y grupos (se versiona)
 .claude/RUTINA.md           # instrucciones de la rutina de actualización
-.claude/ORDEN_PROVEEDOR.md  # instrucciones para llenar una orden de compra al proveedor
-plantillas/                 # plantillas en blanco de la orden de compra (persona natural y empresa)
-ordenes_proveedor/          # órdenes llenas (no se versionan: traen RUT); solo ejemplo.json
+proveedores/                # orden de compra al proveedor:
+  ORDEN_PROVEEDOR.md        #   instrucciones para llenarla (link desde .claude/)
+  plantillas/               #   plantillas en blanco (persona natural y empresa)
+  ordenes_proveedor/        #   órdenes llenas (no se versionan: traen RUT); solo ejemplo.json
 .claude/workflows/          # búsqueda de precios de mercado en Chile
 .github/workflows/          # radar, OC, censo y prueba de la API
 tests/                      # pruebas sin conexión a la API
@@ -380,12 +381,12 @@ con subtotales, IVA y total como fórmulas, y las condiciones de entrega y pago.
 
 ```bash
 python scripts/orden_proveedor.py --siguiente                    # próximo número OC-AAAA-NNN
-python scripts/orden_proveedor.py --datos ordenes_proveedor/OC-2026-001.json --pdf
+python scripts/orden_proveedor.py --datos proveedores/ordenes_proveedor/OC-2026-001.json --pdf
 python scripts/orden_proveedor.py --plantilla persona_natural     # plantilla en blanco
 ```
 
-El formato de los datos está en `ordenes_proveedor/ejemplo.json` (precio neto o con
-IVA por ítem). Las órdenes llenas quedan en `ordenes_proveedor/`, que no se sube al
+El formato de los datos está en `proveedores/ordenes_proveedor/ejemplo.json` (precio neto o con
+IVA por ítem). Las órdenes llenas quedan en `proveedores/ordenes_proveedor/`, que no se sube al
 repositorio porque trae RUT y datos personales. El PDF y el recálculo de totales usan
 LibreOffice si está instalado. Manual de órdenes de compra en Mercado Público:
 https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W

@@ -86,3 +86,17 @@ def test_siguiente_numero_ignora_ejemplo_y_otros_anios(tmp_path):
         (tmp_path / nombre).write_text(json.dumps({"numero": numero}), encoding="utf-8")
     (tmp_path / "roto.json").write_text("{", encoding="utf-8")
     assert siguiente_numero(tmp_path, 2026) == "OC-2026-004"
+
+
+def test_script_usa_las_carpetas_de_proveedores():
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    import orden_proveedor as script
+
+    assert script.CARPETA.parent == script.PLANTILLAS.parent == script.PROVEEDORES
+    assert script.PROVEEDORES.name == "proveedores"
+    for tipo in script.NOMBRE_PLANTILLA.values():
+        assert (script.PLANTILLAS / f"Plantilla_Orden_de_Compra_{tipo}.xlsx").exists()
+    ejemplo = json.loads((script.CARPETA / "ejemplo.json").read_text(encoding="utf-8"))
+    assert validar(ejemplo) == []
