@@ -30,9 +30,9 @@
      "verificado": true,
      "nota": "Se asume Global = 1 contrabajo.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 649900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $649.900."
+     "verificacion_pagina": "2026-10-21: la página muestra $649.900."
     }
    ]
   },
@@ -45,7 +45,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 1,
   "verificadas": 1
  }

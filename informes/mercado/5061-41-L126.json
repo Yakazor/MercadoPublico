@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Precio de listado (rango 53.990-69.990).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 55000.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $55.000."
+     "verificacion_pagina": "2026-10-21: la página muestra $55.000."
     },
     {
      "tienda": "Lider",
@@ -40,15 +40,15 @@
      "verificado": true,
      "nota": "Especificaciones técnicas del comprador no disponibles; modelo monocromático básico.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 54149.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $54.149."
+     "verificacion_pagina": "2026-10-21: la página muestra $54.149."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 2,
   "verificadas": 2
  }

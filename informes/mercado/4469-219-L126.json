@@ -36,9 +36,9 @@
      "verificado": true,
      "nota": "Color negro; marketplace",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 199990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $199.990.",
+     "verificacion_pagina": "2026-10-21: la página muestra $199.990.",
      "descartado": true,
      "motivo_descarte": "Vendedor de marketplace con envío desde EE.UU.: envío internacional, excluido por las reglas de búsqueda."
     },
@@ -55,16 +55,16 @@
      "verificado": true,
      "nota": "Precio del listado de Falabella (marketplace) según resultado de búsqueda; mismo color pedido (Jade). Confirmar que el envío sea desde Chile y el stock.",
      "fecha_consulta": "2026-10-21",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 184990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $184.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $184.990."
     }
    ],
    "nota": "Vendedores externos con envío desde EE.UU. Auditoría 2026-10-21: se descartó la opción de Lider (envío desde EE.UU.) y se agregó una de Falabella; el Kindle no tiene distribución oficial en Chile, confirmar origen del envío."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 2,
   "verificadas": 2
  }

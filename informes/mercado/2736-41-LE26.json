@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Cubre solo el monitor; el resto de los artículos del ítem no está cotizado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 109990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $109.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $109.990."
     },
     {
      "tienda": "Paris",
@@ -40,13 +40,13 @@
      "verificado": false,
      "nota": "Cubre solo el monitor.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 2,
   "verificadas": 1
  }

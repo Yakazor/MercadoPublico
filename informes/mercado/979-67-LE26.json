@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Precio lista; oferta 4.456 Se pide hormigón/concreto preparado de 25 kg; el saco es de cemento (otro producto).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 4690.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $4.690."
+     "verificacion_pagina": "2026-10-21: la página muestra $4.690."
     },
     {
      "tienda": "Sodimac",
@@ -40,9 +40,9 @@
      "verificado": true,
      "nota": "Precio lista; oferta 4.886 Se pide hormigón/concreto preparado de 25 kg; el saco es de cemento (otro producto).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 5090.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $5.090."
+     "verificacion_pagina": "2026-10-21: la página muestra $5.090."
     },
     {
      "tienda": "Sodimac",
@@ -57,9 +57,9 @@
      "verificado": true,
      "nota": "Precio lista; oferta 4.886 Se pide hormigón/concreto preparado de 25 kg; el saco es de cemento (otro producto).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 5090.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $5.090."
+     "verificacion_pagina": "2026-10-21: la página muestra $5.090."
     }
    ]
   },
@@ -81,7 +81,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy (marketplace)",
@@ -96,7 +96,7 @@
      "verificado": false,
      "nota": "Vendedor tercero en Easy",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Sodimac",
@@ -111,9 +111,9 @@
      "verificado": true,
      "nota": "Precio lista; oferta 1.314",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 1450.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $1.450."
+     "verificacion_pagina": "2026-10-21: la página muestra $1.450."
     }
    ]
   },
@@ -136,7 +136,7 @@
      "nota": "Es 16 A, no 10 A; no se halló precio del 10 A simple",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 2890.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $2.890, no $3.090: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $2.890, no $3.090: puede haber cambiado."
     }
    ]
   },
@@ -159,7 +159,7 @@
      "nota": "19mm x 20m",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 1690.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $1.690, no $1.390: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $1.690, no $1.390: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -174,9 +174,9 @@
      "verificado": true,
      "nota": "19mm x 18m",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2190.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.190."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.190."
     }
    ]
   },
@@ -198,9 +198,9 @@
      "verificado": true,
      "nota": "19mm x 18m",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2490.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.490."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.490."
     }
    ]
   },
@@ -222,9 +222,9 @@
      "verificado": true,
      "nota": "Precio lista; otro precio 2.312",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2890.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.890."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.890."
     }
    ]
   },
@@ -247,9 +247,9 @@
      "verificado": true,
      "nota": "Sin tope confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 4490.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $4.490."
+     "verificacion_pagina": "2026-10-21: la página muestra $4.490."
     }
    ]
   },
@@ -278,9 +278,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2190.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.190."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.190."
     },
     {
      "tienda": "Sodimac",
@@ -295,9 +295,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2789.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.789."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.789."
     }
    ]
   },
@@ -319,9 +319,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2910.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.910."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.910."
     },
     {
      "tienda": "Sodimac",
@@ -336,9 +336,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 3843.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.843."
+     "verificacion_pagina": "2026-10-21: la página muestra $3.843."
     }
    ]
   },
@@ -360,9 +360,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 3190.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.190."
+     "verificacion_pagina": "2026-10-21: la página muestra $3.190."
     },
     {
      "tienda": "Sodimac",
@@ -374,12 +374,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 2932.77,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
-     "precio_pagina": 3500.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.500."
+     "precio_pagina": 3190.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $3.190, no $3.490: puede haber cambiado."
     }
    ]
   },
@@ -401,9 +401,9 @@
      "verificado": true,
      "nota": "Precio lista; oferta 6.165",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 6990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $6.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $6.990."
     },
     {
      "tienda": "Easy",
@@ -418,7 +418,7 @@
      "verificado": false,
      "nota": "Largo no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -440,9 +440,9 @@
      "verificado": true,
      "nota": "48 mm vs 50 mm pedidos",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 5290.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $5.290."
+     "verificacion_pagina": "2026-10-21: la página muestra $5.290."
     }
    ]
   },
@@ -465,9 +465,9 @@
      "verificado": true,
      "nota": "Solo roja, grado diamante no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 20990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $20.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $20.990."
     },
     {
      "tienda": "Easy",
@@ -482,7 +482,7 @@
      "verificado": false,
      "nota": "Solo roja, 50 m, grado no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -504,9 +504,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 20000.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $20.000."
+     "verificacion_pagina": "2026-10-21: la página muestra $20.000."
     },
     {
      "tienda": "Sodimac",
@@ -521,9 +521,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 24290.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $24.290."
+     "verificacion_pagina": "2026-10-21: la página muestra $24.290."
     },
     {
      "tienda": "Sodimac",
@@ -540,7 +540,7 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-19",
      "precio_pagina": 25000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $25.000, no $26.490: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $25.000, no $26.490: puede haber cambiado."
     }
    ]
   },
@@ -562,9 +562,9 @@
      "verificado": true,
      "nota": "1 mm en vez de 1,2 mm",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 20000.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $20.000."
+     "verificacion_pagina": "2026-10-21: la página muestra $20.000."
     }
    ]
   },
@@ -586,9 +586,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 1990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $1.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $1.990."
     },
     {
      "tienda": "Sodimac",
@@ -603,9 +603,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2190.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.190."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.190."
     },
     {
      "tienda": "Sodimac",
@@ -620,9 +620,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 3990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $3.990."
     }
    ]
   },
@@ -644,9 +644,9 @@
      "verificado": true,
      "nota": "Oferta vista 2.811",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.990."
     },
     {
      "tienda": "Falabella (SBD)",
@@ -661,9 +661,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 5090.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $5.090."
+     "verificacion_pagina": "2026-10-21: la página muestra $5.090."
     }
    ]
   },
@@ -685,9 +685,9 @@
      "verificado": true,
      "nota": "Oferta vista 2.811",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.990."
     }
    ]
   },
@@ -744,9 +744,9 @@
      "verificado": true,
      "nota": "Medida/uso por confirmar",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 3990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $3.990."
     },
     {
      "tienda": "Sodimac",
@@ -761,9 +761,9 @@
      "verificado": true,
      "nota": "Caja embutida chuqui, no confirmada como de derivación",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2490.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.490."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.490."
     }
    ]
   },
@@ -785,7 +785,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -800,7 +800,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -830,8 +830,8 @@
      "nota": "Precio visto en listado desordenado; confirmar que corresponde a este modelo",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 8290.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $8.290.",
-     "verificado_en": "2026-10-20"
+     "verificacion_pagina": "2026-10-21: la página muestra $8.290.",
+     "verificado_en": "2026-10-21"
     }
    ]
   },
@@ -853,9 +853,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 1720.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $1.720."
+     "verificacion_pagina": "2026-10-21: la página muestra $1.720."
     },
     {
      "tienda": "Sodimac",
@@ -870,9 +870,9 @@
      "verificado": true,
      "nota": "Oferta 1.717",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 1990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $1.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $1.990."
     },
     {
      "tienda": "Sodimac",
@@ -887,9 +887,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2074.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.074."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.074."
     }
    ]
   },
@@ -912,7 +912,7 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 3190.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $3.190, no $2.790: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $3.190, no $2.790: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -928,7 +928,7 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 3190.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $3.190, no $3.030: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $3.190, no $3.030: puede haber cambiado."
     },
     {
      "tienda": "Easy",
@@ -943,7 +943,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -965,9 +965,9 @@
      "verificado": true,
      "nota": "Ancho 3,6 mm vs 4,5 mm",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2090.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.090."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.090."
     }
    ]
   },
@@ -986,12 +986,12 @@
      "unidades_equivalentes": 100,
      "precio_unitario_neto": 235.21,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "381 mm vs 400 mm; caro",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
-     "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $29.990, no $27.990: puede haber cambiado."
+     "verificado_en": "2026-10-21",
+     "precio_pagina": 27980.0,
+     "verificacion_pagina": "2026-10-21: la página muestra $27.980."
     }
    ]
   },
@@ -1027,9 +1027,9 @@
      "verificado": true,
      "nota": "19mm x 18m",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2490.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.490."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.490."
     }
    ]
   },
@@ -1051,9 +1051,9 @@
      "verificado": true,
      "nota": "Descripción ambigua ('3m goma 3mts'); se asume cinta 3M",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 2190.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $2.190."
+     "verificacion_pagina": "2026-10-21: la página muestra $2.190."
     }
    ]
   },
@@ -1082,7 +1082,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -1132,7 +1132,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Sodimac",
@@ -1148,7 +1148,7 @@
      "nota": "Precio con -50% (antes 4.177)",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 2990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $2.990, no $2.088: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $2.990, no $2.088: puede haber cambiado."
     }
    ]
   },
@@ -1212,7 +1212,7 @@
      "verificado": false,
      "nota": "URL asociada por nombre; verificar",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -1248,9 +1248,9 @@
      "verificado": true,
      "nota": "Oferta 24.642",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 28990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $28.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $28.990."
     },
     {
      "tienda": "Sodimac",
@@ -1265,9 +1265,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 31990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $31.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $31.990."
     },
     {
      "tienda": "Sodimac",
@@ -1282,9 +1282,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 34290.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $34.290."
+     "verificacion_pagina": "2026-10-21: la página muestra $34.290."
     }
    ]
   },
@@ -1315,7 +1315,7 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-18",
      "precio_pagina": 55000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $55.000, no $56.962: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $55.000, no $56.962: puede haber cambiado."
     },
     {
      "tienda": "Falabella (Sodimac)",
@@ -1330,9 +1330,9 @@
      "verificado": true,
      "nota": "Tineta supuesta 4 gl",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 55822.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $55.822."
+     "verificacion_pagina": "2026-10-21: la página muestra $55.822."
     }
    ]
   },
@@ -1354,9 +1354,9 @@
      "verificado": true,
      "nota": "Color gris; color pedido no especificado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 18990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $18.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $18.990."
     },
     {
      "tienda": "Sodimac",
@@ -1371,9 +1371,9 @@
      "verificado": true,
      "nota": "Oferta 21.242",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 25000.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $25.000."
+     "verificacion_pagina": "2026-10-21: la página muestra $25.000."
     },
     {
      "tienda": "Sodimac",
@@ -1388,9 +1388,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 25050.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $25.050."
+     "verificacion_pagina": "2026-10-21: la página muestra $25.050."
     }
    ]
   },
@@ -1412,9 +1412,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 34690.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $34.690."
+     "verificacion_pagina": "2026-10-21: la página muestra $34.690."
     },
     {
      "tienda": "Easy",
@@ -1429,7 +1429,7 @@
      "verificado": false,
      "nota": "Precio oferta; normal 2.890",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -1451,9 +1451,9 @@
      "verificado": true,
      "nota": "Vendedor marketplace; confirmar base incluida y origen",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 6590.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $6.590."
+     "verificacion_pagina": "2026-10-21: la página muestra $6.590."
     }
    ]
   },
@@ -1503,7 +1503,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -1525,7 +1525,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Falabella (ElectroChavez)",
@@ -1540,9 +1540,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $29.990."
     }
    ]
   },
@@ -1564,9 +1564,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 3190.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.190."
+     "verificacion_pagina": "2026-10-21: la página muestra $3.190."
     },
     {
      "tienda": "Sodimac",
@@ -1582,7 +1582,7 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 16319.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $16.319, no $17.179: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $16.319, no $17.179: puede haber cambiado."
     },
     {
      "tienda": "Mercado Libre (H&P)",
@@ -1597,7 +1597,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-21: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -1619,9 +1619,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 13243.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $13.243."
+     "verificacion_pagina": "2026-10-21: la página muestra $13.243."
     },
     {
      "tienda": "Mercado Libre",
@@ -1636,7 +1636,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-21: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Sodimac",
@@ -1651,9 +1651,9 @@
      "verificado": true,
      "nota": "Marca premium",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 6490.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $6.490."
+     "verificacion_pagina": "2026-10-21: la página muestra $6.490."
     }
    ]
   },
@@ -1675,7 +1675,7 @@
      "verificado": false,
      "nota": "Precio por kg = precio/13,44",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     }
    ],
    "nota": "[Auditoría 2026-10-21] La unidad dice kilogramo pero la descripción pide barras de 6 m: confirmar en las bases si son 10 kg o 10 barras."
@@ -1712,7 +1712,7 @@
      "verificado": false,
      "nota": "Negro, sin galvanizar; tuerca/golilla no confirmadas",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Sodimac",
@@ -1728,14 +1728,14 @@
      "nota": "Galvanizado no confirmado; kit =1 perno+tuerca+golilla",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 1690.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $1.690, no $1.590: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $1.690, no $1.590: puede haber cambiado."
     }
    ],
    "nota": "[Auditoría 2026-10-21] Kit = perno + tuerca + golilla: la opción es solo el perno (falta cotizar tuerca y golilla)."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 75,
   "verificadas": 48
  }

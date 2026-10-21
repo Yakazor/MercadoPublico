@@ -21,7 +21,7 @@
      "contenido": "1 unidad",
      "nota": "Original HP. La búsqueda confirma $177.900 (antes $259.900), unas 20 unidades online, y que la tienda declara precios con IVA. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "DG Insumos",
@@ -36,9 +36,9 @@
      "contenido": "1 unidad",
      "nota": "Original, 7.500 págs. La búsqueda confirma $215.780 y 5 unidades disponibles. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 215780.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $215.780."
+     "verificacion_pagina": "2026-10-21: la página muestra $215.780."
     },
     {
      "tienda": "Winpy",
@@ -53,9 +53,9 @@
      "contenido": "1 unidad",
      "nota": "Agregada desde un resultado de búsqueda: $224.960, unas 27 unidades en stock. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $224.960).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 225568.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $225.568."
+     "verificacion_pagina": "2026-10-21: la página muestra $225.568."
     }
    ]
   },
@@ -77,9 +77,9 @@
      "contenido": "1 unidad",
      "nota": "Original HP. La búsqueda confirma $219.899 con 1 unidad disponible, así que no alcanza para las 15 que se piden. La misma ficha en Dipy aparece a $255.780 o $268.496 según la captura. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $219.899).",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-20: la página muestra $231.000.",
+     "verificacion_pagina": "2026-10-21: la página muestra $231.000.",
      "precio_pagina": 231000.0,
-     "verificado_en": "2026-10-20"
+     "verificado_en": "2026-10-21"
     },
     {
      "tienda": "Alcaplus Computación",
@@ -94,7 +94,7 @@
      "contenido": "1 unidad",
      "nota": "Original. El precio de búsqueda no cuadra: el informe original dice $259.900 y otro fragmento dice $233.900 (antes $280.700), con 12 unidades. Dejé $259.900 como cifra conservadora. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
     },
     {
      "tienda": "DG Insumos",
@@ -109,9 +109,9 @@
      "contenido": "1 unidad",
      "nota": "Original. La búsqueda confirma $262.406 y 5 unidades. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 262406.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $262.406."
+     "verificacion_pagina": "2026-10-21: la página muestra $262.406."
     }
    ]
   },
@@ -134,8 +134,8 @@
      "nota": "Alternativo con chip, unas 5.500 impresiones, para 4203/MFP4303. Los datos estructurados de la ficha indican $54.990 más $2.990 de despacho. Otros listados de la tienda muestran $49.990 y $79.980, y en esta URL también aparece el SKU del negro (LS1468TNC), así que hay que confirmar color, precio y stock. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $54.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 57129.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $57.129.",
-     "verificado_en": "2026-10-20"
+     "verificacion_pagina": "2026-10-21: la página muestra $57.129.",
+     "verificado_en": "2026-10-21"
     },
     {
      "tienda": "Notebookstore",
@@ -150,9 +150,9 @@
      "contenido": "1 unidad",
      "nota": "Original. La búsqueda confirma $238.592 pagando con transferencia y $246.990 con otros medios. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $238.592).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 237990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $237.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $237.990."
     },
     {
      "tienda": "Dipy",
@@ -167,9 +167,9 @@
      "contenido": "1 unidad",
      "nota": "Original. La búsqueda confirma $252.738. Alcaplus muestra el mismo producto a $233.900 en un listado y a $269.900 en su ficha, que tiene unos 600 días. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 252738.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $252.738."
+     "verificacion_pagina": "2026-10-21: la página muestra $252.738."
     }
    ]
   },
@@ -192,7 +192,7 @@
      "nota": "Estaba AGOTADO en la consulta anterior. Dejé el precio más alto visto ($89.990) como presupuesto conservador; la búsqueda también muestra $49.990 y $34.990. Hay que confirmar precio y reposición. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $89.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 71414.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $71.414.",
+     "verificacion_pagina": "2026-10-21: no se pudo abrir la página (ReadTimeout).",
      "verificado_en": "2026-10-20"
     },
     {
@@ -208,9 +208,9 @@
      "contenido": "1 unidad",
      "nota": "Original, compatible con 4201/4301. La búsqueda confirma $262.406 y 5 unidades. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 262406.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $262.406."
+     "verificacion_pagina": "2026-10-21: la página muestra $262.406."
     },
     {
      "tienda": "Dipy",
@@ -226,8 +226,8 @@
      "nota": "Original. Otro fragmento de búsqueda muestra $257.549 (neto $216.428); dejé el precio informado. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $267.198).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 257549.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $257.549.",
-     "verificado_en": "2026-10-20"
+     "verificacion_pagina": "2026-10-21: la página muestra $257.549.",
+     "verificado_en": "2026-10-21"
     }
    ]
   },
@@ -249,9 +249,9 @@
      "contenido": "1 unidad",
      "nota": "Alternativo. La búsqueda confirma un precio de oferta de $29.990, 9.000 págs y compatibilidad con MFC-L8900CDW. Stock no confirmado. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $29.990."
     },
     {
      "tienda": "TodoToner",
@@ -266,9 +266,9 @@
      "contenido": "1 unidad",
      "nota": "Alternativo de 9.000 impresiones. Según la búsqueda, la ficha indica $29.990 más $2.990 de despacho. Reemplaza la URL anterior tn-419-black-1 a $35.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 29980.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $29.980."
+     "verificacion_pagina": "2026-10-21: la página muestra $29.980."
     },
     {
      "tienda": "Vstore",
@@ -283,9 +283,9 @@
      "contenido": "1 unidad",
      "nota": "Original Brother. La búsqueda confirma $95.900 (Ariex vende el original a $119.000). No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 95900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $95.900."
+     "verificacion_pagina": "2026-10-21: la página muestra $95.900."
     }
    ]
   },
@@ -307,9 +307,9 @@
      "contenido": "1 unidad",
      "nota": "9.000 impresiones. La búsqueda confirma $29.990 más $2.990 de despacho; la versión PPC Gold cuesta $34.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 29980.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $29.980."
+     "verificacion_pagina": "2026-10-21: la página muestra $29.980."
     },
     {
      "tienda": "Laser Chile",
@@ -324,9 +324,9 @@
      "contenido": "1 unidad",
      "nota": "Original. La búsqueda confirma $177.990 (antes $210.000). No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 177990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $177.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $177.990."
     },
     {
      "tienda": "Comaac",
@@ -341,9 +341,9 @@
      "contenido": "1 unidad",
      "nota": "Original, 9.000 págs. El resumen de búsqueda menciona $177.990, pero no queda claro si es de Comaac o de Laser Chile; dejé el precio informado. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 179990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $179.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $179.990."
     }
    ]
   },
@@ -365,8 +365,8 @@
      "contenido": "1 unidad",
      "nota": "Marca My Toner. La búsqueda confirma un precio rebajado de $13.990 (antes $27.990) y 6 meses de garantía. La ficha lista HL-L8360CDW, HL-L9310CDW y MFC-L9570CDW, pero no menciona la MFC-L8900CDW, aunque es el mismo código TN-419. La oferta podría no estar vigente. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $13.990).",
      "fecha_consulta": "2026-10-17",
-     "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $15.990, no $14.990: puede haber cambiado."
+     "precio_pagina": 17990.0,
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $17.990, no $14.990: puede haber cambiado."
     },
     {
      "tienda": "Ariex",
@@ -382,8 +382,8 @@
      "nota": "9.000 págs al 5%. La búsqueda confirma $24.990 (SKU TLLRBRTN419CYAS). No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $24.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 23590.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $23.590.",
-     "verificado_en": "2026-10-20"
+     "verificacion_pagina": "2026-10-21: la página muestra $23.590.",
+     "verificado_en": "2026-10-21"
     },
     {
      "tienda": "TodoToner",
@@ -398,9 +398,9 @@
      "contenido": "1 unidad",
      "nota": "9.000 impresiones. La búsqueda muestra $29.990 en una página y $26.990 en otra; despacho $2.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 29980.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $29.980."
+     "verificacion_pagina": "2026-10-21: la página muestra $29.980."
     }
    ]
   },
@@ -422,9 +422,9 @@
      "contenido": "1 unidad",
      "nota": "9.000 págs al 5%. La búsqueda confirma $23.590 y 10 unidades disponibles, lo que alcanza justo para las 10 pedidas. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 23590.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $23.590."
+     "verificacion_pagina": "2026-10-21: la página muestra $23.590."
     },
     {
      "tienda": "TodoToner",
@@ -439,9 +439,9 @@
      "contenido": "1 unidad",
      "nota": "9.000 impresiones. La búsqueda muestra $29.990 en una página y $26.990 en otra; despacho $2.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 29980.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $29.980."
+     "verificacion_pagina": "2026-10-21: la página muestra $29.980."
     }
    ]
   },
@@ -464,7 +464,7 @@
      "nota": "La búsqueda confirma $49.990 con IVA incluido, 11.000 págs y 3 meses de garantía; la marca es Logic o G&G según stock. La publicación tiene unos 134 días. No pude abrir la página. La página mostró $19.990 como precio más parecido, muy bajo para un alternativo XXL de 11.000 págs (los demás cuestan $49.990-$56.600): probablemente es otro producto de la página, así que no se actualizó. Confirmar a mano.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $19.990, no $49.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-21: la página abrió y el precio más parecido es $19.990, no $49.990: puede haber cambiado."
     },
     {
      "tienda": "Inkpact",
@@ -479,7 +479,7 @@
      "contenido": "1 unidad",
      "nota": "Con chip, unas 11.000 págs al 5%. La búsqueda confirma $56.600 (antes $87.077). No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 404."
     },
     {
      "tienda": "Cintegral",
@@ -494,16 +494,16 @@
      "contenido": "1 unidad",
      "nota": "Original Brother. La búsqueda confirma $138.990 (TodoToner vende el original a $139.990). No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $138.990).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 138290.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $138.290."
+     "verificacion_pagina": "2026-10-21: la página muestra $138.290."
     }
    ]
   }
  ],
  "verificacion": "No pude abrir ninguna página. WebFetch falló en todos los dominios (getaddrinfo ENOTFOUND, también con google.com) y curl recibió 403 del proxy. Por eso todas las opciones quedan con verificado=false. Las revisé con búsquedas web restringidas a cada tienda: todas las URL aparecen en resultados reales y casi todos los precios coinciden con los fragmentos. Los cálculos de neto (precio / 1,19) y de unidades_equivalentes = 1 estaban bien.\n\nCambios:\n- Línea 1: eliminé la opción TodoToner \"230X Black\". Su URL era la ficha del 230X CYAN, no hay ficha propia del negro, el precio no coincide entre páginas ($49.990, $54.990, $79.980) y la serie declara unas 5.500 págs frente a las 7.500 pedidas. Agregué Winpy ($224.960), que salió en la búsqueda. La línea queda solo con originales.\n- Línea 5: cambié la URL de TodoToner de la página de categoría (tn-419-black-1, $35.990) a la ficha tn-419-black-ppc a $29.990.\n\nPrecios que no cuadran entre fuentes:\n- Alcaplus amarillo: $259.900 o $233.900.\n- Dipy magenta: $267.198 o $257.549.\n- Comaac TN-419Y: $179.990 o $177.990.\n- TodoToner 230X magenta: entre $34.990 y $89.990, y estaba agotado.\n\nEn estos casos dejé el precio informado y anoté la diferencia. También anoté el stock insuficiente de Dimerc amarillo (1 unidad).",
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 26,
   "verificadas": 21
  }

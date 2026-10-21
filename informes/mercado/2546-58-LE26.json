@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -46,9 +46,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 79990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $79.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $79.990."
     },
     {
      "tienda": "Sodimac",
@@ -64,8 +64,8 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 134990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $134.990.",
-     "verificado_en": "2026-10-20"
+     "verificacion_pagina": "2026-10-21: la página muestra $134.990.",
+     "verificado_en": "2026-10-21"
     }
    ],
    "nota": "Detalle en bases no disponible; se listan taladros percutores de uso general."
@@ -88,9 +88,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 75590.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $75.590."
+     "verificacion_pagina": "2026-10-21: la página muestra $75.590."
     },
     {
      "tienda": "Sodimac",
@@ -105,9 +105,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 76990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $76.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $76.990."
     },
     {
      "tienda": "Sodimac",
@@ -122,16 +122,16 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-21",
      "precio_pagina": 84990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $84.990."
+     "verificacion_pagina": "2026-10-21: la página muestra $84.990."
     }
    ],
    "nota": "Detalle en bases no disponible."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "opciones": 6,
   "verificadas": 6
  }
