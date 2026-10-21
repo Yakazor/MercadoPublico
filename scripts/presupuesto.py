@@ -228,7 +228,8 @@ def indice(resumen: list[tuple], margen: float, otros_costos: float) -> str:
         "Estado ya pagó en órdenes de compra. Se generan con `scripts/presupuesto.py`; los precios de mercado",
         "están en `informes/mercado/` con su fecha de consulta.",
         "",
-        "- [Guía de uso y de postulación a Mercado Público (PDF)](Guia_Radar_Licitaciones.pdf)",
+        "- [Guía de uso y de postulación a Mercado Público (PDF)](Guia_Radar_Licitaciones.pdf) "
+        "· [erratas y actualizaciones](Guia_erratas.md)",
         "- [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)",
         "- [Versiones en PDF de los informes](pdf/)",
         "",

@@ -383,6 +383,8 @@ IVA por ítem). Las órdenes llenas quedan en `ordenes_proveedor/`, que no se su
 repositorio porque trae RUT y datos personales. El PDF y el recálculo de totales usan
 LibreOffice si está instalado. Manual de órdenes de compra en Mercado Público:
 https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W
+Manual de guía de despacho y factura electrónica (referencia 801 a la OC, Resolución
+SII 154 desde el 1-11-2026): https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Pruebas
 
