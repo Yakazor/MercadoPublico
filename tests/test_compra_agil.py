@@ -32,7 +32,8 @@ class Sesion:
         una página vacía (la cola sigue con los detalles)."""
         self.llamadas.append((url, dict(params), dict(headers)))
         siguiente = self.respuestas[0] if self.respuestas else None
-        es_detalle = siguiente is not None and "codigo" in ((siguiente._datos or {}).get("payload") or {})
+        es_detalle = siguiente is not None and (getattr(siguiente, "solo_detalle", False)
+                                                or "codigo" in ((siguiente._datos or {}).get("payload") or {}))
         if url.endswith("/v2/compra-agil") and (siguiente is None or es_detalle):
             return _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
         return self.respuestas.pop(0)
@@ -53,8 +54,10 @@ def _ok(payload):
     return Resp(200, {"success": "OK", "trace": None, "payload": payload, "errors": None})
 
 
-def _error(status, mensaje):
-    return Resp(status, {"success": "NOK", "payload": None, "errors": [{"codigo": str(status), "mensaje": mensaje}]})
+def _error(status, mensaje, solo_detalle=False):
+    r = Resp(status, {"success": "NOK", "payload": None, "errors": [{"codigo": str(status), "mensaje": mensaje}]})
+    r.solo_detalle = solo_detalle   # la cola falsa no se la entrega al listado
+    return r
 
 
 def _pagina(codigos, pagina, total):
@@ -240,3 +243,36 @@ def test_config_real_detecta_aseo():
         {"nombre": "Papel higiénico", "descripcion": "rollo 500 m", "cantidad": 24, "unidad_medida": "Unidad"}])])
     _, estado = _actualizar(c, filtro=filtro)
     assert [a["fila"]["rubro"] for a in estado["abiertas"].values()] == ["insumos_medicos_aseo"]
+
+
+def test_detalle_504_no_se_reintenta_y_se_descarta_tras_tres_corridas():
+    estado = estado_vacio()
+    estado["pendientes"]["L"] = {"cierre": "2026-10-25 18:00", "intentos": 0, "prioridad": 0}
+    for corrida in range(1, 4):
+        c = _cliente([_error(504, "Endpoint request timed out", solo_detalle=True)])
+        _actualizar(c, estado=estado)
+        assert len([ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]) == 1   # sin reintentos
+        if corrida < 3:
+            assert estado["pendientes"]["L"]["intentos"] == corrida
+    assert "L" not in estado["pendientes"] and "L" in estado["descartadas"]
+
+
+def test_primero_las_que_calzan_por_nombre():
+    pagina = _pagina(["GEN", "GUA"], 1, 1)
+    pagina._datos["payload"]["items"][0]["nombre"] = "Compra de insumos varios"
+    filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"],
+                                    "palabras_candidatas": ["insumos"]}})
+    c = _cliente([pagina, _detalle("GUA"), _detalle("GEN")])
+    _actualizar(c, filtro=filtro)
+    detalles = [ll[0].rsplit("/", 1)[1] for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+    assert detalles == ["GUA", "GEN"]
+
+
+def test_api_caida_corta_los_detalles():
+    estado = estado_vacio()
+    for n in range(20):
+        estado["pendientes"][f"P{n}"] = {"cierre": "2026-10-25 18:00", "intentos": 0, "prioridad": 1}
+    c = _cliente([_error(504, "timeout", solo_detalle=True) for _ in range(20)])
+    r, _ = _actualizar(c, estado=estado)
+    assert "sin respuesta" in r.detenida
+    assert len([ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]) == compra_agil.MAX_FALLAS_SEGUIDAS
