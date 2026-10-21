@@ -46,6 +46,7 @@ src/radar/
   almacenamiento.py         # SQLite + exportación CSV/Excel
   presupuesto.py            # costo, oferta e IVA por licitación vs referencia OC
   censo.py                  # muestra de activas agrupada por segmento ONU
+  orden_proveedor.py        # orden de compra a tu proveedor (planilla Excel)
 scripts/
   probar_api.py             # una llamada real: muestra la estructura del JSON
   radar_diario.py           # ejecución diaria del radar
@@ -56,9 +57,13 @@ scripts/
   presupuesto.py            # informes de presupuesto (informes/presupuestos)
   censo_rubros.py           # censo de grupos de licitaciones
   informe_grupos.py         # informe de grupos (informes/grupos_licitaciones)
+  orden_proveedor.py        # llena la orden de compra al proveedor desde un JSON
 dashboard/index.html        # copia de la página del dashboard
 informes/                   # presupuestos, precios de mercado y grupos (se versiona)
 .claude/RUTINA.md           # instrucciones de la rutina de actualización
+.claude/ORDEN_PROVEEDOR.md  # instrucciones para llenar una orden de compra al proveedor
+plantillas/                 # plantillas en blanco de la orden de compra (persona natural y empresa)
+ordenes_proveedor/          # órdenes llenas (no se versionan: traen RUT); solo ejemplo.json
 .claude/workflows/          # búsqueda de precios de mercado en Chile
 .github/workflows/          # radar, OC, censo y prueba de la API
 tests/                      # pruebas sin conexión a la API
@@ -359,6 +364,25 @@ puede abrir sitios .cl). El workflow `informes.yml` abre cada link desde GitHub 
 marca «Verificado: sí» solo si la página muestra ese precio (±3 %); si no, el
 presupuesto dice qué encontró (otro precio, HTTP 403 o precio cargado con
 JavaScript). Igual revisa stock y despacho antes de cotizar.
+
+## Orden de compra al proveedor
+
+Cuando aceptas una OC del Estado, le envías tu propia orden de compra a quien te vende la
+mercadería. La planilla trae los datos del comprador (persona natural con giro, o
+empresa), del proveedor, la referencia a la licitación y a la OC del Estado, el detalle
+con subtotales, IVA y total como fórmulas, y las condiciones de entrega y pago.
+
+```bash
+python scripts/orden_proveedor.py --siguiente                    # próximo número OC-AAAA-NNN
+python scripts/orden_proveedor.py --datos ordenes_proveedor/OC-2026-001.json --pdf
+python scripts/orden_proveedor.py --plantilla persona_natural     # plantilla en blanco
+```
+
+El formato de los datos está en `ordenes_proveedor/ejemplo.json` (precio neto o con
+IVA por ítem). Las órdenes llenas quedan en `ordenes_proveedor/`, que no se sube al
+repositorio porque trae RUT y datos personales. El PDF y el recálculo de totales usan
+LibreOffice si está instalado. Manual de órdenes de compra en Mercado Público:
+https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W
 
 ## Pruebas
 

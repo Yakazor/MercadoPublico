@@ -1,0 +1,37 @@
+{
+  "_nota": "Ejemplo con datos ficticios. Copia este archivo como <numero>.json con tus datos; las órdenes reales no se suben al repositorio.",
+  "numero": "OC-2026-001",
+  "fecha": "2026-10-21",
+  "comprador": {
+    "tipo": "persona_natural",
+    "nombre": "Nombre Apellido Apellido",
+    "rut": "11.111.111-1",
+    "giro": "Venta al por mayor no especializada",
+    "domicilio": "Calle 123, Comuna, Región",
+    "contacto": "+56 9 0000 0000, correo@ejemplo.cl"
+  },
+  "proveedor": {
+    "razon_social": "Proveedor Ejemplo SpA",
+    "rut": "76.000.000-0",
+    "vendedor": "Nombre del vendedor",
+    "contacto": "+56 2 0000 0000, ventas@ejemplo.cl"
+  },
+  "referencia": {
+    "licitacion": "3730-100-L126",
+    "oc_estado": ""
+  },
+  "items": [
+    {"codigo": "TOL-3X3", "descripcion": "Toldo plegable 3x3 m", "unidad": "Unidad", "cantidad": 30, "precio_con_iva": 32990},
+    {"codigo": "MES-PLEG", "descripcion": "Mesa plegable tipo maleta 180 cm", "unidad": "Unidad", "cantidad": 5, "precio_unitario_neto": 19319},
+    {"codigo": "SIL-PLEG", "descripcion": "Silla plegable", "unidad": "Unidad", "cantidad": 40, "precio_unitario_neto": 12597}
+  ],
+  "descuento": 0,
+  "condiciones": {
+    "lugar_entrega": "Municipalidad de Chimbarongo (dirección de la OC del Estado)",
+    "fecha_entrega": "2026-11-05",
+    "flete": "Incluido",
+    "forma_pago": "Transferencia contra entrega",
+    "validez": "Proveedor confirma stock y precio por escrito al aceptar esta OC",
+    "observaciones": ""
+  }
+}
