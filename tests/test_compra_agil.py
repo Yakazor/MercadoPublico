@@ -28,7 +28,13 @@ class Sesion:
         self.respuestas, self.llamadas = list(respuestas), []
 
     def get(self, url, params, headers, timeout):
+        """El listado se recorre por día: los días sin una página en la cola reciben
+        una página vacía (la cola sigue con los detalles)."""
         self.llamadas.append((url, dict(params), dict(headers)))
+        siguiente = self.respuestas[0] if self.respuestas else None
+        es_detalle = siguiente is not None and "codigo" in ((siguiente._datos or {}).get("payload") or {})
+        if url.endswith("/v2/compra-agil") and (siguiente is None or es_detalle):
+            return _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
         return self.respuestas.pop(0)
 
 
@@ -81,7 +87,10 @@ def test_ticket_va_en_el_encabezado_y_no_en_la_url():
     assert headers == {"ticket": "SECRETO"}
     assert "SECRETO" not in json.dumps(params)
     assert params["estado"] == "publicada" and params["region"] == "13,5"
-    assert params["publicado_desde"] == "2026-10-06T00:00:00Z"
+    # Primero el día más antiguo de la ventana (sus compras cierran antes).
+    assert params["publicado_desde"] == "2026-10-06T00:00:00Z" and params["publicado_hasta"] == "2026-10-06T23:59:59Z"
+    assert c._sesion.llamadas[-1][1]["publicado_desde"] == "2026-10-21T00:00:00Z"
+    assert len(c._sesion.llamadas) == 16
 
 
 def test_recorre_paginas_sin_repetidos():
@@ -92,7 +101,23 @@ def test_recorre_paginas_sin_repetidos():
 def test_504_con_pagina_grande_sigue_con_paginas_de_10():
     c = _cliente([_error(504, "Gateway Timeout"), _pagina(["A"], 1, 1)])
     assert [i["codigo"] for i in listar_publicadas(c, tamano_pagina=50)] == ["A"]
-    assert [ll[1]["tamano_pagina"] for ll in c._sesion.llamadas] == [50, 10]
+    tamanos = [ll[1]["tamano_pagina"] for ll in c._sesion.llamadas]
+    assert tamanos[:2] == [50, 10] and set(tamanos[1:]) == {10}   # el resto de los días, con 10
+
+
+def test_listado_cortado_por_tope_conserva_los_dias_mas_antiguos():
+    c = _cliente([_pagina(["VIEJA"], 1, 1), _pagina(["NUEVA"], 1, 1)])
+    assert [i["codigo"] for i in listar_publicadas(c, dias_publicacion=1, max_paginas=1)] == ["VIEJA"]
+
+
+def test_429_no_espera_mas_alla_del_plazo(monkeypatch):
+    esperas = []
+    monkeypatch.setattr(compra_agil.time, "sleep", esperas.append)
+    c = _cliente([_error(429, "límite")])
+    c.hasta_monotonic = compra_agil.time.monotonic() + 60   # quedan 60 s; la espera sería de 900
+    with pytest.raises(ErrorApi):
+        c.listado()
+    assert 900 not in esperas
 
 
 def test_ticket_rechazado_es_fatal():

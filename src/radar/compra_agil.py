@@ -60,6 +60,7 @@ class ClienteCompraAgil:
         self.llamadas = 0
         self.max_espera_429 = max_espera_429
         self._esperado_429 = False
+        self.hasta_monotonic: float | None = None   # la espera de un 429 no pasa de aquí
 
     @classmethod
     def desde_config(cls, config: dict, ticket: str) -> "ClienteCompraAgil":
@@ -105,7 +106,8 @@ class ClienteCompraAgil:
                     # (acotada) para no comerse el tiempo del workflow; si vuelve, se corta.
                     retry = str((getattr(resp, "headers", None) or {}).get("Retry-After") or "")
                     pausa_429 = float(retry) if retry.isdigit() else self.max_espera_429
-                    if not self._esperado_429 and pausa_429 <= self.max_espera_429:
+                    con_tiempo = self.hasta_monotonic is None or time.monotonic() + pausa_429 < self.hasta_monotonic
+                    if not self._esperado_429 and pausa_429 <= self.max_espera_429 and con_tiempo:
                         self._esperado_429 = True
                         log.warning("%s: HTTP 429 (límite de ritmo). Se espera %.0f s y se reintenta.", recurso, pausa_429)
                         time.sleep(pausa_429)
@@ -166,38 +168,50 @@ def listar_publicadas(cliente: ClienteCompraAgil, regiones: list[int] | None = N
                       hasta_monotonic: float | None = None) -> list[dict]:
     """Compras Ágiles abiertas a cotización publicadas en los últimos `dias_publicacion` días.
 
+    Se recorre un día de publicación a la vez, del más antiguo al más nuevo: la API solo
+    ordena de la más nueva a la más antigua, y si el listado se corta (tiempo o páginas)
+    deben quedar las publicadas hace más tiempo, que son las que cierran antes. Ventanas
+    cortas también achican el corrimiento de filas mientras se pagina.
     `ahora` en hora de Chile: la API compara su hora de Chile marcada con "Z"."""
     ahora = ahora or ahora_chile()
-    params = {
-        "estado": "publicada",
-        "publicado_desde": (ahora - timedelta(days=dias_publicacion)).strftime("%Y-%m-%dT00:00:00Z"),
-        "ordenar_por": "FechaPublicacion",
-        "region": ",".join(str(r) for r in regiones) if regiones else None,
-    }
-    items, pagina, tamano = [], 1, tamano_pagina
-    while pagina <= max_paginas:
-        if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
-            log.warning("Sin tiempo: el listado quedó en la página %d (incompleto).", pagina - 1)
-            break
-        try:
-            payload = cliente.listado(**params, tamano_pagina=tamano, numero_pagina=pagina)
-        except ErrorPaginaGrande:
-            # Mismas filas desde el principio con páginas de 10 (cambia la numeración).
-            log.warning("HTTP 504 con páginas de %d: se sigue con páginas de %d.", tamano, TAMANO_MINIMO)
-            pagina = (pagina - 1) * tamano // TAMANO_MINIMO + 1
-            max_paginas = max_paginas * tamano // TAMANO_MINIMO   # mismo tope de compras
-            tamano = TAMANO_MINIMO
-            continue
-        items += payload.get("items") or []
-        total = (payload.get("paginacion") or {}).get("total_paginas") or 0
-        if pagina == 1:
-            log.info("Compras Ágiles publicadas: %s", (payload.get("paginacion") or {}).get("total_resultados"))
-        if pagina >= total:
-            break
-        pagina += 1
-    else:
-        log.warning("Se alcanzó el máximo de %d páginas: el listado quedó incompleto.", max_paginas)
-    # Sin repetidos (una compra puede moverse de página mientras se recorre el listado).
+    region = ",".join(str(r) for r in regiones) if regiones else None
+    items, tamano, paginas_usadas, total_publicadas = [], tamano_pagina, 0, 0
+    presupuesto_paginas = max_paginas * tamano_pagina   # tope en filas: no cambia si se achican las páginas
+    for atras in range(dias_publicacion, -1, -1):
+        dia = (ahora - timedelta(days=atras)).date()
+        params = {"estado": "publicada", "region": region, "ordenar_por": "FechaPublicacion",
+                  "publicado_desde": f"{dia}T00:00:00Z", "publicado_hasta": f"{dia}T23:59:59Z"}
+        pagina = 1
+        while True:
+            if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
+                log.warning("Sin tiempo: el listado llegó hasta el %s (incompleto).", dia)
+                return _sin_repetidos(items)
+            if paginas_usadas * tamano >= presupuesto_paginas:
+                log.warning("Se alcanzó el tope de %d páginas: el listado llegó hasta el %s.", max_paginas, dia)
+                return _sin_repetidos(items)
+            try:
+                payload = cliente.listado(**params, tamano_pagina=tamano, numero_pagina=pagina)
+            except ErrorPaginaGrande:
+                # Mismas filas con páginas de 10 (cambia la numeración).
+                log.warning("HTTP 504 con páginas de %d: se sigue con páginas de %d.", tamano, TAMANO_MINIMO)
+                pagina = (pagina - 1) * tamano // TAMANO_MINIMO + 1
+                paginas_usadas = paginas_usadas * tamano // TAMANO_MINIMO
+                tamano = TAMANO_MINIMO
+                continue
+            paginas_usadas += 1
+            items += payload.get("items") or []
+            paginacion = payload.get("paginacion") or {}
+            if pagina == 1:
+                total_publicadas += paginacion.get("total_resultados") or 0
+            if pagina >= (paginacion.get("total_paginas") or 0):
+                break
+            pagina += 1
+    log.info("Compras Ágiles publicadas (según la API): %d", total_publicadas)
+    return _sin_repetidos(items)
+
+
+def _sin_repetidos(items: list[dict]) -> list[dict]:
+    """Una compra puede repetirse si se movió de página mientras se recorría el listado."""
     vistos, unicos = set(), []
     for item in items:
         if item.get("codigo") and item["codigo"] not in vistos:
@@ -282,6 +296,7 @@ def radar_compra_agil(cliente: ClienteCompraAgil, filtro: FiltroRubros, regiones
                       hasta_monotonic: float | None = None) -> ResultadoCompraAgil:
     """Compras Ágiles abiertas de tus rubros: listado → filtro por nombre → detalle → filtro completo."""
     resultado = ResultadoCompraAgil()
+    cliente.hasta_monotonic = hasta_monotonic
     # El listado usa a lo más la mitad del tiempo: el resto es para los detalles.
     mitad = (time.monotonic() + (hasta_monotonic - time.monotonic()) / 2) if hasta_monotonic is not None else None
     publicadas = listar_publicadas(cliente, regiones, dias_publicacion, tamano_pagina, max_paginas,

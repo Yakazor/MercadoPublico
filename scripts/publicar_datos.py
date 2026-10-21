@@ -101,7 +101,7 @@ def main():
         "generado": datetime.now(ZoneInfo("America/Santiago")).isoformat(timespec="seconds"),
         "fecha": hoy.isoformat(),
         "licitaciones": int((vigentes["tipo"] != "Compra Ágil").sum()),
-        "compras_agiles": len(agiles["filas"]) if agiles else None,
+        "compras_agiles": int((vigentes["tipo"] == "Compra Ágil").sum()) if agiles else None,
         "compras_agiles_generado": agiles.get("generado") if agiles else None,
         "productos_con_precio": len(precios),
         "items": len(items),

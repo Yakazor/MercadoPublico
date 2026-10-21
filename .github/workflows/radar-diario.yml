@@ -149,7 +149,7 @@ jobs:
         env:
           MP_TICKET: ${{ secrets.MP_TICKET }}
           MP_TICKET_COMPRA_AGIL: ${{ secrets.MP_TICKET_COMPRA_AGIL }}
-        run: python scripts/compra_agil.py --max-minutos 45
+        run: python scripts/compra_agil.py --max-minutos 40
 
       # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
       # commit que se reemplaza en cada corrida). Solo con una base con historial.
