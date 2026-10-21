@@ -15,14 +15,17 @@ compra_agil:
   # Regiones del organismo comprador (1 a 16; 13 = Metropolitana, 5 = Valparaíso,
   # 6 = O'Higgins). Vacío = todo Chile (en el dashboard se filtra por región).
   regiones: []
-  dias_publicacion: 15        # publicadas en los últimos N días (siguen abiertas)
-  tamano_pagina: 25           # ante un HTTP 504 se sigue con páginas de 10
-  max_paginas: 200
-  max_detalles: 700           # detalles por corrida (cuidan la cuota diaria del ticket);
-                              # se piden primero las que cierran antes
-  pausa_entre_llamadas_segundos: 4.0   # ~15 consultas por minuto
+  # El workflow «Compras Ágiles» corre cada 3 horas y lista solo lo publicado desde la
+  # corrida anterior (la API entrega ~10 compras cada ~5 s). La primera vez, o si la
+  # memoria se pierde, parte con los últimos `dias_iniciales` días.
+  dias_iniciales: 3
+  tamano_pagina: 10           # con más, la API suele responder HTTP 504
+  max_paginas: 400            # por corrida
+  max_detalles: 700           # por corrida; primero las que cierran antes
+  pausa_entre_llamadas_segundos: 4.0   # desde el inicio de la consulta anterior (~15 por minuto)
   reintentos: 3
   espera_inicial_reintento_segundos: 5
+  max_espera_429_segundos: 900
   timeout_segundos: 60
 
 # Rubros a detectar. Cómo se comparan las frases:
@@ -1599,3 +1602,4 @@ rutas:
   base_datos: "data/radar.db"
   exportaciones: "data/exportaciones"
   compras_agiles: "data/compras_agiles.json"
+  compra_agil_estado: "data/compra_agil_estado.json"

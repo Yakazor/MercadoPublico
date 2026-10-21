@@ -1,0 +1,79 @@
+name: Compras Ágiles
+
+# Cada 3 horas: lista las Compras Ágiles publicadas desde la corrida anterior, pide el
+# detalle de las que calzan con tus rubros y guarda la memoria en la caché. El radar
+# diario (y «actualiza el radar») toma de ahí las abiertas para el dashboard.
+on:
+  schedule:
+    - cron: "23 */3 * * *"
+  # Con «actualiza el radar» corre también (push del archivo disparador).
+  push:
+    branches: [feature/api-mercadopublico]
+    paths: [".github/disparar/actualizar.txt"]
+  workflow_dispatch:
+    inputs:
+      max_detalles:
+        description: "Máximo de detalles a pedir (vacío = el de config.yaml)"
+        required: false
+        default: ""
+
+concurrency:
+  group: compra-agil
+  cancel-in-progress: false
+
+jobs:
+  compra-agil:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      # Memoria de la corrida anterior (hasta dónde se listó, abiertas, descartadas,
+      # pendientes). Sin ella, parte con los últimos `dias_iniciales` días.
+      - name: Restaurar memoria
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            data/compra_agil_estado.json
+            data/compras_agiles.json
+          key: compra-agil-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: compra-agil-v1-
+
+      - name: Buscar Compras Ágiles
+        env:
+          MP_TICKET: ${{ secrets.MP_TICKET }}
+          MP_TICKET_COMPRA_AGIL: ${{ secrets.MP_TICKET_COMPRA_AGIL }}
+          MAX_DETALLES: ${{ inputs.max_detalles }}
+        run: |
+          ARGS=""
+          [ -n "$MAX_DETALLES" ] && ARGS="--max-detalles $MAX_DETALLES"
+          # Deja margen antes del timeout para guardar la memoria.
+          python scripts/compra_agil.py $ARGS --max-minutos 100
+
+      # Se guarda aunque la búsqueda falle: lo obtenido hasta el error no se pierde.
+      - name: Guardar memoria
+        if: always() && hashFiles('data/compra_agil_estado.json') != ''
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            data/compra_agil_estado.json
+            data/compras_agiles.json
+          key: compra-agil-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Resumen
+        if: always() && hashFiles('data/compras_agiles.json') != ''
+        run: |
+          python - >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          import json
+          d = json.load(open("data/compras_agiles.json", encoding="utf-8"))
+          print(f"### Compras Ágiles\n\n- Abiertas en tus rubros: **{len(d['filas'])}**")
+          print(f"- Pendientes de revisar: {d['pendientes']}\n- Listado completo hasta: {d['listado_hasta']}")
+          print(f"- Llamadas a la API: {d['llamadas_api']}" + (f"\n- Se detuvo: {d['detenida']}" if d.get('detenida') else ""))
+          EOF

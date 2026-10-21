@@ -31,7 +31,7 @@ jobs:
     permissions:
       contents: write   # publica los JSON del dashboard en la rama "datos"
       actions: read
-    timeout-minutes: 180
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -140,16 +140,18 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
 
-      # Compras Ágiles abiertas de tus rubros (API v2). Si falla (ticket sin acceso,
-      # cuota agotada), el radar de licitaciones se publica igual, sin ellas.
-      - name: Compras Ágiles
+      # Compras Ágiles abiertas de tus rubros: las busca el workflow «Compras Ágiles»
+      # (cada 3 horas) y las deja en la caché. Sin caché, se publica sin ellas.
+      - name: Restaurar Compras Ágiles
         if: success()
         continue-on-error: true
-        timeout-minutes: 55
-        env:
-          MP_TICKET: ${{ secrets.MP_TICKET }}
-          MP_TICKET_COMPRA_AGIL: ${{ secrets.MP_TICKET_COMPRA_AGIL }}
-        run: python scripts/compra_agil.py --max-minutos 45
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            data/compra_agil_estado.json
+            data/compras_agiles.json
+          key: compra-agil-v1-${{ github.run_id }}
+          restore-keys: compra-agil-v1-
 
       # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
       # commit que se reemplaza en cada corrida). Solo con una base con historial.

@@ -21,6 +21,7 @@ con "descartado": true (y su "motivo_descarte") se muestran, pero no se usan.
 """
 import argparse
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -134,12 +135,11 @@ def alertas(lic: dict, p: dict) -> list[str]:
 
 def markdown(lic: dict, mercado: dict, p: dict) -> str:
     codigo = lic.get("codigo") or mercado.get("codigo")
-    agil = lic.get("tipo") == "Compra Ágil" or str(codigo).endswith(("-COT25", "-COT26", "-COT27"))
+    agil = lic.get("tipo") == "Compra Ágil" or re.search(r"-COT\d{2}$", str(codigo)) is not None
     lineas = [
         f"# Presupuesto: {_celda(lic.get('nombre'))}",
         "",
-        # Compra Ágil no tiene ficha con enlace estable: se busca por código en Mercado Público.
-        f"- **Compra Ágil:** {codigo} (búscala por código en Mercado Público; se cotiza el TOTAL con IVA y despacho)"
+        f"- **Compra Ágil:** {_link(codigo, lic.get('url'))} (se cotiza el TOTAL con IVA y despacho)"
         if agil else f"- **Licitación:** [{codigo}]({URL_LICITACION.format(codigo)})",
         f"- **Organismo:** {_celda(lic.get('organismo'))} ({_celda(lic.get('region'))})",
         f"- **Cierre:** {lic.get('fecha_cierre') or '—'} · **Monto estimado:** "

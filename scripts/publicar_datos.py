@@ -36,15 +36,18 @@ COLUMNAS_LICITACIONES = [
 MAX_PRECIOS = 3000  # productos con más monto adjudicado (el archivo queda bajo ~1 MB)
 
 
-def compras_agiles(ruta: Path, hoy) -> dict | None:
-    """Resultado de scripts/compra_agil.py si es de hoy (uno antiguo mostraría compras ya cerradas)."""
+def compras_agiles(ruta: Path, ahora: datetime | None = None, max_horas: float = 30) -> dict | None:
+    """Resultado de scripts/compra_agil.py si tiene menos de `max_horas` (el workflow
+    «Compras Ágiles» corre cada 3 horas; uno muy antiguo no tendría las nuevas)."""
     if not ruta.exists():
         return None
     try:
         datos = json.loads(ruta.read_text(encoding="utf-8"))
-    except ValueError:
+        generado = datetime.fromisoformat(datos["generado"])
+    except (ValueError, KeyError, TypeError):
         return None
-    return datos if datos.get("fecha") == hoy.isoformat() else None
+    ahora = ahora or datetime.now(ZoneInfo("America/Santiago"))
+    return datos if (ahora - generado).total_seconds() <= max_horas * 3600 else None
 
 
 def _filas(df: pd.DataFrame) -> list[dict]:
@@ -71,10 +74,14 @@ def main():
                     if (guardado := db.detalle_licitacion(codigo))}
     finally:
         db.cerrar()
-    agiles = compras_agiles(ruta_proyecto(config.get("rutas", {}).get("compras_agiles", "data/compras_agiles.json")), hoy)
+    agiles = compras_agiles(ruta_proyecto(config.get("rutas", {}).get("compras_agiles", "data/compras_agiles.json")))
     if agiles and agiles.get("filas"):
         filas_ca = pd.DataFrame(agiles["filas"]).reindex(columns=COLUMNAS_LICITACIONES)
         filas_ca = filas_ca[~filas_ca["codigo"].isin(vigentes["codigo"])]
+        # Las que cerraron entre la búsqueda y la publicación ya no se ofrecen.
+        ahora = datetime.now(ZoneInfo("America/Santiago")).replace(tzinfo=None)
+        cierre = pd.to_datetime(filas_ca["fecha_cierre"], errors="coerce")
+        filas_ca = filas_ca[cierre.isna() | (cierre > ahora)]
         vigentes = pd.concat([vigentes, filas_ca], ignore_index=True)
         vigentes["llamado"] = pd.to_numeric(vigentes["llamado"], errors="coerce").astype("Int64")
         detalles |= agiles.get("detalles") or {}
@@ -97,7 +104,7 @@ def main():
         "generado": datetime.now(ZoneInfo("America/Santiago")).isoformat(timespec="seconds"),
         "fecha": hoy.isoformat(),
         "licitaciones": int((vigentes["tipo"] != "Compra Ágil").sum()),
-        "compras_agiles": len(agiles["filas"]) if agiles else None,
+        "compras_agiles": int((vigentes["tipo"] == "Compra Ágil").sum()) if agiles else None,
         "compras_agiles_generado": agiles.get("generado") if agiles else None,
         "productos_con_precio": len(precios),
         "items": len(items),

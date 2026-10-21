@@ -5,8 +5,8 @@ import pytest
 
 from radar import compra_agil
 from radar.cliente_api import ErrorApi
-from radar.compra_agil import (ClienteCompraAgil, como_licitacion, fecha_chile, listar_publicadas,
-                               radar_compra_agil)
+from radar.compra_agil import (ClienteCompraAgil, actualizar_compras_agiles, como_licitacion, estado_vacio,
+                               fecha_chile, listar_publicadas)
 from radar.config import cargar_config
 from radar.filtro import FiltroRubros
 from radar.presupuesto import items_licitacion_presupuesto
@@ -28,7 +28,13 @@ class Sesion:
         self.respuestas, self.llamadas = list(respuestas), []
 
     def get(self, url, params, headers, timeout):
+        """El listado se recorre por día: los días sin una página en la cola reciben
+        una página vacía (la cola sigue con los detalles)."""
         self.llamadas.append((url, dict(params), dict(headers)))
+        siguiente = self.respuestas[0] if self.respuestas else None
+        es_detalle = siguiente is not None and "codigo" in ((siguiente._datos or {}).get("payload") or {})
+        if url.endswith("/v2/compra-agil") and (siguiente is None or es_detalle):
+            return _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
         return self.respuestas.pop(0)
 
 
@@ -73,26 +79,58 @@ def _detalle(codigo, nombre="Compra de guantes de nitrilo", productos=None):
     })
 
 
+AHORA = datetime(2026, 10, 21, 12, 0)
+
+
+def _actualizar(c, filtro=FILTRO, estado=None, **kw):
+    estado = estado if estado is not None else estado_vacio()
+    r = actualizar_compras_agiles(c, filtro, estado, dias_iniciales=1, ahora=AHORA, **kw)
+    return r, estado
+
+
 def test_ticket_va_en_el_encabezado_y_no_en_la_url():
     c = _cliente([_pagina(["A"], 1, 1)])
-    listar_publicadas(c, regiones=[13, 5], ahora=datetime(2026, 10, 21))
+    items, cubierto = listar_publicadas(c, datetime(2026, 10, 20), AHORA, regiones=[13, 5])
     url, params, headers = c._sesion.llamadas[0]
     assert url == "https://api2.mercadopublico.cl/v2/compra-agil"
     assert headers == {"ticket": "SECRETO"}
     assert "SECRETO" not in json.dumps(params)
     assert params["estado"] == "publicada" and params["region"] == "13,5"
-    assert params["publicado_desde"] == "2026-10-06T00:00:00Z"
+    # Un día a la vez, primero el más antiguo (sus compras cierran antes).
+    assert params["publicado_desde"] == "2026-10-20T00:00:00Z" and params["publicado_hasta"] == "2026-10-20T23:59:59Z"
+    ultima = c._sesion.llamadas[-1][1]
+    assert ultima["publicado_desde"] == "2026-10-21T00:00:00Z" and ultima["publicado_hasta"] == "2026-10-21T12:00:00Z"
+    assert len(c._sesion.llamadas) == 2 and cubierto == AHORA
 
 
 def test_recorre_paginas_sin_repetidos():
     c = _cliente([_pagina(["A", "B"], 1, 2), _pagina(["B", "C"], 2, 2)])
-    assert [i["codigo"] for i in listar_publicadas(c)] == ["A", "B", "C"]
+    items, _ = listar_publicadas(c, datetime(2026, 10, 21), AHORA)
+    assert [i["codigo"] for i in items] == ["A", "B", "C"]
 
 
 def test_504_con_pagina_grande_sigue_con_paginas_de_10():
     c = _cliente([_error(504, "Gateway Timeout"), _pagina(["A"], 1, 1)])
-    assert [i["codigo"] for i in listar_publicadas(c, tamano_pagina=50)] == ["A"]
+    items, _ = listar_publicadas(c, datetime(2026, 10, 21), AHORA, tamano_pagina=50)
+    assert [i["codigo"] for i in items] == ["A"]
     assert [ll[1]["tamano_pagina"] for ll in c._sesion.llamadas] == [50, 10]
+
+
+def test_listado_cortado_por_tope_conserva_los_dias_mas_antiguos():
+    c = _cliente([_pagina(["VIEJA"], 1, 1), _pagina(["NUEVA"], 1, 1)])
+    items, cubierto = listar_publicadas(c, datetime(2026, 10, 20), AHORA, max_paginas=1)
+    assert [i["codigo"] for i in items] == ["VIEJA"]
+    assert cubierto == datetime(2026, 10, 20, 23, 59, 59)   # la próxima corrida sigue desde ahí
+
+
+def test_429_no_espera_mas_alla_del_plazo(monkeypatch):
+    esperas = []
+    monkeypatch.setattr(compra_agil.time, "sleep", esperas.append)
+    c = _cliente([_error(429, "límite")])
+    c.hasta_monotonic = compra_agil.time.monotonic() + 60   # quedan 60 s; la espera sería de 900
+    with pytest.raises(ErrorApi):
+        c.listado()
+    assert 900 not in esperas
 
 
 def test_ticket_rechazado_es_fatal():
@@ -112,6 +150,25 @@ def test_fecha_chile_quita_la_z():
     assert fecha_chile(None) is None
 
 
+def test_fecha_cierre_real_sin_t_ni_segundos():
+    # Formato real de fechas.fecha_cierre: "2026-10-23 15:00" (hora de Chile).
+    assert fecha_chile("2026-10-23 15:00") == "2026-10-23T15:00:00"
+    payload = _detalle("X").json()["payload"]
+    payload["fechas"]["fecha_cierre"] = "2026-10-23 15:00"
+    c = _cliente([_pagina(["X"], 1, 1), _ok(payload)])
+    _, estado = _actualizar(c)
+    fila = estado["abiertas"]["X"]["fila"]
+    assert fila["fecha_cierre"] == "2026-10-23 15:00:00" and fila["dias_restantes"] == 2
+
+
+def test_monto_en_utm_no_se_toma_como_pesos_y_region_de_respaldo():
+    payload = _detalle("U").json()["payload"]
+    payload["presupuesto"] = {"moneda": "UTM", "monto_disponible": 50}
+    payload["institucion"] = {"organismo_comprador": "X", "region": 8, "nombre_region": None}
+    det = como_licitacion(payload)
+    assert det["MontoEstimado"] is None and det["Comprador"]["RegionUnidad"] == "Región 8"
+
+
 def test_como_licitacion_y_presupuesto():
     det = como_licitacion(_detalle("1-2-COT26").json()["payload"])
     assert det["Tipo"] == "Compra Ágil" and det["MontoEstimado"] == 850000 and det["Llamado"] == 1
@@ -121,24 +178,59 @@ def test_como_licitacion_y_presupuesto():
     assert items[0]["cantidad"] == 20 and items[0]["unidad"] == "Caja" and items[0]["linea"] == 1
 
 
-def test_radar_clasifica_y_descarta():
-    pagina = _pagina(["A", "B"], 1, 1)
+def test_clasifica_descarta_y_recuerda():
+    pagina = _pagina(["A", "B", "C"], 1, 1)
     pagina._datos["payload"]["items"][1]["nombre"] = "Servicio de banquetería"
-    c = _cliente([pagina, _detalle("A")])
-    r = radar_compra_agil(c, FILTRO, hoy=date(2026, 10, 21))
-    assert r.publicadas == 2 and r.candidatas == 1      # B no pasa el filtro por nombre: sin detalle
-    assert [f["codigo"] for f in r.filas] == ["A"]
-    fila = r.filas[0]
-    assert fila["tipo"] == "Compra Ágil" and fila["url"] is None and fila["llamado"] == 1
-    assert fila["dias_restantes"] == 2 and fila["rubro"] == "aseo"
-    assert set(r.detalles) == {"A"}
+    c = _cliente([pagina, _detalle("A"),
+                  # El listado decía «guantes», pero el detalle es otra cosa: se descarta.
+                  _detalle("C", nombre="Servicio de banquetería", productos=[{"nombre": "Banquetería", "cantidad": 1}])])
+    r, estado = _actualizar(c)
+    assert r.listadas == 3 and r.nuevas_candidatas == 2   # B no pasa el filtro por nombre: sin detalle
+    assert set(estado["abiertas"]) == {"A"} and set(estado["descartadas"]) == {"C"}
+    fila = estado["abiertas"]["A"]["fila"]
+    assert fila["tipo"] == "Compra Ágil" and fila["llamado"] == 1 and fila["rubro"] == "aseo"
+    assert fila["url"] == "https://buscador.mercadopublico.cl/ficha?code=A"
+    assert estado["listado_hasta"] == "2026-10-21T12:00:00" and not estado["pendientes"]
+
+    # Corrida siguiente: lista desde la anterior (menos 1 h) y no vuelve a pedir detalles conocidos.
+    c2 = _cliente([_pagina(["A", "D"], 1, 1), _detalle("D")])
+    r2 = actualizar_compras_agiles(c2, FILTRO, estado, ahora=AHORA.replace(hour=15))
+    primera = c2._sesion.llamadas[0][1]
+    assert primera["publicado_desde"] == "2026-10-21T11:00:00Z"
+    assert r2.detalles == 1 and "D" in estado["abiertas"]
 
 
-def test_cuota_agotada_guarda_lo_obtenido():
-    c = _cliente([_pagina(["A", "B"], 1, 1), _detalle("A"), _error(429, "Se ha alcanzado el límite")])
-    r = radar_compra_agil(c, FILTRO, hoy=date(2026, 10, 21))
-    assert [f["codigo"] for f in r.filas] == ["A"]
-    assert r.fallidas == {"B"} and "429" in r.detenida
+def test_las_cerradas_salen_de_la_memoria():
+    estado = estado_vacio()
+    estado["abiertas"]["V"] = {"fila": {"fecha_cierre": "2026-10-21 10:00:00"}, "detalle": {}}
+    estado["descartadas"]["W"] = "2026-10-20 18:00"
+    estado["pendientes"]["X"] = "2026-10-25 18:00"
+    c = _cliente([_detalle("X")])
+    _actualizar(c, estado=estado)
+    assert "V" not in estado["abiertas"] and "W" not in estado["descartadas"] and "X" in estado["abiertas"]
+
+
+def test_sin_tiempo_quedan_pendientes_para_la_proxima():
+    c = _cliente([_pagina(["A", "B"], 1, 1)])
+    r, estado = _actualizar(c, max_detalles=0)
+    assert set(estado["pendientes"]) == {"A", "B"} and r.detenida.startswith("máximo")
+
+
+def test_429_espera_una_vez_y_reintenta(monkeypatch):
+    esperas = []
+    monkeypatch.setattr(compra_agil.time, "sleep", esperas.append)
+    c = _cliente([_error(429, "límite"), _pagina(["A"], 1, 1)])
+    c.max_espera_429 = 600
+    assert c.listado()["items"][0]["codigo"] == "A"
+    assert 600 in esperas
+
+
+def test_429_repetido_guarda_lo_obtenido():
+    c = _cliente([_pagina(["A", "B"], 1, 1), _detalle("A"), _error(429, "Se ha alcanzado el límite"),
+                  _error(429, "Se ha alcanzado el límite")])
+    r, estado = _actualizar(c)
+    assert set(estado["abiertas"]) == {"A"} and set(estado["pendientes"]) == {"B"}
+    assert "429" in r.detenida
 
 
 def test_config_real_detecta_aseo():
@@ -146,5 +238,5 @@ def test_config_real_detecta_aseo():
     c = _cliente([_pagina(["A"], 1, 1), _detalle("A", nombre="Adquisición de artículos de aseo", productos=[
         {"nombre": "Cloro", "descripcion": "cloro tradicional 5 litros", "cantidad": 10, "unidad_medida": "Unidad"},
         {"nombre": "Papel higiénico", "descripcion": "rollo 500 m", "cantidad": 24, "unidad_medida": "Unidad"}])])
-    r = radar_compra_agil(c, filtro, hoy=date(2026, 10, 21))
-    assert len(r.filas) == 1 and r.filas[0]["rubro"] == "insumos_medicos_aseo"
+    _, estado = _actualizar(c, filtro=filtro)
+    assert [a["fila"]["rubro"] for a in estado["abiertas"].values()] == ["insumos_medicos_aseo"]
