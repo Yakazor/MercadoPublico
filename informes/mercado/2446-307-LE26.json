@@ -64,8 +64,8 @@
      "verificado": false,
      "nota": "Precio con 35% dcto (antes 9.990); vendedor externo. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 6230.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $6.230, no $6.500: puede haber cambiado."
+     "precio_pagina": 6300.0,
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $6.300, no $6.500: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -869,8 +869,8 @@
      "nota": "Listados muestran 79.762/75.774 y 78.166/66.441. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
-     "precio_pagina": 76900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $76.900."
+     "precio_pagina": 74900.0,
+     "verificacion_pagina": "2026-10-20: la página muestra $74.900."
     }
    ]
   },

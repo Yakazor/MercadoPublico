@@ -190,7 +190,7 @@
      "nota": "Estaba AGOTADO en la consulta anterior. Dejé el precio más alto visto ($89.990) como presupuesto conservador; la búsqueda también muestra $49.990 y $34.990. Hay que confirmar precio y reposición. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 71414.0,
-     "verificacion_pagina": "2026-10-20: no se pudo abrir la página (ReadTimeout)."
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $71.414, no $89.990: puede haber cambiado."
     },
     {
      "tienda": "DG Insumos",
@@ -361,8 +361,8 @@
      "contenido": "1 unidad",
      "nota": "Marca My Toner. La búsqueda confirma un precio rebajado de $13.990 (antes $27.990) y 6 meses de garantía. La ficha lista HL-L8360CDW, HL-L9310CDW y MFC-L9570CDW, pero no menciona la MFC-L8900CDW, aunque es el mismo código TN-419. La oferta podría no estar vigente. No pude abrir la página.",
      "fecha_consulta": "2026-10-17",
-     "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $15.990, no $13.990: puede haber cambiado."
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $14.990, no $13.990: puede haber cambiado."
     },
     {
      "tienda": "Ariex",
