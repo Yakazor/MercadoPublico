@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-10-20. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-10-21. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -29,6 +29,7 @@ Actualizado: 2026-10-20. Margen 20 %, otros costos 5 %, IVA 19 %.
 | [2402-98-LE26](presupuestos/2402-98-LE26.md) CEREMONIA PREMIACIÓN AÑOS DE SERVICIO Y MEDALLA SANTA CRUZ DE TRIANA A (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [2427-79-LE26](presupuestos/2427-79-LE26.md) ADQUISICIÓN DE REPUESTOS HIDRAULICOS-DEPARTAMENTO GESTIÓN DE FLOTA (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [2546-58-LE26](presupuestos/2546-58-LE26.md) PROP PUBL N84 HERRAMIENTAS ELECTRICAS Y MANUALES (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
+| [2571-2-LE26](presupuestos/2571-2-LE26.md) Materiales de ferretería PEE Nvos cupos 2026 (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [2658-344-L126](presupuestos/2658-344-L126.md) REPUESTOS VARIOS (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [2658-346-L126](presupuestos/2658-346-L126.md) NEUMATICOS Y OTROS REPUESTOS (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [2658-347-L126](presupuestos/2658-347-L126.md) REPUESTOS CAMIONETA JAC (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
@@ -40,7 +41,10 @@ Actualizado: 2026-10-20. Margen 20 %, otros costos 5 %, IVA 19 %.
 | [3537-66-LE26](presupuestos/3537-66-LE26.md) Adquisición de repuestos para Camiones y Camioneta (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [3729-92-LE26](presupuestos/3729-92-LE26.md) CONTRATO DE SUMINISTRO DE MATERIALES ARTÍCULOS DE ASEO Y OTROS (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [3887-48-LE26](presupuestos/3887-48-LE26.md) ADQ. DE JUGUETES DE NAVIDAD 2026 VILLARRICA (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
+| [3890-217-E226](presupuestos/3890-217-E226.md) ADQ. SILLAS EJEC. PARA UNIDADES MUNICIPALES FREIRE (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
+| [4284-164-L126](presupuestos/4284-164-L126.md) Servicio de alimentación galvanos y flores para celebración del día de (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [4375-136-LE26](presupuestos/4375-136-LE26.md) CONVENIO PRODUCTOS DE ASEO PARA HGGB (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
+| [4449-36-L126](presupuestos/4449-36-L126.md) Habilitación de Biblioteca e Instalación de mobiliario en Regimén cerr (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [523059-12-LE26](presupuestos/523059-12-LE26.md) ADQUISICION DE BATERIAS RECARGABLES DE 12 VOLTS (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [564162-146-L126](presupuestos/564162-146-L126.md) Solicitud N°93724 - Desktop, monitor, teclado y mouse CC11 / PS1845 (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [691944-27-LE26](presupuestos/691944-27-LE26.md) Propuesta Nº26 Adquisición pantalón y poleras para trabajadores PMU Lí (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
@@ -50,9 +54,6 @@ Actualizado: 2026-10-20. Margen 20 %, otros costos 5 %, IVA 19 %.
 | [906816-18-LE26](presupuestos/906816-18-LE26.md) ADQUISICIÓN JUGUETES NAVIDEÑOS PARA LA COMUNIDAD I (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [948355-83-LE26](presupuestos/948355-83-LE26.md) ADQUISICIÓN DE INSUMOS MÉDICOS POR SISTEMA DE SUMINISTRO PARA EL HOSPI (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
 | [950753-8-L126](presupuestos/950753-8-L126.md) Servicio de re-impresión del libro: Redes del coleccionismo. El rol de (ya no vigente) |  | — | 0/0 | $0 | $0 | $0 | — |
-| [2571-2-LE26](presupuestos/2571-2-LE26.md) Materiales de ferretería PEE Nvos cupos 2026 | Ferretería y herramientas | 2026-10-20 | 12/14 | $4.120.037 | $5.883.413 | $824.007 | $9.800.000 |
-| [4284-164-L126](presupuestos/4284-164-L126.md) Servicio de alimentación galvanos y flores para celebración del día de | Deporte, juguetes y material didáctico | 2026-10-20 | 1/2 | $17.488 | $24.973 | $3.498 | $2.680.000 |
-| [4449-36-L126](presupuestos/4449-36-L126.md) Habilitación de Biblioteca e Instalación de mobiliario en Regimén cerr | Mobiliario de oficina, escolar y almacenaje | 2026-10-20 | 0/1 | $0 | $0 | $0 | $5.000.000 |
 | [1048-82-LE26](presupuestos/1048-82-LE26.md) ADQ. 20 CAMPANAS RECICLAJE DE VIDRIO VERDE IGLU. | Materiales de construcción, eléctricos e iluminación | 2026-10-20 | 0/1 | $0 | $0 | $0 | $20.000.000 |
 | [1415863-3-LE26](presupuestos/1415863-3-LE26.md) SERV DE SUMINISTRO CALZADO DE SEGURIDAD | Vestuario, uniformes y textiles | 2026-10-20 | 1/1 | $13.226 | $18.887 | $2.645 | $21.600.000 |
 | [5877-38-L126](presupuestos/5877-38-L126.md) SEREMI DE LOS RÍOS REQUIERE LA ADQUISICIÓN DE ARTÍCULOS Y HERRAMIENTAS | Ferretería y herramientas | 2026-10-20 | 1/1 | $79.403 | $113.387 | $15.881 | $3.863.983 |
@@ -105,7 +106,6 @@ Actualizado: 2026-10-20. Margen 20 %, otros costos 5 %, IVA 19 %.
 | [3730-100-L126](presupuestos/3730-100-L126.md) ADQUISICION DE TOLDOS. MESAS Y SILLAS | Mobiliario de oficina, escolar y almacenaje | 2026-10-23 | 3/3 | $1.503.750 | $2.147.355 | $300.750 | $4.500.000 |
 | [5061-41-L126](presupuestos/5061-41-L126.md) SP1522 Adquisición de impresoras laser para establecimientos de salud, | Computación y electrónica | 2026-10-23 | 1/1 | $1.190.956 | $1.700.685 | $238.191 | $7.150.000 |
 | [2274-55-LE26](presupuestos/2274-55-LE26.md) ADQUISICIÓN DE MOBILIARIO Y AIRE ACONDICIONADO PARA ATENCIÓN INFANTIL  | Mobiliario de oficina, escolar y almacenaje | 2026-10-23 | 3/4 | $404.082 | $577.030 | $80.816 | $10.250.000 |
-| [3890-217-E226](presupuestos/3890-217-E226.md) ADQ. SILLAS EJEC. PARA UNIDADES MUNICIPALES FREIRE | Mobiliario de oficina, escolar y almacenaje | 2026-10-23 | 1/1 | $44.109 | $62.987 | $8.822 | $2.300.000 |
 | [2366-31-LE26](presupuestos/2366-31-LE26.md) TONER SIMILAR-EQUIV. HP Y BROTHER IMP. - SC N.45 | Artículos de oficina y librería | 2026-10-23 | 9/9 | $8.863.266 | $12.656.744 | $1.772.653 | $29.393.000 |
 | [1247197-75-LE26](presupuestos/1247197-75-LE26.md) ADQUISICIÓN DE SERVIDORES COMPUTACIONALES | Computación y electrónica | 2026-10-26 | 0/2 | $0 | $0 | $0 | $19.100.000 |
 | [1469-288-L126](presupuestos/1469-288-L126.md) ADQUISICIÓN DE INSUMOS Y MATERIALES DE LABORATORIO, UNIVERSIDAD DE TAL | Instrumental e insumos de laboratorio (sin reactivos) | 2026-10-26 | 14/14 | $3.714 | $5.304 | $743 | $1.061.170 |
