@@ -9,13 +9,15 @@ Lee:
                                     (tienda, producto, link, precio y fecha de consulta)
 Escribe:
     informes/presupuestos/<codigo>.md y .csv   presupuesto por licitación
-    informes/README.md                          índice de presupuestos
-    --mercado-json <ruta>                       (opcional) todas las opciones en una
-                                                tabla, para el dashboard
+    informes/README.md                          índice de presupuestos (vigentes con
+                                                alertas; las ya cerradas al final)
+    --mercado-json <ruta>                       (opcional) todas las opciones no
+                                                descartadas en una tabla, para el dashboard
 
 Supuestos (se pueden cambiar con --margen y --otros-costos): precios de mercado
 convertidos a neto (sin IVA) y a la unidad que pide la licitación; oferta = costo
-neto × (1 + otros costos) × (1 + margen); IVA 19 % sobre la oferta.
+neto × (1 + otros costos) × (1 + margen); IVA 19 % sobre la oferta. Las opciones
+con "descartado": true (y su "motivo_descarte") se muestran, pero no se usan.
 """
 import argparse
 import json
@@ -52,9 +54,10 @@ def _link(texto, url) -> str:
 
 
 def opciones_mercado(mercado: dict) -> list[dict]:
-    """Opciones de cada ítem como filas (una por tienda)."""
+    """Opciones de cada ítem como filas (una por tienda), con las descartadas marcadas."""
     filas = []
     for item in mercado.get("items") or []:
+        # La clave numera todas las opciones (también las descartadas): no cambia al descartar una.
         for n, op in enumerate(item.get("opciones") or [], 1):
             filas.append({
                 "clave": f"{mercado.get('codigo')}|{item.get('linea')}|{n}",
@@ -74,18 +77,59 @@ def opciones_mercado(mercado: dict) -> list[dict]:
                 "verificacion_pagina": op.get("verificacion_pagina"),
                 "fecha_consulta": op.get("fecha_consulta") or mercado.get("fecha_consulta"),
                 "nota": op.get("nota"),
+                "descartado": bool(op.get("descartado")),
+                "motivo_descarte": op.get("motivo_descarte"),
             })
     return filas
 
 
+def opciones_dashboard(opciones: list[dict]) -> list[dict]:
+    """Opciones para el dashboard: sin las descartadas, porque el dashboard no conoce el
+    campo y las usaría como mejor precio."""
+    return [{k: v for k, v in op.items() if k not in ("descartado", "motivo_descarte")}
+            for op in opciones if not op.get("descartado")]
+
+
 def _verificado(op: dict) -> str:
-    """«sí (fecha)» si la página de la tienda mostró el precio; si no, por qué no."""
+    """«sí (fecha)» si la página de la tienda mostró el precio; si no, por qué no.
+    Las descartadas por la auditoría dicen «descartada: <motivo>»."""
+    if op.get("descartado"):
+        motivo = _celda(op.get("motivo_descarte"))
+        return f"descartada: {motivo}" if motivo else "descartada"
     if op.get("verificado"):
         return f"sí ({op.get('verificado_en')})" if op.get("verificado_en") else "sí"
     motivo = op.get("verificacion_pagina")
     if not motivo:
         return "no (aún no se abre la página)"
     return "no: " + _celda(motivo.split(": ", 1)[-1])
+
+
+def _supera_monto(lic: dict, p: dict) -> bool:
+    monto = lic.get("monto_estimado")
+    return bool(monto) and lic.get("moneda") in (None, "CLP") and p["oferta_total"] > monto
+
+
+def _lineas(numeros: list) -> str:
+    """«la línea 3» o «las líneas 1, 4 y 7»."""
+    numeros = [str(n) for n in numeros]
+    if len(numeros) == 1:
+        return f"la línea {numeros[0]}"
+    return f"las líneas {', '.join(numeros[:-1])} y {numeros[-1]}"
+
+
+def alertas(lic: dict, p: dict) -> list[str]:
+    """Avisos cortos para el índice: lo que hay que revisar antes de creer en el total."""
+    avisos = []
+    if _supera_monto(lic, p):
+        avisos.append("supera monto")
+    n = p["items_sin_precio"]
+    if n:
+        avisos.append("falta 1 precio" if n == 1 else f"faltan {n} precios")
+    if p.get("lineas_globales"):
+        avisos.append("línea global")
+    if p.get("items_sin_verificar"):
+        avisos.append("sin verificar")
+    return avisos
 
 
 def markdown(lic: dict, mercado: dict, p: dict) -> str:
@@ -122,9 +166,17 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
     if p.get("oferta_con_referencia") and p.get("referencia_oc_neta") and p["oferta_con_referencia"] > p["referencia_oc_neta"]:
         lineas += [f"> Ojo: en los ítems con referencia, la oferta ({_clp(p['oferta_con_referencia'])}) supera lo que "
                    f"el Estado pagó en OC ({_clp(p['referencia_oc_neta'])}). Revisa el margen o busca proveedores más baratos.", ""]
-    monto = lic.get("monto_estimado")
-    if monto and lic.get("moneda") in (None, "CLP") and p["oferta_total"] > monto:
-        lineas += [f"> La oferta total supera el monto estimado de la licitación ({_clp(monto)}).", ""]
+    if _supera_monto(lic, p):
+        lineas += [f"> La oferta total supera el monto estimado de la licitación ({_clp(lic['monto_estimado'])}).", ""]
+    if p.get("lineas_globales"):
+        unidades = {it.get("linea"): _celda(it.get("unidad")) for it in p["items"]}
+        detalle = [f"{n} ({unidades.get(n)})" for n in p["lineas_globales"]]
+        lineas += [f"> Unidad global en {_lineas(detalle)}: la cantidad real está en las bases de la "
+                   "licitación, así que su total puede no ser comparable.", ""]
+    no_comparables = [it.get("linea") for it in p["items"] if it.get("referencia_comparable") is False]
+    if no_comparables:
+        lineas += [f"> Ref. OC «no comparable» en {_lineas(no_comparables)}: la mediana de OC difiere más de "
+                   "10 veces del costo unitario (probablemente otra presentación) y no entra en lo que pagó el Estado.", ""]
     lineas += [
         "## Ítems",
         "",
@@ -137,16 +189,20 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
         producto = _celda(it.get("producto"))
         if it.get("descripcion"):
             producto += f" — {_celda(it['descripcion'])[:120]}"
+        ref = _clp(it.get("ref_mediana"))
+        if it.get("referencia_comparable") is False:
+            ref += " (no comparable)"
         lineas.append(
             f"| {it.get('linea')} | {producto} | {cant} | {_clp(it.get('costo_unitario_neto'))} | "
             f"{_link(it.get('tienda'), it.get('url')) if it.get('tienda') else '—'} | {_clp(it.get('subtotal_costo'))} | "
-            f"{_clp(it.get('oferta_unitaria_neta'))} | {_clp(it.get('subtotal_oferta'))} | {_clp(it.get('ref_mediana'))} |")
+            f"{_clp(it.get('oferta_unitaria_neta'))} | {_clp(it.get('subtotal_oferta'))} | {ref} |")
     otras = [op for op in opciones_mercado(mercado)]
     if otras:
         lineas += ["", "## Todas las opciones encontradas", "",
                    "| Línea | Tienda | Producto en la tienda | Precio publicado | Neto por unidad pedida | Coincidencia | Verificado |",
                    "|---:|---|---|---:|---:|---|---|"]
-        for op in sorted(otras, key=lambda o: (o["linea"] or 0, o["precio_unitario_neto"] or float("inf"))):
+        # Las descartadas, al final de su línea.
+        for op in sorted(otras, key=lambda o: (o["linea"] or 0, o["descartado"], o["precio_unitario_neto"] or float("inf"))):
             iva = " (c/IVA)" if op.get("iva_incluido") else (" (+IVA)" if op.get("iva_incluido") is False else "")
             lineas.append(
                 f"| {op['linea']} | {_link(op.get('tienda'), op.get('url'))} | {_celda(op.get('producto_mercado'))[:100]} | "
@@ -157,6 +213,52 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
         lineas += ["", "## Notas de la búsqueda", "", *notas]
     lineas += ["", "_Generado con `scripts/presupuesto.py`. Los precios de mercado son una foto de la fecha de "
                    "consulta: revisa stock, despacho a la región y condiciones de la licitación antes de ofertar._", ""]
+    return "\n".join(lineas)
+
+
+def indice(resumen: list[tuple], margen: float, otros_costos: float) -> str:
+    """Índice de presupuestos. `resumen`: (licitación, mercado, presupuesto, vigente).
+    Vigentes = las que siguen en licitaciones.json; las demás van en «Ya cerradas»."""
+    vigentes = sorted((r for r in resumen if r[3]), key=lambda r: r[0].get("fecha_cierre") or "")
+    cerradas = sorted((r for r in resumen if not r[3]), key=lambda r: r[0].get("codigo") or "")
+    lineas = [
+        "# Informes",
+        "",
+        "Presupuestos de licitaciones con precios del mercado chileno (tiendas con link) y el precio que el",
+        "Estado ya pagó en órdenes de compra. Se generan con `scripts/presupuesto.py`; los precios de mercado",
+        "están en `informes/mercado/` con su fecha de consulta.",
+        "",
+        "- [Guía de uso y de postulación a Mercado Público (PDF)](Guia_Radar_Licitaciones.pdf)",
+        "- [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)",
+        "- [Versiones en PDF de los informes](pdf/)",
+        "",
+        f"Actualizado: {date.today().isoformat()}. Margen {_pct(margen)}, otros costos "
+        f"{_pct(otros_costos)}, IVA {_pct(IVA)}.",
+        "",
+        "## Licitaciones vigentes",
+        "",
+        # Una sola línea: informes_pdf.py convierte cada línea en un párrafo.
+        "Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N precios» (ítems sin precio "
+        "de mercado, fuera de los totales), «línea global» (unidad Global, Kit, Servicio o Lote: la cantidad real "
+        "está en las bases) y «sin verificar» (algún precio usado no se confirmó en la página de la tienda).",
+        "",
+        "| Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |",
+        "|---|---|---|---:|---:|---:|---:|---:|---|",
+    ]
+    for lic, mercado, p, _ in vigentes:
+        codigo = lic.get("codigo")
+        n = len(p["items"])
+        lineas.append(
+            f"| [{codigo}](presupuestos/{codigo}.md) {_celda(lic.get('nombre'))[:70]} | {_celda(lic.get('rubro_nombre'))} | "
+            f"{(lic.get('fecha_cierre') or '—')[:10]} | {n - p['items_sin_precio']}/{n} | {_clp(p['costo_neto'])} | "
+            f"{_clp(p['oferta_total'])} | {_clp(p['utilidad'])} | "
+            f"{_clp(lic.get('monto_estimado')) if lic.get('moneda') in (None, 'CLP') else '—'} | "
+            f"{', '.join(alertas(lic, p)) or '—'} |")
+    if cerradas:
+        lineas += ["", "## Ya cerradas", ""]
+        lineas += [f"- [{lic.get('codigo')}](presupuestos/{lic.get('codigo')}.md) {_celda(lic.get('nombre'))}"
+                   for lic, *_ in cerradas]
+    lineas.append("")
     return "\n".join(lineas)
 
 
@@ -199,36 +301,9 @@ def main():
         tabla.to_csv(salida / f"{codigo}.csv", sep=";", decimal=",", index=False, encoding="utf-8-sig")
         resumen.append((lic, mercado, p, codigo in lics))
 
-    lineas = [
-        "# Informes",
-        "",
-        "Presupuestos de licitaciones con precios del mercado chileno (tiendas con link) y el precio que el",
-        "Estado ya pagó en órdenes de compra. Se generan con `scripts/presupuesto.py`; los precios de mercado",
-        "están en `informes/mercado/` con su fecha de consulta.",
-        "",
-        "- [Guía de uso y de postulación a Mercado Público (PDF)](Guia_Radar_Licitaciones.pdf)",
-        "- [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)",
-        "- [Versiones en PDF de los informes](pdf/)",
-        "",
-        f"Actualizado: {date.today().isoformat()}. Margen {_pct(args.margen)}, otros costos "
-        f"{_pct(args.otros_costos)}, IVA {_pct(IVA)}.",
-        "",
-        "| Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado |",
-        "|---|---|---|---:|---:|---:|---:|---:|",
-    ]
-    for lic, mercado, p, vigente in sorted(resumen, key=lambda r: r[0].get("fecha_cierre") or ""):
-        codigo = lic.get("codigo")
-        n = len(p["items"])
-        estado = "" if vigente else " (ya no vigente)"
-        lineas.append(
-            f"| [{codigo}](presupuestos/{codigo}.md) {_celda(lic.get('nombre'))[:70]}{estado} | {_celda(lic.get('rubro_nombre'))} | "
-            f"{(lic.get('fecha_cierre') or '—')[:10]} | {n - p['items_sin_precio']}/{n} | {_clp(p['costo_neto'])} | "
-            f"{_clp(p['oferta_total'])} | {_clp(p['utilidad'])} | "
-            f"{_clp(lic.get('monto_estimado')) if lic.get('moneda') in (None, 'CLP') else '—'} |")
-    lineas.append("")
-    Path(args.indice).write_text("\n".join(lineas), encoding="utf-8")
+    Path(args.indice).write_text(indice(resumen, args.margen, args.otros_costos), encoding="utf-8")
     if args.mercado_json:
-        Path(args.mercado_json).write_text(json.dumps(todas, ensure_ascii=False), encoding="utf-8")
+        Path(args.mercado_json).write_text(json.dumps(opciones_dashboard(todas), ensure_ascii=False), encoding="utf-8")
     print(f"{len(resumen)} presupuestos en {salida}")
 
 

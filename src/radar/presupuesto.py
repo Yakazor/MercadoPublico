@@ -6,7 +6,10 @@ productos parecidos (OC) y el mejor precio encontrado en el mercado chileno.
   Es una referencia: el mismo producto ONU puede mezclar presentaciones.
 - `items_licitacion_presupuesto`: filas de ítems (cantidad, unidad y referencia OC).
 - `armar_presupuesto`: costo de compra, oferta sugerida y margen por ítem, con los
-  precios de mercado que se buscaron aparte (`informes/mercado/<codigo>.json`).
+  precios de mercado que se buscaron aparte (`informes/mercado/<codigo>.json`). Marca
+  lo que hace engañoso un total: opciones descartadas por la auditoría (no cuentan),
+  líneas con unidad global (la cantidad real está en las bases) y referencias OC que
+  no se pueden comparar con el costo (otra presentación del mismo producto ONU).
 """
 from __future__ import annotations
 
@@ -23,6 +26,11 @@ IVA = 0.19
 _VACIAS = {"de", "del", "la", "el", "los", "las", "para", "con", "y", "o", "e", "en", "por", "a", "al",
            "x", "un", "una", "uno", "sin", "tipo", "segun", "otros", "otras", "u"}
 SIMILITUD_MINIMA = 0.8
+# Unidades que no dicen cuántas cosas se compran: la cantidad real está en las bases.
+UNIDADES_GLOBALES = {"global", "kit", "servicio", "lote"}
+# Razón referencia OC / costo unitario con gastos fuera de este rango: la mediana de OC
+# mezcla presentaciones (toldo de $27.723 con referencia de $1.790.250) y no sirve para comparar.
+RAZON_REFERENCIA = (0.1, 10.0)
 
 
 def _palabras(texto: str) -> set[str]:
@@ -35,6 +43,19 @@ def _numero(valor) -> float | None:
     except (TypeError, ValueError):
         return None
     return None if math.isnan(n) else n
+
+
+def unidad_global(unidad: str | None) -> bool:
+    """«Global», «Kit», «Servicio» o «Lote»: la cantidad pedida no es de unidades sueltas."""
+    return normalizar(unidad) in UNIDADES_GLOBALES
+
+
+def referencia_comparable(referencia: float | None, costo: float | None) -> bool | None:
+    """Si la mediana de OC se puede comparar con el costo unitario (con otros gastos):
+    entre 0,1 y 10 veces. None si falta alguno de los dos."""
+    if not referencia or not costo:
+        return None
+    return RAZON_REFERENCIA[0] <= referencia / costo <= RAZON_REFERENCIA[1]
 
 
 @dataclass
@@ -135,12 +156,20 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
     - costo con otros gastos = costo × (1 + otros_costos) (despacho, boletas, etc.);
     - oferta sugerida = costo con gastos × (1 + margen), pero si la referencia OC
       (mediana adjudicada) es menor, se informa que el margen no alcanza;
+    - las opciones con `descartado` (la auditoría las marcó como equivocadas) no se usan;
+    - la referencia OC solo se compara (y entra en `referencia_oc_neta`) si está entre
+      0,1 y 10 veces el costo con gastos (`referencia_comparable`); si no, es otra
+      presentación del producto;
+    - `lineas_globales`: líneas con precio cuya unidad es Global, Kit, Servicio o Lote;
     - todo en CLP neto; el total con IVA se agrega al final.
     """
     # El más barato entre los productos iguales o equivalentes; uno solo "aproximado"
     # (otra marca o medida) se usa cuando no hay otro.
     por_linea, prioridad = {}, {}
     for m in mercado:
+        # Las descartadas quedan en el JSON como registro de la auditoría, pero no cuentan.
+        if m.get("descartado"):
+            continue
         precio = _numero(m.get("precio_unitario_neto"))
         if precio is None or precio <= 0:
             continue
@@ -149,7 +178,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         if linea not in prioridad or nota < prioridad[linea]:
             por_linea[linea], prioridad[linea] = m | {"precio_unitario_neto": precio}, nota
     filas, costo_total, oferta_total, referencia_total, oferta_con_referencia = [], 0.0, 0.0, 0.0, 0.0
-    sin_precio = 0
+    sin_precio, sin_verificar, lineas_globales = 0, 0, []
     for item in items:
         cantidad = _numero(item.get("cantidad")) or 0.0
         mejor = por_linea.get(item.get("linea"))
@@ -157,14 +186,20 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         costo_gastos = costo * (1 + otros_costos) if costo is not None else None
         oferta = costo_gastos * (1 + margen) if costo_gastos is not None else None
         ref = _numero(item.get("ref_mediana"))
+        comparable = referencia_comparable(ref, costo_gastos)
+        es_global = unidad_global(item.get("unidad"))
         if costo is None:
             sin_precio += 1
         else:
             costo_total += costo_gastos * cantidad
             oferta_total += oferta * cantidad
-            if ref is not None:
+            if comparable:
                 referencia_total += ref * cantidad
                 oferta_con_referencia += oferta * cantidad
+            if es_global:
+                lineas_globales.append(item.get("linea"))
+            if not mejor.get("verificado"):
+                sin_verificar += 1
         filas.append({
             **item,
             "tienda": mejor.get("tienda") if mejor else None,
@@ -172,22 +207,30 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
             "url": mejor.get("url") if mejor else None,
             "fecha_consulta": mejor.get("fecha_consulta") if mejor else None,
             "coincidencia": mejor.get("coincidencia") if mejor else None,
+            "verificado": bool(mejor.get("verificado")) if mejor else None,
+            "unidad_global": es_global,
             "costo_unitario_neto": costo,
             "oferta_unitaria_neta": oferta,
             "subtotal_costo": costo_gastos * cantidad if costo_gastos is not None else None,
             "subtotal_oferta": oferta * cantidad if oferta is not None else None,
-            "margen_vs_referencia": (ref / costo_gastos - 1) if (ref and costo_gastos) else None,
+            "referencia_comparable": comparable,
+            # Contra una referencia no comparable el margen sale absurdo (miles por ciento o casi
+            # −100 %): no se informa.
+            "margen_vs_referencia": (ref / costo_gastos - 1) if comparable else None,
         })
     return {
         "items": filas,
         "items_sin_precio": sin_precio,
+        # Ítems con precio cuya opción usada no se confirmó en la página de la tienda.
+        "items_sin_verificar": sin_verificar,
+        "lineas_globales": lineas_globales,
         "costo_neto": costo_total,
         "oferta_neta": oferta_total,
         "oferta_iva": oferta_total * IVA,
         "oferta_total": oferta_total * (1 + IVA),
         "utilidad": oferta_total - costo_total,
         "referencia_oc_neta": referencia_total or None,
-        # Oferta de los mismos ítems que tienen referencia: es la que se compara con ella.
+        # Oferta de los mismos ítems que tienen referencia comparable: es la que se compara con ella.
         "oferta_con_referencia": oferta_con_referencia or None,
         "margen": margen,
         "otros_costos": otros_costos,
