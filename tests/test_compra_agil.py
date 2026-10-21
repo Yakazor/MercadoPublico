@@ -93,16 +93,16 @@ def _actualizar(c, filtro=FILTRO, estado=None, **kw):
 
 def test_ticket_va_en_el_encabezado_y_no_en_la_url():
     c = _cliente([_pagina(["A"], 1, 1)])
-    items, cubierto = listar_publicadas(c, datetime(2026, 10, 20), AHORA, regiones=[13, 5])
+    items, cubierto = listar_publicadas(c, datetime(2026, 10, 21, 10, 30), AHORA, regiones=[13, 5])
     url, params, headers = c._sesion.llamadas[0]
     assert url == "https://api2.mercadopublico.cl/v2/compra-agil"
     assert headers == {"ticket": "SECRETO"}
     assert "SECRETO" not in json.dumps(params)
     assert params["estado"] == "publicada" and params["region"] == "13,5"
-    # Un día a la vez, primero el más antiguo (sus compras cierran antes).
-    assert params["publicado_desde"] == "2026-10-20T00:00:00Z" and params["publicado_hasta"] == "2026-10-20T23:59:59Z"
+    # Una hora a la vez, primero la más antigua (sus compras cierran antes).
+    assert params["publicado_desde"] == "2026-10-21T10:30:00Z" and params["publicado_hasta"] == "2026-10-21T11:29:59Z"
     ultima = c._sesion.llamadas[-1][1]
-    assert ultima["publicado_desde"] == "2026-10-21T00:00:00Z" and ultima["publicado_hasta"] == "2026-10-21T12:00:00Z"
+    assert ultima["publicado_desde"] == "2026-10-21T11:30:00Z" and ultima["publicado_hasta"] == "2026-10-21T12:00:00Z"
     assert len(c._sesion.llamadas) == 2 and cubierto == AHORA
 
 
@@ -114,16 +114,16 @@ def test_recorre_paginas_sin_repetidos():
 
 def test_504_con_pagina_grande_sigue_con_paginas_de_10():
     c = _cliente([_error(504, "Gateway Timeout"), _pagina(["A"], 1, 1)])
-    items, _ = listar_publicadas(c, datetime(2026, 10, 21), AHORA, tamano_pagina=50)
+    items, _ = listar_publicadas(c, datetime(2026, 10, 21, 11, 30), AHORA, tamano_pagina=50)
     assert [i["codigo"] for i in items] == ["A"]
     assert [ll[1]["tamano_pagina"] for ll in c._sesion.llamadas] == [50, 10]
 
 
 def test_listado_cortado_por_tope_conserva_los_dias_mas_antiguos():
     c = _cliente([_pagina(["VIEJA"], 1, 1), _pagina(["NUEVA"], 1, 1)])
-    items, cubierto = listar_publicadas(c, datetime(2026, 10, 20), AHORA, max_paginas=1)
+    items, cubierto = listar_publicadas(c, datetime(2026, 10, 21, 10), AHORA, max_paginas=1)
     assert [i["codigo"] for i in items] == ["VIEJA"]
-    assert cubierto == datetime(2026, 10, 20, 23, 59, 59)   # la próxima corrida sigue desde ahí
+    assert cubierto == datetime(2026, 10, 21, 10, 59, 59)   # la próxima corrida sigue desde ahí
 
 
 def test_429_no_espera_mas_alla_del_plazo(monkeypatch):
@@ -193,13 +193,13 @@ def test_clasifica_descarta_y_recuerda():
     fila = estado["abiertas"]["A"]["fila"]
     assert fila["tipo"] == "Compra Ágil" and fila["llamado"] == 1 and fila["rubro"] == "aseo"
     assert fila["url"] == "https://buscador.mercadopublico.cl/ficha?code=A"
-    assert estado["listado_hasta"] == "2026-10-21T12:00:00" and not estado["pendientes"]
+    assert estado["listado_hasta"] == "2026-10-21T11:59:59" and not estado["pendientes"]
 
     # Corrida siguiente: lista desde la anterior (menos 1 h) y no vuelve a pedir detalles conocidos.
     c2 = _cliente([_pagina(["A", "D"], 1, 1), _detalle("D")])
     r2 = actualizar_compras_agiles(c2, FILTRO, estado, ahora=AHORA.replace(hour=15))
     primera = c2._sesion.llamadas[0][1]
-    assert primera["publicado_desde"] == "2026-10-21T11:00:00Z"
+    assert primera["publicado_desde"] == "2026-10-21T10:59:59Z"   # una hora de margen
     assert r2.detalles == 1 and "D" in estado["abiertas"]
 
 

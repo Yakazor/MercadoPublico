@@ -34,6 +34,7 @@ logging.getLogger("urllib3").setLevel(logging.ERROR)
 
 URL_BASE = "https://api2.mercadopublico.cl"
 TIPO = "Compra Ágil"
+VENTANA_LISTADO = timedelta(hours=1)
 URL_FICHA = "https://buscador.mercadopublico.cl/ficha?code={}"
 TAMANO_MINIMO = 10   # mínimo de la API y tamaño que no se corta con 504
 
@@ -173,7 +174,9 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     """Compras Ágiles abiertas publicadas entre `desde` y `hasta` (hora de Chile: la API
     compara su hora de Chile marcada con "Z"), y hasta qué momento quedó completo el listado.
 
-    Se recorre un día de publicación a la vez, del más antiguo al más nuevo: la API solo
+    Se recorre una hora de publicación a la vez (VENTANA_LISTADO), de la más antigua a la
+    más nueva: un día de todo Chile son ~4.000 compras (~1 hora de API), así que solo una
+    ventana corta alcanza a completarse y a hacer avanzar el listado. La API solo
     ordena de la más nueva a la más antigua, y si el listado se corta (tiempo o páginas)
     deben quedar las publicadas antes, que son las que cierran antes. Ventanas cortas
     también achican el corrimiento de filas mientras se pagina."""
@@ -183,7 +186,7 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     cubierto = desde
     inicio = desde
     while inicio < hasta:
-        fin = min(datetime.combine(inicio.date(), datetime.max.time()).replace(microsecond=0), hasta)
+        fin = min(inicio + VENTANA_LISTADO - timedelta(seconds=1), hasta)
         params = {"estado": "publicada", "region": region, "ordenar_por": "FechaPublicacion",
                   "publicado_desde": inicio.strftime("%Y-%m-%dT%H:%M:%SZ"),
                   "publicado_hasta": fin.strftime("%Y-%m-%dT%H:%M:%SZ")}
