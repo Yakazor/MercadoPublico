@@ -79,7 +79,7 @@
     <h1>Radar de Licitaciones</h1>
     <p class="rl-takeaway">
       <span class="dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span> licitaciones y Compras Ágiles abiertas en tus rubros
-      (<span class="dash-skeleton" data-source="resumen" data-field="compras_agiles" data-row="0">—</span> Compras Ágiles);
+      (Compras Ágiles: <span class="dash-skeleton" data-source="resumen" data-field="compras_agiles" data-row="0">—</span>);
       <span class="dash-skeleton" data-source="resumen" data-field="cierran_7" data-row="0">—</span> cierran en 7 días o menos.
     </p>
     <p class="rl-fresh">
@@ -95,7 +95,7 @@
     <div class="rl-kpi"><span class="rl-kpi-label">Vigentes</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span></div>
     <div class="rl-kpi"><span class="rl-kpi-label">Compras Ágiles abiertas</span><span class="rl-kpi-valor rl-bien dash-skeleton" data-source="resumen" data-field="compras_agiles" data-row="0">—</span></div>
     <div class="rl-kpi"><span class="rl-kpi-label">Cierran en ≤ 7 días</span><span class="rl-kpi-valor rl-urgente dash-skeleton" data-source="resumen" data-field="cierran_7" data-row="0">—</span></div>
-    <div class="rl-kpi"><span class="rl-kpi-label">Monto estimado visible (CLP)</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="monto_clp" data-row="0">—</span></div>
+    <div class="rl-kpi"><span class="rl-kpi-label">Monto estimado o disponible (CLP)</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="monto_clp" data-row="0">—</span></div>
     <div class="rl-kpi"><span class="rl-kpi-label">Solo productos con registro ISP</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="solo_regulados" data-row="0">—</span></div>
   </section>
 
@@ -121,7 +121,7 @@
     </div>
 
     <div class="rl-card" id="tabla-licitaciones">
-      <h2>Licitaciones vigentes</h2>
+      <h2>Licitaciones y Compras Ágiles vigentes</h2>
       <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público (las Compras Ágiles no tienen enlace: búscalas por código en Mercado Público, sección Compra Ágil). En Compra Ágil se cotiza el total con IVA y despacho; «1er llamado» es solo para empresas de menor tamaño. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
       <div class="rl-controles">
         <input type="search" id="buscar-lic" placeholder="Buscar licitación, organismo, región…" aria-label="Buscar licitaciones">
@@ -146,14 +146,14 @@
             <th data-field="nombre"><button data-col="nombre">Nombre</button></th>
             <th class="rl-angosto" data-field="organismo"><button data-col="organismo">Organismo</button></th>
             <th class="rl-angosto" data-field="region"><button data-col="region">Región</button></th>
-            <th class="rl-num" data-field="monto_estimado"><button data-col="monto_estimado">Monto estimado</button></th>
+            <th class="rl-num" data-field="monto_estimado"><button data-col="monto_estimado">Monto estimado / disponible</button></th>
             <th class="rl-angosto" data-field="fecha_cierre"><button data-col="fecha_cierre">Cierre</button></th>
             <th data-source="regulacion" data-field="regulacion"><button data-col="regulacion">Registro ISP</button></th>
             <th>Presupuesto</th>
           </tr></thead>
           <tbody></tbody>
         </table>
-        <p class="rl-vacio" id="lic-vacio" hidden>Ninguna licitación coincide con los filtros.</p>
+        <p class="rl-vacio" id="lic-vacio" hidden>Ninguna licitación ni Compra Ágil coincide con los filtros.</p>
       </div>
     </div>
   </section>
@@ -273,7 +273,7 @@
       const hoy = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
       return licitaciones.map((l) => {
         const cierre = new Date(String(l.fecha_cierre || '').replace(' ', 'T'));
-        if (isNaN(cierre)) return { codigo: l.codigo, dias: l.dias_restantes ?? null, cerrada: false };
+        if (isNaN(cierre)) return { codigo: l.codigo, dias: l.dias_restantes ?? null, cerrada: l.dias_restantes != null && l.dias_restantes < 0 };
         const dia = new Date(cierre.getFullYear(), cierre.getMonth(), cierre.getDate());
         return { codigo: l.codigo, dias: Math.round((dia - hoy) / 86400000), cerrada: cierre < ahora };
       });
@@ -491,7 +491,9 @@
       pre: { col: 'monto_total', dir: -1 },
     };
     const comparar = (col, dir) => (a, b) => {
-      const x = a[col], y = b[col];
+      // Números que lleguen como texto se ordenan como números.
+      const num = (v) => (v !== '' && v != null && !isNaN(Number(v)) ? Number(v) : v);
+      const x = num(a[col]), y = num(b[col]);
       if (x == null || x === '') return 1;
       if (y == null || y === '') return -1;
       return (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), 'es')) * dir;
@@ -647,11 +649,12 @@
       const info = document.getElementById('sim-info');
       info.replaceChildren();
       if (lic) {
-        const parte = (etiqueta, campo, valor) => {
+        // Solo se marca un valor real: «no informado» o «—» no son el dato.
+        const parte = (etiqueta, campo, valor, marcar = lic[campo] != null && lic[campo] !== '') => {
           const s = document.createElement('span');
           const b = document.createElement('b');
           b.textContent = valor;
-          b.dataset.source = 'licitaciones'; b.dataset.field = campo; b.dataset.where = 'codigo=' + valorMarca(lic.codigo);
+          if (marcar) { b.dataset.source = 'licitaciones'; b.dataset.field = campo; b.dataset.where = 'codigo=' + valorMarca(lic.codigo); }
           s.append(document.createTextNode(etiqueta + ' '), b);
           return s;
         };
@@ -660,7 +663,8 @@
           parte(lic.tipo === 'Compra Ágil' ? 'Monto disponible:' : 'Monto estimado:', 'monto_estimado', monto(lic.monto_estimado, lic.moneda) || 'no informado'));
         if (lic.tipo === 'Compra Ágil') {
           info.append(parte('Tipo:', 'tipo', 'Compra Ágil'));
-          if (Number(lic.llamado) === 1) info.append(document.createTextNode('1er llamado: solo empresas de menor tamaño; se cotiza el total con IVA y despacho'));
+          if (Number(lic.llamado) === 1) info.append(document.createTextNode('1er llamado: solo empresas de menor tamaño.'));
+          info.append(document.createTextNode('Se cotiza el total con IVA y despacho.'));
           if (lic.plazo_entrega_dias != null) info.append(parte('Plazo de entrega (días):', 'plazo_entrega_dias', String(lic.plazo_entrega_dias)));
           if (lic.direccion_entrega) info.append(parte('Entrega en:', 'direccion_entrega', lic.direccion_entrega));
         }
