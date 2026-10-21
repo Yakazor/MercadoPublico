@@ -300,3 +300,23 @@ def test_las_guardadas_se_reclasifican_con_la_config_vigente():
                                          "excluir_en_nombre": ["nitrilo"]}})
     _actualizar(_cliente([]), filtro=otro_filtro, estado=estado)
     assert "A" not in estado["abiertas"] and "A" in estado["descartadas"]
+
+
+def test_listado_caido_guarda_lo_recorrido_y_sigue_con_los_detalles():
+    # 21-10-2026: el listado respondió 500/504 y la corrida se cortaba sin revisar
+    # ninguna de las ~1.500 pendientes.
+    estado = estado_vacio()
+    estado["pendientes"]["P"] = {"cierre": "2026-10-25 18:00", "intentos": 0, "prioridad": 0}
+    c = _cliente([_pagina(["A"], 1, 1), _error(500, "Servicio no disponible"), _error(504, "timeout"),
+                  _error(504, "timeout"), _detalle("A"), _detalle("P")])
+    r, estado = _actualizar(c, estado=estado)
+    assert set(estado["abiertas"]) == {"P", "A"} and not estado["pendientes"]
+    # Completa solo la primera hora: la próxima corrida retoma desde ahí.
+    assert estado["listado_hasta"] == "2026-10-20T12:59:59"
+    assert r.listadas == 1 and "listado interrumpido" in r.detenida
+
+
+def test_listado_con_ticket_rechazado_sigue_siendo_fatal():
+    c = _cliente([_error(403, "El ticket no existe")])
+    with pytest.raises(ErrorApi):
+        _actualizar(c)

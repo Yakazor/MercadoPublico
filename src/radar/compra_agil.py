@@ -179,7 +179,10 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     ventana corta alcanza a completarse y a hacer avanzar el listado. La API solo
     ordena de la más nueva a la más antigua, y si el listado se corta (tiempo o páginas)
     deben quedar las publicadas antes, que son las que cierran antes. Ventanas cortas
-    también achican el corrimiento de filas mientras se pagina."""
+    también achican el corrimiento de filas mientras se pagina.
+
+    Si la API falla (ErrorApi temporal), el error lleva en `parcial` lo listado hasta
+    la última ventana completa: no se pierde lo ya recorrido."""
     region = ",".join(str(r) for r in regiones) if regiones else None
     items, tamano, paginas_usadas, total_publicadas = [], tamano_pagina, 0, 0
     tope_filas = max_paginas * tamano_pagina   # no cambia si se achican las páginas
@@ -207,6 +210,10 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
                 paginas_usadas = paginas_usadas * tamano // TAMANO_MINIMO
                 tamano = TAMANO_MINIMO
                 continue
+            except ErrorApi as e:
+                if e.temporal:
+                    e.parcial = (_sin_repetidos(items), cubierto)
+                raise
             paginas_usadas += 1
             items += payload.get("items") or []
             paginacion = payload.get("paginacion") or {}
@@ -344,6 +351,7 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     ahora = ahora or ahora_chile()
     hoy = ahora.date()
     r = ResultadoCompraAgil()
+    listado_cortado = None
     cliente.hasta_monotonic = hasta_monotonic
     anterior = _cierre(estado.get("listado_hasta"))
     # Una hora de margen: compras publicadas justo al final del listado anterior.
@@ -355,9 +363,17 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         listadas, cubierto = listar_publicadas(cliente, desde, ahora, regiones, tamano_pagina, max_paginas,
                                                hasta_monotonic=limite_listado)
     except ErrorApi as e:
-        if not (e.fatal and e.temporal):
+        if not e.temporal:
             raise
-        listadas, cubierto, r.detenida = [], desde, str(e)   # 429: se siguen los detalles pendientes
+        # Se guarda lo listado hasta la última ventana completa. Con 429 (fatal) no se
+        # hacen más llamadas; con la API lenta o caída (5xx) se intenta igual con los
+        # detalles pendientes: suelen responder aunque el listado no lo haga.
+        listadas, cubierto = getattr(e, "parcial", ([], desde))
+        if e.fatal:
+            r.detenida = str(e)
+        else:
+            listado_cortado = f"listado interrumpido ({e})"
+            log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
     r.listadas = len(listadas)
     estado["pendientes"] = {k: _pendiente(v) for k, v in estado["pendientes"].items()}
     conocidas = estado["abiertas"].keys() | estado["descartadas"].keys() | estado["pendientes"].keys()
@@ -433,6 +449,8 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
             estado["descartadas"][codigo] = cierre or det["Fechas"].get("FechaCierre")
         if r.detalles % 50 == 0:
             log.info("Detalle %d/%d", r.detalles, len(pendientes))
+    if listado_cortado:
+        r.detenida = "; ".join(t for t in (listado_cortado, r.detenida) if t)
     r.pendientes = len(estado["pendientes"])
     log.info("Compras Ágiles: %d listadas, %d candidatas nuevas, %d detalles, %d nuevas en tus rubros, "
              "%d abiertas en tus rubros, %d pendientes%s", r.listadas, r.nuevas_candidatas, r.detalles,
