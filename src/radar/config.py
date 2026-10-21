@@ -18,9 +18,11 @@ def cargar_config(ruta: str | Path | None = None) -> dict:
         return yaml.safe_load(f)
 
 
-def obtener_ticket() -> str:
+def obtener_ticket(variable: str | None = None) -> str:
+    """Ticket de MP_TICKET; con `variable`, el de esa variable si está definida
+    (p. ej. un ticket aparte para la API de Compra Ágil) y si no, MP_TICKET."""
     load_dotenv(RAIZ / ".env")
-    ticket = os.getenv("MP_TICKET", "").strip()
+    ticket = (os.getenv(variable, "") if variable else "").strip() or os.getenv("MP_TICKET", "").strip()
     if not ticket:
         raise RuntimeError(
             "No se encontró MP_TICKET. Copia .env.example como .env y pega tu ticket."

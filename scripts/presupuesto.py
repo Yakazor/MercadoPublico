@@ -90,10 +90,13 @@ def _verificado(op: dict) -> str:
 
 def markdown(lic: dict, mercado: dict, p: dict) -> str:
     codigo = lic.get("codigo") or mercado.get("codigo")
+    agil = lic.get("tipo") == "Compra Ágil" or str(codigo).endswith(("-COT25", "-COT26", "-COT27"))
     lineas = [
         f"# Presupuesto: {_celda(lic.get('nombre'))}",
         "",
-        f"- **Licitación:** [{codigo}]({URL_LICITACION.format(codigo)})",
+        # Compra Ágil no tiene ficha con enlace estable: se busca por código en Mercado Público.
+        f"- **Compra Ágil:** {codigo} (búscala por código en Mercado Público; se cotiza el TOTAL con IVA y despacho)"
+        if agil else f"- **Licitación:** [{codigo}]({URL_LICITACION.format(codigo)})",
         f"- **Organismo:** {_celda(lic.get('organismo'))} ({_celda(lic.get('region'))})",
         f"- **Cierre:** {lic.get('fecha_cierre') or '—'} · **Monto estimado:** "
         f"{_clp(lic.get('monto_estimado')) if lic.get('moneda') in (None, 'CLP') else str(lic.get('monto_estimado')) + ' ' + str(lic.get('moneda'))}",

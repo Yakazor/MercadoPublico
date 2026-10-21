@@ -46,8 +46,9 @@ Hay tres pedidos posibles:
 7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: `git add informes`,
    `git commit -m "<mensaje en español>"` y `git push origin HEAD:feature/api-mercadopublico`,
    cada uno en su propia llamada (mismos reintentos).
-8. Resumen de 3–6 líneas (licitaciones vigentes, rango de días de OC, presupuestos con
-   precios y cualquier error). Envíalo con PushNotification **antes** del paso 9, terminado
+8. Resumen de 3–6 líneas (licitaciones vigentes, Compras Ágiles abiertas — `compras_agiles`
+   en meta.json; si es null, el paso «Compras Ágiles» del workflow falló o no corrió —,
+   rango de días de OC, presupuestos con precios y cualquier error). Envíalo con PushNotification **antes** del paso 9, terminado
    en «Para ver los datos en el dashboard, aprueba la subida en esta sesión».
 9. Dashboard: ver «Subir al dashboard» con licitaciones.json, precios.json, items.json y
    meta.json de `<tmp>/datos` y `<tmp>/mercado.json`. Subir archivos a un artefacto pide la

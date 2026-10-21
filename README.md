@@ -29,6 +29,9 @@ servicios. Los productos con registro ISP se marcan, no se excluyen.
 
 Los resultados se guardan en SQLite y se exportan a CSV/Excel listos para Power BI.
 
+Además detecta **Compras Ágiles** abiertas (compras de hasta 100 UTM, sin bases ni
+garantías) con los mismos rubros: ver [Compra Ágil](#compra-ágil).
+
 ## Estructura
 
 ```
@@ -261,6 +264,34 @@ confirma con el ISP y pide al proveedor el N° de registro de cada producto.
 reintentos (4, con esperas de 2, 4, 8 y 16 s) ante errores 5xx, 429,
 "peticiones simultáneas" o cortes de red. Los errores definitivos (ticket
 inválido, código inexistente) no se reintentan.
+
+## Compra Ágil
+
+`scripts/compra_agil.py` usa la API Compra Ágil v2 de ChileCompra
+(`https://api2.mercadopublico.cl/v2/compra-agil`, el ticket va en el encabezado
+`ticket`):
+
+1. lista las Compras Ágiles **publicadas** (abiertas a cotización) de las regiones de
+   `config.yaml > compra_agil > regiones` (por defecto, la Metropolitana);
+2. filtra por nombre con los rubros de `config.yaml` y pide el detalle (productos,
+   cantidades, presupuesto disponible, plazo y dirección de entrega, llamado);
+3. aplica el filtro completo y las alertas ISP, y escribe `data/compras_agiles.json`.
+
+`publicar_datos.py` las suma a `licitaciones.json` e `items.json` con
+`tipo = "Compra Ágil"`, así que el dashboard, el simulador de presupuesto y el
+pedido «busca precios de <código>» funcionan igual que con una licitación. En el
+workflow diario corre después del radar; si falla, las licitaciones se publican igual.
+
+- **Ticket:** usa el secreto `MP_TICKET_COMPRA_AGIL` si existe y, si no, `MP_TICKET`.
+  Si la API responde 401/403, pide un ticket en https://www.chilecompra.cl/api/
+  («Pide tu ticket», con ClaveÚnica) y guárdalo como `MP_TICKET_COMPRA_AGIL`.
+- **Cuota:** la API tiene una cuota diaria por ticket (HTTP 429): la corrida guarda lo
+  obtenido y se detiene. `max_detalles` y `pausa_entre_llamadas_segundos` la cuidan.
+- **Fechas:** vienen en hora de Chile aunque terminen en "Z".
+- **Primer llamado** (`llamado = 1`): solo empresas de menor tamaño (una persona
+  natural con inicio de actividades que vende poco califica como microempresa).
+- **Cotización:** en Compra Ágil se ingresa el **total con IVA y despacho** y se
+  deben cotizar todos los ítems.
 
 ## Programar la ejecución diaria
 

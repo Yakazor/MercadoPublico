@@ -31,7 +31,7 @@ jobs:
     permissions:
       contents: write   # publica los JSON del dashboard en la rama "datos"
       actions: read
-    timeout-minutes: 120
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -139,6 +139,17 @@ jobs:
           path: data/radar.db
           retention-days: 30
           if-no-files-found: ignore
+
+      # Compras Ágiles abiertas de tus rubros (API v2). Si falla (ticket sin acceso,
+      # cuota agotada), el radar de licitaciones se publica igual, sin ellas.
+      - name: Compras Ágiles
+        if: success()
+        continue-on-error: true
+        timeout-minutes: 30
+        env:
+          MP_TICKET: ${{ secrets.MP_TICKET }}
+          MP_TICKET_COMPRA_AGIL: ${{ secrets.MP_TICKET_COMPRA_AGIL }}
+        run: python scripts/compra_agil.py --max-minutos 22
 
       # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
       # commit que se reemplaza en cada corrida). Solo con una base con historial.

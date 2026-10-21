@@ -56,6 +56,7 @@
   .rl .rl-urgente { color: var(--color-bad); font-weight: var(--cds-font-weight-medium); }
   .rl .rl-pronto { color: var(--color-warn); }
   .rl .rl-reg { color: var(--color-warn); white-space: nowrap; }
+  .rl .rl-tipo { display: inline-block; margin-right: var(--cds-gap-xs); padding: 0 var(--cds-pad-xs); border: 1px solid var(--color-ok); border-radius: var(--cds-radius); color: var(--color-ok); font-size: var(--cds-font-size-caption); white-space: nowrap; }
   .rl .rl-mal { color: var(--color-bad); }
   .rl .rl-ok { color: var(--color-ok); }
   .rl-celda-barra { display: grid; grid-template-columns: minmax(3rem, 1fr) auto; gap: var(--cds-gap-sm); align-items: center; min-width: 9rem; }
@@ -77,7 +78,8 @@
   <header class="rl-head" id="resumen">
     <h1>Radar de Licitaciones</h1>
     <p class="rl-takeaway">
-      <span class="dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span> licitaciones vigentes en tus rubros;
+      <span class="dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span> licitaciones y Compras Ágiles abiertas en tus rubros
+      (<span class="dash-skeleton" data-source="resumen" data-field="compras_agiles" data-row="0">—</span> Compras Ágiles);
       <span class="dash-skeleton" data-source="resumen" data-field="cierran_7" data-row="0">—</span> cierran en 7 días o menos.
     </p>
     <p class="rl-fresh">
@@ -91,6 +93,7 @@
 
   <section class="rl-kpis" id="indicadores" aria-label="Indicadores">
     <div class="rl-kpi"><span class="rl-kpi-label">Vigentes</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="vigentes" data-row="0">—</span></div>
+    <div class="rl-kpi"><span class="rl-kpi-label">Compras Ágiles abiertas</span><span class="rl-kpi-valor rl-bien dash-skeleton" data-source="resumen" data-field="compras_agiles" data-row="0">—</span></div>
     <div class="rl-kpi"><span class="rl-kpi-label">Cierran en ≤ 7 días</span><span class="rl-kpi-valor rl-urgente dash-skeleton" data-source="resumen" data-field="cierran_7" data-row="0">—</span></div>
     <div class="rl-kpi"><span class="rl-kpi-label">Monto estimado visible (CLP)</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="monto_clp" data-row="0">—</span></div>
     <div class="rl-kpi"><span class="rl-kpi-label">Solo productos con registro ISP</span><span class="rl-kpi-valor dash-skeleton" data-source="resumen" data-field="solo_regulados" data-row="0">—</span></div>
@@ -119,9 +122,10 @@
 
     <div class="rl-card" id="tabla-licitaciones">
       <h2>Licitaciones vigentes</h2>
-      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
+      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región; el código abre la ficha en Mercado Público (las Compras Ágiles no tienen enlace: búscalas por código en Mercado Público, sección Compra Ágil). En Compra Ágil se cotiza el total con IVA y despacho; «1er llamado» es solo para empresas de menor tamaño. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
       <div class="rl-controles">
         <input type="search" id="buscar-lic" placeholder="Buscar licitación, organismo, región…" aria-label="Buscar licitaciones">
+        <select id="tipo-lic" aria-label="Tipo de compra"><option value="">Licitaciones y Compras Ágiles</option><option value="agil">Solo Compras Ágiles</option><option value="licitacion">Solo licitaciones</option></select>
         <select id="rubro-lic" aria-label="Rubro" data-source="por_rubro"><option value="">Todos los rubros</option></select>
         <label><input type="checkbox" id="pronto-lic"> Solo cierres en ≤ 7 días</label>
         <label><input type="checkbox" id="noreg-lic"> Ocultar solo regulados</label>
@@ -285,6 +289,7 @@
       const abiertas = licitaciones.filter((l) => !(hoy.get(l.codigo) || {}).cerrada);
       return [{
         vigentes: abiertas.length,
+        compras_agiles: abiertas.filter((l) => l.tipo === 'Compra Ágil').length,
         cierran_7: abiertas.filter((l) => { const d = (hoy.get(l.codigo) || {}).dias; return d != null && d <= 7; }).length,
         monto_clp: abiertas.filter((l) => (l.moneda || 'CLP') === 'CLP').reduce((s, l) => s + (Number(l.monto_estimado) || 0), 0),
         solo_regulados: abiertas.filter((l) => Number(l.solo_regulados) === 1).length,
@@ -516,7 +521,7 @@
     let espera = null;
     const pronto = () => { clearTimeout(espera); espera = setTimeout(dibujar, 180); };
     ['buscar-lic', 'buscar-pre'].forEach((id) => document.getElementById(id).addEventListener('input', () => { preTodo = false; pronto(); }));
-    ['rubro-lic', 'pronto-lic', 'noreg-lic', 'precios-lic', 'rubro-pre', 'sim-margen'].forEach((id) =>
+    ['tipo-lic', 'rubro-lic', 'pronto-lic', 'noreg-lic', 'precios-lic', 'rubro-pre', 'sim-margen'].forEach((id) =>
       document.getElementById(id).addEventListener('change', () => dibujar()));
     document.getElementById('sim-lic').addEventListener('change', (e) => { simulada = e.target.value; dibujar(); });
     document.getElementById('pre-todo').addEventListener('click', () => { preTodo = true; dibujar(); });
@@ -550,6 +555,7 @@
       const conMercado = codigosConMercado();
       const q = sinTildes(document.getElementById('buscar-lic').value.trim());
       const rubro = document.getElementById('rubro-lic').value;
+      const tipo = document.getElementById('tipo-lic').value;
       const pronto7 = document.getElementById('pronto-lic').checked;
       const noreg = document.getElementById('noreg-lic').checked;
       const soloPrecios = document.getElementById('precios-lic').checked;
@@ -561,6 +567,7 @@
         })
         .filter((l) => !l.cerrada)
         .filter((l) => !rubro || l.rubro === rubro)
+        .filter((l) => !tipo || (tipo === 'agil') === (l.tipo === 'Compra Ágil'))
         .filter((l) => !pronto7 || (l.dias != null && l.dias <= 7))
         .filter((l) => !noreg || Number(l.solo_regulados) !== 1)
         .filter((l) => !soloPrecios || conMercado.has(l.codigo))
@@ -589,7 +596,14 @@
         const punto = document.createElement('i');
         punto.className = 'rl-punto';
         punto.style.background = colorRubro(l.rubro);
-        tdNombre.append(punto, document.createTextNode(l.nombre || ''));
+        tdNombre.append(punto);
+        if (l.tipo === 'Compra Ágil') {
+          const etiqueta = document.createElement('span');
+          etiqueta.className = 'rl-tipo';
+          etiqueta.textContent = 'Compra Ágil' + (Number(l.llamado) === 1 ? ' · 1er llamado' : Number(l.llamado) === 2 ? ' · 2º llamado' : '');
+          tdNombre.append(etiqueta);
+        }
+        tdNombre.append(document.createTextNode(l.nombre || ''));
         celda(tr, l.organismo || '', 'rl-angosto');
         celda(tr, l.region || '', 'rl-angosto');
         celda(tr, monto(l.monto_estimado, l.moneda), 'rl-num');
@@ -643,7 +657,13 @@
         };
         info.append(parte('Organismo:', 'organismo', lic.organismo || '—'), parte('Región:', 'region', lic.region || '—'),
           parte('Cierre:', 'fecha_cierre', fecha(lic.fecha_cierre, true) || '—'),
-          parte('Monto estimado:', 'monto_estimado', monto(lic.monto_estimado, lic.moneda) || 'no informado'));
+          parte(lic.tipo === 'Compra Ágil' ? 'Monto disponible:' : 'Monto estimado:', 'monto_estimado', monto(lic.monto_estimado, lic.moneda) || 'no informado'));
+        if (lic.tipo === 'Compra Ágil') {
+          info.append(parte('Tipo:', 'tipo', 'Compra Ágil'));
+          if (Number(lic.llamado) === 1) info.append(document.createTextNode('1er llamado: solo empresas de menor tamaño; se cotiza el total con IVA y despacho'));
+          if (lic.plazo_entrega_dias != null) info.append(parte('Plazo de entrega (días):', 'plazo_entrega_dias', String(lic.plazo_entrega_dias)));
+          if (lic.direccion_entrega) info.append(parte('Entrega en:', 'direccion_entrega', lic.direccion_entrega));
+        }
         const ficha = fichaSegura(lic.url);
         if (ficha) info.append(enlace('Ver en Mercado Público', ficha));
         info.append(enlace('Informe en el repositorio',
@@ -679,7 +699,7 @@
         partes.push(`Ojo: en los ítems con precio de tienda, tu oferta (${pesos(fila.oferta_con_referencia)}) supera lo que el Estado pagó (${pesos(fila.referencia_tienda)}). Baja el margen o busca proveedores más baratos.`);
       }
       if (hayValores && lic && esClp(lic.moneda) && Number(lic.monto_estimado) > 0 && fila.oferta_total > Number(lic.monto_estimado)) {
-        partes.push(`Tu oferta total supera el monto estimado de la licitación (${monto(lic.monto_estimado, lic.moneda)}).`);
+        partes.push(`Tu oferta total supera el monto ${lic.tipo === 'Compra Ágil' ? 'disponible de la Compra Ágil' : 'estimado de la licitación'} (${monto(lic.monto_estimado, lic.moneda)}).`);
       }
       aviso.hidden = partes.length === 0;
       aviso.textContent = partes.join(' ');

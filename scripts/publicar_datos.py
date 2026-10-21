@@ -4,7 +4,8 @@ Uso:
     python scripts/publicar_datos.py --salida /tmp/datos
 
 Genera:
-    licitaciones.json  licitaciones vigentes de tus rubros (una fila por licitación)
+    licitaciones.json  licitaciones vigentes de tus rubros (una fila por licitación) y
+                       Compras Ágiles abiertas (tipo "Compra Ágil", de scripts/compra_agil.py)
     precios.json       precios adjudicados en OC por producto (resumen_precios)
     items.json         ítems de cada licitación vigente (cantidad, unidad y precio de
                        referencia en OC), para el simulador de presupuesto
@@ -30,8 +31,20 @@ COLUMNAS_LICITACIONES = [
     "codigo", "nombre", "organismo", "region", "comuna", "monto_estimado", "moneda", "tipo", "rubro",
     "fecha_publicacion", "fecha_cierre", "dias_restantes", "estado", "rubro_nombre",
     "palabras_detectadas", "alertas_regulatorias", "solo_regulados", "url", "primera_deteccion",
+    "llamado", "plazo_entrega_dias", "direccion_entrega",
 ]
 MAX_PRECIOS = 3000  # productos con más monto adjudicado (el archivo queda bajo ~1 MB)
+
+
+def compras_agiles(ruta: Path, hoy) -> dict | None:
+    """Resultado de scripts/compra_agil.py si es de hoy (uno antiguo mostraría compras ya cerradas)."""
+    if not ruta.exists():
+        return None
+    try:
+        datos = json.loads(ruta.read_text(encoding="utf-8"))
+    except ValueError:
+        return None
+    return datos if datos.get("fecha") == hoy.isoformat() else None
 
 
 def _filas(df: pd.DataFrame) -> list[dict]:
@@ -58,6 +71,13 @@ def main():
                     if (guardado := db.detalle_licitacion(codigo))}
     finally:
         db.cerrar()
+    agiles = compras_agiles(ruta_proyecto(config.get("rutas", {}).get("compras_agiles", "data/compras_agiles.json")), hoy)
+    if agiles and agiles.get("filas"):
+        filas_ca = pd.DataFrame(agiles["filas"]).reindex(columns=COLUMNAS_LICITACIONES)
+        filas_ca = filas_ca[~filas_ca["codigo"].isin(vigentes["codigo"])]
+        vigentes = pd.concat([vigentes, filas_ca], ignore_index=True)
+        vigentes["llamado"] = pd.to_numeric(vigentes["llamado"], errors="coerce").astype("Int64")
+        detalles |= agiles.get("detalles") or {}
 
     claves = {datos.get("nombre", clave): clave for clave, datos in (config.get("rubros") or {}).items()}
     precios.insert(0, "rubro", precios["rubro_nombre"].map(claves))
@@ -76,7 +96,9 @@ def main():
     meta = {
         "generado": datetime.now(ZoneInfo("America/Santiago")).isoformat(timespec="seconds"),
         "fecha": hoy.isoformat(),
-        "licitaciones": len(vigentes),
+        "licitaciones": int((vigentes["tipo"] != "Compra Ágil").sum()),
+        "compras_agiles": len(agiles["filas"]) if agiles else None,
+        "compras_agiles_generado": agiles.get("generado") if agiles else None,
         "productos_con_precio": len(precios),
         "items": len(items),
         "oc_desde": dias[0] if dias else None,

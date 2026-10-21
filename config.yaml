@@ -7,6 +7,23 @@ api:
   reintentos: 4                        # esperas crecientes: 2, 4, 8, 16 s
   espera_inicial_reintento_segundos: 2
 
+# Compras Ágiles (API Compra Ágil v2, api2.mercadopublico.cl): las abiertas a
+# cotización que calzan con tus rubros se suman al dashboard como tipo "Compra Ágil".
+# Usa el secreto MP_TICKET_COMPRA_AGIL si existe; si no, MP_TICKET.
+compra_agil:
+  activo: true
+  # Regiones del organismo comprador (1 a 16; 13 = Metropolitana, 5 = Valparaíso,
+  # 6 = O'Higgins). Vacío = todo Chile. Para partir: donde puedes entregar.
+  regiones: [13]
+  dias_publicacion: 15        # publicadas en los últimos N días (siguen abiertas)
+  tamano_pagina: 25           # ante un HTTP 504 se sigue con páginas de 10
+  max_paginas: 200
+  max_detalles: 400           # detalles por corrida (cuidan la cuota diaria del ticket)
+  pausa_entre_llamadas_segundos: 4.0   # ~15 consultas por minuto
+  reintentos: 3
+  espera_inicial_reintento_segundos: 5
+  timeout_segundos: 60
+
 # Rubros a detectar. Cómo se comparan las frases:
 #   - sin tildes, mayúsculas ni puntuación ("SERV.ASEO" = "serv aseo");
 #   - cada palabra admite plural ("guante" = "guantes"): basta escribir una forma;
@@ -1580,3 +1597,4 @@ ordenes_compra:
 rutas:
   base_datos: "data/radar.db"
   exportaciones: "data/exportaciones"
+  compras_agiles: "data/compras_agiles.json"
