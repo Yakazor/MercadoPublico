@@ -276,3 +276,27 @@ def test_api_caida_corta_los_detalles():
     r, _ = _actualizar(c, estado=estado)
     assert "sin respuesta" in r.detenida
     assert len([ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]) == compra_agil.MAX_FALLAS_SEGUIDAS
+
+
+@pytest.mark.parametrize("nombre, producto", [
+    ("20-224-600-003-00 TROCAR ATRAUMATICO 12MM CON PUNZON Y CAMISA REDUCTOR", "Trocares quirúrgicos"),
+    ("SONDA FOLEY 2 VIAS N 8 CON BALON DE 5 CC", "Sondas quirúrgicas"),
+    ("GIF CARD PARA TEXTILES, VESTUARIO Y CALZADO", "Tarjetas comerciales"),
+    ("Servicio de Coctelería para mesas de coordinación", "Servicios de catering"),
+    ("IONÓMERO DE VIDRIO MODIFICADO CON RESINA PARA USO COMO MATERIAL RESTAURADOR", "Unidades dentales"),
+])
+def test_falsos_positivos_de_la_auditoria_de_compras_agiles(nombre, producto):
+    # Casos reales del 21-10-2026: palabras genéricas (camisa, balón, vidrio, mesas)
+    # dentro de nombres de dispositivos clínicos o servicios.
+    filtro = FiltroRubros.desde_config(cargar_config())
+    assert not filtro.evaluar(nombre=nombre, items_onu=[producto], productos=[f"{producto} {nombre}"]).coincide
+
+
+def test_las_guardadas_se_reclasifican_con_la_config_vigente():
+    c = _cliente([_pagina(["A"], 1, 1), _detalle("A")])
+    _, estado = _actualizar(c)
+    assert "A" in estado["abiertas"]
+    otro_filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"],
+                                         "excluir_en_nombre": ["nitrilo"]}})
+    _actualizar(_cliente([]), filtro=otro_filtro, estado=estado)
+    assert "A" not in estado["abiertas"] and "A" in estado["descartadas"]

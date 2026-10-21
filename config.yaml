@@ -136,6 +136,21 @@ grupos_exclusion:
     - traqueostomia
     - traqueotomia
     - marcapasos
+    # Vistos en Compras Ágiles: trocar ("camisa reductor"), sonda Foley ("balón de
+    # 5 cc"), holder Vacutainer ("camisas"), sensor de saturación ("monitor"),
+    # balón de corte coronario, ionómero de vidrio dental, test de parche.
+    - trocar
+    - foley
+    - vacutainer
+    - sensor de saturacion
+    - balon de corte
+    - coronario
+    - coronaria
+    - ionomero
+    - dental
+    - test de parche
+    - cardioquirurgico
+    - cardioquirurgica
 
   # Servicios que llegan como ítem único de una OC cuyo nombre trae un producto.
   servicios:
@@ -151,6 +166,12 @@ grupos_exclusion:
     - mantenimiento preventivo
     - mantenimiento correctivo
     - preventivo y correctivo
+    # Tarjetas de regalo del retail (no son productos) y servicios de alimentación
+    - gift card
+    - gif card
+    - giftcard
+    - cocteleria
+    - catering
 
 rubros:
   insumos_medicos_aseo:
@@ -479,6 +500,7 @@ rubros:
       - mesa de dialogo
       - mesa territorial
       - mesa barrial
+      - mesa de coordinacion
       - mesa comunal
       - mesa regional
       - concesion
@@ -588,6 +610,12 @@ rubros:
       - servicio de impresion
       - servicios de impresion
       - impresion de
+      # Material gráfico impreso (servicio de imprenta)
+      - papeleria de difusion
+      - material de difusion
+      - folletos
+      - dipticos
+      - tripticos
       - outsourcing
       - arriendo
       - arrendamiento
@@ -1162,6 +1190,10 @@ rubros:
       - a medida
       - ventanas de oportunidad
       - ventana de atencion
+      # "Vidrio" como material de otro producto (matraz de vidrio pyrex)
+      - pyrex
+      - borosilicato
+      - matraz
       - baterias de cocina
       - bateria de cocina
       - baterias de test
@@ -1188,6 +1220,7 @@ rubros:
       - material de vidrio
       - vidrieria de laboratorio
       - matraces
+      - matraz
       - probetas
       - vasos precipitados
       - pipetas
@@ -1244,6 +1277,10 @@ rubros:
       - hematologia
       - bacteriologia
       - microbiologia clinica
+      # Reactivos/kits de identificación microbiológica (el ítem ONU dice "Reactivos…")
+      - kit de identificacion
+      - streptococcus
+      - oxidasa
       - banco de sangre
       - pcr
       - calibracion
@@ -1332,6 +1369,7 @@ rubros:
       - repuestos de equipos medicos
       - autoclave
       - autoclaves
+      - campana de extraccion
       - dron
       - drones
       - aeronave

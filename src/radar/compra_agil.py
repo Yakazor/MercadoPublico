@@ -380,6 +380,15 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     estado["descartadas"] = {k: v for k, v in estado["descartadas"].items() if not ((c := _cierre(v)) and c < ahora)}
     estado["abiertas"] = {k: v for k, v in estado["abiertas"].items()
                           if not ((c := _cierre((v.get("fila") or {}).get("fecha_cierre"))) and c < ahora)}
+    # Se reclasifican con la config.yaml vigente (sin llamar a la API): un cambio en los
+    # rubros o exclusiones se aplica también a las que ya estaban guardadas.
+    for codigo, abierta in list(estado["abiertas"].items()):
+        fila = fila_compra_agil(abierta["detalle"], filtro, hoy)
+        if fila:
+            abierta["fila"] = fila
+        else:
+            estado["descartadas"][codigo] = abierta["fila"].get("fecha_cierre")
+            del estado["abiertas"][codigo]
 
     pendientes = sorted(estado["pendientes"].items(),
                         key=lambda kv: (kv[1]["prioridad"], str(_cierre(kv[1]["cierre"]) or "9999")))
