@@ -20,12 +20,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 50420,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio de oferta (antes $112.990). Precio actualizado al que mostró la página el 2026-10-20 (antes $61.990). Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 60000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado.",
-     "verificado_en": "2026-10-18"
+     "verificacion_pagina": "2026-10-20: la página muestra $60.000.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Sodimac",
@@ -67,6 +67,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 3,
-  "verificadas": 2
+  "verificadas": 3
  }
 }

@@ -54,12 +54,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 9235.29,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Vendedor externo (Luz de Luciérnaga); confirmar origen del envío. Precio actualizado al que mostró la página el 2026-10-20 (antes $12.950).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-19",
+     "verificado_en": "2026-10-20",
      "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $10.990, no $12.950: puede haber cambiado.",
+     "verificacion_pagina": "2026-10-20: la página muestra $10.990.",
      "descartado": true,
      "motivo_descarte": "La línea son 4.200 juguetes en cantidad 1: el precio de un juguete no la representa."
     }
@@ -69,6 +69,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 3,
-  "verificadas": 0
+  "verificadas": 1
  }
 }

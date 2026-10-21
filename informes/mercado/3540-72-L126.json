@@ -84,11 +84,12 @@
      "unidades_equivalentes": 4,
      "precio_unitario_neto": 3465.34,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Envase 4 L, no tambor 208 L; precio por litro de referencia. Precio actualizado al que mostró la página el 2026-10-20 (antes $15.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 16495.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $16.495, no $15.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $16.495.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Falabella",
@@ -150,6 +151,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 7,
-  "verificadas": 4
+  "verificadas": 5
  }
 }

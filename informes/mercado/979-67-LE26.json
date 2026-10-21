@@ -135,8 +135,8 @@
      "verificado": false,
      "nota": "Es 16 A, no 10 A; no se halló precio del 10 A simple",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 2990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $2.990, no $3.090: puede haber cambiado."
+     "precio_pagina": 2890.0,
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $2.890, no $3.090: puede haber cambiado."
     }
    ]
   },

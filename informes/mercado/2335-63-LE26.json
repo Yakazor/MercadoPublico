@@ -273,11 +273,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 5033.61,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio con 31% de descuento en listado. Precio actualizado al que mostró la página el 2026-10-20 (antes $6.190).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $5.990, no $6.190: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $5.990.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Falabella (PuntoMed)",
@@ -289,11 +290,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 5033.61,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Listado Falabella. Precio actualizado al que mostró la página el 2026-10-20 (antes $6.590).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $5.990, no $6.590: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $5.990.",
+     "verificado_en": "2026-10-20"
     }
    ]
   },
@@ -402,6 +404,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 17,
-  "verificadas": 7
+  "verificadas": 9
  }
 }

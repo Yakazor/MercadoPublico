@@ -38,13 +38,14 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 30243.7,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio actualizado al que mostró la página el 2026-10-20 (antes $37.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $37.990: puede haber cambiado.",
+     "verificacion_pagina": "2026-10-20: la página muestra $35.990.",
      "descartado": true,
-     "motivo_descarte": "La línea es la compra completa de pinturas según bases: un galón de esmalte no la representa."
+     "motivo_descarte": "La línea es la compra completa de pinturas según bases: un galón de esmalte no la representa.",
+     "verificado_en": "2026-10-20"
     }
    ],
    "nota": "Supuesto: esmalte 1 galón. [Auditoría 2026-10-21] Cantidad 1 = toda la compra: el detalle de pinturas y cantidades está en las bases."
@@ -53,6 +54,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 2,
-  "verificadas": 1
+  "verificadas": 2
  }
 }

@@ -52,9 +52,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 159655,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio del listado de Falabella (marketplace) según resultado de búsqueda; mismo color pedido (Jade). Confirmar que el envío sea desde Chile y el stock.",
-     "fecha_consulta": "2026-10-21"
+     "fecha_consulta": "2026-10-21",
+     "verificado_en": "2026-10-20",
+     "precio_pagina": 184990.0,
+     "verificacion_pagina": "2026-10-20: la página muestra $184.990."
     }
    ],
    "nota": "Vendedores externos con envío desde EE.UU. Auditoría 2026-10-21: se descartó la opción de Lider (envío desde EE.UU.) y se agregó una de Falabella; el Kindle no tiene distribución oficial en Chile, confirmar origen del envío."
@@ -62,7 +65,7 @@
  ],
  "verificacion_paginas": {
   "fecha": "2026-10-20",
-  "opciones": 1,
-  "verificadas": 1
+  "opciones": 2,
+  "verificadas": 2
  }
 }

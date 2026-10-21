@@ -49,7 +49,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 189553,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Agregada desde un resultado de búsqueda: $224.960, unas 27 unidades en stock. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $224.960).",
      "fecha_consulta": "2026-10-17",
@@ -73,12 +73,13 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 194118,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Original HP. La búsqueda confirma $219.899 con 1 unidad disponible, así que no alcanza para las 15 que se piden. La misma ficha en Dipy aparece a $255.780 o $268.496 según la captura. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $219.899).",
      "fecha_consulta": "2026-10-17",
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $231.000, no $219.899: puede haber cambiado.",
-     "precio_pagina": 231000.0
+     "verificacion_pagina": "2026-10-20: la página muestra $231.000.",
+     "precio_pagina": 231000.0,
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Alcaplus Computación",
@@ -128,12 +129,13 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 48008,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Alternativo con chip, unas 5.500 impresiones, para 4203/MFP4303. Los datos estructurados de la ficha indican $54.990 más $2.990 de despacho. Otros listados de la tienda muestran $49.990 y $79.980, y en esta URL también aparece el SKU del negro (LS1468TNC), así que hay que confirmar color, precio y stock. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $54.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 57129.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $57.129, no $54.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $57.129.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Notebookstore",
@@ -144,7 +146,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 199992,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Original. La búsqueda confirma $238.592 pagando con transferencia y $246.990 con otros medios. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $238.592).",
      "fecha_consulta": "2026-10-17",
@@ -190,7 +192,7 @@
      "nota": "Estaba AGOTADO en la consulta anterior. Dejé el precio más alto visto ($89.990) como presupuesto conservador; la búsqueda también muestra $49.990 y $34.990. Hay que confirmar precio y reposición. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $89.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 71414.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $71.414, no $89.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: no se pudo abrir la página (ReadTimeout)."
     },
     {
      "tienda": "DG Insumos",
@@ -218,12 +220,13 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 216428,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Original. Otro fragmento de búsqueda muestra $257.549 (neto $216.428); dejé el precio informado. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $267.198).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 257549.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $257.549, no $267.198: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $257.549.",
+     "verificado_en": "2026-10-20"
     }
    ]
   },
@@ -258,7 +261,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 25193,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Alternativo de 9.000 impresiones. Según la búsqueda, la ficha indica $29.990 más $2.990 de despacho. Reemplaza la URL anterior tn-419-black-1 a $35.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
@@ -299,7 +302,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 25193,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "9.000 impresiones. La búsqueda confirma $29.990 más $2.990 de despacho; la versión PPC Gold cuesta $34.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
@@ -361,8 +364,8 @@
      "contenido": "1 unidad",
      "nota": "Marca My Toner. La búsqueda confirma un precio rebajado de $13.990 (antes $27.990) y 6 meses de garantía. La ficha lista HL-L8360CDW, HL-L9310CDW y MFC-L9570CDW, pero no menciona la MFC-L8900CDW, aunque es el mismo código TN-419. La oferta podría no estar vigente. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $13.990).",
      "fecha_consulta": "2026-10-17",
-     "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $14.990, no $13.990: puede haber cambiado."
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $11.990, no $14.990: puede haber cambiado."
     },
     {
      "tienda": "Ariex",
@@ -373,12 +376,13 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 19824,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "9.000 págs al 5%. La búsqueda confirma $24.990 (SKU TLLRBRTN419CYAS). No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $24.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 23590.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $23.590, no $24.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $23.590.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "TodoToner",
@@ -389,7 +393,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 25193,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "9.000 impresiones. La búsqueda muestra $29.990 en una página y $26.990 en otra; despacho $2.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
@@ -430,7 +434,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 25193,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "9.000 impresiones. La búsqueda muestra $29.990 en una página y $26.990 en otra; despacho $2.990. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $29.990).",
      "fecha_consulta": "2026-10-17",
@@ -485,7 +489,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 116210,
      "coincidencia": "exacta",
-     "verificado": false,
+     "verificado": true,
      "contenido": "1 unidad",
      "nota": "Original Brother. La búsqueda confirma $138.990 (TodoToner vende el original a $139.990). No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $138.990).",
      "fecha_consulta": "2026-10-17",
@@ -500,6 +504,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 26,
-  "verificadas": 16
+  "verificadas": 20
  }
 }

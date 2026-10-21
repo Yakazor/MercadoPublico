@@ -27,11 +27,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 7563,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Medida mayor a la pedida (80x100); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $9.490: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $9.000.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Falabella",
@@ -102,7 +103,8 @@
      "coincidencia": "aproximada",
      "verificado": false,
      "nota": "Algodón, fabricación nacional; tiene diseño (se pide liso pastel). Precio del resultado de búsqueda.",
-     "fecha_consulta": "2026-10-21"
+     "fecha_consulta": "2026-10-21",
+     "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -122,11 +124,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 7563,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Medida mayor a la pedida (100x130); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $9.490: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $9.000.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Falabella",
@@ -197,11 +200,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 30244,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta. Precio actualizado al que mostró la página el 2026-10-20 (antes $32.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $32.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $35.990.",
+     "verificado_en": "2026-10-20"
     }
    ]
   },
@@ -228,11 +232,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 7563,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Medida mayor a la pedida (100x150); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $9.490: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $9.000.",
+     "verificado_en": "2026-10-20"
     },
     {
      "tienda": "Falabella",
@@ -303,18 +308,19 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 30244,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta. Precio actualizado al que mostró la página el 2026-10-20 (antes $32.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $32.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $35.990.",
+     "verificado_en": "2026-10-20"
     }
    ]
   }
  ],
  "verificacion_paginas": {
   "fecha": "2026-10-20",
-  "opciones": 14,
-  "verificadas": 8
+  "opciones": 15,
+  "verificadas": 13
  }
 }

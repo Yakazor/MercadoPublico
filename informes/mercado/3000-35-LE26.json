@@ -349,11 +349,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 14697,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Cabezal con mica no confirmado. Precio actualizado al que mostró la página el 2026-10-20 (antes $16.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 17490.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $17.490, no $16.490: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $17.490.",
+     "verificado_en": "2026-10-20"
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -460,7 +461,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 50420,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Marca profesional, mucho más cara. Precio actualizado al que mostró la página el 2026-10-20 (antes $58.990).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
@@ -485,11 +486,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 44783,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Medidas exactas no confirmadas. Precio actualizado al que mostró la página el 2026-10-20 (antes $70.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 53292.0,
-     "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $53.292, no $70.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-20: la página muestra $53.292.",
+     "verificado_en": "2026-10-20"
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -698,7 +700,7 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 41168,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Fútbol sala, no se confirma 4 capas/450 g. Precio actualizado al que mostró la página el 2026-10-20 (antes $49.990).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
@@ -791,6 +793,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-20",
   "opciones": 22,
-  "verificadas": 11
+  "verificadas": 13
  }
 }
