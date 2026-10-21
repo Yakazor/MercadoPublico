@@ -15,20 +15,20 @@
    "linea": 2,
    "producto": "Mantas o frazadas",
    "consulta": "frazada polar cuna precio Chile; frazada polar cuna 80x100 precio Chile",
-   "nota": "",
+   "nota": "Auditoría 2026-10-21: la oferta supera el monto (~2,3 veces) sin error de unidad ni de cantidad: las cantidades son piezas o juegos y el monto ($20,9 M para 4.054 piezas, ~$5.150 con IVA c/u) parece calculado con precio de fabricante, mientras que estas opciones son precios minoristas de productos más grandes o de mejor calidad. Pendiente: cotizar con un fabricante textil.",
    "opciones": [
     {
      "tienda": "Lider (vendedor Myl Todo Hogar)",
      "producto_mercado": "Manta Nido Polar 127x152 cm",
      "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/manta-nido-polar-127x152-cm-textura-suave-y-termica/00046369407449",
-     "precio": 9490,
+     "precio": 9000,
      "iva_incluido": true,
      "contenido": "1 manta",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 7974.79,
+     "precio_unitario_neto": 7563,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Medida mayor a la pedida (80x100); color/bordes no confirmados.",
+     "nota": "Medida mayor a la pedida (80x100); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $9.490: puede haber cambiado."
@@ -73,7 +73,7 @@
    "linea": 3,
    "producto": "Sábanas",
    "consulta": "juego de sábanas cuna algodón precio Chile",
-   "nota": "",
+   "nota": "Auditoría 2026-10-21: la oferta supera el monto (~2,3 veces) sin error de unidad ni de cantidad: las cantidades son piezas o juegos y el monto ($20,9 M para 4.054 piezas, ~$5.150 con IVA c/u) parece calculado con precio de fabricante, mientras que estas opciones son precios minoristas de productos más grandes o de mejor calidad. Pendiente: cotizar con un fabricante textil.",
    "opciones": [
     {
      "tienda": "Easy",
@@ -89,6 +89,20 @@
      "nota": "Tiene diseño (se pide liso pastel).",
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Juego de sábanas cuna 200 hilos diseño Pajaritos (bajera, encimera y funda)",
+     "url": "https://www.easy.cl/juego-sabanas-cuna-200-hilos-pajaritos-diseno-1374194/p",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 juego (bajera, encimera, funda)",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25202,
+     "coincidencia": "aproximada",
+     "verificado": false,
+     "nota": "Algodón, fabricación nacional; tiene diseño (se pide liso pastel). Precio del resultado de búsqueda.",
+     "fecha_consulta": "2026-10-21"
     }
    ]
   },
@@ -96,20 +110,20 @@
    "linea": 4,
    "producto": "Mantas o frazadas",
    "consulta": "frazada polar cuna precio Chile; frazada polar cuna 80x100 precio Chile",
-   "nota": "",
+   "nota": "Auditoría 2026-10-21: la oferta supera el monto (~2,3 veces) sin error de unidad ni de cantidad: las cantidades son piezas o juegos y el monto ($20,9 M para 4.054 piezas, ~$5.150 con IVA c/u) parece calculado con precio de fabricante, mientras que estas opciones son precios minoristas de productos más grandes o de mejor calidad. Pendiente: cotizar con un fabricante textil.",
    "opciones": [
     {
      "tienda": "Lider (vendedor Myl Todo Hogar)",
      "producto_mercado": "Manta Nido Polar 127x152 cm",
      "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/manta-nido-polar-127x152-cm-textura-suave-y-termica/00046369407449",
-     "precio": 9490,
+     "precio": 9000,
      "iva_incluido": true,
      "contenido": "1 manta",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 7974.79,
+     "precio_unitario_neto": 7563,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Medida mayor a la pedida (100x130); color/bordes no confirmados.",
+     "nota": "Medida mayor a la pedida (100x130); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $9.490: puede haber cambiado."
@@ -154,7 +168,7 @@
    "linea": 5,
    "producto": "Sábanas",
    "consulta": "sábanas 1 plaza algodón juego precio Lider",
-   "nota": "",
+   "nota": "Auditoría 2026-10-21: la oferta supera el monto (~2,3 veces) sin error de unidad ni de cantidad: las cantidades son piezas o juegos y el monto ($20,9 M para 4.054 piezas, ~$5.150 con IVA c/u) parece calculado con precio de fabricante, mientras que estas opciones son precios minoristas de productos más grandes o de mejor calidad. Pendiente: cotizar con un fabricante textil.",
    "opciones": [
     {
      "tienda": "Lider (vendedor MEI LI SPA)",
@@ -177,14 +191,14 @@
      "tienda": "Lider (vendedor Switchmarket)",
      "producto_mercado": "Juego sábanas 1 plaza 144 hilos varios colores",
      "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/juego-sabanas-1-plaza-144-hilos-varios-colores/00045044562013",
-     "precio": 32990,
+     "precio": 35990,
      "iva_incluido": true,
      "contenido": "1 juego",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 27722.69,
+     "precio_unitario_neto": 30244,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta.",
+     "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta. Precio actualizado al que mostró la página el 2026-10-20 (antes $32.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $32.990: puede haber cambiado."
@@ -202,20 +216,20 @@
    "linea": 7,
    "producto": "Mantas o frazadas",
    "consulta": "frazada polar cuna precio Chile; frazada polar cuna 80x100 precio Chile",
-   "nota": "",
+   "nota": "Auditoría 2026-10-21: la oferta supera el monto (~2,3 veces) sin error de unidad ni de cantidad: las cantidades son piezas o juegos y el monto ($20,9 M para 4.054 piezas, ~$5.150 con IVA c/u) parece calculado con precio de fabricante, mientras que estas opciones son precios minoristas de productos más grandes o de mejor calidad. Pendiente: cotizar con un fabricante textil.",
    "opciones": [
     {
      "tienda": "Lider (vendedor Myl Todo Hogar)",
      "producto_mercado": "Manta Nido Polar 127x152 cm",
      "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/manta-nido-polar-127x152-cm-textura-suave-y-termica/00046369407449",
-     "precio": 9490,
+     "precio": 9000,
      "iva_incluido": true,
      "contenido": "1 manta",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 7974.79,
+     "precio_unitario_neto": 7563,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Medida mayor a la pedida (100x150); color/bordes no confirmados.",
+     "nota": "Medida mayor a la pedida (100x150); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 9000.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $9.000, no $9.490: puede haber cambiado."
@@ -260,7 +274,7 @@
    "linea": 8,
    "producto": "Sábanas",
    "consulta": "sábanas 1 plaza algodón juego (compartida)",
-   "nota": "",
+   "nota": "Auditoría 2026-10-21: la oferta supera el monto (~2,3 veces) sin error de unidad ni de cantidad: las cantidades son piezas o juegos y el monto ($20,9 M para 4.054 piezas, ~$5.150 con IVA c/u) parece calculado con precio de fabricante, mientras que estas opciones son precios minoristas de productos más grandes o de mejor calidad. Pendiente: cotizar con un fabricante textil.",
    "opciones": [
     {
      "tienda": "Lider (vendedor MEI LI SPA)",
@@ -283,14 +297,14 @@
      "tienda": "Lider (vendedor Switchmarket)",
      "producto_mercado": "Juego sábanas 1 plaza 144 hilos varios colores",
      "url": "https://www.lider.cl/ip/ropa-y-accesorios-de-cama/juego-sabanas-1-plaza-144-hilos-varios-colores/00045044562013",
-     "precio": 32990,
+     "precio": 35990,
      "iva_incluido": true,
      "contenido": "1 juego",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 27722.69,
+     "precio_unitario_neto": 30244,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta.",
+     "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta. Precio actualizado al que mostró la página el 2026-10-20 (antes $32.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $35.990, no $32.990: puede haber cambiado."

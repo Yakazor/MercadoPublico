@@ -24,7 +24,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex. Además la talla 36 no está en la ficha (39 a 44)."
   },
   {
    "linea": 2,
@@ -46,7 +47,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex. Además la talla 37 no está en la ficha (39 a 44)."
   },
   {
    "linea": 3,
@@ -68,7 +70,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex. Además la talla 38 no está en la ficha (39 a 44)."
   },
   {
    "linea": 4,
@@ -90,7 +93,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex."
   },
   {
    "linea": 5,
@@ -112,7 +116,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex."
   },
   {
    "linea": 6,
@@ -134,7 +139,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex."
   },
   {
    "linea": 7,
@@ -156,7 +162,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex."
   },
   {
    "linea": 8,
@@ -178,7 +185,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex."
   },
   {
    "linea": 9,
@@ -200,7 +208,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex."
   },
   {
    "linea": 10,
@@ -222,7 +231,8 @@
      "fecha_consulta": "2026-10-18",
      "verificacion_pagina": "2026-10-20: la tienda respondió HTTP 403."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: el V930 es dieléctrico y NO antiestático (la línea exige antiestático); una búsqueda adicional no encontró un modelo V-Flex antiestático con precio en Chile (el V37 de Easy tampoco lo es). El precio sirve solo como referencia: cotizar el modelo antiestático con un distribuidor V-Flex. Además la talla 45 no está en la ficha (39 a 44)."
   },
   {
    "linea": 11,
@@ -333,12 +343,13 @@
      "precio_unitario_neto": 503.5,
      "coincidencia": "aproximada",
      "verificado": false,
-     "nota": "Color negro no confirmado; precio por par; URL de listado.",
+     "nota": "Color negro no confirmado; precio por par; URL de listado. La página (listado) mostró $8.990 como precio más parecido; no se confirma que sea el mismo pack, así que no se actualizó (a $8.990 el par costaría $630 neto).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 8990.0,
      "verificacion_pagina": "2026-10-20: la página abrió y el precio más parecido es $8.990, no $7.190: puede haber cambiado."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: la referencia OC ($16.500, «Equipo de protección corporal») es genérica (mezcla cascos, respiradores, botiquines); $500-630 neto por par de guante nylon/PU en pack de 12 pares es un precio de mercado normal, no un error de unidad. Confirmar en las bases que «Unidad» = par y el color negro."
   },
   {
    "linea": 21,
@@ -392,14 +403,14 @@
      "tienda": "Sodimac",
      "producto_mercado": "Lente de seguridad Redline Spy Flex Plus (versión gris/oscura)",
      "url": "https://sodimac.cl/sodimac-cl/lista/CATG10973/Proteccion-de-Ojos/",
-     "precio": 3190,
+     "precio": 3251,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 2680.67,
+     "precio_unitario_neto": 2732,
      "coincidencia": "aproximada",
-     "verificado": true,
-     "nota": "Marca Redline, no Steelpro; mismo modelo Spy Flex Plus. Precio del listado Protección de Ojos.",
+     "verificado": false,
+     "nota": "Marca Redline, no Steelpro; mismo modelo Spy Flex Plus. Precio del listado Protección de Ojos. Precio actualizado al que mostró la página el 2026-10-20 (antes $3.190).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 3251.0,
@@ -416,14 +427,14 @@
      "tienda": "Sodimac",
      "producto_mercado": "Lente de seguridad Redline Spy Flex Plus visor claro",
      "url": "https://sodimac.cl/sodimac-cl/lista/CATG10973/Proteccion-de-Ojos/",
-     "precio": 3190,
+     "precio": 3251,
      "iva_incluido": true,
      "contenido": "1 unidad",
      "unidades_equivalentes": 1,
-     "precio_unitario_neto": 2680.67,
+     "precio_unitario_neto": 2732,
      "coincidencia": "aproximada",
-     "verificado": true,
-     "nota": "Marca Redline, no Steelpro; mismo modelo Spy Flex Plus visor claro.",
+     "verificado": false,
+     "nota": "Marca Redline, no Steelpro; mismo modelo Spy Flex Plus visor claro. Precio actualizado al que mostró la página el 2026-10-20 (antes $3.190).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 3251.0,

@@ -31,9 +31,12 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 3490.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $3.490."
+     "verificacion_pagina": "2026-10-20: la página muestra $3.490.",
+     "descartado": true,
+     "motivo_descarte": "La línea es «material de enseñanza y oficina según detalle en bases» (71 unidades no definidas): una cartulina metálica no representa la línea."
     }
-   ]
+   ],
+   "nota": "Auditoría 2026-10-21: revisar en el anexo de las bases el listado de materiales y sus cantidades (la línea 1, libros, también está según bases)."
   }
  ],
  "verificacion_paginas": {

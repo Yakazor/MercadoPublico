@@ -31,10 +31,12 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-20",
      "precio_pagina": 360990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $360.990."
+     "verificacion_pagina": "2026-10-20: la página muestra $360.990.",
+     "descartado": true,
+     "motivo_descarte": "La línea (cantidad 1) es la compra de las tablets para los alumnos del liceo según bases: el precio de una tablet no representa la línea."
     }
    ],
-   "nota": "Según bases; se asume tablet 11\"."
+   "nota": "Según bases; se asume tablet 11\". Auditoría 2026-10-21: cantidad 1 = todo el lote de tablets; revisar en las bases y anexos (SP_3556) cuántas tablets y qué especificación se piden. Lo mismo para la línea 1 (uniformes y zapatillas: prendas, tallas y cantidades)."
   }
  ],
  "verificacion_paginas": {
