@@ -269,29 +269,35 @@ inválido, código inexistente) no se reintentan.
 
 `scripts/compra_agil.py` usa la API Compra Ágil v2 de ChileCompra
 (`https://api2.mercadopublico.cl/v2/compra-agil`, el ticket va en el encabezado
-`ticket`):
+`ticket`). La API es lenta (~10 compras cada ~5 s; con páginas más grandes responde
+HTTP 504) y hay miles de Compras Ágiles abiertas, así que trabaja por tandas:
 
-1. lista las Compras Ágiles **publicadas** (abiertas a cotización) de las regiones de
-   `config.yaml > compra_agil > regiones` (por defecto, todo Chile);
-2. filtra por nombre con los rubros de `config.yaml` y pide el detalle (productos,
-   cantidades, presupuesto disponible, plazo y dirección de entrega, llamado);
-3. aplica el filtro completo y las alertas ISP, y escribe `data/compras_agiles.json`.
-
-`publicar_datos.py` las suma a `licitaciones.json` e `items.json` con
-`tipo = "Compra Ágil"`, así que el dashboard, el simulador de presupuesto y el
-pedido «busca precios de <código>» funcionan igual que con una licitación. En el
-workflow diario corre después del radar; si falla, las licitaciones se publican igual.
+1. El workflow **«Compras Ágiles»** (`.github/workflows/compra-agil.yml`) corre cada
+   3 horas y lista solo lo publicado desde la corrida anterior (un día a la vez, del
+   más antiguo al más nuevo), en las regiones de `config.yaml > compra_agil > regiones`
+   (vacío = todo Chile).
+2. Las que pasan el filtro por nombre quedan **pendientes**; se pide su detalle
+   (productos, cantidades, monto disponible, plazo y dirección de entrega, llamado),
+   primero las que cierran antes, y se aplica el filtro completo y las alertas ISP.
+3. La **memoria** (`data/compra_agil_estado.json`: hasta dónde se listó, abiertas,
+   descartadas y pendientes) se guarda en la caché de Actions; las que cierran salen
+   solas. Si la memoria se pierde, parte con los últimos `dias_iniciales` días.
+4. El **radar diario** restaura `data/compras_agiles.json` (si tiene menos de 30 horas)
+   y `publicar_datos.py` las suma a `licitaciones.json` e `items.json` con
+   `tipo = "Compra Ágil"`: el dashboard, el simulador y «busca precios de <código>»
+   funcionan igual que con una licitación.
 
 - **Ticket:** usa el secreto `MP_TICKET_COMPRA_AGIL` si existe y, si no, `MP_TICKET`.
   Si la API responde 401/403, pide un ticket en https://www.chilecompra.cl/api/
   («Pide tu ticket», con ClaveÚnica) y guárdalo como `MP_TICKET_COMPRA_AGIL`.
-- **Cuota:** la API tiene una cuota diaria por ticket (HTTP 429): la corrida guarda lo
-  obtenido y se detiene. `max_detalles` y `pausa_entre_llamadas_segundos` la cuidan.
-- **Fechas:** vienen en hora de Chile aunque terminen en "Z".
+- **HTTP 429:** es un límite de ritmo; se espera lo que indique la API (una vez) y, si
+  vuelve, lo que falta queda pendiente para la próxima corrida.
+- **Fechas:** en hora de Chile; `fecha_cierre` llega como `"2026-10-23 15:00"`.
 - **Primer llamado** (`llamado = 1`): solo empresas de menor tamaño (una persona
   natural con inicio de actividades que vende poco califica como microempresa).
 - **Cotización:** en Compra Ágil se ingresa el **total con IVA y despacho** y se
   deben cotizar todos los ítems.
+- **Ficha:** `https://buscador.mercadopublico.cl/ficha?code=<código>`.
 
 ## Programar la ejecución diaria
 
