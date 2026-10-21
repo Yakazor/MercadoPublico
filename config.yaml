@@ -13,12 +13,13 @@ api:
 compra_agil:
   activo: true
   # Regiones del organismo comprador (1 a 16; 13 = Metropolitana, 5 = Valparaíso,
-  # 6 = O'Higgins). Vacío = todo Chile. Para partir: donde puedes entregar.
-  regiones: [13]
+  # 6 = O'Higgins). Vacío = todo Chile (en el dashboard se filtra por región).
+  regiones: []
   dias_publicacion: 15        # publicadas en los últimos N días (siguen abiertas)
   tamano_pagina: 25           # ante un HTTP 504 se sigue con páginas de 10
   max_paginas: 200
-  max_detalles: 400           # detalles por corrida (cuidan la cuota diaria del ticket)
+  max_detalles: 700           # detalles por corrida (cuidan la cuota diaria del ticket);
+                              # se piden primero las que cierran antes
   pausa_entre_llamadas_segundos: 4.0   # ~15 consultas por minuto
   reintentos: 3
   espera_inicial_reintento_segundos: 5

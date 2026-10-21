@@ -31,7 +31,7 @@ jobs:
     permissions:
       contents: write   # publica los JSON del dashboard en la rama "datos"
       actions: read
-    timeout-minutes: 150
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -145,11 +145,11 @@ jobs:
       - name: Compras Ágiles
         if: success()
         continue-on-error: true
-        timeout-minutes: 30
+        timeout-minutes: 55
         env:
           MP_TICKET: ${{ secrets.MP_TICKET }}
           MP_TICKET_COMPRA_AGIL: ${{ secrets.MP_TICKET_COMPRA_AGIL }}
-        run: python scripts/compra_agil.py --max-minutos 22
+        run: python scripts/compra_agil.py --max-minutos 45
 
       # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
       # commit que se reemplaza en cada corrida). Solo con una base con historial.

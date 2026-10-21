@@ -272,7 +272,7 @@ inválido, código inexistente) no se reintentan.
 `ticket`):
 
 1. lista las Compras Ágiles **publicadas** (abiertas a cotización) de las regiones de
-   `config.yaml > compra_agil > regiones` (por defecto, la Metropolitana);
+   `config.yaml > compra_agil > regiones` (por defecto, todo Chile);
 2. filtra por nombre con los rubros de `config.yaml` y pide el detalle (productos,
    cantidades, presupuesto disponible, plazo y dirección de entrega, llamado);
 3. aplica el filtro completo y las alertas ISP, y escribe `data/compras_agiles.json`.
