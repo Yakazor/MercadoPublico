@@ -29,15 +29,15 @@
      "verificado": true,
      "nota": "Especificación del ítem no vista; precio desde listado (rango 19.820-23.990).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-21",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $19.990."
+     "verificacion_pagina": "2026-10-22: la página muestra $19.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-21",
+  "fecha": "2026-10-22",
   "opciones": 1,
   "verificadas": 1
  }

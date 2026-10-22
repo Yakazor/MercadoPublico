@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Sin perforar ni pintar; medida/modelo por confirmar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-21: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Sodimac",
@@ -38,15 +38,15 @@
      "verificado": true,
      "nota": "Precio mínimo del rango mostrado; medida/modelo por confirmar.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-21",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 25000.0,
-     "verificacion_pagina": "2026-10-21: la página muestra $25.000."
+     "verificacion_pagina": "2026-10-22: la página muestra $25.000."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-21",
+  "fecha": "2026-10-22",
   "opciones": 2,
   "verificadas": 1
  }
