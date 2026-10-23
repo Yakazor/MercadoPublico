@@ -284,7 +284,9 @@ HTTP 504) y hay miles de Compras Ágiles abiertas, así que trabaja por tandas:
    (vacío = todo Chile).
 2. Las que pasan el filtro por nombre quedan **pendientes**; se pide su detalle
    (productos, cantidades, monto disponible, plazo y dirección de entrega, llamado),
-   primero las que cierran antes, y se aplica el filtro completo y las alertas ISP.
+   primero las publicadas más recientemente (duran 1 o 2 días y el límite de consultas
+   no alcanza para todas), y se aplica el filtro completo y las alertas ISP. Las que
+   cierran en menos de `margen_cotizar_horas` (12) no se revisan: no alcanzan a cotizarse.
 3. La **memoria** (`data/compra_agil_estado.json`: hasta dónde se listó, abiertas,
    descartadas y pendientes) se guarda en la caché de Actions; las que cierran salen
    solas. Si la memoria se pierde, parte con los últimos `dias_iniciales` días.

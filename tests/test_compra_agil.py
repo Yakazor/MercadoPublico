@@ -320,3 +320,29 @@ def test_listado_con_ticket_rechazado_sigue_siendo_fatal():
     c = _cliente([_error(403, "El ticket no existe")])
     with pytest.raises(ErrorApi):
         _actualizar(c)
+
+
+def test_primero_las_mas_recientes_y_no_las_que_cierran_en_menos_de_12_horas():
+    # 22-10-2026: 401 de 403 Compras Ágiles publicadas cerraban esa misma mañana; se
+    # revisaban primero las que cerraban antes, que ya no alcanzaban a cotizarse.
+    estado = estado_vacio()
+    estado["pendientes"] = {
+        "VIEJA": {"cierre": "2026-10-23 10:00", "intentos": 0, "prioridad": 0, "publicado": "2026-10-20T09:00:00Z"},
+        "NUEVA": {"cierre": "2026-10-23 15:00", "intentos": 0, "prioridad": 0, "publicado": "2026-10-21T11:00:00Z"},
+        "SIN_FECHA": {"cierre": "2026-10-24 12:00", "intentos": 0, "prioridad": 0},   # formato anterior
+        "YA_NO": {"cierre": "2026-10-21 20:00", "intentos": 0, "prioridad": 0, "publicado": "2026-10-21T11:30:00Z"},
+    }
+    c = _cliente([_detalle("SIN_FECHA"), _detalle("NUEVA"), _detalle("VIEJA")])
+    _actualizar(c, estado=estado)
+    detalles = [ll[0].rsplit("/", 1)[1] for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+    assert detalles == ["SIN_FECHA", "NUEVA", "VIEJA"]
+    assert "YA_NO" not in estado["pendientes"] and "YA_NO" not in estado["abiertas"]
+
+
+def test_la_pendiente_guarda_la_fecha_de_publicacion():
+    pagina = _ok({"items": [{"codigo": "A", "nombre": "Compra de guantes", "fechas": {
+        "fecha_publicacion": "2026-10-21T10:00:00Z", "fecha_cierre": "2026-10-25T15:00:00Z"}}],
+        "paginacion": {"numero_pagina": 1, "total_paginas": 1, "total_resultados": 1}})
+    c = _cliente([pagina, _error(429, "límite", solo_detalle=True), _error(429, "límite", solo_detalle=True)])
+    _, estado = _actualizar(c)
+    assert estado["pendientes"]["A"]["publicado"] == "2026-10-21T10:00:00Z"

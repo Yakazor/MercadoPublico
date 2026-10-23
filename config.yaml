@@ -21,7 +21,9 @@ compra_agil:
   dias_iniciales: 3
   tamano_pagina: 10           # con más, la API suele responder HTTP 504
   max_paginas: 400            # por corrida
-  max_detalles: 700           # por corrida; primero las que cierran antes
+  max_detalles: 700           # por corrida; primero las publicadas más recientemente
+  # Duran 1 o 2 días: no se revisan las que cierran antes de este plazo (no alcanzan a cotizarse).
+  margen_cotizar_horas: 12
   pausa_entre_llamadas_segundos: 4.0   # desde el inicio de la consulta anterior (~15 por minuto)
   reintentos: 3
   espera_inicial_reintento_segundos: 5

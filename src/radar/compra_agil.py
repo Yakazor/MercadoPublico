@@ -313,8 +313,9 @@ MAX_FALLAS_SEGUIDAS = 15     # detalles seguidos sin respuesta: la API está ca�
 def _pendiente(valor) -> dict:
     """Pendiente guardada como texto (formato anterior: solo el cierre) → dict."""
     if isinstance(valor, dict):
-        return {"cierre": valor.get("cierre"), "intentos": valor.get("intentos", 0), "prioridad": valor.get("prioridad", 1)}
-    return {"cierre": valor, "intentos": 0, "prioridad": 1}
+        return {"cierre": valor.get("cierre"), "intentos": valor.get("intentos", 0),
+                "prioridad": valor.get("prioridad", 1), "publicado": valor.get("publicado")}
+    return {"cierre": valor, "intentos": 0, "prioridad": 1, "publicado": None}
 
 
 def estado_vacio() -> dict:
@@ -342,12 +343,17 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                               regiones: list[int] | None = None, dias_iniciales: int = 3,
                               tamano_pagina: int = TAMANO_MINIMO, max_paginas: int = 400,
                               max_detalles: int = 700, ahora: datetime | None = None,
-                              hasta_monotonic: float | None = None) -> ResultadoCompraAgil:
+                              hasta_monotonic: float | None = None,
+                              margen_horas: float = 12) -> ResultadoCompraAgil:
     """Suma al `estado` las Compras Ágiles publicadas desde la corrida anterior.
 
-    listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas (primero las
-    que cierran antes) → filtro completo. Se quitan las que ya cerraron. Lo que no alcanza
-    a revisarse queda pendiente para la próxima corrida."""
+    listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas → filtro
+    completo. Se quitan las que ya cerraron. Lo que no alcanza a revisarse queda pendiente
+    para la próxima corrida.
+
+    Una Compra Ágil suele estar abierta 1 o 2 días y el límite de consultas de la API deja
+    revisar solo una parte: primero las publicadas más recientemente (las que más tiempo
+    dejan para cotizar), y no se revisan las que cierran en menos de `margen_horas`."""
     ahora = ahora or ahora_chile()
     hoy = ahora.date()
     r = ResultadoCompraAgil()
@@ -382,6 +388,7 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         if c.get("codigo") not in conocidas and filtro.es_candidata(nombre):
             estado["pendientes"][c["codigo"]] = {
                 "cierre": (c.get("fechas") or {}).get("fecha_cierre"), "intentos": 0,
+                "publicado": (c.get("fechas") or {}).get("fecha_publicacion"),
                 # Las que ya calzan solo por el nombre ("Compra de guantes de nitrilo") van
                 # antes que las que solo lo sugieren ("Compra de insumos").
                 "prioridad": 0 if filtro.evaluar(nombre=nombre).coincide else 1}
@@ -390,9 +397,9 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
 
     # Las que ya cerraron salen de la memoria.
-    # Las pendientes que cierran en menos de una hora ya no alcanzan a cotizarse.
+    # Las pendientes que cierran en menos de `margen_horas` ya no alcanzan a cotizarse.
     estado["pendientes"] = {k: v for k, v in estado["pendientes"].items()
-                            if not ((c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=1))}
+                            if not ((c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=margen_horas))}
     estado["descartadas"] = {k: v for k, v in estado["descartadas"].items() if not ((c := _cierre(v)) and c < ahora)}
     estado["abiertas"] = {k: v for k, v in estado["abiertas"].items()
                           if not ((c := _cierre((v.get("fila") or {}).get("fecha_cierre"))) and c < ahora)}
@@ -406,8 +413,12 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
             estado["descartadas"][codigo] = abierta["fila"].get("fecha_cierre")
             del estado["abiertas"][codigo]
 
+    # Primero las más recientes (sin fecha de publicación, la de cierre más lejana), y
+    # dentro de eso las que el nombre ya calza con un rubro.
     pendientes = sorted(estado["pendientes"].items(),
-                        key=lambda kv: (kv[1]["prioridad"], str(_cierre(kv[1]["cierre"]) or "9999")))
+                        key=lambda kv: str(_cierre(kv[1].get("publicado")) or _cierre(kv[1]["cierre"]) or ""),
+                        reverse=True)
+    pendientes.sort(key=lambda kv: kv[1]["prioridad"])
     fallas_seguidas = 0
     for codigo, pendiente in pendientes:
         cierre = pendiente["cierre"]
