@@ -58,9 +58,9 @@
      "verificado": true,
      "nota": "Cubre solo 1 de las 2 poleras; faltan pantalón de trabajo y chaqueta con logo. Color no confirmado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 20990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $20.990.",
+     "verificacion_pagina": "2026-10-22: la página muestra $20.990.",
      "descartado": true,
      "motivo_descarte": "Cubre una sola prenda de un kit de 3 o 4 prendas (poleras, pantalón y chaqueta)."
     }
@@ -85,7 +85,7 @@
      "verificado": false,
      "nota": "Solo la prenda superior en azul rey; faltan 1 top y el pantalón (pantalón Ripholia $23.828-$25.900 en la misma tienda).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
+     "verificacion_pagina": "2026-10-22: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
      "descartado": true,
      "motivo_descarte": "Es una sola prenda superior; el kit pide 2 tops y 1 pantalón."
     },
@@ -102,9 +102,9 @@
      "verificado": true,
      "nota": "Conjunto de 1 top + 1 pantalón; el kit pide 2 tops. Color no confirmado en el resultado. Top Infinity suelto $36.990 en la misma página.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 91900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $91.900."
+     "verificacion_pagina": "2026-10-22: la página muestra $91.900."
     }
    ]
   },
@@ -127,7 +127,7 @@
      "verificado": false,
      "nota": "Solo la prenda superior en azul rey; faltan 1 top y el pantalón (pantalón Ripholia $23.828-$25.900 en la misma tienda).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
+     "verificacion_pagina": "2026-10-22: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
      "descartado": true,
      "motivo_descarte": "Es una sola prenda superior; el kit pide 2 tops y 1 pantalón."
     },
@@ -144,9 +144,9 @@
      "verificado": true,
      "nota": "Conjunto de 1 top + 1 pantalón; el kit pide 2 tops. Color no confirmado en el resultado. Top Infinity suelto $36.990 en la misma página.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 91900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $91.900."
+     "verificacion_pagina": "2026-10-22: la página muestra $91.900."
     }
    ]
   },
@@ -169,9 +169,9 @@
      "verificado": true,
      "nota": "Conjunto de 1 top + 1 pantalón; el kit pide 2 tops. Color no confirmado en el resultado. Top Infinity suelto $36.990 en la misma página.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 91900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $91.900."
+     "verificacion_pagina": "2026-10-22: la página muestra $91.900."
     }
    ]
   },
@@ -194,9 +194,9 @@
      "verificado": true,
      "nota": "Conjunto de 1 top + 1 pantalón; el kit pide 2 tops. Color no confirmado en el resultado. Top Infinity suelto $36.990 en la misma página.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 91900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $91.900."
+     "verificacion_pagina": "2026-10-22: la página muestra $91.900."
     }
    ]
   },
@@ -219,9 +219,9 @@
      "verificado": true,
      "nota": "Conjunto de 1 top + 1 pantalón; el kit pide 2 tops. Color no confirmado en el resultado. Top Infinity suelto $36.990 en la misma página.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 91900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $91.900."
+     "verificacion_pagina": "2026-10-22: la página muestra $91.900."
     }
    ]
   },
@@ -244,9 +244,9 @@
      "verificado": true,
      "nota": "Conjunto de 1 top + 1 pantalón; el kit pide 2 tops. Color no confirmado en el resultado. Top Infinity suelto $36.990 en la misma página.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 91900.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $91.900."
+     "verificacion_pagina": "2026-10-22: la página muestra $91.900."
     }
    ]
   },
@@ -276,9 +276,9 @@
      "verificado": true,
      "nota": "Es cuello redondo, no polo; cubre solo 1 de las 2 poleras, falta chaqueta softshell con logo.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 22990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $22.990.",
+     "verificacion_pagina": "2026-10-22: la página muestra $22.990.",
      "descartado": true,
      "motivo_descarte": "Cubre una sola prenda de un kit de 3 o 4 prendas (poleras, pantalón y chaqueta)."
     }
@@ -286,7 +286,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-22",
   "opciones": 10,
   "verificadas": 8
  }

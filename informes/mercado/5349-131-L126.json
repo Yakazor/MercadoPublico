@@ -22,7 +22,7 @@
      "verificado": false,
      "nota": "Precio aproximado ($479.990-$499.990 en publicaciones activas según resultado); verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-22: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "SP Digital",
@@ -37,16 +37,16 @@
      "verificado": true,
      "nota": "Precio con Webpay/tarjeta ($518.830 transferencia). Especificaciones técnicas del hospital no disponibles.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 542180.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $542.180."
+     "verificacion_pagina": "2026-10-22: la página muestra $542.180."
     }
    ],
    "nota": "[Auditoría 2026-10-21] Con el escáner más barato encontrado la oferta supera el monto ($800.000 por 2): buscar un modelo de entrada que cumpla las especificaciones."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-22",
   "opciones": 2,
   "verificadas": 1
  }

@@ -846,3 +846,19 @@ def test_real_rubros_nuevos_detectan(real, nombre, rubro):
 def test_real_rubros_nuevos_descartan(real, nombre):
     r = real.evaluar(nombre=nombre)
     assert not r.coincide, (nombre, r.rubro, r.palabras)
+
+
+def test_grupos_de_exclusion_en_el_producto_onu():
+    # "SONDA FOLEY ... CON BALON" lleva "balón", pero su producto ONU es "Sondas
+    # quirúrgicas": los grupos compartidos se buscan también ahí.
+    rubros = {"deporte": {"nombre": "Deporte", "palabras_clave": ["balon"], "excluir_grupos": ["clinico"]},
+              "propio": {"nombre": "Propio", "palabras_clave": ["balon"]}}
+    f = FiltroRubros(rubros, grupos_exclusion={"clinico": ["quirurgicas"]})
+    r = f.evaluar(nombre="SONDA FOLEY 22 FR CON BALON DE 5 CC", productos_onu=["Sondas quirúrgicas"])
+    assert r.rubros == ["propio"]
+    # Compra mixta: con una línea que no es del grupo, se revisa igual.
+    r = f.evaluar(nombre="Balones y sondas", productos_onu=["Sondas quirúrgicas", "Pelotas de fútbol"])
+    assert r.rubros == ["deporte", "propio"]
+    # Las exclusiones propias del rubro (pensadas para el nombre) no se aplican al producto ONU.
+    f = FiltroRubros({"x": {"nombre": "X", "palabras_clave": ["luminarias"], "excluir_en_nombre": ["alumbrado publico"]}})
+    assert f.evaluar(nombre="Reposición luminarias", productos_onu=["Alumbrado público"]).coincide

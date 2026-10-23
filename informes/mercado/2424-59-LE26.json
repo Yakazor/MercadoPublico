@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 6990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $6.990.",
+     "verificacion_pagina": "2026-10-22: la página muestra $6.990.",
      "descartado": true,
      "motivo_descarte": "Contrato de suministro global de ferretería: una válvula de descarga no lo representa."
     },
@@ -41,9 +41,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $13.990.",
+     "verificacion_pagina": "2026-10-22: la página muestra $13.990.",
      "descartado": true,
      "motivo_descarte": "Contrato de suministro global de ferretería: una válvula de descarga no lo representa."
     }
@@ -52,7 +52,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-22",
   "opciones": 2,
   "verificadas": 2
  }

@@ -32,7 +32,8 @@ class Sesion:
         una página vacía (la cola sigue con los detalles)."""
         self.llamadas.append((url, dict(params), dict(headers)))
         siguiente = self.respuestas[0] if self.respuestas else None
-        es_detalle = siguiente is not None and "codigo" in ((siguiente._datos or {}).get("payload") or {})
+        es_detalle = siguiente is not None and (getattr(siguiente, "solo_detalle", False)
+                                                or "codigo" in ((siguiente._datos or {}).get("payload") or {}))
         if url.endswith("/v2/compra-agil") and (siguiente is None or es_detalle):
             return _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
         return self.respuestas.pop(0)
@@ -53,8 +54,10 @@ def _ok(payload):
     return Resp(200, {"success": "OK", "trace": None, "payload": payload, "errors": None})
 
 
-def _error(status, mensaje):
-    return Resp(status, {"success": "NOK", "payload": None, "errors": [{"codigo": str(status), "mensaje": mensaje}]})
+def _error(status, mensaje, solo_detalle=False):
+    r = Resp(status, {"success": "NOK", "payload": None, "errors": [{"codigo": str(status), "mensaje": mensaje}]})
+    r.solo_detalle = solo_detalle   # la cola falsa no se la entrega al listado
+    return r
 
 
 def _pagina(codigos, pagina, total):
@@ -90,16 +93,16 @@ def _actualizar(c, filtro=FILTRO, estado=None, **kw):
 
 def test_ticket_va_en_el_encabezado_y_no_en_la_url():
     c = _cliente([_pagina(["A"], 1, 1)])
-    items, cubierto = listar_publicadas(c, datetime(2026, 10, 20), AHORA, regiones=[13, 5])
+    items, cubierto = listar_publicadas(c, datetime(2026, 10, 21, 10, 30), AHORA, regiones=[13, 5])
     url, params, headers = c._sesion.llamadas[0]
     assert url == "https://api2.mercadopublico.cl/v2/compra-agil"
     assert headers == {"ticket": "SECRETO"}
     assert "SECRETO" not in json.dumps(params)
     assert params["estado"] == "publicada" and params["region"] == "13,5"
-    # Un día a la vez, primero el más antiguo (sus compras cierran antes).
-    assert params["publicado_desde"] == "2026-10-20T00:00:00Z" and params["publicado_hasta"] == "2026-10-20T23:59:59Z"
+    # Una hora a la vez, primero la más antigua (sus compras cierran antes).
+    assert params["publicado_desde"] == "2026-10-21T10:30:00Z" and params["publicado_hasta"] == "2026-10-21T11:29:59Z"
     ultima = c._sesion.llamadas[-1][1]
-    assert ultima["publicado_desde"] == "2026-10-21T00:00:00Z" and ultima["publicado_hasta"] == "2026-10-21T12:00:00Z"
+    assert ultima["publicado_desde"] == "2026-10-21T11:30:00Z" and ultima["publicado_hasta"] == "2026-10-21T12:00:00Z"
     assert len(c._sesion.llamadas) == 2 and cubierto == AHORA
 
 
@@ -111,16 +114,16 @@ def test_recorre_paginas_sin_repetidos():
 
 def test_504_con_pagina_grande_sigue_con_paginas_de_10():
     c = _cliente([_error(504, "Gateway Timeout"), _pagina(["A"], 1, 1)])
-    items, _ = listar_publicadas(c, datetime(2026, 10, 21), AHORA, tamano_pagina=50)
+    items, _ = listar_publicadas(c, datetime(2026, 10, 21, 11, 30), AHORA, tamano_pagina=50)
     assert [i["codigo"] for i in items] == ["A"]
     assert [ll[1]["tamano_pagina"] for ll in c._sesion.llamadas] == [50, 10]
 
 
 def test_listado_cortado_por_tope_conserva_los_dias_mas_antiguos():
     c = _cliente([_pagina(["VIEJA"], 1, 1), _pagina(["NUEVA"], 1, 1)])
-    items, cubierto = listar_publicadas(c, datetime(2026, 10, 20), AHORA, max_paginas=1)
+    items, cubierto = listar_publicadas(c, datetime(2026, 10, 21, 10), AHORA, max_paginas=1)
     assert [i["codigo"] for i in items] == ["VIEJA"]
-    assert cubierto == datetime(2026, 10, 20, 23, 59, 59)   # la próxima corrida sigue desde ahí
+    assert cubierto == datetime(2026, 10, 21, 10, 59, 59)   # la próxima corrida sigue desde ahí
 
 
 def test_429_no_espera_mas_alla_del_plazo(monkeypatch):
@@ -190,13 +193,13 @@ def test_clasifica_descarta_y_recuerda():
     fila = estado["abiertas"]["A"]["fila"]
     assert fila["tipo"] == "Compra Ágil" and fila["llamado"] == 1 and fila["rubro"] == "aseo"
     assert fila["url"] == "https://buscador.mercadopublico.cl/ficha?code=A"
-    assert estado["listado_hasta"] == "2026-10-21T12:00:00" and not estado["pendientes"]
+    assert estado["listado_hasta"] == "2026-10-21T11:59:59" and not estado["pendientes"]
 
     # Corrida siguiente: lista desde la anterior (menos 1 h) y no vuelve a pedir detalles conocidos.
     c2 = _cliente([_pagina(["A", "D"], 1, 1), _detalle("D")])
     r2 = actualizar_compras_agiles(c2, FILTRO, estado, ahora=AHORA.replace(hour=15))
     primera = c2._sesion.llamadas[0][1]
-    assert primera["publicado_desde"] == "2026-10-21T11:00:00Z"
+    assert primera["publicado_desde"] == "2026-10-21T10:59:59Z"   # una hora de margen
     assert r2.detalles == 1 and "D" in estado["abiertas"]
 
 
@@ -240,3 +243,106 @@ def test_config_real_detecta_aseo():
         {"nombre": "Papel higiénico", "descripcion": "rollo 500 m", "cantidad": 24, "unidad_medida": "Unidad"}])])
     _, estado = _actualizar(c, filtro=filtro)
     assert [a["fila"]["rubro"] for a in estado["abiertas"].values()] == ["insumos_medicos_aseo"]
+
+
+def test_detalle_504_no_se_reintenta_y_se_descarta_tras_tres_corridas():
+    estado = estado_vacio()
+    estado["pendientes"]["L"] = {"cierre": "2026-10-25 18:00", "intentos": 0, "prioridad": 0}
+    for corrida in range(1, 4):
+        c = _cliente([_error(504, "Endpoint request timed out", solo_detalle=True)])
+        _actualizar(c, estado=estado)
+        assert len([ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]) == 1   # sin reintentos
+        if corrida < 3:
+            assert estado["pendientes"]["L"]["intentos"] == corrida
+    assert "L" not in estado["pendientes"] and "L" in estado["descartadas"]
+
+
+def test_primero_las_que_calzan_por_nombre():
+    pagina = _pagina(["GEN", "GUA"], 1, 1)
+    pagina._datos["payload"]["items"][0]["nombre"] = "Compra de insumos varios"
+    filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"],
+                                    "palabras_candidatas": ["insumos"]}})
+    c = _cliente([pagina, _detalle("GUA"), _detalle("GEN")])
+    _actualizar(c, filtro=filtro)
+    detalles = [ll[0].rsplit("/", 1)[1] for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+    assert detalles == ["GUA", "GEN"]
+
+
+def test_api_caida_corta_los_detalles():
+    estado = estado_vacio()
+    for n in range(20):
+        estado["pendientes"][f"P{n}"] = {"cierre": "2026-10-25 18:00", "intentos": 0, "prioridad": 1}
+    c = _cliente([_error(504, "timeout", solo_detalle=True) for _ in range(20)])
+    r, _ = _actualizar(c, estado=estado)
+    assert "sin respuesta" in r.detenida
+    assert len([ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]) == compra_agil.MAX_FALLAS_SEGUIDAS
+
+
+@pytest.mark.parametrize("nombre, producto", [
+    ("20-224-600-003-00 TROCAR ATRAUMATICO 12MM CON PUNZON Y CAMISA REDUCTOR", "Trocares quirúrgicos"),
+    ("SONDA FOLEY 2 VIAS N 8 CON BALON DE 5 CC", "Sondas quirúrgicas"),
+    ("GIF CARD PARA TEXTILES, VESTUARIO Y CALZADO", "Tarjetas comerciales"),
+    ("Servicio de Coctelería para mesas de coordinación", "Servicios de catering"),
+    ("IONÓMERO DE VIDRIO MODIFICADO CON RESINA PARA USO COMO MATERIAL RESTAURADOR", "Unidades dentales"),
+])
+def test_falsos_positivos_de_la_auditoria_de_compras_agiles(nombre, producto):
+    # Casos reales del 21-10-2026: palabras genéricas (camisa, balón, vidrio, mesas)
+    # dentro de nombres de dispositivos clínicos o servicios.
+    filtro = FiltroRubros.desde_config(cargar_config())
+    assert not filtro.evaluar(nombre=nombre, items_onu=[producto], productos=[f"{producto} {nombre}"]).coincide
+
+
+def test_las_guardadas_se_reclasifican_con_la_config_vigente():
+    c = _cliente([_pagina(["A"], 1, 1), _detalle("A")])
+    _, estado = _actualizar(c)
+    assert "A" in estado["abiertas"]
+    otro_filtro = FiltroRubros({"aseo": {"nombre": "Aseo", "palabras_clave": ["guantes"],
+                                         "excluir_en_nombre": ["nitrilo"]}})
+    _actualizar(_cliente([]), filtro=otro_filtro, estado=estado)
+    assert "A" not in estado["abiertas"] and "A" in estado["descartadas"]
+
+
+def test_listado_caido_guarda_lo_recorrido_y_sigue_con_los_detalles():
+    # 21-10-2026: el listado respondió 500/504 y la corrida se cortaba sin revisar
+    # ninguna de las ~1.500 pendientes.
+    estado = estado_vacio()
+    estado["pendientes"]["P"] = {"cierre": "2026-10-25 18:00", "intentos": 0, "prioridad": 0}
+    c = _cliente([_pagina(["A"], 1, 1), _error(500, "Servicio no disponible"), _error(504, "timeout"),
+                  _error(504, "timeout"), _detalle("A"), _detalle("P")])
+    r, estado = _actualizar(c, estado=estado)
+    assert set(estado["abiertas"]) == {"P", "A"} and not estado["pendientes"]
+    # Completa solo la primera hora: la próxima corrida retoma desde ahí.
+    assert estado["listado_hasta"] == "2026-10-20T12:59:59"
+    assert r.listadas == 1 and "listado interrumpido" in r.detenida
+
+
+def test_listado_con_ticket_rechazado_sigue_siendo_fatal():
+    c = _cliente([_error(403, "El ticket no existe")])
+    with pytest.raises(ErrorApi):
+        _actualizar(c)
+
+
+def test_primero_las_mas_recientes_y_no_las_que_cierran_en_menos_de_12_horas():
+    # 22-10-2026: 401 de 403 Compras Ágiles publicadas cerraban esa misma mañana; se
+    # revisaban primero las que cerraban antes, que ya no alcanzaban a cotizarse.
+    estado = estado_vacio()
+    estado["pendientes"] = {
+        "VIEJA": {"cierre": "2026-10-23 10:00", "intentos": 0, "prioridad": 0, "publicado": "2026-10-20T09:00:00Z"},
+        "NUEVA": {"cierre": "2026-10-23 15:00", "intentos": 0, "prioridad": 0, "publicado": "2026-10-21T11:00:00Z"},
+        "SIN_FECHA": {"cierre": "2026-10-24 12:00", "intentos": 0, "prioridad": 0},   # formato anterior
+        "YA_NO": {"cierre": "2026-10-21 20:00", "intentos": 0, "prioridad": 0, "publicado": "2026-10-21T11:30:00Z"},
+    }
+    c = _cliente([_detalle("SIN_FECHA"), _detalle("NUEVA"), _detalle("VIEJA")])
+    _actualizar(c, estado=estado)
+    detalles = [ll[0].rsplit("/", 1)[1] for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+    assert detalles == ["SIN_FECHA", "NUEVA", "VIEJA"]
+    assert "YA_NO" not in estado["pendientes"] and "YA_NO" not in estado["abiertas"]
+
+
+def test_la_pendiente_guarda_la_fecha_de_publicacion():
+    pagina = _ok({"items": [{"codigo": "A", "nombre": "Compra de guantes", "fechas": {
+        "fecha_publicacion": "2026-10-21T10:00:00Z", "fecha_cierre": "2026-10-25T15:00:00Z"}}],
+        "paginacion": {"numero_pagina": 1, "total_paginas": 1, "total_resultados": 1}})
+    c = _cliente([pagina, _error(429, "límite", solo_detalle=True), _error(429, "límite", solo_detalle=True)])
+    _, estado = _actualizar(c)
+    assert estado["pendientes"]["A"]["publicado"] == "2026-10-21T10:00:00Z"

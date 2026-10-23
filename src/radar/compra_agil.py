@@ -34,6 +34,7 @@ logging.getLogger("urllib3").setLevel(logging.ERROR)
 
 URL_BASE = "https://api2.mercadopublico.cl"
 TIPO = "Compra Ágil"
+VENTANA_LISTADO = timedelta(hours=1)
 URL_FICHA = "https://buscador.mercadopublico.cl/ficha?code={}"
 TAMANO_MINIMO = 10   # mínimo de la API y tamaño que no se corta con 504
 
@@ -79,10 +80,13 @@ class ClienteCompraAgil:
         """payload del listado: {"items": [...], "paginacion": {...}}."""
         return self._get("/v2/compra-agil", params)
 
-    def detalle(self, codigo: str) -> dict:
-        return self._get(f"/v2/compra-agil/{requests.utils.quote(codigo, safe='')}", {})
+    def detalle(self, codigo: str, reintentos: int = 0) -> dict:
+        """Sin reintentos por defecto: el detalle suele responder 504 por compras puntuales
+        (~30 s cada intento); conviene pasar a la siguiente y volver en otra corrida."""
+        return self._get(f"/v2/compra-agil/{requests.utils.quote(codigo, safe='')}", {}, reintentos)
 
-    def _get(self, recurso: str, params: dict) -> dict:
+    def _get(self, recurso: str, params: dict, reintentos: int | None = None) -> dict:
+        reintentos = self.reintentos if reintentos is None else reintentos
         url = f"{self.base_url}{recurso}"
         consulta = {k: v for k, v in params.items() if v is not None}
         espera = self.espera_inicial
@@ -122,8 +126,8 @@ class ClienteCompraAgil:
                     raise ErrorPaginaGrande(motivo)
             except requests.RequestException as e:
                 motivo = f"error de red: {e.__class__.__name__}"
-            if intento == self.reintentos:
-                raise ErrorApi(f"{recurso}: falló tras {self.reintentos} reintentos ({motivo})", temporal=True)
+            if intento == reintentos:
+                raise ErrorApi(f"{recurso}: falló tras {reintentos} reintentos ({motivo})", temporal=True)
             log.warning("%s: %s. Reintento en %.0f s", recurso, motivo, espera)
             time.sleep(espera)
             espera *= 2
@@ -170,17 +174,22 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     """Compras Ágiles abiertas publicadas entre `desde` y `hasta` (hora de Chile: la API
     compara su hora de Chile marcada con "Z"), y hasta qué momento quedó completo el listado.
 
-    Se recorre un día de publicación a la vez, del más antiguo al más nuevo: la API solo
+    Se recorre una hora de publicación a la vez (VENTANA_LISTADO), de la más antigua a la
+    más nueva: un día de todo Chile son ~4.000 compras (~1 hora de API), así que solo una
+    ventana corta alcanza a completarse y a hacer avanzar el listado. La API solo
     ordena de la más nueva a la más antigua, y si el listado se corta (tiempo o páginas)
     deben quedar las publicadas antes, que son las que cierran antes. Ventanas cortas
-    también achican el corrimiento de filas mientras se pagina."""
+    también achican el corrimiento de filas mientras se pagina.
+
+    Si la API falla (ErrorApi temporal), el error lleva en `parcial` lo listado hasta
+    la última ventana completa: no se pierde lo ya recorrido."""
     region = ",".join(str(r) for r in regiones) if regiones else None
     items, tamano, paginas_usadas, total_publicadas = [], tamano_pagina, 0, 0
     tope_filas = max_paginas * tamano_pagina   # no cambia si se achican las páginas
     cubierto = desde
     inicio = desde
     while inicio < hasta:
-        fin = min(datetime.combine(inicio.date(), datetime.max.time()).replace(microsecond=0), hasta)
+        fin = min(inicio + VENTANA_LISTADO - timedelta(seconds=1), hasta)
         params = {"estado": "publicada", "region": region, "ordenar_por": "FechaPublicacion",
                   "publicado_desde": inicio.strftime("%Y-%m-%dT%H:%M:%SZ"),
                   "publicado_hasta": fin.strftime("%Y-%m-%dT%H:%M:%SZ")}
@@ -201,6 +210,10 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
                 paginas_usadas = paginas_usadas * tamano // TAMANO_MINIMO
                 tamano = TAMANO_MINIMO
                 continue
+            except ErrorApi as e:
+                if e.temporal:
+                    e.parcial = (_sin_repetidos(items), cubierto)
+                raise
             paginas_usadas += 1
             items += payload.get("items") or []
             paginacion = payload.get("paginacion") or {}
@@ -293,13 +306,26 @@ def _cierre(valor) -> datetime | None:
         return None
 
 
+MAX_INTENTOS_DETALLE = 3     # corridas en que se intenta el detalle de una compra
+MAX_FALLAS_SEGUIDAS = 15     # detalles seguidos sin respuesta: la API está caída, se sigue en la próxima
+
+
+def _pendiente(valor) -> dict:
+    """Pendiente guardada como texto (formato anterior: solo el cierre) → dict."""
+    if isinstance(valor, dict):
+        return {"cierre": valor.get("cierre"), "intentos": valor.get("intentos", 0),
+                "prioridad": valor.get("prioridad", 1), "publicado": valor.get("publicado")}
+    return {"cierre": valor, "intentos": 0, "prioridad": 1, "publicado": None}
+
+
 def estado_vacio() -> dict:
     """Memoria entre corridas (se guarda en la caché de GitHub Actions).
 
     - listado_hasta: hasta qué hora de publicación ya se listó (hora de Chile);
     - abiertas: {codigo: {"fila", "detalle"}} de tus rubros;
     - descartadas: {codigo: cierre} revisadas que no son de tus rubros;
-    - pendientes: {codigo: cierre} candidatas por nombre a las que falta pedir el detalle."""
+    - pendientes: {codigo: {"cierre", "intentos", "prioridad"}} candidatas por nombre a las
+      que falta pedir el detalle (prioridad 0 = el nombre solo ya calza con un rubro)."""
     return {"version": 1, "listado_hasta": None, "abiertas": {}, "descartadas": {}, "pendientes": {}}
 
 
@@ -317,15 +343,21 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                               regiones: list[int] | None = None, dias_iniciales: int = 3,
                               tamano_pagina: int = TAMANO_MINIMO, max_paginas: int = 400,
                               max_detalles: int = 700, ahora: datetime | None = None,
-                              hasta_monotonic: float | None = None) -> ResultadoCompraAgil:
+                              hasta_monotonic: float | None = None,
+                              margen_horas: float = 12) -> ResultadoCompraAgil:
     """Suma al `estado` las Compras Ágiles publicadas desde la corrida anterior.
 
-    listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas (primero las
-    que cierran antes) → filtro completo. Se quitan las que ya cerraron. Lo que no alcanza
-    a revisarse queda pendiente para la próxima corrida."""
+    listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas → filtro
+    completo. Se quitan las que ya cerraron. Lo que no alcanza a revisarse queda pendiente
+    para la próxima corrida.
+
+    Una Compra Ágil suele estar abierta 1 o 2 días y el límite de consultas de la API deja
+    revisar solo una parte: primero las publicadas más recientemente (las que más tiempo
+    dejan para cotizar), y no se revisan las que cierran en menos de `margen_horas`."""
     ahora = ahora or ahora_chile()
     hoy = ahora.date()
     r = ResultadoCompraAgil()
+    listado_cortado = None
     cliente.hasta_monotonic = hasta_monotonic
     anterior = _cierre(estado.get("listado_hasta"))
     # Una hora de margen: compras publicadas justo al final del listado anterior.
@@ -337,26 +369,62 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         listadas, cubierto = listar_publicadas(cliente, desde, ahora, regiones, tamano_pagina, max_paginas,
                                                hasta_monotonic=limite_listado)
     except ErrorApi as e:
-        if not (e.fatal and e.temporal):
+        if not e.temporal:
             raise
-        listadas, cubierto, r.detenida = [], desde, str(e)   # 429: se siguen los detalles pendientes
+        # Se guarda lo listado hasta la última ventana completa. Con 429 (fatal) no se
+        # hacen más llamadas; con la API lenta o caída (5xx) se intenta igual con los
+        # detalles pendientes: suelen responder aunque el listado no lo haga.
+        listadas, cubierto = getattr(e, "parcial", ([], desde))
+        if e.fatal:
+            r.detenida = str(e)
+        else:
+            listado_cortado = f"listado interrumpido ({e})"
+            log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
     r.listadas = len(listadas)
+    estado["pendientes"] = {k: _pendiente(v) for k, v in estado["pendientes"].items()}
     conocidas = estado["abiertas"].keys() | estado["descartadas"].keys() | estado["pendientes"].keys()
     for c in listadas:
-        if c.get("codigo") not in conocidas and filtro.es_candidata(c.get("nombre")):
-            estado["pendientes"][c["codigo"]] = (c.get("fechas") or {}).get("fecha_cierre")
+        nombre = c.get("nombre")
+        if c.get("codigo") not in conocidas and filtro.es_candidata(nombre):
+            estado["pendientes"][c["codigo"]] = {
+                "cierre": (c.get("fechas") or {}).get("fecha_cierre"), "intentos": 0,
+                "publicado": (c.get("fechas") or {}).get("fecha_publicacion"),
+                # Las que ya calzan solo por el nombre ("Compra de guantes de nitrilo") van
+                # antes que las que solo lo sugieren ("Compra de insumos").
+                "prioridad": 0 if filtro.evaluar(nombre=nombre).coincide else 1}
             r.nuevas_candidatas += 1
     if cubierto > (anterior or desde):
         estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
 
     # Las que ya cerraron salen de la memoria.
-    for clave in ("pendientes", "descartadas"):
-        estado[clave] = {k: v for k, v in estado[clave].items() if not ((c := _cierre(v)) and c < ahora)}
+    # Las pendientes que cierran en menos de `margen_horas` ya no alcanzan a cotizarse.
+    estado["pendientes"] = {k: v for k, v in estado["pendientes"].items()
+                            if not ((c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=margen_horas))}
+    estado["descartadas"] = {k: v for k, v in estado["descartadas"].items() if not ((c := _cierre(v)) and c < ahora)}
     estado["abiertas"] = {k: v for k, v in estado["abiertas"].items()
                           if not ((c := _cierre((v.get("fila") or {}).get("fecha_cierre"))) and c < ahora)}
+    # Se reclasifican con la config.yaml vigente (sin llamar a la API): un cambio en los
+    # rubros o exclusiones se aplica también a las que ya estaban guardadas.
+    for codigo, abierta in list(estado["abiertas"].items()):
+        fila = fila_compra_agil(abierta["detalle"], filtro, hoy)
+        if fila:
+            abierta["fila"] = fila
+        else:
+            estado["descartadas"][codigo] = abierta["fila"].get("fecha_cierre")
+            del estado["abiertas"][codigo]
 
-    pendientes = sorted(estado["pendientes"].items(), key=lambda kv: str(_cierre(kv[1]) or "9999"))
-    for codigo, cierre in pendientes:
+    # Primero las más recientes (sin fecha de publicación, la de cierre más lejana), y
+    # dentro de eso las que el nombre ya calza con un rubro.
+    pendientes = sorted(estado["pendientes"].items(),
+                        key=lambda kv: str(_cierre(kv[1].get("publicado")) or _cierre(kv[1]["cierre"]) or ""),
+                        reverse=True)
+    pendientes.sort(key=lambda kv: kv[1]["prioridad"])
+    fallas_seguidas = 0
+    for codigo, pendiente in pendientes:
+        cierre = pendiente["cierre"]
+        if fallas_seguidas >= MAX_FALLAS_SEGUIDAS:
+            r.detenida = f"{fallas_seguidas} detalles seguidos sin respuesta (la API está lenta)"
+            break
         if r.detenida:
             break
         if r.detalles >= max_detalles:
@@ -373,10 +441,15 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                     r.detenida = str(e)
                     break
                 raise
-            if not e.temporal:   # 404 u otro error definitivo: no se reintenta
-                log.warning("Sin detalle para %s: %s", codigo, e)
+            pendiente["intentos"] += 1
+            fallas_seguidas += 1
+            # 404 u otro error definitivo, o varias corridas sin respuesta: no se insiste.
+            if not e.temporal or pendiente["intentos"] >= MAX_INTENTOS_DETALLE:
+                log.warning("Sin detalle para %s (%d intentos): %s", codigo, pendiente["intentos"], e)
                 estado["pendientes"].pop(codigo, None)
+                estado["descartadas"][codigo] = cierre
             continue
+        fallas_seguidas = 0
         r.detalles += 1
         estado["pendientes"].pop(codigo, None)
         fila = fila_compra_agil(det, filtro, hoy)
@@ -387,6 +460,8 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
             estado["descartadas"][codigo] = cierre or det["Fechas"].get("FechaCierre")
         if r.detalles % 50 == 0:
             log.info("Detalle %d/%d", r.detalles, len(pendientes))
+    if listado_cortado:
+        r.detenida = "; ".join(t for t in (listado_cortado, r.detenida) if t)
     r.pendientes = len(estado["pendientes"])
     log.info("Compras Ágiles: %d listadas, %d candidatas nuevas, %d detalles, %d nuevas en tus rubros, "
              "%d abiertas en tus rubros, %d pendientes%s", r.listadas, r.nuevas_candidatas, r.detalles,

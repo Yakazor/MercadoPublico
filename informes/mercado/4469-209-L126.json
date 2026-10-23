@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "Tamaño pequeño, marca genérica",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 21990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $21.990."
+     "verificacion_pagina": "2026-10-22: la página muestra $21.990."
     },
     {
      "tienda": "Lider (Bandú)",
@@ -46,9 +46,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 74990.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $74.990."
+     "verificacion_pagina": "2026-10-22: la página muestra $74.990."
     },
     {
      "tienda": "Falabella (Kidscool, vendida por Sodimac)",
@@ -63,15 +63,15 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
+     "verificado_en": "2026-10-22",
      "precio_pagina": 81980.0,
-     "verificacion_pagina": "2026-10-20: la página muestra $81.980."
+     "verificacion_pagina": "2026-10-22: la página muestra $81.980."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-22",
   "opciones": 3,
   "verificadas": 3
  }

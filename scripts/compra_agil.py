@@ -67,6 +67,7 @@ def main():
             max_paginas=ca.get("max_paginas", 400),
             max_detalles=args.max_detalles or ca.get("max_detalles", 700),
             hasta_monotonic=inicio + args.max_minutos * 60 if args.max_minutos else None,
+            margen_horas=ca.get("margen_cotizar_horas", 12),
         )
     except ErrorApi as e:
         # Lo obtenido hasta el error ya está en `estado`: se guarda igual.
