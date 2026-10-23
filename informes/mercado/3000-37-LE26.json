@@ -22,7 +22,7 @@
      "verificado": false,
      "nota": "Bases con características técnicas no disponibles; verificar que cumpla (respaldo, mecanismo, brazos).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Paris",
@@ -37,7 +37,7 @@
      "verificado": false,
      "nota": "Verificar contra las especificaciones de las bases.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Las especificaciones están en las bases (no disponibles); se ofrecen sillas ergonómicas de malla de referencia."
@@ -60,7 +60,7 @@
      "verificado": false,
      "nota": "Silla de visita/reunión apilable básica; verificar según bases.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Especificaciones en bases (no disponibles); opción básica de referencia."
@@ -83,14 +83,14 @@
      "verificado": false,
      "nota": "Silla de visita/reunión apilable básica; verificar según bases.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Especificaciones en bases (no disponibles); opción básica de referencia."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 4,
   "verificadas": 0
  }

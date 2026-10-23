@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "Panel VA",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 89990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $89.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $89.990."
     },
     {
      "tienda": "Lider (GASEI)",
@@ -46,9 +46,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 99990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $99.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $99.990."
     }
    ],
    "nota": "Especificación del monitor no definida; se asume 24\" FHD."
@@ -69,7 +69,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 2,
   "verificadas": 2
  }

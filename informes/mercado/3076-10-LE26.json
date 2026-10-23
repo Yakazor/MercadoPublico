@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "Colores/formato según bases no detallado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 33950.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $33.950.",
+     "verificacion_pagina": "2026-10-23: la página muestra $33.950.",
      "descartado": true,
      "motivo_descarte": "La línea es la compra completa de pinturas según bases: un galón de esmalte no la representa."
     },
@@ -41,18 +41,18 @@
      "verificado": true,
      "nota": "Precio actualizado al que mostró la página el 2026-10-20 (antes $37.990).",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 35000.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $35.000.",
+     "precio_pagina": 35990.0,
+     "verificacion_pagina": "2026-10-23: la página muestra $35.990.",
      "descartado": true,
      "motivo_descarte": "La línea es la compra completa de pinturas según bases: un galón de esmalte no la representa.",
-     "verificado_en": "2026-10-22"
+     "verificado_en": "2026-10-23"
     }
    ],
    "nota": "Supuesto: esmalte 1 galón. [Auditoría 2026-10-21] Cantidad 1 = toda la compra: el detalle de pinturas y cantidades está en las bases."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 2,
   "verificadas": 2
  }

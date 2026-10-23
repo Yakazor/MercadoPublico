@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "Hoja/mango 130 cm; verificar largo de hoja 15-20 cm",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $13.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $13.990."
     },
     {
      "tienda": "Ferretería Saint Germain (Sodimac.cl)",
@@ -39,9 +39,9 @@
      "verificado": true,
      "nota": "Mango de eucalipto, largo no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 16990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $16.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $16.990."
     }
    ]
   },
@@ -63,9 +63,9 @@
      "verificado": true,
      "nota": "Largo/material del mango no confirmado (pide mango metal 120 cm)",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 4990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $4.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $4.990."
     }
    ]
   },
@@ -87,9 +87,9 @@
      "verificado": true,
      "nota": "Tipo de corte y capacidad 35-40 mm no confirmados",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $14.990."
     },
     {
      "tienda": "Sodimac",
@@ -104,9 +104,9 @@
      "verificado": true,
      "nota": "Precio en listado entre 16.950 y 18.950; modelo y capacidad no confirmados Precio actualizado al que mostró la página el 2026-10-20 (antes $16.950).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 16990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $16.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $16.990."
     }
    ]
   },
@@ -125,12 +125,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 9235,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "Marca no Truper; largo de mango no confirmado Precio actualizado al que mostró la página el 2026-10-20 (antes $10.820).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-22",
-     "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $10.990."
+     "precio_pagina": 10620.0,
+     "verificacion_pagina": "2026-10-23: la página abrió y el precio más parecido es $10.620, no $10.990: puede haber cambiado."
     }
    ]
   },
@@ -166,7 +166,7 @@
      "verificado": false,
      "nota": "Medida distinta y sin UV confirmado; cotizar fabricante de rafia para 200 un.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -188,7 +188,7 @@
      "verificado": false,
      "nota": "Asume 10 pares por pack (no aclarado); cabritilla sin recubrimiento nitrilo",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Falabella (Metalfer)",
@@ -203,9 +203,9 @@
      "verificado": true,
      "nota": "Descarne, más largo (soldador)",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 5300.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $5.300."
+     "verificacion_pagina": "2026-10-23: la página muestra $5.300."
     }
    ]
   },
@@ -227,9 +227,9 @@
      "verificado": true,
      "nota": "Largo 2,44 m, no 2,60 m Precio actualizado al que mostró la página el 2026-10-20 (antes $4.990).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 4890.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $4.890."
+     "verificacion_pagina": "2026-10-23: la página muestra $4.890."
     },
     {
      "tienda": "Easy",
@@ -244,7 +244,7 @@
      "verificado": false,
      "nota": "Largo 2,4 m, no 2,60 m",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -266,9 +266,9 @@
      "verificado": true,
      "nota": "Equivale a 0,6 de rollo de 100 m; la bases aceptan 4.000 m totales Precio actualizado al que mostró la página el 2026-10-20 (antes $8.792).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $8.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $8.990."
     },
     {
      "tienda": "Easy",
@@ -283,7 +283,7 @@
      "verificado": false,
      "nota": "Equivale a 0,1 de rollo de 100 m",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -305,15 +305,15 @@
      "verificado": false,
      "nota": "Versión lente claro; se pide gris humo. Confirmar disponibilidad gris",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC ($220.000, 1 sola orden) no representa un lente de seguridad unitario; $3.990 es un precio normal para un Top Gun óptico, sin error de unidad. Falta confirmar la versión gris humo."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 14,
-  "verificadas": 9
+  "verificadas": 8
  }
 }
