@@ -125,12 +125,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 9235,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "Marca no Truper; largo de mango no confirmado Precio actualizado al que mostró la página el 2026-10-20 (antes $10.820).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-22",
-     "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $10.990."
+     "precio_pagina": 10620.0,
+     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $10.620, no $10.990: puede haber cambiado."
     }
    ]
   },
@@ -314,6 +314,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-22",
   "opciones": 14,
-  "verificadas": 9
+  "verificadas": 8
  }
 }

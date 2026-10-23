@@ -1,0 +1,20 @@
+[
+ {
+  "fecha": "2026-10-22",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Top 3 de 24 evaluadas: 3654-36-LE26 (EPP, Ejército, RM), 612-44-LE26 (3 workstations, SAG, RM), 4768-55-LE26 (676 juguetes, Municipalidad de La Estrella)",
+  "resultado": "Las 3 quedan GO CON CONDICIONES: márgenes netos de 14–16 % y ofertas bajo el monto estimado, pero con precios de productos aproximados y, en 3654-36, 13 de 29 ítems sin precio.",
+  "riesgos": "3654-36: el V-Flex de Easy no es antiestático como piden las bases. 612-44: especificación de la workstation en el adjunto; la opción cotizada no incluye teclado ni mouse. 4768-55: 676 juguetes genéricos cotizados con un juguete de tienda; el monto da ~$17.750 c/IVA por juguete. Ningún proveedor publica correo: hay que pedirlo por su web o teléfono.",
+  "decisiones": "Proveedores registrados: Treck S.A. y VS Security (V-Flex); HP Chile, SP Digital y Americatech (workstations); LB Chile, Comercial Lama, Juguetes por Mayor y Diverti (juguetes). Correos sin destinatario hasta confirmar contactos.",
+  "recomendaciones": "Hoy: (1) pedir a Treck el V-Flex antiestático por tallas y precio por 140 pares; (2) leer la especificación de 612-44 y cotizar a HP Chile la workstation exacta con teclado y mouse; (3) pedir a LB Chile o Comercial Lama un pack navideño de 676 juguetes bajo $15.000 c/IVA. Cierran el 26-10: decidir antes del 24-10."
+ },
+ {
+  "fecha": "2026-10-22",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1135 vigentes; 24 evaluadas; informes de 10",
+  "resultado": "0 GO, 16 con condiciones, 8 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 13 de 29 ítems sin precio de mercado; 14 de 16 precios son de productos aproximados (otra medida, marca o modelo).; 14 de 41 precios son de productos aproximados (otra medida, marca o modelo).; 16 de 44 ítems sin precio de mercado; 2 de 11 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 29 de 70 ítems sin precio de mercado; 3 de 3 precios son de productos aproximad",
+  "decisiones": "3654-36-LE26: GO CON CONDICIONES; 612-44-LE26: GO CON CONDICIONES; 4768-55-LE26: GO CON CONDICIONES; 2366-31-LE26: GO CON CONDICIONES; 2446-307-LE26: GO CON CONDICIONES; 3000-37-LE26: GO CON CONDICIONES; 3000-35-LE26: GO CON CONDICIONES; 979-67-LE26: GO CON CONDICIONES; 2585-156-LE26: GO CON CONDICIONES; 2765-60-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **3654-36-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **612-44-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4768-55-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **2366-31-LE26**: 🟡 GO CON CONDICIONES. Mejorar el margen neto (hoy bajo 10 %) negociando con proveedores. - **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ }
+]

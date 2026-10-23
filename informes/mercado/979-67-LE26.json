@@ -374,12 +374,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 2932.77,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-20",
-     "precio_pagina": 3190.0,
-     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $3.190, no $3.490: puede haber cambiado."
+     "verificado_en": "2026-10-22",
+     "precio_pagina": 3500.0,
+     "verificacion_pagina": "2026-10-22: la página muestra $3.500."
     }
    ]
   },
@@ -600,12 +600,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 1840.34,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-22",
-     "precio_pagina": 2190.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $2.190."
+     "precio_pagina": 2290.0,
+     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $2.290, no $2.190: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -617,12 +617,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 3352.94,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-22",
-     "precio_pagina": 3990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $3.990."
+     "precio_pagina": 3606.0,
+     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $3.606, no $3.990: puede haber cambiado."
     }
    ]
   },
@@ -829,8 +829,8 @@
      "verificado": true,
      "nota": "Precio visto en listado desordenado; confirmar que corresponde a este modelo",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 8090.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $8.090.",
+     "precio_pagina": 7940.0,
+     "verificacion_pagina": "2026-10-22: la página muestra $7.940.",
      "verificado_en": "2026-10-22"
     }
    ]
@@ -986,12 +986,12 @@
      "unidades_equivalentes": 100,
      "precio_unitario_neto": 235.21,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "381 mm vs 400 mm; caro",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-22",
-     "precio_pagina": 27980.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $27.980."
+     "precio_pagina": 26490.0,
+     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $26.490, no $27.990: puede haber cambiado."
     }
    ]
   },
@@ -1737,6 +1737,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-22",
   "opciones": 75,
-  "verificadas": 48
+  "verificadas": 46
  }
 }

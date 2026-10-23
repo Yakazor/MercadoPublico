@@ -14,6 +14,8 @@ on:
       - "informes/README.md"
       - "scripts/verificar_precios.py"
       - "scripts/informes_pdf.py"
+      - "scripts/evaluar_licitaciones.py"
+      - "src/radar/evaluacion.py"
   workflow_dispatch:
 
 concurrency:
@@ -46,6 +48,13 @@ jobs:
         run: |
           git clone -q --depth 1 --branch datos "https://github.com/${{ github.repository }}.git" "$RUNNER_TEMP/datos"
           python scripts/presupuesto.py --items "$RUNNER_TEMP/datos/items.json" \
+            --licitaciones "$RUNNER_TEMP/datos/licitaciones.json"
+
+      # Evaluación comercial (Excel, informes ejecutivos, GO / NO GO y correos a proveedores)
+      # con los mismos datos y precios recién verificados.
+      - name: Evaluación comercial
+        run: |
+          python scripts/evaluar_licitaciones.py --items "$RUNNER_TEMP/datos/items.json" \
             --licitaciones "$RUNNER_TEMP/datos/licitaciones.json"
 
       - name: Informes en PDF

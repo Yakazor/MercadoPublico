@@ -1644,6 +1644,30 @@ filtro_preliminar_por_nombre: true
 # vuelve a pedir) hasta que cambie su fecha de cierre o pasen estos días.
 refrescar_detalle_licitacion_dias: 7
 
+# Evaluación comercial (scripts/evaluar_licitaciones.py → informes/evaluacion/): costos que
+# se suman al precio de mercado para decidir GO / NO GO. Son supuestos: ajústalos a tu caso.
+evaluacion:
+  max_evaluadas: 10              # informes, GO/NO GO y correos para las mejores N
+  valor_hora: 6000               # CLP por hora de trabajo propio
+  horas_base: 4                  # preparar oferta, aceptar OC, facturar y cobrar
+  horas_por_linea: 0.25          # cotizar y comprar cada línea
+  horas_por_entrega: 3           # retirar y entregar
+  tasa_financiera_mensual: 0.015 # costo de financiar la compra hasta el pago (30 días)
+  utm: 72151                     # CLP (octubre 2026, por confirmar en sii.cl)
+  garantia_desde_utm: 1000       # fiel cumplimiento sobre 1.000 UTM
+  garantia_pct: 0.05
+  costo_emision_garantia_pct: 0.02
+  logistica_pct:                 # despacho desde Santiago, % del costo de la mercadería
+    cercana: 0.03                # Región Metropolitana
+    media: 0.06                  # Valparaíso, O'Higgins, Maule
+    lejana: 0.09                 # Coquimbo a Los Ríos
+    extrema: 0.12                # Arica a Antofagasta, Los Lagos a Magallanes
+  remitente:                     # firma de los borradores de correo a proveedores
+    empresa: "[Empresa]"
+    nombre: "[Nombre]"
+    cargo: "[Cargo]"
+    contacto: "[Contacto]"
+
 # Órdenes de compra: para los precios basta una muestra. Se piden a lo más estas
 # OC por rubro y día (cada rubro puede cambiarlo con oc_maximo_por_dia).
 ordenes_compra:

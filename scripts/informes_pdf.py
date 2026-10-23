@@ -93,6 +93,11 @@ def destinos() -> list[tuple]:
              (base / "grupos_licitaciones.md", "Grupos_de_licitaciones")]
     for md in sorted((base / "presupuestos").glob("*.md")):
         pares.append((md, f"Presupuesto_{md.stem}"))
+    # Evaluación comercial: resumen, informe ejecutivo y hoja GO / NO GO (los correos quedan en .md).
+    pares.append((base / "evaluacion" / "README.md", "Evaluacion_resumen"))
+    for md in sorted((base / "evaluacion" / "licitaciones").glob("*.md")):
+        if not md.stem.endswith("_correos"):
+            pares.append((md, f"Evaluacion_{md.stem}"))
     return [(md, base / "pdf" / f"{nombre}.pdf") for md, nombre in pares if md.exists()]
 
 

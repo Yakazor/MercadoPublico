@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Treck S.A.",
+  "web": "https://www.treck.cl/vflex",
+  "correo": null,
+  "contacto": "Casa matriz en Santiago",
+  "especialidad": "Calzado de seguridad y vestuario técnico; página dedicada a V-Flex (probable representante)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.treck.cl/vflex"
+ },
+ {
+  "nombre": "VS Security SpA",
+  "web": "https://vssecurity.cl/marca/v-flex/",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Distribuidor de calzado V-Flex, despacho a todo Chile",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://vssecurity.cl/marca/v-flex/"
+ },
+ {
+  "nombre": "Easy",
+  "web": "https://www.easy.cl/botin-de-seguridad-unisex-vflex-v930-negro-1427698/p",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Retail: V-Flex V930 (dieléctrico, NO antiestático: no cumple)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/3654-36-LE26.json"
+ }
+]

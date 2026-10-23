@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "HP Chile (oficina comercial)",
+  "web": "https://www.hp.com/cl-es/contact-hp/office-locations.html",
+  "correo": null,
+  "contacto": "Mariano Sánchez Fontecilla 310, piso 13, Santiago · +56 22 72 27 051",
+  "especialidad": "Fabricante; workstations línea Z para empresas",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.hp.com/cl-es/contact-hp/office-locations.html"
+ },
+ {
+  "nombre": "SP Digital",
+  "web": "https://www.spdigital.cl/",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Retail de computación (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/612-44-LE26.json"
+ },
+ {
+  "nombre": "Americatech SpA (vende en Lider)",
+  "web": "https://www.lider.cl/ip/marcas-destacadas/workstation-mobile-dell-precision-3480-i7-1370p-32gb-512gb-ssd/00539718484876",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Revendedor de workstations Dell Precision",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.lider.cl/ip/marcas-destacadas/workstation-mobile-dell-precision-3480-i7-1370p-32gb-512gb-ssd/00539718484876"
+ }
+]
