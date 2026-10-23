@@ -122,13 +122,21 @@
 
     <div class="rl-card" id="tabla-licitaciones">
       <h2>Licitaciones y Compras Ágiles vigentes</h2>
-      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región, o filtra por región y comuna (en las Compras Ágiles la comuna se busca en la dirección de entrega); el código abre la ficha en Mercado Público (si la ficha de una Compra Ágil no abre, búscala por código en la sección Compra Ágil). En Compra Ágil se cotiza el total con IVA y despacho; «1er llamado» es solo para empresas de menor tamaño. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
+      <p class="rl-nota">Ordenadas por cierre. Busca por nombre, organismo o región, o filtra por región, comuna (en las Compras Ágiles se busca en la dirección de entrega) y plazo de entrega (solo lo traen las Compras Ágiles; en las licitaciones está en las bases); el código abre la ficha en Mercado Público (si la ficha de una Compra Ágil no abre, búscala por código en la sección Compra Ágil). En Compra Ágil se cotiza el total con IVA y despacho; «1er llamado» es solo para empresas de menor tamaño. «Simular» abre el presupuesto de cualquier licitación: con precios de tiendas si ya se buscaron (borde verde) o, si no, estimado con lo que el Estado pagó en órdenes de compra. Marca licitaciones para copiar el pedido de precios de tiendas y pegarlo en el chat.</p>
       <div class="rl-controles">
         <input type="search" id="buscar-lic" placeholder="Buscar licitación, organismo, región…" aria-label="Buscar licitaciones">
         <select id="tipo-lic" aria-label="Tipo de compra"><option value="">Licitaciones y Compras Ágiles</option><option value="agil">Solo Compras Ágiles</option><option value="licitacion">Solo licitaciones</option></select>
         <select id="rubro-lic" aria-label="Rubro" data-source="por_rubro"><option value="">Todos los rubros</option></select>
         <select id="region-lic" aria-label="Región" data-source="licitaciones" data-field="region"><option value="">Todas las regiones</option></select>
         <select id="comuna-lic" aria-label="Comuna o ciudad" data-source="licitaciones" data-field="comuna"><option value="">Todas las comunas</option></select>
+        <select id="entrega-lic" aria-label="Plazo de entrega" data-source="licitaciones" data-field="plazo_entrega_dias">
+          <option value="">Cualquier plazo de entrega</option>
+          <option value="3">Entrega en 3 días o más</option>
+          <option value="5">Entrega en 5 días o más</option>
+          <option value="7">Entrega en 7 días o más</option>
+          <option value="10">Entrega en 10 días o más</option>
+          <option value="-2">Entrega urgente (hasta 2 días)</option>
+        </select>
         <label><input type="checkbox" id="pronto-lic"> Solo cierres en ≤ 7 días</label>
         <label><input type="checkbox" id="noreg-lic"> Ocultar solo regulados</label>
         <label><input type="checkbox" id="precios-lic"> Solo con precios de mercado</label>
@@ -528,7 +536,7 @@
     ['buscar-lic', 'buscar-pre'].forEach((id) => document.getElementById(id).addEventListener('input', () => { preTodo = false; pronto(); }));
     // Al cambiar de región, la comuna elegida puede no existir en ella.
     document.getElementById('region-lic').addEventListener('change', () => { document.getElementById('comuna-lic').value = ''; });
-    ['tipo-lic', 'rubro-lic', 'region-lic', 'comuna-lic', 'pronto-lic', 'noreg-lic', 'precios-lic', 'rubro-pre', 'sim-margen'].forEach((id) =>
+    ['tipo-lic', 'rubro-lic', 'region-lic', 'comuna-lic', 'entrega-lic', 'pronto-lic', 'noreg-lic', 'precios-lic', 'rubro-pre', 'sim-margen'].forEach((id) =>
       document.getElementById(id).addEventListener('change', () => dibujar()));
     document.getElementById('sim-lic').addEventListener('change', (e) => { simulada = e.target.value; dibujar(); });
     document.getElementById('pre-todo').addEventListener('click', () => { preTodo = true; dibujar(); });
@@ -592,6 +600,9 @@
       opcionesLugar(g.data);
       const region = document.getElementById('region-lic').value;
       const comuna = document.getElementById('comuna-lic').value;
+      // > 0: al menos N días para entregar; < 0: hasta N días (urgente). Solo las Compras
+      // Ágiles traen el plazo (en las licitaciones está en las bases): sin plazo no pasan.
+      const entrega = Number(document.getElementById('entrega-lic').value);
       const pronto7 = document.getElementById('pronto-lic').checked;
       const noreg = document.getElementById('noreg-lic').checked;
       const soloPrecios = document.getElementById('precios-lic').checked;
@@ -606,6 +617,11 @@
         .filter((l) => !tipo || (tipo === 'agil') === (l.tipo === 'Compra Ágil'))
         .filter((l) => !region || l.region === region)
         .filter((l) => !comuna || enComuna(l, comuna))
+        .filter((l) => {
+          if (!entrega) return true;
+          const d = l.plazo_entrega_dias == null || l.plazo_entrega_dias === '' ? NaN : Number(l.plazo_entrega_dias);
+          return !isNaN(d) && (entrega > 0 ? d >= entrega : d <= -entrega);
+        })
         .filter((l) => !pronto7 || (l.dias != null && l.dias <= 7))
         .filter((l) => !noreg || Number(l.solo_regulados) !== 1)
         .filter((l) => !soloPrecios || conMercado.has(l.codigo))
@@ -638,7 +654,9 @@
         if (l.tipo === 'Compra Ágil') {
           const etiqueta = document.createElement('span');
           etiqueta.className = 'rl-tipo';
-          etiqueta.textContent = 'Compra Ágil' + (Number(l.llamado) === 1 ? ' · 1er llamado' : Number(l.llamado) === 2 ? ' · 2º llamado' : '');
+          const plazo = l.plazo_entrega_dias == null || l.plazo_entrega_dias === '' ? NaN : Number(l.plazo_entrega_dias);
+          etiqueta.textContent = 'Compra Ágil' + (Number(l.llamado) === 1 ? ' · 1er llamado' : Number(l.llamado) === 2 ? ' · 2º llamado' : '')
+            + (isNaN(plazo) ? '' : ` · entrega ${plazo} ${plazo === 1 ? 'día' : 'días'}`);
           tdNombre.append(etiqueta);
         }
         tdNombre.append(document.createTextNode(l.nombre || ''));
