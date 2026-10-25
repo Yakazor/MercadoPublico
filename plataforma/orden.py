@@ -189,7 +189,8 @@ def pagina() -> None:
 
     st.subheader("Orden")
     a, b, c = st.columns(3)
-    a.text_input("Número", key="oc_numero")
+    a.text_input("Número", key="oc_numero", help="La plataforma no guarda las órdenes: usa el correlativo que "
+                 "sigue a tu última orden (o súbela en JSON arriba).")
     b.date_input("Fecha", key="oc_fecha", format="DD-MM-YYYY")
     c.radio("Compras como", list(TIPOS), format_func=TIPOS.get, key="oc_tipo", horizontal=True)
 

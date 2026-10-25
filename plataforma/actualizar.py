@@ -107,7 +107,8 @@ def _seguimiento(token: str | None) -> None:
     generado = comun.datos_generados(comun.datos()["meta"])
     nuevo = next((c for c in lista if c["workflow"] == "radar-diario.yml" and c["resultado"] == "success"), None)
     recargadas = st.session_state.setdefault("radar_recargados", set())
-    if nuevo and generado is not None and nuevo["fin"] > generado + pd.Timedelta(minutes=1) \
+    # El radar publica unos minutos antes de terminar: margen de 5 minutos.
+    if nuevo and generado is not None and nuevo["fin"] > generado + pd.Timedelta(minutes=5) \
             and nuevo["id"] not in recargadas:
         recargadas.add(nuevo["id"])
         comun.recargar()

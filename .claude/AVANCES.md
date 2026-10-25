@@ -27,7 +27,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | PR #2 abierto (`feature/ordenes-compra`) |
 | Plataforma web (Streamlit) | PR #3 abierto (`feature/plataforma`, parte de `feature/ordenes-compra`) |
-| Workflow «Órdenes de compra históricas» | Falla desde el 22-10 en «Descargar órdenes de compra» (por revisar) |
+| Workflow «Órdenes de compra históricas» | Falla todos los días desde al menos el 19-10 en «Descargar órdenes de compra» (exit 1). El log no se puede bajar desde la sesión (proxy): los workflows ahora dejan los errores como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`). Corrida de diagnóstico en `feature/plataforma`: 40146184655 |
 
 PRs: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakazor/MercadoPublico/pull/3
 (unir el 2 antes que el 3).
@@ -52,6 +52,9 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: radar lanzado a mano terminó bien: `datos` del 24-10 21:19 (465 licitaciones,
+  1.600 Compras Ágiles). Auditoría de la plataforma: margen de recarga 5 min, ayuda del número
+  de OC; prueba completa en Chromium OK con los datos nuevos.
 - 2026-10-25: páginas «Actualizar datos» y «Manuales»; Compras Ágiles se publican al terminar;
   487 pruebas OK. Falta: auditoría y la falla de «Órdenes de compra históricas».
 - 2026-10-25: plataforma web publicada en la rama `feature/plataforma` (PR #3), 482 pruebas OK.
