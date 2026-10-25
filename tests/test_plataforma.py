@@ -191,10 +191,12 @@ class _Respuesta:
             raise RuntimeError(self.status_code)
 
 
-def _run(id_, archivo, status, conclusion=None, creada="2026-10-25T00:10:00Z", fin="2026-10-25T00:13:00Z"):
+def _run(id_, archivo, status, conclusion=None, creada="2026-10-25T00:10:00Z", fin="2026-10-25T00:13:00Z",
+         titulo=None):
     return {"id": id_, "path": f".github/workflows/{archivo}", "name": archivo, "status": status,
             "conclusion": conclusion, "event": "workflow_dispatch", "run_started_at": creada,
-            "created_at": creada, "updated_at": fin, "html_url": f"https://github.com/x/{id_}"}
+            "created_at": creada, "updated_at": fin, "html_url": f"https://github.com/x/{id_}",
+            "display_title": titulo or archivo}
 
 
 def test_corridas_traduce_estados_y_errores(monkeypatch):
@@ -202,13 +204,16 @@ def test_corridas_traduce_estados_y_errores(monkeypatch):
 
     pedidos = []
     runs = [_run(1, "radar-diario.yml", "completed", "success"), _run(2, "compra-agil.yml", "queued"),
-            _run(3, "ordenes-historicas.yml", "in_progress")]
+            _run(3, "ordenes-historicas.yml", "in_progress"),
+            _run(4, "radar-diario.yml", "in_progress", titulo="Publicar datos (solo exportar)")]
     monkeypatch.setattr(a.requests, "get", lambda url, **k: pedidos.append((url, k)) or
                         _Respuesta(200, {"workflow_runs": runs}))
     lista = a.corridas("tok")
     assert [(c["workflow"], c["estado"], c["resultado"]) for c in lista] == [
         ("radar-diario.yml", "completed", "success"), ("compra-agil.yml", "en_cola", None),
-        ("ordenes-historicas.yml", "in_progress", None)]
+        ("ordenes-historicas.yml", "in_progress", None), ("radar-diario.yml", "in_progress", None)]
+    assert [c["solo_exportar"] for c in lista] == [False, False, False, True]
+    assert lista[3]["nombre"] == "Publicar datos (sin consultar la API)"
     assert lista[0]["nombre"] == "Licitaciones (radar diario)" and lista[0]["fin"].minute == 13
     assert lista[1]["fin"] is None
     assert pedidos[0][1]["params"]["branch"] == "feature/api-mercadopublico"
@@ -237,6 +242,11 @@ def test_actualizar_no_pisa_corridas_en_cola(monkeypatch):
     resultado = dict(a.actualizar("tok", ocupado))
     assert resultado["compra-agil.yml"] == "ya está corriendo o en cola"
     assert "misma base" in resultado["radar-diario.yml"] and lanzados == []
+    # Una corrida «solo exportar» (la lanza Compras Ágiles para publicar) no impide el radar completo.
+    lanzados.clear()
+    exportando = [{"workflow": "radar-diario.yml", "estado": "in_progress", "solo_exportar": True},
+                  {"workflow": "radar-diario.yml", "estado": "en_cola", "solo_exportar": True}]
+    assert dict(a.actualizar("tok", exportando))["radar-diario.yml"] == "lanzado"
     with pytest.raises(a.ErrorGitHub):
         a.lanzar("radar-diario.yml", "")
     with pytest.raises(ValueError):

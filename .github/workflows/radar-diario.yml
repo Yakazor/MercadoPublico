@@ -1,4 +1,7 @@
 name: Radar diario de licitaciones
+# El modo «solo exportar» (lo lanza «Compras Ágiles» para publicarlas) lleva otro título: así la
+# plataforma lo distingue del radar completo en la lista de corridas.
+run-name: ${{ inputs.solo_exportar && 'Publicar datos (solo exportar)' || 'Radar diario de licitaciones' }}
 
 # Lunes a viernes 11:07 UTC = 8:07 en Chile (horario de verano) / 7:07 (invierno).
 # También se puede lanzar a mano: Actions → "Radar diario de licitaciones" → Run workflow.

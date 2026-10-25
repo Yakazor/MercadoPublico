@@ -35,6 +35,14 @@ PRs: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakaz
 Manuales (Claude Docs): orden de compra https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W ·
 guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
+## Siguientes pasos sugeridos
+
+- Unir PR #2 y luego PR #3 (la corrección de «Órdenes de compra históricas» y la publicación de
+  Compras Ágiles cada 3 horas solo corren en producción después de unir).
+- Publicar la plataforma en Streamlit Community Cloud (README, «Plataforma web») con `clave` y
+  `github_token` en los secretos.
+- Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma.
+
 ## Tarea en curso: plataforma (pedido del 25-10)
 
 - [x] Plataforma: Inicio, Licitaciones, Compras Ágiles, Evaluación, Orden de compra (PR #3)
@@ -48,7 +56,9 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Página «Manuales»: PDF en `manuales/` (exportados de los Claude Docs), Guía del Radar,
       erratas, plantillas e informes de `informes/pdf/`
 - [x] Auditar y corregir (falla de «Órdenes de compra históricas», JSON de la orden, margen de recarga)
-- [ ] Actualizar la descripción del PR #3
+- [x] Actualizar la descripción del PR #3
+- [ ] Confirmar que «Órdenes de compra históricas» pasa con la corrección (corrida 40146638863 en
+      `feature/plataforma`)
 
 ## Bitácora
 

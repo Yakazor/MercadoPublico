@@ -10,6 +10,8 @@ consultas por hora.
 - `actualizar(token, corridas)`: lanza «Compras Ágiles» y «Radar diario» salvo que ya estén
   corriendo o en cola. El radar comparte la base con «Órdenes de compra históricas» (mismo
   grupo de concurrencia): si una de las dos está en cola, una corrida nueva la cancelaría.
+  Las corridas «solo exportar» del radar (las lanza «Compras Ágiles» para publicar, sin
+  consultar la API) no cuentan: un radar completo publica lo mismo y más.
 """
 from __future__ import annotations
 
@@ -28,6 +30,7 @@ WORKFLOWS = {
 }
 GRUPO_BASE = ("radar-diario.yml", "ordenes-historicas.yml")
 EN_COLA = {"queued", "pending", "waiting", "requested"}
+SOLO_EXPORTAR = "Publicar datos (solo exportar)"   # run-name de radar-diario.yml en ese modo
 
 
 class ErrorGitHub(Exception):
@@ -70,8 +73,10 @@ def corridas(token: str | None = None, repo: str = REPO, rama: str = RAMA, canti
     for run in r.json().get("workflow_runs", []):
         archivo = (run.get("path") or "").split("/")[-1].split("@")[0]
         terminada = run.get("status") == "completed"
+        exportar = archivo == "radar-diario.yml" and run.get("display_title") == SOLO_EXPORTAR
         filas.append({
-            "id": run.get("id"), "workflow": archivo, "nombre": WORKFLOWS.get(archivo, run.get("name")),
+            "id": run.get("id"), "workflow": archivo, "solo_exportar": exportar,
+            "nombre": "Publicar datos (sin consultar la API)" if exportar else WORKFLOWS.get(archivo, run.get("name")),
             "estado": "en_cola" if run.get("status") in EN_COLA else run.get("status"),
             "resultado": run.get("conclusion"), "evento": run.get("event"),
             "inicio": _fecha(run.get("run_started_at") or run.get("created_at")),
@@ -93,10 +98,12 @@ def lanzar(workflow: str, token: str, repo: str = REPO, rama: str = RAMA, inputs
 
 
 def motivo_para_no_lanzar(workflow: str, actuales: list[dict]) -> str | None:
-    """Por qué no conviene lanzar `workflow` ahora (None si se puede)."""
-    if any(c["workflow"] == workflow and c["estado"] in ("en_cola", "in_progress") for c in actuales):
+    """Por qué no conviene lanzar `workflow` ahora (None si se puede). Las corridas «solo
+    exportar» no impiden lanzar el radar: si la nueva la cancela, el radar publica lo mismo."""
+    activas = [c for c in actuales if not c.get("solo_exportar")]
+    if any(c["workflow"] == workflow and c["estado"] in ("en_cola", "in_progress") for c in activas):
         return "ya está corriendo o en cola"
-    if workflow in GRUPO_BASE and any(c["workflow"] in GRUPO_BASE and c["estado"] == "en_cola" for c in actuales):
+    if workflow in GRUPO_BASE and any(c["workflow"] in GRUPO_BASE and c["estado"] == "en_cola" for c in activas):
         return "hay otra corrida que usa la misma base esperando turno"
     return None
 
