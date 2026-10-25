@@ -39,7 +39,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 7
+- **Días para el cierre:** 5
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,6 +48,7 @@
 - 29 de 70 ítems sin precio de mercado: el costo real es mayor.
 - Líneas con unidad Global/Kit: la cantidad real está en las bases.
 - 14 de 41 precios son de productos aproximados (otra medida, marca o modelo).
+- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
 - La oferta ($12.935.560) supera el monto estimado ($10.000.000).
 
 ## Proveedores recomendados

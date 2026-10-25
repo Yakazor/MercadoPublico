@@ -44,9 +44,9 @@
      "verificado": true,
      "nota": "Licitación exige original Mercedes; esta es plumilla 26\" de repuesto equivalente en medida. Precio visto en listado de Sodimac.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-24: la página muestra $14.990."
     }
    ]
   },
@@ -160,9 +160,9 @@
      "verificado": true,
      "nota": "1 juego = 2 plumillas; medida 26\" supuesta.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-24: la página muestra $14.990."
     }
    ]
   },
@@ -210,7 +210,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-23",
+  "fecha": "2026-10-24",
   "opciones": 2,
   "verificadas": 2
  }

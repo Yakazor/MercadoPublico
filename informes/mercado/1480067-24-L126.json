@@ -36,7 +36,7 @@
      "verificado": false,
      "nota": "Precio visto en resultado de búsqueda (listado); ficha no identificada. Verificar ancho requerido.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -58,7 +58,7 @@
      "verificado": false,
      "nota": "Mismo producto que línea 3; precio visto en listado. Verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -94,7 +94,7 @@
      "verificado": false,
      "nota": "Pack de 12 visto en resultados ($33.990 y $40.990 según vendedor); verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -109,13 +109,13 @@
      "verificado": false,
      "nota": "Precio más frecuente en listados (rango 2.990-3.990); ficha no identificada. Verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-23",
+  "fecha": "2026-10-24",
   "opciones": 4,
   "verificadas": 0
  }

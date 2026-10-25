@@ -24,5 +24,6 @@
 ## Condiciones para postular
 
 - Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
+- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
 
 Costo total estimado $7.438.186 neto; punto de equilibrio $8.851.442 con IVA (oferta mínima que cubre todos los costos).

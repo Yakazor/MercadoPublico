@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Gasa no tejida, no tejida+algodón; no se confirma vencimiento >24 meses.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $11.990."
+     "verificacion_pagina": "2026-10-24: la página muestra $11.990."
     }
    ]
   },
@@ -48,7 +48,7 @@
      "verificado": false,
      "nota": "Gasa no tejida + algodón; el comprador pide gasa tejida. Vencimiento no confirmado. Precio de listado, hay ofertas ~3.490.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -78,7 +78,7 @@
      "verificado": false,
      "nota": "Se asume unidad de licitación = sobre x2 (50 por caja). Si la unidad fuera la gasa, dividir por 2. Precio de listado, se vio también a ~3.350.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Falabella (Cranberry)",
@@ -93,9 +93,9 @@
      "verificado": true,
      "nota": "Se asume unidad = sobre x2.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 4690.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $4.690."
+     "verificacion_pagina": "2026-10-24: la página muestra $4.690."
     }
    ]
   },
@@ -118,9 +118,9 @@
      "verificado": true,
      "nota": "Misma medida y tipo; empaque no confirmado como sobre x2. Auditoría: la unidad de la licitación es el sobre de 2 gasas; 50 gasas = 25 sobres.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $11.990."
+     "verificacion_pagina": "2026-10-24: la página muestra $11.990."
     },
     {
      "tienda": "Salcobrand",
@@ -135,9 +135,9 @@
      "verificado": true,
      "nota": "Precio farmacia; no se confirma que sea no tejida. Auditoría: la unidad de la licitación es el sobre de 2 gasas; 6 gasas = 3 sobres.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 4999.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $4.999."
+     "verificacion_pagina": "2026-10-24: la página muestra $4.999."
     }
    ]
   },
@@ -160,9 +160,9 @@
      "verificado": true,
      "nota": "Rotación 360° estéril; en Mercado Libre se vio el mismo producto entre $11.990 y $13.390.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 15590.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $15.590."
+     "verificacion_pagina": "2026-10-24: la página muestra $15.590."
     }
    ]
   },
@@ -206,7 +206,7 @@
      "verificado": false,
      "nota": "No se confirma 100% silicona grado médico ni conexión hermética. Licitación pide \"Caja\" (tamaño no indicado); precio por sonda individual. Rango visto $3.200-4.700.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -236,7 +236,7 @@
      "verificado": false,
      "nota": "No se confirma sin polvo ni grado de examinación; verificar. Marcas Tresor/Semper Care $7.990-8.390 en el mismo listado.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Falabella",
@@ -251,9 +251,9 @@
      "verificado": true,
      "nota": "Uso piscina/general; verificar sin polvo y grado examinación.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 4490.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $4.490."
+     "verificacion_pagina": "2026-10-24: la página muestra $4.490."
     }
    ]
   },
@@ -277,8 +277,8 @@
      "nota": "Precio con 31% de descuento en listado. Precio actualizado al que mostró la página el 2026-10-20 (antes $6.190).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $5.990.",
-     "verificado_en": "2026-10-23"
+     "verificacion_pagina": "2026-10-24: la página muestra $5.990.",
+     "verificado_en": "2026-10-24"
     },
     {
      "tienda": "Falabella (PuntoMed)",
@@ -294,8 +294,8 @@
      "nota": "Listado Falabella. Precio actualizado al que mostró la página el 2026-10-20 (antes $6.590).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $5.990.",
-     "verificado_en": "2026-10-23"
+     "verificacion_pagina": "2026-10-24: la página muestra $5.990.",
+     "verificado_en": "2026-10-24"
     }
    ]
   },
@@ -318,7 +318,7 @@
      "verificado": false,
      "nota": "Verificar sin polvo y uso médico.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -341,7 +341,7 @@
      "verificado": false,
      "nota": "Material no indicado en la publicación (podría ser látex, no sintético).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Falabella",
@@ -356,9 +356,9 @@
      "verificado": true,
      "nota": "Policloropreno = sintético sin látex; listado de categoría, verificar vendedor y marca.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-23",
+     "verificado_en": "2026-10-24",
      "precio_pagina": 67580.0,
-     "verificacion_pagina": "2026-10-23: la página muestra $67.580."
+     "verificacion_pagina": "2026-10-24: la página muestra $67.580."
     }
    ]
   },
@@ -381,7 +381,7 @@
      "verificado": false,
      "nota": "Material/polvo no confirmados (probable látex); precio con cupón de $5.000 según listado.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -396,13 +396,13 @@
      "verificado": false,
      "nota": "Material no confirmado (sintético vs látex); en otro listado $35.000.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-24: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-23",
+  "fecha": "2026-10-24",
   "opciones": 17,
   "verificadas": 9
  }
