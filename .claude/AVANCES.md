@@ -29,6 +29,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Radar, Compra Ágil, presupuestos, informes PDF | En producción (GitHub Actions en `feature/api-mercadopublico`) |
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
+| Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), días hábiles 8:59 America/Santiago, corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7` (tiene el repo conectado: las sesiones nuevas de una tarea no lo tienen y no pueden hacer push). Primera corrida a mano el 25-10. |
 | Plataforma web (Streamlit) | Unida (PR #3, 25-10). Falta publicarla en share.streamlit.io (lo hace el usuario: README, «Plataforma web») |
 | Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. En producción desde la unión del PR #3 (25-10); verificado: corrida 40150220712 terminó bien, incluido «Publicar datos para el dashboard». Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
@@ -68,6 +69,10 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25: tarea programada creada y lanzada una vez. Una tarea con sesión nueva en cada corrida no
+  sirve: esas sesiones no tienen `add_repo` ni el repo conectado (no pueden hacer push), por eso corre en
+  una sesión dedicada creada con el repo (`create_session` con `source_url`).
 
 - 2026-10-25: rutina con créditos de Claude: `.claude/RUTINA.md` ya no sube al dashboard (la plataforma
   lee sola), busca precios para hasta 4 licitaciones al día (`seleccionar_mercado.py --maximo 4
