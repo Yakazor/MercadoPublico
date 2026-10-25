@@ -19,6 +19,7 @@ from datetime import date
 from pathlib import Path
 
 from openpyxl import Workbook
+from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -125,9 +126,20 @@ def siguiente_numero(carpeta: str | Path, anio: int | None = None) -> str:
     return f"OC-{anio}-{max(usados) + 1:03d}"
 
 
+def _sin_control(valor):
+    """Quita los caracteres de control que Excel no acepta (vienen en algunas descripciones)."""
+    if isinstance(valor, str):
+        return ILLEGAL_CHARACTERS_RE.sub("", valor)
+    if isinstance(valor, dict):
+        return {k: _sin_control(v) for k, v in valor.items()}
+    if isinstance(valor, list):
+        return [_sin_control(v) for v in valor]
+    return valor
+
+
 def crear_orden(datos: dict | None = None) -> Workbook:
     """Planilla de la orden de compra; sin `datos`, la plantilla en blanco."""
-    datos = datos or {}
+    datos = _sin_control(datos or {})
     comprador = datos.get("comprador") or {}
     tipo = comprador.get("tipo", "persona_natural")
     if tipo not in CAMPOS_COMPRADOR:

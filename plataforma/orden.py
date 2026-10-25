@@ -68,7 +68,7 @@ def _cargar_licitacion(codigo: str, tienda: str | None) -> None:
     lic = next((l for l in prep["licitaciones"] if l["codigo"] == codigo), None)
     items = prep["items"].get(codigo, [])
     if not lic or not items:
-        st.session_state["oc_aviso"] = f"{codigo}: no hay ítems para cargar."
+        st.session_state["oc_error"] = f"{codigo}: no hay ítems para cargar."
         return
     ops = opciones(items, prep["mercado"].get(codigo, []), comun.cotizaciones().get(codigo), comun.estimar_oc(),
                    comun.margen(), comun.otros())
@@ -93,14 +93,18 @@ def _cargar_json() -> None:
         return
     try:
         datos = json.loads(archivo.getvalue().decode("utf-8"))
-    except ValueError:
-        st.session_state["oc_aviso"] = "El archivo no es un JSON válido."
+        fecha = date.fromisoformat(datos["fecha"]) if datos.get("fecha") else None
+        entrega = (datos.get("condiciones") or {}).get("fecha_entrega")
+        entrega = date.fromisoformat(entrega) if entrega else None
+        descuento = int(round(float(datos.get("descuento") or 0)))
+    except (ValueError, TypeError, AttributeError, UnicodeDecodeError):
+        st.session_state["oc_error"] = "El archivo no es una orden guardada desde la plataforma (JSON con otro formato)."
         return
     comprador, proveedor = datos.get("comprador") or {}, datos.get("proveedor") or {}
     st.session_state["oc_numero"] = datos.get("numero") or st.session_state["oc_numero"]
-    if datos.get("fecha"):
-        st.session_state["oc_fecha"] = date.fromisoformat(datos["fecha"])
-    st.session_state["oc_tipo"] = comprador.get("tipo", "persona_natural")
+    if fecha:
+        st.session_state["oc_fecha"] = fecha
+    st.session_state["oc_tipo"] = comprador.get("tipo") if comprador.get("tipo") in TIPOS else "persona_natural"
     for campos in CAMPOS_COMPRADOR.values():
         for _, campo in campos:
             st.session_state[f"oc_comp_{campo}"] = comprador.get(campo, "")
@@ -108,13 +112,10 @@ def _cargar_json() -> None:
         st.session_state[f"oc_prov_{campo}"] = proveedor.get(campo, "")
     for campo in ("licitacion", "oc_estado"):
         st.session_state[f"oc_ref_{campo}"] = (datos.get("referencia") or {}).get(campo, "")
-    st.session_state["oc_descuento"] = datos.get("descuento") or 0
+    st.session_state["oc_descuento"] = descuento
     for _, campo in CONDICIONES:
         valor = (datos.get("condiciones") or {}).get(campo)
-        if campo == "fecha_entrega":
-            st.session_state[f"oc_cond_{campo}"] = date.fromisoformat(valor) if valor else None
-        else:
-            st.session_state[f"oc_cond_{campo}"] = valor or ""
+        st.session_state[f"oc_cond_{campo}"] = entrega if campo == "fecha_entrega" else str(valor or "")
     _poner_items(datos.get("items") or [])
     st.session_state["oc_aviso"] = f"Se cargó la orden {datos.get('numero') or ''} desde el archivo."
 
@@ -169,6 +170,8 @@ def pagina() -> None:
                "en la plataforma: descarga el Excel (y los datos en JSON si quieres retomarla después).")
     if st.session_state.get("oc_aviso"):
         st.success(st.session_state.pop("oc_aviso"))
+    if st.session_state.get("oc_error"):
+        st.error(st.session_state.pop("oc_error"))
 
     with st.expander("Partir de una licitación o de una orden guardada", expanded=not st.session_state.get(
             "oc_ref_licitacion")):

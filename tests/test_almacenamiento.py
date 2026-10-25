@@ -69,3 +69,16 @@ def test_exportar_neutraliza_formulas_y_usa_coma_decimal(tmp_path):
     assert "'= a lo solicitado" in texto and "1,5" in texto
     leido = pd.read_csv(csv, sep=";", decimal=",", encoding="utf-8-sig")
     assert leido["monto"].tolist() == [1.5, 2.0]
+
+
+def test_exportar_quita_caracteres_de_control_que_excel_rechaza(tmp_path):
+    # Caso real (OC de la API, 24-10-2026): «sigla 10U\x02POCA-202» hacía fallar la exportación.
+    import pandas as pd
+    from openpyxl import load_workbook
+
+    from radar.almacenamiento import sin_formulas
+    df = pd.DataFrame({"descripcion": ["Calzas CAT 336DL, sigla 10U\x02POCA-202", "", "-5 %"], "n": [1, 2, 3]})
+    xlsx = [r for r in exportar(df, tmp_path, "oc_items") if r.suffix == ".xlsx"][0]
+    valores = [c.value for c in load_workbook(xlsx).active["A"][1:]]
+    assert valores[0] == "Calzas CAT 336DL, sigla 10UPOCA-202" and valores[2] == "'-5 %"
+    assert sin_formulas(df)["descripcion"].tolist()[1] == ""        # vacío no se vuelve «'»

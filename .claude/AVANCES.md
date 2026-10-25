@@ -27,7 +27,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | PR #2 abierto (`feature/ordenes-compra`) |
 | Plataforma web (Streamlit) | PR #3 abierto (`feature/plataforma`, parte de `feature/ordenes-compra`) |
-| Workflow «Órdenes de compra históricas» | Falla todos los días desde al menos el 19-10 en «Descargar órdenes de compra» (exit 1). El log no se puede bajar desde la sesión (proxy): los workflows ahora dejan los errores como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`). Corrida de diagnóstico en `feature/plataforma`: 40146184655 |
+| Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. Se arregla en producción al unir el PR #3. Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
 PRs: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakazor/MercadoPublico/pull/3
 (unir el 2 antes que el 3).
@@ -47,10 +47,14 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
       se publicaban con el radar de días hábiles; los datos tenían Compras Ágiles del 23-10)
 - [x] Página «Manuales»: PDF en `manuales/` (exportados de los Claude Docs), Guía del Radar,
       erratas, plantillas e informes de `informes/pdf/`
-- [ ] Auditar y corregir todo lo anterior (incluye la falla de «Órdenes de compra históricas»)
+- [x] Auditar y corregir (falla de «Órdenes de compra históricas», JSON de la orden, margen de recarga)
 - [ ] Actualizar la descripción del PR #3
 
 ## Bitácora
+
+- 2026-10-25: causa de la falla diaria de «Órdenes de compra históricas»: carácter de control en
+  una descripción de OC rompía la exportación a Excel. Corregido (y en la orden de compra y el
+  Excel de evaluación). Carga de orden en JSON más robusta. 489 pruebas OK.
 
 - 2026-10-25: radar lanzado a mano terminó bien: `datos` del 24-10 21:19 (465 licitaciones,
   1.600 Compras Ágiles). Auditoría de la plataforma: margen de recarga 5 min, ayuda del número
