@@ -69,6 +69,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: «Recordarme en este equipo»: cookie `radar_acceso` (30 días) con una llave derivada de
+  la clave (`comun.token_acceso`); se escribe con un componente invisible porque Streamlit solo lee
+  cookies (`st.context.cookies`). «Cerrar sesión» en la barra lateral la borra. Probado en Chromium
+  (recargar y abrir otra sección no piden la clave). 492 pruebas OK.
+
 - 2026-10-25: las tablas no cabían en la pantalla de la usuaria (notebook 1366 px, ~904 px útiles
   con el menú abierto). Anchos fijos por columna, decisiones abreviadas («🟡 Con condiciones»),
   regiones cortas, 💲 = con precios de tiendas, ⚡ = Compra Ágil; organismo, tipo y link pasan a la

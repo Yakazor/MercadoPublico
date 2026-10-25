@@ -442,6 +442,10 @@ financiero y despacho por zona) se cambian en la barra lateral y valen para toda
   solo. La plataforma los vuelve a leer cada 30 minutos o con «Recargar datos».
 - **Claude:** no necesita API key. Los precios de tiendas, los proveedores y el Claude Log
   siguen viniendo de la rutina programada de Claude.
+- **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
+  este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la
+  clave, no la clave). «Cerrar sesión», en la barra lateral, la olvida; cambiar la clave en los
+  secretos cierra todas las sesiones recordadas.
 - **Nada personal en el repositorio:** la clave, tus datos de comprador y la firma de los
   correos van en los secretos (`.streamlit/secrets.toml`, que no se sube; modelo en
   `.streamlit/secrets.toml.example`). Las cotizaciones y órdenes viven solo en tu sesión:

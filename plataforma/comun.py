@@ -1,4 +1,6 @@
 """Lo que comparten las páginas: datos (con caché), supuestos, secretos y formato."""
+import hashlib
+import hmac
 import os
 import sys
 from pathlib import Path
@@ -21,6 +23,9 @@ ZONAS = {"cercana": "Región Metropolitana", "media": "Valparaíso, O'Higgins, M
          "lejana": "Coquimbo a Los Ríos", "extrema": "Extremo norte y sur"}
 # Páginas (st.Page) por nombre, para los botones que llevan de una a otra. Las llena app.py.
 PAGINAS: dict = {}
+# «Recordarme en este equipo»: cookie con una llave derivada de la clave, por estos días.
+COOKIE_ACCESO = "radar_acceso"
+DIAS_RECORDAR = 30
 # Textos cortos para que las tablas quepan en una pantalla de notebook (~900 px de ancho útil).
 DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", NO_GO: "🔴 NO GO"}
 _REGIONES = [("arica", "Arica"), ("tarapaca", "Tarapacá"), ("antofagasta", "Antofagasta"), ("atacama", "Atacama"),
@@ -36,6 +41,19 @@ def secreto(nombre: str, defecto=None):
         return st.secrets.get(nombre, defecto)
     except StreamlitSecretNotFoundError:
         return defecto
+
+
+def token_acceso(clave: str) -> str:
+    """Lo que el navegador guarda para no pedir la clave en cada visita. Se deriva de la clave (no es la
+    clave): si cambias la clave en los secretos, todos los navegadores recordados vuelven a pedirla."""
+    return hmac.new(str(clave).encode(), b"radar-mercadopublico/acceso", hashlib.sha256).hexdigest()
+
+
+def cookie_acceso() -> str:
+    """La llave guardada en este navegador (Streamlit lee las cookies al abrir la página). Fuera de un
+    navegador (pruebas con AppTest) no hay cookies reales."""
+    valor = st.context.cookies.get(COOKIE_ACCESO)
+    return valor if isinstance(valor, str) else ""
 
 
 @st.cache_data(ttl=1800, show_spinner="Cargando licitaciones…")

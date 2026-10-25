@@ -11,6 +11,7 @@ en `.streamlit/secrets.toml` (o en los secretos de Streamlit Cloud), nunca en el
 import hmac
 
 import streamlit as st
+from streamlit.components.v1 import html
 
 import actualizar
 import comun
@@ -23,19 +24,48 @@ import orden
 st.set_page_config(page_title="Radar Mercado Público", page_icon="🔎", layout="wide")
 
 
+def guardar_cookie(valor: str, dias: int) -> None:
+    """Guarda (o borra, con 0 días) la llave de acceso en el navegador. Streamlit lee cookies pero no las
+    escribe: lo hace un componente invisible en la barra lateral."""
+    with st.sidebar:
+        html(f"<script>document.cookie = '{comun.COOKIE_ACCESO}={valor}; path=/; max-age={dias * 86400}; "
+             "SameSite=Strict; Secure';</script>", height=0)
+
+
 def acceso() -> bool:
+    """Pide la clave, salvo que este navegador la tenga recordada («Recordarme en este equipo»)."""
     clave = comun.secreto("clave")
-    if not clave or st.session_state.get("autorizado"):
+    if not clave:
         return True
+    ss = st.session_state
+    llave = comun.token_acceso(clave)
+    # Después de «Cerrar sesión» la cookie leída al abrir la página sigue en st.context: no se usa.
+    if not ss.get("autorizado") and not ss.get("salio") and hmac.compare_digest(comun.cookie_acceso(), llave):
+        ss["autorizado"] = True
+    if ss.get("autorizado"):
+        if ss.pop("recordar", False):
+            guardar_cookie(llave, comun.DIAS_RECORDAR)
+        return True
+    if ss.get("salio"):
+        guardar_cookie("", 0)
     st.title("Radar Mercado Público")
     with st.form("acceso"):
         intento = st.text_input("Clave de acceso", type="password")
+        recordar = st.checkbox(f"Recordarme en este equipo ({comun.DIAS_RECORDAR} días)", value=True,
+                               help="No pide la clave al recargar la página. No lo uses en computadores compartidos.")
         if st.form_submit_button("Entrar", type="primary"):
             if hmac.compare_digest(intento.encode(), str(clave).encode()):
-                st.session_state["autorizado"] = True
+                ss.update(autorizado=True, recordar=recordar, salio=False)
                 st.rerun()
             st.error("Clave incorrecta.")
     return False
+
+
+def boton_salir() -> None:
+    if comun.secreto("clave") and st.sidebar.button("Cerrar sesión", icon="🔒",
+                                                     help="Olvida la clave en este navegador"):
+        st.session_state.update(autorizado=False, salio=True)
+        st.rerun()
 
 
 if acceso():
@@ -51,4 +81,5 @@ if acceso():
     })
     navegacion = st.navigation(list(comun.PAGINAS.values()))
     comun.panel_supuestos()
+    boton_salir()
     navegacion.run()
