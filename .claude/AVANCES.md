@@ -25,16 +25,16 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-25, 14:00 UTC)
+## Estado (actualizado 2026-10-25, 15:00 UTC)
 
 | Tema | Estado |
 |---|---|
-| Radar, Compra Ágil, presupuestos, informes PDF | En producción (GitHub Actions en `feature/api-mercadopublico`). Compras Ágiles cada 3 horas (y se publican al terminar), OC 9:11 UTC todos los días. Radar **todos los días 10:07 UTC** (7:07 en Chile en verano, 6:07 en invierno; PR #9) |
+| Radar, Compra Ágil, presupuestos, informes PDF | En producción (GitHub Actions en `feature/api-mercadopublico`). Compras Ágiles cada 3 horas (y se publican al terminar), OC 9:11 UTC todos los días. Radar programado **todos los días 10:07 UTC** (PR #9), pero GitHub atrasa los cron de 1 a 5 horas (OC de las 9:11 corre ~13:30 UTC; radar de las 11:07 corría ~15:45): la rutina de Claude lo dispara a las 7:59 si no corrió en las últimas 12 horas (PR #11) |
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
 | Plataforma web (Streamlit) | Publicada en https://radar-mercadopublico.streamlit.app desde la cuenta de Streamlit de Yakazor (archivo principal `plataforma/app.py`, rama `feature/api-mercadopublico`; secretos `clave` y `github_token`). PR #3 a #6 unidos: menú arriba, tablas de ancho fijo (caben en 1366 px), «Recordarme» 30 días, filtros GO / NO GO y «Compra y venta directa», 💲 en el nombre = ya tiene precios de tiendas. Si la página muestra la versión anterior: Manage app → ⋮ → Reboot app (con la cuenta Yakazor) |
 | Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), **todos los días 7:59** America/Santiago (pedido del 25-10: «a las 8:00 de lunes a lunes»; antes días hábiles 8:59). Corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7`, creada con el repo. Su prompt solo se puede cambiar desde esa sesión (el horario sí desde cualquiera). «Ejecutar ahora» (`fire_trigger`) **no** usa esa sesión: crea una nueva sin repo y falla (así falló la primera corrida, 25-10 03:55 UTC, con dos avisos al celular). En una sesión nueva `add_repo` existe, pero el modo automático lo niega. Para correrla a mano: escribirle «ACTUALIZACIÓN» a la sesión dedicada. Prueba de corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): **funcionó**: llegó a la sesión dedicada, que respondió «Prueba recibida. Sí, esta sesión tiene el repositorio». Las corridas programadas sí usan esa sesión. **Primera corrida programada: 25-10 11:00–11:20 UTC, bien** (precios para 4 licitaciones, commit e88ad5c de informes, publicación; ~US$ 3,6 de créditos). |
-| Workflow «Órdenes de compra históricas» | Corregido (PR #3): una OC traía un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel; `texto_excel`/`sin_formulas` lo quitan. Verificado: corrida 40150220712. Los errores de los workflows quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
+| Workflow «Órdenes de compra históricas» | Publicaba la rama `datos` sin Compras Ágiles (no restauraba su caché: `compras_agiles: null` e ítems 4.418 en vez de 10.807 en la publicación del 25-10 13:46 UTC); corregido en el PR #11. Antes, corregido en el PR #3: una OC traía un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel; `texto_excel`/`sin_formulas` lo quitan. Verificado: corrida 40150220712. Los errores de los workflows quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
 PRs unidos: #1 a #9 (el #9, radar diario y corrección de la rutina, el 25-10).
 
@@ -78,6 +78,13 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25: auditoría después de unir #9 y #10. Bien: 493 pruebas, últimas 20 corridas de GitHub OK, tarea
+  programada activa (próxima 26-10 10:59 UTC, sesión dedicada), sin PR abiertos. Corregido en el PR #11:
+  (1) «Órdenes de compra históricas» publicaba `datos` sin Compras Ágiles; ahora restaura su caché como el radar.
+  (2) GitHub atrasa los cron 1 a 5 horas, así que `RUTINA.md` paso 2 ya no mira `generado` (Compras Ágiles lo
+  renueva cada 3 h) sino si hubo un «Radar diario de licitaciones» exitoso en las últimas 12 h (`gh api`); si no,
+  lo dispara. No verificado: la plataforma en vivo (el proxy de estas sesiones bloquea `*.streamlit.app`).
 
 - 2026-10-25: PR #9 unido (01fbc93): el radar corre todos los días desde el 26-10, 10:07 UTC.
 

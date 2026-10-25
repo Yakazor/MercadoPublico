@@ -336,7 +336,7 @@ subido):
 
 | Workflow | Cuándo | Qué hace |
 |---|---|---|
-| `radar-diario.yml` | todos los días 10:07 UTC (7:07 en Chile en verano, 6:07 en invierno), manual o push a `.github/disparar/actualizar.txt` | radar + publica los JSON del dashboard en la rama `datos` |
+| `radar-diario.yml` | todos los días 10:07 UTC (GitHub suele atrasarlo horas; la rutina de Claude lo dispara a las 7:59 si no ha corrido), manual o push a `.github/disparar/actualizar.txt` | radar + publica los JSON del dashboard en la rama `datos` |
 | `ordenes-historicas.yml` | todos los días, manual o el mismo push | OC de los últimos 21 días + precios + presupuestos |
 | `censo-rubros.yml` | manual | censo de grupos (rama `censo`) |
 | `probar-api.yml` | manual | una llamada de prueba |
