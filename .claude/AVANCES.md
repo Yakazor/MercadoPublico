@@ -63,6 +63,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: PR #2 y #3 tenían conflictos con la principal solo en informes generados (las dos
+  ramas corrieron «Verificar precios e informes PDF»). Resueltos tomando la versión de la principal
+  (más reciente); ambos PR quedan «clean». La plataforma aún no está publicada: falta unir los PR
+  y crear la app en share.streamlit.io (rama principal, `plataforma/app.py`, secretos).
+
 - 2026-10-25: verificada la corrección de «Órdenes de compra históricas» (corrida 40146638863, éxito).
   Tarea del 25-10 terminada; PR #3 actualizado. Pendiente: que el usuario una los PR #2 y #3.
 
