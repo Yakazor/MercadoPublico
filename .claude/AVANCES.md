@@ -7,8 +7,8 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 
 - Idioma: español (código, comentarios, commits, PR y respuestas al usuario).
 - Ramas: `feature/api-mercadopublico` es la principal (los workflows corren ahí). Cada tarea va
-  en su rama y termina con un pull request hacia la principal. Hoy la rama de trabajo es
-  `feature/plataforma`.
+  en su rama y termina con un pull request hacia la principal. `feature/ordenes-compra` y
+  `feature/plataforma` ya están unidas: la próxima tarea parte de la principal al día.
 - Pruebas: `python3 -m pytest -q` (sin conexión a la API). La plataforma: `pip install -r
   plataforma/requirements.txt` y `streamlit run plataforma/app.py`.
 - Repositorio público: **nunca** subir RUT, domicilios, claves ni órdenes llenas. Van en
@@ -25,20 +25,19 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 |---|---|
 | Radar, Compra Ágil, presupuestos, informes PDF | En producción (GitHub Actions en `feature/api-mercadopublico`) |
 | Orden de compra al proveedor | Unido (PR #1) |
-| Evaluación GO / NO GO, Excel con Claude Log, correos | PR #2 abierto (`feature/ordenes-compra`) |
-| Plataforma web (Streamlit) | PR #3 abierto (`feature/plataforma`, parte de `feature/ordenes-compra`) |
-| Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. Se arregla en producción al unir el PR #3. Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
+| Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
+| Plataforma web (Streamlit) | Unida (PR #3, 25-10). Falta publicarla en share.streamlit.io (lo hace el usuario: README, «Plataforma web») |
+| Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. En producción desde la unión del PR #3 (25-10). Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
-PRs: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakazor/MercadoPublico/pull/3
-(unir el 2 antes que el 3).
+PRs unidos: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakazor/MercadoPublico/pull/3
 
 Manuales (Claude Docs): orden de compra https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W ·
 guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Siguientes pasos sugeridos
 
-- Unir PR #2 y luego PR #3 (la corrección de «Órdenes de compra históricas» y la publicación de
-  Compras Ágiles cada 3 horas solo corren en producción después de unir).
+- Revisar que «Órdenes de compra históricas» (09:11 UTC) y «Compras Ágiles» → «Publicar datos (solo
+  exportar)» (cada 3 horas) corran bien en producción con el código unido.
 - Publicar la plataforma en Streamlit Community Cloud (README, «Plataforma web») con `clave` y
   `github_token` en los secretos.
 - Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma.
@@ -62,6 +61,8 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25: el usuario pidió unir: PR #2 y PR #3 unidos a `feature/api-mercadopublico`.
 
 - 2026-10-25: PR #2 y #3 tenían conflictos con la principal solo en informes generados (las dos
   ramas corrieron «Verificar precios e informes PDF»). Resueltos tomando la versión de la principal
