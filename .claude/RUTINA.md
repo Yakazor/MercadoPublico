@@ -43,10 +43,12 @@ Hay tres pedidos posibles:
    cambios o 100 minutos en total.
 5. Clona la rama datos: `git clone -q --depth 1 --branch datos https://github.com/Yakazor/MercadoPublico.git <tmp>/datos`.
 6. Presupuestos: `python3 scripts/presupuesto.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --mercado-json <tmp>/mercado.json`.
+6b. **Evaluación comercial** (ver «Evaluación comercial» al final): corre el script y
+   completa proveedores y el Claude Log de las 3 mejores oportunidades.
 7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: `git add informes`,
    `git commit -m "<mensaje en español>"` y `git push origin HEAD:feature/api-mercadopublico`,
    cada uno en su propia llamada (mismos reintentos).
-8. Resumen de 3–6 líneas (licitaciones vigentes, Compras Ágiles abiertas — `compras_agiles`
+8. Resumen de 3–6 líneas (decisiones GO / NO GO de `informes/evaluacion/README.md`, licitaciones vigentes, Compras Ágiles abiertas — `compras_agiles`
    en meta.json; si es null, el paso «Compras Ágiles» del workflow falló o no corrió —,
    rango de días de OC, presupuestos con precios y cualquier error). Envíalo con PushNotification **antes** del paso 9, terminado
    en «Para ver los datos en el dashboard, aprueba la subida en esta sesión».
@@ -80,3 +82,32 @@ Hay tres pedidos posibles:
    `{"source": {"kind": "file", "name": "<archivo>.json", "url": "/_blob/<id del asset>"}, "updated": {"at": "<ISO ahora>", "by": "Claude"}}`.
    Los ids de dataset son licitaciones, precios, items, mercado y meta. Si un batch falla
    por versión, vuelve a leer y reintenta una vez.
+
+## Evaluación comercial
+
+Objetivo: después de cada actualización de datos, dejar en `informes/evaluacion/` el
+Excel (`Licitaciones_evaluadas.xlsx`: hojas Licitaciones, Evaluación y Claude Log), el
+resumen ejecutivo (`README.md`) y, para las mejores N, el informe ejecutivo, la hoja
+GO / NO GO y los borradores de correo (`licitaciones/<codigo>_*.md`). Los supuestos de
+costos están en `config.yaml > evaluacion`. GitHub vuelve a correr el script en el
+workflow «Verificar precios e informes PDF» y genera los PDF.
+
+1. `python3 scripts/evaluar_licitaciones.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json`.
+2. Lee `informes/evaluacion/README.md`. Para las 3 primeras que no sean NO GO:
+   - Abre su informe y revisa riesgos y condiciones.
+   - **Proveedores:** busca con WebSearch (máximo 3 búsquedas por licitación) distribuidores
+     chilenos de lo que piden, priorizando los de la región de entrega o Santiago. Escribe
+     `informes/evaluacion/proveedores/<codigo>.json`: lista de
+     `{"nombre", "correo", "web", "contacto", "especialidad", "respuesta", "entrega", "costo_referencial", "fuente"}`.
+     **Nunca inventes correos, teléfonos ni precios:** lo que no aparezca en un resultado
+     de búsqueda va como `null` (el informe dirá «por confirmar»). `fuente` = la URL de
+     donde salió el dato.
+3. Escribe `<tmp>/log.json` con tu análisis en una sola entrada:
+   `{"licitaciones_procesadas": "...", "resultado": "...", "riesgos": "...", "decisiones": "...", "recomendaciones": "..."}`
+   (concreto: qué códigos, qué decidiste y por qué, qué debe hacer el usuario hoy).
+4. Vuelve a correr el paso 1 agregando `--registrar <tmp>/log.json` (queda en la hoja
+   Claude Log y en `claude_log.json`; la entrada automática del día se reemplaza, las tuyas se conservan).
+5. **Borradores en Gmail** (solo si tienes las herramientas de Gmail y el proveedor tiene
+   correo confirmado): un borrador por proveedor con el asunto y cuerpo de
+   `licitaciones/<codigo>_correos.md`. Nunca envíes: el usuario revisa y envía.
+

@@ -374,6 +374,27 @@ marca «Verificado: sí» solo si la página muestra ese precio (±3 %); si no, 
 presupuesto dice qué encontró (otro precio, HTTP 403 o precio cargado con
 JavaScript). Igual revisa stock y despacho antes de cotizar.
 
+## Evaluación comercial (GO / NO GO)
+
+`scripts/evaluar_licitaciones.py` evalúa cada licitación vigente con precios de mercado y
+deja en `informes/evaluacion/`:
+
+- `Licitaciones_evaluadas.xlsx`: hoja **Licitaciones** (todas las vigentes: ID, nombre,
+  organismo, monto, fechas, estado, región, categoría, enlaces y observaciones), hoja
+  **Evaluación** (costos directos e indirectos, márgenes, punto de equilibrio, riesgo,
+  complejidad, factibilidad y probabilidad de adjudicación) y hoja **Claude Log**.
+- `README.md`: resumen ejecutivo con las recomendaciones del día.
+- `licitaciones/<codigo>_informe.md`, `_go_no_go.md` y `_correos.md` para las mejores N
+  (`config.yaml > evaluacion > max_evaluadas`), con su PDF en `informes/pdf/`.
+
+Corre solo en el workflow «Verificar precios e informes PDF» cada vez que la rutina sube
+datos nuevos. La rutina de Claude agrega los proveedores (`informes/evaluacion/proveedores/`)
+y su análisis al Claude Log (ver `.claude/RUTINA.md`, «Evaluación comercial»).
+
+Límites: la API no entrega bases ni anexos (los enlaces llevan a la ficha, donde están),
+los costos indirectos son supuestos de `config.yaml > evaluacion` y la probabilidad de
+adjudicación es una heurística para ordenar, no una predicción.
+
 ## Orden de compra al proveedor
 
 Cuando aceptas una OC del Estado, le envías tu propia orden de compra a quien te vende la
