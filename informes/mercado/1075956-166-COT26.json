@@ -1,0 +1,48 @@
+{
+ "codigo": "1075956-166-COT26",
+ "nombre": "ADQUISICIÓN DE MATERIALES DE OFICINA- SEGÚN REQUERIMIENTOS TECNICOS ADJUNTOS",
+ "fecha_consulta": "2026-10-25",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Notas de papel autoadhesivo",
+   "consulta": "",
+   "opciones": [],
+   "nota": "la especificación y cantidades están en el anexo técnico (la ficha solo dice «1 EA»); no se puede cotizar sin el anexo: por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Lápiz pasta",
+   "consulta": "",
+   "opciones": [],
+   "nota": "la especificación y cantidades están en el anexo técnico (la ficha solo dice «1 EA»); no se puede cotizar sin el anexo: por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Carpetas para archivos",
+   "consulta": "",
+   "opciones": [],
+   "nota": "la especificación y cantidades están en el anexo técnico (la ficha solo dice «1 EA»); no se puede cotizar sin el anexo: por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "Banderitas autoadhesivas",
+   "consulta": "",
+   "opciones": [],
+   "nota": "la especificación y cantidades están en el anexo técnico (la ficha solo dice «1 EA»); no se puede cotizar sin el anexo: por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Goma de borrar",
+   "consulta": "",
+   "opciones": [],
+   "nota": "la especificación y cantidades están en el anexo técnico (la ficha solo dice «1 EA»); no se puede cotizar sin el anexo: por confirmar"
+  }
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-25",
+  "opciones": 0,
+  "verificadas": 0
+ }
+}

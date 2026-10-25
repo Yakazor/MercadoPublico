@@ -14,7 +14,7 @@
 | Complejidad | Alta |
 | Factibilidad operativa | Media |
 | Factibilidad financiera | Alta |
-| Factibilidad de plazos | Alta |
+| Factibilidad de plazos | Media |
 | Probabilidad de adjudicación | 10% (estimación heurística) |
 
 ## Por qué

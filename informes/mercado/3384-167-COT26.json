@@ -1,0 +1,55 @@
+{
+ "codigo": "3384-167-COT26",
+ "nombre": "Adquisición de libros para la biblioteca del Instituto Geográfico Militar.",
+ "fecha_consulta": "2026-10-25",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Ciencias de la tierra V.1 (Tarbuck y Lutgens)",
+   "consulta": "Tarbuck Lutgens Ciencias de la Tierra precio Chile",
+   "opciones": [],
+   "nota": "sin precio en librerías chilenas en los resultados (Pearson; ed. 10, ISBN 978-84-9035-309-7); por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Ciencias de la tierra V.2 (Tarbuck y Lutgens)",
+   "consulta": "Tarbuck Lutgens Ciencias de la Tierra precio Chile",
+   "opciones": [],
+   "nota": "sin precio en librerías chilenas; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Calidad en la producción cartográfica (Ariza)",
+   "consulta": "Calidad en la producción cartográfica Ariza precio",
+   "opciones": [],
+   "nota": "libro de Ra-Ma (2002), sin precio en tiendas; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "Tierra del Fuego y los canales magallánicos (Fuentes Rabé)",
+   "consulta": "Tierra del Fuego canales magallánicos Fuentes Rabé precio",
+   "opciones": [],
+   "nota": "obra de 1923, sin venta encontrada; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Viajes del Adventure y el Beagle. Diario (Fitz Roy)",
+   "consulta": "Viajes del Adventure y el Beagle precio Chile",
+   "opciones": [],
+   "nota": "solo en librería española (Marcial Pons, 35 €, sin stock); sin distribuidor chileno; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "Viajes del Adventure y el Beagle: Apéndices",
+   "consulta": "Viajes del Adventure y el Beagle precio Chile",
+   "opciones": [],
+   "nota": "solo en librería española (Marcial Pons, 28 €, sin stock); por confirmar"
+  }
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-25",
+  "opciones": 0,
+  "verificadas": 0
+ }
+}

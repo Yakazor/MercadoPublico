@@ -26,7 +26,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2460-140-LE26](presupuestos/2460-140-LE26.md) MOBILIARIO DEPARTAMENTO DE RENTAS DAC | Mobiliario de oficina, escolar y almacenaje | 2026-10-26 | 0/1 | $0 | $0 | $0 | $7.300.000 | falta 1 precio |
 | [2585-156-LE26](presupuestos/2585-156-LE26.md) ADQ. HERRAMIENTAS MENORES Y OTROS DIMAO ORD N° 9142026 LSV IMA | Ferretería y herramientas | 2026-10-26 | 9/11 | $2.982.277 | $4.258.692 | $596.455 | $10.000.000 | faltan 2 precios, sin verificar |
 | [3016-54-LE26](presupuestos/3016-54-LE26.md) Juguetes con Envoltorio para Celebración Navidad 2026 para la Ilustre  | Deporte, juguetes y material didáctico | 2026-10-26 | 0/1 | $0 | $0 | $0 | $19.200.000 | falta 1 precio |
-| [4768-55-LE26](presupuestos/4768-55-LE26.md) ADQUISICION DE JUGUETES DE NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-10-26 | 1/1 | $5.368.239 | $7.665.845 | $1.073.648 | $12.000.000 | sin verificar |
+| [4768-55-LE26](presupuestos/4768-55-LE26.md) ADQUISICION DE JUGUETES DE NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-10-26 | 1/1 | $5.368.239 | $7.665.845 | $1.073.648 | $12.000.000 | — |
 | [2279-74-LE26](presupuestos/2279-74-LE26.md) SP 780 ADQUISICION DE ELEMENTOS DE PROTECCION PERSONAL | Seguridad, EPP, señalética y protección contra incendios | 2026-10-26 | 0/1 | $0 | $0 | $0 | $20.000.000 | falta 1 precio |
 | [2422-167-LE26](presupuestos/2422-167-LE26.md) SOL. ADQ. N°945796 ROPA CLINICA- DELANTALES. | Vestuario, uniformes y textiles | 2026-10-26 | 0/1 | $0 | $0 | $0 | $15.874.600 | falta 1 precio |
 | [2424-59-LE26](presupuestos/2424-59-LE26.md) CONTRATO DE SUMINISTRO PARA LA ADQUISICIÓN DE ARTÍCULOS DE FERRETERÍA- | Ferretería y herramientas | 2026-10-26 | 0/1 | $0 | $0 | $0 | $28.833.880 | falta 1 precio |
@@ -48,6 +48,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [889473-66-LE26](presupuestos/889473-66-LE26.md) SC 8750 - Mobiliario orquesta de cámara UOH | Mobiliario de oficina, escolar y almacenaje | 2026-10-27 | 0/1 | $0 | $0 | $0 | $14.280.000 | falta 1 precio |
 | [1145-73-LE26](presupuestos/1145-73-LE26.md) Adquisición de neumáticos maquinarias extintoras | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-10-27 | 0/1 | $0 | $0 | $0 | $16.000.000 | falta 1 precio |
 | [3666-13-LE26](presupuestos/3666-13-LE26.md) Adquisición de juguetes Navidad 2026 Tiltil | Deporte, juguetes y material didáctico | 2026-10-28 | 0/1 | $0 | $0 | $0 | $12.000.000 | falta 1 precio |
+| [3384-167-COT26](presupuestos/3384-167-COT26.md) Adquisición de libros para la biblioteca del Instituto Geográfico Mili | Deporte, juguetes y material didáctico | 2026-10-28 | 0/6 | $0 | $0 | $0 | $322.570 | faltan 6 precios |
 | [1230848-69-LE26](presupuestos/1230848-69-LE26.md) ADQUISICIÓN DE JUEGOS Y MATERIAL DIDÁCTICO AIDIA | Deporte, juguetes y material didáctico | 2026-10-28 | 0/4 | $0 | $0 | $0 | $10.000.000 | faltan 4 precios |
 | [3708-43-LE26](presupuestos/3708-43-LE26.md) SUMINISTRO DE NEUMÁTICOS PARA FLOTA MUNICIPAL | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-10-28 | 0/2 | $0 | $0 | $0 | $17.000.000 | faltan 2 precios |
 | [1033392-3-L126](presupuestos/1033392-3-L126.md) Adquisición de juguetes de navidad 2026 para hijos de funcionarios afi | Deporte, juguetes y material didáctico | 2026-10-29 | 1/1 | $1.216.835 | $1.737.641 | $243.367 | $1.380.000 | supera monto |
@@ -58,10 +59,13 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [3810-25-LE26](presupuestos/3810-25-LE26.md) ADQUISICION DE NEUMATICOS PARA LA I. MUNICIPALIDAD DE PICHILEMU AÑO 20 | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-10-30 | 0/1 | $0 | $0 | $0 | $28.000.000 | falta 1 precio |
 | [2446-307-LE26](presupuestos/2446-307-LE26.md) P.P413-2026 MATERIALES Y HERRAMIENTAS MANT ESTADIO | Ferretería y herramientas | 2026-10-30 | 28/44 | $8.813.021 | $12.584.994 | $1.762.604 | $28.003.098 | faltan 16 precios, sin verificar |
 | [1271359-137-LE26](presupuestos/1271359-137-LE26.md) ADQ. DE ARTICULOS DEPORTIVOS Y OTROS – DIREDUC | Deporte, juguetes y material didáctico | 2026-10-30 | 0/4 | $0 | $0 | $0 | $12.000.000 | faltan 4 precios |
+| [1075956-166-COT26](presupuestos/1075956-166-COT26.md) ADQUISICIÓN DE MATERIALES DE OFICINA- SEGÚN REQUERIMIENTOS TECNICOS AD | Artículos de oficina y librería | 2026-11-02 | 0/5 | $0 | $0 | $0 | $415.885 | faltan 5 precios |
 | [2446-315-LE26](presupuestos/2446-315-LE26.md) ADQUISICIÓN DE LICENCIAS DE SOFTWARE INSTITUCIONAL | Computación y electrónica | 2026-11-02 | 0/5 | $0 | $0 | $0 | $19.200.000 | faltan 5 precios |
 | [594965-30-LE26](presupuestos/594965-30-LE26.md) ADQ.TEXTILES ROPA DE CAMA JARDINES INF. OHIGGINS | Electrodomésticos, hogar y menaje | 2026-11-02 | 6/8 | $33.851.231 | $48.339.558 | $6.770.246 | $20.900.000 | supera monto, faltan 2 precios, sin verificar |
 | [2585-111-LE26](presupuestos/2585-111-LE26.md) ADQ. HERRAMIENTAS Y MATERIALES DE FERRETERIA DIPRESEH ORD. N°692 IMA | Ferretería y herramientas | 2026-11-02 | 22/49 | $2.532.301 | $3.616.126 | $506.460 | $23.500.000 | faltan 27 precios, sin verificar |
+| [2452-25-LE26](presupuestos/2452-25-LE26.md) ADQUISICION DE TÓNER Y TAMBOR PARA LA RED DE SALUD | Artículos de oficina y librería | 2026-11-02 | 14/18 | $15.253.164 | $21.781.518 | $3.050.633 | $19.976.060 | supera monto, faltan 4 precios, sin verificar |
 | [2408-183-LE26](presupuestos/2408-183-LE26.md) ELEMENTOS DE ESTIMULACIÓN Y MATERIAL DIDÁCTICO PROGRAMA RED LOCAL DE A | Deporte, juguetes y material didáctico | 2026-11-05 | 0/1 | $0 | $0 | $0 | $9.160.000 | falta 1 precio |
+| [979-73-LE26](presupuestos/979-73-LE26.md) Adquisición de Elementos de Protección Personal NC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 14/18 | $5.497.994 | $7.851.136 | $1.099.599 | $10.900.000 | faltan 4 precios, sin verificar |
 
 ## Ya cerradas
 

@@ -21,9 +21,9 @@
      "nota": "Precio del listado de búsqueda de Sodimac (página de selección, no ficha del producto).",
      "precio_unitario_neto": 42008.4,
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-24",
+     "verificado_en": "2026-10-25",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-24: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-25: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -37,9 +37,9 @@
      "nota": "Precio del listado de categoría de Sodimac.",
      "precio_unitario_neto": 54613.45,
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-24",
+     "verificado_en": "2026-10-25",
      "precio_pagina": 64990.0,
-     "verificacion_pagina": "2026-10-24: la página muestra $64.990."
+     "verificacion_pagina": "2026-10-25: la página muestra $64.990."
     },
     {
      "tienda": "Sodimac",
@@ -53,9 +53,9 @@
      "nota": "Gama media-alta.",
      "precio_unitario_neto": 92428.57,
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-24",
+     "verificado_en": "2026-10-25",
      "precio_pagina": 109990.0,
-     "verificacion_pagina": "2026-10-24: la página muestra $109.990."
+     "verificacion_pagina": "2026-10-25: la página muestra $109.990."
     },
     {
      "tienda": "Lider",
@@ -70,14 +70,14 @@
      "precio_unitario_neto": 100756.3,
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 116990.0,
-     "verificacion_pagina": "2026-10-24: la página muestra $116.990.",
-     "verificado_en": "2026-10-24"
+     "verificacion_pagina": "2026-10-25: la página muestra $116.990.",
+     "verificado_en": "2026-10-25"
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-24",
+  "fecha": "2026-10-25",
   "opciones": 4,
   "verificadas": 4
  }

@@ -1,0 +1,484 @@
+{
+ "codigo": "979-73-LE26",
+ "nombre": "Adquisición de Elementos de Protección Personal NC",
+ "fecha_consulta": "2026-10-25",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Protector auditivo endaural",
+   "consulta": "protector auditivo endaural precio Chile",
+   "opciones": [],
+   "nota": "sin precio chileno en los resultados (3M Chile tiene catálogo sin precios); por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Guante cabritilla con forro (par)",
+   "consulta": "guante cabritilla forrado precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Metalfer SpA)",
+     "producto_mercado": "Guante Cabritilla Con Forro Polar",
+     "url": "https://www.falabella.com/falabella-cl/shop/guante-cabritilla-con-forro",
+     "precio": 3800,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3193.28,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 3990.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $3.990, no $3.800: puede haber cambiado."
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Pantalón térmico",
+   "consulta": "pantalón térmico trabajo invierno precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Pantalón Térmico Softshell Impermeable Hombre Invierno Frío marrón XL",
+     "url": "https://www.lider.cl/ip/vestuario/pantalon-termico-softshell-impermeable-hombre-invierno-frio-marron-xl/00387317500354",
+     "precio": 16580,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13932.77,
+     "coincidencia": "equivalente",
+     "nota": "revisar tallas y especificación de las bases",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 16580.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $16.580."
+    },
+    {
+     "tienda": "Sodimac (Blue Mountain)",
+     "producto_mercado": "Pantalón softshell térmico impermeable con micropolar",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat874914/ropa-de-trabajo",
+     "precio": 17990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15117.65,
+     "coincidencia": "equivalente",
+     "nota": "precio con descuento. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 17990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $17.990."
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Casco de seguridad blanco",
+   "consulta": "casco de seguridad blanco precio Chile Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Libus)",
+     "producto_mercado": "Casco de seguridad blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34981/Cascos-de-Seguridad",
+     "precio": 2580,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2168.07,
+     "coincidencia": "equivalente",
+     "nota": "oferta $2.193; confirmar que incluye suspensión/arnés interior según bases. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 2550.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $2.550."
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Botas para el agua (par)",
+   "consulta": "botas de agua goma precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bata Industrials)",
+     "producto_mercado": "Bota Larga de Goma Concretera",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10967/Botas-de-agua",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 10000.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $10.000, no $18.990: puede haber cambiado."
+    },
+    {
+     "tienda": "Easy (Bata Industrials)",
+     "producto_mercado": "Botas de agua hombre cubrecalzado alto negro",
+     "url": "https://www.easy.cl/botas-de-agua-hombre-cubrecalzado-alto-negro-1517371/p",
+     "precio": 28990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 24361.34,
+     "coincidencia": "equivalente",
+     "nota": "precio con 20% de descuento (normal $36.290)",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Lentes control UV",
+   "consulta": "lentes de seguridad protección UV precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Redline)",
+     "producto_mercado": "Lentes Spy Flex Plus visor claro",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat874909/proteccion-de-ojos",
+     "precio": 3190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2680.67,
+     "coincidencia": "aproximada",
+     "nota": "no confirma filtro UV en el listado. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 3251.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $3.251."
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Pantalón cargo",
+   "consulta": "pantalón cargo trabajo precio Chile Sodimac",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Pantalón Trabajo Cargo Azul",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10785/Ropa-de-Trabajo",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $11.990."
+    },
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Pantalón cargo gris talla M",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10785/Ropa-de-Trabajo",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 18990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $18.990."
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Primera capa (conjunto)",
+   "consulta": "primera capa térmica conjunto precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (Giovacchino)",
+     "producto_mercado": "Pack camiseta y calza primera capa",
+     "url": "https://www.falabella.com/falabella-cl/shop/conjunto-primera-capa-hombre",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 conjunto",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 19000.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $19.000."
+    },
+    {
+     "tienda": "Paris (Ekol)",
+     "producto_mercado": "Set primera capa hombre camiseta y calza compresión térmicos",
+     "url": "https://www.paris.cl/set-primera-capa-hombre-camiseta-y-calza-compresion-termicos-MK08GUZL09.html",
+     "precio": 33430,
+     "iva_incluido": true,
+     "contenido": "1 conjunto",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 28092.44,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Pantalón control UV",
+   "consulta": "",
+   "opciones": [],
+   "nota": "no buscado por separado; por confirmar"
+  },
+  {
+   "linea": 10,
+   "producto": "Polera control UV",
+   "consulta": "polera manga larga protección UV precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Induseg)",
+     "producto_mercado": "Polera Algodón Manga Larga Cuello Redondo UV Antipilling Azul",
+     "url": "https://www.lider.cl/ip/vestuario/polera-algodon-manga-larga-cuello-redondo-uv-antipilling-azul/00046562785616",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "nota": "no indica UPF; confirmar con bases",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 7990.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $7.990, no $11.990: puede haber cambiado."
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Chaqueta 3 en 1 con polar",
+   "consulta": "chaqueta 3 en 1 con polar precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Chaqueta 3 En 1 Desmontable Hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-3-en-1-desmontable-hombre/00046047693931",
+     "precio": 77990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 65537.82,
+     "coincidencia": "aproximada",
+     "nota": "la ficha no confirma polar interior",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 77990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $77.990."
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Polar (mujer)",
+   "consulta": "chaqueta polar precio Chile",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Likeshop)",
+     "producto_mercado": "Polerón chaquetón mujer polar grueso forro chiporro",
+     "url": "https://www.lider.cl/ip/vestuario/poleron-chaqueton-mujer-polar-grueso-forro-chiporro-premium-7567/00079325429759",
+     "precio": 17980,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15109.24,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 17980.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $17.980."
+    },
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Chaqueta Polar Corporativa Hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693375",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "aproximada",
+     "nota": "modelo de hombre",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 29990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $29.990."
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Chaleco reflectante naranjo",
+   "consulta": "chaleco reflectante naranjo precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac (RFX)",
+     "producto_mercado": "Chaleco reflectante talla única naranjo",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/chaleco-reflectante",
+     "precio": 4190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3521.01,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 4190.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $4.190."
+    },
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Chaleco Reflectante Geólogo Naranjo",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/chaleco-reflectante",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $11.990."
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Cubre pantalón azul o negro",
+   "consulta": "",
+   "opciones": [],
+   "nota": "no buscado por separado; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "Camisa control UV",
+   "consulta": "camisa protección UV precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Oryx)",
+     "producto_mercado": "Camisa con Protección UV Hombre Serengueti Gris",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat4850398/parkas-y-primera-capa",
+     "precio": 37990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31924.37,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 40000.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $40.000, no $37.990: puede haber cambiado."
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Zapatos para nieve (par)",
+   "consulta": "botas para nieve hombre precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Look Shop)",
+     "producto_mercado": "Botín impermeable hombre lluvia y nieve con chiporro",
+     "url": "https://www.falabella.com/falabella-cl/shop/botines-impermeables-hombre",
+     "precio": 37990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31924.37,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 40000.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $40.000, no $37.990: puede haber cambiado."
+    }
+   ]
+  },
+  {
+   "linea": 17,
+   "producto": "Capa de agua impermeable",
+   "consulta": "traje de agua impermeable precio Chile",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Traje de Lluvia Azul 0,18 mm",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10966/Trajes-de-agua",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 15990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $15.990."
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Traje impermeable azul",
+     "url": "https://www.falabella.com/falabella-cl/product/110370461/traje-impermeable-azul/110370466",
+     "precio": 26990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 22680.67,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 24990.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $24.990, no $26.990: puede haber cambiado."
+    }
+   ]
+  },
+  {
+   "linea": 18,
+   "producto": "Guante espuma de nitrilo (par)",
+   "consulta": "guante espuma de nitrilo precio Chile",
+   "opciones": [],
+   "nota": "solo aparecieron guantes desechables o importados (nocnoc); por confirmar con distribuidores de EPP"
+  }
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-25",
+  "opciones": 21,
+  "verificadas": 13
+ }
+}

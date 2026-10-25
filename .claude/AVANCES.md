@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-25, 05:00 UTC)
+## Estado (actualizado 2026-10-25, 14:00 UTC)
 
 | Tema | Estado |
 |---|---|
@@ -33,7 +33,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
 | Plataforma web (Streamlit) | Publicada en https://radar-mercadopublico.streamlit.app desde la cuenta de Streamlit de Yakazor (archivo principal `plataforma/app.py`, rama `feature/api-mercadopublico`; secretos `clave` y `github_token`). PR #3 a #6 unidos: menú arriba, tablas de ancho fijo (caben en 1366 px), «Recordarme» 30 días, filtros GO / NO GO y «Compra y venta directa», 💲 en el nombre = ya tiene precios de tiendas. Si la página muestra la versión anterior: Manage app → ⋮ → Reboot app (con la cuenta Yakazor) |
-| Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), **todos los días 7:59** America/Santiago (pedido del 25-10: «a las 8:00 de lunes a lunes»; antes días hábiles 8:59). Corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7`, creada con el repo. Su prompt solo se puede cambiar desde esa sesión (el horario sí desde cualquiera). «Ejecutar ahora» (`fire_trigger`) **no** usa esa sesión: crea una nueva sin repo y falla (así falló la primera corrida, 25-10 03:55 UTC, con dos avisos al celular). En una sesión nueva `add_repo` existe, pero el modo automático lo niega. Para correrla a mano: escribirle «ACTUALIZACIÓN» a la sesión dedicada. Prueba de corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): **funcionó**: llegó a la sesión dedicada, que respondió «Prueba recibida. Sí, esta sesión tiene el repositorio». Las corridas programadas sí usan esa sesión. |
+| Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), **todos los días 7:59** America/Santiago (pedido del 25-10: «a las 8:00 de lunes a lunes»; antes días hábiles 8:59). Corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7`, creada con el repo. Su prompt solo se puede cambiar desde esa sesión (el horario sí desde cualquiera). «Ejecutar ahora» (`fire_trigger`) **no** usa esa sesión: crea una nueva sin repo y falla (así falló la primera corrida, 25-10 03:55 UTC, con dos avisos al celular). En una sesión nueva `add_repo` existe, pero el modo automático lo niega. Para correrla a mano: escribirle «ACTUALIZACIÓN» a la sesión dedicada. Prueba de corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): **funcionó**: llegó a la sesión dedicada, que respondió «Prueba recibida. Sí, esta sesión tiene el repositorio». Las corridas programadas sí usan esa sesión. **Primera corrida programada: 25-10 11:00–11:20 UTC, bien** (precios para 4 licitaciones, commit e88ad5c de informes, publicación; ~US$ 3,6 de créditos). |
 | Workflow «Órdenes de compra históricas» | Corregido (PR #3): una OC traía un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel; `texto_excel`/`sin_formulas` lo quitan. Verificado: corrida 40150220712. Los errores de los workflows quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
 PRs unidos: #1 a #8. Pendiente de unir: https://github.com/Yakazor/MercadoPublico/pull/9 (radar diario y corrección de la rutina).
@@ -45,10 +45,8 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 - Unir el PR #9. Sin él, el radar de GitHub sigue de lunes a viernes. La rutina también lee el `.claude/RUTINA.md`
   viejo, que con datos frescos se salta los precios; el prompt de la tarea igual pide los precios.
-- Revisar la primera corrida programada (25-10, 7:59 hora de Chile = 10:59 UTC) en la sesión dedicada: precios
-  nuevos, commit de `informes/`, publicación «solo exportar» y el aviso al celular. Si `git reset --hard` o
-  `gh workflow run` los niega el modo automático, agregarlos a `.claude/settings.json` (hoy permite `git push`,
-  `git add`, `git commit`, `git fetch`, `git clone`, `python3 scripts/*` y pytest).
+- La rutina busca precios con WebSearch y no puede abrir las tiendas: quedan «sin verificar» hasta que
+  «Verificar precios e informes PDF» (GitHub) los revisa después del push (así pasó el 25-10: efd4b54).
 - Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma, y que
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
@@ -61,7 +59,7 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Diagnóstico de la corrida fallida («Ejecutar ahora» crea una sesión sin repo; `add_repo` negado)
 - [x] Prueba de una corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): ver «Estado»
 - [ ] Unir el PR #9 (usuaria)
-- [ ] Revisar la primera corrida programada (25-10 10:59 UTC)
+- [x] Primera corrida programada (25-10 10:59 UTC): terminó bien a las 11:20 UTC
 
 ## Tarea anterior: plataforma (pedido del 25-10) — terminada
 
@@ -82,6 +80,13 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25 (rutina 11:00 UTC): datos `datos` del 25-10 08:16 (465 licitaciones, 1.596 Compras Ágiles).
+  Precios con WebSearch (sin Workflow; la sesión no abre las tiendas: quedan sin verificar) para
+  2452-25-LE26 tóner (14/18 ítems; GO con condiciones, pero la oferta supera el estimado),
+  979-73-LE26 EPP (14/18; GO con condiciones, margen 16 %), 3384-167-COT26 libros (0/6) y
+  1075956-166-COT26 oficina (0/5, especificación en anexo). Mejores: 3654-36-LE26, 612-44-LE26 y
+  4768-55-LE26 (cierran 26-10; ya tenían proveedores). 482 pruebas OK.
 
 - 2026-10-25: actualización diaria (pedido: «todos los días a las 8:00, de lunes a lunes»). Tarea de Claude
   todos los días 7:59 (aplicado); radar de GitHub todos los días 10:07 UTC y corrección de `.claude/RUTINA.md`

@@ -1,0 +1,437 @@
+{
+ "codigo": "2452-25-LE26",
+ "nombre": "ADQUISICION DE TÓNER Y TAMBOR PARA LA RED DE SALUD",
+ "fecha_consulta": "2026-10-25",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tóner Brother TN-1060",
+   "consulta": "Toner Brother TN-1060 original precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Laser Imaging Chile)",
+     "producto_mercado": "Toner tn-1060 negro TN1060",
+     "url": "https://www.falabella.com/falabella-cl/shop/tn-negras",
+     "precio": 36990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31084.03,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 36077.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $36.077."
+    },
+    {
+     "tienda": "Falabella (vende Techbox)",
+     "producto_mercado": "Toner TN-1060 Para 1000 Páginas Negro",
+     "url": "https://www.falabella.com/falabella-cl/shop/tn-negras",
+     "precio": 38690,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 32512.61,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 38690.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $38.690."
+    },
+    {
+     "tienda": "Falabella (vende Alcaplus)",
+     "producto_mercado": "Toner Láser TN-1060",
+     "url": "https://www.falabella.com/falabella-cl/shop/tn-negras",
+     "precio": 42990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 36126.05,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 42990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $42.990."
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Tambor Brother DR-1060",
+   "consulta": "Tambor Brother DR-1060 precio Chile",
+   "opciones": [],
+   "nota": "no se encontró precio en tiendas chilenas (solo de otros países); por confirmar con distribuidores"
+  },
+  {
+   "linea": 3,
+   "producto": "Tóner Brother TN-2370",
+   "consulta": "Toner Brother TN-2370 original precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Laser Imaging Chile)",
+     "producto_mercado": "Toner tn2370 Negro TN-2370",
+     "url": "https://www.falabella.com/falabella-cl/shop/tn-negras",
+     "precio": 65990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 55453.78,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 65200.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $65.200."
+    },
+    {
+     "tienda": "Falabella (vende Alcaplus)",
+     "producto_mercado": "Toner TN-2370",
+     "url": "https://www.falabella.com/falabella-cl/shop/tn-negras",
+     "precio": 79990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 67218.49,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 79990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $79.990."
+    },
+    {
+     "tienda": "Falabella (vende Techbox)",
+     "producto_mercado": "Toner Original TN2370 Negro",
+     "url": "https://www.falabella.com/falabella-cl/shop/tn-negras",
+     "precio": 86990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 73100.84,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 86990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $86.990."
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Tóner HP 79A (CF279A)",
+   "consulta": "Toner HP 79A CF279A original precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Cartucho de tóner HP 79A negro LaserJet original (CF279A)",
+     "url": "https://www.hp.com/cl-es/shop/reviews/cartucho-de-toner-hp-79a-negro-laserjet-original-cf279a",
+     "precio": 77990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 65537.82,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile; confirmar precio vigente",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Tambor Brother DR-2340",
+   "consulta": "Tambor DR-2340 Brother precio Chile",
+   "opciones": [],
+   "nota": "Intcomex Chile tiene la ficha (SKU AT100BRO34) sin precio público; no se encontró precio en tiendas chilenas (solo de otros países); por confirmar con distribuidores"
+  },
+  {
+   "linea": 6,
+   "producto": "Tóner HP 48A (CF248A)",
+   "consulta": "Toner HP 48A CF248A original precio Chile",
+   "opciones": [],
+   "nota": "no se encontró precio en tiendas chilenas (solo de otros países); por confirmar con distribuidores"
+  },
+  {
+   "linea": 7,
+   "producto": "Tóner HP 105A (W1105A)",
+   "consulta": "HP 105A W1105A toner original precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Cintegral)",
+     "producto_mercado": "HP - Toner W1105A Negro",
+     "url": "https://www.falabella.com/falabella-cl/shop/toner-hp-1120-w",
+     "precio": 67990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 57134.45,
+     "coincidencia": "aproximada",
+     "nota": "el listado no dice si es original HP; confirmar con el vendedor. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 68970.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $68.970."
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Tóner HP 26X (CF226X)",
+   "consulta": "HP 26X CF226X toner original precio Chile",
+   "opciones": [],
+   "nota": "no se encontró precio en tiendas chilenas (solo de otros países); por confirmar con distribuidores"
+  },
+  {
+   "linea": 9,
+   "producto": "Tóner HP 85A (CE285A)",
+   "consulta": "HP 85A CE285A toner original precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Cartucho de Tóner HP 85A LaserJet Negro Original (CE285A)",
+     "url": "https://www.hp.com/cl-es/shop/cartucho-de-toner-hp-85a-negro-laserjet-original-ce285a.html",
+     "precio": 119990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 100831.93,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile; el dato de la búsqueda era de caché (dic-2024): confirmar precio vigente",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Botella de tinta HP GT53 negro 90 ml",
+   "consulta": "botella tinta HP GT53 GT52 precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT53 negro original 90 ml (1VV22AL)",
+     "url": "https://www.hp.com/cl-es/shop/botella-de-tinta-hp-gt53-negro-original-90-ml-1vv22al.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Botella de tinta HP GT52 cian 70 ml",
+   "consulta": "botella tinta HP GT53 GT52 precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT52 cian original (en combo GT53+GT52)",
+     "url": "https://www.hp.com/cl-es/shop/botellas-de-tinta-hp-gt53-negro-original-gt52-cian-amarillo-y-magenta-original-1vv22al-1.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Botella de tinta HP GT52 magenta 70 ml",
+   "consulta": "botella tinta HP GT53 GT52 precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT52 magenta original (en combo GT53+GT52)",
+     "url": "https://www.hp.com/cl-es/shop/botellas-de-tinta-hp-gt53-negro-original-gt52-cian-amarillo-y-magenta-original-1vv22al-1.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Botella de tinta HP GT52 amarillo 70 ml",
+   "consulta": "botella tinta HP GT53 GT52 precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT52 amarillo original (en combo GT53+GT52)",
+     "url": "https://www.hp.com/cl-es/shop/botellas-de-tinta-hp-gt53-negro-original-gt52-cian-amarillo-y-magenta-original-1vv22al-1.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Tinta HP 711 negro 38 ml",
+   "consulta": "HP 711 negro 38 ml Chile precio",
+   "opciones": [
+    {
+     "tienda": "Paris (vende Tech Box SpA)",
+     "producto_mercado": "Cartucho tinta HP 711 negro 38 ml DesignJet original",
+     "url": "https://www.paris.cl/cartucho-tinta-hp-711-negro-38-ml-designjet-original-MKB1YAE2V6.html",
+     "precio": 51990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 43689.08,
+     "coincidencia": "equivalente",
+     "nota": "el 711 negro de 38 ml es CZ129A (CZ133A es el de 80 ml): aclarar con el comprador. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    },
+    {
+     "tienda": "Falabella (vende Tecno Insumos SpA)",
+     "producto_mercado": "Cartucho De Tinta 711 38ML Negro Original",
+     "url": "https://www.falabella.com/falabella-cl/shop/hp711",
+     "precio": 61990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 52092.44,
+     "coincidencia": "equivalente",
+     "nota": "confirmar código. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 60000.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado."
+    }
+   ]
+  },
+  {
+   "linea": 15,
+   "producto": "Tinta HP 711 cian 29 ml (CZ130A)",
+   "consulta": "tinta HP 711 29 ml precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Tecno Insumos SpA)",
+     "producto_mercado": "Cartucho HP 711 cian original",
+     "url": "https://www.falabella.com/falabella-cl/shop/hp711",
+     "precio": 58990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 49571.43,
+     "coincidencia": "exacta",
+     "nota": "el listado no muestra el código CZ130A. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 59990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $59.990."
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Tinta HP 711 magenta 29 ml (CZ131A)",
+   "consulta": "tinta HP 711 29 ml precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Tienda Oficial HP)",
+     "producto_mercado": "Cartucho HP 711 magenta original",
+     "url": "https://www.falabella.com/falabella-cl/shop/hp711",
+     "precio": 52990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 44529.41,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 52990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $52.990."
+    }
+   ]
+  },
+  {
+   "linea": 17,
+   "producto": "Tinta HP 711 amarillo 29 ml (CZ132A)",
+   "consulta": "tinta HP 711 29 ml precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Laser Imaging Chile)",
+     "producto_mercado": "Cartucho HP 711 amarillo 29 ml (CZ132A)",
+     "url": "https://www.falabella.com/falabella-cl/shop/hp711",
+     "precio": 50990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42848.74,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 50990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $50.990."
+    }
+   ]
+  },
+  {
+   "linea": 18,
+   "producto": "Cabezal HP 711 (C1Q10A)",
+   "consulta": "cabezal HP 711 C1Q10A precio Chile",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Kit de reemplazo de cabezal de impresión DesignJet HP 711 (C1Q10A)",
+     "url": "https://www.hp.com/cl-es/shop/tinta-toner/kits-de-mantenimiento-fusor.html",
+     "precio": 358990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 301672.27,
+     "coincidencia": "exacta",
+     "nota": "precio «desde» en la página de categoría de HP Chile; confirmar",
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+    }
+   ]
+  }
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-25",
+  "opciones": 19,
+  "verificadas": 10
+ }
+}
