@@ -140,7 +140,16 @@ jobs:
           fi
           [ "$REPROCESAR" = "true" ] && ARGS="$ARGS --reprocesar"
           # Deja ~40 min de margen (un día hábil tarda ~25 min) antes del timeout para guardar la base.
-          python scripts/ordenes_historicas.py $ARGS --max-minutos 290
+          # Si falla, los últimos errores quedan como anotaciones (se leen por la API de GitHub
+          # sin descargar el log completo).
+          set +e
+          python scripts/ordenes_historicas.py $ARGS --max-minutos 290 2>&1 | tee "$RUNNER_TEMP/oc.log"
+          estado=${PIPESTATUS[0]}
+          if [ "$estado" -ne 0 ]; then
+            grep -E "ERROR|Error|Traceback|Exception" "$RUNNER_TEMP/oc.log" | tail -n 5 \
+              | while IFS= read -r linea; do echo "::error::${linea:0:900}"; done
+          fi
+          exit "$estado"
 
       - name: Guardar base de datos
         if: always() && steps.version.outputs.es_actual == 'true'

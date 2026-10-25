@@ -122,7 +122,15 @@ jobs:
           [ -n "$LIMITE" ] && ARGS="--limite $LIMITE"
           [ "$SOLO_EXPORTAR" = "true" ] && ARGS="--solo-exportar"
           # Deja ~20 min de margen antes del timeout para guardar la base.
-          python scripts/radar_diario.py $ARGS --max-minutos 95
+          # Si falla, los últimos errores quedan como anotaciones (legibles por la API de GitHub).
+          set +e
+          python scripts/radar_diario.py $ARGS --max-minutos 95 2>&1 | tee "$RUNNER_TEMP/radar.log"
+          estado=${PIPESTATUS[0]}
+          if [ "$estado" -ne 0 ]; then
+            grep -E "ERROR|Error|Traceback|Exception" "$RUNNER_TEMP/radar.log" | tail -n 5 \
+              | while IFS= read -r linea; do echo "::error::${linea:0:900}"; done
+          fi
+          exit "$estado"
 
       # «Solo exportar» (lo lanza «Compras Ágiles» para publicarlas) no cambia la base: no se guarda.
       - name: Guardar base de datos
