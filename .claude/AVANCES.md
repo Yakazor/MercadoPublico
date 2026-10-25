@@ -69,6 +69,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: creada de nuevo con `plataforma/app.py`: **la plataforma funciona** en
+  https://radar-mercadopublico.streamlit.app (probada por la usuaria en incógnito). En su Chrome normal
+  fallaban tablas e indicadores («Failed to fetch dynamically imported module»): copia defectuosa
+  guardada o extensión; se arregla borrando los datos de ese sitio. Bajar los datos toma ~1,3 s y
+  procesarlos ~0,2 s; la espera larga es el arranque de Streamlit Cloud cuando la app duerme.
+
 - 2026-10-25: la plataforma se publicó en https://radar-mercadopublico.streamlit.app desde la cuenta
   Yakazor (Carlag96 no es admin del repo). El primer intento quedó con archivo principal
   `plataforma/evaluar.py` y la página salía en blanco: debe ser `plataforma/app.py`. Streamlit no deja
