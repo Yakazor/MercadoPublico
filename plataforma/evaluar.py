@@ -17,7 +17,7 @@ VISTAS = ["Una licitación", "Ranking"]
 def pagina() -> None:
     prep = comun.datos()
     st.title("Evaluación GO / NO GO")
-    st.caption("Costos, márgenes, riesgo y decisión con los supuestos de la barra lateral. Las cotizaciones que "
+    st.caption("Costos, márgenes, riesgo y decisión con tus supuestos (⚙️ Supuestos, arriba). Las cotizaciones que "
                "ingreses mandan sobre los precios de tiendas y quedan mientras tengas la plataforma abierta.")
     if st.segmented_control("Vista", VISTAS, default=VISTAS[0], required=True, key="eval_vista",
                             label_visibility="collapsed") == VISTAS[1]:
@@ -108,7 +108,7 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
     st.subheader("Resultado")
     if p["items_sin_precio"] == len(p["items"]):
         st.info("Ninguna línea tiene precio todavía. Pide cotización a proveedores (correos abajo) e ingresa sus "
-                "precios en la tabla, o activa «Estimar con OC del Estado» en los supuestos de la barra lateral.")
+                "precios en la tabla, o activa «Estimar con OC del Estado» en ⚙️ Supuestos.")
         _documentos(lic, p, ev, mercado, con_precios=False)
         return
     comun.aviso_decision(ev)
@@ -206,13 +206,19 @@ def _proveedores(codigo: str, mercado: list[dict]) -> tuple[list[dict], dict]:
 
 
 def _ranking(prep: dict) -> None:
-    a, b = st.columns([1, 2])
+    a, b, c = st.columns([1.2, 1.6, 1.6])
     tipo = a.segmented_control("Mostrar", ["Todas", "Licitaciones", "Compras Ágiles"], default="Todas",
                                required=True, key="rank_tipo")
-    decisiones = b.multiselect("Decisión", [GO, CONDICIONADO, NO_GO], default=[GO, CONDICIONADO], key="rank_dec")
+    decisiones = b.multiselect("Decisión", [GO, CONDICIONADO, NO_GO], default=[GO, CONDICIONADO], key="rank_dec",
+                               format_func=comun.DECISION_CORTA.get)
+    cv_txt = c.segmented_control("Compra y venta directa", ["Todas", *comun.COMPRA_VENTA.values()], default="Todas",
+                                 required=True, key="rank_cv", help=comun.AYUDA_COMPRA_VENTA)
+    cv = comun.compra_venta_por_codigo()
+    estado = next((k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt), "todas")
     filas = [(l, p, e) for l, p, e in ranking(prep, comun.supuestos(), comun.margen(), comun.otros(),
                                               comun.estimar_oc(), comun.cotizaciones())
-             if e.decision in decisiones and (tipo == "Todas" or es_compra_agil(l) == (tipo == "Compras Ágiles"))]
+             if e.decision in decisiones and (tipo == "Todas" or es_compra_agil(l) == (tipo == "Compras Ágiles"))
+             and (estado == "todas" or cv.get(l["codigo"], (None, ""))[0] is estado)]
     st.caption(f"{len(filas)} evaluadas con al menos un precio, de mejor a peor (decisión y luego margen × "
                "probabilidad). ⚡ = Compra Ágil. Toca una fila para abrir su evaluación, con riesgos y costos.")
     codigos = [l["codigo"] for l, _, _ in filas]
@@ -224,14 +230,17 @@ def _ranking(prep: dict) -> None:
 
     st.dataframe(pd.DataFrame([{
         "Código": l["codigo"], "Nombre": ("⚡ " if es_compra_agil(l) else "") + (l.get("nombre") or ""),
-        "Decisión": comun.DECISION_CORTA[e.decision], "Margen neto": (e.margenes["neto_pct"] or 0) * 100,
+        "Decisión": comun.DECISION_CORTA[e.decision],
+        "Compra-venta": comun.COMPRA_VENTA[cv.get(l["codigo"], (None, ""))[0]],
+        "Margen neto": (e.margenes["neto_pct"] or 0) * 100,
         "Oferta c/IVA": comun.pesos(e.ingresos["oferta_total"]),
         "Monto estimado": comun.pesos(e.ingresos["monto_estimado"]), "Cierre": comun.dias_texto(l.get("dias_restantes")),
     } for l, p, e in filas]), hide_index=True, key="rank_tabla", on_select=abrir, selection_mode="single-row",
         height=560, column_config={
             "Código": st.column_config.TextColumn(width=130),
-            "Nombre": st.column_config.TextColumn(width=210),
+            "Nombre": st.column_config.TextColumn(width=260),
             "Decisión": st.column_config.TextColumn(width=140),
+            "Compra-venta": st.column_config.TextColumn(width=105, help=comun.AYUDA_COMPRA_VENTA),
             "Margen neto": st.column_config.NumberColumn(format="%.0f %%", width=85),
             "Oferta c/IVA": st.column_config.NumberColumn(format="localized", width=105),
             "Monto estimado": st.column_config.NumberColumn(format="localized", width=105),

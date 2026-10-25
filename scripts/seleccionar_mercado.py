@@ -14,29 +14,14 @@ cumplan los filtros.
 """
 import argparse
 import json
-import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
 import _ruta  # noqa: F401
 from radar.config import ruta_proyecto
+from radar.plataforma import item_concreto as concreto
 
 CAMPOS_ITEM = ("linea", "producto", "descripcion", "cantidad", "unidad", "ref_mediana")
-_GLOBAL = {"global", "unidad no definida", "servicio"}
-_SEGUN = re.compile(r"seg[uú]n (bases|detalle|cantidades|anexo|especificaciones|lo indicado)|de acuerdo a (las )?bases", re.I)
-# Descripciones que nombran una categoría y no un producto ("Mobiliario para la oficina X").
-_GENERICA = re.compile(r"^(mobiliario|insumos|materiales|equipamiento|articulos|art[ií]culos|equipos|productos)\b", re.I)
-# Licencias y soporte de software: exigen ser partner del fabricante, no se compran y revenden.
-_SOFTWARE = re.compile(r"licenci|software|soporte|suscripci", re.I)
-
-
-def concreto(item: dict) -> bool:
-    """Ítem que se puede cotizar: cantidad, unidad física y una descripción propia."""
-    descripcion = (item.get("descripcion") or "").strip()
-    unidad = (item.get("unidad") or "").strip().lower()
-    return (bool(item.get("cantidad")) and unidad not in _GLOBAL and len(descripcion) >= 8
-            and not _SEGUN.search(descripcion) and not _GENERICA.search(descripcion)
-            and not _SOFTWARE.search(f"{item.get('producto') or ''} {descripcion}"))
 
 
 def main():

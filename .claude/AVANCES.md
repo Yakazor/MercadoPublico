@@ -69,6 +69,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: menú arriba y ⚙️ Supuestos en un botón (sin barra lateral: ~1.200 px útiles en 1366).
+  Filtros y columnas «Decisión» (GO / con condiciones / NO GO / sin evaluar) y «Compra-venta»
+  (`radar.plataforma.compra_venta`: ✅ productos para revender, ❌ servicios/ISP/licencias, ❓ bases);
+  `item_concreto` se movió de `scripts/seleccionar_mercado.py` a `radar.plataforma`. 493 pruebas OK.
+
 - 2026-10-25: «Recordarme en este equipo»: cookie `radar_acceso` (30 días) con una llave derivada de
   la clave (`comun.token_acceso`); se escribe con un componente invisible porque Streamlit solo lee
   cookies (`st.context.cookies`). «Cerrar sesión» en la barra lateral la borra. Probado en Chromium

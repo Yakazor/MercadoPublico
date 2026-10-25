@@ -26,10 +26,9 @@ st.set_page_config(page_title="Radar Mercado Público", page_icon="🔎", layout
 
 def guardar_cookie(valor: str, dias: int) -> None:
     """Guarda (o borra, con 0 días) la llave de acceso en el navegador. Streamlit lee cookies pero no las
-    escribe: lo hace un componente invisible en la barra lateral."""
-    with st.sidebar:
-        html(f"<script>document.cookie = '{comun.COOKIE_ACCESO}={valor}; path=/; max-age={dias * 86400}; "
-             "SameSite=Strict; Secure';</script>", height=0)
+    escribe: lo hace un componente invisible al final de la página."""
+    html(f"<script>document.cookie = '{comun.COOKIE_ACCESO}={valor}; path=/; max-age={dias * 86400}; "
+         "SameSite=Strict; Secure';</script>", height=0)
 
 
 def acceso() -> bool:
@@ -44,10 +43,10 @@ def acceso() -> bool:
         ss["autorizado"] = True
     if ss.get("autorizado"):
         if ss.pop("recordar", False):
-            guardar_cookie(llave, comun.DIAS_RECORDAR)
+            ss["cookie_pendiente"] = (llave, comun.DIAS_RECORDAR)
         return True
     if ss.get("salio"):
-        guardar_cookie("", 0)
+        ss["cookie_pendiente"] = ("", 0)
     st.title("Radar Mercado Público")
     with st.form("acceso"):
         intento = st.text_input("Clave de acceso", type="password")
@@ -61,8 +60,8 @@ def acceso() -> bool:
     return False
 
 
-def boton_salir() -> None:
-    if comun.secreto("clave") and st.sidebar.button("Cerrar sesión", icon="🔒",
+def boton_salir(contenedor) -> None:
+    if comun.secreto("clave") and contenedor.button("Cerrar sesión", icon="🔒", width="stretch",
                                                      help="Olvida la clave en este navegador"):
         st.session_state.update(autorizado=False, salio=True)
         st.rerun()
@@ -79,7 +78,15 @@ if acceso():
         "manuales": st.Page(manuales.pagina, title="Manuales", icon="📚", url_path="manuales"),
         "actualizar": st.Page(actualizar.pagina, title="Actualizar datos", icon="🔄", url_path="actualizar"),
     })
-    navegacion = st.navigation(list(comun.PAGINAS.values()))
-    comun.panel_supuestos()
-    boton_salir()
+    # Menú arriba y sin barra lateral: las tablas usan todo el ancho de la pantalla.
+    navegacion = st.navigation(list(comun.PAGINAS.values()), position="top")
+    _, supuestos, salir = st.columns([5, 1.3, 1.3], vertical_alignment="center")
+    with supuestos.popover("Supuestos", icon="⚙️", width="stretch",
+                           help="Margen, otros costos, valor de tu hora, costo financiero y despacho por zona"):
+        comun.panel_supuestos()
+    boton_salir(salir)
     navegacion.run()
+
+# Al final para no correr el contenido (un st.switch_page antes lo deja para la próxima corrida).
+if "cookie_pendiente" in st.session_state:
+    guardar_cookie(*st.session_state.pop("cookie_pendiente"))

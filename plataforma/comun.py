@@ -17,7 +17,7 @@ from streamlit.errors import StreamlitSecretNotFoundError  # noqa: E402
 from evaluar_licitaciones import clp  # noqa: E402,F401
 from radar.evaluacion import CONDICIONADO, GO, NO_GO  # noqa: E402
 from radar.filtro import normalizar  # noqa: E402
-from radar.plataforma import ORIGEN_DATOS, leer_datos, preparar, supuestos_config  # noqa: E402
+from radar.plataforma import ORIGEN_DATOS, compra_venta, leer_datos, preparar, supuestos_config  # noqa: E402
 
 ZONAS = {"cercana": "Región Metropolitana", "media": "Valparaíso, O'Higgins, Maule",
          "lejana": "Coquimbo a Los Ríos", "extrema": "Extremo norte y sur"}
@@ -28,6 +28,11 @@ COOKIE_ACCESO = "radar_acceso"
 DIAS_RECORDAR = 30
 # Textos cortos para que las tablas quepan en una pantalla de notebook (~900 px de ancho útil).
 DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", NO_GO: "🔴 NO GO"}
+SIN_EVALUAR = "⚪ Sin evaluar"
+COMPRA_VENTA = {True: "✅ Sí", False: "❌ No", None: "❓ Revisar"}
+AYUDA_COMPRA_VENTA = ("Compra y venta directa: productos que compras hechos y revendes. ❌ = incluye un servicio "
+                      "(instalación, mantención, confección, arriendo, capacitación, licencias) o exige registro ISP. "
+                      "❓ = la cantidad o el producto exacto están en las bases.")
 _REGIONES = [("arica", "Arica"), ("tarapaca", "Tarapacá"), ("antofagasta", "Antofagasta"), ("atacama", "Atacama"),
              ("coquimbo", "Coquimbo"), ("valparaiso", "Valparaíso"), ("metropolitana", "Metropolitana"),
              ("higgins", "O'Higgins"), ("maule", "Maule"), ("nuble", "Ñuble"), ("biobio", "Biobío"),
@@ -61,10 +66,24 @@ def _leer(origen: str, marca: str | None) -> dict:
     return leer_datos(origen, marca=marca)
 
 
+def _origen() -> str:
+    return os.environ.get("RADAR_DATOS") or secreto("datos") or ORIGEN_DATOS
+
+
 def datos() -> dict:
     """Licitaciones y Compras Ágiles abiertas (se vuelven a bajar cada 30 minutos)."""
-    origen = os.environ.get("RADAR_DATOS") or secreto("datos") or ORIGEN_DATOS
-    return preparar(_leer(origen, st.session_state.get("marca_datos")))
+    return preparar(_leer(_origen(), st.session_state.get("marca_datos")))
+
+
+@st.cache_data(ttl=1800, show_spinner=False)
+def _compra_venta(origen: str, marca: str | None) -> dict:
+    prep = preparar(_leer(origen, marca))
+    return {l["codigo"]: compra_venta(l, prep["items"].get(l["codigo"], [])) for l in prep["licitaciones"]}
+
+
+def compra_venta_por_codigo() -> dict:
+    """{código: (sí / no / None = revisar, motivo)} de las abiertas (se calcula una vez por descarga)."""
+    return _compra_venta(_origen(), st.session_state.get("marca_datos"))
 
 
 def recargar() -> None:
@@ -87,7 +106,7 @@ def _supuestos_base() -> dict:
 
 
 def supuestos() -> dict:
-    """Supuestos de `config.yaml` con lo que cambiaste en la barra lateral."""
+    """Supuestos de `config.yaml` con lo que cambiaste en ⚙️ Supuestos."""
     s = dict(_supuestos_base())
     s["valor_hora"] = st.session_state.get("sup_valor_hora", s["valor_hora"])
     s["tasa_financiera_mensual"] = st.session_state.get("sup_tasa", s["tasa_financiera_mensual"] * 100) / 100
@@ -113,9 +132,9 @@ def cotizaciones() -> dict:
 
 
 def panel_supuestos() -> None:
-    """Supuestos de la evaluación en la barra lateral (valen para todas las páginas)."""
+    """Supuestos de la evaluación (botón ⚙️ Supuestos, arriba en todas las páginas)."""
     base = _supuestos_base()
-    with st.sidebar.expander("Supuestos de evaluación"):
+    with st.container():
         st.number_input("Margen sobre el costo (%)", 0, 200, 20, 1, key="sup_margen")
         st.number_input("Otros costos (%)", 0, 50, 5, 1, key="sup_otros",
                         help="Boletas, envases y gastos menores sobre el costo de la mercadería.")
