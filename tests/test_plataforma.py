@@ -146,10 +146,15 @@ def _pagina(modulo: str, funcion: str, raiz: str) -> None:
 
 @pytest.mark.parametrize("modulo, funcion", [("inicio", "pagina"), ("explorar", "licitaciones"),
                                              ("explorar", "compras_agiles"), ("evaluar", "pagina"),
-                                             ("orden", "pagina")])
+                                             ("orden", "pagina"), ("manuales", "pagina"), ("actualizar", "pagina")])
 def test_paginas_cargan_sin_errores(tmp_path, monkeypatch, modulo, funcion):
     pytest.importorskip("streamlit")
+    import requests
     from streamlit.testing.v1 import AppTest
+
+    # «Actualizar datos» consulta GitHub: sin red en las pruebas.
+    monkeypatch.setattr(requests, "get", lambda url, **k: _Respuesta(200, {"workflow_runs": [
+        _run(1, "radar-diario.yml", "completed", "success")]}))
 
     datos = _datos()
     for lic in datos["licitaciones"]:       # que sigan abiertas el día que corra el test
@@ -172,3 +177,80 @@ def test_app_completa_abre_en_inicio(tmp_path, monkeypatch):
     at = AppTest.from_file(str(RAIZ / "plataforma" / "app.py"), default_timeout=60).run()
     assert not at.exception, [e.value for e in at.exception]
     assert at.title[0].value == "Radar Mercado Público"
+
+
+class _Respuesta:
+    def __init__(self, status, datos=None, cabeceras=None):
+        self.status_code, self._datos, self.headers, self.text = status, datos or {}, cabeceras or {}, ""
+
+    def json(self):
+        return self._datos
+
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise RuntimeError(self.status_code)
+
+
+def _run(id_, archivo, status, conclusion=None, creada="2026-10-25T00:10:00Z", fin="2026-10-25T00:13:00Z"):
+    return {"id": id_, "path": f".github/workflows/{archivo}", "name": archivo, "status": status,
+            "conclusion": conclusion, "event": "workflow_dispatch", "run_started_at": creada,
+            "created_at": creada, "updated_at": fin, "html_url": f"https://github.com/x/{id_}"}
+
+
+def test_corridas_traduce_estados_y_errores(monkeypatch):
+    from radar import actualizacion as a
+
+    pedidos = []
+    runs = [_run(1, "radar-diario.yml", "completed", "success"), _run(2, "compra-agil.yml", "queued"),
+            _run(3, "ordenes-historicas.yml", "in_progress")]
+    monkeypatch.setattr(a.requests, "get", lambda url, **k: pedidos.append((url, k)) or
+                        _Respuesta(200, {"workflow_runs": runs}))
+    lista = a.corridas("tok")
+    assert [(c["workflow"], c["estado"], c["resultado"]) for c in lista] == [
+        ("radar-diario.yml", "completed", "success"), ("compra-agil.yml", "en_cola", None),
+        ("ordenes-historicas.yml", "in_progress", None)]
+    assert lista[0]["nombre"] == "Licitaciones (radar diario)" and lista[0]["fin"].minute == 13
+    assert lista[1]["fin"] is None
+    assert pedidos[0][1]["params"]["branch"] == "feature/api-mercadopublico"
+    assert pedidos[0][1]["headers"]["Authorization"] == "Bearer tok"
+    monkeypatch.setattr(a.requests, "get", lambda url, **k: _Respuesta(401))
+    with pytest.raises(a.ErrorGitHub, match="token"):
+        a.corridas("malo")
+    monkeypatch.setattr(a.requests, "get", lambda url, **k: _Respuesta(403, cabeceras={"x-ratelimit-remaining": "0"}))
+    with pytest.raises(a.ErrorGitHub, match="limitó"):
+        a.corridas()
+
+
+def test_actualizar_no_pisa_corridas_en_cola(monkeypatch):
+    from radar import actualizacion as a
+
+    lanzados = []
+    monkeypatch.setattr(a.requests, "post", lambda url, **k: lanzados.append((url.split("/")[-2], k["json"])) or
+                        _Respuesta(204))
+    libre = [{"workflow": "radar-diario.yml", "estado": "completed"}]
+    assert a.actualizar("tok", libre) == [("compra-agil.yml", "lanzado"), ("radar-diario.yml", "lanzado")]
+    assert lanzados == [("compra-agil.yml", {"ref": "feature/api-mercadopublico", "inputs": {}}),
+                        ("radar-diario.yml", {"ref": "feature/api-mercadopublico", "inputs": {}})]
+    lanzados.clear()
+    ocupado = [{"workflow": "compra-agil.yml", "estado": "in_progress"},
+               {"workflow": "ordenes-historicas.yml", "estado": "en_cola"}]
+    resultado = dict(a.actualizar("tok", ocupado))
+    assert resultado["compra-agil.yml"] == "ya está corriendo o en cola"
+    assert "misma base" in resultado["radar-diario.yml"] and lanzados == []
+    with pytest.raises(a.ErrorGitHub):
+        a.lanzar("radar-diario.yml", "")
+    with pytest.raises(ValueError):
+        a.lanzar("otro.yml", "tok")
+    monkeypatch.setattr(a.requests, "post", lambda url, **k: _Respuesta(404))
+    with pytest.raises(a.ErrorGitHub, match="Read and write"):
+        a.lanzar("radar-diario.yml", "tok")
+
+
+def test_leer_datos_con_marca_salta_la_cache(monkeypatch):
+    import radar.plataforma as plataforma
+
+    urls = []
+    monkeypatch.setattr(plataforma.requests, "get", lambda url, params=None, **k: urls.append((url, params)) or
+                        _Respuesta(200, []))
+    plataforma.leer_datos("https://x/datos/", marca="20261025")
+    assert urls[0] == ("https://x/datos/licitaciones.json", {"v": "20261025"}) and len(urls) == 4

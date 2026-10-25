@@ -31,18 +31,28 @@ def secreto(nombre: str, defecto=None):
 
 
 @st.cache_data(ttl=1800, show_spinner="Cargando licitaciones…")
-def _leer(origen: str) -> dict:
-    return leer_datos(origen)
+def _leer(origen: str, marca: str | None) -> dict:
+    return leer_datos(origen, marca=marca)
 
 
 def datos() -> dict:
     """Licitaciones y Compras Ágiles abiertas (se vuelven a bajar cada 30 minutos)."""
     origen = os.environ.get("RADAR_DATOS") or secreto("datos") or ORIGEN_DATOS
-    return preparar(_leer(origen))
+    return preparar(_leer(origen, st.session_state.get("marca_datos")))
 
 
 def recargar() -> None:
+    """Vuelve a bajar los datos, saltándose la caché de GitHub."""
     _leer.clear()
+    st.session_state["marca_datos"] = pd.Timestamp.now().strftime("%Y%m%d%H%M%S")
+
+
+def datos_generados(meta: dict) -> pd.Timestamp | None:
+    """Cuándo publicó el radar los datos que se están mostrando (hora de Chile)."""
+    try:
+        return pd.Timestamp(meta["generado"]).tz_convert("America/Santiago")
+    except (KeyError, TypeError, ValueError):
+        return None
 
 
 @st.cache_data

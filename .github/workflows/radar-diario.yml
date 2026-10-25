@@ -124,15 +124,16 @@ jobs:
           # Deja ~20 min de margen antes del timeout para guardar la base.
           python scripts/radar_diario.py $ARGS --max-minutos 95
 
+      # «Solo exportar» (lo lanza «Compras Ágiles» para publicarlas) no cambia la base: no se guarda.
       - name: Guardar base de datos
-        if: always() && steps.version.outputs.es_actual == 'true'
+        if: always() && steps.version.outputs.es_actual == 'true' && !inputs.solo_exportar
         uses: actions/cache/save@v5
         with:
           path: data/radar.db
           key: radar-db-${{ (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true') && 'v1' || 'v0' }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Respaldo de la base (artefacto, 30 días)
-        if: always() && steps.version.outputs.es_actual == 'true'
+        if: always() && steps.version.outputs.es_actual == 'true' && !inputs.solo_exportar
         uses: actions/upload-artifact@v6
         with:
           name: radar-db-${{ (steps.restaurar.outputs.cache-matched-key != '' || steps.respaldo.outputs.ok == 'true') && 'v1' || 'v0' }}-${{ github.run_number }}-${{ github.run_attempt }}

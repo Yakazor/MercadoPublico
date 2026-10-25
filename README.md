@@ -51,6 +51,7 @@ src/radar/
   orden_proveedor.py        # orden de compra a tu proveedor (planilla Excel)
   evaluacion.py             # costos, márgenes, riesgo y decisión GO / NO GO
   plataforma.py             # datos y cálculos de la plataforma web
+  actualizacion.py          # lanza los workflows de GitHub desde la plataforma
 scripts/
   probar_api.py             # una llamada real: muestra la estructura del JSON
   radar_diario.py           # ejecución diaria del radar
@@ -64,6 +65,7 @@ scripts/
   orden_proveedor.py        # llena la orden de compra al proveedor desde un JSON
   evaluar_licitaciones.py   # Excel, informes, GO / NO GO y correos (informes/evaluacion)
 plataforma/                 # plataforma web (Streamlit): app.py y una página por archivo
+manuales/                   # manuales en PDF (orden de compra; guía de despacho y factura)
 dashboard/index.html        # copia de la página del dashboard
 informes/                   # presupuestos, precios de mercado y grupos (se versiona)
 .claude/RUTINA.md           # instrucciones de la rutina de actualización
@@ -429,8 +431,11 @@ cierres próximos y mejores oportunidades), **Licitaciones** y **Compras Ágiles
 rubro, región, monto, cierre, plazo de entrega y llamado, con la ficha y los ítems de cada
 una), **Evaluación GO / NO GO** (ingresas las cotizaciones de tus proveedores, con o sin
 IVA, y la decisión, los costos y los márgenes se recalculan al instante; ranking de todas;
-ficha, informe y correos para descargar) y **Orden de compra** (se llena desde la
-evaluación y se descarga en Excel). Los supuestos (margen, otros costos, valor hora, costo
+ficha, informe y correos para descargar), **Orden de compra** (se llena desde la
+evaluación y se descarga en Excel), **Manuales** (los PDF de orden de compra, guía de despacho y
+factura y la Guía del Radar, las plantillas y los informes en PDF de `informes/pdf/`) y
+**Actualizar datos** (botón que lanza en GitHub los workflows que consultan la API y muestra
+cómo van; cuando termina el radar, la plataforma vuelve a leer los datos). Los supuestos (margen, otros costos, valor hora, costo
 financiero y despacho por zona) se cambian en la barra lateral y valen para todas las páginas.
 
 - **Datos:** los JSON de la rama `datos` (los mismos del dashboard), que GitHub actualiza
@@ -441,6 +446,13 @@ financiero y despacho por zona) se cambian en la barra lateral y valen para toda
   correos van en los secretos (`.streamlit/secrets.toml`, que no se sube; modelo en
   `.streamlit/secrets.toml.example`). Las cotizaciones y órdenes viven solo en tu sesión:
   descarga el Excel, y el JSON si quieres retomar una orden.
+- **Actualizar desde la plataforma:** necesita el secreto `github_token`, un token
+  *fine-grained* de GitHub solo para este repositorio con permiso **Actions: Read and write**,
+  y que la plataforma tenga `clave`. Lanza «Compras Ágiles» y «Radar diario» salvo que ya
+  estén corriendo o en cola (una corrida nueva cancelaría la que espera en el mismo grupo).
+- **Compras Ágiles al día:** al terminar, el workflow «Compras Ágiles» lanza el radar en modo
+  «solo exportar» (sin llamar a la API) para publicarlas en la rama `datos`; antes solo se
+  publicaban con el radar de los días hábiles.
 - **Estimar con OC del Estado** (barra lateral): para las líneas sin precio usa el costo
   máximo que permite ofertar lo que pagó el Estado. Es una estimación: la evaluación la marca
   como precio aproximado y pide confirmarlo.

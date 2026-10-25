@@ -39,14 +39,20 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 - [x] Plataforma: Inicio, Licitaciones, Compras Ágiles, Evaluación, Orden de compra (PR #3)
 - [x] Bitácora de avances (este archivo) y `CLAUDE.md` que apunta aquí
-- [ ] Lanzar ahora la actualización de la API (workflows «Radar diario» y «Compras Ágiles»)
-- [ ] Botón en la plataforma para actualizar la API (dispara los workflows con un token de
-      GitHub guardado en los secretos) y estado de las últimas corridas
-- [ ] Sección «Manuales» en la plataforma con los PDF (manuales + guía + informes)
+- [x] Lanzar ahora la actualización de la API (corridas 40145670239 radar y 40145668711
+      Compras Ágiles, 25-10 00:10 UTC)
+- [x] Página «Actualizar datos»: botón que lanza los workflows (`src/radar/actualizacion.py`,
+      secreto `github_token` + `clave`), últimas corridas cada 30 s y recarga al terminar el radar
+- [x] «Compras Ágiles» publica al terminar: lanza el radar en modo «solo exportar» (antes solo
+      se publicaban con el radar de días hábiles; los datos tenían Compras Ágiles del 23-10)
+- [x] Página «Manuales»: PDF en `manuales/` (exportados de los Claude Docs), Guía del Radar,
+      erratas, plantillas e informes de `informes/pdf/`
 - [ ] Auditar y corregir todo lo anterior (incluye la falla de «Órdenes de compra históricas»)
 - [ ] Actualizar la descripción del PR #3
 
 ## Bitácora
 
+- 2026-10-25: páginas «Actualizar datos» y «Manuales»; Compras Ágiles se publican al terminar;
+  487 pruebas OK. Falta: auditoría y la falla de «Órdenes de compra históricas».
 - 2026-10-25: plataforma web publicada en la rama `feature/plataforma` (PR #3), 482 pruebas OK.
   Pedido nuevo: bitácora, botón de actualización, manuales en PDF, auditoría.

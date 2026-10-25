@@ -38,12 +38,16 @@ COTIZACION = "Cotización ingresada"
 ESTIMADA_OC = "estimada (OC)"
 
 
-def leer_datos(origen: str = ORIGEN_DATOS, timeout: float = 60) -> dict:
-    """Los JSON de la rama `datos`, desde su URL (raw de GitHub) o desde una carpeta."""
+def leer_datos(origen: str = ORIGEN_DATOS, timeout: float = 60, marca: str | None = None) -> dict:
+    """Los JSON de la rama `datos`, desde su URL (raw de GitHub) o desde una carpeta.
+
+    `marca` va como parámetro de la URL: GitHub guarda en caché los archivos unos minutos y
+    una marca nueva obliga a traer la versión recién publicada."""
     datos = {}
     for nombre in ARCHIVOS:
         if origen.startswith(("http://", "https://")):
-            r = requests.get(f"{origen.rstrip('/')}/{nombre}.json", timeout=timeout)
+            r = requests.get(f"{origen.rstrip('/')}/{nombre}.json", params={"v": marca} if marca else None,
+                             timeout=timeout)
             r.raise_for_status()
             datos[nombre] = r.json()
         else:

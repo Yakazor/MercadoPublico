@@ -25,6 +25,11 @@ def pagina() -> None:
     if boton.button("Recargar datos", icon="🔄", width="stretch"):
         comun.recargar()
         st.rerun()
+    generado = comun.datos_generados(meta)
+    if generado is not None and pd.Timestamp.now(tz="America/Santiago") - generado > pd.Timedelta(hours=26):
+        st.warning(f"Los datos son del {generado:%d-%m %H:%M}: tienen más de un día.")
+        if "actualizar" in comun.PAGINAS:
+            st.page_link(comun.PAGINAS["actualizar"], label="Actualizar ahora desde la API", icon="🔄")
 
     agiles = [l for l in lics if es_compra_agil(l)]
     pronto = [l for l in lics if l.get("dias_restantes") is not None and l["dias_restantes"] <= 2]

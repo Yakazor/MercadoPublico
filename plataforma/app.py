@@ -3,18 +3,21 @@
     streamlit run plataforma/app.py
 
 Licitaciones y Compras Ágiles abiertas de tus rubros (de la rama `datos`), evaluación
-GO / NO GO con tus supuestos y cotizaciones, y la orden de compra al proveedor. La
-clave de acceso, el origen de los datos y tus datos de comprador van en
-`.streamlit/secrets.toml` (o en los secretos de Streamlit Cloud), nunca en el repositorio.
+GO / NO GO con tus supuestos y cotizaciones, la orden de compra al proveedor, los manuales
+en PDF y el botón para actualizar los datos desde la API (lanza los workflows de GitHub).
+La clave de acceso, el token de GitHub, el origen de los datos y tus datos de comprador van
+en `.streamlit/secrets.toml` (o en los secretos de Streamlit Cloud), nunca en el repositorio.
 """
 import hmac
 
 import streamlit as st
 
+import actualizar
 import comun
 import evaluar
 import explorar
 import inicio
+import manuales
 import orden
 
 st.set_page_config(page_title="Radar Mercado Público", page_icon="🔎", layout="wide")
@@ -43,6 +46,8 @@ if acceso():
         "compra_agil": st.Page(explorar.compras_agiles, title="Compras Ágiles", icon="⚡", url_path="compra-agil"),
         "evaluacion": st.Page(evaluar.pagina, title="Evaluación GO / NO GO", icon="📊", url_path="evaluacion"),
         "orden": st.Page(orden.pagina, title="Orden de compra", icon="🧾", url_path="orden-de-compra"),
+        "manuales": st.Page(manuales.pagina, title="Manuales", icon="📚", url_path="manuales"),
+        "actualizar": st.Page(actualizar.pagina, title="Actualizar datos", icon="🔄", url_path="actualizar"),
     })
     navegacion = st.navigation(list(comun.PAGINAS.values()))
     comun.panel_supuestos()
