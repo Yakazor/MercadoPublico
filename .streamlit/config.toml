@@ -1,0 +1,9 @@
+# Configuración de la plataforma (plataforma/app.py).
+[theme]
+primaryColor = "#1F3864"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"

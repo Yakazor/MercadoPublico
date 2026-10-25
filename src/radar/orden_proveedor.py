@@ -5,6 +5,7 @@ vende la mercadería después de aceptar la OC del Estado.
   es la plantilla en blanco; con datos (ver `proveedores/ordenes_proveedor/ejemplo.json`) es la
   orden llena. Subtotales, IVA y total son fórmulas.
 - `validar(datos)`: lista de datos que faltan para enviar la orden.
+- `totales(datos)`: subtotal, descuento, neto, IVA y total, como los calcula la planilla.
 - `siguiente_numero(carpeta, anio)`: correlativo OC-AAAA-NNN según las órdenes guardadas.
 
 El comprador puede ser persona natural con giro (nombre, RUT, giro, domicilio) o
@@ -35,7 +36,7 @@ _CAJA = Border(left=_LINEA, right=_LINEA, top=_LINEA, bottom=_LINEA)
 CLP = '$#,##0;($#,##0);"-"'
 
 # Etiqueta y campo del comprador según su tipo, en el orden en que se muestran.
-_CAMPOS_COMPRADOR = {
+CAMPOS_COMPRADOR = {
     "persona_natural": [("Nombre completo", "nombre"), ("RUT", "rut"), ("Giro", "giro"),
                         ("Contacto", "contacto"), ("Domicilio", "domicilio")],
     "empresa": [("Razón social", "razon_social"), ("RUT", "rut"), ("Dirección", "direccion"),
@@ -43,7 +44,7 @@ _CAMPOS_COMPRADOR = {
 }
 _TITULO_COMPRADOR = {"persona_natural": "COMPRADOR (persona natural con giro)",
                      "empresa": "COMPRADOR (empresa)"}
-_CONDICIONES = [("Lugar de entrega", "lugar_entrega"), ("Fecha límite de entrega", "fecha_entrega"),
+CONDICIONES = [("Lugar de entrega", "lugar_entrega"), ("Fecha límite de entrega", "fecha_entrega"),
                 ("Flete", "flete"), ("Forma de pago", "forma_pago"), ("Validez y stock", "validez"),
                 ("Observaciones", "observaciones")]
 
@@ -68,17 +69,27 @@ def precio_neto(item: dict, iva: float = IVA) -> float | None:
     return None
 
 
+def totales(datos: dict) -> dict:
+    """Los totales que calculan las fórmulas de la planilla (subtotal, descuento, neto, IVA, total)."""
+    subtotal = sum(float(it["cantidad"]) * precio_neto(it) for it in datos.get("items") or []
+                   if it.get("cantidad") not in (None, "") and precio_neto(it) is not None)
+    neto = subtotal - float(datos.get("descuento") or 0)
+    iva = round(neto * float(datos.get("iva", IVA)))
+    return {"subtotal": subtotal, "descuento": float(datos.get("descuento") or 0), "neto": neto, "iva": iva,
+            "total": neto + iva}
+
+
 def validar(datos: dict) -> list[str]:
     """Datos que faltan para enviar la orden (vacía = completa)."""
     faltan = []
     tipo = (datos.get("comprador") or {}).get("tipo", "persona_natural")
-    if tipo not in _CAMPOS_COMPRADOR:
+    if tipo not in CAMPOS_COMPRADOR:
         faltan.append(f"comprador.tipo: «{tipo}» no es persona_natural ni empresa")
         tipo = "persona_natural"
     for campo in ("numero", "fecha"):
         if not datos.get(campo):
             faltan.append(campo)
-    for _, campo in _CAMPOS_COMPRADOR[tipo]:
+    for _, campo in CAMPOS_COMPRADOR[tipo]:
         if not (datos.get("comprador") or {}).get(campo):
             faltan.append(f"comprador.{campo}")
     for campo in ("razon_social", "rut"):
@@ -119,7 +130,7 @@ def crear_orden(datos: dict | None = None) -> Workbook:
     datos = datos or {}
     comprador = datos.get("comprador") or {}
     tipo = comprador.get("tipo", "persona_natural")
-    if tipo not in _CAMPOS_COMPRADOR:
+    if tipo not in CAMPOS_COMPRADOR:
         raise ValueError(f"comprador.tipo debe ser persona_natural o empresa, no «{tipo}»")
     proveedor = datos.get("proveedor") or {}
     referencia = datos.get("referencia") or {}
@@ -173,7 +184,7 @@ def crear_orden(datos: dict | None = None) -> Workbook:
     # Comprador: pares de campos por fila (izquierda C, derecha E:G)
     fila = 5
     seccion(fila, _TITULO_COMPRADOR[tipo])
-    campos = _CAMPOS_COMPRADOR[tipo]
+    campos = CAMPOS_COMPRADOR[tipo]
     for i in range(0, len(campos), 2):
         fila += 1
         izq = campos[i]
@@ -275,7 +286,7 @@ def crear_orden(datos: dict | None = None) -> Workbook:
     # Condiciones
     c0 = t + 7
     seccion(c0, "CONDICIONES")
-    for k, (texto, campo) in enumerate(_CONDICIONES):
+    for k, (texto, campo) in enumerate(CONDICIONES):
         r = c0 + 1 + k
         ws.merge_cells(f"A{r}:B{r}")
         etiqueta(f"A{r}", texto)
@@ -283,7 +294,7 @@ def crear_orden(datos: dict | None = None) -> Workbook:
         ws.row_dimensions[r].height = 20
 
     # Firmas
-    s = c0 + len(_CONDICIONES) + 3
+    s = c0 + len(CONDICIONES) + 3
     firma = "Firma comprador (nombre y RUT)" if tipo == "persona_natural" else "Firma y timbre comprador"
     for rango, texto in ((f"A{s}:C{s}", firma), (f"E{s}:G{s}", "Aceptación proveedor (firma y fecha)")):
         ws.merge_cells(rango)

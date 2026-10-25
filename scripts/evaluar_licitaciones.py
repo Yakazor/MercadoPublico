@@ -32,7 +32,8 @@ from openpyxl.utils import get_column_letter
 import _ruta  # noqa: F401
 from presupuesto import opciones_mercado
 from radar.config import cargar_config, hoy_chile, ruta_proyecto
-from radar.evaluacion import NO_GO, SUPUESTOS, evaluar, puntaje
+from radar.evaluacion import NO_GO, evaluar, puntaje
+from radar.plataforma import supuestos_config
 from radar.presupuesto import armar_presupuesto
 
 URL_LICITACION = "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={}"
@@ -336,9 +337,9 @@ def main():
     ap.add_argument("--registrar", help="JSON con una entrada del Claude Log (fecha, licitaciones_procesadas, ...)")
     args = ap.parse_args()
 
-    conf = cargar_config().get("evaluacion") or {}
-    s = SUPUESTOS | {k: v for k, v in conf.items() if k in SUPUESTOS}
-    remitente = REMITENTE | (conf.get("remitente") or {})
+    conf = cargar_config()
+    s = supuestos_config(conf)
+    remitente = REMITENTE | ((conf.get("evaluacion") or {}).get("remitente") or {})
     hoy = hoy_chile()
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
