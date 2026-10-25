@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "Especificación del comprador no definida",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 360990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $360.990.",
+     "verificacion_pagina": "2026-10-23: la página muestra $360.990.",
      "descartado": true,
      "motivo_descarte": "La línea (cantidad 1) es la compra de las tablets para los alumnos del liceo según bases: el precio de una tablet no representa la línea."
     }
@@ -40,7 +40,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 1,
   "verificadas": 1
  }

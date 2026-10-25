@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "Precio de listado; diámetro (6 cm vs 60 cm pedido) sin confirmar.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 6990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $6.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $6.990."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -54,9 +54,9 @@
      "verificado": true,
      "nota": "Se vende por par: 2 vendas.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $9.990."
     },
     {
      "tienda": "Paris",
@@ -71,7 +71,7 @@
      "verificado": false,
      "nota": "Se vende por par: 2 vendas.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -94,9 +94,9 @@
      "verificado": true,
      "nota": "Largo 68 cm no confirmado en resultado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $15.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $15.990."
     },
     {
      "tienda": "Paris",
@@ -111,7 +111,7 @@
      "verificado": false,
      "nota": "Largo 68 cm no confirmado.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -141,9 +141,9 @@
      "verificado": true,
      "nota": "Listado; no se indica si es engomada.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $11.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $11.990."
     },
     {
      "tienda": "Paris (Ultimate Fitness)",
@@ -158,7 +158,7 @@
      "verificado": false,
      "nota": "Cemento con cubierta plástica, no goma.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -173,7 +173,7 @@
      "verificado": false,
      "nota": "Cemento, no confirma engomada.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -196,9 +196,9 @@
      "verificado": true,
      "nota": "Precio 'desde' del listado; no confirma engomada.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $14.990."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -221,9 +221,9 @@
      "verificado": true,
      "nota": "Precio 'desde' del listado; no confirma engomada.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $15.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $15.990."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -260,9 +260,9 @@
      "verificado": true,
      "nota": "Incluye accesorios; el mismo producto con otros vendedores desde $31.690.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $9.990."
     },
     {
      "tienda": "Falabella (FITNICS)",
@@ -277,9 +277,9 @@
      "verificado": true,
      "nota": "Colores/kg exactos no confirmados.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 18980.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $18.980."
+     "verificacion_pagina": "2026-10-23: la página muestra $18.980."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -337,7 +337,7 @@
      "verificado": false,
      "nota": "Precio de listado; talla M no confirmada.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-23: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Lider (LINEASPORT.CL)",
@@ -353,8 +353,8 @@
      "nota": "Cabezal con mica no confirmado. Precio actualizado al que mostró la página el 2026-10-20 (antes $16.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 17490.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $17.490.",
-     "verificado_en": "2026-10-22"
+     "verificacion_pagina": "2026-10-23: la página muestra $17.490.",
+     "verificado_en": "2026-10-23"
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -447,9 +447,9 @@
      "verificado": true,
      "nota": "Precio de listado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 6990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $6.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $6.990."
     },
     {
      "tienda": "Falabella (Toolpro)",
@@ -464,9 +464,9 @@
      "verificado": true,
      "nota": "Marca profesional, mucho más cara. Precio actualizado al que mostró la página el 2026-10-20 (antes $58.990).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 60000.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $60.000."
+     "verificacion_pagina": "2026-10-23: la página muestra $60.000."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -490,8 +490,8 @@
      "nota": "Medidas exactas no confirmadas. Precio actualizado al que mostró la página el 2026-10-20 (antes $70.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 52265.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $52.265.",
-     "verificado_en": "2026-10-22"
+     "verificacion_pagina": "2026-10-23: la página muestra $52.265.",
+     "verificado_en": "2026-10-23"
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -528,7 +528,7 @@
      "verificado": false,
      "nota": "Revestimiento de goma no confirmado.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -559,7 +559,7 @@
      "nota": "Orificio olímpico 50 mm, no preolímpico; pack de 4 asumido. La página (listado de Sodimac) mostró $34.990 como precio más parecido; no se pudo confirmar que sea este producto ni que el precio sea por pack de 4 discos, así que no se actualizó.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 34990.0,
-     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $34.990, no $31.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-23: la página abrió y el precio más parecido es $34.990, no $31.990: puede haber cambiado."
     }
    ],
    "nota": "Auditoría 2026-10-21: el pack de 4 discos es un supuesto no confirmado (si el precio fuera por 1 disco, el costo por unidad sería 4 veces mayor) y es orificio olímpico, no preolímpico: confirmar en la ficha antes de ofertar."
@@ -666,7 +666,7 @@
      "verificado": false,
      "nota": "Carga 1-20 kg; placas de acero no confirmadas.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -703,9 +703,9 @@
      "verificado": true,
      "nota": "Fútbol sala, no se confirma 4 capas/450 g. Precio actualizado al que mostró la página el 2026-10-20 (antes $49.990).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-23: la página muestra $49.990."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."
@@ -784,14 +784,14 @@
      "verificado": false,
      "nota": "No es el Tango; marca Train similar, termosellado.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien. Auditoría 2026-10-21: esta línea (100 balones) es ~70 % de la oferta y usa el precio al detalle de un balón Train Nexus (aproximado al «similar a Train Tango»): cotizar por volumen."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 22,
   "verificadas": 13
  }

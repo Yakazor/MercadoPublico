@@ -16,7 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [2705-62-L126](presupuestos/2705-62-L126.md) Adquisicion de medallas SC 4427 | Deporte, juguetes y material didáctico | 2026-10-22 | 0/1 | $0 | $0 | $0 | $5.276.270 | falta 1 precio |
 | [1498473-1-LE26](presupuestos/1498473-1-LE26.md) ADQUISICION LIBROS PARA BIBLIOTECA PUBLICA ACHAO | Deporte, juguetes y material didáctico | 2026-10-23 | 0/8 | $0 | $0 | $0 | $9.960.736 | faltan 8 precios |
 | [4190-32-LE26](presupuestos/4190-32-LE26.md) Instrumentos Musicales | Deporte, juguetes y material didáctico | 2026-10-23 | 1/3 | $573.441 | $818.874 | $114.688 | $11.758.620 | faltan 2 precios, línea global |
 | [2335-63-LE26](presupuestos/2335-63-LE26.md) INSUMOS CLINICOS OP 553-554-555-556 | Insumos médicos no regulados y aseo | 2026-10-23 | 11/16 | $24.785.897 | $35.394.261 | $4.957.179 | $20.139.000 | supera monto, faltan 5 precios, sin verificar |
@@ -115,6 +114,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [2658-344-L126](presupuestos/2658-344-L126.md) REPUESTOS VARIOS
 - [2658-346-L126](presupuestos/2658-346-L126.md) NEUMATICOS Y OTROS REPUESTOS
 - [2658-347-L126](presupuestos/2658-347-L126.md) REPUESTOS CAMIONETA JAC
+- [2705-62-L126](presupuestos/2705-62-L126.md) Adquisicion de medallas SC 4427
 - [2736-41-LE26](presupuestos/2736-41-LE26.md) Monitor impresoras disco duro y otros.
 - [2756-16-LE26](presupuestos/2756-16-LE26.md) MATERIAL DIDACTICO PARA JARDINES INFANTILES VTF
 - [2775-121-LE26](presupuestos/2775-121-LE26.md) ADQUISICIÓN DE TERMOFUSOR HIDRÁULICO PARA PINTURA TERMOPLÁSTICA Y KIT DE ZAPATAS
