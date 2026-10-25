@@ -70,6 +70,13 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25 (rutina 11:00 UTC): datos `datos` del 25-10 08:16 (465 licitaciones, 1.596 Compras Ágiles).
+  Precios con WebSearch (sin Workflow; la sesión no abre las tiendas: quedan sin verificar) para
+  2452-25-LE26 tóner (14/18 ítems; GO con condiciones, pero la oferta supera el estimado),
+  979-73-LE26 EPP (14/18; GO con condiciones, margen 16 %), 3384-167-COT26 libros (0/6) y
+  1075956-166-COT26 oficina (0/5, especificación en anexo). Mejores: 3654-36-LE26, 612-44-LE26 y
+  4768-55-LE26 (cierran 26-10; ya tenían proveedores). 482 pruebas OK.
+
 - 2026-10-25: tarea programada creada y lanzada una vez. Una tarea con sesión nueva en cada corrida no
   sirve: esas sesiones no tienen `add_repo` ni el repo conectado (no pueden hacer push), por eso corre en
   una sesión dedicada creada con el repo (`create_session` con `source_url`).

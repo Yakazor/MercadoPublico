@@ -39,15 +39,15 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 2
-- **Viabilidad:** Media.
+- **Días para el cierre:** 1
+- **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 44 de 59 ítems sin precio de mercado: el costo real es mayor.
 - 9 de 15 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de Coquimbo: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados
