@@ -69,6 +69,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: la plataforma se publicó en https://radar-mercadopublico.streamlit.app desde la cuenta
+  Yakazor (Carlag96 no es admin del repo). El primer intento quedó con archivo principal
+  `plataforma/evaluar.py` y la página salía en blanco: debe ser `plataforma/app.py`. Streamlit no deja
+  cambiarlo: hay que borrar la app (guardando antes los secretos) y crearla de nuevo con el mismo URL.
+
 - 2026-10-25: verificado en producción tras unir: «Órdenes de compra históricas» OK (40150220712,
   ya publica datos); «Compras Ágiles» (40150222091) lanzó sola «Publicar datos (solo exportar)»
   (40150264913, OK): `datos` del 24-10 22:25 con Compras Ágiles de las 22:20; informes regenerados
