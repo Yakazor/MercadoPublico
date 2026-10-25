@@ -295,3 +295,38 @@ def test_ranking_y_ficha_cargan_sin_errores(tmp_path, monkeypatch):
     ficha = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60).run()
     assert not ficha.exception, [e.value for e in ficha.exception]
     assert ficha.subheader and ficha.subheader[0].value.startswith("1-1-LE26")
+
+
+def test_llave_de_acceso_deriva_de_la_clave():
+    pytest.importorskip("streamlit")
+    import sys
+    sys.path.insert(0, str(RAIZ / "plataforma"))
+    import comun
+
+    llave = comun.token_acceso("ciruela")
+    assert llave == comun.token_acceso("ciruela") and len(llave) == 64
+    assert llave != comun.token_acceso("otra-clave") and "ciruela" not in llave
+
+
+def test_acceso_con_clave_recordarme_y_cerrar_sesion(tmp_path, monkeypatch):
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    for nombre, valor in _datos().items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    at = AppTest.from_file(str(RAIZ / "plataforma" / "app.py"), default_timeout=60)
+    at.secrets["clave"] = "ciruela"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert at.checkbox[0].label.startswith("Recordarme") and at.checkbox[0].value is True
+    at.text_input[0].input("mala")
+    at.button[0].click().run()
+    assert at.error and "incorrecta" in at.error[0].value
+    at.text_input[0].input("ciruela")
+    at.button[0].click().run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert at.title[0].value == "Radar Mercado Público" and not at.text_input
+    salir = next(b for b in at.sidebar.button if b.label == "Cerrar sesión")
+    salir.click().run()
+    assert at.text_input and at.text_input[0].label == "Clave de acceso"
