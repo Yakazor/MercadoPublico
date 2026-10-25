@@ -21,36 +21,47 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   el bot y vuelve a dispararlo en esa rama (deja un commit de informes y después conflictos): el
   commit de arriba del push debe llevar `[skip actions]`.
 - Pie de commits y PR: el que indique la sesión (Co-Authored-By / link de la sesión).
+- Pull requests: `gh pr create` usa GraphQL y está bloqueado en estas sesiones; créalos con
+  `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
+  El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-25)
+## Estado (actualizado 2026-10-25, 14:00 UTC)
 
 | Tema | Estado |
 |---|---|
-| Radar, Compra Ágil, presupuestos, informes PDF | En producción (GitHub Actions en `feature/api-mercadopublico`) |
+| Radar, Compra Ágil, presupuestos, informes PDF | En producción (GitHub Actions en `feature/api-mercadopublico`). Compras Ágiles cada 3 horas (y se publican al terminar), OC 9:11 UTC todos los días. Radar: 11:07 UTC de lunes a viernes; con el PR #9 pasa a **todos los días 10:07 UTC** (7:07 en Chile en verano, 6:07 en invierno) |
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
-| Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), días hábiles 8:59 America/Santiago, corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7` (tiene el repo conectado: las sesiones nuevas de una tarea no lo tienen y no pueden hacer push). Primera corrida a mano el 25-10. |
-| Plataforma web (Streamlit) | Unida (PR #3, 25-10). Falta publicarla en share.streamlit.io (lo hace el usuario: README, «Plataforma web») |
-| Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. En producción desde la unión del PR #3 (25-10); verificado: corrida 40150220712 terminó bien, incluido «Publicar datos para el dashboard». Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
+| Plataforma web (Streamlit) | Publicada en https://radar-mercadopublico.streamlit.app desde la cuenta de Streamlit de Yakazor (archivo principal `plataforma/app.py`, rama `feature/api-mercadopublico`; secretos `clave` y `github_token`). PR #3 a #6 unidos: menú arriba, tablas de ancho fijo (caben en 1366 px), «Recordarme» 30 días, filtros GO / NO GO y «Compra y venta directa», 💲 en el nombre = ya tiene precios de tiendas. Si la página muestra la versión anterior: Manage app → ⋮ → Reboot app (con la cuenta Yakazor) |
+| Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), **todos los días 7:59** America/Santiago (pedido del 25-10: «a las 8:00 de lunes a lunes»; antes días hábiles 8:59). Corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7`, creada con el repo. Su prompt solo se puede cambiar desde esa sesión (el horario sí desde cualquiera). «Ejecutar ahora» (`fire_trigger`) **no** usa esa sesión: crea una nueva sin repo y falla (así falló la primera corrida, 25-10 03:55 UTC, con dos avisos al celular). En una sesión nueva `add_repo` existe, pero el modo automático lo niega. Para correrla a mano: escribirle «ACTUALIZACIÓN» a la sesión dedicada. Prueba de corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): **funcionó**: llegó a la sesión dedicada, que respondió «Prueba recibida. Sí, esta sesión tiene el repositorio». Las corridas programadas sí usan esa sesión. **Primera corrida programada: 25-10 11:00–11:20 UTC, bien** (precios para 4 licitaciones, commit e88ad5c de informes, publicación; ~US$ 3,6 de créditos). |
+| Workflow «Órdenes de compra históricas» | Corregido (PR #3): una OC traía un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel; `texto_excel`/`sin_formulas` lo quitan. Verificado: corrida 40150220712. Los errores de los workflows quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
-PRs unidos: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakazor/MercadoPublico/pull/3
+PRs unidos: #1 a #8. Pendiente de unir: https://github.com/Yakazor/MercadoPublico/pull/9 (radar diario y corrección de la rutina).
 
 Manuales (Claude Docs): orden de compra https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W ·
 guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Siguientes pasos sugeridos
 
-- Publicar la plataforma en Streamlit Community Cloud (README, «Plataforma web») con `clave` y
-  `github_token` en los secretos.
-  Ojo: Streamlit exige ser **admin** del repositorio para publicar. `Yakazor/MercadoPublico` es de una
-  cuenta personal (Yakazor); la usuaria (Carlag96) solo tiene permiso de escritura. Opciones: que
-  Yakazor la publique, o publicarla desde un fork en Carlag96 (los datos se leen igual de la rama
-  `datos` de Yakazor; manuales e informes se actualizan con «Sync fork»).
+- Unir el PR #9. Sin él, el radar de GitHub sigue de lunes a viernes. La rutina también lee el `.claude/RUTINA.md`
+  viejo, que con datos frescos se salta los precios; el prompt de la tarea igual pide los precios.
+- La rutina busca precios con WebSearch y no puede abrir las tiendas: quedan «sin verificar» hasta que
+  «Verificar precios e informes PDF» (GitHub) los revisa después del push (así pasó el 25-10: efd4b54).
 - Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma, y que
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
 
-## Última tarea: plataforma (pedido del 25-10) — terminada
+## Última tarea: actualización diaria con créditos de Claude (pedido del 25-10)
+
+- [x] Tarea programada todos los días 7:59 hora de Chile (aplicado en la tarea)
+- [x] Radar de GitHub todos los días 10:07 UTC (PR #9)
+- [x] `.claude/RUTINA.md` paso 2: con datos frescos salta a los precios (5b), no al 6 (PR #9)
+- [x] Diagnóstico de la corrida fallida («Ejecutar ahora» crea una sesión sin repo; `add_repo` negado)
+- [x] Prueba de una corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): ver «Estado»
+- [ ] Unir el PR #9 (usuaria)
+- [x] Primera corrida programada (25-10 10:59 UTC): terminó bien a las 11:20 UTC
+
+## Tarea anterior: plataforma (pedido del 25-10) — terminada
 
 - [x] Plataforma: Inicio, Licitaciones, Compras Ágiles, Evaluación, Orden de compra (PR #3)
 - [x] Bitácora de avances (este archivo) y `CLAUDE.md` que apunta aquí
@@ -77,9 +88,16 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   1075956-166-COT26 oficina (0/5, especificación en anexo). Mejores: 3654-36-LE26, 612-44-LE26 y
   4768-55-LE26 (cierran 26-10; ya tenían proveedores). 482 pruebas OK.
 
+- 2026-10-25: actualización diaria (pedido: «todos los días a las 8:00, de lunes a lunes»). Tarea de Claude
+  todos los días 7:59 (aplicado); radar de GitHub todos los días 10:07 UTC y corrección de `.claude/RUTINA.md`
+  paso 2 en el PR #9. Con datos frescos, y lo están siempre porque Compras Ágiles publica cada 3 horas, la rutina
+  saltaba al paso 6 y nunca buscaba precios; ahora salta al 5b. La primera corrida falló porque «Ejecutar ahora»
+  creó una sesión nueva sin repo (ver «Estado»).
+
 - 2026-10-25: tarea programada creada y lanzada una vez. Una tarea con sesión nueva en cada corrida no
-  sirve: esas sesiones no tienen `add_repo` ni el repo conectado (no pueden hacer push), por eso corre en
-  una sesión dedicada creada con el repo (`create_session` con `source_url`).
+  sirve: esas sesiones no tienen el repo conectado y el modo automático les niega `add_repo` (probado en
+  `session_01VZ5VVWs2D4QfuQfqbg4sYe`), por eso corre en una sesión dedicada creada con el repo
+  (`create_session` con `source_url`).
 
 - 2026-10-25: rutina con créditos de Claude: `.claude/RUTINA.md` ya no sube al dashboard (la plataforma
   lee sola), busca precios para hasta 4 licitaciones al día (`seleccionar_mercado.py --maximo 4

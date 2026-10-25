@@ -40,8 +40,8 @@ def _duracion(c: dict) -> str:
 def pagina() -> None:
     st.title("Actualizar datos")
     st.caption("Los datos vienen de la API de Mercado Público y se consultan en GitHub Actions, no en esta página. "
-               "Corren solos: Compras Ágiles cada 3 horas (y se publican al terminar), licitaciones los días "
-               "hábiles en la mañana y precios de órdenes de compra todos los días.")
+               "Corren solos: Compras Ágiles cada 3 horas (y se publican al terminar), licitaciones todos los "
+               "días a las 7 de la mañana y precios de órdenes de compra todos los días.")
     meta = comun.datos()["meta"]
     generado = comun.datos_generados(meta)
     st.markdown(f"**Datos que estás viendo:** publicados el {generado:%d-%m-%Y a las %H:%M}" if generado

@@ -3,11 +3,12 @@ name: Radar diario de licitaciones
 # plataforma lo distingue del radar completo en la lista de corridas.
 run-name: ${{ inputs.solo_exportar && 'Publicar datos (solo exportar)' || 'Radar diario de licitaciones' }}
 
-# Lunes a viernes 11:07 UTC = 8:07 en Chile (horario de verano) / 7:07 (invierno).
+# Todos los días 10:07 UTC = 7:07 en Chile (horario de verano) / 6:07 (invierno): termina antes
+# de la rutina de Claude de las 7:59, que usa estos datos.
 # También se puede lanzar a mano: Actions → "Radar diario de licitaciones" → Run workflow.
 on:
   schedule:
-    - cron: "7 11 * * 1-5"
+    - cron: "7 10 * * *"
   # "Actualizar ahora" (rutina de Claude): un push que solo
   # cambia .github/disparar/actualizar.txt lanza la corrida sin la API de GitHub.
   push:
