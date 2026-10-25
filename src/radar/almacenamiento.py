@@ -8,6 +8,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 import pandas as pd
+from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 
 ESQUEMA = """
 CREATE TABLE IF NOT EXISTS licitaciones (
@@ -318,13 +319,24 @@ class BaseDatos:
         return pd.read_sql_query("SELECT * FROM ordenes_compra_items", self.con)
 
 
+def texto_excel(valor):
+    """Texto que Excel acepta: sin caracteres de control (algunas descripciones de la API
+    los traen, p. ej. «10U\x02POCA», y openpyxl rechaza la planilla entera)."""
+    return ILLEGAL_CHARACTERS_RE.sub("", valor) if isinstance(valor, str) else valor
+
+
 def sin_formulas(df: pd.DataFrame) -> pd.DataFrame:
     """Textos libres de compradores y proveedores que empiezan con = + - @ ("= a lo
-    solicitado") se exportan con un apóstrofo delante: Excel no los evalúa como fórmula."""
+    solicitado") se exportan con un apóstrofo delante: Excel no los evalúa como fórmula.
+    También se les quitan los caracteres de control (`texto_excel`)."""
+    def limpiar(v):
+        v = texto_excel(v)
+        return "'" + v if isinstance(v, str) and v[:1] and v[0] in "=+-@" else v
+
     df = df.copy()
     for col in df.columns:
         if pd.api.types.is_object_dtype(df[col]) or pd.api.types.is_string_dtype(df[col]):
-            df[col] = df[col].map(lambda v: "'" + v if isinstance(v, str) and v[:1] in "=+-@" else v)
+            df[col] = df[col].map(limpiar)
     return df
 
 

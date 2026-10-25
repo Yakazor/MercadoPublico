@@ -100,3 +100,8 @@ def test_script_usa_las_carpetas_de_proveedores():
         assert (script.PLANTILLAS / f"Plantilla_Orden_de_Compra_{tipo}.xlsx").exists()
     ejemplo = json.loads((script.CARPETA / "ejemplo.json").read_text(encoding="utf-8"))
     assert validar(ejemplo) == []
+
+
+def test_descripcion_con_caracteres_de_control():
+    items = [{"descripcion": "Calzas sigla 10U\x02POCA", "cantidad": 1, "precio_unitario_neto": 10}]
+    assert "Calzas sigla 10UPOCA" in _celdas(crear_orden(_datos(items=items))["Orden de Compra"])

@@ -32,6 +32,8 @@ Los resultados se guardan en SQLite y se exportan a CSV/Excel listos para Power 
 Además detecta **Compras Ágiles** abiertas (compras de hasta 100 UTM, sin bases ni
 garantías) con los mismos rubros: ver [Compra Ágil](#compra-ágil).
 
+> **¿Retomas el trabajo?** Lee primero `.claude/AVANCES.md`: estado, tarea en curso y reglas.
+
 ## Estructura
 
 ```
@@ -47,6 +49,9 @@ src/radar/
   presupuesto.py            # costo, oferta e IVA por licitación vs referencia OC
   censo.py                  # muestra de activas agrupada por segmento ONU
   orden_proveedor.py        # orden de compra a tu proveedor (planilla Excel)
+  evaluacion.py             # costos, márgenes, riesgo y decisión GO / NO GO
+  plataforma.py             # datos y cálculos de la plataforma web
+  actualizacion.py          # lanza los workflows de GitHub desde la plataforma
 scripts/
   probar_api.py             # una llamada real: muestra la estructura del JSON
   radar_diario.py           # ejecución diaria del radar
@@ -58,6 +63,9 @@ scripts/
   censo_rubros.py           # censo de grupos de licitaciones
   informe_grupos.py         # informe de grupos (informes/grupos_licitaciones)
   orden_proveedor.py        # llena la orden de compra al proveedor desde un JSON
+  evaluar_licitaciones.py   # Excel, informes, GO / NO GO y correos (informes/evaluacion)
+plataforma/                 # plataforma web (Streamlit): app.py y una página por archivo
+manuales/                   # manuales en PDF (orden de compra; guía de despacho y factura)
 dashboard/index.html        # copia de la página del dashboard
 informes/                   # presupuestos, precios de mercado y grupos (se versiona)
 .claude/RUTINA.md           # instrucciones de la rutina de actualización
@@ -415,6 +423,57 @@ LibreOffice si está instalado. Manual de órdenes de compra en Mercado Público
 https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W
 Manual de guía de despacho y factura electrónica (referencia 801 a la OC, Resolución
 SII 154 desde el 1-11-2026): https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
+
+## Plataforma web
+
+Una página web con todo en un solo lugar, en vez del artefacto: **Inicio** (abiertas,
+cierres próximos y mejores oportunidades), **Licitaciones** y **Compras Ágiles** (filtros por
+rubro, región, monto, cierre, plazo de entrega y llamado, con la ficha y los ítems de cada
+una), **Evaluación GO / NO GO** (ingresas las cotizaciones de tus proveedores, con o sin
+IVA, y la decisión, los costos y los márgenes se recalculan al instante; ranking de todas;
+ficha, informe y correos para descargar), **Orden de compra** (se llena desde la
+evaluación y se descarga en Excel), **Manuales** (los PDF de orden de compra, guía de despacho y
+factura y la Guía del Radar, las plantillas y los informes en PDF de `informes/pdf/`) y
+**Actualizar datos** (botón que lanza en GitHub los workflows que consultan la API y muestra
+cómo van; cuando termina el radar, la plataforma vuelve a leer los datos). Los supuestos (margen, otros costos, valor hora, costo
+financiero y despacho por zona) se cambian en la barra lateral y valen para todas las páginas.
+
+- **Datos:** los JSON de la rama `datos` (los mismos del dashboard), que GitHub actualiza
+  solo. La plataforma los vuelve a leer cada 30 minutos o con «Recargar datos».
+- **Claude:** no necesita API key. Los precios de tiendas, los proveedores y el Claude Log
+  siguen viniendo de la rutina programada de Claude.
+- **Nada personal en el repositorio:** la clave, tus datos de comprador y la firma de los
+  correos van en los secretos (`.streamlit/secrets.toml`, que no se sube; modelo en
+  `.streamlit/secrets.toml.example`). Las cotizaciones y órdenes viven solo en tu sesión:
+  descarga el Excel, y el JSON si quieres retomar una orden.
+- **Actualizar desde la plataforma:** necesita el secreto `github_token`, un token
+  *fine-grained* de GitHub solo para este repositorio con permiso **Actions: Read and write**,
+  y que la plataforma tenga `clave`. Lanza «Compras Ágiles» y «Radar diario» salvo que ya
+  estén corriendo o en cola (una corrida nueva cancelaría la que espera en el mismo grupo).
+- **Compras Ágiles al día:** al terminar, el workflow «Compras Ágiles» lanza el radar en modo
+  «solo exportar» (sin llamar a la API) para publicarlas en la rama `datos`; antes solo se
+  publicaban con el radar de los días hábiles.
+- **Estimar con OC del Estado** (barra lateral): para las líneas sin precio usa el costo
+  máximo que permite ofertar lo que pagó el Estado. Es una estimación: la evaluación la marca
+  como precio aproximado y pide confirmarlo.
+
+Correrla en tu computador:
+
+```bash
+pip install -r plataforma/requirements.txt
+streamlit run plataforma/app.py        # se abre en http://localhost:8501
+```
+
+Publicarla gratis en Streamlit Community Cloud (unos 5 minutos):
+
+1. Entra a https://share.streamlit.io con tu cuenta de GitHub y elige **Create app**.
+2. Repositorio `Yakazor/MercadoPublico`, rama `feature/api-mercadopublico`, archivo
+   `plataforma/app.py`.
+3. En **Advanced settings** pega el contenido de `.streamlit/secrets.toml.example` con tus
+   datos (al menos `clave`) y elige Python 3.12. **Deploy.**
+4. Cada cambio que llegue a esa rama se publica solo. Los secretos se cambian en
+   **Settings › Secrets**; en **Settings › Sharing** puedes además dejarla privada para tu
+   correo (Streamlit Cloud permite una app privada a la vez).
 
 ## Pruebas
 

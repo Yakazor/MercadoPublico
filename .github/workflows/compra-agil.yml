@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
+      actions: write   # lanza el radar en modo «solo exportar» para publicar en la rama datos
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
@@ -66,6 +67,29 @@ jobs:
             data/compra_agil_estado.json
             data/compras_agiles.json
           key: compra-agil-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
+      # Publica estas Compras Ágiles en la rama `datos` (la que leen la plataforma y el
+      # dashboard): el radar las sube junto con las licitaciones sin llamar a la API. Un
+      # workflow_dispatch con GITHUB_TOKEN sí crea la corrida. Si ya hay un radar u «Órdenes
+      # de compra históricas» en cola no se lanza: comparten grupo de concurrencia y la nueva
+      # cancelaría la que espera (el radar en cola publicará igual estas Compras Ágiles).
+      - name: Publicar en la rama datos
+        if: success() && github.ref_name == 'feature/api-mercadopublico'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          en_cola=0
+          for w in radar-diario.yml ordenes-historicas.yml; do
+            n=$(gh run list -R "${{ github.repository }}" -w "$w" -L 20 --json status \
+                --jq '[.[] | select(.status == "queued" or .status == "pending" or .status == "waiting" or .status == "requested")] | length')
+            en_cola=$((en_cola + n))
+          done
+          if [ "$en_cola" -gt 0 ]; then
+            echo "Hay una corrida del radar en cola: publicará estas Compras Ágiles."
+          else
+            gh workflow run radar-diario.yml -R "${{ github.repository }}" --ref "$GITHUB_REF_NAME" -f solo_exportar=true
+            echo "Radar lanzado en modo «solo exportar» para publicar las Compras Ágiles."
+          fi
 
       - name: Resumen
         if: always() && hashFiles('data/compras_agiles.json') != ''

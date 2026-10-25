@@ -1,0 +1,8 @@
+# Dependencias de la plataforma (Streamlit Cloud usa este archivo por estar junto a app.py).
+streamlit>=1.50
+requests>=2.31
+python-dotenv>=1.0
+PyYAML>=6.0
+pandas>=2.0
+openpyxl>=3.1
+tzdata>=2024.1

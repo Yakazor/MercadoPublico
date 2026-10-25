@@ -31,8 +31,10 @@ from openpyxl.utils import get_column_letter
 
 import _ruta  # noqa: F401
 from presupuesto import opciones_mercado
+from radar.almacenamiento import texto_excel
 from radar.config import cargar_config, hoy_chile, ruta_proyecto
-from radar.evaluacion import NO_GO, SUPUESTOS, evaluar, puntaje
+from radar.evaluacion import NO_GO, evaluar, puntaje
+from radar.plataforma import supuestos_config
 from radar.presupuesto import armar_presupuesto
 
 URL_LICITACION = "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={}"
@@ -274,7 +276,7 @@ def excel(todas: list[tuple], evaluadas: list[tuple], log: list[dict], destino: 
             c.font, c.fill = Font(bold=True, color="FFFFFF", name="Arial"), cab
             c.alignment = Alignment(wrap_text=True, vertical="center")
         for fila in filas[nombre]:
-            ws.append(fila)
+            ws.append([texto_excel(v) for v in fila])
         for j, col in enumerate(columnas, 1):
             letra = get_column_letter(j)
             ws.column_dimensions[letra].width = 14 if col in dinero | porcentaje else 40 if col in (
@@ -336,9 +338,9 @@ def main():
     ap.add_argument("--registrar", help="JSON con una entrada del Claude Log (fecha, licitaciones_procesadas, ...)")
     args = ap.parse_args()
 
-    conf = cargar_config().get("evaluacion") or {}
-    s = SUPUESTOS | {k: v for k, v in conf.items() if k in SUPUESTOS}
-    remitente = REMITENTE | (conf.get("remitente") or {})
+    conf = cargar_config()
+    s = supuestos_config(conf)
+    remitente = REMITENTE | ((conf.get("evaluacion") or {}).get("remitente") or {})
     hoy = hoy_chile()
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
