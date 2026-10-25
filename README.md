@@ -32,6 +32,8 @@ Los resultados se guardan en SQLite y se exportan a CSV/Excel listos para Power 
 Además detecta **Compras Ágiles** abiertas (compras de hasta 100 UTM, sin bases ni
 garantías) con los mismos rubros: ver [Compra Ágil](#compra-ágil).
 
+> **¿Retomas el trabajo?** Lee primero `.claude/AVANCES.md`: estado, tarea en curso y reglas.
+
 ## Estructura
 
 ```
