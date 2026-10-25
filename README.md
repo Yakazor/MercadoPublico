@@ -436,7 +436,11 @@ evaluación y se descarga en Excel), **Manuales** (los PDF de orden de compra, g
 factura y la Guía del Radar, las plantillas y los informes en PDF de `informes/pdf/`) y
 **Actualizar datos** (botón que lanza en GitHub los workflows que consultan la API y muestra
 cómo van; cuando termina el radar, la plataforma vuelve a leer los datos). Los supuestos (margen, otros costos, valor hora, costo
-financiero y despacho por zona) se cambian en la barra lateral y valen para todas las páginas.
+financiero y despacho por zona) se cambian en el botón ⚙️ Supuestos, arriba, y valen para todas las
+páginas. Licitaciones, Compras Ágiles, Inicio y el ranking muestran y filtran la **decisión** (🟢 GO,
+🟡 con condiciones, 🔴 NO GO, ⚪ sin evaluar) y si es **compra y venta directa** (✅ productos que se
+compran hechos y se revenden; ❌ incluye instalación, mantención, confección, arriendo, capacitación,
+licencias o exige registro ISP; ❓ la cantidad o el producto están en las bases).
 
 - **Datos:** los JSON de la rama `datos` (los mismos del dashboard), que GitHub actualiza
   solo. La plataforma los vuelve a leer cada 30 minutos o con «Recargar datos».
@@ -444,7 +448,7 @@ financiero y despacho por zona) se cambian en la barra lateral y valen para toda
   siguen viniendo de la rutina programada de Claude.
 - **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
   este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la
-  clave, no la clave). «Cerrar sesión», en la barra lateral, la olvida; cambiar la clave en los
+  clave, no la clave). «Cerrar sesión», arriba a la derecha, la olvida; cambiar la clave en los
   secretos cierra todas las sesiones recordadas.
 - **Nada personal en el repositorio:** la clave, tus datos de comprador y la firma de los
   correos van en los secretos (`.streamlit/secrets.toml`, que no se sube; modelo en
@@ -457,7 +461,7 @@ financiero y despacho por zona) se cambian en la barra lateral y valen para toda
 - **Compras Ágiles al día:** al terminar, el workflow «Compras Ágiles» lanza el radar en modo
   «solo exportar» (sin llamar a la API) para publicarlas en la rama `datos`; antes solo se
   publicaban con el radar de los días hábiles.
-- **Estimar con OC del Estado** (barra lateral): para las líneas sin precio usa el costo
+- **Estimar con OC del Estado** (⚙️ Supuestos): para las líneas sin precio usa el costo
   máximo que permite ofertar lo que pagó el Estado. Es una estimación: la evaluación la marca
   como precio aproximado y pide confirmarlo.
 

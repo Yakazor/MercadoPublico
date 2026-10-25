@@ -13,11 +13,13 @@ dashboard) y usa el código del radar para todo lo demás: presupuesto
   si se pide, una estimación con lo que pagó el Estado para las líneas sin precio.
 - `evaluar_licitacion(...)` y `ranking(...)`: presupuesto y evaluación con tus supuestos.
 - `datos_orden(...)` y `orden_xlsx(...)`: orden de compra al proveedor desde el presupuesto.
+- `compra_venta(lic, items)`: si se puede ofertar comprando los productos hechos y revendiéndolos.
 """
 from __future__ import annotations
 
 import io
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -36,6 +38,25 @@ CHILE = ZoneInfo("America/Santiago")
 COMPRA_AGIL = "Compra Ágil"
 COTIZACION = "Cotización ingresada"
 ESTIMADA_OC = "estimada (OC)"
+
+# Ítems que se pueden cotizar (también los usa scripts/seleccionar_mercado.py).
+UNIDADES_NO_FISICAS = {"global", "gl", "unidad no definida", "servicio"}
+_SEGUN = re.compile(r"seg[uú]n (bases|detalle|cantidades|anexo|especificaciones|lo indicado)|de acuerdo a (las )?bases", re.I)
+# Descripciones que nombran una categoría y no un producto ("Mobiliario para la oficina X").
+_GENERICA = re.compile(r"^(mobiliario|insumos|materiales|equipamiento|articulos|art[ií]culos|equipos|productos)\b", re.I)
+# Licencias y soporte de software: exigen ser partner del fabricante, no se compran y revenden («soporte»
+# solo es un producto: soporte de monitor, de pared).
+_SOFTWARE = re.compile(r"licenci|software|suscripci|soporte (t[eé]cnico|inform[aá]tico|de software)", re.I)
+# Lo que no se compra hecho para revender (sobre el texto normalizado, sin tildes). «Servicio» solo no
+# basta: «Servicio de Salud» o «Servicio de Urgencia» son nombres de organismos.
+_SERVICIO_DESCRIPCION = re.compile(
+    r"\b(instalacion|instalar|mantencion|mantenimiento|reparacion|capacitacion|curso|arriendo|arrendamiento|"
+    r"confeccion|confeccionar|bordados?|estampados?|serigrafia|consultoria|asesoria|catering|fabricacion|"
+    r"a medida|mano de obra|servicios? de (instalacion|mantencion|mantenimiento|reparacion|traslado|transporte|"
+    r"aseo|limpieza|alimentacion|impresion))\b")
+# Productos ONU que son servicios ("Servicios de consultoría…", "Mantenimiento de…", "Capacitación…").
+_SERVICIO_PRODUCTO = re.compile(r"^(servicios?|mantenimiento|mantencion|reparacion|capacitacion|formacion|arriendo|"
+                                r"alquiler|instalacion|consultoria|asesoria)\b")
 
 
 def leer_datos(origen: str = ORIGEN_DATOS, timeout: float = 60, marca: str | None = None) -> dict:
@@ -142,6 +163,41 @@ def opciones(items: list[dict], mercado: list[dict], cotizaciones: dict | None =
                 filas.append({"linea": it["linea"], "precio_unitario_neto": it["ref_mediana"] / ((1 + otros) * (1 + margen)),
                               "coincidencia": ESTIMADA_OC, "verificado": False, "tienda": "Estimado con OC del Estado"})
     return filas
+
+
+def item_concreto(item: dict) -> bool:
+    """Ítem que se puede cotizar: cantidad, unidad física y una descripción propia."""
+    descripcion = (item.get("descripcion") or "").strip()
+    unidad = (item.get("unidad") or "").strip().lower()
+    return (bool(item.get("cantidad")) and unidad not in UNIDADES_NO_FISICAS and len(descripcion) >= 8
+            and not _SEGUN.search(descripcion) and not _GENERICA.search(descripcion)
+            and not _SOFTWARE.search(f"{item.get('producto') or ''} {descripcion}"))
+
+
+def compra_venta(lic: dict, items: list[dict]) -> tuple[bool | None, str]:
+    """¿Se puede ofertar comprando los productos hechos y revendiéndolos? (sí / no / None = revisar las
+    bases, y por qué).
+
+    No: exige registro ISP, es consultoría o algún ítem es un servicio (instalación, mantención,
+    confección, bordado, arriendo, capacitación, licencias…). Revisar: el radar no trae los ítems o
+    alguno no dice qué ni cuánto («1 Global», «según bases», una categoría en vez de un producto).
+    """
+    if lic.get("alertas_regulatorias"):
+        return False, f"Requiere registro ISP ({lic['alertas_regulatorias']})"
+    if lic.get("rubro") == "consultoria_gestion_bi":
+        return False, "Es un servicio de consultoría"
+    revisar = None if items else "El radar no trae sus ítems: revisa las bases"
+    for it in items:
+        producto, descripcion = normalizar(it.get("producto")), normalizar(it.get("descripcion"))
+        m = (_SERVICIO_PRODUCTO.match(producto) or _SERVICIO_DESCRIPCION.search(descripcion)
+             or _SOFTWARE.search(f"{producto} {descripcion}"))
+        if m:
+            return False, f"Línea {it.get('linea')}: incluye «{m.group(0)}», no es solo comprar y revender"
+        if revisar is None and not item_concreto(it):
+            revisar = f"Línea {it.get('linea')}: la cantidad o el producto exacto están en las bases"
+    if revisar:
+        return None, revisar
+    return True, "Productos que se compran hechos y se revenden"
 
 
 def evaluar_licitacion(lic: dict, items: list[dict], ops: list[dict], supuestos: dict | None = None,

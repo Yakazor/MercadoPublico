@@ -8,8 +8,8 @@ from openpyxl import load_workbook
 
 from radar.evaluacion import NO_GO
 from radar.orden_proveedor import totales
-from radar.plataforma import (CHILE, COTIZACION, ESTIMADA_OC, datos_orden, evaluar_licitacion, filtrar, leer_datos,
-                              opciones, orden_xlsx, preparar, ranking, supuestos_config)
+from radar.plataforma import (CHILE, COTIZACION, ESTIMADA_OC, compra_venta, datos_orden, evaluar_licitacion, filtrar,
+                              item_concreto, leer_datos, opciones, orden_xlsx, preparar, ranking, supuestos_config)
 
 AHORA = datetime(2026, 10, 24, 12, 0, tzinfo=CHILE)
 RAIZ = Path(__file__).resolve().parents[1]
@@ -327,6 +327,30 @@ def test_acceso_con_clave_recordarme_y_cerrar_sesion(tmp_path, monkeypatch):
     at.button[0].click().run()
     assert not at.exception, [e.value for e in at.exception]
     assert at.title[0].value == "Radar Mercado Público" and not at.text_input
-    salir = next(b for b in at.sidebar.button if b.label == "Cerrar sesión")
+    salir = next(b for b in at.button if b.label == "Cerrar sesión")
     salir.click().run()
     assert at.text_input and at.text_input[0].label == "Clave de acceso"
+
+
+def _item(descripcion, producto="Producto", cantidad=10, unidad="Unidad", linea=1):
+    return {"linea": linea, "producto": producto, "descripcion": descripcion, "cantidad": cantidad, "unidad": unidad}
+
+
+def test_compra_venta_directa_servicios_isp_y_bases():
+    assert compra_venta({}, [_item("Mochila escolar 30 L color azul")])[0] is True
+    # «servicios médicos» en la categoría ONU de un botiquín no lo vuelve servicio.
+    assert compra_venta({}, [_item("Botiquín tipo maletín", producto="Estuches de primeros auxilios para los "
+                                   "servicios médicos de urgencias")])[0] is True
+    assert compra_venta({}, [_item("Soporte para monitor de 27 pulgadas")])[0] is True
+    for texto in ("Estufa a pellet con servicio de instalación", "Pecheras clínicas con bordado del logo",
+                  "Licencias Microsoft Windows 11", "Arriendo de baños químicos por 3 meses"):
+        estado, motivo = compra_venta({}, [_item("Silla de oficina ergonómica", linea=1), _item(texto, linea=2)])
+        assert estado is False and motivo.startswith("Línea 2"), texto
+    assert compra_venta({}, [_item("Curso Excel", producto="Formación, capacitación y entrenamiento")])[0] is False
+    estado, motivo = compra_venta({"alertas_regulatorias": "Guantes: registro ISP"}, [_item("Guantes de látex M")])
+    assert estado is False and "ISP" in motivo
+    assert compra_venta({"rubro": "consultoria_gestion_bi"}, [_item("Informe de gestión")])[0] is False
+    assert compra_venta({}, [_item("Insumos de aseo según bases", unidad="Global")])[0] is None
+    assert compra_venta({}, [_item("Estufa a pellet modelo X", unidad="GL")])[0] is None    # GL = global
+    assert compra_venta({}, [])[0] is None
+    assert item_concreto(_item("Soporte para monitor de 27 pulgadas")) and not item_concreto(_item("Soporte técnico anual"))

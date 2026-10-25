@@ -3,7 +3,12 @@ import pandas as pd
 import streamlit as st
 
 import comun
-from radar.plataforma import es_compra_agil, filtrar
+from radar.evaluacion import CONDICIONADO, GO, NO_GO
+from radar.plataforma import es_compra_agil, filtrar, ranking
+
+DECISIONES = [comun.DECISION_CORTA[GO], comun.DECISION_CORTA[CONDICIONADO], comun.DECISION_CORTA[NO_GO],
+              comun.SIN_EVALUAR]
+OPCIONES_CV = ["Todas", *comun.COMPRA_VENTA.values()]
 
 
 def licitaciones() -> None:
@@ -27,7 +32,13 @@ def _explorar(compra_agil: bool) -> None:
         st.caption("Licitaciones abiertas de tus rubros. Las bases y anexos están en la ficha de Mercado Público "
                    "(la API no los entrega).")
 
-    texto = st.text_input("Buscar", placeholder="código, nombre, organismo o producto", key=f"{pre}_texto")
+    a, b, c = st.columns([2, 1.4, 1.6], vertical_alignment="bottom")
+    texto = a.text_input("Buscar", placeholder="código, nombre, organismo o producto", key=f"{pre}_texto")
+    decisiones = b.multiselect("Decisión", DECISIONES, key=f"{pre}_decision", placeholder="Todas",
+                               help="GO / NO GO con tus supuestos (⚙️ Supuestos). ⚪ = todavía sin precios para "
+                                    "evaluar: ingresa cotizaciones o activa «Estimar con OC del Estado».")
+    cv_txt = c.segmented_control("Compra y venta directa", OPCIONES_CV, default="Todas", required=True,
+                                 key=f"{pre}_cv", help=comun.AYUDA_COMPRA_VENTA)
     with st.expander("Más filtros"):
         b, c = st.columns(2)
         rubros = b.multiselect("Rubro", sorted({l["rubro_nombre"] for l in todas if l.get("rubro_nombre")}),
@@ -53,11 +64,21 @@ def _explorar(compra_agil: bool) -> None:
     lista = filtrar(todas, texto=texto, rubros=rubros, regiones=regiones, max_dias=max_dias if max_dias < 30 else None,
                     monto_min=monto_min or None, monto_max=monto_max or None,
                     con_precios=set(prep["mercado"]) if solo_precios else None, plazo_max=plazo, llamado=llamado)
+    evaluadas = {l["codigo"]: comun.DECISION_CORTA[e.decision] for l, _, e in ranking(
+        prep, comun.supuestos(), comun.margen(), comun.otros(), comun.estimar_oc(), comun.cotizaciones())}
+    cv = comun.compra_venta_por_codigo()
+    if decisiones:
+        lista = [l for l in lista if evaluadas.get(l["codigo"], comun.SIN_EVALUAR) in decisiones]
+    if cv_txt != "Todas":
+        estado = next(k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt)
+        lista = [l for l in lista if cv.get(l["codigo"], (None, ""))[0] is estado]
     st.caption(f"{len(lista)} de {len(todas)} abiertas. 💲 = tiene precios de tiendas. Toca una fila para ver el "
                "detalle, con el organismo, los ítems y el link a Mercado Público.")
     filas = []
     for l in lista:
-        fila = {"Código": l["codigo"], "Nombre": ("💲 " if l["codigo"] in prep["mercado"] else "") + (l.get("nombre") or "")}
+        fila = {"Código": l["codigo"], "Nombre": ("💲 " if l["codigo"] in prep["mercado"] else "") + (l.get("nombre") or ""),
+                "Decisión": evaluadas.get(l["codigo"], comun.SIN_EVALUAR),
+                "Compra-venta": comun.COMPRA_VENTA[cv.get(l["codigo"], (None, ""))[0]]}
         if not compra_agil:
             fila["Organismo"] = l.get("organismo")
         fila |= {"Región": comun.region_corta(l.get("region")), "Monto ($)": comun.pesos(l.get("monto_estimado")),
@@ -65,11 +86,12 @@ def _explorar(compra_agil: bool) -> None:
         if compra_agil:
             fila |= {"Entrega": l.get("plazo_entrega_dias"), "Llamado": l.get("llamado")}
         filas.append(fila)
-    # Anchos fijos: la tabla cabe en una pantalla de notebook con el menú abierto (~900 px).
-    anchos = ({"Código": 150, "Nombre": 215, "Región": 105, "Monto ($)": 90, "Cierre": 105, "Días": 50, "Entrega": 70,
-               "Llamado": 60} if compra_agil else
-              {"Código": 125, "Nombre": 235, "Organismo": 135, "Región": 105, "Monto ($)": 95, "Cierre": 105, "Días": 50})
+    # Anchos fijos: la tabla cabe en una pantalla de notebook (1366 px, menú arriba: ~1.200 px útiles).
+    comunes = {"Decisión": 140, "Compra-venta": 105, "Región": 105, "Cierre": 110, "Días": 50}
+    anchos = ({"Código": 150, "Nombre": 235, "Monto ($)": 90, "Entrega": 70, "Llamado": 60} if compra_agil else
+              {"Código": 125, "Nombre": 255, "Organismo": 140, "Monto ($)": 95}) | comunes
     config = {col: st.column_config.TextColumn(width=ancho) for col, ancho in anchos.items()}
+    config["Compra-venta"] = st.column_config.TextColumn(width=anchos["Compra-venta"], help=comun.AYUDA_COMPRA_VENTA)
     config |= {
         "Monto ($)": st.column_config.NumberColumn(format="localized", width=anchos["Monto ($)"]),
         "Cierre": st.column_config.DatetimeColumn(format="DD-MM HH:mm", width=anchos["Cierre"]),
@@ -108,6 +130,8 @@ def ficha(lic: dict, prep: dict) -> None:
             k[3].metric("Tipo", lic.get("tipo") or "—")
         st.markdown(f"**Rubro:** {lic.get('rubro_nombre') or '—'} · **Palabras detectadas:** "
                     f"{lic.get('palabras_detectadas') or '—'}")
+        estado, motivo = comun.compra_venta_por_codigo().get(codigo, (None, "Sin datos de sus ítems"))
+        st.markdown(f"**Compra y venta directa:** {comun.COMPRA_VENTA[estado]} — {motivo}.")
         if lic.get("alertas_regulatorias"):
             st.warning(f"Requiere registro ISP: {lic['alertas_regulatorias']}.")
 
