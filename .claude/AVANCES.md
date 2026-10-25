@@ -17,6 +17,9 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   borradores: nunca se envían solos.
 - Un commit que solo toca `informes/` dispara «Verificar precios e informes PDF»; si es un
   commit intermedio, agrega `[skip actions]` al mensaje.
+  Ojo: al poner una rama al día con la principal, el push también lleva los informes que regeneró
+  el bot y vuelve a dispararlo en esa rama (deja un commit de informes y después conflictos): el
+  commit de arriba del push debe llevar `[skip actions]`.
 - Pie de commits y PR: el que indique la sesión (Co-Authored-By / link de la sesión).
 
 ## Estado (actualizado 2026-10-25)
@@ -38,6 +41,10 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 - Publicar la plataforma en Streamlit Community Cloud (README, «Plataforma web») con `clave` y
   `github_token` en los secretos.
+  Ojo: Streamlit exige ser **admin** del repositorio para publicar. `Yakazor/MercadoPublico` es de una
+  cuenta personal (Yakazor); la usuaria (Carlag96) solo tiene permiso de escritura. Opciones: que
+  Yakazor la publique, o publicarla desde un fork en Carlag96 (los datos se leen igual de la rama
+  `datos` de Yakazor; manuales e informes se actualizan con «Sync fork»).
 - Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma, y que
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
