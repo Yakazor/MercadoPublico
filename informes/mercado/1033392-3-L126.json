@@ -23,15 +23,15 @@
      "nota": "Edad de destino no definida Precio actualizado al que mostró la página el 2026-10-20 (antes $13.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $14.990.",
-     "verificado_en": "2026-10-22"
+     "verificacion_pagina": "2026-10-23: la página muestra $14.990.",
+     "verificado_en": "2026-10-23"
     }
    ],
    "nota": "[Auditoría 2026-10-21] El monto da unos $15.000 con IVA por juguete: con precio de tienda la oferta lo supera; cotizar con mayorista."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 1,
   "verificadas": 1
  }

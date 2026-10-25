@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "Dieléctrico no confirmado; precio por par",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 15000.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $15.000.",
+     "verificacion_pagina": "2026-10-23: la página muestra $15.000.",
      "descartado": true,
      "motivo_descarte": "Suministro global de calzado de seguridad: un par no representa la línea."
     }
@@ -33,7 +33,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 1,
   "verificadas": 1
  }

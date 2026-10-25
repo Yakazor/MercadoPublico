@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "Unidad asumida = 1 pliego; tamaño no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 3490.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $3.490.",
+     "verificacion_pagina": "2026-10-23: la página muestra $3.490.",
      "descartado": true,
      "motivo_descarte": "La línea es «material de enseñanza y oficina según detalle en bases» (71 unidades no definidas): una cartulina metálica no representa la línea."
     }
@@ -40,7 +40,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 1,
   "verificadas": 1
  }

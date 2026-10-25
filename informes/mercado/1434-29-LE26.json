@@ -24,7 +24,7 @@
      "nota": "Supuesto: 1 set de cubiertos por 'Global'; platos y detalle (anexos A-F) no visibles.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 5490.0,
-     "verificacion_pagina": "2026-10-22: la página abrió y el precio más parecido es $5.490, no $5.690: puede haber cambiado.",
+     "verificacion_pagina": "2026-10-23: la página abrió y el precio más parecido es $5.490, no $5.690: puede haber cambiado.",
      "descartado": true,
      "motivo_descarte": "La línea es global (menaje según anexos A–F): un set de cubiertos no la representa."
     },
@@ -41,9 +41,9 @@
      "verificado": true,
      "nota": "Supuesto: 1 set por 'Global'; no incluye platos.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-22",
+     "verificado_en": "2026-10-23",
      "precio_pagina": 21990.0,
-     "verificacion_pagina": "2026-10-22: la página muestra $21.990.",
+     "verificacion_pagina": "2026-10-23: la página muestra $21.990.",
      "descartado": true,
      "motivo_descarte": "La línea es global (menaje según anexos A–F): un set de cubiertos no la representa."
     }
@@ -51,7 +51,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 2,
   "verificadas": 1
  }

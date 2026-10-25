@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Solo cubre un componente (grapas/corchetera); el kit completo está en decreto de bases no visible.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-22: la tienda respondió HTTP 404.",
+     "verificacion_pagina": "2026-10-23: la tienda respondió HTTP 404.",
      "descartado": true,
      "motivo_descarte": "La línea es un kit completo de artículos de ferretería según el Decreto de Bases: una corchetera no representa el kit."
     }
@@ -31,7 +31,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-22",
+  "fecha": "2026-10-23",
   "opciones": 1,
   "verificadas": 0
  }
