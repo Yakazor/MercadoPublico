@@ -264,3 +264,34 @@ def test_leer_datos_con_marca_salta_la_cache(monkeypatch):
                         _Respuesta(200, []))
     plataforma.leer_datos("https://x/datos/", marca="20261025")
     assert urls[0] == ("https://x/datos/licitaciones.json", {"v": "20261025"}) and len(urls) == 4
+
+
+def _ficha(raiz: str) -> None:
+    """Corre la ficha de la primera licitación (ítems y precios de tiendas) dentro de AppTest."""
+    import sys
+
+    sys.path.insert(0, raiz + "/plataforma")
+    import comun
+    import explorar
+
+    prep = comun.datos()
+    explorar.ficha(prep["licitaciones"][0], prep)
+
+
+def test_ranking_y_ficha_cargan_sin_errores(tmp_path, monkeypatch):
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    datos = _datos()
+    for lic in datos["licitaciones"]:
+        lic["fecha_cierre"] = "2099-01-01 12:00:00"
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    ranking_ = AppTest.from_function(_pagina, args=("evaluar", "pagina", str(RAIZ)), default_timeout=60)
+    ranking_.session_state["eval_vista"] = "Ranking"
+    ranking_.run()
+    assert not ranking_.exception, [e.value for e in ranking_.exception]
+    ficha = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60).run()
+    assert not ficha.exception, [e.value for e in ficha.exception]
+    assert ficha.subheader and ficha.subheader[0].value.startswith("1-1-LE26")

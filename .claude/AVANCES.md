@@ -69,6 +69,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: las tablas no cabían en la pantalla de la usuaria (notebook 1366 px, ~904 px útiles
+  con el menú abierto). Anchos fijos por columna, decisiones abreviadas («🟡 Con condiciones»),
+  regiones cortas, 💲 = con precios de tiendas, ⚡ = Compra Ágil; organismo, tipo y link pasan a la
+  ficha. Pruebas nuevas para el ranking y la ficha. 490 pruebas OK.
+
 - 2026-10-25: creada de nuevo con `plataforma/app.py`: **la plataforma funciona** en
   https://radar-mercadopublico.streamlit.app (probada por la usuaria en incógnito). En su Chrome normal
   fallaban tablas e indicadores («Failed to fetch dynamically imported module»): copia defectuosa
