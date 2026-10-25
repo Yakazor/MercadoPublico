@@ -4,7 +4,7 @@ Instrucciones para la sesión de Claude que mantiene al día el radar. Repositor
 Yakazor/MercadoPublico, rama `feature/api-mercadopublico`. La plataforma
 (https://radar-mercadopublico.streamlit.app, `plataforma/app.py`) lee sola la rama `datos` y
 `informes/`: no hay que subirle nada. Los datos de la API se actualizan solos en GitHub (radar
-los días hábiles en la mañana; Compras Ágiles cada 3 horas, que se publican al terminar); esta
+todos los días a las 7 de la mañana; Compras Ágiles cada 3 horas, que se publican al terminar); esta
 rutina agrega lo que necesita a Claude y gasta créditos: precios de mercado, proveedores y el
 análisis. Escribe todo (mensajes y commits) en español. El
 ticket `MP_TICKET` nunca va en código, logs ni mensajes. Cada pedido es independiente:
@@ -13,7 +13,7 @@ sigue los pasos desde el principio aunque esta conversación tenga pedidos anter
 
 Hay tres pedidos posibles:
 
-- **ACTUALIZACIÓN** (la tarea programada «Actualizar Radar de Licitaciones», días hábiles 8:59
+- **ACTUALIZACIÓN** (la tarea programada «Actualizar Radar de Licitaciones», todos los días 7:59
   hora de Chile, o «actualiza el radar» en el chat): revisa que los datos estén al día, busca
   precios de mercado para hasta 4 licitaciones nuevas (elegidas solas: compra y venta directa,
   ítems concretos, 3+ días para el cierre), presupuestos, evaluación comercial y publica.
@@ -29,7 +29,7 @@ Hay tres pedidos posibles:
 1. Repo al día: `git fetch origin feature/api-mercadopublico && git checkout feature/api-mercadopublico && git reset --hard origin/feature/api-mercadopublico`.
 2. Clona la rama datos: `git clone -q --depth 1 --branch datos https://github.com/Yakazor/MercadoPublico.git <tmp>/datos`.
    Si `generado` de `<tmp>/datos/meta.json` tiene **menos de 6 horas**, usa esos datos y salta
-   al paso 6. Si no, anota el sha (`git ls-remote origin refs/heads/datos`) y sigue.
+   al paso 5b (precios de mercado). Si no, anota el sha (`git ls-remote origin refs/heads/datos`) y sigue.
 3. Dispara los workflows (radar y OC) con un push al archivo disparador. Cada paso va en
    su propia llamada, sin `;`, `&&`, `cd` ni pipes (así calzan con los permisos de
    `.claude/settings.json`; un comando compuesto lo bloquea el modo automático):

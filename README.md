@@ -336,7 +336,7 @@ subido):
 
 | Workflow | Cuándo | Qué hace |
 |---|---|---|
-| `radar-diario.yml` | días hábiles en la mañana, manual o push a `.github/disparar/actualizar.txt` | radar + publica los JSON del dashboard en la rama `datos` |
+| `radar-diario.yml` | todos los días 10:07 UTC (7:07 en Chile en verano, 6:07 en invierno), manual o push a `.github/disparar/actualizar.txt` | radar + publica los JSON del dashboard en la rama `datos` |
 | `ordenes-historicas.yml` | todos los días, manual o el mismo push | OC de los últimos 21 días + precios + presupuestos |
 | `censo-rubros.yml` | manual | censo de grupos (rama `censo`) |
 | `probar-api.yml` | manual | una llamada de prueba |
@@ -350,7 +350,7 @@ como caché/artefacto.
 
 La plataforma (`plataforma/app.py`, https://radar-mercadopublico.streamlit.app) y el antiguo
 dashboard leen los JSON de la rama `datos`. La **tarea programada de Claude «Actualizar Radar de
-Licitaciones»** (días hábiles 8:59, hora de Chile; usa los créditos de la cuenta de Claude, no una API
+Licitaciones»** (todos los días 7:59, hora de Chile; usa los créditos de la cuenta de Claude, no una API
 key) busca precios de mercado para hasta 4 licitaciones nuevas por día (2 cupos para Compras Ágiles de
 la Región Metropolitana), arma presupuestos y la evaluación con proveedores y Claude Log, y publica
 (instrucciones en `.claude/RUTINA.md`).
