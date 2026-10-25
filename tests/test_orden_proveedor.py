@@ -105,3 +105,21 @@ def test_script_usa_las_carpetas_de_proveedores():
 def test_descripcion_con_caracteres_de_control():
     items = [{"descripcion": "Calzas sigla 10U\x02POCA", "cantidad": 1, "precio_unitario_neto": 10}]
     assert "Calzas sigla 10UPOCA" in _celdas(crear_orden(_datos(items=items))["Orden de Compra"])
+
+
+def test_totales_redondean_el_iva_como_excel():
+    from radar.orden_proveedor import totales
+    # 150 × 0,19 = 28,5: Excel ROUND da 29 (Python round daría 28).
+    t = totales({"items": [{"cantidad": 1, "precio_unitario_neto": 150}]})
+    assert t["iva"] == 29 and t["total"] == 179
+    assert totales({"iva": 0.10, "items": [{"cantidad": 1, "precio_con_iva": 1100}]})["neto"] == 1000
+
+
+def test_textos_con_igual_quedan_como_texto():
+    wb = crear_orden(_datos(items=[{"descripcion": "= a lo solicitado", "cantidad": 2, "precio_unitario_neto": 100}],
+                            proveedor={"razon_social": "=Proveedor", "rut": "76.000.000-0"}))
+    ws = wb["Orden de Compra"]
+    textos = [c for fila in ws.iter_rows() for c in fila if c.value in ("= a lo solicitado", "=Proveedor")]
+    assert len(textos) == 2 and all(c.data_type == "s" for c in textos)
+    # Las fórmulas de la planilla siguen siendo fórmulas.
+    assert any(c.data_type == "f" for fila in ws.iter_rows() for c in fila)

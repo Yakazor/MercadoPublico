@@ -14,15 +14,17 @@ empresa (razón social, RUT, dirección): `comprador.tipo` = "persona_natural" |
 from __future__ import annotations
 
 import json
+import math
 import re
 from datetime import date
 from pathlib import Path
 
 from openpyxl import Workbook
-from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
+
+from .almacenamiento import texto_en_celda, texto_excel
 
 IVA = 0.19
 LINEAS_MINIMAS = 15
@@ -70,12 +72,18 @@ def precio_neto(item: dict, iva: float = IVA) -> float | None:
     return None
 
 
+def _redondeo_excel(valor: float) -> int:
+    """Como ROUND(x; 0) de Excel: la mitad se aleja del cero (Python redondea al par)."""
+    return int(math.floor(abs(valor) + 0.5)) * (1 if valor >= 0 else -1)
+
+
 def totales(datos: dict) -> dict:
     """Los totales que calculan las fórmulas de la planilla (subtotal, descuento, neto, IVA, total)."""
-    subtotal = sum(float(it["cantidad"]) * precio_neto(it) for it in datos.get("items") or []
-                   if it.get("cantidad") not in (None, "") and precio_neto(it) is not None)
+    tasa = float(datos.get("iva", IVA))
+    subtotal = sum(float(it["cantidad"]) * precio_neto(it, tasa) for it in datos.get("items") or []
+                   if it.get("cantidad") not in (None, "") and precio_neto(it, tasa) is not None)
     neto = subtotal - float(datos.get("descuento") or 0)
-    iva = round(neto * float(datos.get("iva", IVA)))
+    iva = _redondeo_excel(neto * tasa)
     return {"subtotal": subtotal, "descuento": float(datos.get("descuento") or 0), "neto": neto, "iva": iva,
             "total": neto + iva}
 
@@ -129,7 +137,7 @@ def siguiente_numero(carpeta: str | Path, anio: int | None = None) -> str:
 def _sin_control(valor):
     """Quita los caracteres de control que Excel no acepta (vienen en algunas descripciones)."""
     if isinstance(valor, str):
-        return ILLEGAL_CHARACTERS_RE.sub("", valor)
+        return texto_excel(valor)
     if isinstance(valor, dict):
         return {k: _sin_control(v) for k, v in valor.items()}
     if isinstance(valor, list):
@@ -165,6 +173,7 @@ def crear_orden(datos: dict | None = None) -> Workbook:
             ws.merge_cells(rango)
         valor = _fecha(valor) if valor not in (None, "") else None
         ws[rango.split(":")[0]] = valor
+        texto_en_celda(ws[rango.split(":")[0]])
         if isinstance(valor, date):
             formato = "dd-mm-yyyy"
         for fila in (ws[rango] if ":" in rango else ((ws[rango],),)):
@@ -256,6 +265,8 @@ def crear_orden(datos: dict | None = None) -> Workbook:
             ws[f"B{r}"] = item.get("codigo")
             ws[f"C{r}"] = item.get("descripcion")
             ws[f"D{r}"] = item.get("unidad") or "Unidad"
+            for col in "BCD":
+                texto_en_celda(ws[f"{col}{r}"])
             ws[f"E{r}"] = item.get("cantidad")
             ws[f"F{r}"] = precio_neto(item, iva)
             if len(item.get("descripcion") or "") > 45:

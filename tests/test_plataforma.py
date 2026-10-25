@@ -354,3 +354,29 @@ def test_compra_venta_directa_servicios_isp_y_bases():
     assert compra_venta({}, [_item("Estufa a pellet modelo X", unidad="GL")])[0] is None    # GL = global
     assert compra_venta({}, [])[0] is None
     assert item_concreto(_item("Soporte para monitor de 27 pulgadas")) and not item_concreto(_item("Soporte técnico anual"))
+
+
+def test_orden_al_proveedor_sin_precios_estimados_con_oc():
+    # Una línea estimada con OC del Estado no tiene precio cotizado: va vacía en la orden.
+    prep = preparar(_datos(), AHORA)
+    lic = next(l for l in prep["licitaciones"] if l["codigo"] == "2-2-COT26")
+    items = [it | {"ref_mediana": 30_000} for it in prep["items"]["2-2-COT26"]]
+    p, _ = evaluar_licitacion(lic, items, opciones(items, [], estimar_oc=True))
+    assert p["items"][0]["costo_unitario_neto"] > 0
+    assert [i["precio_unitario_neto"] for i in datos_orden(lic, p)["items"]] == [None]
+
+
+@pytest.mark.parametrize("unidad, cotizable", [("Unidad", True), ("Caja", True), ("Kit", False), ("GL", False),
+                                               ("Lote", False), ("Unidad no definida", False), ("Servicio", False)])
+def test_item_concreto_usa_las_mismas_unidades_que_el_presupuesto(unidad, cotizable):
+    item = {"cantidad": 10, "unidad": unidad, "producto": "Silla", "descripcion": "Silla de visita apilable"}
+    assert item_concreto(item) is cotizable
+
+
+def test_dias_al_cierre_desde_hoy():
+    from datetime import date
+    from radar.plataforma import dias_al_cierre
+    hoy = date(2026, 10, 24)
+    assert dias_al_cierre({"fecha_cierre": "2026-10-25 15:00:00", "dias_restantes": 3}, hoy) == 1
+    assert dias_al_cierre({"fecha_cierre": "2026-10-23", "dias_restantes": 1}, hoy) == -1
+    assert dias_al_cierre({"fecha_cierre": None, "dias_restantes": 4}, hoy) == 4

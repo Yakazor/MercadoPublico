@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-25, 14:00 UTC)
+## Estado (actualizado 2026-10-25, 15:30 UTC)
 
 | Tema | Estado |
 |---|---|
@@ -78,6 +78,18 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25 (revisión de los 76 commits del 21 al 25-10, pedida por la usuaria; correcciones directo en la
+  principal, a pedido): la orden al proveedor ya no lleva precios estimados con OC (van vacíos y el aviso
+  dice cuántos faltan); textos que empiezan con «=» quedan como texto en el Excel de evaluación y en la orden
+  (`almacenamiento.texto_en_celda`); `seleccionar_mercado.py` acepta Compras Ágiles con 1 día al cierre (antes
+  3: quedaba fuera el 88 %) y sus cupos no gastan el tope por rubro; días al cierre contados desde hoy
+  (`plataforma.dias_al_cierre`, también en `evaluar_licitaciones.py`); un solo conjunto de unidades «globales»
+  (`presupuesto.UNIDADES_GLOBALES`, lo usa `item_concreto`); IVA de `totales` redondea como ROUND de Excel;
+  la tabla «Precios por línea» se rearma si cambian los datos y las cotizaciones se guardan por línea.
+  Simulado con los datos del 25-10: selección (2 Compras Ágiles RM de 14-15 ítems), evaluación completa
+  (2.047 vigentes, 19 evaluadas, Excel sin fórmulas), las 7 páginas en Chromium (1366 y 390 px, sin errores)
+  y la orden con «Estimar con OC». 506 pruebas OK.
 
 - 2026-10-25: PR #9 unido (01fbc93): el radar corre todos los días desde el 26-10, 10:07 UTC.
 

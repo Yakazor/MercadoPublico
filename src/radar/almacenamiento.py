@@ -325,6 +325,14 @@ def texto_excel(valor):
     return ILLEGAL_CHARACTERS_RE.sub("", valor) if isinstance(valor, str) else valor
 
 
+def texto_en_celda(celda) -> None:
+    """openpyxl guarda como fórmula todo texto que empieza con «=» («= a lo solicitado»): la
+    planilla abre con #¿NOMBRE? o pide reparación. Para celdas con texto de compradores o
+    proveedores, lo deja como texto (sin alterar lo que se ve)."""
+    if celda.data_type == "f":
+        celda.data_type = "s"
+
+
 def sin_formulas(df: pd.DataFrame) -> pd.DataFrame:
     """Textos libres de compradores y proveedores que empiezan con = + - @ ("= a lo
     solicitado") se exportan con un apóstrofo delante: Excel no los evalúa como fórmula.

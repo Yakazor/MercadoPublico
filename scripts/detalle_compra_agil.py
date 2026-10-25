@@ -38,7 +38,7 @@ def ficha(codigo: str, det: dict, filtro: FiltroRubros) -> str:
         f"- **Publicación:** {fechas.get('FechaPublicacion') or '—'} · **Cierre:** {fechas.get('FechaCierre') or '—'}",
         f"- **Monto disponible:** {_pesos(det.get('MontoEstimado'))} (se cotiza el total con IVA y despacho)",
         f"- **Entrega:** {det.get('DireccionEntrega') or '—'} · plazo {det.get('PlazoEntregaDias') or '—'} días",
-        f"- **Radar:** " + (f"calza con {fila['rubro_nombre']} ({fila['palabras_detectadas']})" if fila
+        "- **Radar:** " + (f"calza con {fila['rubro_nombre']} ({fila['palabras_detectadas']})" if fila
                              else "no calza con tus rubros"),
     ]
     if det.get("Descripcion"):

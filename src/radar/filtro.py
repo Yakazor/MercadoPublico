@@ -380,7 +380,6 @@ class FiltroRubros:
         producto ONU de cada línea, donde se buscan los grupos de exclusión."""
         nombre_norm = normalizar(nombre)
         lineas = [normalizar(t) for t in items if t]
-        items_norm = " ".join(lineas)
         onu = _unir(items_onu)
         productos_onu_norm = [normalizar(t) for t in productos_onu]
         libre = _unir(descripcion)

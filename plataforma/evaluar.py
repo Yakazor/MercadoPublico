@@ -67,9 +67,15 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict]) -> None:
     ingresadas = st.session_state.setdefault("cotizaciones_ingresadas", {}).get(codigo, {})
     con_iva = st.toggle("Mis cotizaciones incluyen IVA", value=ingresadas.get("con_iva", False), key=f"eval_iva_{codigo}",
                         help="Las Compras Ágiles y las tiendas suelen dar el precio con IVA; se descuenta el 19 %.")
-    base, editor = f"eval_base_{codigo}", f"eval_editor_{codigo}"
-    if editor not in st.session_state or base not in st.session_state:
-        tiendas = armar_presupuesto(items, mercado)["items"]
+    base, editor, firma = f"eval_base_{codigo}", f"eval_editor_{codigo}", f"eval_firma_{codigo}"
+    tiendas = armar_presupuesto(items, mercado)["items"]
+    # La tabla se arma de nuevo si cambian los ítems o los precios de tiendas (datos recargados);
+    # tus cotizaciones se conservan porque se guardan por línea en «cotizaciones_ingresadas».
+    actual = tuple((it.get("linea"), it.get("cantidad"), t.get("tienda"), t.get("costo_unitario_neto"))
+                   for it, t in zip(items, tiendas))
+    if editor not in st.session_state or base not in st.session_state or st.session_state.get(firma) != actual:
+        st.session_state.pop(editor, None)
+        st.session_state[firma] = actual
         st.session_state[base] = pd.DataFrame([{
             "Línea": it.get("linea"), "Producto": it.get("producto"), "Cantidad": it.get("cantidad"),
             "Unidad": it.get("unidad"), "Mejor tienda": t.get("tienda"),
@@ -92,7 +98,7 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict]) -> None:
             "Tu cotización (unitario)": st.column_config.NumberColumn(
                 min_value=0, format="localized", width=130, help="Precio por unidad que te dio el proveedor"),
         })
-    precios = {str(it.get("linea")): float(v) for it, v in zip(items, editado["Tu cotización (unitario)"])
+    precios = {str(int(linea)): float(v) for linea, v in zip(editado["Línea"], editado["Tu cotización (unitario)"])
                if pd.notna(v) and v > 0}
     st.session_state["cotizaciones_ingresadas"][codigo] = {"precios": precios, "con_iva": con_iva}
     factor = 1 / (1 + IVA) if con_iva else 1
