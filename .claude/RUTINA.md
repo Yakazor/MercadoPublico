@@ -1,30 +1,35 @@
 # Rutina «Actualizar Radar de Licitaciones»
 
-Instrucciones para la sesión de Claude que mantiene al día el radar y su dashboard
-(https://claude.ai/artifact/AUMtv926GXLeg1H82EDWrn, tipo Dashboard: sus datos son
-documentos `datasets/<id>` con archivos adjuntos). Repositorio Yakazor/MercadoPublico,
-rama `feature/api-mercadopublico`. Escribe todo (mensajes y commits) en español. El
+Instrucciones para la sesión de Claude que mantiene al día el radar. Repositorio
+Yakazor/MercadoPublico, rama `feature/api-mercadopublico`. La plataforma
+(https://radar-mercadopublico.streamlit.app, `plataforma/app.py`) lee sola la rama `datos` y
+`informes/`: no hay que subirle nada. Los datos de la API se actualizan solos en GitHub (radar
+los días hábiles en la mañana; Compras Ágiles cada 3 horas, que se publican al terminar); esta
+rutina agrega lo que necesita a Claude y gasta créditos: precios de mercado, proveedores y el
+análisis. Escribe todo (mensajes y commits) en español. El
 ticket `MP_TICKET` nunca va en código, logs ni mensajes. Cada pedido es independiente:
 sigue los pasos desde el principio aunque esta conversación tenga pedidos anteriores.
 `<tmp>` es tu scratchpad (o una carpeta nueva en /tmp).
 
 Hay tres pedidos posibles:
 
-- **ACTUALIZACIÓN** (la rutina programada o «actualiza el radar» en el chat): datos de la
-  API, órdenes de compra, presupuestos y dashboard. **No** busca precios de mercado
-  nuevos: cuestan tiempo y plan, y el usuario elige qué licitaciones presupuestar.
+- **ACTUALIZACIÓN** (la tarea programada «Actualizar Radar de Licitaciones», días hábiles 8:59
+  hora de Chile, o «actualiza el radar» en el chat): revisa que los datos estén al día, busca
+  precios de mercado para hasta 4 licitaciones nuevas (elegidas solas: compra y venta directa,
+  ítems concretos, 3+ días para el cierre), presupuestos, evaluación comercial y publica.
 - **PRECIOS para: <códigos>** (pedido en el chat; el dashboard copia el texto «busca precios de …»):
   busca precios de mercado solo para esas licitaciones (máximo 5; si piden más, haz las
   5 primeras y dilo).
-- **PRUEBA**: no cambies nada; prueba cada herramienta (git push --dry-run, Artifact
-  list, ArtifactData list de `datasets`, WebSearch, Workflow disponible) y responde
-  cuáles funcionan.
+- **PRUEBA**: no cambies nada; prueba cada herramienta (git push --dry-run, WebSearch,
+  Workflow disponible, `gh workflow list`) y responde cuáles funcionan.
 
 ## ACTUALIZACIÓN
 
 0. Dependencias (una vez por sesión): `pip install -q -r requirements.txt pytest`.
 1. Repo al día: `git fetch origin feature/api-mercadopublico && git checkout feature/api-mercadopublico && git reset --hard origin/feature/api-mercadopublico`.
-2. Anota el sha de la rama datos: `git ls-remote origin refs/heads/datos`.
+2. Clona la rama datos: `git clone -q --depth 1 --branch datos https://github.com/Yakazor/MercadoPublico.git <tmp>/datos`.
+   Si `generado` de `<tmp>/datos/meta.json` tiene **menos de 6 horas**, usa esos datos y salta
+   al paso 6. Si no, anota el sha (`git ls-remote origin refs/heads/datos`) y sigue.
 3. Dispara los workflows (radar y OC) con un push al archivo disparador. Cada paso va en
    su propia llamada, sin `;`, `&&`, `cd` ni pipes (así calzan con los permisos de
    `.claude/settings.json`; un comando compuesto lo bloquea el modo automático):
@@ -41,21 +46,26 @@ Hay tres pedidos posibles:
    después (2–60 min). Revisa `git ls-remote origin refs/heads/datos` cada 3 minutos con
    un loop de Bash en segundo plano (nunca un sleep largo en primer plano), hasta ver dos
    cambios o 100 minutos en total.
-5. Clona la rama datos: `git clone -q --depth 1 --branch datos https://github.com/Yakazor/MercadoPublico.git <tmp>/datos`.
+5. Vuelve a clonar la rama datos (paso 2, borrando antes `<tmp>/datos`).
+5b. **Precios de mercado** (gasta créditos; máximo 4 licitaciones por corrida):
+   1. `python3 scripts/seleccionar_mercado.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --salida <tmp>/lote.json --maximo 4 --compras-agiles 2`
+      (elige abiertas sin precios, 3+ días para el cierre, ítems concretos, sin servicios ni registro ISP;
+      2 cupos para Compras Ágiles, primero de la Región Metropolitana).
+   2. Si el lote tiene licitaciones, pasos 3 y 4 de «PRECIOS para» (workflow `precios-mercado-chile`
+      o WebSearch con sus reglas; `guardar_mercado.py`). Prioriza tiendas y distribuidores de Santiago.
 6. Presupuestos: `python3 scripts/presupuesto.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --mercado-json <tmp>/mercado.json`.
 6b. **Evaluación comercial** (ver «Evaluación comercial» al final): corre el script y
    completa proveedores y el Claude Log de las 3 mejores oportunidades.
-7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: `git add informes`,
+7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: agrega una línea a la bitácora de
+   `.claude/AVANCES.md` (fecha, licitaciones con precios nuevos, decisiones), `git add informes .claude/AVANCES.md`,
    `git commit -m "<mensaje en español>"` y `git push origin HEAD:feature/api-mercadopublico`,
-   cada uno en su propia llamada (mismos reintentos).
-8. Resumen de 3–6 líneas (decisiones GO / NO GO de `informes/evaluacion/README.md`, licitaciones vigentes, Compras Ágiles abiertas — `compras_agiles`
-   en meta.json; si es null, el paso «Compras Ágiles» del workflow falló o no corrió —,
-   rango de días de OC, presupuestos con precios y cualquier error). Envíalo con PushNotification **antes** del paso 9, terminado
-   en «Para ver los datos en el dashboard, aprueba la subida en esta sesión».
-9. Dashboard: ver «Subir al dashboard» con licitaciones.json, precios.json, items.json y
-   meta.json de `<tmp>/datos` y `<tmp>/mercado.json`. Subir archivos a un artefacto pide la
-   aprobación del usuario en la app: es el último paso para que todo lo demás ya esté hecho
-   si nadie aprueba. Si una subida se rechaza, no reintentes: termina y dilo.
+   cada uno en su propia llamada (mismos reintentos). El push dispara «Verificar precios e
+   informes PDF», que abre cada tienda y rehace los PDF.
+8. Publica los precios nuevos en la plataforma sin esperar: `gh workflow run radar-diario.yml -R Yakazor/MercadoPublico --ref feature/api-mercadopublico -f solo_exportar=true`
+   (no llama a la API). Si `gh` no puede, no pasa nada: «Compras Ágiles» los publica en menos de 3 horas.
+9. Resumen de 3–6 líneas con PushNotification: licitaciones con precios nuevos y su decisión,
+   las 3 mejores oportunidades (de `informes/evaluacion/README.md`), Compras Ágiles abiertas
+   (`compras_agiles` en meta.json) y cualquier error. Termina con el link de la plataforma.
 
 ## PRECIOS para: <códigos>
 
@@ -67,13 +77,14 @@ Hay tres pedidos posibles:
    (tiendas chilenas, nunca inventar precios ni links, convertir a la unidad pedida, IVA).
 4. Guarda el resultado (`{"licitaciones": [...]}`) en `<tmp>/resultado.json` y corre
    `python3 scripts/guardar_mercado.py <tmp>/resultado.json`.
-5. Pasos 6 y 7 de ACTUALIZACIÓN (presupuestos, tests, commit de `informes/` y push).
+5. Pasos 6, 6b, 7 y 8 de ACTUALIZACIÓN (presupuestos, evaluación, tests, commit y publicar).
 6. Resumen: por licitación, ítems con precio, costo, oferta total y si supera lo que el
-   Estado pagó o el monto estimado. Envíalo con PushNotification antes del paso 7.
-7. Dashboard (último paso, pide aprobación del usuario): «Subir al dashboard» con
-   `<tmp>/mercado.json` (y items.json si cambió).
+   Estado pagó o el monto estimado. Envíalo con PushNotification.
 
-## Subir al dashboard
+## Subir al dashboard (antiguo, solo si el usuario lo pide)
+
+El dashboard artefacto (https://claude.ai/artifact/AUMtv926GXLeg1H82EDWrn) quedó reemplazado por la
+plataforma. Para actualizarlo igual:
 
 1. Sube cada archivo como asset, uno por llamada: herramienta Artifact, `action: publish`,
    `url` del dashboard, `asset: true`, `file_path`.

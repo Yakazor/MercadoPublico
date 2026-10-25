@@ -69,6 +69,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-25: rutina con créditos de Claude: `.claude/RUTINA.md` ya no sube al dashboard (la plataforma
+  lee sola), busca precios para hasta 4 licitaciones al día (`seleccionar_mercado.py --maximo 4
+  --compras-agiles 2`, sin las que no son compra y venta directa) y publica con radar «solo exportar».
+  Tarea programada «Actualizar Radar de Licitaciones», días hábiles 8:59 (America/Santiago).
+
 - 2026-10-25: menú arriba y ⚙️ Supuestos en un botón (sin barra lateral: ~1.200 px útiles en 1366).
   Filtros y columnas «Decisión» (GO / con condiciones / NO GO / sin evaluar) y «Compra-venta»
   (`radar.plataforma.compra_venta`: ✅ productos para revender, ❌ servicios/ISP/licencias, ❓ bases);

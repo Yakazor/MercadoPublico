@@ -2,14 +2,16 @@
 
 Uso:
     python scripts/seleccionar_mercado.py --items items.json --licitaciones licitaciones.json \
-        --salida lote.json [--maximo 4] [--por-rubro 2] [--codigos 123-4-LE26,...]
+        --salida lote.json [--maximo 4] [--por-rubro 2] [--compras-agiles 2] [--codigos 123-4-LE26,...]
 
 Prioriza licitaciones que se pueden cotizar ítem por ítem: abiertas con tiempo
 para ofertar (3+ días), de rubros de productos (no consultoría), que no sean solo
-de productos regulados, con 1 a 20 ítems concretos (con cantidad, sin "1 Global"
-ni "según bases"), de un monto manejable para partir (hasta `--monto-maximo`) y
-sin precios ya buscados en informes/mercado/. Ordena por ítems concretos y monto;
-como mucho `--por-rubro` por rubro. Con `--codigos` se buscan esas, aunque no
+de productos regulados ni incluyan servicios (`compra_venta` no las marca como «no»),
+con 1 a 20 ítems concretos (con cantidad, sin "1 Global" ni "según bases"), de un
+monto manejable para partir (hasta `--monto-maximo`) y sin precios ya buscados en
+informes/mercado/. Ordena por ítems concretos y monto;
+como mucho `--por-rubro` por rubro. `--compras-agiles N` reserva los primeros N cupos para
+Compras Ágiles, primero las de la Región Metropolitana (despacho más barato desde Santiago). Con `--codigos` se buscan esas, aunque no
 cumplan los filtros.
 """
 import argparse
@@ -19,7 +21,7 @@ from pathlib import Path
 
 import _ruta  # noqa: F401
 from radar.config import ruta_proyecto
-from radar.plataforma import item_concreto as concreto
+from radar.plataforma import compra_venta, item_concreto as concreto
 
 CAMPOS_ITEM = ("linea", "producto", "descripcion", "cantidad", "unidad", "ref_mediana")
 
@@ -34,6 +36,8 @@ def main():
     ap.add_argument("--por-rubro", type=int, default=2)
     ap.add_argument("--monto-maximo", type=float, default=60_000_000, help="monto estimado máximo en CLP")
     ap.add_argument("--codigos", default="", help="códigos separados por coma (se buscan sí o sí)")
+    ap.add_argument("--compras-agiles", type=int, default=0,
+                    help="cupos reservados para Compras Ágiles (primero las de la Región Metropolitana)")
     args = ap.parse_args()
 
     items = json.loads(Path(args.items).read_text(encoding="utf-8"))
@@ -61,6 +65,8 @@ def main():
                 continue
             if (l.get("dias_restantes") or 0) < 3 or not (1 <= len(its) <= 20):
                 continue
+            if compra_venta(l, its)[0] is False:     # servicios, licencias o registro ISP
+                continue
             concretos = sum(concreto(i) for i in its)
             if concretos < max(1, 0.8 * len(its)):
                 continue
@@ -70,8 +76,12 @@ def main():
             # Mejor con varios ítems concretos (un presupuesto de verdad) y monto conocido.
             candidatas.append((-min(concretos, 15), -(monto or 0), l))
         candidatas.sort(key=lambda c: (c[0], c[1]))
+        agiles = sorted((c for c in candidatas if c[-1].get("tipo") == "Compra Ágil"),
+                        key=lambda c: ("metropolitana" not in (c[-1].get("region") or "").lower(), c[0], c[1]))
+        primeras = agiles[:args.compras_agiles]
+        orden = primeras + [c for c in candidatas if all(c is not p for p in primeras)]
         elegidas, por_rubro = [], Counter()
-        for *_, l in candidatas:
+        for *_, l in orden:
             if len(elegidas) >= args.maximo:
                 break
             if por_rubro[l["rubro"]] >= args.por_rubro:
