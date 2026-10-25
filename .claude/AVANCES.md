@@ -27,7 +27,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Orden de compra al proveedor | Unido (PR #1) |
 | Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
 | Plataforma web (Streamlit) | Unida (PR #3, 25-10). Falta publicarla en share.streamlit.io (lo hace el usuario: README, «Plataforma web») |
-| Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. En producción desde la unión del PR #3 (25-10). Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
+| Workflow «Órdenes de compra históricas» | **Causa encontrada y corregida en `feature/plataforma`:** una OC trae un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel (`IllegalCharacterError`). `texto_excel`/`sin_formulas` lo quitan. En producción desde la unión del PR #3 (25-10); verificado: corrida 40150220712 terminó bien, incluido «Publicar datos para el dashboard». Los errores de los workflows ahora quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
 PRs unidos: https://github.com/Yakazor/MercadoPublico/pull/2 y https://github.com/Yakazor/MercadoPublico/pull/3
 
@@ -36,11 +36,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Siguientes pasos sugeridos
 
-- Revisar que «Órdenes de compra históricas» (09:11 UTC) y «Compras Ágiles» → «Publicar datos (solo
-  exportar)» (cada 3 horas) corran bien en producción con el código unido.
 - Publicar la plataforma en Streamlit Community Cloud (README, «Plataforma web») con `clave` y
   `github_token` en los secretos.
-- Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma.
+- Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma, y que
+  «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
+  (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
 
 ## Última tarea: plataforma (pedido del 25-10) — terminada
 
@@ -61,6 +61,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25: verificado en producción tras unir: «Órdenes de compra históricas» OK (40150220712,
+  ya publica datos); «Compras Ágiles» (40150222091) lanzó sola «Publicar datos (solo exportar)»
+  (40150264913, OK): `datos` del 24-10 22:25 con Compras Ágiles de las 22:20; informes regenerados
+  (9e2fd96, 20e7f53). La plataforma lee bien esas corridas (`radar.actualizacion.corridas`).
 
 - 2026-10-25: el usuario pidió unir: PR #2 y PR #3 unidos a `feature/api-mercadopublico`.
 
