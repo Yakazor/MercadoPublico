@@ -348,9 +348,12 @@ como caché/artefacto.
 
 ## Dashboard, rutina y presupuestos
 
-El dashboard (artefacto de Claude) lee los JSON de la rama `datos` que sube la
-**rutina «Actualizar Radar de Licitaciones»** (días hábiles 8:50, hora de Chile;
-instrucciones en `.claude/RUTINA.md`).
+La plataforma (`plataforma/app.py`, https://radar-mercadopublico.streamlit.app) y el antiguo
+dashboard leen los JSON de la rama `datos`. La **tarea programada de Claude «Actualizar Radar de
+Licitaciones»** (días hábiles 8:59, hora de Chile; usa los créditos de la cuenta de Claude, no una API
+key) busca precios de mercado para hasta 4 licitaciones nuevas por día (2 cupos para Compras Ágiles de
+la Región Metropolitana), arma presupuestos y la evaluación con proveedores y Claude Log, y publica
+(instrucciones en `.claude/RUTINA.md`).
 
 - **Un solo artefacto:** el dashboard. claude.ai no deja que una página le mande
   mensajes a una sesión de Claude (lo rechaza con `blocked_by_policy`), así que los
