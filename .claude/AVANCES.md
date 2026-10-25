@@ -43,7 +43,7 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   `github_token` en los secretos.
 - Ideas pendientes: botón «Pedir análisis a Claude», borradores en Gmail desde la plataforma.
 
-## Tarea en curso: plataforma (pedido del 25-10)
+## Última tarea: plataforma (pedido del 25-10) — terminada
 
 - [x] Plataforma: Inicio, Licitaciones, Compras Ágiles, Evaluación, Orden de compra (PR #3)
 - [x] Bitácora de avances (este archivo) y `CLAUDE.md` que apunta aquí
@@ -57,10 +57,14 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
       erratas, plantillas e informes de `informes/pdf/`
 - [x] Auditar y corregir (falla de «Órdenes de compra históricas», JSON de la orden, margen de recarga)
 - [x] Actualizar la descripción del PR #3
-- [ ] Confirmar que «Órdenes de compra históricas» pasa con la corrección (corrida 40146638863 en
-      `feature/plataforma`)
+- [x] Confirmar que «Órdenes de compra históricas» pasa con la corrección: corrida 40146638863 en
+      `feature/plataforma` terminó bien (antes fallaba en «Descargar órdenes de compra»)
+- [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-10-25: verificada la corrección de «Órdenes de compra históricas» (corrida 40146638863, éxito).
+  Tarea del 25-10 terminada; PR #3 actualizado. Pendiente: que el usuario una los PR #2 y #3.
 
 - 2026-10-25: causa de la falla diaria de «Órdenes de compra históricas»: carácter de control en
   una descripción de OC rompía la exportación a Excel. Corregido (y en la orden de compra y el
