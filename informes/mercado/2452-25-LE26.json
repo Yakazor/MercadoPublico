@@ -20,7 +20,11 @@
      "precio_unitario_neto": 31084.03,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 36077.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $36.077."
     },
     {
      "tienda": "Falabella (vende Techbox)",
@@ -33,7 +37,11 @@
      "precio_unitario_neto": 32512.61,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 38690.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $38.690."
     },
     {
      "tienda": "Falabella (vende Alcaplus)",
@@ -46,7 +54,11 @@
      "precio_unitario_neto": 36126.05,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 42990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $42.990."
     }
    ]
   },
@@ -73,7 +85,11 @@
      "precio_unitario_neto": 55453.78,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 65200.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $65.200."
     },
     {
      "tienda": "Falabella (vende Alcaplus)",
@@ -86,7 +102,11 @@
      "precio_unitario_neto": 67218.49,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 79990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $79.990."
     },
     {
      "tienda": "Falabella (vende Techbox)",
@@ -99,7 +119,11 @@
      "precio_unitario_neto": 73100.84,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 86990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $86.990."
     }
    ]
   },
@@ -119,7 +143,8 @@
      "precio_unitario_neto": 65537.82,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; confirmar precio vigente",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -153,7 +178,11 @@
      "precio_unitario_neto": 57134.45,
      "coincidencia": "aproximada",
      "nota": "el listado no dice si es original HP; confirmar con el vendedor. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 68970.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $68.970."
     }
    ]
   },
@@ -180,7 +209,8 @@
      "precio_unitario_neto": 100831.93,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; el dato de la búsqueda era de caché (dic-2024): confirmar precio vigente",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -200,7 +230,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -220,7 +251,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -240,7 +272,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -260,7 +293,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -280,7 +314,8 @@
      "precio_unitario_neto": 43689.08,
      "coincidencia": "equivalente",
      "nota": "el 711 negro de 38 ml es CZ129A (CZ133A es el de 80 ml): aclarar con el comprador. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Falabella (vende Tecno Insumos SpA)",
@@ -293,7 +328,10 @@
      "precio_unitario_neto": 52092.44,
      "coincidencia": "equivalente",
      "nota": "confirmar código. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 60000.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado."
     }
    ]
   },
@@ -313,7 +351,11 @@
      "precio_unitario_neto": 49571.43,
      "coincidencia": "exacta",
      "nota": "el listado no muestra el código CZ130A. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 59990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $59.990."
     }
    ]
   },
@@ -333,7 +375,11 @@
      "precio_unitario_neto": 44529.41,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 52990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $52.990."
     }
    ]
   },
@@ -353,7 +399,11 @@
      "precio_unitario_neto": 42848.74,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 50990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $50.990."
     }
    ]
   },
@@ -373,9 +423,15 @@
      "precio_unitario_neto": 301672.27,
      "coincidencia": "exacta",
      "nota": "precio «desde» en la página de categoría de HP Chile; confirmar",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-25",
+  "opciones": 19,
+  "verificadas": 10
+ }
 }

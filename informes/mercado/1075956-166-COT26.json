@@ -39,5 +39,10 @@
    "opciones": [],
    "nota": "la especificación y cantidades están en el anexo técnico (la ficha solo dice «1 EA»); no se puede cotizar sin el anexo: por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-25",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

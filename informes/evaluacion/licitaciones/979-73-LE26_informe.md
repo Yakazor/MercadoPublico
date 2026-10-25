@@ -28,7 +28,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $6.611.326 |
 | Oferta sugerida con IVA | $7.851.136 |
 
-**Riesgos financieros:** 4 de 18 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo)..
+**Riesgos financieros:** 4 de 18 ítems sin precio de mercado: el costo real es mayor.; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo)..
 
 ## Análisis operacional
 
@@ -46,7 +46,6 @@
 ## Riesgos detectados
 
 - 4 de 18 ítems sin precio de mercado: el costo real es mayor.
-- La mayoría de los precios no está verificada en la página de la tienda.
 - 3 de 14 precios son de productos aproximados (otra medida, marca o modelo).
 
 ## Proveedores recomendados
