@@ -219,10 +219,14 @@ def pagina() -> None:
         st.session_state["oc_items_actual"] = st.session_state["oc_items"]
     editado = st.data_editor(st.session_state["oc_items"], key=f"editor_oc_{version}", num_rows="dynamic",
                              hide_index=True, column_config={
-                                 "Descripción": st.column_config.TextColumn(width="large", required=True),
-                                 "Cantidad": st.column_config.NumberColumn(min_value=0, format="%g"),
-                                 "Precio unitario neto": st.column_config.NumberColumn(min_value=0, format="localized"),
-                                 "Precio unitario c/IVA": st.column_config.NumberColumn(min_value=0, format="localized"),
+                                 "Código": st.column_config.TextColumn(width=90),
+                                 "Descripción": st.column_config.TextColumn(width=330, required=True),
+                                 "Unidad": st.column_config.TextColumn(width=80),
+                                 "Cantidad": st.column_config.NumberColumn(min_value=0, format="%g", width=80),
+                                 "Precio unitario neto": st.column_config.NumberColumn(min_value=0, format="localized",
+                                                                                       width=125),
+                                 "Precio unitario c/IVA": st.column_config.NumberColumn(min_value=0, format="localized",
+                                                                                        width=125),
                              })
     st.session_state["oc_items_actual"] = editado
 

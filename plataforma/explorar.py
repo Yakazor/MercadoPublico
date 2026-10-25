@@ -1,6 +1,4 @@
 """Licitaciones y Compras Ágiles abiertas: filtros, tabla y ficha con sus ítems."""
-import re
-
 import pandas as pd
 import streamlit as st
 
@@ -55,28 +53,36 @@ def _explorar(compra_agil: bool) -> None:
     lista = filtrar(todas, texto=texto, rubros=rubros, regiones=regiones, max_dias=max_dias if max_dias < 30 else None,
                     monto_min=monto_min or None, monto_max=monto_max or None,
                     con_precios=set(prep["mercado"]) if solo_precios else None, plazo_max=plazo, llamado=llamado)
-    st.caption(f"{len(lista)} de {len(todas)} abiertas. Toca una fila para ver el detalle.")
+    st.caption(f"{len(lista)} de {len(todas)} abiertas. 💲 = tiene precios de tiendas. Toca una fila para ver el "
+               "detalle, con el organismo, los ítems y el link a Mercado Público.")
     filas = []
     for l in lista:
-        fila = {"Código": l["codigo"], "Nombre": l.get("nombre"), "Organismo": l.get("organismo"),
-                "Región": re.sub(r"^Región (de la |del |de )?", "", l.get("region") or ""),
-                "Monto ($)": comun.pesos(l.get("monto_estimado")), "Cierre": comun.fecha_hora(l.get("fecha_cierre")),
-                "Días": l.get("dias_restantes")}
+        fila = {"Código": l["codigo"], "Nombre": ("💲 " if l["codigo"] in prep["mercado"] else "") + (l.get("nombre") or "")}
+        if not compra_agil:
+            fila["Organismo"] = l.get("organismo")
+        fila |= {"Región": comun.region_corta(l.get("region")), "Monto ($)": comun.pesos(l.get("monto_estimado")),
+                 "Cierre": pd.to_datetime(l.get("fecha_cierre")), "Días": l.get("dias_restantes")}
         if compra_agil:
-            fila |= {"Entrega (días)": l.get("plazo_entrega_dias"), "Llamado": l.get("llamado")}
-        else:
-            fila["Tipo"] = l.get("tipo")
-        filas.append(fila | {"Precios": l["codigo"] in prep["mercado"], "Ficha": l.get("url")})
+            fila |= {"Entrega": l.get("plazo_entrega_dias"), "Llamado": l.get("llamado")}
+        filas.append(fila)
+    # Anchos fijos: la tabla cabe en una pantalla de notebook con el menú abierto (~900 px).
+    anchos = ({"Código": 150, "Nombre": 215, "Región": 105, "Monto ($)": 90, "Cierre": 105, "Días": 50, "Entrega": 70,
+               "Llamado": 60} if compra_agil else
+              {"Código": 125, "Nombre": 235, "Organismo": 135, "Región": 105, "Monto ($)": 95, "Cierre": 105, "Días": 50})
+    config = {col: st.column_config.TextColumn(width=ancho) for col, ancho in anchos.items()}
+    config |= {
+        "Monto ($)": st.column_config.NumberColumn(format="localized", width=anchos["Monto ($)"]),
+        "Cierre": st.column_config.DatetimeColumn(format="DD-MM HH:mm", width=anchos["Cierre"]),
+        "Días": st.column_config.NumberColumn(width=anchos["Días"], help="Días que faltan para el cierre"),
+    }
+    if compra_agil:
+        config |= {"Entrega": st.column_config.NumberColumn(format="%g d", width=anchos["Entrega"],
+                                                            help="Días para entregar desde la orden de compra"),
+                   "Llamado": st.column_config.NumberColumn(width=anchos["Llamado"],
+                                                            help="1 = solo empresas de menor tamaño; 2 = todas")}
     evento = st.dataframe(
         pd.DataFrame(filas), hide_index=True, on_select="rerun", selection_mode="single-row", key=f"{pre}_tabla",
-        height=420, column_config={
-            "Nombre": st.column_config.TextColumn(width="large"),
-            "Organismo": st.column_config.TextColumn(width="medium"),
-            "Monto ($)": st.column_config.NumberColumn(format="localized"),
-            "Entrega (días)": st.column_config.NumberColumn(format="%g"),
-            "Precios": st.column_config.CheckboxColumn(help="Tiene precios de tiendas buscados por Claude"),
-            "Ficha": st.column_config.LinkColumn(display_text="Abrir"),
-        })
+        height=420, column_config=config)
     if evento.selection.rows:
         ficha(lista[evento.selection.rows[0]], prep)
 
@@ -111,12 +117,17 @@ def ficha(lic: dict, prep: dict) -> None:
             st.dataframe(pd.DataFrame([{
                 "Línea": it.get("linea"), "Producto": it.get("producto"), "Descripción": it.get("descripcion"),
                 "Cantidad": it.get("cantidad"), "Unidad": it.get("unidad"),
-                "Pagado por el Estado (mediana)": comun.pesos(it.get("ref_mediana")), "OC comparadas": it.get("ref_n_ordenes"),
+                "Pagado Estado": comun.pesos(it.get("ref_mediana")), "N° OC": it.get("ref_n_ordenes"),
             } for it in items]), hide_index=True, column_config={
-                "Descripción": st.column_config.TextColumn(width="medium"),
-                "Cantidad": st.column_config.NumberColumn(format="%g"),
-                "Pagado por el Estado (mediana)": st.column_config.NumberColumn(
-                    format="localized", help="Precio unitario neto en órdenes de compra de productos parecidos")})
+                "Línea": st.column_config.NumberColumn(width=50),
+                "Producto": st.column_config.TextColumn(width=170),
+                "Descripción": st.column_config.TextColumn(width=270),
+                "Cantidad": st.column_config.NumberColumn(format="%g", width=75),
+                "Unidad": st.column_config.TextColumn(width=65),
+                "Pagado Estado": st.column_config.NumberColumn(
+                    format="localized", width=110,
+                    help="Mediana del precio unitario neto en órdenes de compra de productos parecidos"),
+                "N° OC": st.column_config.NumberColumn(width=60, help="Órdenes de compra comparadas")})
         else:
             st.caption("El radar no trae los ítems de esta licitación: revísalos en la ficha.")
 
@@ -125,12 +136,18 @@ def ficha(lic: dict, prep: dict) -> None:
             st.markdown("**Precios de tiendas**")
             st.dataframe(pd.DataFrame([{
                 "Línea": op.get("linea"), "Tienda": op.get("tienda"), "Producto": op.get("producto_mercado"),
-                "Precio unitario neto": comun.pesos(op.get("precio_unitario_neto")), "Coincidencia": op.get("coincidencia"),
+                "Precio neto": comun.pesos(op.get("precio_unitario_neto")), "Coincidencia": op.get("coincidencia"),
                 "Verificado": bool(op.get("verificado")), "Link": op.get("url"),
             } for op in sorted(mercado, key=lambda o: (o.get("linea") or 0, o.get("precio_unitario_neto") or 0))]),
                 hide_index=True, column_config={
-                    "Precio unitario neto": st.column_config.NumberColumn(format="localized"),
-                    "Link": st.column_config.LinkColumn(display_text="Ver")})
+                    "Línea": st.column_config.NumberColumn(width=50),
+                    "Tienda": st.column_config.TextColumn(width=110),
+                    "Producto": st.column_config.TextColumn(width=250),
+                    "Precio neto": st.column_config.NumberColumn(format="localized", width=100,
+                                                                 help="Precio unitario sin IVA"),
+                    "Coincidencia": st.column_config.TextColumn(width=100),
+                    "Verificado": st.column_config.CheckboxColumn(width=80),
+                    "Link": st.column_config.LinkColumn(display_text="Ver", width=50)})
 
         a, b, c = st.columns(3)
         if a.button("Evaluar GO / NO GO", icon="📊", type="primary", width="stretch", key=f"evaluar_{codigo}"):

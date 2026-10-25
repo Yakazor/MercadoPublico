@@ -81,13 +81,16 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict]) -> None:
         st.session_state[base], key=editor, hide_index=True,
         disabled=[c for c in st.session_state[base].columns if c != "Tu cotización (unitario)"],
         column_config={
-            "Producto": st.column_config.TextColumn(width="medium"),
-            "Cantidad": st.column_config.NumberColumn(format="%g"),
-            "Precio tienda (neto)": st.column_config.NumberColumn(format="localized"),
+            "Línea": st.column_config.NumberColumn(width=50),
+            "Producto": st.column_config.TextColumn(width=200),
+            "Cantidad": st.column_config.NumberColumn(format="%g", width=75),
+            "Unidad": st.column_config.TextColumn(width=65),
+            "Mejor tienda": st.column_config.TextColumn(width=120),
+            "Precio tienda (neto)": st.column_config.NumberColumn(format="localized", width=110),
             "Pagado por el Estado": st.column_config.NumberColumn(
-                format="localized", help="Mediana del precio unitario neto en órdenes de compra parecidas"),
+                format="localized", width=125, help="Mediana del precio unitario neto en órdenes de compra parecidas"),
             "Tu cotización (unitario)": st.column_config.NumberColumn(
-                min_value=0, format="localized", help="Precio por unidad que te dio el proveedor"),
+                min_value=0, format="localized", width=130, help="Precio por unidad que te dio el proveedor"),
         })
     precios = {str(it.get("linea")): float(v) for it, v in zip(items, editado["Tu cotización (unitario)"])
                if pd.notna(v) and v > 0}
@@ -154,13 +157,20 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
             "Costo unitario": comun.pesos(it.get("costo_unitario_neto")),
             "Oferta unitaria": comun.pesos(it.get("oferta_unitaria_neta")),
             "Subtotal oferta": comun.pesos(it.get("subtotal_oferta")), "Fuente": it.get("tienda"),
-            "Coincidencia": it.get("coincidencia"), "Verificado": it.get("verificado"), "Link": it.get("url"),
+            "Tipo de precio": " · ".join(x for x in (it.get("coincidencia"), "verificado" if it.get("verificado") else "")
+                                         if x) or None,
+            "Link": it.get("url"),
         } for it in p["items"]]), hide_index=True, column_config={
-            "Producto": st.column_config.TextColumn(width="large"),
-            "Cantidad": st.column_config.NumberColumn(format="%g"),
-            **{col: st.column_config.NumberColumn(format="localized")
-               for col in ("Costo unitario", "Oferta unitaria", "Subtotal oferta")},
-            "Link": st.column_config.LinkColumn(display_text="Ver")})
+            "Línea": st.column_config.NumberColumn(width=50),
+            "Producto": st.column_config.TextColumn(width=160),
+            "Cantidad": st.column_config.NumberColumn(format="%g", width=70),
+            "Costo unitario": st.column_config.NumberColumn(format="localized", width=95),
+            "Oferta unitaria": st.column_config.NumberColumn(format="localized", width=95),
+            "Subtotal oferta": st.column_config.NumberColumn(format="localized", width=110),
+            "Fuente": st.column_config.TextColumn(width=100),
+            "Tipo de precio": st.column_config.TextColumn(
+                width=130, help="exacta / equivalente / aproximada / estimada (OC), y si se verificó en la tienda"),
+            "Link": st.column_config.LinkColumn(display_text="Ver", width=50)})
 
     _documentos(lic, p, ev, mercado)
 
@@ -204,7 +214,7 @@ def _ranking(prep: dict) -> None:
                                               comun.estimar_oc(), comun.cotizaciones())
              if e.decision in decisiones and (tipo == "Todas" or es_compra_agil(l) == (tipo == "Compras Ágiles"))]
     st.caption(f"{len(filas)} evaluadas con al menos un precio, de mejor a peor (decisión y luego margen × "
-               "probabilidad). Toca una fila para abrir su evaluación.")
+               "probabilidad). ⚡ = Compra Ágil. Toca una fila para abrir su evaluación, con riesgos y costos.")
     codigos = [l["codigo"] for l, _, _ in filas]
 
     def abrir():
@@ -213,14 +223,16 @@ def _ranking(prep: dict) -> None:
             st.session_state.update(codigo=codigos[sel[0]], eval_vista=VISTAS[0])
 
     st.dataframe(pd.DataFrame([{
-        "Código": l["codigo"], "Tipo": "Compra Ágil" if es_compra_agil(l) else l.get("tipo"), "Nombre": l.get("nombre"),
-        "Decisión": e.etiqueta, "Margen neto %": (e.margenes["neto_pct"] or 0) * 100,
-        "Margen neto": comun.pesos(e.margenes["neto"]), "Oferta c/IVA": comun.pesos(e.ingresos["oferta_total"]),
-        "Monto estimado": comun.pesos(e.ingresos["monto_estimado"]), "Con precio": e.cobertura * 100, "Riesgo": e.riesgo,
-        "Prob.": e.probabilidad * 100, "Cierre": comun.dias_texto(l.get("dias_restantes")),
+        "Código": l["codigo"], "Nombre": ("⚡ " if es_compra_agil(l) else "") + (l.get("nombre") or ""),
+        "Decisión": comun.DECISION_CORTA[e.decision], "Margen neto": (e.margenes["neto_pct"] or 0) * 100,
+        "Oferta c/IVA": comun.pesos(e.ingresos["oferta_total"]),
+        "Monto estimado": comun.pesos(e.ingresos["monto_estimado"]), "Cierre": comun.dias_texto(l.get("dias_restantes")),
     } for l, p, e in filas]), hide_index=True, key="rank_tabla", on_select=abrir, selection_mode="single-row",
         height=560, column_config={
-            "Nombre": st.column_config.TextColumn(width="large"),
-            **{col: st.column_config.NumberColumn(format="%.0f %%") for col in ("Margen neto %", "Con precio", "Prob.")},
-            **{col: st.column_config.NumberColumn(format="localized")
-               for col in ("Margen neto", "Oferta c/IVA", "Monto estimado")}})
+            "Código": st.column_config.TextColumn(width=130),
+            "Nombre": st.column_config.TextColumn(width=210),
+            "Decisión": st.column_config.TextColumn(width=140),
+            "Margen neto": st.column_config.NumberColumn(format="%.0f %%", width=85),
+            "Oferta c/IVA": st.column_config.NumberColumn(format="localized", width=105),
+            "Monto estimado": st.column_config.NumberColumn(format="localized", width=105),
+            "Cierre": st.column_config.TextColumn(width=70)})

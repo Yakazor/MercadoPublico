@@ -13,13 +13,21 @@ import streamlit as st  # noqa: E402
 from streamlit.errors import StreamlitSecretNotFoundError  # noqa: E402
 
 from evaluar_licitaciones import clp  # noqa: E402,F401
-from radar.evaluacion import CONDICIONADO, GO  # noqa: E402
+from radar.evaluacion import CONDICIONADO, GO, NO_GO  # noqa: E402
+from radar.filtro import normalizar  # noqa: E402
 from radar.plataforma import ORIGEN_DATOS, leer_datos, preparar, supuestos_config  # noqa: E402
 
 ZONAS = {"cercana": "Región Metropolitana", "media": "Valparaíso, O'Higgins, Maule",
          "lejana": "Coquimbo a Los Ríos", "extrema": "Extremo norte y sur"}
 # Páginas (st.Page) por nombre, para los botones que llevan de una a otra. Las llena app.py.
 PAGINAS: dict = {}
+# Textos cortos para que las tablas quepan en una pantalla de notebook (~900 px de ancho útil).
+DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", NO_GO: "🔴 NO GO"}
+_REGIONES = [("arica", "Arica"), ("tarapaca", "Tarapacá"), ("antofagasta", "Antofagasta"), ("atacama", "Atacama"),
+             ("coquimbo", "Coquimbo"), ("valparaiso", "Valparaíso"), ("metropolitana", "Metropolitana"),
+             ("higgins", "O'Higgins"), ("maule", "Maule"), ("nuble", "Ñuble"), ("biobio", "Biobío"),
+             ("araucania", "Araucanía"), ("los rios", "Los Ríos"), ("los lagos", "Los Lagos"), ("aysen", "Aysén"),
+             ("magallanes", "Magallanes")]
 
 
 def secreto(nombre: str, defecto=None):
@@ -121,6 +129,11 @@ def pesos(valor) -> int | None:
 def con_signo(valor: float) -> str:
     """Monto con el signo adelante, para que st.metric lo muestre en rojo si es negativo."""
     return f"-{clp(abs(valor))}" if valor < 0 else clp(valor)
+
+
+def region_corta(region: str | None) -> str:
+    texto = normalizar(region or "")
+    return next((corta for clave, corta in _REGIONES if clave in texto), region or "")
 
 
 def fecha_hora(texto: str | None, corta: bool = False) -> str:
