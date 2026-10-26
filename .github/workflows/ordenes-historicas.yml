@@ -167,6 +167,20 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
 
+      # Compras Ágiles abiertas de tus rubros: las busca el workflow «Compras Ágiles»
+      # (cada 3 horas) y las deja en la caché. Sin este paso, esta publicación las borraba
+      # de la plataforma hasta la siguiente corrida de Compras Ágiles.
+      - name: Restaurar Compras Ágiles
+        if: success()
+        continue-on-error: true
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            data/compra_agil_estado.json
+            data/compras_agiles.json
+          key: compra-agil-v1-${{ github.run_id }}
+          restore-keys: compra-agil-v1-
+
       # Datos en JSON para el dashboard, en la rama "datos" del repositorio (un solo
       # commit que se reemplaza en cada corrida). Solo con una base con historial.
       - name: Publicar datos para el dashboard
