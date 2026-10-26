@@ -205,6 +205,6 @@ def ficha(lic: dict, prep: dict) -> None:
         a, b, c = st.columns(3)
         if a.button("Evaluar GO / NO GO", icon="📊", type="primary", width="stretch", key=f"evaluar_{codigo}"):
             comun.ir_a("evaluacion", codigo)
-        if b.button("Orden de compra al proveedor", icon="🧾", width="stretch", key=f"oc_{codigo}"):
+        if b.button("Orden de compra al proveedor", icon="🧾", width="stretch", key=f"abrir_oc_{codigo}"):
             comun.ir_a("orden", codigo)
         c.link_button("Abrir en Mercado Público", lic.get("url") or "", icon="🔗", width="stretch")

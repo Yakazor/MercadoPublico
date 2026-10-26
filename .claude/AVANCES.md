@@ -79,6 +79,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (arreglo): al abrir la ficha y cambiar de página fallaba con StreamlitValueAssignmentNotAllowedError:
+  el botón «Orden de compra al proveedor» tenía la clave `oc_<código>` y `conservar_estado("oc_")` lo
+  reasignaba. Ahora se llama `abrir_oc_<código>` y `conservar_estado` salta cualquier valor que Streamlit no
+  deja asignar (botones, tablas con selección, cargas de archivo). Recorrido en Chromium por las 7 páginas con
+  fichas abiertas y los botones de la ficha: sin errores.
 - 2026-10-26 (plataforma, pedido de la usuaria, directo en la principal): los filtros de Licitaciones, Compras
   Ágiles, el ranking de Evaluación y los supuestos se conservan al cambiar de página
   (`comun.conservar_estado` con más prefijos; salta las tablas `*_tabla`, que Streamlit no deja reasignar;

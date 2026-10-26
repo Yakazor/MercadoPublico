@@ -12,7 +12,7 @@ for _ruta in (RAIZ / "src", RAIZ / "scripts"):
 
 import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
-from streamlit.errors import StreamlitSecretNotFoundError  # noqa: E402
+from streamlit.errors import StreamlitSecretNotFoundError, StreamlitValueAssignmentNotAllowedError  # noqa: E402
 
 from evaluar_licitaciones import clp  # noqa: E402,F401
 from radar.evaluacion import CONDICIONADO, GO, NO_GO  # noqa: E402
@@ -152,11 +152,14 @@ def panel_supuestos() -> None:
 
 def conservar_estado(*prefijos: str) -> None:
     """Streamlit borra el valor de un widget cuando su página no se muestra; reasignarlo al
-    inicio de cada corrida lo conserva al cambiar de página. Las tablas con selección no se
-    pueden reasignar (Streamlit lo prohíbe) y se saltan."""
+    inicio de cada corrida lo conserva al cambiar de página. Botones, tablas con selección y
+    cargas de archivo no se pueden reasignar (Streamlit lo prohíbe) y se saltan."""
     for clave in list(st.session_state):
-        if clave.startswith(prefijos) and not clave.endswith("_tabla"):
-            st.session_state[clave] = st.session_state[clave]
+        if clave.startswith(prefijos):
+            try:
+                st.session_state[clave] = st.session_state[clave]
+            except StreamlitValueAssignmentNotAllowedError:
+                pass
 
 
 def pesos(valor) -> int | None:
