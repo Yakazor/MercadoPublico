@@ -1,6 +1,6 @@
 # Informe ejecutivo: ADQUISICIÓN DE ELEMENTOS DE PROTECCIÓN CORPORAL
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -49,7 +49,7 @@
 - 13 de 29 ítems sin precio de mercado: el costo real es mayor.
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 14 de 16 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 
@@ -63,13 +63,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
-
-Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
-- Mitigar los riesgos marcados antes de comprometer la oferta.
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar.
 
 ## Supuestos
 

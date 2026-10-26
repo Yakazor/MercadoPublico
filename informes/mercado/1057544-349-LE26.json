@@ -1,0 +1,143 @@
+{
+ "codigo": "1057544-349-LE26",
+ "nombre": "Compra por Suministro de Artículos de Oficina Escritorio y Almacenamiento Tecnológico",
+ "fecha_consulta": "2026-10-26",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "047-0010 CARPETA TRANSPARENTE OFICIO",
+   "opciones": [
+    {
+     "tienda": "Falabella (Adetec)",
+     "producto_mercado": "Carpeta acoclip tamaño oficio tipo fast con bolsillo",
+     "url": "https://www.falabella.com/falabella-cl/shop/carpeta-con-acoclip",
+     "precio": 2390,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2008.4,
+     "coincidencia": "aproximada",
+     "nota": "la ficha no confirma que sea transparente. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-26"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "047-0041 CUADERNO CUADRICULADO 200 HJS. EMPASTADO.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 3,
+   "producto": "047-0057 LAPIZ ARTLINE Nº250 NEGRO O AZUL",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 4,
+   "producto": "047-0058 LAPIZ ARTLINE N° 70 NEGRO O AZUL",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 5,
+   "producto": "047-0146 SCOTCH 1/2 X 60 CM.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 6,
+   "producto": "047-0161 TACO CALENDARIO GRANDE",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 7,
+   "producto": "047-0179 ALFILERES 28 MM.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 8,
+   "producto": "047-0183 SOBRE OFICIO KRAFT TIPO SACO",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Sobres kraft 23,5 x 33,5 cm, pack 50",
+     "url": "https://www.falabella.com/falabella-cl/shop/sobres-de-papel-kraft",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "pack 50 sobres",
+     "unidades_equivalentes": 50,
+     "precio_unitario_neto": 268.74,
+     "coincidencia": "aproximada",
+     "nota": "medida cercana a oficio, no tipo saco confirmado. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-26"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "047-0342 MICA LISA 020 OFICIO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 10,
+   "producto": "047-0373 CORCHETES 3/8  (9.5 MM)",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 11,
+   "producto": "047-0666 LAMINA PLASTICA ADHESIVA PROTECTORA TRANSPARENTE P/INVENTARIO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 12,
+   "producto": "047-0679 LAPIZ ARTLINE Nº750 NEGRO O AZUL",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 13,
+   "producto": "057-0147 SOBRES P/CD",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  },
+  {
+   "linea": 14,
+   "producto": "057-0445 COFRES 3.5\" HDD SATA USB 3.0",
+   "opciones": [],
+   "nota": "solo aparecieron cofres 3,5\" importados (nocnoc, envío desde EE. UU.) o listados sin precio por producto; por confirmar con distribuidores"
+  },
+  {
+   "linea": 15,
+   "producto": "057-0446 COFRES 2.5\" HDD/SSD USB 3.0",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Cofre case disco duro USB 3.0 metálico 2,5\" SSD o HDD",
+     "url": "https://www.paris.cl/cofre-case-disco-duro-usb-30-metalico-25-ssd-o-hdd-MK7Y16QEOU.html",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-26"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "057-0447 COFRES SATA M.2",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
+  }
+ ]
+}

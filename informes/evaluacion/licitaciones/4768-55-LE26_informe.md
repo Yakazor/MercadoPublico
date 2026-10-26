@@ -1,6 +1,6 @@
 # Informe ejecutivo: ADQUISICION DE JUGUETES DE NAVIDAD 2026
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 1 de 1 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 
@@ -62,11 +62,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
-
-Condiciones:
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar.
 
 ## Supuestos
 

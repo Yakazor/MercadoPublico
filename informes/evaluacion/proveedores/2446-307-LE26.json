@@ -1,0 +1,24 @@
+[
+ {
+  "nombre": "Sodimac",
+  "correo": null,
+  "web": "https://www.sodimac.cl/",
+  "contacto": null,
+  "especialidad": "Herramientas y ferretería (opción usada en el presupuesto; tiendas en La Serena y Coquimbo por confirmar)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/2446-307-LE26.json"
+ },
+ {
+  "nombre": "Construmart",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Materiales de construcción, herramientas y equipos; presencia en La Serena/Coquimbo (avisos de empleo)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://cl.indeed.com/cmp/Construmart/about"
+ }
+]

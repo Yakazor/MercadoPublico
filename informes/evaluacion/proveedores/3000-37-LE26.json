@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Paris",
+  "correo": null,
+  "web": "https://www.paris.cl/",
+  "contacto": null,
+  "especialidad": "Retail; sillas usadas en el presupuesto",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/3000-37-LE26.json"
+ },
+ {
+  "nombre": "Ripley",
+  "correo": null,
+  "web": "https://simple.ripley.cl/",
+  "contacto": null,
+  "especialidad": "Retail; sillas usadas en el presupuesto",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/3000-37-LE26.json"
+ },
+ {
+  "nombre": "Bookstore.cl",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "E-commerce chileno de muebles de oficina y sillas ergonómicas (atención a compras institucionales por confirmar)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.theclinic.cl/2025/09/21/silla-ergonomica-oficina-chile/"
+ }
+]

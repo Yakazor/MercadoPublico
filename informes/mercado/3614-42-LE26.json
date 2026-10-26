@@ -1,0 +1,123 @@
+{
+ "codigo": "3614-42-LE26",
+ "nombre": "INSUMOS MEDICOS DESAM Y PIE DIABETICO",
+ "fecha_consulta": "2026-10-26",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "APOSITO EN BASE A MIEL EN GEL GRADO MEDICINAL TUBO 30G. APOSITO BACTERIOSTATICO PRIMARIO(SIMILAR A ULMOPLUS)/PIE DIABETI",
+   "opciones": [
+    {
+     "tienda": "Salcobrand",
+     "producto_mercado": "Ulmoplus gel 30 g (miel de ulmo grado medicinal)",
+     "url": "https://salcobrand.cl/products/ulmoplus",
+     "precio": 12324,
+     "iva_incluido": true,
+     "contenido": "tubo 30 g",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10356.3,
+     "coincidencia": "exacta",
+     "nota": "precio internet ($14.499 en farmacia); exigir vencimiento mínimo según bases. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-26"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "APOSITO ANTIMICROBIANO CON PHMB 15X17CMS - ESPONJA ANTIMICROBIANA AMD CON POLIHEXAMETILENO DE BUGUANIDA (PHMB) FABRICADA",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 3,
+   "producto": "APOSITO PRIMARIO REGENERATIVOS, LAMINA CON COLAGENO 10 A 12 X 10 A12 CMS./PIE DIABETICO (SIMILAR A FIBRACOL PLUS )PIE DI",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 4,
+   "producto": "APOSITO PRIMARIO BACTERIOSTATICO GEL C/POLIHEXANIDA  0,1% (SIMILAR A PRONTOSAN GEL) 30G HIDROGEL PARA EL LAVADO, DESCONT",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 5,
+   "producto": "APOSITO PRIMARIO HIDRATANTE TULL DE SILICONA LÁMINA 10X10 CMS (SIMILAR A URGOTULL)                                      ",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 6,
+   "producto": "HIDROGEL CON PLATA TUBO 10-30 GRS, APOSITO BACTERICIDA (SIMILAR A ASKINA CALGITROL AG PASTA TUBO 15 GRS, HIDROGEL MARCA ",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 7,
+   "producto": "TORULAS CON MEDIO DE TRANSPORTE  TIPO STUART, O EQUIVALENTE FUNCIONAL, CON HISOPO DE PLASTICO SENCILLO Y TAPA           ",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 8,
+   "producto": "ACIDO GRASO HIPEROXIGENADOS (LUBRICANTE CUTÁNEO)20- 50 ML. (VENCIMIENTO MINIMO 18 MESES)",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 9,
+   "producto": "CURETA DÉRMICA 3 O 4 MM. (VENCIMIENTO MINIMO 18 MESES)",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 10,
+   "producto": "BOTÍN  DESCARGA DE ANTEPIE CON DORSIFLEXIÓN DE TOBILLO, CON PLANTILLA PERSONALIZABLE ( PARA PACIENTES CON ULCERA  DE ANT",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 11,
+   "producto": "BOTIN PLANO DESCARGA, ENVASE A PLANTILLA PERSONALIZABLE Y BALANCIN ANTERIOR (PARA PACIENTES CON ULCERAS EN ANTEPIE O MED",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 12,
+   "producto": "SOLUCION LIMPIADORA DE HERIDAS QUE CONTENGA 0,1% POLIHEXANIDA Y 0,1% DE BETAINA PIE DIABETICO 350 ML. (VENCIMIENTO MINIM",
+   "opciones": [],
+   "nota": "Prontosan solución 350 ml aparece en Mercado Libre Chile (tienda LP Medical) sin precio visible; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "SOLUCION LIMPIADORA DE HERIDAS QUE CONTENGA ACIDO  HIPOCLOROSO AL 0,033%,                                              C",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 14,
+   "producto": "APOSITO DE CARBON ACTIVADO CON PLATA, CARBON ACTIVADO  CONTENIDO EN UNA MALLA DE NAILON NO ADHERENTE 10X10 CM  (VENCIMIE",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 15,
+   "producto": "APOSITO PELICULA DE POLIETILENO , TAMAÑO 10,2 X12 ,7CM APROXIMADO (VENCIMIENTO MINIMO 18 MESES)",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 16,
+   "producto": "FIELTRO COMPACTO DE COLOR BLANCO CRUDO, DE DUREZA MEDIA DE GRAN CALIDAD Y SUAVIDAD , IDEAL PARA APLICAR COMO DESCARGA , ",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  },
+  {
+   "linea": 17,
+   "producto": "BOTA DESCARGA ULCERAS PLANTARES TALLA M, BOTA ESTÁ COMPUESTA POR UNA ESTRUCTURA  O ARMAZON CON 3 VELCROS , PLETINAS BILA",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
+  }
+ ]
+}

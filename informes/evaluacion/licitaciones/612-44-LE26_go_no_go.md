@@ -1,6 +1,6 @@
 # GO / NO GO: 612-44-LE26
 
-## Resultado: 🟡 GO CON CONDICIONES
+## Resultado: 🔴 NO GO
 
 | Indicador | Valor |
 |---|---|
@@ -19,11 +19,6 @@
 
 ## Por qué
 
-- La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
-
-## Condiciones para postular
-
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
+- Cierra hoy o ya cerró: no hay tiempo para cotizar.
 
 Costo total estimado $8.779.018 neto; punto de equilibrio $10.447.031 con IVA (oferta mínima que cubre todos los costos).

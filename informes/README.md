@@ -16,9 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [1057501-3710-COT26](presupuestos/1057501-3710-COT26.md) 40-001-510-40800 SILLA ERGONOMETRICA C/BRAZO RESPALDO MEDIO | Mobiliario de oficina, escolar y almacenaje | 2026-10-26 | 1/1 | $734.895 | $1.049.430 | $146.979 | $800.000 | supera monto, sin verificar |
-| [1956-37-COT26](presupuestos/1956-37-COT26.md) ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS | Electrodomésticos, hogar y menaje | 2026-10-26 | 2/2 | $125.968 | $179.883 | $25.194 | $250.000 | — |
-| [4037-378-COT26](presupuestos/4037-378-COT26.md) IMPRESORA MULTIFUNCIONAL PARA USO EN DIRECCION DE OBRAS | Computación y electrónica | 2026-10-26 | 1/1 | $430.489 | $614.739 | $86.098 | $800.000 | sin verificar |
 | [1247197-75-LE26](presupuestos/1247197-75-LE26.md) ADQUISICIÓN DE SERVIDORES COMPUTACIONALES | Computación y electrónica | 2026-10-26 | 0/2 | $0 | $0 | $0 | $19.100.000 | faltan 2 precios |
 | [1469-288-L126](presupuestos/1469-288-L126.md) ADQUISICIÓN DE INSUMOS Y MATERIALES DE LABORATORIO, UNIVERSIDAD DE TAL | Insumos médicos no regulados y aseo | 2026-10-26 | 14/14 | $427.686 | $610.735 | $85.537 | $1.061.170 | — |
 | [2981-296-LE26](presupuestos/2981-296-LE26.md) TARJETA O TICKET ELECTRONICO DE VESTUARIO PARA EQUIPOS FRONTERA | Vestuario, uniformes y textiles | 2026-10-26 | 0/1 | $0 | $0 | $0 | $20.000.000 | falta 1 precio |
@@ -55,12 +52,15 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1230848-69-LE26](presupuestos/1230848-69-LE26.md) ADQUISICIÓN DE JUEGOS Y MATERIAL DIDÁCTICO AIDIA | Deporte, juguetes y material didáctico | 2026-10-28 | 0/4 | $0 | $0 | $0 | $10.000.000 | faltan 4 precios |
 | [3708-43-LE26](presupuestos/3708-43-LE26.md) SUMINISTRO DE NEUMÁTICOS PARA FLOTA MUNICIPAL | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-10-28 | 0/2 | $0 | $0 | $0 | $17.000.000 | faltan 2 precios |
 | [1033392-3-L126](presupuestos/1033392-3-L126.md) Adquisición de juguetes de navidad 2026 para hijos de funcionarios afi | Deporte, juguetes y material didáctico | 2026-10-29 | 1/1 | $1.448.034 | $2.067.793 | $289.607 | $1.380.000 | supera monto |
+| [1057544-349-LE26](presupuestos/1057544-349-LE26.md) Compra por Suministro de Artículos de Oficina Escritorio y Almacenamie | Artículos de oficina y librería | 2026-10-29 | 3/16 | $3.738.438 | $5.338.489 | $747.688 | $10.000.000 | faltan 13 precios, sin verificar |
+| [2981-298-LE26](presupuestos/2981-298-LE26.md) INSUMOS DE LABORATORIO BIOQUIMICA JENACIF | Instrumental e insumos de laboratorio (sin reactivos) | 2026-10-29 | 0/14 | $0 | $0 | $0 | $33.000.000 | faltan 14 precios |
 | [979-67-LE26](presupuestos/979-67-LE26.md) Adquisición de materiales construcción para plaza de pesaje de la Dire | Materiales de construcción, eléctricos e iluminación | 2026-10-29 | 41/70 | $10.779.633 | $15.393.316 | $2.155.927 | $10.000.000 | supera monto, faltan 29 precios, línea global, sin verificar |
 | [2697-61-LE26](presupuestos/2697-61-LE26.md) ADQUISICIÓN CONTENEDORES DE BASURA DE 1.100 LITROS | Insumos médicos no regulados y aseo | 2026-10-29 | 0/1 | $0 | $0 | $0 | $15.000.000 | falta 1 precio |
 | [1145-72-LE26](presupuestos/1145-72-LE26.md) Adquisición de Servidores alto rendimiento | Computación y electrónica | 2026-10-29 | 0/2 | $0 | $0 | $0 | $10.726.660 | faltan 2 precios |
 | [1562-79-LE26](presupuestos/1562-79-LE26.md) SERVIDOR DE TIEMPO NTP SATELITAL PARA OVDAS | Computación y electrónica | 2026-10-29 | 0/1 | $0 | $0 | $0 | $8.000.000 | falta 1 precio |
 | [3810-25-LE26](presupuestos/3810-25-LE26.md) ADQUISICION DE NEUMATICOS PARA LA I. MUNICIPALIDAD DE PICHILEMU AÑO 20 | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-10-30 | 0/1 | $0 | $0 | $0 | $28.000.000 | falta 1 precio |
 | [2446-307-LE26](presupuestos/2446-307-LE26.md) P.P413-2026 MATERIALES Y HERRAMIENTAS MANT ESTADIO | Ferretería y herramientas | 2026-10-30 | 28/44 | $10.487.495 | $14.976.143 | $2.097.499 | $28.003.098 | faltan 16 precios, sin verificar |
+| [3614-42-LE26](presupuestos/3614-42-LE26.md) INSUMOS MEDICOS DESAM Y PIE DIABETICO | Insumos médicos no regulados y aseo | 2026-10-30 | 1/17 | $776.412 | $1.108.716 | $155.282 | $8.124.075 | faltan 16 precios, sin verificar |
 | [1271359-137-LE26](presupuestos/1271359-137-LE26.md) ADQ. DE ARTICULOS DEPORTIVOS Y OTROS – DIREDUC | Deporte, juguetes y material didáctico | 2026-10-30 | 0/4 | $0 | $0 | $0 | $12.000.000 | faltan 4 precios |
 | [1075956-166-COT26](presupuestos/1075956-166-COT26.md) ADQUISICIÓN DE MATERIALES DE OFICINA- SEGÚN REQUERIMIENTOS TECNICOS AD | Artículos de oficina y librería | 2026-11-02 | 0/5 | $0 | $0 | $0 | $415.885 | faltan 5 precios |
 | [2446-315-LE26](presupuestos/2446-315-LE26.md) ADQUISICIÓN DE LICENCIAS DE SOFTWARE INSTITUCIONAL | Computación y electrónica | 2026-11-02 | 0/5 | $0 | $0 | $0 | $19.200.000 | faltan 5 precios |
@@ -69,6 +69,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2452-25-LE26](presupuestos/2452-25-LE26.md) ADQUISICION DE TÓNER Y TAMBOR PARA LA RED DE SALUD | Artículos de oficina y librería | 2026-11-02 | 14/18 | $18.151.265 | $25.920.007 | $3.630.253 | $19.976.060 | supera monto, faltan 4 precios, sin verificar |
 | [2408-183-LE26](presupuestos/2408-183-LE26.md) ELEMENTOS DE ESTIMULACIÓN Y MATERIAL DIDÁCTICO PROGRAMA RED LOCAL DE A | Deporte, juguetes y material didáctico | 2026-11-05 | 0/1 | $0 | $0 | $0 | $9.160.000 | falta 1 precio |
 | [979-73-LE26](presupuestos/979-73-LE26.md) Adquisición de Elementos de Protección Personal NC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 14/18 | $6.542.613 | $9.342.852 | $1.308.523 | $10.900.000 | faltan 4 precios, sin verificar |
+| [1641-427-LP26](presupuestos/1641-427-LP26.md) TCA - KIT RESINCRONIZADOR CRTP Y BALONES | Deporte, juguetes y material didáctico | 2026-11-10 | 0/15 | $0 | $0 | $0 | — | faltan 15 precios |
 
 ## Ya cerradas
 
@@ -76,6 +77,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1048-81-LE26](presupuestos/1048-81-LE26.md) ADQ. VESTUARIO Y EPP PERSONAL LUMINARIA - 3ER LLAMADO
 - [1048-82-LE26](presupuestos/1048-82-LE26.md) ADQ. 20 CAMPANAS RECICLAJE DE VIDRIO VERDE IGLU.
 - [1057415-62-LE26](presupuestos/1057415-62-LE26.md) VESTUARIO INSTITUCIONAL PARA EL HOSPITAL
+- [1057501-3710-COT26](presupuestos/1057501-3710-COT26.md) 40-001-510-40800 SILLA ERGONOMETRICA C/BRAZO RESPALDO MEDIO
 - [1057544-333-LE26](presupuestos/1057544-333-LE26.md) Compra por Suministro de Insumos Clínicos para la Unidad de Paciente Crítico Adulto
 - [1057544-338-LE26](presupuestos/1057544-338-LE26.md) Suministro de Insumos Clínicos para Diversos Servicios Clínicos
 - [1079445-48-LE26](presupuestos/1079445-48-LE26.md) ADQ. PUERTAS PARA DEPENDENCIAS DE LA DEAOPERPOL
@@ -104,6 +106,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1604-6-LE26](presupuestos/1604-6-LE26.md) ADQ. 50 NEUMÁTICOS PARA CAMIONETAS SIFRON
 - [1658-245-LE26](presupuestos/1658-245-LE26.md) P.312-2026 ADQUISICIÓN DE TABLETS PARA DIFERENRES UNIDADES MUNICIPALES
 - [188-97-LE26](presupuestos/188-97-LE26.md) ADQUISICIÓN DE ARTICULOS DEPORTIVOS ADULTO MAYOR
+- [1956-37-COT26](presupuestos/1956-37-COT26.md) ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS EN CASINO DEPROV CORDILLERA
 - [2099-55-L126](presupuestos/2099-55-L126.md) ADQUISICION DE EQUIPOS PARA LOS LABORATORIOS DE LA SECRETARÍA REGIONAL MINISTERIAL DE SALUD XII REGIÓN DE MAGALLANES Y ANTÁRTICA CHILENA
 - [2274-55-LE26](presupuestos/2274-55-LE26.md) ADQUISICIÓN DE MOBILIARIO Y AIRE ACONDICIONADO PARA ATENCIÓN INFANTIL EN CCR. PRAPS AIDIA 2026 DC 164 EXP. 16212
 - [2335-63-LE26](presupuestos/2335-63-LE26.md) INSUMOS CLINICOS OP 553-554-555-556
@@ -135,6 +138,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [3843-38-L126](presupuestos/3843-38-L126.md) ADQUISICIÓN DE EQUIPAMIENTO TECNOLÓGICO EDUCATIVO: PANTALLAS INTERACTIVAS TÁCTILES MÁS SOPORTES MÓVILES PARA LAS ESCUELAS: RAUCO Y LA ALBORADA
 - [3887-48-LE26](presupuestos/3887-48-LE26.md) ADQ. DE JUGUETES DE NAVIDAD 2026 VILLARRICA
 - [3890-217-E226](presupuestos/3890-217-E226.md) ADQ. SILLAS EJEC. PARA UNIDADES MUNICIPALES FREIRE
+- [4037-378-COT26](presupuestos/4037-378-COT26.md) IMPRESORA MULTIFUNCIONAL PARA USO EN DIRECCION DE OBRAS
 - [4190-32-LE26](presupuestos/4190-32-LE26.md) Instrumentos Musicales
 - [4284-164-L126](presupuestos/4284-164-L126.md) Servicio de alimentación galvanos y flores para celebración del día del funcionario municipal 2026 SEGUN NUMERAL 5 B.A.G Bases administrativas Generales
 - [4307-4-LE26](presupuestos/4307-4-LE26.md) ADQUISICION DE UNIFORMES Y OTROS LICEO C-44

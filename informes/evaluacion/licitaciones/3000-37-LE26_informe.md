@@ -40,23 +40,24 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 2
-- **Viabilidad:** Media.
+- **Días para el cierre:** 1
+- **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 3 de 3 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de Coquimbo: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados
 
 | # | Proveedor | Especialidad | Correo | Sitio web | Contacto | Respuesta / entrega | Costo referencial |
 |---:|---|---|---|---|---|---|---|
-| 1 | Ripley | Precio publicado para 2 línea(s) | por confirmar | [web](https://simple.ripley.cl/silla-polipropileno-negra-apilable-base-metalica-mpm00012952602) | — | por confirmar | — |
-| 2 | Paris | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.paris.cl/silla-oficina-ergon-mica-silla-escritorio-ejecutivo-ikemma-ergo-pro-MK1XITPYPS.html) | — | por confirmar | — |
+| 1 | Paris | Retail; sillas usadas en el presupuesto | por confirmar | [web](https://www.paris.cl/) | — | por confirmar | Precio de tienda en el presupuesto |
+| 2 | Ripley | Retail; sillas usadas en el presupuesto | por confirmar | [web](https://simple.ripley.cl/) | — | por confirmar | Precio de tienda en el presupuesto |
+| 3 | Bookstore.cl | E-commerce chileno de muebles de oficina y sillas ergonómicas (atención a compras institucionales por confirmar) | por confirmar | — | — | por confirmar | — |
 
 Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedir precio por volumen.
 

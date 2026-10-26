@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 12
+- **Días para el cierre:** 11
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -53,11 +53,9 @@
 
 | # | Proveedor | Especialidad | Correo | Sitio web | Contacto | Respuesta / entrega | Costo referencial |
 |---:|---|---|---|---|---|---|---|
-| 1 | Sodimac (Alaska) | Precio publicado para 2 línea(s) | por confirmar | [web](https://www.sodimac.cl/sodimac-cl/lista/CATG10785/Ropa-de-Trabajo) | — | por confirmar | — |
-| 2 | Lider (vende Andesland) | Precio publicado para 2 línea(s) | por confirmar | [web](https://www.lider.cl/ip/vestuario/chaqueta-3-en-1-desmontable-hombre/00046047693931) | — | por confirmar | — |
-| 3 | Falabella (vende Metalfer SpA) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.falabella.com/falabella-cl/shop/guante-cabritilla-con-forro) | — | por confirmar | — |
-| 4 | Lider | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/ip/vestuario/pantalon-termico-softshell-impermeable-hombre-invierno-frio-marron-xl/00387317500354) | — | por confirmar | — |
-| 5 | Sodimac (Blue Mountain) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.sodimac.cl/sodimac-cl/category/scat874914/ropa-de-trabajo) | — | por confirmar | — |
+| 1 | Proseg Ltda. (Protección y Seguridad) | Importadora, fabricante y distribuidora de EPP | por confirmar | [web](https://proseg.cl) | Avenida Francia 1314, Independencia, Santiago | por confirmar | — |
+| 2 | Sodimac | EPP y ropa de trabajo (opción usada en el presupuesto) | por confirmar | [web](https://www.sodimac.cl/) | — | por confirmar | Precio de tienda en el presupuesto |
+| 3 | Lider | Ropa térmica, polar y UV (opción usada en el presupuesto) | por confirmar | [web](https://www.lider.cl/) | — | por confirmar | Precio de tienda en el presupuesto |
 
 Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedir precio por volumen.
 

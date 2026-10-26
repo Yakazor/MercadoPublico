@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (rutina 11:00 UTC): `datos` del 26-10 08:11 (466 licitaciones, 1.437 Compras Ágiles, ninguna
+  de 2º llamado). Precios con WebSearch (sin verificar): 1057544-349-LE26 oficina (3/16), 3614-42-LE26 pie
+  diabético (1/17), 1641-427-LP26 marcapasos (0/15, no se buscó) y 2981-298-LE26 laboratorio (0/14). Las dos
+  con precios salen «GO con condiciones» solo por los pocos ítems cotizados. Mejores: 2446-307-LE26,
+  3000-37-LE26 y 979-73-LE26 (proveedores nuevos, sin correos confirmados: no hay borradores). 498 pruebas OK.
+
 - 2026-10-26 (pedido de la usuaria): 1) si la oferta con IVA supera el monto estimado, la evaluación es
   **NO GO** (antes solo sobre el 130 %; quedaba «GO con condiciones»); 2) **IVA sin crédito fiscal**:
   `evaluacion.recupera_iva_compras: false` en config.yaml (interruptor en ⚙️ Supuestos). El IVA de la compra

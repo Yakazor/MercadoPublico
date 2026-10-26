@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Proseg Ltda. (Protección y Seguridad)",
+  "correo": null,
+  "web": "https://proseg.cl",
+  "contacto": "Avenida Francia 1314, Independencia, Santiago",
+  "especialidad": "Importadora, fabricante y distribuidora de EPP",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/proseg-ltda/independencia/300070497/esp"
+ },
+ {
+  "nombre": "Sodimac",
+  "correo": null,
+  "web": "https://www.sodimac.cl/",
+  "contacto": null,
+  "especialidad": "EPP y ropa de trabajo (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/979-73-LE26.json"
+ },
+ {
+  "nombre": "Lider",
+  "correo": null,
+  "web": "https://www.lider.cl/",
+  "contacto": null,
+  "especialidad": "Ropa térmica, polar y UV (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/979-73-LE26.json"
+ }
+]
