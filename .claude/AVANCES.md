@@ -79,6 +79,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (PRECIOS para 1057501-3710-COT26, 01:30 UTC): Compra Ágil Sótero del Río, 10 sillas
+  ergonómicas con brazos y respaldo medio (cierra 26-10 08:00, estimado $800.000). Con WebSearch, sin
+  verificar: Paris (marketplace) y Sodimac Enzo, $69.990 c/IVA ($58.815 neto). Costo $617.559 neto, oferta
+  sugerida $881.874 con IVA (margen 20 %): **supera el estimado**; con IVA, $800.000 deja ~8,9 % de margen.
+  El Estado pagó $77.000 neto por silla (mediana OC). Sin precios de Dimerc, Prisa ni Mercado Libre. 495 pruebas OK.
+
 - 2026-10-25 (revisión de los 76 commits del 21 al 25-10, pedida por la usuaria; correcciones directo en la
   principal, a pedido): la orden al proveedor ya no lleva precios estimados con OC (van vacíos y el aviso
   dice cuántos faltan); textos que empiezan con «=» quedan como texto en el Excel de evaluación y en la orden
