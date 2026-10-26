@@ -123,6 +123,16 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   verificar: Paris (marketplace) y Sodimac Enzo, $69.990 c/IVA ($58.815 neto). Costo $617.559 neto, oferta
   sugerida $881.874 con IVA (margen 20 %): **supera el estimado**; con IVA, $800.000 deja ~8,9 % de margen.
   El Estado pagó $77.000 neto por silla (mediana OC). Sin precios de Dimerc, Prisa ni Mercado Libre. 495 pruebas OK.
+- 2026-10-26: «no aparecen la mejor tienda y precio en las Compras Ágiles»: de 1.574 abiertas, 0 tienen precios de
+  tiendas (la rutina hace 2 por día y las del 25-10, libros y oficina, no tenían resultados). La ficha y la
+  evaluación sin precios ahora lo dicen y muestran «PRECIOS para: <código>» para copiar en la sesión de la rutina
+  (`comun.pedir_precios`); «Mejor tienda» vacía muestra «—». Pedido a mano para 1057501-3710-COT26 (silla
+  ergonómica) en `session_01L3RAfgqwUvEXxzpcqNoJmB`.
+
+- 2026-10-26: error en la plataforma al abrir la ficha de una Compra Ágil y volver a dibujarla
+  (`StreamlitValueAssignmentNotAllowedError` en el botón «Orden de compra al proveedor»): su clave era
+  `oc_<código>` y `app.py` reasigna todas las claves `oc_` para conservar el formulario de la orden, pero
+  Streamlit no deja asignar el valor de un botón. Clave nueva `ir_oc_<código>` y prueba que corre la ficha dos veces.
 
 - 2026-10-25 (revisión de los 76 commits del 21 al 25-10, pedida por la usuaria; correcciones directo en la
   principal, a pedido): la orden al proveedor ya no lleva precios estimados con OC (van vacíos y el aviso

@@ -274,8 +274,40 @@ def _ficha(raiz: str) -> None:
     import comun
     import explorar
 
+    comun.conservar_estado("oc_")   # como app.py en cada corrida
     prep = comun.datos()
     explorar.ficha(prep["licitaciones"][0], prep)
+
+
+def _ficha_sin_precios(raiz: str) -> None:
+    import sys
+
+    sys.path.insert(0, raiz + "/plataforma")
+    import comun
+    import explorar
+
+    prep = comun.datos()
+    explorar.ficha(next(l for l in prep["licitaciones"] if l["codigo"] == "2-2-COT26"), prep)
+
+
+def test_sin_precios_de_tiendas_muestra_el_pedido_para_claude(tmp_path, monkeypatch):
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    datos = _datos()
+    for lic in datos["licitaciones"]:
+        lic["fecha_cierre"] = "2099-01-01 12:00:00"
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    ficha = AppTest.from_function(_ficha_sin_precios, args=(str(RAIZ),), default_timeout=60).run()
+    assert not ficha.exception, [e.value for e in ficha.exception]
+    assert [c.value for c in ficha.code] == ["PRECIOS para: 2-2-COT26"]
+    evaluacion = AppTest.from_function(_pagina, args=("evaluar", "pagina", str(RAIZ)), default_timeout=60)
+    evaluacion.session_state["codigo"] = "2-2-COT26"
+    evaluacion.run()
+    assert not evaluacion.exception, [e.value for e in evaluacion.exception]
+    assert "PRECIOS para: 2-2-COT26" in [c.value for c in evaluacion.code]
 
 
 def test_ranking_y_ficha_cargan_sin_errores(tmp_path, monkeypatch):
@@ -293,6 +325,10 @@ def test_ranking_y_ficha_cargan_sin_errores(tmp_path, monkeypatch):
     ranking_.run()
     assert not ranking_.exception, [e.value for e in ranking_.exception]
     ficha = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60).run()
+    assert not ficha.exception, [e.value for e in ficha.exception]
+    # Segunda corrida (p. ej. al tocar otra cosa con la ficha abierta): conservar_estado("oc_") no puede
+    # reasignar la clave de un botón (StreamlitValueAssignmentNotAllowedError, visto en la plataforma).
+    ficha.run()
     assert not ficha.exception, [e.value for e in ficha.exception]
     assert ficha.subheader and ficha.subheader[0].value.startswith("1-1-LE26")
 

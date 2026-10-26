@@ -198,8 +198,7 @@ def ficha(lic: dict, prep: dict) -> None:
                 st.caption(f"Sin precio de tiendas: línea{'s' if len(faltan) > 1 else ''} {', '.join(faltan)}. "
                            "Cotízalas con un proveedor o pídele a Claude que las busque.")
         elif items:
-            st.caption("Todavía sin precios de tiendas. Pídele a Claude que la cotice o ingresa tus "
-                       "cotizaciones en «Evaluar GO / NO GO».")
+            comun.pedir_precios(codigo, es_compra_agil(lic))
 
         pdfs = manuales.pdfs_de(codigo)
         if pdfs:
@@ -211,6 +210,8 @@ def ficha(lic: dict, prep: dict) -> None:
         a, b, c = st.columns(3)
         if a.button("Evaluar GO / NO GO", icon="📊", type="primary", width="stretch", key=f"evaluar_{codigo}"):
             comun.ir_a("evaluacion", codigo)
+        # La clave no puede empezar con «oc_»: app.py conserva esas claves reasignándolas y Streamlit no
+        # deja asignar el valor de un botón (StreamlitValueAssignmentNotAllowedError).
         if b.button("Orden de compra al proveedor", icon="🧾", width="stretch", key=f"abrir_oc_{codigo}"):
             comun.ir_a("orden", codigo)
         c.link_button("Abrir en Mercado Público", lic.get("url") or "", icon="🔗", width="stretch")
