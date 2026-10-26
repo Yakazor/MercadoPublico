@@ -7,3 +7,8 @@ gatherUsageStats = false
 
 [client]
 toolbarMode = "viewer"
+
+[global]
+# Los filtros se conservan entre páginas reasignándolos en session_state (comun.conservar_estado):
+# no es un error, así que se silencia el aviso de valor por defecto duplicado.
+disableWidgetStateDuplicationWarning = true

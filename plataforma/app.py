@@ -68,7 +68,8 @@ def boton_salir(contenedor) -> None:
 
 
 if acceso():
-    comun.conservar_estado("oc_")
+    # Filtros, supuestos y la orden se mantienen al pasar de una página a otra.
+    comun.conservar_estado("oc_", "lic_", "ca_", "rank_", "sup_", "eval_vista", "eval_codigo", "eval_iva_")
     comun.PAGINAS.update({
         "inicio": st.Page(inicio.pagina, title="Inicio", icon="🏠", url_path="inicio", default=True),
         "licitaciones": st.Page(explorar.licitaciones, title="Licitaciones", icon="📋", url_path="licitaciones"),

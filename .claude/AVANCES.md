@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-25, 15:30 UTC)
+## Estado (actualizado 2026-10-26, 02:00 UTC)
 
 | Tema | Estado |
 |---|---|
@@ -79,6 +79,15 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (plataforma, pedido de la usuaria, directo en la principal): los filtros de Licitaciones, Compras
+  Ágiles, el ranking de Evaluación y los supuestos se conservan al cambiar de página
+  (`comun.conservar_estado` con más prefijos; salta las tablas `*_tabla`, que Streamlit no deja reasignar;
+  aviso de valor duplicado silenciado en `.streamlit/config.toml`). La ficha de una fila marca con ⭐ el mejor
+  proveedor de cada línea (el mismo que elige `armar_presupuesto`), dice qué líneas no tienen precio y trae
+  botones para descargar sus PDF (presupuesto, ficha GO / NO GO, informe ejecutivo: `manuales.pdfs_de`).
+  Probado en Chromium a 1366 y 390 px. Ojo: con los datos del 25-10 solo 19 licitaciones abiertas tienen
+  precios de tiendas y ninguna Compra Ágil abierta (luego otra sesión cotizó 1057501-3710-COT26); las 143 de `informes/mercado` ya están todas en la rama
+  `datos` (las demás cerraron).
 - 2026-10-26 (PRECIOS para 1057501-3710-COT26, 01:30 UTC): Compra Ágil Sótero del Río, 10 sillas
   ergonómicas con brazos y respaldo medio (cierra 26-10 08:00, estimado $800.000). Con WebSearch, sin
   verificar: Paris (marketplace) y Sodimac Enzo, $69.990 c/IVA ($58.815 neto). Costo $617.559 neto, oferta

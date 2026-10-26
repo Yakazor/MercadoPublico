@@ -152,9 +152,10 @@ def panel_supuestos() -> None:
 
 def conservar_estado(*prefijos: str) -> None:
     """Streamlit borra el valor de un widget cuando su página no se muestra; reasignarlo al
-    inicio de cada corrida lo conserva al cambiar de página."""
+    inicio de cada corrida lo conserva al cambiar de página. Las tablas con selección no se
+    pueden reasignar (Streamlit lo prohíbe) y se saltan."""
     for clave in list(st.session_state):
-        if clave.startswith(prefijos):
+        if clave.startswith(prefijos) and not clave.endswith("_tabla"):
             st.session_state[clave] = st.session_state[clave]
 
 

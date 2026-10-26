@@ -3,8 +3,10 @@ import pandas as pd
 import streamlit as st
 
 import comun
+import manuales
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
 from radar.plataforma import es_compra_agil, filtrar, ranking
+from radar.presupuesto import armar_presupuesto
 
 DECISIONES = [comun.DECISION_CORTA[GO], comun.DECISION_CORTA[CONDICIONADO], comun.DECISION_CORTA[NO_GO],
               comun.SIN_EVALUAR]
@@ -157,13 +159,27 @@ def ficha(lic: dict, prep: dict) -> None:
 
         mercado = prep["mercado"].get(codigo, [])
         if mercado:
-            st.markdown("**Precios de tiendas**")
+            # ⭐ = la opción que usa el presupuesto en esa línea: la más barata entre las iguales o
+            # equivalentes (una «aproximada» solo si no hay otra).
+            # La misma tienda y link pueden repetirse (página de categoría): el precio desempata.
+            def opcion(linea, tienda, url, precio) -> tuple:
+                return linea, tienda, url, round(float(precio or 0), 2)
+            elegidas = {opcion(f["linea"], f["tienda"], f.get("url"), f.get("costo_unitario_neto"))
+                        for f in armar_presupuesto(items, mercado)["items"] if f.get("tienda")}
+            def mejor(op: dict) -> bool:
+                return opcion(op.get("linea"), op.get("tienda"), op.get("url"), op.get("precio_unitario_neto")) in elegidas
+            con_precio = {op.get("linea") for op in mercado}
+            faltan = [str(it.get("linea")) for it in items if it.get("linea") not in con_precio]
+            st.markdown(f"**Precios de tiendas** ({len(mercado)} opciones · ⭐ = mejor proveedor de la línea)")
             st.dataframe(pd.DataFrame([{
+                "Mejor": "⭐" if mejor(op) else "",
                 "Línea": op.get("linea"), "Tienda": op.get("tienda"), "Producto": op.get("producto_mercado"),
                 "Precio neto": comun.pesos(op.get("precio_unitario_neto")), "Coincidencia": op.get("coincidencia"),
                 "Verificado": bool(op.get("verificado")), "Link": op.get("url"),
-            } for op in sorted(mercado, key=lambda o: (o.get("linea") or 0, o.get("precio_unitario_neto") or 0))]),
+            } for op in sorted(mercado, key=lambda o: (o.get("linea") or 0, not mejor(o),
+                                                       o.get("precio_unitario_neto") or 0))]),
                 hide_index=True, column_config={
+                    "Mejor": st.column_config.TextColumn(width=50),
                     "Línea": st.column_config.NumberColumn(width=50),
                     "Tienda": st.column_config.TextColumn(width=110),
                     "Producto": st.column_config.TextColumn(width=250),
@@ -172,6 +188,19 @@ def ficha(lic: dict, prep: dict) -> None:
                     "Coincidencia": st.column_config.TextColumn(width=100),
                     "Verificado": st.column_config.CheckboxColumn(width=80),
                     "Link": st.column_config.LinkColumn(display_text="Ver", width=50)})
+            if faltan:
+                st.caption(f"Sin precio de tiendas: línea{'s' if len(faltan) > 1 else ''} {', '.join(faltan)}. "
+                           "Cotízalas con un proveedor o pídele a Claude que las busque.")
+        elif items:
+            st.caption("Todavía sin precios de tiendas. Pídele a Claude que la cotice o ingresa tus "
+                       "cotizaciones en «Evaluar GO / NO GO».")
+
+        pdfs = manuales.pdfs_de(codigo)
+        if pdfs:
+            st.markdown("**Informes en PDF**")
+            for col, (tipo, ruta) in zip(st.columns(len(pdfs)), pdfs):
+                with col:
+                    manuales.descarga(tipo, ruta, clave=f"pdf_{codigo}_{ruta}", icon="📥", width="stretch")
 
         a, b, c = st.columns(3)
         if a.button("Evaluar GO / NO GO", icon="📊", type="primary", width="stretch", key=f"evaluar_{codigo}"):

@@ -30,7 +30,25 @@ def _en_github(ruta: str) -> str:
     return f"https://github.com/{REPO}/blob/{RAMA}/{quote(ruta)}"
 
 
-def _descarga(etiqueta: str, ruta: str, mime: str = "application/pdf", clave: str | None = None, **kw) -> None:
+def pdfs_de(codigo: str) -> list[tuple[str, str]]:
+    """Los PDF de una licitación en informes/pdf/ (presupuesto, ficha GO / NO GO, informe ejecutivo)."""
+    carpeta = comun.RAIZ / "informes/pdf"
+    if not carpeta.exists():
+        return []
+    salida = []
+    for archivo in sorted(carpeta.glob(f"*_{codigo}*.pdf")):
+        m = re.search(r"\d+-\d+-[A-Z0-9]+", archivo.name)
+        if m and m.group(0) == codigo:
+            salida.append((_tipo(archivo.name), f"informes/pdf/{archivo.name}"))
+    return salida
+
+
+def _tipo(nombre: str) -> str:
+    return ("Ficha GO / NO GO" if nombre.endswith("_go_no_go.pdf") else
+            "Informe ejecutivo" if nombre.endswith("_informe.pdf") else "Presupuesto")
+
+
+def descarga(etiqueta: str, ruta: str, mime: str = "application/pdf", clave: str | None = None, **kw) -> None:
     archivo = comun.RAIZ / ruta
     if archivo.exists():
         st.download_button(etiqueta, archivo.read_bytes(), archivo.name, mime, key=clave or ruta, **kw)
@@ -49,7 +67,7 @@ def pagina() -> None:
             st.caption(descripcion)
             a, b, c = st.columns(3)
             with a:
-                _descarga("Descargar PDF", ruta, icon="📥", width="stretch")
+                descarga("Descargar PDF", ruta, icon="📥", width="stretch")
             b.link_button("Ver en GitHub", _en_github(ruta), icon="📄", width="stretch")
             if editable:
                 c.link_button("Versión editable (Claude)", editable, icon="✏️", width="stretch")
@@ -62,7 +80,7 @@ def pagina() -> None:
     columnas = st.columns(len(PLANTILLAS))
     for col, (titulo, ruta) in zip(columnas, PLANTILLAS):
         with col:
-            _descarga(titulo, ruta, XLSX, icon="📥", width="stretch")
+            descarga(titulo, ruta, XLSX, icon="📥", width="stretch")
     st.caption("La página «Orden de compra» las llena por ti.")
 
     st.subheader("Informes en PDF")
@@ -72,7 +90,7 @@ def pagina() -> None:
     pdfs = sorted(p.name for p in carpeta.glob("*.pdf")) if carpeta.exists() else []
     generales = [n for n in pdfs if not re.search(r"\d+-\d+-[A-Z0-9]+", n)]
     for nombre in generales:
-        _descarga(TITULOS.get(nombre, nombre.removesuffix(".pdf").replace("_", " ")), f"informes/pdf/{nombre}",
+        descarga(TITULOS.get(nombre, nombre.removesuffix(".pdf").replace("_", " ")), f"informes/pdf/{nombre}",
                   icon="📄")
     por_codigo: dict[str, list[str]] = {}
     for nombre in pdfs:
@@ -87,6 +105,4 @@ def pagina() -> None:
                               placeholder=f"Elige una de las {len(codigos)} licitaciones con informe")
         if codigo:
             for nombre in por_codigo[codigo]:
-                tipo = ("Ficha GO / NO GO" if nombre.endswith("_go_no_go.pdf") else
-                        "Informe ejecutivo" if nombre.endswith("_informe.pdf") else "Presupuesto")
-                _descarga(f"{tipo} ({codigo})", f"informes/pdf/{nombre}", icon="📄")
+                descarga(f"{_tipo(nombre)} ({codigo})", f"informes/pdf/{nombre}", icon="📄")
