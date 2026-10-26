@@ -5,7 +5,7 @@ import streamlit as st
 import comun
 import manuales
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
-from radar.plataforma import es_compra_agil, filtrar, ranking, soy_emt
+from radar.plataforma import es_compra_agil, filtrar, ranking, solo_emt, soy_emt
 from radar.presupuesto import armar_presupuesto
 
 DECISIONES = [comun.DECISION_CORTA[GO], comun.DECISION_CORTA[CONDICIONADO], comun.DECISION_CORTA[NO_GO],
@@ -80,11 +80,14 @@ def _explorar(compra_agil: bool) -> None:
     if cv_txt != "Todas":
         estado = next(k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt)
         lista = [l for l in lista if cv.get(l["codigo"], (None, ""))[0] is estado]
-    st.caption(f"{len(lista)} de {len(todas)} abiertas. 💲 = tiene precios de tiendas. Toca una fila para ver el "
-               "detalle, con el organismo, los ítems y el link a Mercado Público.")
+    bloqueadas = compra_agil and not soy_emt()   # 🚫 = 1er llamado: sin EMT no se puede cotizar
+    st.caption(f"{len(lista)} de {len(todas)} abiertas. 💲 = tiene precios de tiendas. "
+               + ("🚫 = 1er llamado, no puedes cotizarla. " if bloqueadas else "")
+               + "Toca una fila para ver el detalle, con el organismo, los ítems y el link a Mercado Público.")
     filas = []
     for l in lista:
-        fila = {"Código": l["codigo"], "Nombre": ("💲 " if l["codigo"] in prep["mercado"] else "") + (l.get("nombre") or ""),
+        marca = ("🚫 " if bloqueadas and solo_emt(l) else "") + ("💲 " if l["codigo"] in prep["mercado"] else "")
+        fila = {"Código": l["codigo"], "Nombre": marca + (l.get("nombre") or ""),
                 "Decisión": evaluadas.get(l["codigo"], comun.SIN_EVALUAR),
                 "Compra-venta": comun.COMPRA_VENTA[cv.get(l["codigo"], (None, ""))[0]]}
         if not compra_agil:
@@ -132,7 +135,11 @@ def ficha(lic: dict, prep: dict) -> None:
                         help="Desde que aceptas la orden de compra.")
             if lic.get("direccion_entrega"):
                 st.markdown(f"**Entrega en:** {lic['direccion_entrega']}")
-            if lic.get("llamado") == 1:
+            if solo_emt(lic) and not soy_emt():
+                st.error("🚫 **No puedes cotizar esta Compra Ágil:** es de 1er llamado, solo para empresas de menor "
+                         "tamaño (EMT), y tu ficha de proveedor dice que no clasificas. Si nadie oferta, el organismo "
+                         "puede abrir un 2º llamado para todos.")
+            elif lic.get("llamado") == 1:
                 st.info("Primer llamado: solo pueden cotizar empresas de menor tamaño (Mipymes).")
         else:
             k[3].metric("Tipo", lic.get("tipo") or "—")

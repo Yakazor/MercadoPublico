@@ -81,6 +81,9 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26: Compras Ágiles de 1er llamado marcadas con 🚫 en la tabla (si `soy_emt` es false) y la ficha
+  dice en rojo que no puede cotizarla. La usuaria seguía viéndolas porque su sesión tenía Llamado = «Todos»
+  de antes (los filtros se conservan); una sesión nueva parte en «2º».
 - 2026-10-26 (informes y repositorio): guía en PDF revisada (14 páginas): sección 7.5 «EMT y giros del SII»
   con 13 códigos de actividad por rubro y la ruta del trámite, erratas integradas (aceptación de la OC,
   referencia 801, Mesa de Ayuda 600 0061 211). El generador es `pdf/generar.py` del scratchpad de la sesión
