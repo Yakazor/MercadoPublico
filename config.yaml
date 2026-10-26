@@ -12,6 +12,10 @@ api:
 # Usa el secreto MP_TICKET_COMPRA_AGIL si existe; si no, MP_TICKET.
 compra_agil:
   activo: true
+  # ¿Mercado Público te clasifica como Empresa de Menor Tamaño (EMT)? Lo dice tu ficha de
+  # proveedor (Idoneidad). Sin EMT solo puedes cotizar en el 2º llamado: las de 1er llamado no se
+  # cotizan en la rutina y la plataforma muestra de partida solo las de 2º llamado.
+  soy_emt: false
   # Regiones del organismo comprador (1 a 16; 13 = Metropolitana, 5 = Valparaíso,
   # 6 = O'Higgins). Vacío = todo Chile (en el dashboard se filtra por región).
   regiones: []

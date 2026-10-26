@@ -5,7 +5,7 @@ import streamlit as st
 import comun
 import manuales
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
-from radar.plataforma import es_compra_agil, filtrar, ranking
+from radar.plataforma import es_compra_agil, filtrar, ranking, soy_emt
 from radar.presupuesto import armar_presupuesto
 
 DECISIONES = [comun.DECISION_CORTA[GO], comun.DECISION_CORTA[CONDICIONADO], comun.DECISION_CORTA[NO_GO],
@@ -29,6 +29,11 @@ def _explorar(compra_agil: bool) -> None:
         st.title("Compras Ágiles")
         st.caption("Hasta 100 UTM: se cotiza el total con IVA y despacho. En el primer llamado solo pueden "
                    "cotizar empresas de menor tamaño; el plazo de entrega lo fija el comprador.")
+        emt = soy_emt()
+        if not emt:
+            st.info("No clasificas como Empresa de Menor Tamaño: solo puedes cotizar en el **2º llamado**. "
+                    "Se muestran esas; elige «Todos» en Llamado (Más filtros) para ver también las de 1er llamado. "
+                    "Si te clasifican como EMT, cambia `compra_agil.soy_emt` a true en config.yaml.")
     else:
         st.title("Licitaciones")
         st.caption("Licitaciones abiertas de tus rubros. Las bases y anexos están en la ficha de Mercado Público "
@@ -59,7 +64,8 @@ def _explorar(compra_agil: bool) -> None:
             plazo_txt = a.selectbox("Entrega en máximo", ["Cualquiera", "2 días", "5 días", "10 días", "30 días"],
                                     key="ca_plazo")
             plazo = None if plazo_txt == "Cualquiera" else int(plazo_txt.split()[0])
-            llamado_txt = b.segmented_control("Llamado", ["Todos", "1º", "2º"], default="Todos", key="ca_llamado",
+            llamado_txt = b.segmented_control("Llamado", ["Todos", "1º", "2º"], default="Todos" if emt else "2º",
+                                              key="ca_llamado",
                                               help="1º llamado: solo empresas de menor tamaño. 2º: cualquiera.")
             llamado = {"1º": 1, "2º": 2}.get(llamado_txt)
 

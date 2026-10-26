@@ -13,7 +13,8 @@ informes/mercado/. Ordena por ítems concretos y monto;
 como mucho `--por-rubro` licitaciones por rubro. `--compras-agiles N` reserva los primeros N cupos para
 Compras Ágiles, primero las de la Región Metropolitana (despacho más barato desde Santiago); no
 cuentan en el tope por rubro de las licitaciones. Los días al cierre se cuentan desde hoy (el
-`dias_restantes` publicado puede tener horas). Con `--codigos` se buscan esas, aunque no
+`dias_restantes` publicado puede tener horas). Si `compra_agil.soy_emt` es false (config.yaml), salta
+las Compras Ágiles de 1er llamado: solo pueden cotizarlas empresas de menor tamaño. Con `--codigos` se buscan esas, aunque no
 cumplan los filtros.
 """
 import argparse
@@ -22,8 +23,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 import _ruta  # noqa: F401
-from radar.config import hoy_chile, ruta_proyecto
-from radar.plataforma import COMPRA_AGIL, compra_venta, dias_al_cierre, item_concreto as concreto
+from radar.config import cargar_config, hoy_chile, ruta_proyecto
+from radar.plataforma import COMPRA_AGIL, compra_venta, dias_al_cierre, item_concreto as concreto, soy_emt, solo_emt
 
 DIAS_MINIMOS = 3
 DIAS_MINIMOS_COMPRA_AGIL = 1
@@ -50,6 +51,7 @@ def main():
     ya = {p.stem for p in Path(args.mercado).glob("*.json")}
     pedidos = [c.strip() for c in args.codigos.split(",") if c.strip()]
     hoy = hoy_chile()
+    emt = soy_emt(cargar_config())
     por_codigo = defaultdict(list)
     for it in items:
         por_codigo[it["codigo"]].append(it)
@@ -68,6 +70,8 @@ def main():
         for l in lics:
             its = por_codigo.get(l["codigo"], [])
             if l["codigo"] in ya or l.get("rubro") == "consultoria_gestion_bi" or l.get("solo_regulados"):
+                continue
+            if not emt and solo_emt(l):              # 1er llamado de Compra Ágil: no puedes cotizar
                 continue
             minimo = DIAS_MINIMOS_COMPRA_AGIL if l.get("tipo") == COMPRA_AGIL else DIAS_MINIMOS
             if (dias_al_cierre(l, hoy) or 0) < minimo or not (1 <= len(its) <= 20):

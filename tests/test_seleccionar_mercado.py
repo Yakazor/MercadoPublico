@@ -44,3 +44,14 @@ def test_licitacion_que_cierra_pronto_o_cerrada_no_entra(tmp_path, monkeypatch):
             _lic("2-2-COT26", "2026-10-24 15:00:00", tipo="Compra Ágil"),   # cierra hoy
             _lic("3-3-LE26", "2026-10-28 15:00:00")]
     assert _elegir(tmp_path, monkeypatch, lics, "--compras-agiles", "1") == ["3-3-LE26"]
+
+
+def test_sin_emt_salta_las_compras_agiles_de_primer_llamado(tmp_path, monkeypatch):
+    import seleccionar_mercado as script
+    lics = [_lic("1-1-COT26", "2026-10-25 15:00:00", tipo="Compra Ágil", llamado=1),
+            _lic("2-2-COT26", "2026-10-25 15:00:00", tipo="Compra Ágil", llamado=2),
+            _lic("3-3-LE26", "2026-10-30 15:00:00")]
+    monkeypatch.setattr(script, "cargar_config", lambda: {"compra_agil": {"soy_emt": False}})
+    assert _elegir(tmp_path, monkeypatch, lics, "--compras-agiles", "2") == ["2-2-COT26", "3-3-LE26"]
+    monkeypatch.setattr(script, "cargar_config", lambda: {"compra_agil": {"soy_emt": True}})
+    assert _elegir(tmp_path, monkeypatch, lics, "--compras-agiles", "2") == ["1-1-COT26", "2-2-COT26", "3-3-LE26"]

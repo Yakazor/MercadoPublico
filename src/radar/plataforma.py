@@ -264,6 +264,16 @@ def ranking(prep: dict, supuestos: dict | None = None, margen: float = 0.20, otr
     return sorted(filas, key=lambda t: -puntaje(t[2]))
 
 
+def soy_emt(config: dict | None = None) -> bool:
+    """`compra_agil.soy_emt` de config.yaml: sin EMT no se puede cotizar en el 1er llamado de Compra Ágil."""
+    return bool(((config if config is not None else cargar_config()).get("compra_agil") or {}).get("soy_emt", True))
+
+
+def solo_emt(lic: dict) -> bool:
+    """Compra Ágil de 1er llamado: solo pueden cotizar empresas de menor tamaño."""
+    return lic.get("tipo") == COMPRA_AGIL and lic.get("llamado") == 1
+
+
 def supuestos_config(config: dict | None = None) -> dict:
     """Supuestos de la evaluación con lo que diga `config.yaml > evaluacion`."""
     conf = (config if config is not None else cargar_config()).get("evaluacion") or {}

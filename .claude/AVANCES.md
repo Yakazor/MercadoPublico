@@ -79,6 +79,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (EMT): la ficha de proveedor de la usuaria dice «No clasifica como Empresa de Menor Tamaño»
+  (persona natural, tamaño «Sin información» en el SII), así que no puede cotizar Compras Ágiles de 1er
+  llamado. Nuevo `compra_agil.soy_emt: false` en config.yaml: `seleccionar_mercado.py` salta las de 1er
+  llamado (la rutina no gasta búsquedas en ellas) y la página Compras Ágiles parte con Llamado = 2º y un
+  aviso (con «Todos» se ven todas). Con los datos del 25-10 las 1.558 abiertas son de 1er llamado: 0 visibles.
+  Si la reclasifican como EMT, poner `soy_emt: true`.
 - 2026-10-26 (arreglo): al abrir la ficha y cambiar de página fallaba con StreamlitValueAssignmentNotAllowedError:
   el botón «Orden de compra al proveedor» tenía la clave `oc_<código>` y `conservar_estado("oc_")` lo
   reasignaba. Ahora se llama `abrir_oc_<código>` y `conservar_estado` salta cualquier valor que Streamlit no
