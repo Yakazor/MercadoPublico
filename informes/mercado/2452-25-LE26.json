@@ -23,8 +23,8 @@
      "fecha_consulta": "2026-10-25",
      "verificado": true,
      "verificado_en": "2026-10-25",
-     "precio_pagina": 36077.0,
-     "verificacion_pagina": "2026-10-25: la página muestra $36.077."
+     "precio_pagina": 35990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $35.990."
     },
     {
      "tienda": "Falabella (vende Techbox)",
@@ -86,10 +86,10 @@
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
-     "verificado": true,
+     "verificado": false,
      "verificado_en": "2026-10-25",
-     "precio_pagina": 65200.0,
-     "verificacion_pagina": "2026-10-25: la página muestra $65.200."
+     "precio_pagina": 69990.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $69.990, no $65.990: puede haber cambiado."
     },
     {
      "tienda": "Falabella (vende Alcaplus)",
@@ -144,7 +144,10 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; confirmar precio vigente",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página muestra $77.990.",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 77990.0
     }
    ]
   },
@@ -210,7 +213,10 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; el dato de la búsqueda era de caché (dic-2024): confirmar precio vigente",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página muestra $119.990.",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 119990.0
     }
    ]
   },
@@ -231,7 +237,10 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página muestra $11.990.",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 11990.0
     }
    ]
   },
@@ -252,7 +261,10 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página muestra $11.990.",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 11990.0
     }
    ]
   },
@@ -273,7 +285,10 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página muestra $11.990.",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 11990.0
     }
    ]
   },
@@ -294,7 +309,10 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página muestra $11.990.",
+     "verificado": true,
+     "verificado_en": "2026-10-25",
+     "precio_pagina": 11990.0
     }
    ]
   },
@@ -424,7 +442,9 @@
      "coincidencia": "exacta",
      "nota": "precio «desde» en la página de categoría de HP Chile; confirmar",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $454.990, no $358.990: puede haber cambiado.",
+     "verificado": false,
+     "precio_pagina": 454990.0
     }
    ]
   }
@@ -432,6 +452,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-25",
   "opciones": 19,
-  "verificadas": 10
+  "verificadas": 15
  }
 }

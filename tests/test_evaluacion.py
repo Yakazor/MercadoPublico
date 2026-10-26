@@ -1,4 +1,5 @@
 import json
+from datetime import date
 import sys
 from pathlib import Path
 
@@ -63,8 +64,8 @@ def test_costos_de_region_garantia_y_orden():
 def test_script_genera_excel_informes_correos_y_log(tmp_path, monkeypatch):
     import evaluar_licitaciones as script
 
-    lics = [_lic(), _lic(codigo="2-2-COT26", tipo="Compra Ágil", plazo_entrega_dias=3, llamado=1),
-            _lic(codigo="3-3-LE26", dias_restantes=-1)]
+    lics = [_lic(), _lic(codigo="2-2-COT26", tipo="Compra Ágil", plazo_entrega_dias=3, llamado=1, nombre="= a lo solicitado"),
+            _lic(codigo="3-3-LE26", dias_restantes=2, fecha_cierre="2026-10-22 15:00:00")]   # ya cerró
     items = [{"codigo": "1-1-LE26", "linea": 1, "producto": "Silla", "descripcion": "Silla de oficina",
               "cantidad": 100, "unidad": "Unidad"}]
     mercado = tmp_path / "mercado"
@@ -77,6 +78,8 @@ def test_script_genera_excel_informes_correos_y_log(tmp_path, monkeypatch):
     entrada = tmp_path / "entrada.json"
     entrada.write_text(json.dumps({"licitaciones_procesadas": "1-1-LE26", "resultado": "revisada"}))
     salida = tmp_path / "eval"
+    # Los días al cierre se cuentan desde hoy (no se usa el dias_restantes publicado).
+    monkeypatch.setattr(script, "hoy_chile", lambda: date(2026, 10, 24))
     monkeypatch.setattr(sys, "argv", ["x", "--items", str(tmp_path / "items.json"), "--licitaciones",
                                       str(tmp_path / "lics.json"), "--mercado", str(mercado), "--salida", str(salida),
                                       "--registrar", str(entrada)])
@@ -86,6 +89,9 @@ def test_script_genera_excel_informes_correos_y_log(tmp_path, monkeypatch):
     assert wb.sheetnames == ["Licitaciones", "Evaluación", "Claude Log"]
     codigos = [r[0].value for r in wb["Licitaciones"].iter_rows(min_row=2)]
     assert sorted(codigos) == ["1-1-LE26", "2-2-COT26"]           # la cerrada no entra
+    # Un nombre que empieza con «=» queda como texto, no como fórmula.
+    igual = [c for f in wb["Licitaciones"].iter_rows() for c in f if c.value == "= a lo solicitado"]
+    assert igual and all(c.data_type == "s" for c in igual)
     assert wb["Evaluación"]["C2"].value == GO
     assert [r[1].value for r in wb["Claude Log"].iter_rows(min_row=2)] == ["Claude", "Sistema (script)"]
     correo = (salida / "licitaciones" / "1-1-LE26_correos.md").read_text()

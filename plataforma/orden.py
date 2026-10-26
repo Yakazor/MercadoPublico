@@ -83,8 +83,11 @@ def _cargar_licitacion(codigo: str, tienda: str | None) -> None:
     if es_compra_agil(lic) and lic.get("plazo_entrega_dias") is not None:
         st.session_state["oc_cond_observaciones"] = (f"Compra Ágil {codigo}: plazo de entrega al organismo "
                                                      f"{lic['plazo_entrega_dias']:g} días desde la OC del Estado.")
+    sin_precio = sum(1 for it in datos["items"] if it["precio_unitario_neto"] is None)
     st.session_state["oc_aviso"] = (f"Se cargaron {len(datos['items'])} ítems de {codigo}"
-                                    + (f" (tienda {tienda})" if tienda else "") + " con su costo unitario neto.")
+                                    + (f" (tienda {tienda})" if tienda else "") + " con su costo unitario neto."
+                                    + (f" {sin_precio} sin precio (sin cotizar o estimados con OC del Estado): "
+                                       "escribe el que te dé el proveedor." if sin_precio else ""))
 
 
 def _cargar_json() -> None:

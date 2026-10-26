@@ -5,13 +5,15 @@ Uso:
         --salida lote.json [--maximo 4] [--por-rubro 2] [--compras-agiles 2] [--codigos 123-4-LE26,...]
 
 Prioriza licitaciones que se pueden cotizar ítem por ítem: abiertas con tiempo
-para ofertar (3+ días), de rubros de productos (no consultoría), que no sean solo
+para ofertar (3+ días; las Compras Ágiles duran 1 o 2 días, a ellas les basta 1), de rubros de productos (no consultoría), que no sean solo
 de productos regulados ni incluyan servicios (`compra_venta` no las marca como «no»),
 con 1 a 20 ítems concretos (con cantidad, sin "1 Global" ni "según bases"), de un
 monto manejable para partir (hasta `--monto-maximo`) y sin precios ya buscados en
 informes/mercado/. Ordena por ítems concretos y monto;
-como mucho `--por-rubro` por rubro. `--compras-agiles N` reserva los primeros N cupos para
-Compras Ágiles, primero las de la Región Metropolitana (despacho más barato desde Santiago). Con `--codigos` se buscan esas, aunque no
+como mucho `--por-rubro` licitaciones por rubro. `--compras-agiles N` reserva los primeros N cupos para
+Compras Ágiles, primero las de la Región Metropolitana (despacho más barato desde Santiago); no
+cuentan en el tope por rubro de las licitaciones. Los días al cierre se cuentan desde hoy (el
+`dias_restantes` publicado puede tener horas). Con `--codigos` se buscan esas, aunque no
 cumplan los filtros.
 """
 import argparse
@@ -20,8 +22,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 import _ruta  # noqa: F401
-from radar.config import ruta_proyecto
-from radar.plataforma import compra_venta, item_concreto as concreto
+from radar.config import hoy_chile, ruta_proyecto
+from radar.plataforma import COMPRA_AGIL, compra_venta, dias_al_cierre, item_concreto as concreto
+
+DIAS_MINIMOS = 3
+DIAS_MINIMOS_COMPRA_AGIL = 1
 
 CAMPOS_ITEM = ("linea", "producto", "descripcion", "cantidad", "unidad", "ref_mediana")
 
@@ -44,6 +49,7 @@ def main():
     lics = json.loads(Path(args.licitaciones).read_text(encoding="utf-8"))
     ya = {p.stem for p in Path(args.mercado).glob("*.json")}
     pedidos = [c.strip() for c in args.codigos.split(",") if c.strip()]
+    hoy = hoy_chile()
     por_codigo = defaultdict(list)
     for it in items:
         por_codigo[it["codigo"]].append(it)
@@ -63,7 +69,8 @@ def main():
             its = por_codigo.get(l["codigo"], [])
             if l["codigo"] in ya or l.get("rubro") == "consultoria_gestion_bi" or l.get("solo_regulados"):
                 continue
-            if (l.get("dias_restantes") or 0) < 3 or not (1 <= len(its) <= 20):
+            minimo = DIAS_MINIMOS_COMPRA_AGIL if l.get("tipo") == COMPRA_AGIL else DIAS_MINIMOS
+            if (dias_al_cierre(l, hoy) or 0) < minimo or not (1 <= len(its) <= 20):
                 continue
             if compra_venta(l, its)[0] is False:     # servicios, licencias o registro ISP
                 continue
@@ -76,7 +83,7 @@ def main():
             # Mejor con varios ítems concretos (un presupuesto de verdad) y monto conocido.
             candidatas.append((-min(concretos, 15), -(monto or 0), l))
         candidatas.sort(key=lambda c: (c[0], c[1]))
-        agiles = sorted((c for c in candidatas if c[-1].get("tipo") == "Compra Ágil"),
+        agiles = sorted((c for c in candidatas if c[-1].get("tipo") == COMPRA_AGIL),
                         key=lambda c: ("metropolitana" not in (c[-1].get("region") or "").lower(), c[0], c[1]))
         primeras = agiles[:args.compras_agiles]
         orden = primeras + [c for c in candidatas if all(c is not p for p in primeras)]
@@ -84,9 +91,11 @@ def main():
         for *_, l in orden:
             if len(elegidas) >= args.maximo:
                 break
-            if por_rubro[l["rubro"]] >= args.por_rubro:
-                continue
-            por_rubro[l["rubro"]] += 1
+            reservada = any(l is p[-1] for p in primeras)
+            if not reservada:
+                if por_rubro[l["rubro"]] >= args.por_rubro:
+                    continue
+                por_rubro[l["rubro"]] += 1
             elegidas.append(ficha(l))
     Path(args.salida).write_text(json.dumps(elegidas, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{len(elegidas)} licitaciones, {sum(len(e['items']) for e in elegidas)} ítems")

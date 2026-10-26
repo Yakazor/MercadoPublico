@@ -31,10 +31,10 @@ from openpyxl.utils import get_column_letter
 
 import _ruta  # noqa: F401
 from presupuesto import opciones_mercado
-from radar.almacenamiento import texto_excel
+from radar.almacenamiento import texto_en_celda, texto_excel
 from radar.config import cargar_config, hoy_chile, ruta_proyecto
 from radar.evaluacion import NO_GO, evaluar, puntaje
-from radar.plataforma import supuestos_config
+from radar.plataforma import dias_al_cierre, supuestos_config
 from radar.presupuesto import armar_presupuesto
 
 URL_LICITACION = "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={}"
@@ -277,6 +277,8 @@ def excel(todas: list[tuple], evaluadas: list[tuple], log: list[dict], destino: 
             c.alignment = Alignment(wrap_text=True, vertical="center")
         for fila in filas[nombre]:
             ws.append([texto_excel(v) for v in fila])
+            for c in ws[ws.max_row]:          # aquí no hay fórmulas: todo es texto o número
+                texto_en_celda(c)
         for j, col in enumerate(columnas, 1):
             letra = get_column_letter(j)
             ws.column_dimensions[letra].width = 14 if col in dinero | porcentaje else 40 if col in (
@@ -348,8 +350,10 @@ def main():
     log = json.loads(ruta_log.read_text(encoding="utf-8")) if ruta_log.exists() else []
 
     items = json.loads(Path(args.items).read_text(encoding="utf-8"))
-    lics = [l for l in json.loads(Path(args.licitaciones).read_text(encoding="utf-8"))
-            if l.get("dias_restantes") is None or l["dias_restantes"] >= 0]
+    # Días al cierre contados desde hoy (los publicados pueden tener horas).
+    lics = [l | {"dias_restantes": dias_al_cierre(l, hoy)}
+            for l in json.loads(Path(args.licitaciones).read_text(encoding="utf-8"))]
+    lics = [l for l in lics if l["dias_restantes"] is None or l["dias_restantes"] >= 0]
     por_codigo: dict[str, list[dict]] = {}
     for it in items:
         por_codigo.setdefault(it["codigo"], []).append(it)

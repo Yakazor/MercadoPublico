@@ -9,7 +9,6 @@ tiendas y a Mercado Público quedan activos en el PDF.
 """
 import html
 import re
-import sys
 
 CSS = """
 @page { size: A4 %(orient)s; margin: 14mm 12mm 16mm 12mm; }

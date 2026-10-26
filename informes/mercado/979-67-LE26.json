@@ -248,8 +248,8 @@
      "nota": "Sin tope confirmado",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-23",
-     "precio_pagina": 3490.0,
-     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $3.490, no $4.490: puede haber cambiado."
+     "precio_pagina": 3290.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $3.290, no $4.490: puede haber cambiado."
     }
    ]
   },
@@ -374,12 +374,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 2932.77,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-25",
-     "precio_pagina": 3500.0,
-     "verificacion_pagina": "2026-10-25: la página muestra $3.500."
+     "precio_pagina": 3190.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $3.190, no $3.490: puede haber cambiado."
     }
    ]
   },
@@ -871,8 +871,8 @@
      "nota": "Oferta 1.717",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-25",
-     "precio_pagina": 2074.0,
-     "verificacion_pagina": "2026-10-25: la página muestra $2.074."
+     "precio_pagina": 1990.0,
+     "verificacion_pagina": "2026-10-25: la página muestra $1.990."
     },
     {
      "tienda": "Sodimac",
@@ -1738,6 +1738,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-25",
   "opciones": 75,
-  "verificadas": 49
+  "verificadas": 48
  }
 }

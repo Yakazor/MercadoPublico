@@ -26,8 +26,9 @@ IVA = 0.19
 _VACIAS = {"de", "del", "la", "el", "los", "las", "para", "con", "y", "o", "e", "en", "por", "a", "al",
            "x", "un", "una", "uno", "sin", "tipo", "segun", "otros", "otras", "u"}
 SIMILITUD_MINIMA = 0.8
-# Unidades que no dicen cuántas cosas se compran: la cantidad real está en las bases.
-UNIDADES_GLOBALES = {"global", "kit", "servicio", "lote"}
+# Unidades que no dicen cuántas cosas se compran: la cantidad real está en las bases. La usan
+# el presupuesto (línea global) y la selección de ítems que se pueden cotizar (radar.plataforma).
+UNIDADES_GLOBALES = {"global", "gl", "kit", "lote", "servicio", "unidad no definida"}
 # Razón referencia OC / costo unitario con gastos fuera de este rango: la mediana de OC
 # mezcla presentaciones (toldo de $27.723 con referencia de $1.790.250) y no sirve para comparar.
 RAZON_REFERENCIA = (0.1, 10.0)
@@ -46,7 +47,8 @@ def _numero(valor) -> float | None:
 
 
 def unidad_global(unidad: str | None) -> bool:
-    """«Global», «Kit», «Servicio» o «Lote»: la cantidad pedida no es de unidades sueltas."""
+    """«Global», «GL», «Kit», «Lote», «Servicio» o «Unidad no definida»: la cantidad pedida no
+    es de unidades sueltas."""
     return normalizar(unidad) in UNIDADES_GLOBALES
 
 

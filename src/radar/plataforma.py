@@ -30,7 +30,7 @@ from .config import cargar_config
 from .evaluacion import SUPUESTOS, evaluar, puntaje
 from .filtro import normalizar
 from .orden_proveedor import crear_orden
-from .presupuesto import armar_presupuesto
+from .presupuesto import armar_presupuesto, unidad_global
 
 ORIGEN_DATOS = "https://raw.githubusercontent.com/Yakazor/MercadoPublico/datos"
 ARCHIVOS = ("licitaciones", "items", "mercado", "meta")
@@ -39,8 +39,8 @@ COMPRA_AGIL = "Compra Ágil"
 COTIZACION = "Cotización ingresada"
 ESTIMADA_OC = "estimada (OC)"
 
-# Ítems que se pueden cotizar (también los usa scripts/seleccionar_mercado.py).
-UNIDADES_NO_FISICAS = {"global", "gl", "unidad no definida", "servicio"}
+# Ítems que se pueden cotizar (también los usa scripts/seleccionar_mercado.py): con unidad
+# física, la misma regla que el presupuesto (`unidad_global`).
 _SEGUN = re.compile(r"seg[uú]n (bases|detalle|cantidades|anexo|especificaciones|lo indicado)|de acuerdo a (las )?bases", re.I)
 # Descripciones que nombran una categoría y no un producto ("Mobiliario para la oficina X").
 _GENERICA = re.compile(r"^(mobiliario|insumos|materiales|equipamiento|articulos|art[ií]culos|equipos|productos)\b", re.I)
@@ -165,11 +165,19 @@ def opciones(items: list[dict], mercado: list[dict], cotizaciones: dict | None =
     return filas
 
 
+def dias_al_cierre(lic: dict, hoy) -> int | None:
+    """Días desde `hoy` (fecha de Chile) hasta el cierre. El `dias_restantes` publicado se calculó
+    cuando corrió el radar o Compra Ágil (puede tener horas): se usa solo si la fecha no se lee."""
+    try:
+        return (datetime.fromisoformat(str(lic.get("fecha_cierre") or "")[:10]).date() - hoy).days
+    except ValueError:
+        return lic.get("dias_restantes")
+
+
 def item_concreto(item: dict) -> bool:
     """Ítem que se puede cotizar: cantidad, unidad física y una descripción propia."""
     descripcion = (item.get("descripcion") or "").strip()
-    unidad = (item.get("unidad") or "").strip().lower()
-    return (bool(item.get("cantidad")) and unidad not in UNIDADES_NO_FISICAS and len(descripcion) >= 8
+    return (bool(item.get("cantidad")) and not unidad_global(item.get("unidad")) and len(descripcion) >= 8
             and not _SEGUN.search(descripcion) and not _GENERICA.search(descripcion)
             and not _SOFTWARE.search(f"{item.get('producto') or ''} {descripcion}"))
 
@@ -240,14 +248,16 @@ def mercado_por_item(ops: list[dict]) -> dict:
 
 def datos_orden(lic: dict, p: dict, tienda: str | None = None) -> dict:
     """Datos para `crear_orden` desde el presupuesto: los ítems (de una tienda, o todos) con su
-    cantidad y costo unitario neto; el lugar de entrega de la Compra Ágil si lo informa."""
+    cantidad y costo unitario neto; el lugar de entrega de la Compra Ágil si lo informa.
+    Las líneas estimadas con OC del Estado van sin precio: nadie lo cotizó y no puede llegarle
+    al proveedor como si fuera su precio."""
     items = []
     for it in p["items"]:
         if tienda and it.get("tienda") != tienda:
             continue
         descripcion = it.get("producto_mercado") or (
             it.get("descripcion") if es_compra_agil(lic) and it.get("descripcion") else it.get("producto"))
-        costo = it.get("costo_unitario_neto")
+        costo = None if it.get("coincidencia") == ESTIMADA_OC else it.get("costo_unitario_neto")
         items.append({"descripcion": " ".join(str(descripcion or "").split())[:200], "unidad": it.get("unidad"),
                       "cantidad": it.get("cantidad"), "precio_unitario_neto": round(costo) if costo else None})
     condiciones = {}
