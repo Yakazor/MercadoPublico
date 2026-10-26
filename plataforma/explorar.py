@@ -116,7 +116,9 @@ def _explorar(compra_agil: bool) -> None:
     evento = st.dataframe(
         pd.DataFrame(filas), hide_index=True, on_select="rerun", selection_mode="single-row", key=f"{pre}_tabla",
         height=420, column_config=config)
-    if evento.selection.rows:
+    # La selección queda guardada aunque la lista cambie (filtros, datos recién publicados): un
+    # índice que ya no existe no abre nada.
+    if evento.selection.rows and evento.selection.rows[0] < len(lista):
         ficha(lista[evento.selection.rows[0]], prep)
 
 
@@ -156,17 +158,18 @@ def ficha(lic: dict, prep: dict) -> None:
             st.dataframe(pd.DataFrame([{
                 "Línea": it.get("linea"), "Producto": it.get("producto"), "Descripción": it.get("descripcion"),
                 "Cantidad": it.get("cantidad"), "Unidad": it.get("unidad"),
-                "Pagado Estado": comun.pesos(it.get("ref_mediana")), "N° OC": it.get("ref_n_ordenes"),
+                "Pagado Estado": comun.numero_texto(it.get("ref_mediana")),
+                "N° OC": comun.numero_texto(it.get("ref_n_ordenes")),
             } for it in items]), hide_index=True, column_config={
                 "Línea": st.column_config.NumberColumn(width=50),
                 "Producto": st.column_config.TextColumn(width=170),
                 "Descripción": st.column_config.TextColumn(width=270),
                 "Cantidad": st.column_config.NumberColumn(format="%g", width=75),
                 "Unidad": st.column_config.TextColumn(width=65),
-                "Pagado Estado": st.column_config.NumberColumn(
-                    format="localized", width=110,
+                "Pagado Estado": st.column_config.TextColumn(
+                    alignment="right", width=110,
                     help="Mediana del precio unitario neto en órdenes de compra de productos parecidos"),
-                "N° OC": st.column_config.NumberColumn(width=60, help="Órdenes de compra comparadas")})
+                "N° OC": st.column_config.TextColumn(alignment="right", width=60, help="Órdenes de compra comparadas")})
         else:
             st.caption("El radar no trae los ítems de esta licitación: revísalos en la ficha.")
 

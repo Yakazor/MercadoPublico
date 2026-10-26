@@ -139,7 +139,7 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
 
     a, b = st.columns(2)
     with a:
-        st.markdown(
+        st.markdown(comun.md(
             "| Costos (netos) | Monto |\n|---|---:|\n"
             f"| Mercadería | {comun.clp(c['directos'])} |\n"
             f"| Despacho ({pct(ev.supuestos['logistica_pct'])}, zona {ev.supuestos['zona']}) | {comun.clp(c['logistica'])} |\n"
@@ -149,16 +149,16 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
             f"| **Costo total** | **{comun.clp(c['total'])}** |\n"
             f"| Oferta neta | {comun.clp(i['oferta_neta'])} |\n"
             f"| Margen bruto | {comun.clp(m['bruto'])} ({pct(m['bruto_pct'])}) |\n"
-            f"| **Margen neto** | **{comun.clp(m['neto'])} ({pct(m['neto_pct'])})** |")
+            f"| **Margen neto** | **{comun.clp(m['neto'])} ({pct(m['neto_pct'])})** |"))
     with b:
         st.markdown(f"**Complejidad:** {ev.complejidad} · **Factibilidad:** operativa "
                     f"{ev.factibilidad['operativa'].lower()}, financiera {ev.factibilidad['financiera'].lower()}, "
                     f"plazos {ev.factibilidad['plazos'].lower()}")
-        st.markdown("**Por qué**\n" + "\n".join(f"- {r}" for r in ev.razones))
+        st.markdown(comun.md("**Por qué**\n" + "\n".join(f"- {r}" for r in ev.razones)))
         if ev.condiciones:
-            st.markdown("**Condiciones para postular**\n" + "\n".join(f"- {x}" for x in ev.condiciones))
+            st.markdown(comun.md("**Condiciones para postular**\n" + "\n".join(f"- {x}" for x in ev.condiciones)))
         if ev.riesgos:
-            st.markdown("**Riesgos detectados**\n" + "\n".join(f"- {r}" for r in ev.riesgos))
+            st.markdown(comun.md("**Riesgos detectados**\n" + "\n".join(f"- {r}" for r in ev.riesgos)))
 
     with st.expander("Presupuesto por línea"):
         st.dataframe(pd.DataFrame([{
@@ -202,7 +202,7 @@ def _documentos(lic: dict, p: dict, ev, mercado: list[dict], con_precios: bool =
     with st.expander("Ver correos a proveedores", expanded=not con_precios):
         st.caption("Copia el texto con el botón de cada recuadro. Nunca se envían solos; revisa el correo del "
                    "proveedor en su web antes de enviar.")
-        st.markdown(texto_correos.split("\n", 2)[-1].replace("\n## ", "\n#### ").removeprefix("## "))
+        st.markdown(comun.md(texto_correos.split("\n", 2)[-1].replace("\n## ", "\n#### ").removeprefix("## ")))
 
 
 def _proveedores(codigo: str, mercado: list[dict]) -> tuple[list[dict], dict]:
@@ -234,7 +234,7 @@ def _ranking(prep: dict) -> None:
 
     def abrir():
         sel = st.session_state["rank_tabla"].selection.rows
-        if sel:
+        if sel and sel[0] < len(codigos):
             st.session_state.update(codigo=codigos[sel[0]], eval_vista=VISTAS[0])
 
     st.dataframe(pd.DataFrame([{

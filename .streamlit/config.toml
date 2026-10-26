@@ -7,6 +7,9 @@ gatherUsageStats = false
 
 [client]
 toolbarMode = "viewer"
+# Un error muestra solo su tipo y mensaje, sin el traceback con rutas del servidor (el detalle
+# completo queda en los registros: Manage app › logs).
+showErrorDetails = "type"
 
 [global]
 # Los filtros se conservan entre páginas reasignándolos en session_state (comun.conservar_estado):

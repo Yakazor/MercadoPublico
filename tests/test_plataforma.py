@@ -446,3 +446,16 @@ def test_version_datos_lee_el_commit_de_la_rama_y_fija_la_url(monkeypatch):
 
     monkeypatch.setattr(plataforma.requests, "get", caido)
     assert plataforma.version_datos() is None
+
+
+def test_montos_en_markdown_no_se_leen_como_formula():
+    pytest.importorskip("streamlit")
+    import sys
+
+    sys.path.insert(0, str(RAIZ / "plataforma"))
+    import comun
+
+    # Entre dos «$» Streamlit dibuja una fórmula: el riesgo salía pegado y en cursiva.
+    assert comun.md("La oferta ($881.874) supera el monto ($800.000).") == \
+        r"La oferta (\$881.874) supera el monto (\$800.000)."
+    assert comun.numero_texto(None) == "—" and comun.numero_texto(72450.4) == "72.450"

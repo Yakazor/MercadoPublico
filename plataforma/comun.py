@@ -218,6 +218,18 @@ def ir_a(pagina: str, codigo: str | None = None) -> None:
     st.switch_page(PAGINAS[pagina])
 
 
+def md(texto: str) -> str:
+    """Texto para st.markdown y los avisos: Streamlit lee lo que va entre dos «$» como fórmula
+    (LaTeX), así que «la oferta ($881.874) supera el monto ($800.000)» salía pegado y en cursiva."""
+    return str(texto).replace("$", r"\$")
+
+
+def numero_texto(valor) -> str:
+    """Número para una tabla chica de solo lectura: «72.450», o «—» si falta (Streamlit muestra
+    «None» en las celdas vacías de una columna numérica y no tiene opción para cambiarlo)."""
+    return "—" if valor is None or pd.isna(valor) else f"{round(valor):,}".replace(",", ".")
+
+
 def aviso_decision(ev) -> None:
-    texto = f"**{ev.etiqueta}** · {ev.recomendacion}"
+    texto = md(f"**{ev.etiqueta}** · {ev.recomendacion}")
     {GO: st.success, CONDICIONADO: st.warning}.get(ev.decision, st.error)(texto)

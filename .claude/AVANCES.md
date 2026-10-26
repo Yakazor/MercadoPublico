@@ -81,6 +81,15 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (auditoría de la plataforma del 25-10, PDF subido por la usuaria): 1) botón «Orden de compra»
+  de la ficha: ya corregido (f91a307); 2) IndexError con selección obsoleta: se valida el índice en
+  Licitaciones/Compras Ágiles, Inicio y el ranking; 3) «$…$» se dibujaba como fórmula: `comun.md` escapa
+  los «$» en la tabla de costos, razones, condiciones, riesgos, correos y aviso de decisión; 4) «None» en la
+  ficha (Pagado Estado, N° OC): texto «—» (`comun.numero_texto`); en las tablas grandes queda «None» para no
+  perder el orden numérico (Streamlit no deja cambiarlo; `df.style.format(na_rep=...)` no funcionó con
+  column_config); 5) errores sin traceback (`client.showErrorDetails = "type"`). Datos personales de la orden:
+  vienen de los secretos (confirmado). Enlaces a `feature/api-mercadopublico`: es la rama por defecto, no se
+  cambian. «Actualizar ahora» necesita el secreto `github_token` en Streamlit Cloud (lo agrega la usuaria).
 - 2026-10-26: Compras Ágiles de 1er llamado marcadas con 🚫 en la tabla (si `soy_emt` es false) y la ficha
   dice en rojo que no puede cotizarla. La usuaria seguía viéndolas porque su sesión tenía Llamado = «Todos»
   de antes (los filtros se conservan); una sesión nueva parte en «2º».
