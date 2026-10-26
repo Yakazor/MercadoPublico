@@ -15,18 +15,19 @@
 | Concepto | Monto (neto) |
 |---|---:|
 | Costos directos (mercadería a precio de tienda) | $4.384.280 |
+| IVA de las compras (sin crédito fiscal) | $833.013 |
 | Logística (despacho 9 %, zona lejana) | $394.585 |
 | Horas hombre (21.75 h × $6.000) | $130.500 |
 | Garantía de fiel cumplimiento | $0 |
 | Costo financiero (30 días hasta el pago) | $78.259 |
 | Subcontratación | $0 |
-| **Costo total** | **$4.987.624** |
-| Ingreso (oferta sugerida) | $5.524.193 |
-| **Margen bruto** | $1.139.913 (21 %) |
-| **Margen neto** | $536.568 (10 %) |
-| Rentabilidad sobre costos | 11 % |
-| Punto de equilibrio (oferta mínima con IVA) | $5.935.273 |
-| Oferta sugerida con IVA | $6.573.789 |
+| **Costo total** | **$5.820.638** |
+| Ingreso (oferta sugerida) | $6.573.789 |
+| **Margen bruto** | $1.356.496 (21 %) |
+| **Margen neto** | $753.152 (11 %) |
+| Rentabilidad sobre costos | 13 % |
+| Punto de equilibrio (oferta mínima con IVA) | $6.926.559 |
+| Oferta sugerida con IVA | $7.822.809 |
 
 **Riesgos financieros:** 44 de 59 ítems sin precio de mercado: el costo real es mayor.; 9 de 15 precios son de productos aproximados (otra medida, marca o modelo)..
 
@@ -68,7 +69,6 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 Condiciones:
 - Conseguir precio de los ítems que faltan antes de ofertar.
-- Mejorar el margen neto (hoy bajo 10 %) negociando con proveedores.
 - Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
 - Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
 - Mitigar los riesgos marcados antes de comprometer la oferta.

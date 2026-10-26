@@ -8,14 +8,14 @@
 | Cliente | SERVICIO AGRICOLA Y GANADERO |
 | Monto estimado | $14.600.000 |
 | Fecha de cierre | 2026-10-26 20:00 |
-| Oferta sugerida (c/IVA) | $10.581.278 |
-| Margen esperado | 16 % neto · 21 % bruto ($1.453.644 neto) |
+| Oferta sugerida (c/IVA) | $12.591.721 |
+| Margen esperado | 17 % neto · 21 % bruto ($1.802.261 neto) |
 | Riesgo general | Medio |
 | Complejidad | Baja |
 | Factibilidad operativa | Alta |
 | Factibilidad financiera | Alta |
 | Factibilidad de plazos | Baja |
-| Probabilidad de adjudicación | 45% (estimación heurística) |
+| Probabilidad de adjudicación | 35% (estimación heurística) |
 
 ## Por qué
 
@@ -26,4 +26,4 @@
 - Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
 - Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
 
-Costo total estimado $7.438.186 neto; punto de equilibrio $8.851.442 con IVA (oferta mínima que cubre todos los costos).
+Costo total estimado $8.779.018 neto; punto de equilibrio $10.447.031 con IVA (oferta mínima que cubre todos los costos).

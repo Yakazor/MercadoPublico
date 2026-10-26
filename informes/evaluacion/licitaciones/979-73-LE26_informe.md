@@ -15,18 +15,19 @@
 | Concepto | Monto (neto) |
 |---|---:|
 | Costos directos (mercadería a precio de tienda) | $5.236.185 |
+| IVA de las compras (sin crédito fiscal) | $994.875 |
 | Logística (despacho 3 %, zona cercana) | $157.086 |
 | Horas hombre (11.5 h × $6.000) | $69.000 |
 | Garantía de fiel cumplimiento | $0 |
 | Costo financiero (30 días hasta el pago) | $93.466 |
 | Subcontratación | $0 |
-| **Costo total** | **$5.555.736** |
-| Ingreso (oferta sugerida) | $6.597.593 |
-| **Margen bruto** | $1.361.408 (21 %) |
-| **Margen neto** | $1.041.857 (16 %) |
-| Rentabilidad sobre costos | 19 % |
-| Punto de equilibrio (oferta mínima con IVA) | $6.611.326 |
-| Oferta sugerida con IVA | $7.851.136 |
+| **Costo total** | **$6.550.612** |
+| Ingreso (oferta sugerida) | $7.851.136 |
+| **Margen bruto** | $1.620.076 (21 %) |
+| **Margen neto** | $1.300.524 (17 %) |
+| Rentabilidad sobre costos | 20 % |
+| Punto de equilibrio (oferta mínima con IVA) | $7.795.228 |
+| Oferta sugerida con IVA | $9.342.852 |
 
 **Riesgos financieros:** 4 de 18 ítems sin precio de mercado: el costo real es mayor.; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo)..
 

@@ -8,14 +8,14 @@
 | Cliente | MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF |
 | Monto estimado | $10.900.000 |
 | Fecha de cierre | 2026-11-06 15:01 |
-| Oferta sugerida (c/IVA) | $7.851.136 |
-| Margen esperado | 16 % neto · 21 % bruto ($1.041.857 neto) |
+| Oferta sugerida (c/IVA) | $9.342.852 |
+| Margen esperado | 17 % neto · 21 % bruto ($1.300.524 neto) |
 | Riesgo general | Bajo |
 | Complejidad | Media |
 | Factibilidad operativa | Media |
 | Factibilidad financiera | Alta |
 | Factibilidad de plazos | Alta |
-| Probabilidad de adjudicación | 35% (estimación heurística) |
+| Probabilidad de adjudicación | 25% (estimación heurística) |
 
 ## Por qué
 
@@ -26,4 +26,4 @@
 - Conseguir precio de los ítems que faltan antes de ofertar.
 - Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
 
-Costo total estimado $5.555.736 neto; punto de equilibrio $6.611.326 con IVA (oferta mínima que cubre todos los costos).
+Costo total estimado $6.550.612 neto; punto de equilibrio $7.795.228 con IVA (oferta mínima que cubre todos los costos).
