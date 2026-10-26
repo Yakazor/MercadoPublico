@@ -268,8 +268,8 @@
      "verificado": false,
      "nota": "Listado muestra 8.490 y 7.216. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 7689.0,
-     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $7.689, no $7.216: puede haber cambiado."
+     "precio_pagina": 6890.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $6.890, no $7.216: puede haber cambiado."
     }
    ]
   },
