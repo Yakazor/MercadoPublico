@@ -88,6 +88,13 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   Probado en Chromium a 1366 y 390 px. Ojo: con los datos del 25-10 solo 19 licitaciones abiertas tienen
   precios de tiendas y ninguna Compra Ágil abierta (luego otra sesión cotizó 1057501-3710-COT26); las 143 de `informes/mercado` ya están todas en la rama
   `datos` (las demás cerraron).
+- 2026-10-26 (PRECIOS para 4037-378-COT26, 01:45 UTC): Compra Ágil Municipalidad de Fresia, 1 impresora
+  multifuncional para Dirección de Obras (cierra 26-10 08:00, estimado $800.000, entrega 2 días). El anexo
+  con la especificación no se pudo abrir: se supuso A3 con wifi y dúplex. Con WebSearch, sin verificar: HP
+  OfficeJet Pro 9730 (A3, dúplex, ADF, wifi) Mercado Libre $409.990 c/IVA ($344.529 neto), SP Digital
+  $559.990; Brother MFC-T4500DW (A3, tanque) Ripley $693.990. Oferta sugerida $516.587 c/IVA (margen 20 %),
+  bajo el estimado. OC del Estado: «impresoras multifuncionales» mediana $246.428 neto (p75 $402.248, 65 OC;
+  mayormente A4); la ref. del ítem ($2,99 M, «impresoras de bandas», 2 OC) no es comparable. 495 pruebas OK.
 - 2026-10-26 (PRECIOS para 1057501-3710-COT26, 01:30 UTC): Compra Ágil Sótero del Río, 10 sillas
   ergonómicas con brazos y respaldo medio (cierra 26-10 08:00, estimado $800.000). Con WebSearch, sin
   verificar: Paris (marketplace) y Sodimac Enzo, $69.990 c/IVA ($58.815 neto). Costo $617.559 neto, oferta
