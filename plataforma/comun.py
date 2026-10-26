@@ -159,6 +159,15 @@ def conservar_estado(*prefijos: str) -> None:
             st.session_state[clave] = st.session_state[clave]
 
 
+def pedir_precios(codigo: str, compra_agil: bool) -> None:
+    """Cómo pedirle a Claude precios de tiendas para una licitación que todavía no los tiene."""
+    tipo = "Compra Ágil" if compra_agil else "licitación"
+    st.caption(f"Sin precios de tiendas: la rutina diaria de Claude los busca solo para 4 licitaciones por día "
+               f"(2 Compras Ágiles). Para pedirlos para esta {tipo}, copia este texto en la app de Claude, en la "
+               "sesión «Rutina: Actualizar Radar de Licitaciones». Cuando termine, toca «Recargar datos» en Inicio.")
+    st.code(f"PRECIOS para: {codigo}", language=None)
+
+
 def pesos(valor) -> int | None:
     """Monto redondeado al peso para las tablas (sin decimales)."""
     return None if valor is None or pd.isna(valor) else round(valor)

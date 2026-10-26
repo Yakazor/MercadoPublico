@@ -79,6 +79,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26: «no aparecen la mejor tienda y precio en las Compras Ágiles»: de 1.574 abiertas, 0 tienen precios de
+  tiendas (la rutina hace 2 por día y las del 25-10, libros y oficina, no tenían resultados). La ficha y la
+  evaluación sin precios ahora lo dicen y muestran «PRECIOS para: <código>» para copiar en la sesión de la rutina
+  (`comun.pedir_precios`); «Mejor tienda» vacía muestra «—». Pedido a mano para 1057501-3710-COT26 (silla
+  ergonómica) en `session_01L3RAfgqwUvEXxzpcqNoJmB`.
+
 - 2026-10-26: error en la plataforma al abrir la ficha de una Compra Ágil y volver a dibujarla
   (`StreamlitValueAssignmentNotAllowedError` en el botón «Orden de compra al proveedor»): su clave era
   `oc_<código>` y `app.py` reasigna todas las claves `oc_` para conservar el formulario de la orden, pero

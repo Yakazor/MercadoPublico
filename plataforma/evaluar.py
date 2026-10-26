@@ -55,13 +55,13 @@ def _una(prep: dict) -> None:
         st.link_button("Abrir en Mercado Público", lic.get("url") or "", icon="🔗")
         return
 
-    _cotizaciones(codigo, items, mercado)
+    _cotizaciones(codigo, items, mercado, es_compra_agil(lic))
     ops = opciones(items, mercado, comun.cotizaciones().get(codigo), comun.estimar_oc(), comun.margen(), comun.otros())
     p, ev = evaluar_licitacion(lic, items, ops, comun.supuestos(), comun.margen(), comun.otros())
     _resultado(lic, p, ev, mercado)
 
 
-def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict]) -> None:
+def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict], compra_agil: bool) -> None:
     """Tabla de ítems con los precios de tiendas y una columna para tus cotizaciones."""
     st.subheader("Precios por línea")
     ingresadas = st.session_state.setdefault("cotizaciones_ingresadas", {}).get(codigo, {})
@@ -78,7 +78,7 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict]) -> None:
         st.session_state[firma] = actual
         st.session_state[base] = pd.DataFrame([{
             "Línea": it.get("linea"), "Producto": it.get("producto"), "Cantidad": it.get("cantidad"),
-            "Unidad": it.get("unidad"), "Mejor tienda": t.get("tienda"),
+            "Unidad": it.get("unidad"), "Mejor tienda": t.get("tienda") or "—",
             "Precio tienda (neto)": comun.pesos(t.get("costo_unitario_neto")),
             "Pagado por el Estado": comun.pesos(it.get("ref_mediana")),
             "Tu cotización (unitario)": (ingresadas.get("precios") or {}).get(str(it.get("linea"))),
@@ -98,6 +98,8 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict]) -> None:
             "Tu cotización (unitario)": st.column_config.NumberColumn(
                 min_value=0, format="localized", width=130, help="Precio por unidad que te dio el proveedor"),
         })
+    if not mercado:
+        comun.pedir_precios(codigo, compra_agil)
     precios = {str(int(linea)): float(v) for linea, v in zip(editado["Línea"], editado["Tu cotización (unitario)"])
                if pd.notna(v) and v > 0}
     st.session_state["cotizaciones_ingresadas"][codigo] = {"precios": precios, "con_iva": con_iva}
@@ -114,7 +116,8 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
     st.subheader("Resultado")
     if p["items_sin_precio"] == len(p["items"]):
         st.info("Ninguna línea tiene precio todavía. Pide cotización a proveedores (correos abajo) e ingresa sus "
-                "precios en la tabla, o activa «Estimar con OC del Estado» en ⚙️ Supuestos.")
+                "precios en la tabla, pide a Claude precios de tiendas (texto de arriba) o activa «Estimar con OC del Estado» "
+                "en ⚙️ Supuestos.")
         _documentos(lic, p, ev, mercado, con_precios=False)
         return
     comun.aviso_decision(ev)

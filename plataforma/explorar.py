@@ -172,6 +172,8 @@ def ficha(lic: dict, prep: dict) -> None:
                     "Coincidencia": st.column_config.TextColumn(width=100),
                     "Verificado": st.column_config.CheckboxColumn(width=80),
                     "Link": st.column_config.LinkColumn(display_text="Ver", width=50)})
+        elif items:
+            comun.pedir_precios(codigo, es_compra_agil(lic))
 
         a, b, c = st.columns(3)
         if a.button("Evaluar GO / NO GO", icon="📊", type="primary", width="stretch", key=f"evaluar_{codigo}"):
