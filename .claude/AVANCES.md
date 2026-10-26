@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-26, 02:00 UTC)
+## Estado (actualizado 2026-10-26, 03:00 UTC)
 
 | Tema | Estado |
 |---|---|
@@ -34,6 +34,8 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Evaluación GO / NO GO, Excel con Claude Log, correos | Unido (PR #2, 25-10) |
 | Plataforma web (Streamlit) | Publicada en https://radar-mercadopublico.streamlit.app desde la cuenta de Streamlit de Yakazor (archivo principal `plataforma/app.py`, rama `feature/api-mercadopublico`; secretos `clave` y `github_token`). PR #3 a #6 unidos: menú arriba, tablas de ancho fijo (caben en 1366 px), «Recordarme» 30 días, filtros GO / NO GO y «Compra y venta directa», 💲 en el nombre = ya tiene precios de tiendas. Si la página muestra la versión anterior: Manage app → ⋮ → Reboot app (con la cuenta Yakazor) |
 | Rutina con créditos de Claude | Tarea programada «Actualizar Radar de Licitaciones» (`trig_016CgWNwJxAa22bBQMtx7z4U`), **todos los días 7:59** America/Santiago (pedido del 25-10: «a las 8:00 de lunes a lunes»; antes días hábiles 8:59). Corre en la sesión dedicada `session_01XXFwMR2USPWee8pWawbiB7`, creada con el repo. Su prompt solo se puede cambiar desde esa sesión (el horario sí desde cualquiera). «Ejecutar ahora» (`fire_trigger`) **no** usa esa sesión: crea una nueva sin repo y falla (así falló la primera corrida, 25-10 03:55 UTC, con dos avisos al celular). En una sesión nueva `add_repo` existe, pero el modo automático lo niega. Para correrla a mano: escribirle «ACTUALIZACIÓN» a la sesión dedicada. Prueba de corrida programada hacia la sesión dedicada (`trig_01Bf1ZoTveVMJLP3jPi5bD71`, 04:56 UTC): **funcionó**: llegó a la sesión dedicada, que respondió «Prueba recibida. Sí, esta sesión tiene el repositorio». Las corridas programadas sí usan esa sesión. **Primera corrida programada: 25-10 11:00–11:20 UTC, bien** (precios para 4 licitaciones, commit e88ad5c de informes, publicación; ~US$ 3,6 de créditos). |
+| Situación de la proveedora | Ficha de Mercado Público (26-10): persona natural, hábil, **no clasifica como EMT** (tamaño «Sin información – 0 a 13,5 UTA» en el SII: sin ventas declaradas). No puede cotizar Compras Ágiles de 1er llamado: `compra_agil.soy_emt: false` en config.yaml (la rutina las salta, la plataforma muestra de partida solo el 2º llamado). Giros sugeridos y cómo llegar a EMT: sección 7.5 de `informes/Guia_Radar_Licitaciones.pdf`. Mesa de Ayuda de ChileCompra: **600 0061 211 / 2 2595 0820** (el 600 7000 600 ya no corresponde) |
+| Cuenta de la rutina | La tarea programada activa no aparece en la cuenta de esta sesión (yaksicazocar: solo `trig_01DtbqBbzE4aZVmpAnVjPWXQ`, desactivada desde el 22-10): vive en la otra cuenta de Claude y gasta sus créditos. Su prompt dice «sigue .claude/RUTINA.md», así que cambiar ese archivo basta para cambiar lo que hace |
 | Workflow «Órdenes de compra históricas» | Corregido (PR #3): una OC traía un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel; `texto_excel`/`sin_formulas` lo quitan. Verificado: corrida 40150220712. Los errores de los workflows quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
 PRs unidos: #1 a #9 (el #9, radar diario y corrección de la rutina, el 25-10).
@@ -79,6 +81,13 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (informes y repositorio): guía en PDF revisada (14 páginas): sección 7.5 «EMT y giros del SII»
+  con 13 códigos de actividad por rubro y la ruta del trámite, erratas integradas (aceptación de la OC,
+  referencia 801, Mesa de Ayuda 600 0061 211). El generador es `pdf/generar.py` del scratchpad de la sesión
+  (no está en el repo). `.claude/RUTINA.md` al día (EMT, Compras Ágiles de 2º llamado en el resumen). Unida
+  `feature/arreglo-ficha` (otra sesión, mismo error de la ficha: texto «PRECIOS para» y prueba). Ramas
+  `feature/actualizacion-diaria` y `feature/bitacora-pr9` ya están contenidas en la principal (lo que les
+  falta es historia vieja); `feature/ordenes-compra` y `feature/plataforma` sin commits pendientes.
 - 2026-10-26 (EMT): la ficha de proveedor de la usuaria dice «No clasifica como Empresa de Menor Tamaño»
   (persona natural, tamaño «Sin información» en el SII), así que no puede cotizar Compras Ágiles de 1er
   llamado. Nuevo `compra_agil.soy_emt: false` en config.yaml: `seleccionar_mercado.py` salta las de 1er

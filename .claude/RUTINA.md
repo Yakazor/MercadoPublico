@@ -16,7 +16,8 @@ Hay tres pedidos posibles:
 - **ACTUALIZACIÓN** (la tarea programada «Actualizar Radar de Licitaciones», todos los días 7:59
   hora de Chile, o «actualiza el radar» en el chat): revisa que los datos estén al día, busca
   precios de mercado para hasta 4 licitaciones nuevas (elegidas solas: compra y venta directa,
-  ítems concretos, 3+ días para el cierre), presupuestos, evaluación comercial y publica.
+  ítems concretos, 3+ días para el cierre; Compras Ágiles con 1+ día y, mientras la usuaria no sea EMT,
+  solo de 2º llamado), presupuestos, evaluación comercial y publica.
 - **PRECIOS para: <códigos>** (pedido en el chat; el dashboard copia el texto «busca precios de …»):
   busca precios de mercado solo para esas licitaciones (máximo 5; si piden más, haz las
   5 primeras y dilo).
@@ -50,7 +51,10 @@ Hay tres pedidos posibles:
 5b. **Precios de mercado** (gasta créditos; máximo 4 licitaciones por corrida):
    1. `python3 scripts/seleccionar_mercado.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --salida <tmp>/lote.json --maximo 4 --compras-agiles 2`
       (elige abiertas sin precios, 3+ días para el cierre, ítems concretos, sin servicios ni registro ISP;
-      2 cupos para Compras Ágiles, primero de la Región Metropolitana).
+      2 cupos para Compras Ágiles con 1+ día, primero de la Región Metropolitana). La usuaria **no
+      clasifica como Empresa de Menor Tamaño** (`compra_agil.soy_emt: false` en config.yaml): el script
+      salta las Compras Ágiles de 1er llamado, porque no puede cotizarlas. Si el lote queda sin Compras
+      Ágiles, es normal (casi todas las abiertas son de 1er llamado); no las agregues a mano.
    2. Si el lote tiene licitaciones, pasos 3 y 4 de «PRECIOS para» (workflow `precios-mercado-chile`
       o WebSearch con sus reglas; `guardar_mercado.py`). Prioriza tiendas y distribuidores de Santiago.
 6. Presupuestos: `python3 scripts/presupuesto.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --mercado-json <tmp>/mercado.json`.
@@ -64,8 +68,8 @@ Hay tres pedidos posibles:
 8. Publica los precios nuevos en la plataforma sin esperar: `gh workflow run radar-diario.yml -R Yakazor/MercadoPublico --ref feature/api-mercadopublico -f solo_exportar=true`
    (no llama a la API). Si `gh` no puede, no pasa nada: «Compras Ágiles» los publica en menos de 3 horas.
 9. Resumen de 3–6 líneas con PushNotification: licitaciones con precios nuevos y su decisión,
-   las 3 mejores oportunidades (de `informes/evaluacion/README.md`), Compras Ágiles abiertas
-   (`compras_agiles` en meta.json) y cualquier error. Termina con el link de la plataforma.
+   las 3 mejores oportunidades (de `informes/evaluacion/README.md`), Compras Ágiles abiertas de 2º
+   llamado (las únicas que puede cotizar; `llamado` en licitaciones.json) y cualquier error. Termina con el link de la plataforma.
 
 ## PRECIOS para: <códigos>
 

@@ -1,0 +1,158 @@
+{
+ "fecha_larga": "17 de octubre de 2026",
+ "activas": 4879,
+ "vigentes": 284,
+ "cierran_7": 168,
+ "items": 1615,
+ "productos_precio": 3000,
+ "oc_rango": "26 de septiembre de 2026 al 16 de octubre de 2026 (21 días)",
+ "tests": "346",
+ "presupuestos": [
+  {
+   "codigo": "2366-31-LE26",
+   "nombre": "TONER SIMILAR-EQUIV. HP Y BROTHER IMP. - SC N.45",
+   "rubro": "Artículos de oficina y librería",
+   "con_precio": "9/9",
+   "costo_neto": 8863266,
+   "oferta_total": 12656744,
+   "ref_oc": 6264000,
+   "monto_estimado": 29393000.0,
+   "lectura": "las líneas 1 y 2 quedaron con tóner HP original porque no apareció alternativo; las bases aceptan similares. Con alternativos, como en las líneas 3 a 8, el costo baja y la oferta podría acercarse a lo que pagó el Estado. La referencia OC es la misma para todas las líneas (mediana del producto genérico «Tóner»), así que es solo orientativa."
+  },
+  {
+   "codigo": "2460-137-LE26",
+   "nombre": "Adquisición de Insumos de Escritorio",
+   "rubro": "Artículos de oficina y librería",
+   "con_precio": "12/13",
+   "costo_neto": 8020211,
+   "oferta_total": 11452862,
+   "ref_oc": 557790,
+   "monto_estimado": 7470140.0,
+   "lectura": "el costo lo domina la línea 9 (1.000 sets de banderas adhesivas: $4,8 millones a precio de tienda). Con precio mayorista o una alternativa equivalente más simple la oferta podría quedar bajo el monto estimado ($7,47 millones). Corcheteras y corchetes están en línea con lo que pagó el Estado. Un ítem quedó sin precio."
+  }
+ ],
+ "por_rubro": [
+  [
+   "Computación y electrónica",
+   53
+  ],
+  [
+   "Deporte, juguetes y material didáctico",
+   53
+  ],
+  [
+   "Vestuario, uniformes y textiles",
+   51
+  ],
+  [
+   "Insumos médicos no regulados y aseo",
+   47
+  ],
+  [
+   "Mobiliario de oficina, escolar y almacenaje",
+   30
+  ],
+  [
+   "Ferretería y herramientas",
+   25
+  ],
+  [
+   "Artículos de oficina y librería",
+   15
+  ],
+  [
+   "Electrodomésticos, hogar y menaje",
+   8
+  ],
+  [
+   "Consultoría en gestión, BI y control de gestión",
+   2
+  ]
+ ],
+ "grupos": [
+  [
+   "42 Equipamiento y suministros médicos",
+   "464",
+   "30,7 %",
+   "Insumos no regulados sí; dispositivos con registro ISP no."
+  ],
+  [
+   "43 Tecnologías de la información, telecomunicaciones y radiodifusión",
+   "297",
+   "45,2 %",
+   "Computadores, periféricos, accesorios (licencias exigen partner)."
+  ],
+  [
+   "30 Artículos para estructuras, obras y construcciones",
+   "183",
+   "20,0 %",
+   "Materiales de construcción (sin la obra)."
+  ],
+  [
+   "41 Equipamiento para laboratorios",
+   "183",
+   "28,9 %",
+   "Instrumentos simples sí; equipos calibrados con servicio no."
+  ],
+  [
+   "25 Vehículos y equipamiento en general",
+   "138",
+   "14,7 %",
+   "Repuestos y accesorios sí; vehículos exigen concesionario."
+  ],
+  [
+   "40 Equipamiento para el acondicionamiento, distribución y filtrado de fluidos",
+   "81",
+   "25,0 %",
+   "Equipos sí; instalación de gas o clima exige técnicos SEC."
+  ]
+ ],
+ "captura_licitaciones": "informes/guia/captura_licitaciones.png",
+ "captura_simulador": "informes/guia/captura_simulador.png",
+ "censo_fecha": "17-10-2026",
+ "censo_muestra": 1200,
+ "censo_activas": 4879,
+ "censo_pct": "14,8 %",
+ "etapas": [
+  [
+   "Botón «Actualizar ahora» → rutina",
+   "La rutina recibe el pedido, trae el repositorio al día y hace el push disparador. En la primera corrida el modo automático bloqueó el push (comando compuesto); se corrigieron las instrucciones y en la segunda funcionó."
+  ],
+  [
+   "Radar en GitHub Actions",
+   "4.879 activas, 336 candidatas por nombre, 284 en tus rubros (43 s, reutilizando detalles). 18 salieron por las nuevas exclusiones, todas falsos positivos."
+  ],
+  [
+   "Órdenes de compra",
+   "Terminó bien en 2 h 13 min: con la config nueva primero descargó las OC que pasaron a ser candidatas y luego los días nuevos. Precios de 3.000 productos con OC del 26-09 al 16-10 (21 días)."
+  ],
+  [
+   "Presupuestos",
+   "La rutina los regeneró y los subió al repositorio (2460-137-LE26 pasó a Oficina); con las OC de 21 días se rehicieron y cambiaron las referencias."
+  ],
+  [
+   "Subida al dashboard",
+   "La rutina no pudo subir los datos sola: subir archivos a un artefacto pide la aprobación del usuario y no se puede pre-autorizar. Se dejó como último paso con aviso al teléfono; esta vez los subí desde la conversación."
+  ],
+  [
+   "Dashboard (navegador)",
+   "Sin errores de JavaScript; sin desborde horizontal a 1.280 y 360 px; búsqueda sin tildes, simulador, cambio de margen y precios verificados."
+  ],
+  [
+   "Pruebas automáticas",
+   "346 pruebas pasan (antes 339; se agregaron las de las correcciones)."
+  ]
+ ],
+ "correcciones": [
+  "<b>Clasificación:</b> el primer nivel de la categoría ONU («Ropa, maletas y productos de aseo personal») mandaba champú a Vestuario; ya no cuenta.",
+  "<b>Órdenes de compra:</b> el nombre de la OC ya no asigna rubro a un ítem que es medicamento o servicio («MITOMICINA … JERINGA»).",
+  "<b>Exclusiones nuevas:</b> semaglutida y otros GLP-1, traqueostomía, marcapasos, instalación de cortinas, mantenciones preventivas/correctivas, calderas, jeringas prellenadas, SaaS, mesas de disección, refrigeradores de farmacia, monitores-persona.",
+  "<b>«Insumos de escritorio»</b> ahora es Oficina (antes Mobiliario por la palabra «escritorio»).",
+  "<b>Protección de datos:</b> si la API entrega un listado de activas vacío o recortado, el radar ya no borra la base; un día de OC vacío no se marca como procesado.",
+  "<b>Seguridad:</b> el ticket no puede quedar en los logs (aviso de la librería HTTP silenciado); .gitignore cubre cualquier variante de .env.",
+  "<b>Excel/Power BI:</b> exportaciones con coma decimal y textos que empiezan con «=» neutralizados (no se ejecutan como fórmula).",
+  "<b>Dashboard:</b> ajuste de ancho en teléfonos y texto que aclaraba mal qué incluye la actualización automática.",
+  "<b>Rutina:</b> comandos de git separados para que el modo automático permita el push disparador, e instalación de dependencias antes de las pruebas.",
+  "<b>Actualización del dashboard:</b> la subida pide tu aprobación; la rutina ahora deja todo lo demás listo, te avisa y sube al final."
+ ]
+}
