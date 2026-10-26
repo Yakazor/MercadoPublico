@@ -380,3 +380,33 @@ def test_dias_al_cierre_desde_hoy():
     assert dias_al_cierre({"fecha_cierre": "2026-10-25 15:00:00", "dias_restantes": 3}, hoy) == 1
     assert dias_al_cierre({"fecha_cierre": "2026-10-23", "dias_restantes": 1}, hoy) == -1
     assert dias_al_cierre({"fecha_cierre": None, "dias_restantes": 4}, hoy) == 4
+
+
+def test_version_datos_lee_el_commit_de_la_rama_y_fija_la_url(monkeypatch):
+    import radar.plataforma as plataforma
+
+    sha = "3dac93a05184298919990563edf112fe05105bfd"
+    refs = f"001e# service=git-upload-pack\n0000{'a' * 40} HEAD\x00multi_ack\n003e{sha} refs/heads/datos\n"
+    pedidas = []
+
+    class Refs:
+        text = refs
+
+        def raise_for_status(self):
+            pass
+
+    monkeypatch.setattr(plataforma.requests, "get", lambda url, **k: pedidas.append(url) or Refs())
+    assert plataforma.version_datos() == sha
+    assert pedidas == ["https://github.com/Yakazor/MercadoPublico.git/info/refs"]
+    assert plataforma.origen_en_commit(plataforma.ORIGEN_DATOS, sha) == \
+        f"https://raw.githubusercontent.com/Yakazor/MercadoPublico/{sha}"
+    # Otro origen (carpeta local) o sin commit: queda igual.
+    assert plataforma.version_datos("/tmp/datos") is None
+    assert plataforma.origen_en_commit("/tmp/datos", sha) == "/tmp/datos"
+    assert plataforma.origen_en_commit(plataforma.ORIGEN_DATOS, None) == plataforma.ORIGEN_DATOS
+
+    def caido(url, **k):
+        raise plataforma.requests.ConnectionError("sin red")
+
+    monkeypatch.setattr(plataforma.requests, "get", caido)
+    assert plataforma.version_datos() is None

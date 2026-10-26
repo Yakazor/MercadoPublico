@@ -17,7 +17,8 @@ from streamlit.errors import StreamlitSecretNotFoundError, StreamlitValueAssignm
 from evaluar_licitaciones import clp  # noqa: E402,F401
 from radar.evaluacion import CONDICIONADO, GO, NO_GO  # noqa: E402
 from radar.filtro import normalizar  # noqa: E402
-from radar.plataforma import ORIGEN_DATOS, compra_venta, leer_datos, preparar, supuestos_config  # noqa: E402
+from radar.plataforma import (ORIGEN_DATOS, compra_venta, leer_datos, origen_en_commit, preparar,  # noqa: E402
+                              supuestos_config, version_datos)
 
 ZONAS = {"cercana": "Región Metropolitana", "media": "Valparaíso, O'Higgins, Maule",
          "lejana": "Coquimbo a Los Ríos", "extrema": "Extremo norte y sur"}
@@ -66,12 +67,21 @@ def _leer(origen: str, marca: str | None) -> dict:
     return leer_datos(origen, marca=marca)
 
 
+@st.cache_data(ttl=60, show_spinner=False)
+def _version(origen: str) -> str | None:
+    return version_datos(origen)
+
+
 def _origen() -> str:
-    return os.environ.get("RADAR_DATOS") or secreto("datos") or ORIGEN_DATOS
+    """De dónde se leen los datos. La rama `datos` de GitHub se lee en su último commit (se revisa
+    cada minuto): una publicación nueva (p. ej. precios recién cotizados) se ve al tiro, sin
+    esperar que venza la caché de 30 minutos."""
+    origen = os.environ.get("RADAR_DATOS") or secreto("datos") or ORIGEN_DATOS
+    return origen_en_commit(origen, _version(origen))
 
 
 def datos() -> dict:
-    """Licitaciones y Compras Ágiles abiertas (se vuelven a bajar cada 30 minutos)."""
+    """Licitaciones y Compras Ágiles abiertas (se vuelven a bajar con cada publicación nueva)."""
     return preparar(_leer(_origen(), st.session_state.get("marca_datos")))
 
 
@@ -89,6 +99,7 @@ def compra_venta_por_codigo() -> dict:
 def recargar() -> None:
     """Vuelve a bajar los datos, saltándose la caché de GitHub."""
     _leer.clear()
+    _version.clear()
     st.session_state["marca_datos"] = pd.Timestamp.now().strftime("%Y%m%d%H%M%S")
 
 

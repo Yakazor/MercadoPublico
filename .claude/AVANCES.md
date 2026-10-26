@@ -93,6 +93,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   Probado en Chromium a 1366 y 390 px. Ojo: con los datos del 25-10 solo 19 licitaciones abiertas tienen
   precios de tiendas y ninguna Compra Ágil abierta (luego otra sesión cotizó 1057501-3710-COT26); las 143 de `informes/mercado` ya están todas en la rama
   `datos` (las demás cerraron).
+- 2026-10-26 (plataforma, pedido de la usuaria, directo en la principal): «Precios por línea» salía con «None» en
+  1956-37-COT26 aunque sus precios ya estaban publicados en `datos`: la plataforma guardaba los datos 30 minutos
+  en caché. Ahora lee la rama `datos` en su último commit (`plataforma.version_datos` con `info/refs`, sin límite
+  por hora, revisado cada minuto; `origen_en_commit` fija la URL raw en ese commit): cada publicación se ve en
+  ~1 minuto. Probado en Chromium con los datos reales. 507 pruebas OK.
 - 2026-10-26 (PRECIOS para 1956-37-COT26): Compra Ágil Deprov. Educación Cordillera, 1 termo hervidor 20 L
   (doble pared inox, termostato) y 2 termos de 2,8–3 L (Eco Boil 750 W, panel digital; cierra 26-10 08:00,
   estimado $250.000). Con WebSearch, sin verificar (algunos links son de listado, no de ficha): línea 1 Ventus

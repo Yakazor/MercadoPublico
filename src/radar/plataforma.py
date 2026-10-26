@@ -7,6 +7,8 @@ dashboard) y usa el código del radar para todo lo demás: presupuesto
 
 - `leer_datos(origen)`: licitaciones, ítems, precios de mercado y meta, desde la URL de
   la rama `datos` o desde una carpeta local.
+- `version_datos(origen)` y `origen_en_commit(origen, sha)`: el último commit publicado en la
+  rama `datos` y la URL de ese commit, para que la plataforma note cada publicación al tiro.
 - `preparar(datos, ahora)`: solo las abiertas, con los días al cierre recalculados (los
   JSON se generan una vez al día) e ítems y precios agrupados por código.
 - `opciones(...)`: precios de tiendas + tus cotizaciones (mandan sobre las tiendas) y,
@@ -74,6 +76,36 @@ def leer_datos(origen: str = ORIGEN_DATOS, timeout: float = 60, marca: str | Non
         else:
             datos[nombre] = json.loads((Path(origen) / f"{nombre}.json").read_text(encoding="utf-8"))
     return datos
+
+
+_RAW_GITHUB = re.compile(r"^https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/?$")
+
+
+def version_datos(origen: str = ORIGEN_DATOS, timeout: float = 10) -> str | None:
+    """Commit de la rama de `origen` (URL raw de GitHub), como `git ls-remote`, que GitHub no
+    guarda en caché ni limita por hora. None si el origen es otro o GitHub no responde."""
+    m = _RAW_GITHUB.match(origen)
+    if not m:
+        return None
+    dueno, repo, rama = m.groups()
+    try:
+        r = requests.get(f"https://github.com/{dueno}/{repo}.git/info/refs", params={"service": "git-upload-pack"},
+                         timeout=timeout)
+        r.raise_for_status()
+    except requests.RequestException:
+        return None
+    encontrado = re.search(rf"([0-9a-f]{{40}}) refs/heads/{re.escape(rama)}(?:\x00|\n|$)", r.text)
+    return encontrado.group(1) if encontrado else None
+
+
+def origen_en_commit(origen: str, sha: str | None) -> str:
+    """La URL raw de `origen` fijada en el commit `sha`: sus archivos no cambian, así que la caché
+    de GitHub nunca entrega una versión vieja. Sin `sha` (u otro origen), queda igual."""
+    m = _RAW_GITHUB.match(origen)
+    if not m or not sha:
+        return origen
+    dueno, repo, _ = m.groups()
+    return f"https://raw.githubusercontent.com/{dueno}/{repo}/{sha}"
 
 
 def cierre(lic: dict) -> datetime | None:
