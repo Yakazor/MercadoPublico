@@ -81,7 +81,7 @@ def test_cotizacion_manda_sobre_la_tienda_y_estimacion_con_oc():
     items, mercado = prep["items"]["1-1-LE26"], prep["mercado"]["1-1-LE26"]
     ops = opciones(items, mercado, {1: 30_000})
     assert [(o["linea"], o["tienda"]) for o in ops] == [(1, COTIZACION)]
-    ops = opciones(items, mercado, estimar_oc=True)
+    ops = opciones(items, mercado, estimar_oc=True, iva_es_costo=True)
     estimada = next(o for o in ops if o["linea"] == 2)
     assert estimada["coincidencia"] == ESTIMADA_OC and not estimada["verificado"]
     p, _ = evaluar_licitacion(prep["licitaciones"][0], items, ops)
@@ -92,9 +92,15 @@ def test_evaluar_compra_agil_con_cotizacion():
     prep = preparar(_datos(), AHORA)
     lic = next(l for l in prep["licitaciones"] if l["codigo"] == "2-2-COT26")
     items = prep["items"]["2-2-COT26"]
+    # Sin crédito fiscal (lo normal en config.yaml) el IVA de la compra es costo: la oferta sale de
+    # precio × 1,19; con crédito fiscal, del precio neto.
     p, ev = evaluar_licitacion(lic, items, opciones(items, [], {1: 25_000}))
+    assert p["oferta_total"] == pytest.approx(25_000 * 1.19 * 15 * 1.05 * 1.2 * 1.19)
+    assert p["iva_compras"] == pytest.approx(25_000 * 0.19 * 15)
+    assert ev.costos["directos"] == pytest.approx(25_000 * 15) and ev.costos["iva_compras"] > 0
+    p, ev = evaluar_licitacion(lic, items, opciones(items, [], {1: 25_000}), {"recupera_iva_compras": True})
     assert p["oferta_total"] == pytest.approx(25_000 * 15 * 1.05 * 1.2 * 1.19)
-    assert ev.cobertura == 1 and ev.decision != NO_GO
+    assert p["iva_compras"] == 0 and ev.cobertura == 1 and ev.decision != NO_GO
     p, ev = evaluar_licitacion(lic, items, opciones(items, []))
     assert p["items_sin_precio"] == 1 and ev.decision == NO_GO
 

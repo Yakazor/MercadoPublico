@@ -81,6 +81,14 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26 (pedido de la usuaria): 1) si la oferta con IVA supera el monto estimado, la evaluación es
+  **NO GO** (antes solo sobre el 130 %; quedaba «GO con condiciones»); 2) **IVA sin crédito fiscal**:
+  `evaluacion.recupera_iva_compras: false` en config.yaml (interruptor en ⚙️ Supuestos). El IVA de la compra
+  es costo: `armar_presupuesto(..., iva_es_costo=True)` calcula costo con gastos y oferta sobre precio × 1,19
+  (`iva_compras` en el presupuesto, fila propia en la tabla de costos y en el informe ejecutivo);
+  `costo_unitario_neto` sigue siendo el precio sin IVA (la orden al proveedor lo usa); «Estimar con OC»
+  descuenta también el IVA para que la oferta siga en la mediana. Con los datos del 25-10: 14 → 10 «GO con
+  condiciones» y 5 → 9 NO GO (las 4 nuevas, por superar el monto); las ofertas suben 19 %.
 - 2026-10-26 (auditoría de la plataforma del 25-10, PDF subido por la usuaria): 1) botón «Orden de compra»
   de la ficha: ya corregido (f91a307); 2) IndexError con selección obsoleta: se valida el índice en
   Licitaciones/Compras Ágiles, Inicio y el ranking; 3) «$…$» se dibujaba como fórmula: `comun.md` escapa

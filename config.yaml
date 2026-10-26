@@ -1657,6 +1657,10 @@ evaluacion:
   horas_por_linea: 0.25          # cotizar y comprar cada línea
   horas_por_entrega: 3           # retirar y entregar
   tasa_financiera_mensual: 0.015 # costo de financiar la compra hasta el pago (30 días)
+  # ¿Recuperas el IVA de tus compras como crédito fiscal (giro con IVA y facturas a tu nombre)?
+  # Si no, el IVA de la compra es costo y el de la venta se paga entero al SII: costos y ofertas
+  # se calculan sobre el precio con IVA.
+  recupera_iva_compras: false
   utm: 72151                     # CLP (octubre 2026, por confirmar en sii.cl)
   garantia_desde_utm: 1000       # fiel cumplimiento sobre 1.000 UTM
   garantia_pct: 0.05

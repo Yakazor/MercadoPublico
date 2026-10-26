@@ -28,7 +28,7 @@ from pathlib import Path
 import pandas as pd
 
 import _ruta  # noqa: F401
-from radar.config import ruta_proyecto
+from radar.config import cargar_config, ruta_proyecto
 from radar.presupuesto import IVA, armar_presupuesto
 
 URL_LICITACION = "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={}"
@@ -153,7 +153,8 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
         "",
         "| Concepto | Monto |",
         "|---|---:|",
-        f"| Costo de compra con otros costos (neto) | {_clp(p['costo_neto'])} |",
+        f"| Costo de compra con otros costos (neto{', con el IVA de las compras' if p.get('iva_compras') else ''}) "
+        f"| {_clp(p['costo_neto'])} |",
         f"| Oferta sugerida (neto) | {_clp(p['oferta_neta'])} |",
         f"| IVA | {_clp(p['oferta_iva'])} |",
         f"| **Oferta total** | **{_clp(p['oferta_total'])}** |",
@@ -281,6 +282,8 @@ def main():
     for it in items:
         por_codigo.setdefault(it["codigo"], []).append(it)
 
+    # Sin crédito fiscal el IVA de las compras es costo (config.yaml > evaluacion > recupera_iva_compras).
+    iva_es_costo = not (cargar_config().get("evaluacion") or {}).get("recupera_iva_compras", True)
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
     resumen, todas = [], []
@@ -290,7 +293,7 @@ def main():
         opciones = opciones_mercado(mercado)
         todas += opciones
         lic = lics.get(codigo) or {"codigo": codigo, "nombre": mercado.get("nombre")}
-        p = armar_presupuesto(por_codigo.get(codigo, []), opciones, args.margen, args.otros_costos)
+        p = armar_presupuesto(por_codigo.get(codigo, []), opciones, args.margen, args.otros_costos, iva_es_costo)
         (salida / f"{codigo}.md").write_text(markdown(lic, mercado, p), encoding="utf-8")
         tabla = pd.DataFrame(p["items"])
         dinero = ["ref_mediana", "ref_p25", "costo_unitario_neto", "oferta_unitaria_neta", "subtotal_costo", "subtotal_oferta"]

@@ -157,6 +157,7 @@ def informe(lic: dict, p: dict, ev, provs: list[dict], s: dict) -> str:
         "## Análisis económico", "",
         "| Concepto | Monto (neto) |", "|---|---:|",
         f"| Costos directos (mercadería a precio de tienda) | {clp(c['directos'])} |",
+        *([f"| IVA de las compras (sin crédito fiscal) | {clp(c['iva_compras'])} |"] if c.get("iva_compras") else []),
         f"| Logística (despacho {pct(ev.supuestos['logistica_pct'])}, zona {ev.supuestos['zona']}) | {clp(c['logistica'])} |",
         f"| Horas hombre ({c['horas']:g} h × {clp(ev.supuestos['valor_hora'])}) | {clp(c['mano_obra'])} |",
         f"| Garantía de fiel cumplimiento | {clp(c['garantia'])} |",
@@ -364,7 +365,8 @@ def main():
         ev = None
         if archivo.exists():
             mercado = json.loads(archivo.read_text(encoding="utf-8"))
-            p = armar_presupuesto(por_codigo.get(lic["codigo"], []), opciones_mercado(mercado))
+            p = armar_presupuesto(por_codigo.get(lic["codigo"], []), opciones_mercado(mercado),
+                                  iva_es_costo=not s["recupera_iva_compras"])
             if len(p["items"]) - p["items_sin_precio"] > 0:
                 ev = evaluar(lic, p, s)
                 evaluadas.append((lic, p, ev))

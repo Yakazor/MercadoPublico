@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 from openpyxl import load_workbook
+import pytest
 
 from radar.evaluacion import CONDICIONADO, GO, NO_GO, evaluar, puntaje, zona_logistica
 from radar.presupuesto import armar_presupuesto
@@ -103,3 +104,19 @@ def test_script_genera_excel_informes_correos_y_log(tmp_path, monkeypatch):
     script.main()
     log = json.loads((salida / "claude_log.json").read_text())
     assert [x["autor"] for x in log] == ["Claude", "Sistema (script)"]
+
+
+def test_oferta_sobre_el_monto_es_no_go_y_el_iva_sin_credito_es_costo():
+    # Oferta 1.000.000 × 1,05 × 1,2 × 1,19 = 1.499.400 con IVA: un poco sobre 1.400.000 ya es NO GO.
+    ev = evaluar(_lic(monto_estimado=1_400_000), _presupuesto())
+    assert ev.decision == NO_GO and any("supera el monto" in r for r in ev.razones)
+    assert evaluar(_lic(monto_estimado=1_600_000), _presupuesto()).decision != NO_GO
+    # Sin crédito fiscal el IVA de la compra suma al costo (no a la mercadería) y baja el margen.
+    sin_credito = armar_presupuesto([{"linea": 1, "producto": "Silla", "cantidad": 100, "unidad": "Unidad"}],
+                                    [{"linea": 1, "precio_unitario_neto": 10_000, "coincidencia": "exacta",
+                                      "verificado": True, "tienda": "Tienda"}], iva_es_costo=True)
+    ev = evaluar(_lic(monto_estimado=5_000_000), sin_credito)
+    assert sin_credito["iva_compras"] == pytest.approx(190_000) and ev.costos["iva_compras"] == pytest.approx(190_000)
+    assert ev.costos["directos"] == pytest.approx(1_000_000)
+    assert ev.costos["total"] == pytest.approx(ev.costos["directos"] + ev.costos["iva_compras"] + ev.costos["indirectos"])
+    assert sin_credito["oferta_neta"] == pytest.approx(1_000_000 * 1.19 * 1.05 * 1.2)

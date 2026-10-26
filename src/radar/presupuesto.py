@@ -151,7 +151,7 @@ def items_licitacion_presupuesto(codigo: str, rubro: str | None, detalle: dict,
 
 
 def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.20,
-                      otros_costos: float = 0.05) -> dict:
+                      otros_costos: float = 0.05, iva_es_costo: bool = False) -> dict:
     """Presupuesto por ítem con el mejor precio de mercado encontrado.
 
     - costo unitario = precio neto (sin IVA) por unidad pedida en la licitación;
@@ -163,7 +163,11 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
       0,1 y 10 veces el costo con gastos (`referencia_comparable`); si no, es otra
       presentación del producto;
     - `lineas_globales`: líneas con precio cuya unidad es Global, Kit, Servicio o Lote;
-    - todo en CLP neto; el total con IVA se agrega al final.
+    - todo en CLP neto; el total con IVA se agrega al final;
+    - `iva_es_costo`: sin crédito fiscal (sin giro con IVA, o compras con boleta) el IVA de la
+      compra no se recupera y es costo: el costo con gastos y la oferta se calculan sobre el
+      precio con IVA (`iva_compras` dice cuánto suma). `costo_unitario_neto` sigue siendo el
+      precio sin IVA de la tienda (la orden al proveedor lo usa).
     """
     # El más barato entre los productos iguales o equivalentes; uno solo "aproximado"
     # (otra marca o medida) se usa cuando no hay otro.
@@ -180,12 +184,13 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         if linea not in prioridad or nota < prioridad[linea]:
             por_linea[linea], prioridad[linea] = m | {"precio_unitario_neto": precio}, nota
     filas, costo_total, oferta_total, referencia_total, oferta_con_referencia = [], 0.0, 0.0, 0.0, 0.0
-    sin_precio, sin_verificar, lineas_globales = 0, 0, []
+    sin_precio, sin_verificar, lineas_globales, iva_compras = 0, 0, [], 0.0
     for item in items:
         cantidad = _numero(item.get("cantidad")) or 0.0
         mejor = por_linea.get(item.get("linea"))
         costo = mejor["precio_unitario_neto"] if mejor else None
-        costo_gastos = costo * (1 + otros_costos) if costo is not None else None
+        factor_iva = 1 + IVA if iva_es_costo else 1
+        costo_gastos = costo * factor_iva * (1 + otros_costos) if costo is not None else None
         oferta = costo_gastos * (1 + margen) if costo_gastos is not None else None
         ref = _numero(item.get("ref_mediana"))
         comparable = referencia_comparable(ref, costo_gastos)
@@ -194,6 +199,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
             sin_precio += 1
         else:
             costo_total += costo_gastos * cantidad
+            iva_compras += costo * (factor_iva - 1) * cantidad
             oferta_total += oferta * cantidad
             if comparable:
                 referencia_total += ref * cantidad
@@ -227,6 +233,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         "items_sin_verificar": sin_verificar,
         "lineas_globales": lineas_globales,
         "costo_neto": costo_total,
+        "iva_compras": iva_compras,
         "oferta_neta": oferta_total,
         "oferta_iva": oferta_total * IVA,
         "oferta_total": oferta_total * (1 + IVA),

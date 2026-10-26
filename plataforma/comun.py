@@ -122,6 +122,7 @@ def supuestos() -> dict:
     s["valor_hora"] = st.session_state.get("sup_valor_hora", s["valor_hora"])
     s["tasa_financiera_mensual"] = st.session_state.get("sup_tasa", s["tasa_financiera_mensual"] * 100) / 100
     s["logistica_pct"] = {z: st.session_state.get(f"sup_log_{z}", v * 100) / 100 for z, v in s["logistica_pct"].items()}
+    s["recupera_iva_compras"] = st.session_state.get("sup_recupera_iva", s["recupera_iva_compras"])
     return s
 
 
@@ -155,6 +156,11 @@ def panel_supuestos() -> None:
         st.caption("Despacho desde Santiago (% del costo de la mercadería)")
         for zona, pct in base["logistica_pct"].items():
             st.number_input(f"{zona.capitalize()}: {ZONAS[zona]}", 0.0, 50.0, pct * 100, 0.5, key=f"sup_log_{zona}")
+        st.toggle("Recupero el IVA de mis compras (crédito fiscal)", value=bool(base["recupera_iva_compras"]),
+                  key="sup_recupera_iva",
+                  help="Apagado: el IVA que pagas al comprar es costo tuyo (y el de la venta se paga entero al "
+                       "SII), así que costos y ofertas se calculan con el precio con IVA. Enciéndelo cuando "
+                       "factures con un giro con IVA y compres con factura a tu nombre.")
         st.toggle("Estimar con OC del Estado las líneas sin precio", key="sup_estimar_oc",
                   help="Para las líneas sin precio de tienda ni cotización usa el costo máximo que permite "
                        "ofertar lo que pagó el Estado (mediana de órdenes de compra). Es una estimación: "

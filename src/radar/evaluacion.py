@@ -32,6 +32,9 @@ SUPUESTOS = {
     "tasa_financiera_mensual": 0.015,  # costo de financiar la compra hasta el pago (30 días)
     "logistica_pct": {"cercana": 0.03, "media": 0.06, "lejana": 0.09, "extrema": 0.12},
     "max_evaluadas": 10,
+    # Sin crédito fiscal el IVA de las compras no se recupera: es costo, y el de la venta se
+    # paga entero al SII.
+    "recupera_iva_compras": False,
 }
 
 # Zona logística desde Santiago (despacho como % del costo de la mercadería).
@@ -88,7 +91,9 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     con_precio = n_items - p["items_sin_precio"]
     cobertura = con_precio / n_items if n_items else 0.0
     otros = p.get("otros_costos", 0.05)
-    directo = p["costo_neto"] / (1 + otros) if p["costo_neto"] else 0.0
+    # costo_neto ya trae el IVA de las compras si no se recupera (armar_presupuesto con iva_es_costo).
+    iva_compras = p.get("iva_compras") or 0.0
+    directo = p["costo_neto"] / (1 + otros) - iva_compras if p["costo_neto"] else 0.0
     oferta_neta, oferta_total = p["oferta_neta"], p["oferta_total"]
     monto = lic.get("monto_estimado") if lic.get("moneda") in (None, "CLP") else None
     dias = lic.get("dias_restantes")
@@ -101,8 +106,8 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     garantia = oferta_total * s["garantia_pct"] * s["costo_emision_garantia_pct"] if con_garantia else 0.0
     financiero = directo * (1 + IVA) * s["tasa_financiera_mensual"]
     indirectos = logistica + mano_obra + garantia + financiero
-    total = directo + indirectos
-    margen_bruto = oferta_neta - directo
+    total = directo + iva_compras + indirectos
+    margen_bruto = oferta_neta - directo - iva_compras
     margen_neto = oferta_neta - total
 
     riesgos, puntos = [], 0
@@ -172,8 +177,10 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
         razones.append("Ningún ítem tiene precio de mercado: no se puede estimar el costo.")
     if con_precio and margen_neto < 0:
         razones.append("Con los costos indirectos el margen neto es negativo.")
-    if monto and oferta_total > 1.3 * monto:
-        razones.append("La oferta supera en más de 30 % el monto estimado.")
+    if monto and oferta_total > monto:
+        # Ofertar sobre el presupuesto del organismo casi nunca se adjudica (y sin crédito fiscal
+        # no hay margen para bajar el precio).
+        razones.append("La oferta supera el monto estimado del organismo.")
     if razones:
         decision = NO_GO
     else:
@@ -181,8 +188,6 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
             condiciones.append("Conseguir precio de los ítems que faltan antes de ofertar.")
         if p.get("lineas_globales"):
             condiciones.append("Revisar en las bases la cantidad real de las líneas globales.")
-        if monto and oferta_total > monto:
-            condiciones.append("Bajar costos (mayorista) o margen hasta quedar bajo el monto estimado.")
         if margen_neto_pct < 0.10:
             condiciones.append("Mejorar el margen neto (hoy bajo 10 %) negociando con proveedores.")
         if aproximadas:
@@ -203,7 +208,7 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     return Evaluacion(
         codigo=lic.get("codigo"),
         decision=decision,
-        costos={"directos": directo, "logistica": logistica, "mano_obra": mano_obra, "horas": horas,
+        costos={"directos": directo, "iva_compras": iva_compras, "logistica": logistica, "mano_obra": mano_obra, "horas": horas,
                 "garantia": garantia, "financiero": financiero, "indirectos": indirectos, "total": total,
                 "subcontratacion": 0.0},
         ingresos={"oferta_neta": oferta_neta, "oferta_total": oferta_total, "monto_estimado": monto},

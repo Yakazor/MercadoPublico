@@ -56,7 +56,8 @@ def _una(prep: dict) -> None:
         return
 
     _cotizaciones(codigo, items, mercado, es_compra_agil(lic))
-    ops = opciones(items, mercado, comun.cotizaciones().get(codigo), comun.estimar_oc(), comun.margen(), comun.otros())
+    ops = opciones(items, mercado, comun.cotizaciones().get(codigo), comun.estimar_oc(), comun.margen(), comun.otros(),
+                   not comun.supuestos()["recupera_iva_compras"])
     p, ev = evaluar_licitacion(lic, items, ops, comun.supuestos(), comun.margen(), comun.otros())
     _resultado(lic, p, ev, mercado)
 
@@ -142,7 +143,8 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
         st.markdown(comun.md(
             "| Costos (netos) | Monto |\n|---|---:|\n"
             f"| Mercadería | {comun.clp(c['directos'])} |\n"
-            f"| Despacho ({pct(ev.supuestos['logistica_pct'])}, zona {ev.supuestos['zona']}) | {comun.clp(c['logistica'])} |\n"
+            + (f"| IVA de las compras (sin crédito fiscal) | {comun.clp(c['iva_compras'])} |\n" if c.get("iva_compras") else "")
+            + f"| Despacho ({pct(ev.supuestos['logistica_pct'])}, zona {ev.supuestos['zona']}) | {comun.clp(c['logistica'])} |\n"
             f"| Tu trabajo ({c['horas']:g} h × {comun.clp(ev.supuestos['valor_hora'])}) | {comun.clp(c['mano_obra'])} |\n"
             f"| Garantía de fiel cumplimiento | {comun.clp(c['garantia'])} |\n"
             f"| Costo financiero (30 días) | {comun.clp(c['financiero'])} |\n"

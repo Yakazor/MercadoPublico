@@ -32,7 +32,7 @@ from .config import cargar_config
 from .evaluacion import SUPUESTOS, evaluar, puntaje
 from .filtro import normalizar
 from .orden_proveedor import crear_orden
-from .presupuesto import armar_presupuesto, unidad_global
+from .presupuesto import IVA, armar_presupuesto, unidad_global
 
 ORIGEN_DATOS = "https://raw.githubusercontent.com/Yakazor/MercadoPublico/datos"
 ARCHIVOS = ("licitaciones", "items", "mercado", "meta")
@@ -175,14 +175,16 @@ def filtrar(lics: list[dict], *, texto: str = "", compra_agil: bool | None = Non
 
 
 def opciones(items: list[dict], mercado: list[dict], cotizaciones: dict | None = None, estimar_oc: bool = False,
-             margen: float = 0.20, otros: float = 0.05) -> list[dict]:
+             margen: float = 0.20, otros: float = 0.05, iva_es_costo: bool = False) -> list[dict]:
     """Opciones de precio para `armar_presupuesto`.
 
     - `cotizaciones`: {línea: precio unitario neto} que te dio un proveedor; reemplazan a
       las tiendas de esa línea y cuentan como producto exacto y verificado;
     - `estimar_oc`: para las líneas sin precio, el costo máximo que permite ofertar la
       mediana que pagó el Estado (la oferta queda igual a esa mediana). Cuenta como
-      producto aproximado y sin verificar: suma riesgo y una condición en la evaluación.
+      producto aproximado y sin verificar: suma riesgo y una condición en la evaluación. Con
+      `iva_es_costo` (sin crédito fiscal) también se descuenta el IVA de la compra, para que la
+      oferta siga quedando en la mediana.
     """
     cotizaciones = {linea: precio for linea, precio in (cotizaciones or {}).items() if precio and precio > 0}
     filas = [op for op in mercado if op.get("linea") not in cotizaciones]
@@ -192,7 +194,8 @@ def opciones(items: list[dict], mercado: list[dict], cotizaciones: dict | None =
         con_precio = {f.get("linea") for f in filas if (f.get("precio_unitario_neto") or 0) > 0}
         for it in items:
             if it.get("linea") not in con_precio and it.get("ref_mediana"):
-                filas.append({"linea": it["linea"], "precio_unitario_neto": it["ref_mediana"] / ((1 + otros) * (1 + margen)),
+                filas.append({"linea": it["linea"], "precio_unitario_neto": it["ref_mediana"] / (
+                    (1 + otros) * (1 + margen) * (1 + IVA if iva_es_costo else 1)),
                               "coincidencia": ESTIMADA_OC, "verificado": False, "tienda": "Estimado con OC del Estado"})
     return filas
 
@@ -242,7 +245,8 @@ def compra_venta(lic: dict, items: list[dict]) -> tuple[bool | None, str]:
 
 def evaluar_licitacion(lic: dict, items: list[dict], ops: list[dict], supuestos: dict | None = None,
                        margen: float = 0.20, otros: float = 0.05) -> tuple[dict, object]:
-    p = armar_presupuesto(items, ops, margen=margen, otros_costos=otros)
+    iva_es_costo = not (SUPUESTOS | (supuestos or {}))["recupera_iva_compras"]
+    p = armar_presupuesto(items, ops, margen=margen, otros_costos=otros, iva_es_costo=iva_es_costo)
     return p, evaluar(lic, p, supuestos)
 
 
@@ -257,7 +261,8 @@ def ranking(prep: dict, supuestos: dict | None = None, margen: float = 0.20, otr
         mercado = prep["mercado"].get(codigo, [])
         if not items or not (mercado or estimar_oc or cotizaciones.get(codigo)):
             continue
-        ops = opciones(items, mercado, cotizaciones.get(codigo), estimar_oc, margen, otros)
+        ops = opciones(items, mercado, cotizaciones.get(codigo), estimar_oc, margen, otros,
+                       not (SUPUESTOS | (supuestos or {}))["recupera_iva_compras"])
         p, ev = evaluar_licitacion(lic, items, ops, supuestos, margen, otros)
         if p["items_sin_precio"] < len(p["items"]):
             filas.append((lic, p, ev))
