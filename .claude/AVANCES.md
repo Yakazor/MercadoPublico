@@ -79,6 +79,11 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-26: error en la plataforma al abrir la ficha de una Compra Ágil y volver a dibujarla
+  (`StreamlitValueAssignmentNotAllowedError` en el botón «Orden de compra al proveedor»): su clave era
+  `oc_<código>` y `app.py` reasigna todas las claves `oc_` para conservar el formulario de la orden, pero
+  Streamlit no deja asignar el valor de un botón. Clave nueva `ir_oc_<código>` y prueba que corre la ficha dos veces.
+
 - 2026-10-25 (revisión de los 76 commits del 21 al 25-10, pedida por la usuaria; correcciones directo en la
   principal, a pedido): la orden al proveedor ya no lleva precios estimados con OC (van vacíos y el aviso
   dice cuántos faltan); textos que empiezan con «=» quedan como texto en el Excel de evaluación y en la orden

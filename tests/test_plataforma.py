@@ -274,6 +274,7 @@ def _ficha(raiz: str) -> None:
     import comun
     import explorar
 
+    comun.conservar_estado("oc_")   # como app.py en cada corrida
     prep = comun.datos()
     explorar.ficha(prep["licitaciones"][0], prep)
 
@@ -293,6 +294,10 @@ def test_ranking_y_ficha_cargan_sin_errores(tmp_path, monkeypatch):
     ranking_.run()
     assert not ranking_.exception, [e.value for e in ranking_.exception]
     ficha = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60).run()
+    assert not ficha.exception, [e.value for e in ficha.exception]
+    # Segunda corrida (p. ej. al tocar otra cosa con la ficha abierta): conservar_estado("oc_") no puede
+    # reasignar la clave de un botón (StreamlitValueAssignmentNotAllowedError, visto en la plataforma).
+    ficha.run()
     assert not ficha.exception, [e.value for e in ficha.exception]
     assert ficha.subheader and ficha.subheader[0].value.startswith("1-1-LE26")
 
