@@ -19,7 +19,11 @@
      "precio_unitario_neto": 2008.4,
      "coincidencia": "aproximada",
      "nota": "la ficha no confirma que sea transparente. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-26"
+     "fecha_consulta": "2026-10-26",
+     "verificado": true,
+     "verificado_en": "2026-10-26",
+     "precio_pagina": 2390.0,
+     "verificacion_pagina": "2026-10-26: la página muestra $2.390."
     }
    ]
   },
@@ -74,7 +78,11 @@
      "precio_unitario_neto": 268.74,
      "coincidencia": "aproximada",
      "nota": "medida cercana a oficio, no tipo saco confirmado. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-26"
+     "fecha_consulta": "2026-10-26",
+     "verificado": true,
+     "verificado_en": "2026-10-26",
+     "precio_pagina": 15990.0,
+     "verificacion_pagina": "2026-10-26: la página muestra $15.990."
     }
    ]
   },
@@ -129,7 +137,8 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-26"
+     "fecha_consulta": "2026-10-26",
+     "verificacion_pagina": "2026-10-26: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -139,5 +148,10 @@
    "opciones": [],
    "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar con distribuidores"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-26",
+  "opciones": 3,
+  "verificadas": 2
+ }
 }

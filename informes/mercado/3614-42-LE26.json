@@ -19,7 +19,10 @@
      "precio_unitario_neto": 10356.3,
      "coincidencia": "exacta",
      "nota": "precio internet ($14.499 en farmacia); exigir vencimiento mínimo según bases. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-26"
+     "fecha_consulta": "2026-10-26",
+     "verificado": false,
+     "precio_pagina": 14499.0,
+     "verificacion_pagina": "2026-10-26: la página abrió y el precio más parecido es $14.499, no $12.324: puede haber cambiado."
     }
    ]
   },
@@ -119,5 +122,10 @@
    "opciones": [],
    "nota": "insumo clínico especializado: sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores (p. ej. B. Braun, Urgo, Coloplast)"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-26",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

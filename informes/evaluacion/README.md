@@ -1,6 +1,6 @@
 # Evaluación comercial de licitaciones
 
-Actualizado: 2026-10-26. 1903 oportunidades vigentes en el Excel, 21 con precios de mercado evaluadas: 0 GO, 6 GO con condiciones y 15 NO GO.
+Actualizado: 2026-10-26. 1902 oportunidades vigentes en el Excel, 21 con precios de mercado evaluadas: 0 GO, 6 GO con condiciones y 15 NO GO.
 
 - [Excel con todas las licitaciones, la evaluación y el Claude Log](Licitaciones_evaluadas.xlsx)
 
@@ -17,7 +17,7 @@ Actualizado: 2026-10-26. 1903 oportunidades vigentes en el Excel, 21 con precios
 | [3654-36-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=3654-36-LE26) ADQUISICIÓN DE ELEMENTOS DE PROTECCIÓN CORPORAL | 2026-10-26 | $10.958.029 | $15.250.642 | 17 % | Alto | 55% | 🔴 NO GO | [informe](licitaciones/3654-36-LE26_informe.md) · [GO/NO GO](licitaciones/3654-36-LE26_go_no_go.md) · [correos](licitaciones/3654-36-LE26_correos.md) |
 | [4768-55-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=4768-55-LE26) ADQUISICION DE JUGUETES DE NAVIDAD 2026 | 2026-10-26 | $9.122.355 | $12.000.000 | 15 % | Medio | 65% | 🔴 NO GO | [informe](licitaciones/4768-55-LE26_informe.md) · [GO/NO GO](licitaciones/4768-55-LE26_go_no_go.md) · [correos](licitaciones/4768-55-LE26_correos.md) |
 | [612-44-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=612-44-LE26) Adquisición de 3 Workstations teclado y mouse | 2026-10-26 | $12.591.721 | $14.600.000 | 17 % | Medio | 35% | 🔴 NO GO | [informe](licitaciones/612-44-LE26_informe.md) · [GO/NO GO](licitaciones/612-44-LE26_go_no_go.md) · [correos](licitaciones/612-44-LE26_correos.md) |
-| [3000-35-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=3000-35-LE26) Implementos Deportivos - Unidad de Deportes | 2026-10-26 | $7.822.809 | $13.697.000 | 11 % | Alto | 55% | 🔴 NO GO | [informe](licitaciones/3000-35-LE26_informe.md) · [GO/NO GO](licitaciones/3000-35-LE26_go_no_go.md) · [correos](licitaciones/3000-35-LE26_correos.md) |
+| [2098-155-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=2098-155-LE26) ADQUISICION DE FOCOS Y PANELES LED | 2026-10-27 | $68.611.744 | $23.800.000 | 13 % | Alto | 5% | 🔴 NO GO | [informe](licitaciones/2098-155-LE26_informe.md) · [GO/NO GO](licitaciones/2098-155-LE26_go_no_go.md) · [correos](licitaciones/2098-155-LE26_correos.md) |
 
 ## Qué hacer ahora
 

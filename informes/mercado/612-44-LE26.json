@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Sin teclado ni mouse; spec del comprador no conocida.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-26: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Paris (CompuElite)",
@@ -38,13 +38,13 @@
      "verificado": false,
      "nota": "Sin teclado ni mouse; spec del comprador no conocida.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-25: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-26: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-25",
+  "fecha": "2026-10-26",
   "opciones": 2,
   "verificadas": 0
  }

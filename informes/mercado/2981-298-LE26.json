@@ -88,5 +88,10 @@
    "opciones": [],
    "nota": "reactivo o insumo de laboratorio: sin precio público en Chile (cotización a distribuidores como Merck, Thermo Fisher, Labbox); por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-26",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
