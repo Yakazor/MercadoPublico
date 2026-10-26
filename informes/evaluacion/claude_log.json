@@ -37,20 +37,20 @@
  },
  {
   "fecha": "2026-10-25",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "2039 vigentes; 21 evaluadas; informes de 10",
-  "resultado": "0 GO, 15 con condiciones, 6 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 14 precios son de productos aproximados (otra medida, marca o modelo).; 13 de 29 ítems sin precio de mercado; 14 de 16 precios son de productos aproximados (otra medida, marca o modelo).; 14 de 41 precios son de productos aproximados (otra medida, marca o modelo).; 16 de 44 ítems sin precio de mercado; 2 de 11 ítems sin precio de mercado; 29 de 70 ítems sin precio de mercado; 3 de 14 precios son de productos aproxim",
-  "decisiones": "3654-36-LE26: GO CON CONDICIONES; 612-44-LE26: GO CON CONDICIONES; 4768-55-LE26: GO CON CONDICIONES; 2446-307-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3000-37-LE26: GO CON CONDICIONES; 3000-35-LE26: GO CON CONDICIONES; 979-67-LE26: GO CON CONDICIONES; 2585-156-LE26: GO CON CONDICIONES; 2452-25-LE26: GO CON CONDICIONES",
-  "recomendaciones": "- **3654-36-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **612-44-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4768-55-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
- },
- {
-  "fecha": "2026-10-25",
   "autor": "Claude",
   "licitaciones_procesadas": "4037-378-COT26 (Compra Ágil, Municipalidad de Fresia, impresora multifuncional para Dirección de Obras, 1 unidad, cierra 26-10 08:00, estimado $800.000)",
   "resultado": "Precios con WebSearch, sin verificar. Mejor: HP OfficeJet Pro 9730 (A3, dúplex, ADF, wifi) en Mercado Libre $409.990 c/IVA; SP Digital $559.990; alternativa con tanque de tinta Brother MFC-T4500DW (A3) en Ripley $693.990. Oferta sugerida $516.587 con IVA (margen 20 %), bajo el estimado.",
   "riesgos": "El anexo con la especificación no se pudo abrir (se supuso A3 con wifi y dúplex); plazo de entrega de 2 días a Fresia (Los Lagos); vendedor de marketplace; cierra hoy 08:00.",
   "decisiones": "Se cotizó la opción A3 más barata; la Epson EcoTank L15150 (desde $999.900) quedó fuera por superar el estimado. Las 3 mejores del ranking ya tenían proveedores.",
   "recomendaciones": "Antes de las 08:00, abrir el anexo y confirmar formato (A3/A4), tipo de tinta y conectividad; confirmar stock y despacho a Fresia en 2 días. Con el estimado de $800.000 hay espacio para ofertar la Brother con tanque (costo por página más bajo) si el anexo lo pide."
+ },
+ {
+  "fecha": "2026-10-25",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "2039 vigentes; 22 evaluadas; informes de 10",
+  "resultado": "0 GO, 15 con condiciones, 7 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 14 precios son de productos aproximados (otra medida, marca o modelo).; 13 de 29 ítems sin precio de mercado; 14 de 16 precios son de productos aproximados (otra medida, marca o modelo).; 14 de 41 precios son de productos aproximados (otra medida, marca o modelo).; 16 de 44 ítems sin precio de mercado; 2 de 11 ítems sin precio de mercado; 29 de 70 ítems sin precio de mercado; 3 de 14 precios son de productos aproxim",
+  "decisiones": "3654-36-LE26: GO CON CONDICIONES; 612-44-LE26: GO CON CONDICIONES; 4768-55-LE26: GO CON CONDICIONES; 2446-307-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3000-37-LE26: GO CON CONDICIONES; 3000-35-LE26: GO CON CONDICIONES; 979-67-LE26: GO CON CONDICIONES; 2585-156-LE26: GO CON CONDICIONES; 2452-25-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **3654-36-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **612-44-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4768-55-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
  }
 ]

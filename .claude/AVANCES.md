@@ -88,6 +88,13 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   Probado en Chromium a 1366 y 390 px. Ojo: con los datos del 25-10 solo 19 licitaciones abiertas tienen
   precios de tiendas y ninguna Compra Ágil abierta (luego otra sesión cotizó 1057501-3710-COT26); las 143 de `informes/mercado` ya están todas en la rama
   `datos` (las demás cerraron).
+- 2026-10-26 (PRECIOS para 1956-37-COT26): Compra Ágil Deprov. Educación Cordillera, 1 termo hervidor 20 L
+  (doble pared inox, termostato) y 2 termos de 2,8–3 L (Eco Boil 750 W, panel digital; cierra 26-10 08:00,
+  estimado $250.000). Con WebSearch, sin verificar (algunos links son de listado, no de ficha): línea 1 Ventus
+  20 L Sodimac $59.990 c/IVA (Easy VHA-20 $74.990; Nex 20 L Mercado Libre $55.170, aproximada: no confirma doble
+  pared); línea 2 Electron BA-6928 (2,8 L, 750 W, Eco Boil, calza con la descripción) Sodimac $29.990, Easy
+  $33.990, Falabella $34.990. Oferta sugerida $151.162 c/IVA (margen 20 %), bajo el estimado; el Estado pagó
+  $129.990 neto por unidad (mediana OC). 495 pruebas OK.
 - 2026-10-26 (PRECIOS para 4037-378-COT26, 01:45 UTC): Compra Ágil Municipalidad de Fresia, 1 impresora
   multifuncional para Dirección de Obras (cierra 26-10 08:00, estimado $800.000, entrega 2 días). El anexo
   con la especificación no se pudo abrir: se supuso A3 con wifi y dúplex. Con WebSearch, sin verificar: HP

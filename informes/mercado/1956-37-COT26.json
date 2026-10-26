@@ -1,0 +1,100 @@
+{
+ "codigo": "1956-37-COT26",
+ "nombre": "ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS EN CASINO DEPROV CORDILLERA",
+ "fecha_consulta": "2026-10-26",
+ "verificacion": "sin verificar (WebSearch; la sesión no puede abrir las tiendas)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Termo hervidor 20 litros, acero inoxidable, control de temperatura",
+   "consulta": "termo hervidor 20 litros acero inoxidable doble pared termostato; Ventus hervidor mantenedor industrial 20 litros sodimac",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre",
+     "producto_mercado": "Termo Hervidor Nex 20 Litros Control Temperatura Gris",
+     "url": "https://www.mercadolibre.cl/shorts/clips/GPPEAr/termo-hervidor-nex-20-litros-control-temperatura-gris",
+     "precio": 55170,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "coincidencia": "aproximada",
+     "nota": "Control de temperatura e indicador de nivel; no confirma doble pared de acero. Link de clip, no de la ficha.",
+     "precio_unitario_neto": 46361.34,
+     "fecha_consulta": "2026-10-26"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Hervidor mantenedor industrial 20 litros Ventus",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat115137/hervidores-electricos",
+     "precio": 59990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "coincidencia": "equivalente",
+     "nota": "Precio visto en el listado de categoría (otra captura: $58.190); falta el link de la ficha. Ventus 20 L (19 L netos), 2 kW, inox, regulación 30–100 °C. Confirmar que sea doble pared (la ficha del VHA2B-20 lo dice).",
+     "precio_unitario_neto": 50411.76,
+     "fecha_consulta": "2026-10-26"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Hervidor mantenedor 20 litros VHA-20 Ventus",
+     "url": "https://www.easy.cl/hervidor-mantenedor-20-litros-vha-20-ventus-1200123/p",
+     "precio": 74990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "coincidencia": "equivalente",
+     "nota": "20 L, 2000 W, acero inoxidable, garantía 1 año; normal $89.990.",
+     "precio_unitario_neto": 63016.81,
+     "fecha_consulta": "2026-10-26"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Termo hervidor 2,8 litros Eco Boil 750 W, interior inox, panel digital",
+   "consulta": "termo hervidor eléctrico 3 litros panel digital acero inoxidable; Electron BA6928 INX precio",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Termo hervidor BA-6928RG 2.8 Lts Electron",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/termo-hervidor",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "coincidencia": "exacta",
+     "nota": "Precio de oferta en listado (normal $39.990); falta link de ficha. BA-6928: 2,8 L, 750 W, Eco Boil, interior inox, panel digital, dispensado eléctrico/manual/contacto: calza con la descripción.",
+     "precio_unitario_neto": 25201.68,
+     "fecha_consulta": "2026-10-26"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Termo hervidor BA-6928I gris 2.8 lt Electron",
+     "url": "https://www.easy.cl/termo-hervidor-ba-6928i-gris-28-lt-1350898/p",
+     "precio": 33990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "coincidencia": "exacta",
+     "nota": "Normal $39.990.",
+     "precio_unitario_neto": 28563.03,
+     "fecha_consulta": "2026-10-26"
+    },
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Termo hervidor BA-6928RG 2.8 Lts Electron",
+     "url": "https://www.falabella.com/falabella-cl/brand/ELECTRON",
+     "precio": 34990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "coincidencia": "exacta",
+     "nota": "Precio en listado de marca (normal $39.990).",
+     "precio_unitario_neto": 29403.36,
+     "fecha_consulta": "2026-10-26"
+    }
+   ]
+  }
+ ]
+}
