@@ -17,7 +17,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
 | [1057501-3710-COT26](presupuestos/1057501-3710-COT26.md) 40-001-510-40800 SILLA ERGONOMETRICA C/BRAZO RESPALDO MEDIO | Mobiliario de oficina, escolar y almacenaje | 2026-10-26 | 1/1 | $617.559 | $881.874 | $123.512 | $800.000 | supera monto, sin verificar |
-| [1956-37-COT26](presupuestos/1956-37-COT26.md) ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS | Electrodomésticos, hogar y menaje | 2026-10-26 | 2/2 | $105.856 | $151.162 | $21.171 | $250.000 | sin verificar |
+| [1956-37-COT26](presupuestos/1956-37-COT26.md) ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS | Electrodomésticos, hogar y menaje | 2026-10-26 | 2/2 | $105.856 | $151.162 | $21.171 | $250.000 | — |
 | [4037-378-COT26](presupuestos/4037-378-COT26.md) IMPRESORA MULTIFUNCIONAL PARA USO EN DIRECCION DE OBRAS | Computación y electrónica | 2026-10-26 | 1/1 | $361.756 | $516.587 | $72.351 | $800.000 | sin verificar |
 | [1247197-75-LE26](presupuestos/1247197-75-LE26.md) ADQUISICIÓN DE SERVIDORES COMPUTACIONALES | Computación y electrónica | 2026-10-26 | 0/2 | $0 | $0 | $0 | $19.100.000 | faltan 2 precios |
 | [1469-288-L126](presupuestos/1469-288-L126.md) ADQUISICIÓN DE INSUMOS Y MATERIALES DE LABORATORIO, UNIVERSIDAD DE TAL | Insumos médicos no regulados y aseo | 2026-10-26 | 14/14 | $359.400 | $513.223 | $71.880 | $1.061.170 | — |

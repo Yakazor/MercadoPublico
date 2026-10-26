@@ -51,12 +51,12 @@
      "unidades_equivalentes": 2,
      "precio_unitario_neto": 4197.48,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "Se vende por par: 2 vendas.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-25",
-     "precio_pagina": 10000.0,
-     "verificacion_pagina": "2026-10-25: la página muestra $10.000."
+     "precio_pagina": 9510.0,
+     "verificacion_pagina": "2026-10-25: la página abrió y el precio más parecido es $9.510, no $9.990: puede haber cambiado."
     },
     {
      "tienda": "Paris",
@@ -793,6 +793,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-25",
   "opciones": 22,
-  "verificadas": 12
+  "verificadas": 11
  }
 }
