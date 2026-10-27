@@ -1,0 +1,158 @@
+{
+ "codigo": "1904-10-LE26",
+ "nombre": "ADQUISICION DE NEUMATICOS Y LLANTA",
+ "fecha_consulta": "2026-10-27",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Neumático 295/80 R22.5 mixto para camion plano",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 2,
+   "producto": "Neumático 245/65 R17 AT para camioneta",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Mucho Neumático)",
+     "producto_mercado": "Neumático 245/65 R17 Pirelli 111T XL Scorpion A/T+",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-245-65-r17-pirelli-111t-xl-scorpion-a-t-/00045000123038",
+     "precio": 149900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 125966.39,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    },
+    {
+     "tienda": "Lider (vende Chileneumáticos)",
+     "producto_mercado": "Neumático Firestone 245/65 R17 105T Destination AT2",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-firestone-245-65-r17-105t-destination-at2/00046682613163",
+     "precio": 153800,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 129243.7,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Neumático 225/75 R16 C para furgon",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Neumático 225/75 R16 AT",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-225-75-r16-at/00045055237236",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "nota": "no es versión C (carga); confirmar índice de carga. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Neumático 245/70 R16 AT para camioneta",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Comercial SP)",
+     "producto_mercado": "Neumático 245/70 R16 111T Roadcruza RA1100 AT",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-245-70-r16-111t-roadcruza-ra1100-at/00046126674782",
+     "precio": 85990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 72260.5,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    },
+    {
+     "tienda": "Lider (vende Chileneumáticos)",
+     "producto_mercado": "Neumático Pirelli 245/70 R16 111T Scorpion ATR",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-pirelli-245-70-r16-111t-scorpion-atr/00046101352839",
+     "precio": 142300,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 119579.83,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Neumático 235/85 R 16 C mixto 4x4 para remolque",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 6,
+   "producto": "Neumático 215/75 R 17.5 para camión plano",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 7,
+   "producto": "Neumático 11.00R22.5 mixto para camion aljibe",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Neumático 11 R22.5 Faena HD969 146/143K 16PR",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-11-r22-5-faena-hd969-146-143k-16pr/00046416946828",
+     "precio": 225590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 189571.43,
+     "coincidencia": "aproximada",
+     "nota": "confirmar que el dibujo es mixto. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Neumático 17.5-25 AT G-3 para motoniveladora",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 9,
+   "producto": "Neumático 19.5 X 24 ATR para retro excavadora trasero",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 10,
+   "producto": "Neumático 12.5/80-18 ATR para retro excavadora delatero",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 11,
+   "producto": "Neumático 10 16.5 NHS ATR para mini cargador",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  },
+  {
+   "linea": 12,
+   "producto": "Llanta disco 8.25 X 22.5 10 pernos",
+   "opciones": [],
+   "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
+  }
+ ]
+}

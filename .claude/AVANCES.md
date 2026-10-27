@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-27 (rutina 11:00 UTC): `datos` del 27-10 07:01 (menos de 6 h: sin disparar workflows; 395 licitaciones,
+  1.113 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 1090-17-LE26 herramientas
+  CONAF (7/13; GO con condiciones, margen 15 %, entra al top 3), 1904-10-LE26 neumáticos (4/12),
+  2366-44-LE26 computación (3/14) y 2107-168-LE26 oficina (0/20). Mejores: 2446-307-LE26, 1090-17-LE26 y
+  979-73-LE26. Proveedores nuevos para 1090-17-LE26 (sin correos: no hay borradores). 498 pruebas OK.
+
 - 2026-10-26 (rutina 11:00 UTC): `datos` del 26-10 08:11 (466 licitaciones, 1.437 Compras Ágiles, ninguna
   de 2º llamado). Precios con WebSearch (sin verificar): 1057544-349-LE26 oficina (3/16), 3614-42-LE26 pie
   diabético (1/17), 1641-427-LP26 marcapasos (0/15, no se buscó) y 2981-298-LE26 laboratorio (0/14). Las dos

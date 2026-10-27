@@ -1,0 +1,131 @@
+{
+ "codigo": "2366-44-LE26",
+ "nombre": "ACCESORIOS COMPUTACIONALES MEMO N79 PYD",
+ "fecha_consulta": "2026-10-27",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "memoria ram ddr 4 sodimm 16 GB No-ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [
+    {
+     "tienda": "Centrale",
+     "producto_mercado": "Memoria Kingston 16 GB DDR4-3200 SODIMM",
+     "url": "https://centrale.cl/?p=411147",
+     "precio": 29170,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 24512.61,
+     "coincidencia": "equivalente",
+     "nota": "precio con transferencia ($30.770 con tarjeta); stock 1 unidad al buscar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "memoria ram ddr 4 sodimm 8 GB No-ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "memoria ram ddr 5 sodimm 16 GB No-ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "solo apareció una memoria UDIMM ECC de servidor Lenovo (no SODIMM); por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "memoria ram ddr 5 sodimm 8 GB No-ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "memoria ram 32GB UDIMM DDR5-5600 No-ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "memoria RAM 32GB DDR4 3200MHz DIMM No-ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "memoria RAM 32GB DDR4 3200MHz DIMM para servidor con ECC, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "Disco Duro 8tb 3,5\" interfaz SAS 7200rpm para NAS, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 9,
+   "producto": "Disco Duro 4TB 3.5\" 5400RPM SATAIII 128MB para  NAS, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "solo un aviso de Yapo de 2024 (no es tienda); por confirmar"
+  },
+  {
+   "linea": 10,
+   "producto": "SSD 1920GB similar o superior a Kingston Data Center Enterprise DC600M, 2.5\", Sata, NAND  3D TLC SATA, Rev. 3.0 (6 GB/s)",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 11,
+   "producto": "ssd 2,5\" sata 3 de 512 GB, SEGUN EETT ADJUNTAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "ssd m2 NVMe de 512 GB, SEGUN EETT ADJUNTAS",
+   "opciones": [
+    {
+     "tienda": "Notebookstore",
+     "producto_mercado": "SSD Kingston KC3000 512 GB PCIe 4.0 NVMe M.2",
+     "url": "https://notebookstore.cl/kingston-kc3000-ssd-512gb",
+     "precio": 115910,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 97403.36,
+     "coincidencia": "equivalente",
+     "nota": "precio con transferencia ($119.990 otros medios). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "discos duros externos de 4 TB, USB 3.0, SEGUN EETT ADJUNTAS",
+   "opciones": [
+    {
+     "tienda": "Notebookstore",
+     "producto_mercado": "Disco externo Toshiba Canvio Advance 4 TB USB 3.2 Gen 1",
+     "url": "https://notebookstore.cl/4tb-canvio-advance-white",
+     "precio": 151652,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 127438.66,
+     "coincidencia": "equivalente",
+     "nota": "precio con transferencia ($156.990 otros medios). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Grabador DVD externo USB, interfaz usb-C, Velocidad de escritura: DVD 8x / CD 24x: Formatos soportados: DVD-ROM, DVD-R, ",
+   "opciones": [],
+   "nota": "solo aparecieron grabadores importados (envío desde EE. UU.); por confirmar"
+  }
+ ]
+}

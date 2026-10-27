@@ -1,0 +1,190 @@
+{
+ "codigo": "1090-17-LE26",
+ "nombre": "Herramientas Programa PET 2026",
+ "fecha_consulta": "2026-10-27",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "AZADONES",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Sodimac, Tramontina)",
+     "producto_mercado": "Azadón forjado con mango 130 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/azadon",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "AZADONES CON MANGO",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende Sodimac, Tramontina)",
+     "producto_mercado": "Azadón forjado con mango 130 cm",
+     "url": "https://www.falabella.com/falabella-cl/shop/azadon",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "BARRE HOJAS CON MANGO",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Rayun)",
+     "producto_mercado": "Barrehojas de metal 22 dientes",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat3240011/rastrillos-y-horquetas",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "aproximada",
+     "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    },
+    {
+     "tienda": "Sodimac (Tramontina)",
+     "producto_mercado": "Barrehojas de metal con mango reversible",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat3240011/rastrillos-y-horquetas",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "ESCOBA DE RAMA",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "HORQUETAS CON MANGO C/M",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "LIMA PLANA",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "LIMA TRIANGULAR",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "PALA PUNTA CUADRADA C/M CORTO",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Ergo)",
+     "producto_mercado": "Pala cuadrada mango largo",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10782/Palas-Picotas-y-Rastrillos",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "aproximada",
+     "nota": "piden mango corto; precio con 30% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "PALA PUNTA REDONDA C/M LARGO",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Tramontina)",
+     "producto_mercado": "Pala redonda tipo americana mango de madera 120 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10782/Palas-Picotas-y-Rastrillos",
+     "precio": 14995,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12600.84,
+     "coincidencia": "equivalente",
+     "nota": "precio con 50% de descuento (lista $29.990). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "RASTRILLOS MCLEOD",
+   "opciones": [],
+   "nota": "rastrillo McLeod (herramienta forestal) sin precio en tiendas chilenas; por confirmar con proveedores forestales"
+  },
+  {
+   "linea": 11,
+   "producto": "ROZONES CON MANGO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "RASTRILLOS C/MANGO",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Ergo)",
+     "producto_mercado": "Rastrillo metálico 14 dientes",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat3240011/rastrillos-y-horquetas",
+     "precio": 7990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6714.29,
+     "coincidencia": "equivalente",
+     "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "TIJERONES DE PODA",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Ergo)",
+     "producto_mercado": "Tijerón forjado",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11180/Tijeras-de-Podar",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  }
+ ]
+}

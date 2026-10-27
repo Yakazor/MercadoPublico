@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Sodimac",
+  "correo": null,
+  "web": "https://www.sodimac.cl/",
+  "contacto": null,
+  "especialidad": "Herramientas de jardín: palas, rastrillos, barrehojas, tijerones (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/1090-17-LE26.json"
+ },
+ {
+  "nombre": "Falabella (vende Sodimac)",
+  "correo": null,
+  "web": "https://www.falabella.com/falabella-cl/",
+  "contacto": null,
+  "especialidad": "Azadones Tramontina (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/1090-17-LE26.json"
+ },
+ {
+  "nombre": "Ferretería La Reguera SpA",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Herramientas manuales, insumos agrícolas y de jardinería (Villa Alegre, Maule); venta por mayor y stock por confirmar",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://vlex.cl/vid/ferreteria-reguera-spa-1105732684"
+ }
+]

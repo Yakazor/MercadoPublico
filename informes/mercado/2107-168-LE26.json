@@ -1,0 +1,128 @@
+{
+ "codigo": "2107-168-LE26",
+ "nombre": "ADQUISICIÓN DE INSUMOS DE OFICINA PARA DPTO. LOGISTICA",
+ "fecha_consulta": "2026-10-27",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "EESE0003 - ARCHIVADOR OFICIO PALANCA COLOR BURDEO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "EESE0122 - ADHESIVO EN BARRA 40 GRS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "EESE0016 - ARCHIVADOR TIPO WILLIAM COLOR BLANCO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "EESE0017 - CARTULINA DE COLOR PLIEGO DE 60 X 65 CMS 160 GRS (10 VERDE CLARO - 10 CELESTE - 10 ROSADO CLARO - 10 AMARILLO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "EESE0019 - CINTA EMBALAJE TRANSPARENTE 48MM X 40MTS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "EESE0027 - CD DVD 8X 4.7 GB CARATULA IMPRIMIBLE, CON CAJA",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "EESE0031 - CORRECTOR LAPIZ 7 ML LIQUID PAPER TORRE BIC",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "EESE0038 - CORCHETES 23/8",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 9,
+   "producto": "EESE0041 - LAPIZ GRAFITO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 10,
+   "producto": "EESE0042 - LAPIZ PASTA AZUL PUNTA MEDIA",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 11,
+   "producto": "EESE0045 - PAQUETE FUNDA PLASTICA TRANSPARENTE OFICIO CON RIBETE",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "EESE0047 - GOMA DE BORRAR MIGA S20 GRANDE",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "EESE0081 - LAPIZ PENTEL M10 MARCADOR COLOR NEGRO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 14,
+   "producto": "EESE0082 - LIBRO DE ACTAS MATEMATICA 100 HJS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "EESE0144 - NOTA ADHESIVA POST IT",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 16,
+   "producto": "EESE0148 - SOBRES PARA CD CON VENTANA BLANCO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 17,
+   "producto": "EESE0109 - TINTA EPSON BLACK DUPLICADORA MAQUINA EPSON PP-100III MODELO N181A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 18,
+   "producto": "EESE0131 - TINTA EPSON CYAN DUPLICADORA MAQUINA EPSON PP-100III MODELO N181A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 19,
+   "producto": "EESE0132 - TINTA EPSON LIGHT CYAN DUPLICADORA MAQUINA EPSON PP-100III MODELO N181A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 20,
+   "producto": "EESE0133 - TINTA EPSON LIGHT MAGENTA DUPLICADORA MAQUINA EPSON PP-100III MODELO N181A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  }
+ ]
+}
