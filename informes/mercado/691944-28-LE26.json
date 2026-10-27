@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "No se confirma si es packable, capucha elasticada ni reflectante; solo modelo hombre.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 36990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $36.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $36.990."
     },
     {
      "tienda": "Lider",
@@ -41,13 +41,13 @@
      "nota": "Unisex; no confirma capucha elasticada ni detalle reflectante; precio muy superior a ref. fiscal.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 48993.0,
-     "verificacion_pagina": "2026-10-26: la página abrió y el precio más parecido es $48.993, no $52.492: puede haber cambiado."
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $48.993, no $52.492: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-26",
+  "fecha": "2026-10-27",
   "opciones": 2,
   "verificadas": 1
  }

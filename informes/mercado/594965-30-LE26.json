@@ -31,8 +31,8 @@
      "nota": "Medida mayor a la pedida (80x100); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $8.990.",
-     "verificado_en": "2026-10-26"
+     "verificacion_pagina": "2026-10-27: la página muestra $8.990.",
+     "verificado_en": "2026-10-27"
     },
     {
      "tienda": "Falabella",
@@ -47,9 +47,9 @@
      "verificado": true,
      "nota": "Medida mayor a la pedida (80x100); precio con descuento en listado; color/estampado no confirmado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $9.990."
     },
     {
      "tienda": "Falabella",
@@ -64,9 +64,9 @@
      "verificado": true,
      "nota": "Medida distinta a la pedida (80x100); sin confirmar bordes enguinchados ni color pastel liso.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $12.990."
     }
    ]
   },
@@ -89,7 +89,7 @@
      "verificado": false,
      "nota": "Tiene diseño (se pide liso pastel).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-26: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-27: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -104,7 +104,7 @@
      "verificado": false,
      "nota": "Algodón, fabricación nacional; tiene diseño (se pide liso pastel). Precio del resultado de búsqueda.",
      "fecha_consulta": "2026-10-21",
-     "verificacion_pagina": "2026-10-26: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-27: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -128,8 +128,8 @@
      "nota": "Medida mayor a la pedida (100x130); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $8.990.",
-     "verificado_en": "2026-10-26"
+     "verificacion_pagina": "2026-10-27: la página muestra $8.990.",
+     "verificado_en": "2026-10-27"
     },
     {
      "tienda": "Falabella",
@@ -144,9 +144,9 @@
      "verificado": true,
      "nota": "Medida mayor a la pedida (100x130); precio con descuento en listado; color/estampado no confirmado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $9.990."
     },
     {
      "tienda": "Falabella",
@@ -161,9 +161,9 @@
      "verificado": true,
      "nota": "Medida distinta a la pedida (100x130); sin confirmar bordes enguinchados ni color pastel liso.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $12.990."
     }
    ]
   },
@@ -186,9 +186,9 @@
      "verificado": true,
      "nota": "Composición (algodón >=50%) y medida para catre/colchoneta no confirmadas.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $12.990."
     },
     {
      "tienda": "Lider (vendedor Switchmarket)",
@@ -204,8 +204,8 @@
      "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta. Precio actualizado al que mostró la página el 2026-10-20 (antes $32.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $35.990.",
-     "verificado_en": "2026-10-26"
+     "verificacion_pagina": "2026-10-27: la página muestra $35.990.",
+     "verificado_en": "2026-10-27"
     }
    ]
   },
@@ -236,8 +236,8 @@
      "nota": "Medida mayor a la pedida (100x150); color/bordes no confirmados. Precio actualizado al que mostró la página el 2026-10-20 (antes $9.490).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $8.990.",
-     "verificado_en": "2026-10-26"
+     "verificacion_pagina": "2026-10-27: la página muestra $8.990.",
+     "verificado_en": "2026-10-27"
     },
     {
      "tienda": "Falabella",
@@ -252,9 +252,9 @@
      "verificado": true,
      "nota": "Medida mayor a la pedida (100x150); precio con descuento en listado; color/estampado no confirmado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $9.990."
     },
     {
      "tienda": "Falabella",
@@ -269,9 +269,9 @@
      "verificado": true,
      "nota": "Medida distinta a la pedida (100x150); sin confirmar bordes enguinchados ni color pastel liso.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $12.990."
     }
    ]
   },
@@ -294,9 +294,9 @@
      "verificado": true,
      "nota": "Composición (algodón >=50%) y medida para catre/colchoneta no confirmadas.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $12.990."
     },
     {
      "tienda": "Lider (vendedor Switchmarket)",
@@ -312,14 +312,14 @@
      "nota": "Composición no confirmada; medida 1 plaza puede exceder catre/colchoneta. Precio actualizado al que mostró la página el 2026-10-20 (antes $32.990).",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $35.990.",
-     "verificado_en": "2026-10-26"
+     "verificacion_pagina": "2026-10-27: la página muestra $35.990.",
+     "verificado_en": "2026-10-27"
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-26",
+  "fecha": "2026-10-27",
   "opciones": 15,
   "verificadas": 13
  }

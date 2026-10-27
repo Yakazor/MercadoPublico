@@ -25,7 +25,10 @@
      "precio_unitario_neto": 125966.39,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": false,
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $89.990, no $149.900: puede haber cambiado."
     },
     {
      "tienda": "Lider (vende Chileneumáticos)",
@@ -38,7 +41,10 @@
      "precio_unitario_neto": 129243.7,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": false,
+     "precio_pagina": 187300.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $187.300, no $153.800: puede haber cambiado."
     }
    ]
   },
@@ -57,7 +63,11 @@
      "precio_unitario_neto": 54613.45,
      "coincidencia": "aproximada",
      "nota": "no es versión C (carga); confirmar índice de carga. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 64500.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $64.500."
     }
    ]
   },
@@ -76,7 +86,10 @@
      "precio_unitario_neto": 72260.5,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": false,
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $89.990, no $85.990: puede haber cambiado."
     },
     {
      "tienda": "Lider (vende Chileneumáticos)",
@@ -89,7 +102,10 @@
      "precio_unitario_neto": 119579.83,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": false,
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $89.990, no $142.300: puede haber cambiado."
     }
    ]
   },
@@ -120,7 +136,10 @@
      "precio_unitario_neto": 189571.43,
      "coincidencia": "aproximada",
      "nota": "confirmar que el dibujo es mixto. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": false,
+     "precio_pagina": 241990.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $241.990, no $225.590: puede haber cambiado."
     }
    ]
   },
@@ -154,5 +173,10 @@
    "opciones": [],
    "nota": "medida de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores de neumáticos"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-27",
+  "opciones": 6,
+  "verificadas": 1
+ }
 }

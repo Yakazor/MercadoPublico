@@ -19,7 +19,11 @@
      "precio_unitario_neto": 11756.3,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 13990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $13.990."
     }
    ]
   },
@@ -38,7 +42,11 @@
      "precio_unitario_neto": 11756.3,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 13990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $13.990."
     }
    ]
   },
@@ -57,7 +65,11 @@
      "precio_unitario_neto": 4193.28,
      "coincidencia": "aproximada",
      "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 4990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $4.990."
     },
     {
      "tienda": "Sodimac (Tramontina)",
@@ -70,7 +82,11 @@
      "precio_unitario_neto": 10915.97,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $12.990."
     }
    ]
   },
@@ -113,7 +129,10 @@
      "precio_unitario_neto": 5873.95,
      "coincidencia": "aproximada",
      "nota": "piden mango corto; precio con 30% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": false,
+     "precio_pagina": 7990.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $7.990, no $6.990: puede haber cambiado."
     }
    ]
   },
@@ -132,7 +151,11 @@
      "precio_unitario_neto": 12600.84,
      "coincidencia": "equivalente",
      "nota": "precio con 50% de descuento (lista $29.990). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $14.990."
     }
    ]
   },
@@ -163,7 +186,11 @@
      "precio_unitario_neto": 6714.29,
      "coincidencia": "equivalente",
      "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 7990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $7.990."
     }
    ]
   },
@@ -182,9 +209,18 @@
      "precio_unitario_neto": 12596.64,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-27"
+     "fecha_consulta": "2026-10-27",
+     "verificado": true,
+     "verificado_en": "2026-10-27",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-27: la página muestra $14.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-27",
+  "opciones": 8,
+  "verificadas": 7
+ }
 }

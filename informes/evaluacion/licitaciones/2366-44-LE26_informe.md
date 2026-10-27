@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $2.036.321 |
 | Oferta sugerida con IVA | $2.214.746 |
 
-**Riesgos financieros:** 11 de 14 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda..
+**Riesgos financieros:** 11 de 14 ítems sin precio de mercado: el costo real es mayor..
 
 ## Análisis operacional
 
@@ -47,7 +47,6 @@
 ## Riesgos detectados
 
 - 11 de 14 ítems sin precio de mercado: el costo real es mayor.
-- La mayoría de los precios no está verificada en la página de la tienda.
 - Entrega en Región de Arica y Parinacota: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados

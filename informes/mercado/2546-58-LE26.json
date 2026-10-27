@@ -29,9 +29,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -46,9 +46,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 79990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $79.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $79.990."
     },
     {
      "tienda": "Sodimac",
@@ -64,8 +64,8 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 134990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $134.990.",
-     "verificado_en": "2026-10-26"
+     "verificacion_pagina": "2026-10-27: la página muestra $134.990.",
+     "verificado_en": "2026-10-27"
     }
    ],
    "nota": "Detalle en bases no disponible; se listan taladros percutores de uso general."
@@ -85,12 +85,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 63521.01,
      "coincidencia": "equivalente",
-     "verificado": true,
+     "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-26",
-     "precio_pagina": 75590.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $75.590."
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $89.990, no $75.590: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -105,9 +105,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 76990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $76.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $76.990."
     },
     {
      "tienda": "Sodimac",
@@ -122,17 +122,17 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 84990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $84.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $84.990."
     }
    ],
    "nota": "Detalle en bases no disponible."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-26",
+  "fecha": "2026-10-27",
   "opciones": 6,
-  "verificadas": 6
+  "verificadas": 5
  }
 }

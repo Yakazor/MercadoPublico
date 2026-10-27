@@ -73,20 +73,20 @@
  },
  {
   "fecha": "2026-10-27",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "1508 vigentes; 14 evaluadas; informes de 10",
-  "resultado": "0 GO, 8 con condiciones, 6 NO GO",
-  "riesgos": "1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 16 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 6 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 1",
-  "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 1057544-349-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES; 3000-37-LE26: NO GO; 2098-155-LE26: NO GO",
-  "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057544-349-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
- },
- {
-  "fecha": "2026-10-27",
   "autor": "Claude",
   "licitaciones_procesadas": "Precios de mercado nuevos (WebSearch, sin verificar en la tienda): 1090-17-LE26 herramientas CONAF Maule (7/13 ítems), 1904-10-LE26 neumáticos MOP (4/12), 2366-44-LE26 accesorios computacionales Arica (3/14) y 2107-168-LE26 insumos de oficina Hospital Santa Cruz (0/20: la búsqueda no trae librerías chilenas). Datos del radar de 07:01 (menos de 6 h: no se dispararon workflows). Evaluadas 14: 0 GO, 8 GO con condiciones, 6 NO GO.",
   "resultado": "1090-17-LE26: GO con condiciones (oferta $11,3 M c/IVA vs. estimado $19,5 M, margen 15 %, cierre 03-11) y entra entre las 3 mejores. 1904-10-LE26 (sin monto estimado) y 2366-44-LE26 salen GO con condiciones solo por los pocos ítems cotizados: faltan neumáticos de camión y maquinaria, y la mayoría de las memorias y discos. Mejores: 2446-307-LE26 (cierre 30-10), 1090-17-LE26 y 979-73-LE26 (cierre 06-11).",
   "riesgos": "1090-17-LE26: faltan rastrillo McLeod, escoba de rama, horqueta, rozón y limas (6 de 13), y varias opciones son con descuento o con mango distinto. Precios de memorias muy altos en el mercado (escasez de RAM): cotizar con mayoristas. Proveedores sin correos confirmados: no hay borradores de Gmail.",
   "decisiones": "Proveedores nuevos solo para 1090-17-LE26 (Sodimac, Falabella, Ferretería La Reguera en el Maule); 2446-307-LE26 y 979-73-LE26 ya los tenían. Oficina queda guardada sin precios para no volver a gastar cupos.",
   "recomendaciones": "Hoy: 2446-307-LE26 cierra el 30-10: cotizar los ítems que faltan con ferreterías de Coquimbo. 1090-17-LE26: pedir precio por volumen (más de 1.300 herramientas) a Sodimac Empresas o a un mayorista y conseguir el McLeod con un proveedor forestal. 979-73-LE26: cotizar con Proseg."
+ },
+ {
+  "fecha": "2026-10-27",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1473 vigentes; 14 evaluadas; informes de 10",
+  "resultado": "0 GO, 8 con condiciones, 6 NO GO",
+  "riesgos": "1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 16 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 6 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 1",
+  "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 1057544-349-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES; 3000-37-LE26: NO GO; 2098-155-LE26: NO GO",
+  "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057544-349-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
  }
 ]

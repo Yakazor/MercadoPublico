@@ -30,9 +30,9 @@
      "verificado": true,
      "nota": "Silla escritorio infantil Gato Just Home; la licitación pide escritorios y sillas según bases (no visibles).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $49.990.",
+     "verificacion_pagina": "2026-10-27: la página muestra $49.990.",
      "descartado": true,
      "motivo_descarte": "Línea global de escritorios y sillas: un producto suelto no la representa."
     },
@@ -49,9 +49,9 @@
      "verificado": true,
      "nota": "Precio de listado; especificación real está en bases técnicas (no visibles).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $69.990.",
+     "verificacion_pagina": "2026-10-27: la página muestra $69.990.",
      "descartado": true,
      "motivo_descarte": "Línea global de escritorios y sillas: un producto suelto no la representa."
     }
@@ -76,9 +76,9 @@
      "verificado": true,
      "nota": "Supuesto: 1 equipo 12000 BTU; no incluye instalación (Sodimac cobra aprox. 129.990 aparte).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 359990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $359.990.",
+     "verificacion_pagina": "2026-10-27: la página muestra $359.990.",
      "descartado": true,
      "motivo_descarte": "Línea global de provisión E INSTALACIÓN de aires acondicionados: un equipo sin instalación no la representa."
     },
@@ -95,9 +95,9 @@
      "verificado": true,
      "nota": "Supuesto: 1 equipo 12000 BTU; sin instalación.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 429990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $429.990.",
+     "verificacion_pagina": "2026-10-27: la página muestra $429.990.",
      "descartado": true,
      "motivo_descarte": "Línea global de provisión E INSTALACIÓN de aires acondicionados: un equipo sin instalación no la representa."
     }
@@ -122,15 +122,15 @@
      "verificado": true,
      "nota": "Precio visto en listado de escaños y bancos de jardín (modelo no identificado); medidas y material según bases no verificados.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
+     "verificado_en": "2026-10-27",
      "precio_pagina": 23990.0,
-     "verificacion_pagina": "2026-10-26: la página muestra $23.990."
+     "verificacion_pagina": "2026-10-27: la página muestra $23.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-26",
+  "fecha": "2026-10-27",
   "opciones": 5,
   "verificadas": 5
  }

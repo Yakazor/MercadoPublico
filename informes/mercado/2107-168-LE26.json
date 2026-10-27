@@ -124,5 +124,10 @@
    "opciones": [],
    "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-27",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
