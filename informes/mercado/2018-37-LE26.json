@@ -1,0 +1,108 @@
+{
+ "codigo": "2018-37-LE26",
+ "nombre": "VESTUARIO DE PROTECCIÓN ANTÁRTICO ",
+ "fecha_consulta": "2026-10-28",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "GORRO SHAPKA CON LOGO DGAC, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [],
+   "nota": "prenda con logo DGAC y especificación en anexo; sin precio comparable en tiendas; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "GORRO POLAR CON LOGO DGAC, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Omas)",
+     "producto_mercado": "Pasamontaña de polar 2 en 1 (cuello y gorro)",
+     "url": "https://www.falabella.com/falabella-cl/shop/pasa-montaña",
+     "precio": 5500,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4621.85,
+     "coincidencia": "aproximada",
+     "nota": "falta el logo DGAC bordado. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "GORRO CHAVO CON LOGO DGAC, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [],
+   "nota": "prenda con logo DGAC y especificación en anexo; sin precio comparable en tiendas; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "PRIMERA CAPA UNISEX, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [
+    {
+     "tienda": "Falabella (AGW)",
+     "producto_mercado": "Camiseta térmica primera capa",
+     "url": "https://www.falabella.com/falabella-cl/shop/camiseta-primera-capa-hombre",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "aproximada",
+     "nota": "solo camiseta; la especificación técnica está en el anexo. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "PARCHE BANDERA CHILENA, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [],
+   "nota": "parche bordado a pedido: cotizar con taller de bordado"
+  },
+  {
+   "linea": 6,
+   "producto": "LOGO INSTITUCIONAL DGAC, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [],
+   "nota": "logo bordado a pedido: cotizar con taller de bordado"
+  },
+  {
+   "linea": 7,
+   "producto": "POLERA SEGUNDA CAPA UNISEX, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [],
+   "nota": "prenda con logo DGAC y especificación en anexo; sin precio comparable en tiendas; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "BALACLAVA, DE ACUERDO A ESPECIFICACIONES TÉCNICAS ADJUNTAS.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Siberia)",
+     "producto_mercado": "Pasamontaña térmico estándar de invierno",
+     "url": "https://www.falabella.com/falabella-cl/shop/pasa-montaña",
+     "precio": 6090,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5117.65,
+     "coincidencia": "equivalente",
+     "nota": "revisar especificación del anexo (uso antártico). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    },
+    {
+     "tienda": "Falabella (Ekol)",
+     "producto_mercado": "Balaclava de invierno para moto, esquí y ciclismo",
+     "url": "https://www.falabella.com/falabella-cl/shop/pasa-montaña",
+     "precio": 7910,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6647.06,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    }
+   ]
+  }
+ ]
+}

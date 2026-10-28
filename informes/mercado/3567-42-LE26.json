@@ -1,0 +1,114 @@
+{
+ "codigo": "3567-42-LE26",
+ "nombre": "JUGUETES DE NAVIDAD AÑO 2026.",
+ "fecha_consulta": "2026-10-28",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Andador Infantil Multifuncional, con luces y sonido, con pilas, material ABS",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Andador de equilibrio con música y luces",
+     "url": "https://www.lider.cl/browse/mundo-bebe/actividades-y-estimulacion/andadores-y-caminadoras/40094495_80102111_32769397",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "aproximada",
+     "nota": "confirmar que es multifuncional y de ABS. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    },
+    {
+     "tienda": "Lider (Fisher-Price)",
+     "producto_mercado": "León Camina Conmigo",
+     "url": "https://www.lider.cl/browse/mundo-bebe/actividades-y-estimulacion/andadores-y-caminadoras/40094495_80102111_32769397",
+     "precio": 44990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 37806.72,
+     "coincidencia": "aproximada",
+     "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Triscooter con luces, 3 ruedas, medidas 80x58x23cm",
+   "opciones": [],
+   "nota": "triscooter con luces en Easy y Paris, pero sin precio visible en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Triscooter con luces, 3 ruedas, medidas 80x58x23cm",
+   "opciones": [],
+   "nota": "triscooter con luces en Easy y Paris, pero sin precio visible en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "Lanza Agua de capacidad 650 ml, material plástico",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Maleta para dibujar y pintar con colores surtidos",
+   "opciones": [
+    {
+     "tienda": "Paris (vende Utilísimo)",
+     "producto_mercado": "Maletín set de arte 53 piezas para dibujar y pintar",
+     "url": "https://www.paris.cl/maletin-set-de-arte-53-piezas-estuche-para-dibujar-y-pintar-nina-pony-rosa-MK24C79S41.html",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "equivalente",
+     "nota": "precio con 39% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    },
+    {
+     "tienda": "Paris (vende Utilísimo)",
+     "producto_mercado": "Set 145 piezas arte infantil maletín metálico",
+     "url": "https://www.paris.cl/set-145-piezas-arte-infantil-dibujo-maletin-metalico-completo-lapices-marcadores-pinturas-pasteles-MKRIILAUQX.html",
+     "precio": 24990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21000.0,
+     "coincidencia": "equivalente",
+     "nota": "precio con 39% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-28"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Cámara de fotos video para niñas,  imprime fotos instantáneas, cámara frontal y trasera, grabación de video 1080P HD; 18",
+   "opciones": [],
+   "nota": "solo apareció una cámara importada (nocnoc, envío desde EE. UU.); por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "Lanzador de agua super soaker twister, Material Plástico, capacidad 650 ml",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "Mug Térmico 900ml,  con parlante Inalámbrica y  luces",
+   "opciones": [],
+   "nota": "no apareció mug térmico con parlante en tiendas chilenas; por confirmar"
+  },
+  {
+   "linea": 9,
+   "producto": "Mug Térmico 900ml,  con parlante Inalámbrico y  luces",
+   "opciones": [],
+   "nota": "no apareció mug térmico con parlante en tiendas chilenas; por confirmar"
+  }
+ ]
+}

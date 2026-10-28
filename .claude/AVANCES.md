@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-28 (rutina 11:03 UTC): `datos` del 28-10 03:25 (menos de 6 h: sin disparar workflows; 422 licitaciones,
+  910 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 3567-42-LE26 juguetes (2/9),
+  2018-37-LE26 vestuario antártico DGAC (3/8), 2335-67-LE26 insumos clínicos (0/7) y 1079580-34-LE26 repuestos
+  Carabineros (0/7, no se buscó). Las dos con precios, GO con condiciones solo por los pocos ítems cotizados.
+  Mejores sin cambio: 2446-307-LE26, 1090-17-LE26 y 979-73-LE26. 498 pruebas OK.
+
 - 2026-10-27 (rutina 11:00 UTC): `datos` del 27-10 07:01 (menos de 6 h: sin disparar workflows; 395 licitaciones,
   1.113 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 1090-17-LE26 herramientas
   CONAF (7/13; GO con condiciones, margen 15 %, entra al top 3), 1904-10-LE26 neumáticos (4/12),

@@ -1,0 +1,50 @@
+{
+ "codigo": "2335-67-LE26",
+ "nombre": "INSUMOS CLINICOS OP 602",
+ "fecha_consulta": "2026-10-28",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "APOSITO DE TUL DE POLIAMIDA CON PLATA ELEMENTAL, NO ADHERENTE IMPREGNADA CON POMADA NEUTRAL DE TRIGLICERIDOS SIN ADITIVO",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  },
+  {
+   "linea": 2,
+   "producto": "BOTA DE UNNA, VENDA IMPREGNADA EN OXIDO DE ZINC, COMPUESTA POR POLIAMIDA, DE 10 CM X 7 MTS, SIMILAR A VARICEX, VENCIMIEN",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  },
+  {
+   "linea": 3,
+   "producto": "SOLUCION LIMPIADORA DE HERIDAS ESTERIL, CON ACCION TENSOACTIVA Y ANTIMICROBIANA, COMPUESTA POR AGUA PURIFICADA...SEGUN L",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  },
+  {
+   "linea": 4,
+   "producto": "APOSITO TUL/MALLA INHIBIDOR DE METALOPROTEASA CON TECNOLOGIA TLC-NOSF(TIPO MALLA CONTACTO), 10X10 CM, CON RETIRO ATRAUMA",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  },
+  {
+   "linea": 5,
+   "producto": "SOLUCION TOPICA EN FORMATO SPRAY DE ACIDOS GRASOS HIPEROXIGENADOS , PARA CUIDADO DE PIEL Y LESIONES X PRESION TIPO 1...S",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  },
+  {
+   "linea": 6,
+   "producto": "APOSITO HIDRATANTE DE TUL DE SILICONA...SEGUN LO SOLICITADO EN BASES TECNICAS...",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  },
+  {
+   "linea": 7,
+   "producto": "APOSITO BACTERIOSTATICO DE MALLA/LAMINA DE ACETATO IMPRGNADA CON DACC(DIALQUILCARBAMILCLORURO) DE 7X9 CM, CAPAZ DE RECRT",
+   "opciones": [],
+   "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
+  }
+ ]
+}

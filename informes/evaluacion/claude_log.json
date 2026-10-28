@@ -88,5 +88,23 @@
   "riesgos": "1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 16 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 6 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 1",
   "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 1057544-349-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES; 3000-37-LE26: NO GO; 2098-155-LE26: NO GO",
   "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057544-349-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-28",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1332 vigentes; 14 evaluadas; informes de 10",
+  "resultado": "0 GO, 10 con condiciones, 4 NO GO",
+  "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 16 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 1",
+  "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 1057544-349-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057544-349-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-28",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Precios de mercado nuevos (WebSearch, sin verificar en la tienda): 3567-42-LE26 juguetes de Navidad Florida (2/9 ítems), 2018-37-LE26 vestuario antártico DGAC (3/8), 2335-67-LE26 insumos clínicos Linares (0/7) y 1079580-34-LE26 repuestos Carabineros Ñuble (0/7, no se buscó: líneas por patente sin especificación). Datos de las 03:25 (menos de 6 h: no se dispararon workflows). Evaluadas 14: 0 GO, 10 GO con condiciones, 4 NO GO.",
+  "resultado": "3567-42-LE26 y 2018-37-LE26 salen GO con condiciones solo por los pocos ítems cotizados (andador y maletín de arte; balaclava, gorro y primera capa): faltan triscooters, lanzadores de agua, cámaras y mugs con parlante, y en DGAC las prendas con logo. Las 3 mejores no cambian: 2446-307-LE26 (cierre 30-10), 1090-17-LE26 (03-11) y 979-73-LE26 (06-11).",
+  "riesgos": "Juguetes: 3567-42-LE26 pide 835 unidades; precios de retail con descuentos de temporada que pueden terminar. DGAC: especificación técnica en el anexo y logos bordados a pedido. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
+  "decisiones": "No se buscaron repuestos de Carabineros ni más insumos clínicos (sin precios públicos en Chile). No se repitieron búsquedas de proveedores: las 3 mejores ya los tienen.",
+  "recomendaciones": "Hoy: 2446-307-LE26 cierra el 30-10: decidir si se oferta y cotizar los 16 ítems faltantes. 1090-17-LE26 (03-11): pedir precio por volumen a Sodimac Empresas. Para 3567-42-LE26, si interesa, cotizar con un mayorista de juguetes (cierra el 02-11)."
  }
 ]
