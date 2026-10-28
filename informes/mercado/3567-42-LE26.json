@@ -19,7 +19,11 @@
      "precio_unitario_neto": 25201.68,
      "coincidencia": "aproximada",
      "nota": "confirmar que es multifuncional y de ABS. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-28"
+     "fecha_consulta": "2026-10-28",
+     "verificado": true,
+     "verificado_en": "2026-10-28",
+     "precio_pagina": 29990.0,
+     "verificacion_pagina": "2026-10-28: la página muestra $29.990."
     },
     {
      "tienda": "Lider (Fisher-Price)",
@@ -32,7 +36,11 @@
      "precio_unitario_neto": 37806.72,
      "coincidencia": "aproximada",
      "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-28"
+     "fecha_consulta": "2026-10-28",
+     "verificado": true,
+     "verificado_en": "2026-10-28",
+     "precio_pagina": 44990.0,
+     "verificacion_pagina": "2026-10-28: la página muestra $44.990."
     }
    ]
   },
@@ -69,7 +77,8 @@
      "precio_unitario_neto": 15957.98,
      "coincidencia": "equivalente",
      "nota": "precio con 39% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-28"
+     "fecha_consulta": "2026-10-28",
+     "verificacion_pagina": "2026-10-28: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Paris (vende Utilísimo)",
@@ -82,7 +91,8 @@
      "precio_unitario_neto": 21000.0,
      "coincidencia": "equivalente",
      "nota": "precio con 39% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-28"
+     "fecha_consulta": "2026-10-28",
+     "verificacion_pagina": "2026-10-28: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -110,5 +120,10 @@
    "opciones": [],
    "nota": "no apareció mug térmico con parlante en tiendas chilenas; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-28",
+  "opciones": 4,
+  "verificadas": 2
+ }
 }

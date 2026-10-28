@@ -20,7 +20,7 @@
      "coincidencia": "equivalente",
      "nota": "precio con transferencia ($30.770 con tarjeta); stock 1 unidad al buscar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
-     "verificacion_pagina": "2026-10-27: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-28: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -101,9 +101,9 @@
      "nota": "precio con transferencia ($119.990 otros medios). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-27",
-     "precio_pagina": 117990.0,
-     "verificacion_pagina": "2026-10-27: la página muestra $117.990."
+     "verificado_en": "2026-10-28",
+     "precio_pagina": 116990.0,
+     "verificacion_pagina": "2026-10-28: la página muestra $116.990."
     }
    ]
   },
@@ -124,9 +124,9 @@
      "nota": "precio con transferencia ($156.990 otros medios). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-27",
+     "verificado_en": "2026-10-28",
      "precio_pagina": 150990.0,
-     "verificacion_pagina": "2026-10-27: la página muestra $150.990."
+     "verificacion_pagina": "2026-10-28: la página muestra $150.990."
     }
    ]
   },
@@ -138,7 +138,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-27",
+  "fecha": "2026-10-28",
   "opciones": 3,
   "verificadas": 2
  }

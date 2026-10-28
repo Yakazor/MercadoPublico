@@ -46,5 +46,10 @@
    "opciones": [],
    "nota": "insumo clínico especializado: sin precio en tiendas chilenas (solo Australia/EE. UU.); por confirmar con distribuidores (Hartmann, Urgo, B. Braun)"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-28",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

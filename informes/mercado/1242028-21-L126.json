@@ -22,9 +22,9 @@
      "verificado": true,
      "nota": "Cuello/zipper distinto; precio por talla única de listado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-27",
+     "verificado_en": "2026-10-28",
      "precio_pagina": 17490.0,
-     "verificacion_pagina": "2026-10-27: la página muestra $17.490."
+     "verificacion_pagina": "2026-10-28: la página muestra $17.490."
     }
    ]
   },
@@ -50,12 +50,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 12596.64,
      "coincidencia": "equivalente",
-     "verificado": false,
+     "verificado": true,
      "nota": "Colores azul marino/negro; sin bordado/logo",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-26",
-     "precio_pagina": 7990.0,
-     "verificacion_pagina": "2026-10-27: la página abrió y el precio más parecido es $7.990, no $14.990: puede haber cambiado."
+     "verificado_en": "2026-10-28",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-10-28: la página muestra $14.990."
     }
    ]
   },
@@ -82,8 +82,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-27",
+  "fecha": "2026-10-28",
   "opciones": 2,
-  "verificadas": 1
+  "verificadas": 2
  }
 }
