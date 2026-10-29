@@ -22,7 +22,7 @@
      "fecha_consulta": "2026-10-26",
      "verificado": false,
      "precio_pagina": 11599.0,
-     "verificacion_pagina": "2026-10-28: la página abrió y el precio más parecido es $11.599, no $12.324: puede haber cambiado."
+     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $11.599, no $12.324: puede haber cambiado."
     }
    ]
   },
@@ -124,7 +124,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-28",
+  "fecha": "2026-10-29",
   "opciones": 1,
   "verificadas": 0
  }

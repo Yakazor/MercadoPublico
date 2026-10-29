@@ -109,20 +109,20 @@
  },
  {
   "fecha": "2026-10-29",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "1360 vigentes; 16 evaluadas; informes de 10",
-  "resultado": "0 GO, 10 con condiciones, 6 NO GO",
-  "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados ",
-  "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 1417913-152-L126: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES",
-  "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
- },
- {
-  "fecha": "2026-10-29",
   "autor": "Claude",
   "licitaciones_procesadas": "Precios de mercado nuevos (WebSearch, sin verificar en la tienda): 1417913-152-L126 equipamiento audiovisual y musical Iquique (5/18 ítems: mesas, toldos, sillas, bombo), 1057544-363-LE26 tintas y tóner Hospital Talcahuano (4/15: botellas HP GT52 y GT53), 4236-30-LE26 juguetes Curanilahue (0/18: solo tramos de edad, sin producto) y 4407-29-L126 insumos FOFAR Lumaco (0/7). Datos del radar de 07:56 (menos de 6 h). Evaluadas 16: 0 GO, 10 GO con condiciones, 6 NO GO.",
   "resultado": "1417913-152-L126 sale GO con condiciones solo por 5 de 18 ítems: falta todo el equipo audiovisual (proyector, cámara, parlantes, telón) y los instrumentos andinos. Las 3 mejores no cambian: 2446-307-LE26 (cierra mañana 30-10), 1090-17-LE26 (03-11) y 979-73-LE26 (06-11).",
   "riesgos": "Tóner: los HP 410A, 78A, 125A, 26X, Canon 303 y Brother DR-213CL no tienen precio chileno en la búsqueda (HP Chile muestra el 410A cian agotado). Iquique: todo «conforme a especificaciones técnicas» del anexo. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
   "decisiones": "No se buscaron más insumos clínicos (sin precios públicos). Juguetes de Curanilahue guardados sin precios porque no definen productos. No se repitieron proveedores: las 3 mejores ya los tienen.",
   "recomendaciones": "Hoy: 2446-307-LE26 cierra mañana 30-10: es el último día para decidir y cotizar los 16 ítems faltantes. 1090-17-LE26 (03-11): pedir precio por volumen a Sodimac Empresas. Para el tóner de Talcahuano, cotizar con un mayorista de insumos (cierra el 09-11)."
+ },
+ {
+  "fecha": "2026-10-29",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1336 vigentes; 16 evaluadas; informes de 10",
+  "resultado": "0 GO, 10 con condiciones, 6 NO GO",
+  "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados ",
+  "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 1417913-152-L126: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
  }
 ]

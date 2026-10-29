@@ -112,5 +112,10 @@
    "opciones": [],
    "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-29",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

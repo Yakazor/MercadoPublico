@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Sin elastano ni refuerzo Oxford declarado; solo negro.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-28: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -46,13 +46,13 @@
      "verificado": false,
      "nota": "No es 100% poliéster ni tiene detalle reflectivo; para compra por volumen conviene proveedor de ropa de trabajo.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-28: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-28",
+  "fecha": "2026-10-29",
   "opciones": 2,
   "verificadas": 0
  }

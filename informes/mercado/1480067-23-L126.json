@@ -30,7 +30,7 @@
      "verificado": false,
      "nota": "Precio con descuento visto en listado (lista $69.990); se asume caja de 10. Verificar que sea la versión sin plata con adhesivo.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-28: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -54,7 +54,7 @@
      "nota": "Formato 100 g vs pomo 30 g pedido; precio farmacia $14.499.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 11599.0,
-     "verificacion_pagina": "2026-10-28: la página abrió y el precio más parecido es $11.599, no $12.324: puede haber cambiado."
+     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $11.599, no $12.324: puede haber cambiado."
     }
    ]
   },
@@ -77,7 +77,7 @@
      "verificado": false,
      "nota": "Verificar composición (silicona, vitamina E).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-28: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -114,13 +114,13 @@
      "verificado": false,
      "nota": "Espuma con plata, no tiene azul de metileno/violeta de genciana (tipo Lifecorp); producto distinto en activo.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-28: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-28",
+  "fecha": "2026-10-29",
   "opciones": 4,
   "verificadas": 0
  }

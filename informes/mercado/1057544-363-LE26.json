@@ -55,7 +55,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "aproximada",
      "nota": "piden GT51; confirmar compatibilidad con la Ink Tank 410",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -74,7 +75,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile (precio de la página del combo, búsqueda del 25 y 29-10)",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -93,7 +95,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -112,7 +115,8 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -146,5 +150,10 @@
    "opciones": [],
    "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-29",
+  "opciones": 4,
+  "verificadas": 0
+ }
 }

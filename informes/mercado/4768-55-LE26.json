@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Para bebés/niños pequeños; edad objetivo del programa no especificada.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $9.990."
     },
     {
      "tienda": "Lider (vendedor HFCTOYS)",
@@ -40,15 +40,15 @@
      "verificado": true,
      "nota": "Un solo tipo de juguete; la compra real requiere variedad por edad/género. Precio actualizado al que mostró la página el 2026-10-20 (antes $10.990).",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 9000.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $9.000.",
-     "verificado_en": "2026-10-28"
+     "precio_pagina": 8998.0,
+     "verificacion_pagina": "2026-10-29: la página muestra $8.998.",
+     "verificado_en": "2026-10-29"
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-28",
+  "fecha": "2026-10-29",
   "opciones": 2,
   "verificadas": 2
  }

@@ -31,7 +31,10 @@
      "precio_unitario_neto": 117563.03,
      "coincidencia": "aproximada",
      "nota": "el listado no confirma 26\" x 10\". Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": false,
+     "precio_pagina": 147000.0,
+     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $147.000, no $139.900: puede haber cambiado."
     }
    ]
   },
@@ -68,7 +71,10 @@
      "precio_unitario_neto": 20159.66,
      "coincidencia": "equivalente",
      "nota": "precio con descuento; confirmar que es tipo maleta. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": false,
+     "precio_pagina": 24990.0,
+     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $24.990, no $23.990: puede haber cambiado."
     },
     {
      "tienda": "Sodimac (Avymaq)",
@@ -81,7 +87,11 @@
      "precio_unitario_neto": 25201.68,
      "coincidencia": "exacta",
      "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": true,
+     "verificado_en": "2026-10-29",
+     "precio_pagina": 29990.0,
+     "verificacion_pagina": "2026-10-29: la página muestra $29.990."
     }
    ]
   },
@@ -100,7 +110,11 @@
      "precio_unitario_neto": 33605.04,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": true,
+     "verificado_en": "2026-10-29",
+     "precio_pagina": 39990.0,
+     "verificacion_pagina": "2026-10-29: la página muestra $39.990."
     }
    ]
   },
@@ -119,7 +133,11 @@
      "precio_unitario_neto": 100831.93,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": true,
+     "verificado_en": "2026-10-29",
+     "precio_pagina": 119990.0,
+     "verificacion_pagina": "2026-10-29: la página muestra $119.990."
     }
    ]
   },
@@ -138,7 +156,11 @@
      "precio_unitario_neto": 8394.96,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": true,
+     "verificado_en": "2026-10-29",
+     "precio_pagina": 9990.0,
+     "verificacion_pagina": "2026-10-29: la página muestra $9.990."
     },
     {
      "tienda": "Sodimac (Just Home Collection)",
@@ -151,7 +173,11 @@
      "precio_unitario_neto": 10915.97,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-29"
+     "fecha_consulta": "2026-10-29",
+     "verificado": true,
+     "verificado_en": "2026-10-29",
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-10-29: la página muestra $12.990."
     }
    ]
   },
@@ -203,5 +229,10 @@
    "opciones": [],
    "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-29",
+  "opciones": 7,
+  "verificadas": 5
+ }
 }

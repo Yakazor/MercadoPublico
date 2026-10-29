@@ -46,5 +46,10 @@
    "opciones": [],
    "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-29",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

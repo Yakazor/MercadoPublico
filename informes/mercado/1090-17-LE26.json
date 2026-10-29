@@ -21,9 +21,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $13.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $13.990."
     }
    ]
   },
@@ -44,9 +44,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $13.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $13.990."
     }
    ]
   },
@@ -69,7 +69,7 @@
      "verificado": false,
      "verificado_en": "2026-10-27",
      "precio_pagina": 4300.0,
-     "verificacion_pagina": "2026-10-28: la página abrió y el precio más parecido es $4.300, no $4.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $4.300, no $4.990: puede haber cambiado."
     },
     {
      "tienda": "Sodimac (Tramontina)",
@@ -84,9 +84,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $12.990."
     }
    ]
   },
@@ -132,7 +132,7 @@
      "fecha_consulta": "2026-10-27",
      "verificado": false,
      "precio_pagina": 7990.0,
-     "verificacion_pagina": "2026-10-28: la página abrió y el precio más parecido es $7.990, no $6.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $7.990, no $6.990: puede haber cambiado."
     }
    ]
   },
@@ -153,9 +153,9 @@
      "nota": "precio con 50% de descuento (lista $29.990). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $14.990."
     }
    ]
   },
@@ -188,9 +188,9 @@
      "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 7990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $7.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $7.990."
     }
    ]
   },
@@ -211,15 +211,15 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-28",
+     "verificado_en": "2026-10-29",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-28: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-29: la página muestra $14.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-28",
+  "fecha": "2026-10-29",
   "opciones": 8,
   "verificadas": 6
  }
