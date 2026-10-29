@@ -1,0 +1,207 @@
+{
+ "codigo": "1417913-152-L126",
+ "nombre": "ADQUISICIÓN DE EQUIPAMIENTO AUDIOVISUAL, INSTRUMENTOS MUSICALES, MOBILIARIO Y ARTÍCULOS COMPLEMENTARIOS PARA PROGRAMAS DE SALUD DE CORMUDESI",
+ "fecha_consulta": "2026-10-29",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Maceta para bombo andino",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Caja redoblante acústica metálica de 14  5,5 conforme a las especificaciones técnicas.",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Bombo de comparsa o banda de 26  10 conforme a las especificaciones técnicas.",
+   "opciones": [
+    {
+     "tienda": "Lider (Allegro)",
+     "producto_mercado": "Bombo de marcha Allegro ALL2610",
+     "url": "https://www.lider.cl/browse/tecno/instrumentos-musicales/baterias-y-percusion/66849718_41801283_93745657",
+     "precio": 139900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 117563.03,
+     "coincidencia": "aproximada",
+     "nota": "el listado no confirma 26\" x 10\". Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Silbato caporal metálico conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Cascabel de percusión con manilla conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "Tropa completa de zampoñas de 16 unidades conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "Mesa plegable rectangular tipo maleta de 180 cm conforme a las especificaciones técnicas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Just Home Collection)",
+     "producto_mercado": "Mesa plegable rectangular 180 cm blanca",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/cat7190301/Mesas-Plegables",
+     "precio": 23990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20159.66,
+     "coincidencia": "equivalente",
+     "nota": "precio con descuento; confirmar que es tipo maleta. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-29"
+    },
+    {
+     "tienda": "Sodimac (Avymaq)",
+     "producto_mercado": "Mesa plegable 180x70x74 cm tipo maleta blanca",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/cat7190301/Mesas-Plegables",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "exacta",
+     "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Toldo plegable de 3  3 metros conforme a las especificaciones técnicas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Just Home Collection)",
+     "producto_mercado": "Toldo plegable 3x3 metros verde",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat273724/Toldos-y-Quitasoles",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Toldo plegable de 6  3 metros conforme a las especificaciones técnicas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Just Home Collection)",
+     "producto_mercado": "Toldo plegable 3x6 metros blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat273724/Toldos-y-Quitasoles",
+     "precio": 119990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 100831.93,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Silla plegable portátil conforme a las especificaciones técnicas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Ideehouse)",
+     "producto_mercado": "Silla camping plegable con bolso",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG19055/Silla-plegable",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-29"
+    },
+    {
+     "tienda": "Sodimac (Just Home Collection)",
+     "producto_mercado": "Silla plegable blanca",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG19055/Silla-plegable",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Maleta rígida de transporte",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "Parlante Bluetooth portátil conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "Parlante Bluetooth portátil compacto conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 14,
+   "producto": "Trípode para cámara fotográfica conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "Trípode para teléfono móvil conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 16,
+   "producto": "Cámara fotográfica digital de lentes intercambiables conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 17,
+   "producto": "Telón de proyección portátil con trípode conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 18,
+   "producto": "Proyector multimedia digital conforme a las especificaciones técnicas",
+   "opciones": [],
+   "nota": "equipo con especificación técnica en el anexo; sin precio comparable en la búsqueda; por confirmar"
+  }
+ ]
+}

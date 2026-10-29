@@ -1,0 +1,116 @@
+{
+ "codigo": "4236-30-LE26",
+ "nombre": "ADQUISICION DE JUGUETES PROGRAMA NAVIDAD AÑO 2026",
+ "fecha_consulta": "2026-10-29",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "0 a menos de 1 año / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "0 a menos de 1 año / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "1 a menos de 2 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "1 a menos de 2 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "2 a menos de 3 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "2 a menos de 3 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "3 a menos de 4 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "3 a menos de 4 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 9,
+   "producto": "4 a menos de 5 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 10,
+   "producto": "4 a menos de 5 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 11,
+   "producto": "5 a menos de 6 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "5 a menos de 6 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "6 a menos de 7 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 14,
+   "producto": "6 a menos de 7 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "7 a menos de 8 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 16,
+   "producto": "7 a menos de 8 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 17,
+   "producto": "8 y 9 años / Niñas",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 18,
+   "producto": "8 y 9 años / Niños",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  }
+ ]
+}

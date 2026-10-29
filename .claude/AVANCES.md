@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-29 (rutina 11:00 UTC): `datos` del 29-10 07:56 (menos de 6 h: sin disparar workflows; 434 licitaciones,
+  926 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 1417913-152-L126 audiovisual
+  Iquique (5/18; GO con condiciones solo por esos ítems), 1057544-363-LE26 tóner Talcahuano (4/15),
+  4236-30-LE26 juguetes Curanilahue (0/18, sin productos definidos) y 4407-29-L126 insumos FOFAR (0/7).
+  Mejores sin cambio: 2446-307-LE26 (cierra 30-10), 1090-17-LE26 y 979-73-LE26. 498 pruebas OK.
+
 - 2026-10-28 (rutina 11:03 UTC): `datos` del 28-10 03:25 (menos de 6 h: sin disparar workflows; 422 licitaciones,
   910 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 3567-42-LE26 juguetes (2/9),
   2018-37-LE26 vestuario antártico DGAC (3/8), 2335-67-LE26 insumos clínicos (0/7) y 1079580-34-LE26 repuestos

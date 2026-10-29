@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-10-28. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-10-29. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,11 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [3666-13-LE26](presupuestos/3666-13-LE26.md) Adquisición de juguetes Navidad 2026 Tiltil | Deporte, juguetes y material didáctico | 2026-10-28 | 0/1 | $0 | $0 | $0 | $12.000.000 | falta 1 precio |
-| [3384-167-COT26](presupuestos/3384-167-COT26.md) Adquisición de libros para la biblioteca del Instituto Geográfico Mili | Deporte, juguetes y material didáctico | 2026-10-28 | 0/6 | $0 | $0 | $0 | $322.570 | faltan 6 precios |
-| [1230848-69-LE26](presupuestos/1230848-69-LE26.md) ADQUISICIÓN DE JUEGOS Y MATERIAL DIDÁCTICO AIDIA | Deporte, juguetes y material didáctico | 2026-10-28 | 0/4 | $0 | $0 | $0 | $10.000.000 | faltan 4 precios |
-| [2424-59-LE26](presupuestos/2424-59-LE26.md) CONTRATO DE SUMINISTRO PARA LA ADQUISICIÓN DE ARTÍCULOS DE FERRETERÍA- | Ferretería y herramientas | 2026-10-28 | 0/1 | $0 | $0 | $0 | $28.833.880 | falta 1 precio |
-| [3708-43-LE26](presupuestos/3708-43-LE26.md) SUMINISTRO DE NEUMÁTICOS PARA FLOTA MUNICIPAL | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-10-28 | 0/2 | $0 | $0 | $0 | $17.000.000 | faltan 2 precios |
 | [1033392-3-L126](presupuestos/1033392-3-L126.md) Adquisición de juguetes de navidad 2026 para hijos de funcionarios afi | Deporte, juguetes y material didáctico | 2026-10-29 | 1/1 | $1.448.034 | $2.067.793 | $289.607 | $1.380.000 | supera monto |
 | [1057544-349-LE26](presupuestos/1057544-349-LE26.md) Compra por Suministro de Artículos de Oficina Escritorio y Almacenamie | Artículos de oficina y librería | 2026-10-29 | 3/16 | $3.738.438 | $5.338.489 | $747.688 | $10.000.000 | faltan 13 precios, sin verificar |
 | [2981-298-LE26](presupuestos/2981-298-LE26.md) INSUMOS DE LABORATORIO BIOQUIMICA JENACIF | Instrumental e insumos de laboratorio (sin reactivos) | 2026-10-29 | 0/14 | $0 | $0 | $0 | $33.000.000 | faltan 14 precios |
@@ -33,6 +28,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [3614-42-LE26](presupuestos/3614-42-LE26.md) INSUMOS MEDICOS DESAM Y PIE DIABETICO | Insumos médicos no regulados y aseo | 2026-10-30 | 1/17 | $776.412 | $1.108.716 | $155.282 | $8.124.075 | faltan 16 precios, sin verificar |
 | [1271359-137-LE26](presupuestos/1271359-137-LE26.md) ADQ. DE ARTICULOS DEPORTIVOS Y OTROS – DIREDUC | Deporte, juguetes y material didáctico | 2026-10-30 | 0/4 | $0 | $0 | $0 | $12.000.000 | faltan 4 precios |
 | [1075956-166-COT26](presupuestos/1075956-166-COT26.md) ADQUISICIÓN DE MATERIALES DE OFICINA- SEGÚN REQUERIMIENTOS TECNICOS AD | Artículos de oficina y librería | 2026-11-02 | 0/5 | $0 | $0 | $0 | $415.885 | faltan 5 precios |
+| [1417913-152-L126](presupuestos/1417913-152-L126.md) ADQUISICIÓN DE EQUIPAMIENTO AUDIOVISUAL, INSTRUMENTOS MUSICALES, MOBIL | Mobiliario de oficina, escolar y almacenaje | 2026-11-02 | 5/18 | $1.196.412 | $1.708.476 | $239.282 | $6.975.100 | faltan 13 precios, sin verificar |
 | [2446-315-LE26](presupuestos/2446-315-LE26.md) ADQUISICIÓN DE LICENCIAS DE SOFTWARE INSTITUCIONAL | Computación y electrónica | 2026-11-02 | 0/5 | $0 | $0 | $0 | $19.200.000 | faltan 5 precios |
 | [594965-30-LE26](presupuestos/594965-30-LE26.md) ADQ.TEXTILES ROPA DE CAMA JARDINES INF. OHIGGINS | Electrodomésticos, hogar y menaje | 2026-11-02 | 6/8 | $40.282.965 | $57.524.074 | $8.056.593 | $20.900.000 | supera monto, faltan 2 precios, sin verificar |
 | [1079580-34-LE26](presupuestos/1079580-34-LE26.md) ADQUISICION DE REPUESTOS PARA VEHICULOS FISCALES | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-02 | 0/7 | $0 | $0 | $0 | — | faltan 7 precios |
@@ -44,9 +40,12 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2018-37-LE26](presupuestos/2018-37-LE26.md) VESTUARIO DE PROTECCIÓN ANTÁRTICO | Vestuario, uniformes y textiles | 2026-11-05 | 3/8 | $1.725.403 | $2.463.875 | $345.081 | $25.487.420 | faltan 5 precios, sin verificar |
 | [2366-44-LE26](presupuestos/2366-44-LE26.md) ACCESORIOS COMPUTACIONALES MEMO N79 PYD | Computación y electrónica | 2026-11-05 | 3/14 | $1.550.942 | $2.214.746 | $310.188 | $21.931.700 | faltan 11 precios, sin verificar |
 | [2335-67-LE26](presupuestos/2335-67-LE26.md) INSUMOS CLINICOS OP 602 | Insumos médicos no regulados y aseo | 2026-11-06 | 0/7 | $0 | $0 | $0 | $8.140.000 | faltan 7 precios |
+| [4407-29-L126](presupuestos/4407-29-L126.md) INSUMOS MEDICOS CONVENIO FOFAR | Insumos médicos no regulados y aseo | 2026-11-06 | 0/7 | $0 | $0 | $0 | $2.780.034 | faltan 7 precios |
+| [4236-30-LE26](presupuestos/4236-30-LE26.md) ADQUISICION DE JUGUETES PROGRAMA NAVIDAD AÑO 2026 | Deporte, juguetes y material didáctico | 2026-11-06 | 0/18 | $0 | $0 | $0 | — | faltan 18 precios |
 | [979-73-LE26](presupuestos/979-73-LE26.md) Adquisición de Elementos de Protección Personal NC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 14/18 | $6.542.613 | $9.342.852 | $1.308.523 | $10.900.000 | faltan 4 precios, sin verificar |
 | [2107-168-LE26](presupuestos/2107-168-LE26.md) ADQUISICIÓN DE INSUMOS DE OFICINA PARA DPTO. LOGISTICA | Artículos de oficina y librería | 2026-11-06 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
 | [1904-10-LE26](presupuestos/1904-10-LE26.md) ADQUISICION DE NEUMATICOS Y LLANTA | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-06 | 4/12 | $3.948.315 | $5.638.194 | $789.663 | — | faltan 8 precios, sin verificar |
+| [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-09 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios, sin verificar |
 | [1641-427-LP26](presupuestos/1641-427-LP26.md) TCA - KIT RESINCRONIZADOR CRTP Y BALONES | Deporte, juguetes y material didáctico | 2026-11-10 | 0/15 | $0 | $0 | $0 | — | faltan 15 precios |
 
 ## Ya cerradas
@@ -69,6 +68,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1209-15-L126](presupuestos/1209-15-L126.md) IMPLEMENTOS DEPORTIVOS PROGRAMA IMPLEMENTA TU SUEÑO
 - [1211839-73-LE26](presupuestos/1211839-73-LE26.md) MOCHILAS DE VIAJE PARA AFILIADOS DE BIENESTAR APS
 - [1230848-68-LE26](presupuestos/1230848-68-LE26.md) ADQUISICIÓN DE COMPUTADORES E IMPRESORAS
+- [1230848-69-LE26](presupuestos/1230848-69-LE26.md) ADQUISICIÓN DE JUEGOS Y MATERIAL DIDÁCTICO AIDIA
 - [1232565-41-LE26](presupuestos/1232565-41-LE26.md) Escáner Laser Proyecto ULS 23992
 - [1236-22-LE26](presupuestos/1236-22-LE26.md) REQ. N°149_IMPLEMENTOS DEPORTIVOS_DPS_CEM _SNCD
 - [1242028-21-L126](presupuestos/1242028-21-L126.md) Adquisición de uniformes de primavera-verano para colaboradores de la Corporación SEMCO
@@ -101,6 +101,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [2366-31-LE26](presupuestos/2366-31-LE26.md) TONER SIMILAR-EQUIV. HP Y BROTHER IMP. - SC N.45
 - [2402-98-LE26](presupuestos/2402-98-LE26.md) CEREMONIA PREMIACIÓN AÑOS DE SERVICIO Y MEDALLA SANTA CRUZ DE TRIANA AÑO 2026”.
 - [2422-167-LE26](presupuestos/2422-167-LE26.md) SOL. ADQ. N°945796 ROPA CLINICA- DELANTALES.
+- [2424-59-LE26](presupuestos/2424-59-LE26.md) CONTRATO DE SUMINISTRO PARA LA ADQUISICIÓN DE ARTÍCULOS DE FERRETERÍA-PMR
 - [2424-83-LE26](presupuestos/2424-83-LE26.md) KIT ARTICULOS DE FERRETERIA - 104 - 105 - 106 - 3821 - 3845 - 3868 - N.C.V
 - [2427-61-LE26](presupuestos/2427-61-LE26.md) SUMINISTRO DE JUGUETES PARA FIESTA DE NAVIDAD 2026 SERVICIO DE BIENESTAR.
 - [2427-79-LE26](presupuestos/2427-79-LE26.md) ADQUISICIÓN DE REPUESTOS HIDRAULICOS-DEPARTAMENTO GESTIÓN DE FLOTA
@@ -129,11 +130,14 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [3092-25-LE26](presupuestos/3092-25-LE26.md) “ADQUISICION DE MESAS PARA CULTIVO ELEVADOS PARA ACCIONES DEL PROYECTO SEMBRANDO BIENESTAR HUERTOS FAMILIARES PARA LA SALUD INTEGRAL RURAL Y ACCCIONES POR EL PROGRAMA EQUIDAD EN SALUD RURAL Y MAS SALUD EN COMUNIDAD AÑO 2026 DE LA DIRECCION DE SALUD I.MU
 - [3134-99-LE26](presupuestos/3134-99-LE26.md) SERVIDOR DE MONTAJE EN RACK ESTÁNDAR DE 19 PULGADA
 - [3251-34-L126](presupuestos/3251-34-L126.md) ARTICULOS DE ASEO DE SALUD
+- [3384-167-COT26](presupuestos/3384-167-COT26.md) Adquisición de libros para la biblioteca del Instituto Geográfico Militar.
 - [3537-66-LE26](presupuestos/3537-66-LE26.md) Adquisición de repuestos para Camiones y Camioneta
 - [3540-72-L126](presupuestos/3540-72-L126.md) Lubricantes y grasa para vehículos y maquinarias (P.2408-2409)
 - [3540-74-LE26](presupuestos/3540-74-LE26.md) Repuestos y filtros para camiones y bus
 - [3654-36-LE26](presupuestos/3654-36-LE26.md) ADQUISICIÓN DE ELEMENTOS DE PROTECCIÓN CORPORAL
+- [3666-13-LE26](presupuestos/3666-13-LE26.md) Adquisición de juguetes Navidad 2026 Tiltil
 - [3675-8-L126](presupuestos/3675-8-L126.md) TONER Y TINTAS PARA EL DEPARTAMENTRO DE SALUD
+- [3708-43-LE26](presupuestos/3708-43-LE26.md) SUMINISTRO DE NEUMÁTICOS PARA FLOTA MUNICIPAL
 - [3729-92-LE26](presupuestos/3729-92-LE26.md) CONTRATO DE SUMINISTRO DE MATERIALES ARTÍCULOS DE ASEO Y OTROS
 - [3730-100-L126](presupuestos/3730-100-L126.md) ADQUISICION DE TOLDOS. MESAS Y SILLAS
 - [3841-32-LE26](presupuestos/3841-32-LE26.md) ADQUISICIÓN DE INSUMOS MATERIALES VESTUARIO Y CONTRATACIÓN DE SERVICIOS DE CAPACITACIÓN Y GIRA TÉCNICA PARA EL PROGRAMA PRODESAL PEMUCO

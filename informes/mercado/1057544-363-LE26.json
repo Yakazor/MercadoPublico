@@ -1,0 +1,150 @@
+{
+ "codigo": "1057544-363-LE26",
+ "nombre": "Compra por Suministro de Tintas y Tóner para impresoras de distintos modelos",
+ "fecha_consulta": "2026-10-29",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "047-0616 TONER HP 410 CYAN PARA IMPRESORA HP LASER JET M 452",
+   "opciones": [],
+   "nota": "HP Chile tiene la ficha del 410A cian (CF411A) pero aparece agotada; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "047-0618 TONER HP 410 BLACK PARA IMPRESORA HP LASER JET M 452",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "057-0029 TONER HP CE278A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "057-0223 TONER CANON LPB 3000 (COMODATO)",
+   "opciones": [],
+   "nota": "la LBP3000 usa el cartucho Canon 303 (verificar con las bases); sin precio chileno; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "057-0268 TONER HP CB 543A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "057-0345 TONER P/IMPRESORA LÁSER HP M402DNE (26X NEGRO)",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "057-0360 TINTA P/IMPRESORA HP INTANK 410 GT51",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT53 negro 90 ml (sucesora de GT51)",
+     "url": "https://www.hp.com/cl-es/shop/botella-de-tinta-hp-gt53-negro-original-90-ml-1vv22al.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "nota": "piden GT51; confirmar compatibilidad con la Ink Tank 410",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "057-0361 TINTA P/IMPRESORA HP INTANK 410 GT52C",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT52 cian original",
+     "url": "https://www.hp.com/cl-es/shop/botellas-de-tinta-hp-gt53-negro-original-gt52-cian-amarillo-y-magenta-original-1vv22al-1.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile (precio de la página del combo, búsqueda del 25 y 29-10)",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "057-0362 TINTA P/IMPRESORA HP INTANK 410 GT52M",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT52 magenta original",
+     "url": "https://www.hp.com/cl-es/shop/botellas-de-tinta-hp-gt53-negro-original-gt52-cian-amarillo-y-magenta-original-1vv22al-1.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "057-0363 TINTA P/IMPRESORA HP INTANK 410 GT52Y",
+   "opciones": [
+    {
+     "tienda": "HP Store Chile",
+     "producto_mercado": "Botella de tinta HP GT52 amarillo original",
+     "url": "https://www.hp.com/cl-es/shop/botellas-de-tinta-hp-gt53-negro-original-gt52-cian-amarillo-y-magenta-original-1vv22al-1.html",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "exacta",
+     "nota": "tienda oficial HP Chile",
+     "fecha_consulta": "2026-10-29"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "057-0405 DRUM DR 213CL P/IMPRESORA BROTHER L3270 CDW",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "057-0416 RECARGA IMPRESORA EPSON L120 NEGRO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "057-0417 RECARGA IMPRESORA EPSON L120 MAGENTA",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 14,
+   "producto": "057-0421 TINTA RISO PARA DUPLICADORA MODELO SF5230 EIIU",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "066-0086 CINTA DE TRANSFERENCIA DE RESINA P/IMPRESORA DE ETIQUETA, MEDIDAS 60MMX300 MTS (INVENTARIO)",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  }
+ ]
+}

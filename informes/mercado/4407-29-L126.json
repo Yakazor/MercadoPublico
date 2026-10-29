@@ -1,0 +1,50 @@
+{
+ "codigo": "4407-29-L126",
+ "nombre": "INSUMOS MEDICOS CONVENIO FOFAR",
+ "fecha_consulta": "2026-10-29",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Gel bacteriostático con 0.1% de Polihexanida con Betaina de 30 ml.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  },
+  {
+   "linea": 2,
+   "producto": "Espuma limpiadora de piel de 35 ml o 400 ml.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  },
+  {
+   "linea": 3,
+   "producto": "Protector cutáneo.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  },
+  {
+   "linea": 4,
+   "producto": "Solución limpiadora de heridas de 250 ml o 350 ml.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  },
+  {
+   "linea": 5,
+   "producto": "Espuma de urea 10%.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  },
+  {
+   "linea": 6,
+   "producto": "Ácido fusidico de 2% crema tópica de 15 g.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  },
+  {
+   "linea": 7,
+   "producto": "Aceite hidratante, acido grasos esenciales (lubricante cutáneo) de 30ml.",
+   "opciones": [],
+   "nota": "insumo clínico o medicamento sin precio público en farmacias chilenas en los resultados; por confirmar con distribuidores o farmacias"
+  }
+ ]
+}

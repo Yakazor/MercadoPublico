@@ -40,15 +40,15 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 5
-- **Viabilidad:** Alta.
+- **Días para el cierre:** 4
+- **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 7 de 9 ítems sin precio de mercado: el costo real es mayor.
 - 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región del Biobío: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados
