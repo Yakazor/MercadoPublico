@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 4
+- **Días para el cierre:** 3
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,16 +48,19 @@
 
 - 7 de 9 ítems sin precio de mercado: el costo real es mayor.
 - 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región del Biobío: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados
 
 | # | Proveedor | Especialidad | Correo | Sitio web | Contacto | Respuesta / entrega | Costo referencial |
 |---:|---|---|---|---|---|---|---|
-| 1 | Lider | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/browse/mundo-bebe/actividades-y-estimulacion/andadores-y-caminadoras/40094495_80102111_32769397) | — | por confirmar | — |
-| 2 | Lider (Fisher-Price) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/browse/mundo-bebe/actividades-y-estimulacion/andadores-y-caminadoras/40094495_80102111_32769397) | — | por confirmar | — |
-| 3 | Paris (vende Utilísimo) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.paris.cl/maletin-set-de-arte-53-piezas-estuche-para-dibujar-y-pintar-nina-pony-rosa-MK24C79S41.html) | — | por confirmar | — |
+| 1 | LB Chile | Juguetes por mayor para municipalidades y campañas de Navidad (compra mínima $50.000) | por confirmar | [web](https://lbchile.com/) | — | por confirmar | — |
+| 2 | Comercial Lama | Juguetes por mayor; soluciones para municipalidades, sección Navidad | por confirmar | [web](https://www.comerciallama.cl/) | — | por confirmar | — |
+| 3 | Juguetes por Mayor (Chile Mayoristas SpA) | Importador directo; precios por volumen desde 3 unidades | por confirmar | [web](https://juguetespormayor.cl/) | Bodega en Barrio Meiggs, Santiago | Despacho sin costo a todo Chile en 24 h hábiles (según su web) | — |
+| 4 | Diverti (Hasbro) | Distribuidor oficial Hasbro; venta mayorista a instituciones | por confirmar | [web](https://www.diverti.cl/content/19-juguetes-hasbro-por-mayor-chile-diverti) | — | por confirmar | — |
+| 5 | Paris (vende Utilísimo) | Maletines de arte (opción usada en el presupuesto) | por confirmar | [web](https://www.paris.cl/) | — | por confirmar | Precio de tienda en el presupuesto |
+| 6 | Lider | Andadores infantiles (opción usada en el presupuesto) | por confirmar | [web](https://www.lider.cl/) | — | por confirmar | Precio de tienda en el presupuesto |
 
 Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedir precio por volumen.
 

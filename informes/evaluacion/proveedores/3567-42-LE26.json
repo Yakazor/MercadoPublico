@@ -1,0 +1,68 @@
+[
+ {
+  "nombre": "LB Chile",
+  "web": "https://lbchile.com/",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Juguetes por mayor para municipalidades y campañas de Navidad (compra mínima $50.000)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://lbchile.com/"
+ },
+ {
+  "nombre": "Comercial Lama",
+  "web": "https://www.comerciallama.cl/",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Juguetes por mayor; soluciones para municipalidades, sección Navidad",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.comerciallama.cl/"
+ },
+ {
+  "nombre": "Juguetes por Mayor (Chile Mayoristas SpA)",
+  "web": "https://juguetespormayor.cl/",
+  "correo": null,
+  "contacto": "Bodega en Barrio Meiggs, Santiago",
+  "especialidad": "Importador directo; precios por volumen desde 3 unidades",
+  "respuesta": null,
+  "entrega": "Despacho sin costo a todo Chile en 24 h hábiles (según su web)",
+  "costo_referencial": null,
+  "fuente": "https://juguetespormayor.cl/"
+ },
+ {
+  "nombre": "Diverti (Hasbro)",
+  "web": "https://www.diverti.cl/content/19-juguetes-hasbro-por-mayor-chile-diverti",
+  "correo": null,
+  "contacto": null,
+  "especialidad": "Distribuidor oficial Hasbro; venta mayorista a instituciones",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.diverti.cl/content/19-juguetes-hasbro-por-mayor-chile-diverti"
+ },
+ {
+  "nombre": "Paris (vende Utilísimo)",
+  "correo": null,
+  "web": "https://www.paris.cl/",
+  "contacto": null,
+  "especialidad": "Maletines de arte (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/3567-42-LE26.json"
+ },
+ {
+  "nombre": "Lider",
+  "correo": null,
+  "web": "https://www.lider.cl/",
+  "contacto": null,
+  "especialidad": "Andadores infantiles (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/3567-42-LE26.json"
+ }
+]

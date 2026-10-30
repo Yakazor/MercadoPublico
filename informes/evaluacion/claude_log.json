@@ -124,5 +124,23 @@
   "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 16 de 44 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados ",
   "decisiones": "2446-307-LE26: GO CON CONDICIONES; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 1417913-152-L126: GO CON CONDICIONES; 3614-42-LE26: GO CON CONDICIONES",
   "recomendaciones": "- **2446-307-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-30",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1230 vigentes; 18 evaluadas; informes de 10",
+  "resultado": "0 GO, 12 con condiciones, 6 NO GO",
+  "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados ",
+  "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 1417913-152-L126: GO CON CONDICIONES",
+  "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1295444-14-L126**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-30",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Precios de mercado nuevos (WebSearch, sin verificar en la tienda; algunos reutilizados de búsquedas del 25 y 27-10): 1295444-14-L126 EPP cementerio Concepción (7/16 ítems), 3568-31-L126 ferretería Panguipulli (7/17), 2832-42-L126 artículos deportivos Quillota (4/9) y 1362-13-LE26 neumáticos MOP Talagante (5/9). Datos del radar de 07:31 (menos de 6 h). Evaluadas 18: 0 GO, 12 GO con condiciones, 6 NO GO.",
+  "resultado": "1295444-14-L126 y 1362-13-LE26 salen GO con condiciones (margen 14-15 %) pero con la mitad de los ítems sin precio. 2446-307-LE26 cierra hoy y sale del ranking. Mejores: 1090-17-LE26 herramientas CONAF (cierre 03-11), 979-73-LE26 EPP MOP (06-11) y 3567-42-LE26 juguetes Florida (02-11, solo 2/9 ítems cotizados).",
+  "riesgos": "3567-42-LE26 tiene 7 de 9 ítems sin precio (triscooters, lanzadores de agua, cámaras, mugs con parlante): el GO con condiciones es engañoso hasta cotizar con mayoristas. Neumáticos de camión y tolva 12.00R24 sin precio. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
+  "decisiones": "Proveedores para 3567-42-LE26: los mayoristas de juguetes ya documentados para 4768-55-LE26 (LB Chile, Comercial Lama, Juguetes por Mayor, Diverti) más Paris y Lider. 1090-17-LE26 y 979-73-LE26 ya tenían proveedores.",
+  "recomendaciones": "Hoy: 1090-17-LE26 cierra el 03-11 (martes): pedir precio por volumen a Sodimac Empresas ya. 3567-42-LE26 cierra el 02-11 (lunes): solo ofertar si un mayorista cotiza los 835 juguetes. 979-73-LE26 (06-11): cotizar con Proseg."
  }
 ]

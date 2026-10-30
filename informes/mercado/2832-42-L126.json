@@ -1,0 +1,114 @@
+{
+ "codigo": "2832-42-L126",
+ "nombre": "ADQUISICION DE ARTICULOS DEPORTIVOS PARA EL DEPARTAMENTO DE SALUD DE QUILLOTA",
+ "fecha_consulta": "2026-10-30",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ITEM: 1SILLIN BICICLETA ANTIPROSTATICO COMODO AMPLIO REFECTATE COLOR NEGRO O EQUIVALENTE",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "ITEM 2: MONTAJE DE PARED DE BOLA DE EJERCICIO O EQUIVALENTE",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "ITEM 3: BANDA ELASTICA NEGRA RESISTENCIA MUY ALTA 45,7 MTS CANDO O EQUIVALENTE.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "ITEM  4: SET DE 5 BANDAS ELASTICAS",
+   "opciones": [
+    {
+     "tienda": "Easy (Kick Jump)",
+     "producto_mercado": "Set de 5 bandas elásticas de resistencia",
+     "url": "https://www.easy.cl/set-de-5-bandas-elasticas-de-resistencia-mkrxwdey1x/p",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "ITEM 5: PAR DE MANCUERNAS 1 KILO CADA UNA VINILO ULTIMATE FITNESS O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Par mancuernas 1 kg PE",
+     "url": "https://www.lider.cl/ip/fitness/par-mancuernas-1-kg-pe/00690202210013",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "aproximada",
+     "nota": "polietileno, no vinilo. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "ITEM 6: STEPPER MACHINE SUNNY HEALTH  FITNESS PARA TODO EL CUERPO 2 EN 1 O EQUIVALENTE.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "ITEM 7: TROTADORA CAMINADORA ELÉCTRICA S90 SMART FOLD ULTIMATE FITNESS O EQUIVALENTE.",
+   "opciones": [
+    {
+     "tienda": "Lider (Ultimate Fitness)",
+     "producto_mercado": "Trotadora eléctrica E520 Smart Pro 2.0",
+     "url": "https://www.lider.cl/ip/fitness/trotadora-electrica-e520-smart-pro-2-0/00045075879364",
+     "precio": 389990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 327722.69,
+     "coincidencia": "equivalente",
+     "nota": "modelo distinto de la S90 Smart Fold pedida; precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "ITEM 8: MAQUINA ABDOMINALES EJERCICIOS AB ROCKET MULTIFUNCIONAL 6 EN 1 FITNESS CRUNCH O EQUIVALENTE.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 9,
+   "producto": "ITEM 9: RUEDA ABDOMINALES PRO AB SLIDER ULTIMATE FITNESS O EQUIVALENTE.",
+   "opciones": [
+    {
+     "tienda": "Paris (vende Pesas Chile)",
+     "producto_mercado": "Rueda abdominal negra FullFit",
+     "url": "https://www.paris.cl/rueda-abdominal-negra-fullfit-MKJV2R17DC.html",
+     "precio": 9990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 8394.96,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  }
+ ]
+}

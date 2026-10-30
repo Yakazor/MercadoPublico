@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-30 (rutina 11:00 UTC): `datos` del 30-10 07:31 (menos de 6 h: sin disparar workflows; 431 licitaciones,
+  799 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar; algunos reutilizados del 25 y
+  27-10): 1295444-14-L126 EPP cementerio (7/16), 3568-31-L126 ferretería (7/17), 2832-42-L126 deportes (4/9) y
+  1362-13-LE26 neumáticos (5/9). Mejores: 1090-17-LE26, 979-73-LE26 y 3567-42-LE26 (proveedores: mayoristas de
+  juguetes de 4768-55-LE26). 2446-307-LE26 cerró hoy. 498 pruebas OK.
+
 - 2026-10-29 (rutina 11:00 UTC): `datos` del 29-10 07:56 (menos de 6 h: sin disparar workflows; 434 licitaciones,
   926 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 1417913-152-L126 audiovisual
   Iquique (5/18; GO con condiciones solo por esos ítems), 1057544-363-LE26 tóner Talcahuano (4/15),

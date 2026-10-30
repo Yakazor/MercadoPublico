@@ -1,0 +1,214 @@
+{
+ "codigo": "3568-31-L126",
+ "nombre": "ADQUISICIÓN DE MATERIALES DE FERRETERÍA PARA FERIAS VERANO 2026 - 2027",
+ "fecha_consulta": "2026-10-30",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ANGULO LAMINADO 30 X 30 X 3.0",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Perfil ángulo 30x30x3 mm 6 m",
+     "url": "https://www.easy.cl/perfil-angulo-30x30x3-mm-6-m-78-kg-119207/p",
+     "precio": 12080,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10151.26,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    },
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Ángulo laminado 30x30x3 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/ángulo-laminado",
+     "precio": 13990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11756.3,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "PLETINA 50 X 5.0 MM",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "PERNO COCHE 5/16",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Mamut)",
+     "producto_mercado": "Perno coche 5/16 x 1 1/2\" caja 100 unidades",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG35039/Pernos",
+     "precio": 12000,
+     "iva_incluido": true,
+     "contenido": "caja 100",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 100.84,
+     "coincidencia": "equivalente",
+     "nota": "confirmar largo e inclusión de tuerca. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "TUERCA HEXAGONAL 5/16",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "GOLILLAS PLANAS",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "PORTAELECTRODOS 500 AMP.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "PINZA TOMA CORRIENTE P/SOLDADURA 500 A",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "PINO VERDE 3 X 3 X 3.20 M",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Pino cuartón dimensionado verde 3x3 3,2 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/madera-3x3",
+     "precio": 3534,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2969.75,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "POLICARBONATO ACANALADO 0.7 MM X 3.00 TRANSPARENTE",
+   "opciones": [
+    {
+     "tienda": "Easy (Femoglas)",
+     "producto_mercado": "Policarbonato ondulado transparente premium 0,7 x 810 x 3000 mm",
+     "url": "https://www.easy.cl/premium-07x810x3000-mm-policarbonato-transparente-ondulado-femoglas-561605/p",
+     "precio": 13643,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 11464.71,
+     "coincidencia": "exacta",
+     "nota": "precio con 30% de descuento (normal $19.490). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "PROTECTOR DE MADERA COLOR PALO DE ROSA",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 11,
+   "producto": "PERFIL RECTANGULAR 30 X 20 X 2.0M",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil rectangular 30x20x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/perfil-20x30x2",
+     "precio": 9030,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7588.24,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "ARNÉS DE SEGURIDAD C/CABO",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "CABO DE VIDA 1/2 A 1.80 M",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 14,
+   "producto": "PINO CEPILLADO 2 X 2 X 3.20M",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "TERCIADO ESTRUCTURAL DE 12MM X 1.22 X 2.44",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Terciado estructural pino 12 mm 122x244 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34413/Terciado-estructural",
+     "precio": 20700,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 17394.96,
+     "coincidencia": "exacta",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "PAPEL FIELTRO 30 M",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 17,
+   "producto": "ZINC 5V 0.40 X 929 X 3.0",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Plancha zinc 5V 0,35 mm 89,5x300 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/zinc-acanalado-3-metros",
+     "precio": 11060,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9294.12,
+     "coincidencia": "aproximada",
+     "nota": "piden 0,40 mm. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  }
+ ]
+}

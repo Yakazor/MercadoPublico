@@ -1,0 +1,127 @@
+{
+ "codigo": "1362-13-LE26",
+ "nombre": "COMPRA DE NEUMATICOS PROVINCIA TALAGANTE",
+ "fecha_consulta": "2026-10-30",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Camioneta Maxus Neumatico 245/70 R16 MICHELIN ( O SIMILAR)",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Comercial SP)",
+     "producto_mercado": "Neumático 245/70 R16 111T Roadcruza RA1100 AT",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-245-70-r16-111t-roadcruza-ra1100-at/00046126674782",
+     "precio": 85990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 72260.5,
+     "coincidencia": "equivalente",
+     "nota": "búsqueda del 27-10; piden Michelin o similar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Mini Cargador Neumatico 12/16.5 12PR L5HULK (O SIMILAR)",
+   "opciones": [],
+   "nota": "neumático de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores"
+  },
+  {
+   "linea": 3,
+   "producto": "Camion Bei Ben Neumatico 295/80R22,5 es el Michelin XDE2( O SIMILAR)",
+   "opciones": [],
+   "nota": "neumático de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores"
+  },
+  {
+   "linea": 4,
+   "producto": "Camioneta Chevrolet Dimax Neumatico 245/75R16 MICHELIN( O SIMILAR)",
+   "opciones": [
+    {
+     "tienda": "Lider (Rockblade)",
+     "producto_mercado": "Neumático 245/75 R16 Rock 737 111T",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-245-75-r16-rock-737-111t/00046696607202",
+     "precio": 75990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 63857.14,
+     "coincidencia": "equivalente",
+     "nota": "piden Michelin o similar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Camion Mitsubishi Neumatico 215/75 R17.5 XZE2 TL 126/124M (Michelin X Multi Z2 ) ( O SIMILAR)",
+   "opciones": [
+    {
+     "tienda": "Lider (Grenlander)",
+     "producto_mercado": "Neumático 215/75 R17.5 DD678 135/133J 18PR tracción",
+     "url": "https://knasta.cl/detail/lider/00046975798766/grenlander-neumatico-215-75-r175-dd678-135-133j-18pr-traccion-tbr",
+     "precio": 105990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 89067.23,
+     "coincidencia": "aproximada",
+     "nota": "dibujo de tracción; piden X Multi Z2 (direccional/mixto). Precio vía Knasta (comparador). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Furgon de pesaje neumatico Neumatico 225/75R16 MICHELIN (O SIMILAR)",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Neumático 225/75 R16 AT",
+     "url": "https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-225-75-r16-at/00045055237236",
+     "precio": 64990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 54613.45,
+     "coincidencia": "aproximada",
+     "nota": "búsqueda del 27-10; no es versión C. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-27"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Carro de arrastre Neumatico 215/75 R15 100T TL LTX FORCE MICHELINLTX FORCE( O SIMILAR)\r 4",
+   "opciones": [
+    {
+     "tienda": "Lider (Torque)",
+     "producto_mercado": "Neumático 215/75 R15 AT701 100S",
+     "url": "https://knasta.cl/detail/lider/00046441956686/torque-neumatico-215-75-r15-at701-at-100s",
+     "precio": 56490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47470.59,
+     "coincidencia": "equivalente",
+     "nota": "precio vía Knasta (comparador de Lider). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Camion Tolva Neumatico 12,00/ R24 Traccional bridgestone (O SIMILAR)",
+   "opciones": [],
+   "nota": "neumático de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores"
+  },
+  {
+   "linea": 9,
+   "producto": "Camion Tolva Neumatico 12,00/ R24 Direccional Goodride (O SIMILAR)\r 2",
+   "opciones": [],
+   "nota": "neumático de camión o maquinaria sin precio en tiendas chilenas en los resultados; por confirmar con distribuidores"
+  }
+ ]
+}

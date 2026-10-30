@@ -1,0 +1,208 @@
+{
+ "codigo": "1295444-14-L126",
+ "nombre": "ELEMENTOS DE PROTECCIÓN PERSONAL PARA EL CEMENTERIO GENERAL DE CONCEPCION",
+ "fecha_consulta": "2026-10-30",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Guantes de nitrilo",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Traje de papel",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "Sobre lentes",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Línea de vida de doble cola",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Redline)",
+     "producto_mercado": "Cabo de vida de posicionamiento",
+     "url": "https://www.sodimac.cl/sodimac-cl/marca/REDLINE",
+     "precio": 17290,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 14529.41,
+     "coincidencia": "aproximada",
+     "nota": "no es de doble cola con absorbedor: confirmar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Guante albañil",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Redline)",
+     "producto_mercado": "Guante albañil de goma talla única negro",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10972/Guantes-de-Seguridad",
+     "precio": 890,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 747.9,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Guantes de cabretilla",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Guante cabritilla de cuero L blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat934870/Guantes-de-seguridad",
+     "precio": 1890,
+     "iva_incluido": true,
+     "contenido": "1 par",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1588.24,
+     "coincidencia": "exacta",
+     "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Trajes de agua",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Traje de lluvia azul 0,18 mm",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10966/Trajes-de-agua",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "equivalente",
+     "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Guantes aislante eléctricos",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 9,
+   "producto": "Guante anticorte",
+   "opciones": [],
+   "nota": "solo apareció un guante anticorte de malla de acero (carnicero); por confirmar"
+  },
+  {
+   "linea": 10,
+   "producto": "Protector solar",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 11,
+   "producto": "Filtro multiorgánico",
+   "opciones": [],
+   "nota": "filtros 3M 6003 sin precio chileno; por confirmar"
+  },
+  {
+   "linea": 12,
+   "producto": "Filtro P100",
+   "opciones": [],
+   "nota": "filtro 3M 2091 P100 sin precio chileno; por confirmar"
+  },
+  {
+   "linea": 13,
+   "producto": "Careta soldador",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Máscara de soldar fotosensible",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10910/Mascaras-de-soldar/",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "equivalente",
+     "nota": "otro listado la muestra a $28.042. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Trajes de soldador",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 15,
+   "producto": "Linterna de cabeza",
+   "opciones": [
+    {
+     "tienda": "Lider (Energizer)",
+     "producto_mercado": "Linterna frontal LED Energizer pack 2, 100 lúmenes",
+     "url": "https://www.lider.cl/ip/iluminacion-y-electricidad/linterna-frontal-led-energizer-2-pack-100-lumenes-negra/00395721397926",
+     "precio": 35990,
+     "iva_incluido": true,
+     "contenido": "pack 2",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 15121.85,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Linterna frontal recargable BIAT 230 wide beam impermeable",
+     "url": "https://www.lider.cl/ip/iluminacion-y-electricidad/linterna-frontal-recargable-biat-230-wide-beam-impermeable/00503119273885",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "linea": 16,
+   "producto": "Geologo",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Chaleco reflectante geólogo naranjo",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/chaleco-reflectante",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  }
+ ]
+}
