@@ -24,7 +24,7 @@
      "nota": "Referencia parcial; no se conoce el listado exacto de la sala de maestranza.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 79990.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $79.990, no $89.990: puede haber cambiado.",
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $79.990, no $89.990: puede haber cambiado.",
      "descartado": true,
      "motivo_descarte": "La línea es todo el equipamiento de la sala de maestranza: un set de herramientas no la representa.",
      "verificado_en": "2026-10-28"
@@ -33,7 +33,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 1,
   "verificadas": 0
  }

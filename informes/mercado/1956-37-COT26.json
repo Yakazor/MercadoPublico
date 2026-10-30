@@ -22,7 +22,7 @@
      "precio_unitario_neto": 46361.34,
      "fecha_consulta": "2026-10-26",
      "verificado": false,
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Sodimac",
@@ -37,9 +37,9 @@
      "precio_unitario_neto": 50411.76,
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 59990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $59.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $59.990."
     },
     {
      "tienda": "Easy",
@@ -53,7 +53,7 @@
      "nota": "20 L, 2000 W, acero inoxidable, garantía 1 año; normal $89.990.",
      "precio_unitario_neto": 63016.81,
      "fecha_consulta": "2026-10-26",
-     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -75,9 +75,9 @@
      "precio_unitario_neto": 25201.68,
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $29.990."
     },
     {
      "tienda": "Easy",
@@ -91,7 +91,7 @@
      "nota": "Normal $39.990.",
      "precio_unitario_neto": 28563.03,
      "fecha_consulta": "2026-10-26",
-     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Falabella",
@@ -106,15 +106,15 @@
      "precio_unitario_neto": 29403.36,
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 34990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $34.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $34.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 6,
   "verificadas": 3
  }

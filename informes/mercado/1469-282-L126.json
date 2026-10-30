@@ -24,8 +24,8 @@
      "nota": "Precio de oferta (antes $112.990). Precio actualizado al que mostró la página el 2026-10-20 (antes $61.990). Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 60000.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $60.000.",
-     "verificado_en": "2026-10-29"
+     "verificacion_pagina": "2026-10-30: la página muestra $60.000.",
+     "verificado_en": "2026-10-30"
     },
     {
      "tienda": "Sodimac",
@@ -40,9 +40,9 @@
      "verificado": true,
      "nota": "Precio del listado de Sodimac (no ficha del producto). Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 129990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $129.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $129.990."
     },
     {
      "tienda": "Sodimac",
@@ -57,15 +57,15 @@
      "verificado": true,
      "nota": "Oferta (antes $259.990); listado de Sodimac. Coincidencia cambiada a aproximada: la línea no trae especificación (está en las bases) y el monto sugiere un sillón de gama alta.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 129990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $129.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $129.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 3,
   "verificadas": 3
  }

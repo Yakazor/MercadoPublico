@@ -21,8 +21,8 @@
      "nota": "precio internet ($14.499 en farmacia); exigir vencimiento mínimo según bases. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-26",
      "verificado": false,
-     "precio_pagina": 11599.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $11.599, no $12.324: puede haber cambiado."
+     "precio_pagina": 13049.0,
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $13.049, no $12.324: puede haber cambiado."
     }
    ]
   },
@@ -124,7 +124,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 1,
   "verificadas": 0
  }

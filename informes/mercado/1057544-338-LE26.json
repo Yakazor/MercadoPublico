@@ -99,7 +99,7 @@
      "verificado": false,
      "nota": "Precio visto en listado de Mercado Libre; URL es la página de listado (no ficha). Otro vendedor a $12.490.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -114,7 +114,7 @@
      "verificado": false,
      "nota": "Precio visto en listado de Mercado Libre; URL es la página de listado.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "No se encontró ficha con precio; precios tomados de la página de listado de Mercado Libre. Verificar."
@@ -137,7 +137,7 @@
      "verificado": false,
      "nota": "Precio visto en listado de Mercado Libre; URL es la página de listado. Otro vendedor a $10.480.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "Se interpretan como puntas de micropipeta de 1000 uL. Ficha sin precio visible: https://articulo.mercadolibre.cl/MLC-1098972687-500-puntas-azules-de-pipeta-1000-ul-sin-filtro-esteril-_JM (Wantong, bolsa 500, estériles). Precio de la opción tomado de la página de listado; verificar."
@@ -160,7 +160,7 @@
      "verificado": false,
      "nota": "Precio visto en resultados de búsqueda; la URL de la ficha no se identificó, se indica la página de listado de tubos de ensayo. Verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -175,7 +175,7 @@
      "verificado": false,
      "nota": "Precio visto en resultados de búsqueda; URL de listado, ficha no identificada. Verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "Mercado Libre Chile",
@@ -190,7 +190,7 @@
      "verificado": false,
      "nota": "Es de vidrio, no polipropileno.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "Las dos primeras opciones (PP) tienen precio visto en la página de listado, sin ficha identificada; la tercera es ficha de vidrio. Verificar."
@@ -220,14 +220,14 @@
      "verificado": false,
      "nota": "Precio tomado del título del resultado; no se confirmó si es estéril ni su conector (para espirometría/ventilación). Verificar.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "También existen packs de 10 (https://articulo.mercadolibre.cl/MLC-1265743717-filtro-hme-viral-bacteriano-pack-10-unidades-_JM) sin precio visible en la búsqueda."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 7,
   "verificadas": 0
  }

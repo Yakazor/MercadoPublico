@@ -37,7 +37,8 @@
      "precio_unitario_neto": 5873.95,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-30"
+     "fecha_consulta": "2026-10-30",
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -56,7 +57,11 @@
      "precio_unitario_neto": 4193.28,
      "coincidencia": "aproximada",
      "nota": "polietileno, no vinilo. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-30"
+     "fecha_consulta": "2026-10-30",
+     "verificado": true,
+     "verificado_en": "2026-10-30",
+     "precio_pagina": 4910.0,
+     "verificacion_pagina": "2026-10-30: la página muestra $4.910."
     }
    ]
   },
@@ -81,7 +86,11 @@
      "precio_unitario_neto": 327722.69,
      "coincidencia": "equivalente",
      "nota": "modelo distinto de la S90 Smart Fold pedida; precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-30"
+     "fecha_consulta": "2026-10-30",
+     "verificado": true,
+     "verificado_en": "2026-10-30",
+     "precio_pagina": 399990.0,
+     "verificacion_pagina": "2026-10-30: la página muestra $399.990."
     }
    ]
   },
@@ -106,9 +115,15 @@
      "precio_unitario_neto": 8394.96,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-30"
+     "fecha_consulta": "2026-10-30",
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-30",
+  "opciones": 4,
+  "verificadas": 2
+ }
 }

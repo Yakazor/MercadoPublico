@@ -21,7 +21,7 @@
      "coincidencia": "equivalente",
      "nota": "Oferta (antes $215.990). Malla, soporte lumbar, pistón a gas, base 5 ruedas; ficha dice brazos «fijos o ajustables» y respaldo 80 cm: confirmar que sea respaldo medio y stock para 10 unidades. Garantía legal 6 meses. Vendedor de marketplace.",
      "fecha_consulta": "2026-10-26",
-     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Sodimac (marca Just Home Collection)",
@@ -36,16 +36,16 @@
      "nota": "Precio visto en el listado de categoría (-22 %, normal $79.990–$89.990); link al listado, no a la ficha. No se confirmaron brazos ni altura del respaldo.",
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $69.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $69.990."
     }
    ],
    "nota": "Solo dos precios chilenos con link. Sin precios de Dimerc, Prisa, OfficeStore ni Mercado Libre Chile. Easy (Arthome Santiago, con brazos, SKU 1525577) sin precio visible; Easy Budapest $54.990 no confirma brazos y Arthome es «uso doméstico». Para un hospital conviene silla operativa de uso intensivo: cotizar a distribuidores de mobiliario de oficina."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 2,
   "verificadas": 1
  }

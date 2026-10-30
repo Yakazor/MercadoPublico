@@ -28,7 +28,7 @@
      "fecha_consulta": "2026-10-27",
      "verificado": false,
      "precio_pagina": 98990.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $98.990, no $149.900: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $98.990, no $149.900: puede haber cambiado."
     },
     {
      "tienda": "Lider (vende Chileneumáticos)",
@@ -44,7 +44,7 @@
      "fecha_consulta": "2026-10-27",
      "verificado": false,
      "precio_pagina": 187300.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $187.300, no $153.800: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $187.300, no $153.800: puede haber cambiado."
     }
    ]
   },
@@ -65,9 +65,9 @@
      "nota": "no es versión C (carga); confirmar índice de carga. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 64500.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $64.500."
+     "verificacion_pagina": "2026-10-30: la página muestra $64.500."
     }
    ]
   },
@@ -89,7 +89,7 @@
      "fecha_consulta": "2026-10-27",
      "verificado": false,
      "precio_pagina": 89990.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $89.990, no $85.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $89.990, no $85.990: puede haber cambiado."
     },
     {
      "tienda": "Lider (vende Chileneumáticos)",
@@ -105,7 +105,7 @@
      "fecha_consulta": "2026-10-27",
      "verificado": false,
      "precio_pagina": 98990.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $98.990, no $142.300: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $98.990, no $142.300: puede haber cambiado."
     }
    ]
   },
@@ -139,7 +139,7 @@
      "fecha_consulta": "2026-10-27",
      "verificado": false,
      "precio_pagina": 241990.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $241.990, no $225.590: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $241.990, no $225.590: puede haber cambiado."
     }
    ]
   },
@@ -175,7 +175,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 6,
   "verificadas": 1
  }

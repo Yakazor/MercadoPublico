@@ -22,7 +22,7 @@
      "nota": "A3 (imprime y escanea hasta A3/11x17\"), dúplex automático, ADF, wifi doble banda + Ethernet, 22 ppm negro / 18 ppm color; tinta en cartuchos (no tanque). La ficha indica «2 nuevos desde $398.990». Confirmar vendedor nuevo con garantía y despacho a Fresia. El anexo no se pudo abrir: revisar que cumpla lo pedido.",
      "fecha_consulta": "2026-10-26",
      "verificado": false,
-     "verificacion_pagina": "2026-10-29: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-10-30: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     },
     {
      "tienda": "SP Digital",
@@ -37,9 +37,9 @@
      "nota": "Precio por transferencia ($585.190 otros medios). Tienda de Santiago; acepta OC a 30 días en otros productos. Mismo modelo que la opción anterior.",
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 559990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $559.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $559.990."
     },
     {
      "tienda": "Ripley",
@@ -53,14 +53,14 @@
      "coincidencia": "equivalente",
      "nota": "A3 con tanque de tinta (bajo costo por página), dúplex, ADF, wifi + Ethernet, 35 ppm negro / 27 ppm color. Probablemente marketplace: confirmar vendedor y stock. Otras referencias del mismo modelo: PC Factory $679.990 efectivo y SP Digital $660.560 transferencia (fichas con precios contradictorios). Epson EcoTank L15150 (A3, tanque) desde $999.900 en Mercado Libre: supera el estimado.",
      "fecha_consulta": "2026-10-26",
-     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
     }
    ],
    "nota": "La descripción remite a un anexo que no se pudo abrir: se supuso multifuncional A3 (planos/croquis) con wifi y dúplex. Si el anexo pide solo A4, hay modelos más baratos (por confirmar). Plazo de entrega 2 días a Fresia (Los Lagos): confirmar despacho. ref_mediana ($2,99 M) corresponde a «impresoras de bandas», no comparable."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 3,
   "verificadas": 1
  }

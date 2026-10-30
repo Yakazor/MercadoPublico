@@ -23,7 +23,7 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 15000.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $15.000, no $15.900: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $15.000, no $15.900: puede haber cambiado."
     },
     {
      "tienda": "Falabella",
@@ -39,7 +39,7 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 19590.0,
-     "verificacion_pagina": "2026-10-29: la página abrió y el precio más parecido es $19.590, no $18.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $19.590, no $18.990: puede haber cambiado."
     },
     {
      "tienda": "Falabella",
@@ -54,16 +54,16 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-29",
+     "verificado_en": "2026-10-30",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $19.990."
+     "verificacion_pagina": "2026-10-30: la página muestra $19.990."
     }
    ],
    "nota": "Especificaciones mínimas están en bases técnicas (no disponibles); se asume mochila de viaje de ~40 L."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 3,
   "verificadas": 1
  }

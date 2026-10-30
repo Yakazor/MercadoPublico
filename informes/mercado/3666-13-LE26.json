@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Precio oferta; juguete tipo de referencia (rangos etarios por definir).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403.",
      "descartado": true,
      "motivo_descarte": "La línea (cantidad 1) es la compra de 2.740 juguetes de distintos rangos etarios: el precio de un juguete no representa la línea."
     },
@@ -40,7 +40,7 @@
      "verificado": false,
      "nota": "Precio oferta; desde 12 meses.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-29: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403.",
      "descartado": true,
      "motivo_descarte": "La línea (cantidad 1) es la compra de 2.740 juguetes de distintos rangos etarios: el precio de un juguete no representa la línea."
     },
@@ -54,12 +54,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 10882.35,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "Vendedor externo (Luz de Luciérnaga); confirmar origen del envío.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-29",
-     "precio_pagina": 13000.0,
-     "verificacion_pagina": "2026-10-29: la página muestra $13.000.",
+     "precio_pagina": 10990.0,
+     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $10.990, no $12.950: puede haber cambiado.",
      "descartado": true,
      "motivo_descarte": "La línea (cantidad 1) es la compra de 2.740 juguetes de distintos rangos etarios: el precio de un juguete no representa la línea."
     }
@@ -67,8 +67,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-29",
+  "fecha": "2026-10-30",
   "opciones": 3,
-  "verificadas": 1
+  "verificadas": 0
  }
 }
