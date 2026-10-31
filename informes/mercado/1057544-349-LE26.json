@@ -21,9 +21,9 @@
      "nota": "la ficha no confirma que sea transparente. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 2390.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $2.390."
+     "verificacion_pagina": "2026-10-31: la página muestra $2.390."
     }
    ]
   },
@@ -80,9 +80,9 @@
      "nota": "medida cercana a oficio, no tipo saco confirmado. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-26",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $15.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $15.990."
     }
    ]
   },
@@ -138,7 +138,7 @@
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-26",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -150,7 +150,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 3,
   "verificadas": 2
  }

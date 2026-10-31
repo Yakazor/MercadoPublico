@@ -38,10 +38,10 @@
      "coincidencia": "aproximada",
      "nota": "no es de doble cola con absorbedor: confirmar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
-     "verificado": true,
+     "verificado": false,
      "verificado_en": "2026-10-30",
-     "precio_pagina": 16990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $16.990."
+     "precio_pagina": 17990.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $17.990, no $17.290: puede haber cambiado."
     }
    ]
   },
@@ -62,9 +62,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 890.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $890."
+     "verificacion_pagina": "2026-10-31: la página muestra $890."
     }
    ]
   },
@@ -85,9 +85,9 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 1890.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $1.890."
+     "verificacion_pagina": "2026-10-31: la página muestra $1.890."
     }
    ]
   },
@@ -108,9 +108,9 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $15.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $15.990."
     }
    ]
   },
@@ -161,9 +161,9 @@
      "nota": "otro listado la muestra a $28.042. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 32990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $32.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $32.990."
     }
    ]
   },
@@ -191,7 +191,7 @@
      "fecha_consulta": "2026-10-30",
      "verificado": false,
      "precio_pagina": 37990.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $37.990, no $35.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $37.990, no $35.990: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -206,9 +206,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $29.990."
     }
    ]
   },
@@ -229,16 +229,16 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 8,
-  "verificadas": 7
+  "verificadas": 6
  }
 }

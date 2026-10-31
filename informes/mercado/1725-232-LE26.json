@@ -64,5 +64,10 @@
    "opciones": [],
    "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-31",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

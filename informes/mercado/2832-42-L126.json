@@ -38,7 +38,7 @@
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -59,9 +59,9 @@
      "nota": "polietileno, no vinilo. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 4910.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $4.910."
+     "verificacion_pagina": "2026-10-31: la página muestra $4.910."
     }
    ]
   },
@@ -88,9 +88,9 @@
      "nota": "modelo distinto de la S90 Smart Fold pedida; precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 399990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $399.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $399.990."
     }
    ]
   },
@@ -116,13 +116,13 @@
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 4,
   "verificadas": 2
  }

@@ -23,9 +23,9 @@
      "verificado": true,
      "nota": "Precio de listado (rango 53.990-69.990).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 55000.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $55.000."
+     "verificacion_pagina": "2026-10-31: la página muestra $55.000."
     },
     {
      "tienda": "Lider",
@@ -42,13 +42,13 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-28",
      "precio_pagina": 51990.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $51.990, no $54.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $51.990, no $54.990: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 2,
   "verificadas": 1
  }

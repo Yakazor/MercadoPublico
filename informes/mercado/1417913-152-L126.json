@@ -34,8 +34,8 @@
      "fecha_consulta": "2026-10-29",
      "verificado": true,
      "precio_pagina": 139900.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $139.900.",
-     "verificado_en": "2026-10-30"
+     "verificacion_pagina": "2026-10-31: la página muestra $139.900.",
+     "verificado_en": "2026-10-31"
     }
    ]
   },
@@ -75,7 +75,7 @@
      "fecha_consulta": "2026-10-29",
      "verificado": false,
      "precio_pagina": 24990.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $24.990, no $23.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $24.990, no $23.990: puede haber cambiado."
     },
     {
      "tienda": "Sodimac (Avymaq)",
@@ -90,9 +90,9 @@
      "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-29",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $29.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $29.990."
     }
    ]
   },
@@ -113,9 +113,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
      "fecha_consulta": "2026-10-29",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 39990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $39.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $39.990."
     }
    ]
   },
@@ -136,9 +136,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
      "fecha_consulta": "2026-10-29",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 119990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $119.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $119.990."
     }
    ]
   },
@@ -159,9 +159,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
      "fecha_consulta": "2026-10-29",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 9990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $9.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $9.990."
     },
     {
      "tienda": "Sodimac (Just Home Collection)",
@@ -176,9 +176,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
      "fecha_consulta": "2026-10-29",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $12.990."
     }
    ]
   },
@@ -232,7 +232,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 7,
   "verificadas": 6
  }

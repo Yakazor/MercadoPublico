@@ -22,9 +22,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
-     "precio_pagina": 35990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $35.990."
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 37900.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $37.900."
     },
     {
      "tienda": "Falabella (vende Techbox)",
@@ -38,10 +38,10 @@
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
-     "verificado": false,
-     "verificado_en": "2026-10-29",
-     "precio_pagina": 40000.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $40.000, no $38.690: puede haber cambiado."
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 37900.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $37.900."
     },
     {
      "tienda": "Falabella (vende Alcaplus)",
@@ -56,9 +56,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 42990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $42.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $42.990."
     }
    ]
   },
@@ -87,9 +87,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 65990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $65.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $65.990."
     },
     {
      "tienda": "Falabella (vende Alcaplus)",
@@ -104,9 +104,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 79990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $79.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $79.990."
     },
     {
      "tienda": "Falabella (vende Techbox)",
@@ -121,9 +121,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 86990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $86.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $86.990."
     }
    ]
   },
@@ -144,9 +144,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; confirmar precio vigente",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página muestra $77.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $77.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 77990.0
     }
    ]
@@ -183,9 +183,9 @@
      "nota": "el listado no dice si es original HP; confirmar con el vendedor. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
-     "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $69.990."
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 70000.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $70.000."
     }
    ]
   },
@@ -213,9 +213,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; el dato de la búsqueda era de caché (dic-2024): confirmar precio vigente",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página muestra $119.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $119.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 119990.0
     }
    ]
@@ -237,9 +237,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -261,9 +261,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -285,9 +285,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -309,9 +309,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -333,7 +333,7 @@
      "coincidencia": "equivalente",
      "nota": "el 711 negro de 38 ml es CZ129A (CZ133A es el de 80 ml): aclarar con el comprador. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Falabella (vende Tecno Insumos SpA)",
@@ -349,7 +349,7 @@
      "fecha_consulta": "2026-10-25",
      "verificado": false,
      "precio_pagina": 60000.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado."
     }
    ]
   },
@@ -371,9 +371,9 @@
      "nota": "el listado no muestra el código CZ130A. precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 59990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $59.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $59.990."
     }
    ]
   },
@@ -395,9 +395,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 52990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $52.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $52.990."
     }
    ]
   },
@@ -419,9 +419,9 @@
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 50990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $50.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $50.990."
     }
    ]
   },
@@ -442,7 +442,7 @@
      "coincidencia": "exacta",
      "nota": "precio «desde» en la página de categoría de HP Chile; confirmar",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $454.990, no $358.990: puede haber cambiado.",
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $454.990, no $358.990: puede haber cambiado.",
      "verificado": false,
      "precio_pagina": 454990.0
     }
@@ -450,8 +450,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 19,
-  "verificadas": 15
+  "verificadas": 16
  }
 }

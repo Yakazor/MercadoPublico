@@ -56,9 +56,9 @@
      "coincidencia": "aproximada",
      "nota": "piden GT51; confirmar compatibilidad con la Ink Tank 410",
      "fecha_consulta": "2026-10-29",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -79,9 +79,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile (precio de la página del combo, búsqueda del 25 y 29-10)",
      "fecha_consulta": "2026-10-29",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -102,9 +102,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
      "fecha_consulta": "2026-10-29",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -125,9 +125,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
      "fecha_consulta": "2026-10-29",
-     "verificacion_pagina": "2026-10-30: la página muestra $11.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 11990.0
     }
    ]
@@ -164,7 +164,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 4,
   "verificadas": 4
  }

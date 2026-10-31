@@ -31,7 +31,10 @@
      "precio_unitario_neto": 38655.46,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": false,
+     "precio_pagina": 52000.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $52.000, no $46.000: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -44,7 +47,10 @@
      "precio_unitario_neto": 52092.44,
      "coincidencia": "equivalente",
      "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": false,
+     "precio_pagina": 60000.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $60.000, no $61.990: puede haber cambiado."
     }
    ]
   },
@@ -63,7 +69,10 @@
      "precio_unitario_neto": 38655.46,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": false,
+     "precio_pagina": 52000.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $52.000, no $46.000: puede haber cambiado."
     }
    ]
   },
@@ -85,5 +94,10 @@
    "opciones": [],
    "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-31",
+  "opciones": 3,
+  "verificadas": 0
+ }
 }

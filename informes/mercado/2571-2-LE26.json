@@ -22,7 +22,7 @@
      "verificado": false,
      "nota": "Mango plástico; también publicado en Paris.cl",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -44,9 +44,9 @@
      "verificado": true,
      "nota": "Precio visto entre 49.990 y 66.515",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $49.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $49.990."
     },
     {
      "tienda": "Sodimac",
@@ -61,9 +61,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 62535.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $62.535."
+     "verificacion_pagina": "2026-10-31: la página muestra $62.535."
     }
    ],
    "nota": "No se confirmó rueda de caucho macizo en los resultados; verificar ficha."
@@ -86,8 +86,8 @@
      "verificado": false,
      "nota": "Vendedor externo; mango no confirmado",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 3356.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $3.356, no $2.890: puede haber cambiado."
+     "precio_pagina": 2990.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $2.990, no $2.890: puede haber cambiado."
     },
     {
      "tienda": "Sodimac",
@@ -102,9 +102,9 @@
      "verificado": true,
      "nota": "Mango no confirmado en resultado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 7990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $7.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $7.990."
     }
    ]
   },
@@ -126,9 +126,9 @@
      "verificado": true,
      "nota": "Forjado no confirmado",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $14.990."
     }
    ]
   },
@@ -150,9 +150,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $14.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $14.990."
     }
    ],
    "nota": "No se encontró modelo de 28 pulgadas exacto."
@@ -175,9 +175,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $5.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $5.990."
     }
    ]
   },
@@ -199,9 +199,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 4990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $4.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $4.990."
     },
     {
      "tienda": "Sodimac",
@@ -216,9 +216,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $12.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $12.990."
     }
    ]
   },
@@ -255,7 +255,7 @@
      "nota": "18\" en vez de 16\"",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 7990.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $7.990, no $7.690: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $7.990, no $7.690: puede haber cambiado."
     }
    ],
    "nota": "No hay modelo de 16\" en Sodimac; solo 18\" y 24\"."
@@ -278,9 +278,9 @@
      "verificado": true,
      "nota": "Publicación patrocinada de vendedor externo",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 120900.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $120.900."
+     "verificacion_pagina": "2026-10-31: la página muestra $120.900."
     }
    ],
    "nota": "Se asume tineta de 4 galones."
@@ -303,7 +303,7 @@
      "verificado": false,
      "nota": "Medida 60x90 en vez de 45x90",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -318,7 +318,7 @@
      "verificado": false,
      "nota": "Medida 60x90",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     }
    ],
    "nota": "No se encontró 45x90; solo 60x90 (aproximada)."
@@ -342,8 +342,8 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 17990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $17.990.",
-     "verificado_en": "2026-10-30"
+     "verificacion_pagina": "2026-10-31: la página muestra $17.990.",
+     "verificado_en": "2026-10-31"
     },
     {
      "tienda": "Sodimac",
@@ -358,9 +358,9 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 31990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $31.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $31.990."
     }
    ]
   },
@@ -382,16 +382,16 @@
      "verificado": true,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 1990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $1.990."
+     "verificacion_pagina": "2026-10-31: la página muestra $1.990."
     }
    ],
    "nota": "No se encontró tipo abanico con cerdas largas."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 17,
   "verificadas": 12
  }

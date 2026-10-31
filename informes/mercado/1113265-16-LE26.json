@@ -24,7 +24,7 @@
      "nota": "Precio por transferencia (con tarjeta $486.440). Cumple WXGA, DLP y 3.600 lúmenes; resto de conectividad exigida no verificada. Pide 15 unidades.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 599990.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $599.990, no $469.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $599.990, no $469.990: puede haber cambiado."
     },
     {
      "tienda": "Falabella",
@@ -40,13 +40,13 @@
      "nota": "Mismo modelo, más caro.",
      "fecha_consulta": "2026-10-18",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-30: la página abrió y el precio más parecido es $49.990, no $746.990: puede haber cambiado."
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $49.990, no $746.990: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 2,
   "verificadas": 0
  }

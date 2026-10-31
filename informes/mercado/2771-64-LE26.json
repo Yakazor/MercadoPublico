@@ -23,7 +23,7 @@
      "verificado": false,
      "nota": "Precio oferta; juguete tipo de referencia (rangos etarios por definir).",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403.",
      "descartado": true,
      "motivo_descarte": "La línea son 4.200 juguetes en cantidad 1: el precio de un juguete no la representa."
     },
@@ -40,7 +40,7 @@
      "verificado": false,
      "nota": "Precio oferta; desde 12 meses.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-10-30: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403.",
      "descartado": true,
      "motivo_descarte": "La línea son 4.200 juguetes en cantidad 1: el precio de un juguete no la representa."
     },
@@ -57,9 +57,9 @@
      "verificado": true,
      "nota": "Vendedor externo (Luz de Luciérnaga); confirmar origen del envío. Precio actualizado al que mostró la página el 2026-10-20 (antes $12.950).",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-10-30",
+     "verificado_en": "2026-10-31",
      "precio_pagina": 10990.0,
-     "verificacion_pagina": "2026-10-30: la página muestra $10.990.",
+     "verificacion_pagina": "2026-10-31: la página muestra $10.990.",
      "descartado": true,
      "motivo_descarte": "La línea son 4.200 juguetes en cantidad 1: el precio de un juguete no la representa."
     }
@@ -67,7 +67,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "opciones": 3,
   "verificadas": 1
  }

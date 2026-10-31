@@ -19,7 +19,11 @@
      "precio_unitario_neto": 13436.97,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 15990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $15.990."
     }
    ]
   },
@@ -44,7 +48,11 @@
      "precio_unitario_neto": 5033.61,
      "coincidencia": "aproximada",
      "nota": "aluminio, no acero. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 5990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $5.990."
     }
    ]
   },
@@ -69,7 +77,11 @@
      "precio_unitario_neto": 42008.4,
      "coincidencia": "aproximada",
      "nota": "no confirma que sea portátil. Especificación técnica en el anexo: confirmar.",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 49990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $49.990."
     }
    ]
   },
@@ -100,7 +112,11 @@
      "precio_unitario_neto": 42008.4,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 49990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $49.990."
     }
    ]
   },
@@ -110,5 +126,10 @@
    "opciones": [],
    "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-31",
+  "opciones": 4,
+  "verificadas": 4
+ }
 }
