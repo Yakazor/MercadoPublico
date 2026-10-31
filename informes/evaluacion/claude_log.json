@@ -155,10 +155,19 @@
  {
   "fecha": "2026-10-31",
   "autor": "Sistema (script)",
-  "licitaciones_procesadas": "2008 vigentes; 19 evaluadas; informes de 10",
-  "resultado": "0 GO, 13 con condiciones, 6 NO GO",
-  "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 27 de ",
-  "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES",
-  "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+  "licitaciones_procesadas": "2005 vigentes; 21 evaluadas; informes de 10",
+  "resultado": "0 GO, 15 con condiciones, 6 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados ",
+  "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 4053-44-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4053-44-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-31",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Actualización pedida por la usuaria (31-10 noche): se dispararon radar y OC (datos de las 19:41). Precios de mercado nuevos (WebSearch, sin verificar): 4451-129-L126 herramientas alumbrado público San Clemente (4/14 ítems), 4053-44-LE26 vestuario CESFAM Mariquina (1/6, solo parkas 3 en 1), 2111-316-LR26 apósitos de presión negativa con comodato (0/13, no se buscó) y 2258-237-LE26 insumos Zebra Hospital Antofagasta (0/6, sin precio en CLP). Evaluadas 21: 0 GO, 15 GO con condiciones, 6 NO GO.",
+  "resultado": "4053-44-LE26 entra al top 3 como GO con condiciones solo por las parkas (oferta $7,6 M vs. $30 M estimados): faltan tops clínicos, poleras, blusas y buzo. Mejores: 1090-17-LE26 herramientas CONAF (cierre martes 03-11), 979-73-LE26 EPP MOP (06-11) y 4053-44-LE26 (10-11).",
+  "riesgos": "4053-44-LE26: prendas con especificación y bordado en bases; precio de parka de retail importado. 4451-129-L126: faltan herramientas dieléctricas certificadas, eslingas y la perforadora knock out. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
+  "decisiones": "No se buscaron los apósitos de terapia de presión negativa (requieren equipo en comodato). Proveedores nuevos para 4053-44-LE26: Druks Uniforms (Temuco), Comercial Primetex, Mario León Castillo (confección y distintivos) y Lider.",
+  "recomendaciones": "Lunes: 1090-17-LE26 cierra el martes 03-11: decidir y pedir precio por volumen. 4053-44-LE26: pedir cotización completa a un confeccionista (Druks Uniforms, en Temuco, está cerca). 979-73-LE26: cotizar con Proseg."
  }
 ]

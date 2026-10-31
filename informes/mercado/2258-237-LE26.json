@@ -1,0 +1,44 @@
+{
+ "codigo": "2258-237-LE26",
+ "nombre": "INSUMOS PARA IMPRESORAS ZEBRA DEL HRA",
+ "fecha_consulta": "2026-10-31",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "244-0029 Etiquetas Autoadhesiva 40mm x 60mm Blanca (Rollo 700-1000 Und) Compatible con Maquina Zebra",
+   "opciones": [],
+   "nota": "insumo Zebra sin precio en CLP en la búsqueda (solo extranjero); cotizar con distribuidor de etiquetas"
+  },
+  {
+   "linea": 2,
+   "producto": "039-0681 Etiqueta Autoadhesiva 152 x 102mm Blanca (Rollo 100-200 Und) Compatible con Maquina Zebra",
+   "opciones": [],
+   "nota": "insumo Zebra sin precio en CLP en la búsqueda (solo extranjero); cotizar con distribuidor de etiquetas"
+  },
+  {
+   "linea": 3,
+   "producto": "039-0525 Etiqueta Autoadhesiva 30 x 50mm Blanca (Rollo 1000-2000 Und) Compatible con Maquina Zebra",
+   "opciones": [],
+   "nota": "insumo Zebra sin precio en CLP en la búsqueda (solo extranjero); cotizar con distribuidor de etiquetas"
+  },
+  {
+   "linea": 4,
+   "producto": "039-0654 Etiqueta autoadhesiva mate 99 x100 mm (Rollo 400-500 Und) Compatible con Maquina Zebra",
+   "opciones": [],
+   "nota": "insumo Zebra sin precio en CLP en la búsqueda (solo extranjero); cotizar con distribuidor de etiquetas"
+  },
+  {
+   "linea": 5,
+   "producto": "039-0598   PAPEL TERMICO 80X80 TURNOMATICOS",
+   "opciones": [],
+   "nota": "insumo Zebra sin precio en CLP en la búsqueda (solo extranjero); cotizar con distribuidor de etiquetas"
+  },
+  {
+   "linea": 6,
+   "producto": "224-0277 CINTA TRANSFERENCIA (RIBBON) C/RESINA ZEBRA GC420T",
+   "opciones": [],
+   "nota": "insumo Zebra sin precio en CLP en la búsqueda (solo extranjero); cotizar con distribuidor de etiquetas"
+  }
+ ]
+}

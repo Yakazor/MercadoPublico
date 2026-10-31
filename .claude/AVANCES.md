@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-10-31 (pedido de la usuaria «Actualiza todo», 22:33 UTC): se dispararon radar y OC (ambos OK; `datos` del
+  31-10 19:41, 462 licitaciones, 1.543 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin
+  verificar): 4451-129-L126 herramientas alumbrado (4/14), 4053-44-LE26 vestuario CESFAM (1/6; GO con
+  condiciones solo por las parkas, entra al top 3), 2111-316-LR26 TPN en comodato (0/13, no se buscó) y
+  2258-237-LE26 Zebra (0/6). Mejores: 1090-17-LE26, 979-73-LE26 y 4053-44-LE26. 498 pruebas OK.
+
 - 2026-10-31 (rutina 11:00 UTC): `datos` del 31-10 03:44 (menos de 6 h: sin disparar workflows; 435 licitaciones,
   1.574 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 635-183-L126 herramientas
   Arica (4/9), 1057448-53-LE26 sillas Iquique (2/7; GO con condiciones, entra al top 3), 1725-232-LE26 libros

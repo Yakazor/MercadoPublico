@@ -1,0 +1,46 @@
+[
+ {
+  "nombre": "Druks Uniforms",
+  "correo": null,
+  "web": null,
+  "contacto": "Temuco, Región de La Araucanía",
+  "especialidad": "Uniformes clínicos (cerca de Mariquina); parkas y bordado por confirmar",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/druks-uniforms/temuco/300283925/esp"
+ },
+ {
+  "nombre": "Comercial Primetex SpA",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Proveedor del Estado con contratos de uniformes clínicos en Mercado Público",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://bidsfactory.com/en/companies/comercial-primetex-spa"
+ },
+ {
+  "nombre": "Fabricación de distintivos y confecciones Mario León Castillo E.I.R.L.",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Confección y distintivos (posible bordado de logos); proveedor del Estado",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://bidsfactory.com/en/companies/fabricacion-de-distintivos-y-confecciones-mario-leon-castillo-eirl"
+ },
+ {
+  "nombre": "Lider (vende Andesland)",
+  "correo": null,
+  "web": "https://www.lider.cl/",
+  "contacto": null,
+  "especialidad": "Parkas 3 en 1 (opción usada en el presupuesto)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/4053-44-LE26.json"
+ }
+]

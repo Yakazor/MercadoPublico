@@ -1,0 +1,57 @@
+{
+ "codigo": "4053-44-LE26",
+ "nombre": "VESTUARIO INSTITUCIONAL - CESFAM MARIQUINA 2026",
+ "fecha_consulta": "2026-10-31",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "TOP CLINICOS - SIMILAR A \"CHEROKEE O KOI\" VER BASES TECNICAS DE LICITACION",
+   "opciones": [],
+   "nota": "top clínico tipo Cherokee/Koi: sin precio chileno en la búsqueda; cotizar con distribuidor de uniformes clínicos"
+  },
+  {
+   "linea": 2,
+   "producto": "CONJUNTO DEPORTIVO HOMBRE - POLERA, POLERON Y PANTALON DE BUZO",
+   "opciones": [],
+   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "POLERAS PIQUÉ - VER BASES TECNICAS DE LICITACION",
+   "opciones": [],
+   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "BLUSAS - VER BASES TECNICAS DE LICITACION",
+   "opciones": [],
+   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "PARKAS 3 EN 1 HOMBRE - VER BASES TECNICAS DE LICITACION",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Chaqueta 3 en 1 desmontable hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-3-en-1-desmontable-hombre/00046047693931",
+     "precio": 77990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 65537.82,
+     "coincidencia": "aproximada",
+     "nota": "búsqueda del 25-10; bordado y especificación de bases por confirmar",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "PARKAS 3 EN 1 MUJER - VER BASES TECNICAS DE LICITACION",
+   "opciones": [],
+   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+  }
+ ]
+}
