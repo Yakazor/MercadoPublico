@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $6.639.946 |
 | Oferta sugerida con IVA | $7.600.984 |
 
-**Riesgos financieros:** 5 de 6 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 1 de 1 precios son de productos aproximados (otra medida, marca o modelo)..
+**Riesgos financieros:** 5 de 6 ítems sin precio de mercado: el costo real es mayor.; 1 de 1 precios son de productos aproximados (otra medida, marca o modelo)..
 
 ## Análisis operacional
 
@@ -47,7 +47,6 @@
 ## Riesgos detectados
 
 - 5 de 6 ítems sin precio de mercado: el costo real es mayor.
-- La mayoría de los precios no está verificada en la página de la tienda.
 - 1 de 1 precios son de productos aproximados (otra medida, marca o modelo).
 - Entrega en Región de Los Ríos: despacho caro y lento desde Santiago.
 
@@ -69,7 +68,6 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 Condiciones:
 - Conseguir precio de los ítems que faltan antes de ofertar.
 - Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
-- Mitigar los riesgos marcados antes de comprometer la oferta.
 
 ## Supuestos
 

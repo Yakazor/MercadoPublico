@@ -60,12 +60,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 19319.33,
      "coincidencia": "aproximada",
-     "verificado": false,
+     "verificado": true,
      "nota": "Precio de página de listado; medidas exactas pedidas en anexo no verificadas.",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 21990.0,
-     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $21.990, no $22.990: puede haber cambiado.",
-     "verificado_en": "2026-10-30"
+     "precio_pagina": 22990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $22.990.",
+     "verificado_en": "2026-10-31"
     }
    ]
   },
@@ -98,6 +98,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-31",
   "opciones": 4,
-  "verificadas": 2
+  "verificadas": 3
  }
 }

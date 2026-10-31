@@ -716,8 +716,8 @@
      "nota": "",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-31",
-     "precio_pagina": 184990.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $184.990."
+     "precio_pagina": 179990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $179.990."
     }
    ]
   },
@@ -866,8 +866,8 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "precio_pagina": 100000.0,
-     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $100.000, no $109.990: puede haber cambiado."
+     "precio_pagina": 115990.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $115.990, no $109.990: puede haber cambiado."
     }
    ]
   }

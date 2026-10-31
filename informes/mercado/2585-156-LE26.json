@@ -64,8 +64,8 @@
      "nota": "Largo/material del mango no confirmado (pide mango metal 120 cm)",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-31",
-     "precio_pagina": 4996.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $4.996."
+     "precio_pagina": 4990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $4.990."
     }
    ]
   },
@@ -224,12 +224,12 @@
      "unidades_equivalentes": 1,
      "precio_unitario_neto": 4109,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "Largo 2,44 m, no 2,60 m Precio actualizado al que mostró la página el 2026-10-20 (antes $4.990).",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-31",
-     "precio_pagina": 4890.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $4.890."
+     "precio_pagina": 3350.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $3.350, no $4.890: puede haber cambiado."
     },
     {
      "tienda": "Easy",
@@ -314,6 +314,6 @@
  "verificacion_paginas": {
   "fecha": "2026-10-31",
   "opciones": 14,
-  "verificadas": 8
+  "verificadas": 7
  }
 }

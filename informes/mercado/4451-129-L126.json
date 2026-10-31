@@ -37,7 +37,11 @@
      "precio_unitario_neto": 84025.21,
      "coincidencia": "exacta",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 99990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $99.990."
     }
    ]
   },
@@ -98,7 +102,10 @@
      "precio_unitario_neto": 21840.34,
      "coincidencia": "aproximada",
      "nota": "alicate individual, no set; precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": false,
+     "precio_pagina": 25000.0,
+     "verificacion_pagina": "2026-10-31: la página abrió y el precio más parecido es $25.000, no $25.990: puede haber cambiado."
     }
    ]
   },
@@ -117,7 +124,11 @@
      "precio_unitario_neto": 109235.29,
      "coincidencia": "exacta",
      "nota": "otro listado lo muestra a $79.990 con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 129990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $129.990."
     }
    ]
   },
@@ -136,9 +147,15 @@
      "precio_unitario_neto": 26558.82,
      "coincidencia": "exacta",
      "nota": "oferta $21.500. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-31"
+     "fecha_consulta": "2026-10-31",
+     "verificacion_pagina": "2026-10-31: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-31",
+  "opciones": 4,
+  "verificadas": 2
+ }
 }

@@ -43,7 +43,11 @@
      "precio_unitario_neto": 65537.82,
      "coincidencia": "aproximada",
      "nota": "búsqueda del 25-10; bordado y especificación de bases por confirmar",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-10-31",
+     "precio_pagina": 77990.0,
+     "verificacion_pagina": "2026-10-31: la página muestra $77.990."
     }
    ]
   },
@@ -53,5 +57,10 @@
    "opciones": [],
    "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-10-31",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }
