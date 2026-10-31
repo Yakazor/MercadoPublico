@@ -1,0 +1,89 @@
+{
+ "codigo": "1057448-53-LE26",
+ "nombre": "ADQ DE SILLAS VARIAS BIP 30418022 BIP 40001311",
+ "fecha_consulta": "2026-10-31",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Silla ecocuero (GRUPO 1)",
+   "opciones": [],
+   "nota": "no apareció silla de ecocuero con precio; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Silla ecocuero (GRUPO 1)",
+   "opciones": [],
+   "nota": "no apareció silla de ecocuero con precio; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Silla ergonómica (GRUPO 2)",
+   "opciones": [
+    {
+     "tienda": "Pandalino",
+     "producto_mercado": "Silla oficina ergonómica Magnus",
+     "url": "https://www.pandalino.cl/products/silla-oficina-ergonomica-magnus-confort-y-productividad",
+     "precio": 46000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 38655.46,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-31"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Silla ejecutiva ergonómica Liverpool con soporte lumbar negra",
+     "url": "https://www.lider.cl/ip/home-office/silla-ejecutiva-ergonomica-liverpool-con-soporte-lumbar-color-negro/00046064404422",
+     "precio": 61990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 52092.44,
+     "coincidencia": "equivalente",
+     "nota": "precio con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Silla ergonómica (GRUPO 2)",
+   "opciones": [
+    {
+     "tienda": "Pandalino",
+     "producto_mercado": "Silla oficina ergonómica Magnus",
+     "url": "https://www.pandalino.cl/products/silla-oficina-ergonomica-magnus-confort-y-productividad",
+     "precio": 46000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 38655.46,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Silla cajero alta (GRUPO 3)",
+   "opciones": [],
+   "nota": "silla de cajero en Mercado Libre (Fullmuebles) sin precio visible; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "Silla cajero alta (GRUPO 3)",
+   "opciones": [],
+   "nota": "silla de cajero en Mercado Libre (Fullmuebles) sin precio visible; por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "Piso ergonómico laboratorio (GRUPO 4)",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  }
+ ]
+}

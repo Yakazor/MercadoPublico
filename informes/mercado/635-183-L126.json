@@ -1,0 +1,114 @@
+{
+ "codigo": "635-183-L126",
+ "nombre": "ADQUISICIÓN DE HERRAMIENTAS PARA DIAGNÓSTICO Y CONTROL DE INFRAESTRUCTURAS, OT 5905.",
+ "fecha_consulta": "2026-10-31",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Anemómetro digital portátil de hélice, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Proimeq)",
+     "producto_mercado": "Anemómetro termómetro digital GM816",
+     "url": "https://www.lider.cl/ip/herramientas/anemometro-termometro-digital-gm816/00200000017527",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Termohigrómetro digital portátil, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [],
+   "nota": "solo termohigrómetros básicos de Shein (importados); por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Escuadra metálica rígida de 90°, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Stanley)",
+     "producto_mercado": "Escuadra 8\" aluminio negro",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34387/Escuadras-de-medicion",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5033.61,
+     "coincidencia": "aproximada",
+     "nota": "aluminio, no acero. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "inclinómetro digital portátil, compacto y de un eje, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Manómetro analógico portátil, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [
+    {
+     "tienda": "Lider (Campbell Manufacturing)",
+     "producto_mercado": "Manómetro Brady 0-100 PSI",
+     "url": "https://www.lider.cl/ip/herramientas/manometro-campbell-manufacturing-brady-0-100-psi/00008840903443",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "nota": "no confirma que sea portátil. Especificación técnica en el anexo: confirmar.",
+     "fecha_consulta": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Martillo geológico, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [],
+   "nota": "solo martillos Estwing de carpintería (importados por Lider); el geológico, por confirmar"
+  },
+  {
+   "linea": 7,
+   "producto": "Martillo telescópico, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  },
+  {
+   "linea": 8,
+   "producto": "mochila portaherramientas, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Stanley)",
+     "producto_mercado": "Mochila para herramientas 35x16x44 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/mochila-para-herramientas",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-31"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Nivel digital portátil con brazo angular abatible, similar a las especificaciones técnicas adjuntas.",
+   "opciones": [],
+   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+  }
+ ]
+}

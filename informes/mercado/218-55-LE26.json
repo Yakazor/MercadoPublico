@@ -1,0 +1,44 @@
+{
+ "codigo": "218-55-LE26",
+ "nombre": "Adquisición de Juguetes Navidad Comunal 2026",
+ "fecha_consulta": "2026-10-31",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Juguetes para Niñas entre 0 y 3 años",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Juguetes para Niñas entre 4 y 7 años",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Juguetes para Niñas entre 8 y 10 años",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "Juguetes para Niños entre 0 y 3 años",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 5,
+   "producto": "Juguetes para Niños entre 4 y 7 años",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  },
+  {
+   "linea": 6,
+   "producto": "Juguetes para Niños entre 8 y 10 años",
+   "opciones": [],
+   "nota": "solo indica tramo de edad y sexo, sin producto ni especificación (detalle en bases): no se puede cotizar; por confirmar"
+  }
+ ]
+}

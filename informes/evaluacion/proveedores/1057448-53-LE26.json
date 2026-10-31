@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Comercial e Industrial Muebles Asenjo Ltda.",
+  "correo": null,
+  "web": null,
+  "contacto": "San Bernardo, Región Metropolitana",
+  "especialidad": "Fabricante de mobiliario y sillas; dice estar en Convenio Marco y tener presencia en todo Chile",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/muebles-asenjo-limitada/san-bernardo/300062213/frn"
+ },
+ {
+  "nombre": "Dimusa (filial de Moving)",
+  "correo": null,
+  "web": null,
+  "contacto": "Macul, Región Metropolitana",
+  "especialidad": "Fabricante de sillas de oficina con stock en Chile",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/muebles-de-oficina-dimusa/macul/300291911/esp"
+ },
+ {
+  "nombre": "Pandalino",
+  "correo": null,
+  "web": "https://www.pandalino.cl/",
+  "contacto": null,
+  "especialidad": "Sillas ergonómicas (opción usada en el presupuesto); envía a todo Chile continental",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "https://www.pandalino.cl/products/silla-oficina-ergonomica-magnus-confort-y-productividad"
+ }
+]

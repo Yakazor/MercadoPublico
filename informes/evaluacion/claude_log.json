@@ -142,5 +142,23 @@
   "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados ",
   "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES; 1417913-152-L126: GO CON CONDICIONES",
   "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1295444-14-L126**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-31",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "2009 vigentes; 19 evaluadas; informes de 10",
+  "resultado": "0 GO, 13 con condiciones, 6 NO GO",
+  "riesgos": "1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 27 de ",
+  "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES; 2366-44-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2585-111-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
+ },
+ {
+  "fecha": "2026-10-31",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Precios de mercado nuevos (WebSearch, sin verificar en la tienda): 635-183-L126 herramientas de diagnóstico Servicio de Salud Arica (4/9 ítems), 1057448-53-LE26 sillas Servicio de Salud Iquique (2/7: solo las ergonómicas), 1725-232-LE26 libros de autores nacionales Subsecretaría de las Culturas (0/10: editoriales pequeñas, sin precio en librerías) y 218-55-LE26 juguetes San Joaquín (0/6: solo tramos de edad). Datos de las 03:44 (menos de 6 h). Evaluadas 19: 0 GO, 13 GO con condiciones, 6 NO GO.",
+  "resultado": "1057448-53-LE26 entra al top 3 como GO con condiciones (95 sillas ergonómicas a precio de retail, margen 10 %, sin monto estimado), pero faltan las de ecocuero, cajero y laboratorio. Mejores: 1090-17-LE26 (cierre martes 03-11), 979-73-LE26 (06-11) y 1057448-53-LE26 (09-11).",
+  "riesgos": "Sillas: el precio de $46.000 es de una tienda online con modelo genérico; confirmar especificación técnica del anexo y despacho a Iquique. Libros (37,5 M de monto estimado, 3.000 ejemplares): solo cotizable con las editoriales. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
+  "decisiones": "Proveedores nuevos para 1057448-53-LE26: Muebles Asenjo y Dimusa (fabricantes) y Pandalino. No se buscaron los juguetes de San Joaquín (sin productos definidos).",
+  "recomendaciones": "Lunes: 1090-17-LE26 cierra el martes 03-11: confirmar si se oferta y pedir precio por volumen. 1057448-53-LE26: pedir cotización a Muebles Asenjo o Dimusa con el anexo técnico. 1725-232-LE26 (cierre 11-11, $37,5 M): si interesa, pedir precio a las editoriales por ISBN."
  }
 ]

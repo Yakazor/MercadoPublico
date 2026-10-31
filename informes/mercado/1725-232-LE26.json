@@ -1,0 +1,68 @@
+{
+ "codigo": "1725-232-LE26",
+ "nombre": "LIBROS DE AUTORES NACIONALES Y SU DISTRIBUCIÓN",
+ "fecha_consulta": "2026-10-31",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Los sueños del cyborg\r ISBN 9789568865726",
+   "opciones": [],
+   "nota": "editorial Simplemente Editores (2022); sin precio en librerías en la búsqueda: cotizar con la editorial"
+  },
+  {
+   "linea": 2,
+   "producto": "La ciencia oscura \r ISBN 9789562626262",
+   "opciones": [],
+   "nota": "Ediciones B (2022); sin precio en librerías en la búsqueda: cotizar con la editorial o distribuidor"
+  },
+  {
+   "linea": 3,
+   "producto": "La secta perfecta \r ISBN 9789566063636",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 4,
+   "producto": "Una vida fascinante\r ISBN 9789563356076",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 5,
+   "producto": "Prohibido el paso: propiedad militar\r ISBN 9789563591569",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 6,
+   "producto": "Malamente\r ISBN 9789563385939",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 7,
+   "producto": "El cuaderno de las cosas inútiles\r ISBN 9789563961881",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 8,
+   "producto": "Bitácora del desamparo\r ISBN 9789563961737",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 9,
+   "producto": "Amor en tiempos de dictadura \r ISBN 9789563385632",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  },
+  {
+   "linea": 10,
+   "producto": "Subterfugio\r ISBN 9789563961690",
+   "opciones": [],
+   "nota": "libro de editorial nacional pequeña: sin precio en librerías chilenas en la búsqueda; cotizar con la editorial por ISBN (300 ejemplares)"
+  }
+ ]
+}

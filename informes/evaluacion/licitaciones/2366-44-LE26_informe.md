@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 6
+- **Días para el cierre:** 5
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,6 +48,7 @@
 
 - 11 de 14 ítems sin precio de mercado: el costo real es mayor.
 - La mayoría de los precios no está verificada en la página de la tienda.
+- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de Arica y Parinacota: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados
