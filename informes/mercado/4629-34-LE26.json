@@ -1,0 +1,103 @@
+{
+ "codigo": "4629-34-LE26",
+ "nombre": "ADQUISICIÓN DE VESTUARIO - DT",
+ "fecha_consulta": "2026-11-01",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Parka Unisex desmontable en su interior y exterior con logo D.T.",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Parka desmontable Ottawa 3 en 1 (mujer)",
+     "url": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "aproximada",
+     "nota": "modelo de mujer, no unisex; falta el logo bordado y la especificación de las bases. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-11-01"
+    },
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Chaqueta 3 en 1 desmontable hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-3-en-1-desmontable-hombre/00046047693931",
+     "precio": 77990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 65537.82,
+     "coincidencia": "aproximada",
+     "nota": "búsqueda del 25-10; falta el logo bordado y la especificación de las bases",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Blusa outdoor con logo D.T.",
+   "opciones": [],
+   "nota": "no apareció blusa outdoor de mujer con precio; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Camisa outdoor con logo D.T.",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Camisa trekking manga larga hombre",
+     "url": "https://www.lider.cl/ip/vestuario/camisa-trekking-manga-larga-hombre/00046045101804",
+     "precio": 47990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 40327.73,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda; falta el logo bordado y la especificación de las bases",
+     "fecha_consulta": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Conjunto primera capa unisex (polera y pantalón)",
+   "opciones": [
+    {
+     "tienda": "Falabella (Giovacchino)",
+     "producto_mercado": "Pack camiseta y calza primera capa",
+     "url": "https://www.falabella.com/falabella-cl/shop/conjunto-primera-capa-hombre",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 conjunto",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "equivalente",
+     "nota": "búsqueda del 25-10; modelo de hombre, piden unisex. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Chaqueta softshell unisex con logo D.T.",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Chaqueta softshell corporativa hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-softshell-corporativa-hombre/00046047693242",
+     "precio": 46990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 39487.39,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda; falta el logo bordado y la especificación de las bases",
+     "fecha_consulta": "2026-11-01"
+    }
+   ]
+  }
+ ]
+}

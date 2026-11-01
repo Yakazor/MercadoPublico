@@ -1,0 +1,51 @@
+{
+ "codigo": "1703-17-LE26",
+ "nombre": "ADQUISICIÓN DE UNIFORMES CLÍNICOS PARA FUNCIONARIO",
+ "fecha_consulta": "2026-11-01",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Conjunto de Polera y Pantalón Mujer, según requerimientos establecidos en Bases de Licitación.",
+   "opciones": [
+    {
+     "tienda": "Falabella (vende MyScrubs, Cherokee)",
+     "producto_mercado": "Uniforme clínico completo mujer Revolution WW610 y WW110",
+     "url": "https://www.falabella.com/falabella-cl/seller/MyScrubs",
+     "precio": 72990,
+     "iva_incluido": true,
+     "contenido": "1 conjunto",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 61336.13,
+     "coincidencia": "equivalente",
+     "nota": "especificación en bases (tela, color, bordado) por confirmar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Conjunto de Polera y Pantalón Hombre, según requerimientos establecidos en Bases de Licitación.",
+   "opciones": [],
+   "nota": "uniforme según bases; sin precio comparable en la búsqueda; cotizar con confeccionista de uniformes clínicos"
+  },
+  {
+   "linea": 3,
+   "producto": "Poleras para Educadoras de Párvulos, según requerimientos establecidos en Bases de Licitación.",
+   "opciones": [],
+   "nota": "uniforme según bases; sin precio comparable en la búsqueda; cotizar con confeccionista de uniformes clínicos"
+  },
+  {
+   "linea": 4,
+   "producto": "Poleras para Técnicos en párvulos, según requerimientos establecidos en Bases de Licitación.",
+   "opciones": [],
+   "nota": "uniforme según bases; sin precio comparable en la búsqueda; cotizar con confeccionista de uniformes clínicos"
+  },
+  {
+   "linea": 5,
+   "producto": "Conjunto de Polera y Pantalón con reflectantes para Conductores, según requerimientos establecidos en Bases de Licitació",
+   "opciones": [],
+   "nota": "uniforme según bases; sin precio comparable en la búsqueda; cotizar con confeccionista de uniformes clínicos"
+  }
+ ]
+}

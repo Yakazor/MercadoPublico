@@ -1,0 +1,32 @@
+{
+ "codigo": "1216088-27-LE26",
+ "nombre": "SUMINISTRO DE PRODUCTOS DE ASEO",
+ "fecha_consulta": "2026-11-01",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Línea 1: HIGIENE DE PAPEL",
+   "opciones": [],
+   "nota": "línea de suministro por canasta (1 pack) sin productos detallados en la ficha: no se buscó; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "Línea 2: LIMPIEZA E INSUMOS DE ASEO",
+   "opciones": [],
+   "nota": "línea de suministro por canasta (1 pack) sin productos detallados en la ficha: no se buscó; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "Línea 3: Cuidado e Higiene personal",
+   "opciones": [],
+   "nota": "línea de suministro por canasta (1 pack) sin productos detallados en la ficha: no se buscó; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "Línea 4: Dispensadores y Contenedores",
+   "opciones": [],
+   "nota": "línea de suministro por canasta (1 pack) sin productos detallados en la ficha: no se buscó; por confirmar"
+  }
+ ]
+}

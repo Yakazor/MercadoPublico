@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-11-01 (rutina 11:00 UTC): `datos` del 01-11 03:19 (menos de 6 h: sin disparar workflows; 462 licitaciones,
+  1.537 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 4629-34-LE26 vestuario DT
+  (4/5; NO GO, supera el estimado), 1703-17-LE26 uniformes clínicos (1/5; NO GO), 1709-29-LE26 grupo
+  electrógeno y 1216088-27-LE26 aseo (0, sin productos detallados). Mejores sin cambio: 1090-17-LE26,
+  979-73-LE26 y 4053-44-LE26. 498 pruebas OK.
+
 - 2026-10-31 (pedido de la usuaria «Actualiza todo», 22:33 UTC): se dispararon radar y OC (ambos OK; `datos` del
   31-10 19:41, 462 licitaciones, 1.543 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin
   verificar): 4451-129-L126 herramientas alumbrado (4/14), 4053-44-LE26 vestuario CESFAM (1/6; GO con
