@@ -1,0 +1,97 @@
+{
+ "codigo": "2111-330-LE26",
+ "nombre": "SUMINISTRO ROPA DE TRABAJO II",
+ "fecha_consulta": "2026-11-01",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "PANTALON CARGO HOMBRE",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Pantalón trabajo cargo azul",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10785/Ropa-de-Trabajo",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "POLERA MANGA LARGA",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Polera cool dry manga larga gris",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/cat4850398/parkas-y-primera-capa",
+     "precio": 7290,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6126.05,
+     "coincidencia": "equivalente",
+     "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "CHAQUETA SOFTSHELL",
+   "opciones": [
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Chaqueta softshell corporativa hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-softshell-corporativa-hombre/00046047693242",
+     "precio": 46990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 39487.39,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "POLERA MANGA CORTA",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Polera Cooldry Quebec manga corta azul",
+     "url": "https://knasta.cl/detail/lider/00779904501723/polera-cooldry-quebec-manga-corta-azul",
+     "precio": 6490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5453.78,
+     "coincidencia": "aproximada",
+     "nota": "precio vía Knasta (comparador de Lider); confirmar tela. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-11-01"
+    },
+    {
+     "tienda": "Lider (vende Andesland)",
+     "producto_mercado": "Polera algodón piqué manga corta hombre",
+     "url": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-corta-hombre/00046050349029",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
+     "fecha_consulta": "2026-11-01"
+    }
+   ]
+  }
+ ]
+}

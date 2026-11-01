@@ -1,0 +1,46 @@
+[
+ {
+  "nombre": "Huinganal Ltda.",
+  "correo": null,
+  "web": null,
+  "contacto": "Recoleta, Santiago",
+  "especialidad": "Fabrica, importa y comercializa ropa de trabajo; talleres propios de corte, confección y bordado",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/huinganal-ltda/recoleta/300204860/esp"
+ },
+ {
+  "nombre": "Agazi",
+  "correo": null,
+  "web": null,
+  "contacto": "Las Condes, Santiago",
+  "especialidad": "Ropa de trabajo y de seguridad (pantalones, poleras, polerones), bordados",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/agazi/las-condes/300269077/esp"
+ },
+ {
+  "nombre": "Abu-Tsar Ropa de Trabajo (Comercial Tsar)",
+  "correo": null,
+  "web": null,
+  "contacto": "Recoleta, Santiago",
+  "especialidad": "Ropa corporativa y de trabajo",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/abu-tsar-ropa-de-trabajo/recoleta/300096565/esp"
+ },
+ {
+  "nombre": "Lider (vende Andesland) / Sodimac",
+  "correo": null,
+  "web": "https://www.lider.cl/",
+  "contacto": null,
+  "especialidad": "Opciones de retail usadas en el presupuesto (softshell, poleras, pantalón cargo)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": "Precio de tienda en el presupuesto",
+  "fuente": "informes/mercado/2111-330-LE26.json"
+ }
+]

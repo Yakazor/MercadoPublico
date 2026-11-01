@@ -81,6 +81,12 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 
 ## Bitácora
 
+- 2026-11-01 (pedido de la usuaria «Actualiza todo», 21:29 UTC): radar, OC y Compras Ágiles disparados (OK; `datos`
+  del 01-11 18:37, 462 licitaciones, 1.527 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin
+  verificar): 2111-330-LE26 ropa de trabajo HUAP (4/4) → **primer GO** (margen 17 %, cierre 04-11; ojo, la oferta
+  triplica lo que el Estado pagó en OC), 5611-23-LE26 vestuario UV (1/4) y dos de mobiliario por líneas (0, no se
+  buscaron). Top: 2111-330-LE26, 1090-17-LE26 y 979-73-LE26. 498 pruebas OK.
+
 - 2026-11-01 (rutina 11:00 UTC): `datos` del 01-11 03:19 (menos de 6 h: sin disparar workflows; 462 licitaciones,
   1.537 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 4629-34-LE26 vestuario DT
   (4/5; NO GO, supera el estimado), 1703-17-LE26 uniformes clínicos (1/5; NO GO), 1709-29-LE26 grupo

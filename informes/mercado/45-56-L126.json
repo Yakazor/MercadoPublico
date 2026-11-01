@@ -1,0 +1,32 @@
+{
+ "codigo": "45-56-L126",
+ "nombre": "SUMINISTRO DE MOBILIARIO PARA 4 DIRECCIONES REGIONALES",
+ "fecha_consulta": "2026-11-01",
+ "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "LINEA DE PRODUCTO N°1  José Miguel Carrera N° 1701, piso 1 y 6, Antofagasta.",
+   "opciones": [],
+   "nota": "línea agrupada (varios ítems según términos de referencia) sin detalle en la ficha: no se buscó; por confirmar"
+  },
+  {
+   "linea": 2,
+   "producto": "LINEA DE PRODUCTO N°2 Maipú N° 355, piso 2, Copiapó, Atacama.",
+   "opciones": [],
+   "nota": "línea agrupada (varios ítems según términos de referencia) sin detalle en la ficha: no se buscó; por confirmar"
+  },
+  {
+   "linea": 3,
+   "producto": "LINEA DE PRODUCTO N°3 Campos N° 241, piso 6, Rancagua, Ohiggins.",
+   "opciones": [],
+   "nota": "línea agrupada (varios ítems según términos de referencia) sin detalle en la ficha: no se buscó; por confirmar"
+  },
+  {
+   "linea": 4,
+   "producto": "LINEA DE PRODUCTO N°4 Rengo N° 97, Concepcion, Biobío.",
+   "opciones": [],
+   "nota": "línea agrupada (varios ítems según términos de referencia) sin detalle en la ficha: no se buscó; por confirmar"
+  }
+ ]
+}
