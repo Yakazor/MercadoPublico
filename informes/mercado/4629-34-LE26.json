@@ -19,7 +19,11 @@
      "precio_unitario_neto": 58815.13,
      "coincidencia": "aproximada",
      "nota": "modelo de mujer, no unisex; falta el logo bordado y la especificación de las bases. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 69990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $69.990."
     },
     {
      "tienda": "Lider (vende Andesland)",
@@ -32,7 +36,11 @@
      "precio_unitario_neto": 65537.82,
      "coincidencia": "aproximada",
      "nota": "búsqueda del 25-10; falta el logo bordado y la especificación de las bases",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 77990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $77.990."
     }
    ]
   },
@@ -57,7 +65,11 @@
      "precio_unitario_neto": 40327.73,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda; falta el logo bordado y la especificación de las bases",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 47990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $47.990."
     }
    ]
   },
@@ -76,7 +88,11 @@
      "precio_unitario_neto": 15957.98,
      "coincidencia": "equivalente",
      "nota": "búsqueda del 25-10; modelo de hombre, piden unisex. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 19000.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $19.000."
     }
    ]
   },
@@ -95,9 +111,18 @@
      "precio_unitario_neto": 39487.39,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda; falta el logo bordado y la especificación de las bases",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 46990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $46.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-01",
+  "opciones": 5,
+  "verificadas": 5
+ }
 }

@@ -21,9 +21,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda. Especificación técnica en el anexo: confirmar.",
      "fecha_consulta": "2026-10-31",
      "verificado": true,
-     "verificado_en": "2026-10-31",
+     "verificado_en": "2026-11-01",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $15.990."
+     "verificacion_pagina": "2026-11-01: la página muestra $15.990."
     }
    ]
   },
@@ -50,9 +50,9 @@
      "nota": "aluminio, no acero. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-31",
      "verificado": true,
-     "verificado_en": "2026-10-31",
+     "verificado_en": "2026-11-01",
      "precio_pagina": 5990.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $5.990."
+     "verificacion_pagina": "2026-11-01: la página muestra $5.990."
     }
    ]
   },
@@ -78,10 +78,10 @@
      "coincidencia": "aproximada",
      "nota": "no confirma que sea portátil. Especificación técnica en el anexo: confirmar.",
      "fecha_consulta": "2026-10-31",
-     "verificado": true,
+     "verificado": false,
      "verificado_en": "2026-10-31",
-     "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $49.990."
+     "precio_pagina": 51990.0,
+     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $51.990, no $49.990: puede haber cambiado."
     }
    ]
   },
@@ -114,9 +114,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-31",
      "verificado": true,
-     "verificado_en": "2026-10-31",
+     "verificado_en": "2026-11-01",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-10-31: la página muestra $49.990."
+     "verificacion_pagina": "2026-11-01: la página muestra $49.990."
     }
    ]
   },
@@ -128,8 +128,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-10-31",
+  "fecha": "2026-11-01",
   "opciones": 4,
-  "verificadas": 4
+  "verificadas": 3
  }
 }

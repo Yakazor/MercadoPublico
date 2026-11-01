@@ -28,5 +28,10 @@
    "opciones": [],
    "nota": "línea de suministro por canasta (1 pack) sin productos detallados en la ficha: no se buscó; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-01",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

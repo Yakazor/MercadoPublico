@@ -19,7 +19,11 @@
      "precio_unitario_neto": 61336.13,
      "coincidencia": "equivalente",
      "nota": "especificación en bases (tela, color, bordado) por confirmar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 72990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $72.990."
     }
    ]
   },
@@ -47,5 +51,10 @@
    "opciones": [],
    "nota": "uniforme según bases; sin precio comparable en la búsqueda; cotizar con confeccionista de uniformes clínicos"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-01",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

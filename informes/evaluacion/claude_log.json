@@ -172,20 +172,20 @@
  },
  {
   "fecha": "2026-11-01",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "1999 vigentes; 23 evaluadas; informes de 10",
-  "resultado": "0 GO, 15 con condiciones, 8 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados ",
-  "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 4053-44-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES",
-  "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4053-44-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
- },
- {
-  "fecha": "2026-11-01",
   "autor": "Claude",
   "licitaciones_procesadas": "Precios de mercado nuevos (WebSearch, sin verificar; algunos reutilizados del 25-10): 4629-34-LE26 vestuario Dirección del Trabajo (4/5 ítems), 1703-17-LE26 uniformes clínicos Hospital La Calera (1/5), 1709-29-LE26 canasta grupo electrógeno Cauquenes (0/5) y 1216088-27-LE26 aseo Puente Alto (0/4): las dos últimas sin productos detallados, no se buscaron. Datos de las 03:19 (menos de 6 h). Evaluadas 23: 0 GO, 15 GO con condiciones, 8 NO GO.",
   "resultado": "4629-34-LE26: NO GO (oferta $39,5 M c/IVA vs. estimado $32,2 M con precios de retail). 1703-17-LE26: NO GO (oferta $14,8 M vs. $12 M con solo 1 de 5 ítems). Las 3 mejores no cambian: 1090-17-LE26 (cierra el martes 03-11), 979-73-LE26 (06-11) y 4053-44-LE26 (10-11).",
   "riesgos": "Vestuario institucional a precio de retail no compite: haría falta un confeccionista con precio mayorista y bordado incluido. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
   "decisiones": "No se buscaron la canasta de grupo electrógeno ni el suministro de aseo (líneas sin productos). No se repitieron proveedores: las 3 mejores ya los tienen.",
   "recomendaciones": "Mañana lunes: 1090-17-LE26 cierra el martes 03-11: último día hábil para decidir y pedir precio por volumen. 3567-42-LE26 (juguetes) cierra mañana 02-11: descartar si no hay cotización mayorista. Para 4629-34-LE26, solo vale la pena si un confeccionista cotiza bajo $32 M."
+ },
+ {
+  "fecha": "2026-11-01",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1993 vigentes; 23 evaluadas; informes de 10",
+  "resultado": "0 GO, 15 con condiciones, 8 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados ",
+  "decisiones": "1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 4053-44-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES; 2018-37-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4053-44-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3567-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
  }
 ]

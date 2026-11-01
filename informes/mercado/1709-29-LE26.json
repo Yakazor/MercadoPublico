@@ -34,5 +34,10 @@
    "opciones": [],
    "nota": "«canasta de suministro» sin especificación por línea (detalle en bases): no se buscó; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-01",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
