@@ -38,10 +38,10 @@
      "coincidencia": "aproximada",
      "nota": "no es de doble cola con absorbedor: confirmar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
-     "verificado": true,
+     "verificado": false,
      "verificado_en": "2026-11-01",
-     "precio_pagina": 16990.0,
-     "verificacion_pagina": "2026-11-01: la página muestra $16.990."
+     "precio_pagina": 17990.0,
+     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $17.990, no $17.290: puede haber cambiado."
     }
    ]
   },
@@ -239,6 +239,6 @@
  "verificacion_paginas": {
   "fecha": "2026-11-01",
   "opciones": 8,
-  "verificadas": 7
+  "verificadas": 6
  }
 }

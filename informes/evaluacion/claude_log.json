@@ -181,20 +181,20 @@
  },
  {
   "fecha": "2026-11-01",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "1989 vigentes; 25 evaluadas; informes de 10",
-  "resultado": "1 GO, 16 con condiciones, 8 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 1",
-  "decisiones": "2111-330-LE26: GO; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 4053-44-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES",
-  "recomendaciones": "- **2111-330-LE26**: 🟢 GO (postular). Margen neto de 17%, precios para todos los ítems y riesgo bajo. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4053-44-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
- },
- {
-  "fecha": "2026-11-01",
   "autor": "Claude",
   "licitaciones_procesadas": "Actualización pedida por la usuaria (01-11 noche): se dispararon radar y OC (datos de las 18:37, todo OK). Precios de mercado nuevos (WebSearch, sin verificar; algunos reutilizados del 25-10): 2111-330-LE26 ropa de trabajo HUAP (4/4 ítems), 5611-23-LE26 vestuario UV Serviu Arica (1/4), 1754-55-LE26 mobiliario Salud Parral y 45-56-L126 mobiliario SENCE (0/4 cada una: líneas agrupadas sin detalle, no se buscaron). Evaluadas 25: 1 GO, 16 GO con condiciones, 8 NO GO.",
   "resultado": "Primer GO: 2111-330-LE26 (oferta $23,9 M c/IVA, margen neto 17 %, riesgo bajo, cierre miércoles 04-11, sin monto estimado). Ojo: la oferta neta de $20,1 M es más del triple de lo que el Estado pagó en OC por esos productos ($5,8 M), así que con precios de retail la probabilidad es baja (25 %). Top 3: 2111-330-LE26, 1090-17-LE26 (cierra martes 03-11) y 979-73-LE26 (06-11).",
   "riesgos": "2111-330-LE26: precios de retail (Lider/Sodimac); hace falta precio mayorista para competir con lo que paga el hospital. 5611-23-LE26 solo con la camisa UV cotizada. Ningún proveedor con correo confirmado: no hay borradores de Gmail.",
   "decisiones": "Proveedores para 2111-330-LE26: fabricantes de ropa de trabajo de Santiago (Huinganal, Agazi, Abu-Tsar) además del retail. No se buscaron las líneas de mobiliario agrupadas.",
   "recomendaciones": "Mañana lunes: 1090-17-LE26 cierra el martes 03-11 (decidir ya). 2111-330-LE26 cierra el miércoles 04-11: pedir cotización por 810 prendas a Huinganal o Agazi y ofertar solo si el costo baja lo suficiente para acercarse a lo que paga el hospital. 979-73-LE26 (06-11): cotizar con Proseg."
+ },
+ {
+  "fecha": "2026-11-01",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1989 vigentes; 25 evaluadas; informes de 10",
+  "resultado": "1 GO, 16 con condiciones, 8 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 1",
+  "decisiones": "2111-330-LE26: GO; 1090-17-LE26: GO CON CONDICIONES; 979-73-LE26: GO CON CONDICIONES; 4053-44-LE26: GO CON CONDICIONES; 1057448-53-LE26: GO CON CONDICIONES; 3567-42-LE26: GO CON CONDICIONES; 2585-111-LE26: GO CON CONDICIONES; 1295444-14-L126: GO CON CONDICIONES; 1362-13-LE26: GO CON CONDICIONES; 1904-10-LE26: GO CON CONDICIONES",
+  "recomendaciones": "- **2111-330-LE26**: 🟢 GO (postular). Margen neto de 17%, precios para todos los ítems y riesgo bajo. - **1090-17-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **979-73-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4053-44-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **1057448-53-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar."
  }
 ]

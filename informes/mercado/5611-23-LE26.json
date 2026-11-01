@@ -31,7 +31,10 @@
      "precio_unitario_neto": 31924.37,
      "coincidencia": "aproximada",
      "nota": "búsqueda del 25-10; piden color azul. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": false,
+     "precio_pagina": 40000.0,
+     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $40.000, no $37.990: puede haber cambiado."
     }
    ]
   },
@@ -41,5 +44,10 @@
    "opciones": [],
    "nota": "no apareció blusa UV manga larga de dama con precio; por confirmar"
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-01",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

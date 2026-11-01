@@ -19,7 +19,11 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "equivalente",
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $11.990."
     }
    ]
   },
@@ -38,7 +42,11 @@
      "precio_unitario_neto": 6126.05,
      "coincidencia": "equivalente",
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-10-25"
+     "fecha_consulta": "2026-10-25",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 7290.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $7.290."
     }
    ]
   },
@@ -57,7 +65,11 @@
      "precio_unitario_neto": 39487.39,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 46990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $46.990."
     }
    ]
   },
@@ -76,7 +88,8 @@
      "precio_unitario_neto": 5453.78,
      "coincidencia": "aproximada",
      "nota": "precio vía Knasta (comparador de Lider); confirmar tela. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificacion_pagina": "2026-11-01: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider (vende Andesland)",
@@ -89,9 +102,18 @@
      "precio_unitario_neto": 16798.32,
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
-     "fecha_consulta": "2026-11-01"
+     "fecha_consulta": "2026-11-01",
+     "verificado": true,
+     "verificado_en": "2026-11-01",
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-01: la página muestra $19.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-01",
+  "opciones": 5,
+  "verificadas": 4
+ }
 }
