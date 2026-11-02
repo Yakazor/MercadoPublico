@@ -451,15 +451,19 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
   (sin API key).
 - **Proveedores al abrir una licitación o Compra Ágil:** al final de la ficha, Claude busca en la web
   a quién comprarle (fabricantes, importadores, mayoristas o tiendas, con correo, teléfono y la página
-  de donde salió cada dato) y deja listo el correo de **solicitud de cotización** para el proveedor que
+  de donde salió cada dato) y **precios**: hasta 3 alternativas por línea, de fuentes distintas, de la más
+  barata a la más cara. Un precio solo queda si está escrito en la página del producto que Claude abrió;
+  pasa a costo neto por unidad pedida y entra a la evaluación de todas las páginas, que usa el más barato
+  exacto o equivalente de cada línea (el de mayor margen). También deja listo el correo de **solicitud de cotización** para el proveedor que
   elijas, con las líneas que vende, la entrega y el plazo para responder: «Abrir en Gmail» o «Abrir en
   mi correo» lo abren para que lo revises y lo envíes tú (nunca se envía solo). Necesita el secreto
   `anthropic_api_key` (clave de la API de Claude, en https://console.anthropic.com); cada búsqueda cuesta
-  unos US$0,20–0,40 y queda guardada en la rama `proveedores` del repositorio (si el `github_token` tiene
+  unos US$0,40–0,80 y queda guardada en la rama `proveedores` del repositorio (los precios, además, en
+  `proveedores/precios.json`) (si el `github_token` tiene
   además permiso **Contents: Read and write**), así que no se paga dos veces. Un correo o teléfono solo
   aparece si estaba escrito en una página que Claude leyó; si no, queda «por confirmar». Sin la clave se
   muestran los proveedores de la rutina diaria o las tiendas con precio, y el correo igual queda listo.
-  Se ajusta en `config.yaml > proveedores` (modelo, búsquedas, tope de búsquedas automáticas por sesión,
+  Se ajusta en `config.yaml > proveedores` (modelo, búsquedas, `precios_por_linea`, tope de búsquedas automáticas por sesión,
   o `buscar_al_abrir: false` para buscar solo con el botón).
 - **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
   este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la

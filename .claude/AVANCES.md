@@ -64,6 +64,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
       EMT ni en servicios), tabla de proveedores y panel «Solicitud de cotización»; también en Evaluación
 - [x] «None» → «—» en todas las tablas (`placeholder`, Streamlit ≥ 1.66)
 - [x] «⚪ Sin evaluar» → «⚪ Falta precio», con ayuda en la columna y conteo de las que tienen decisión
+- [x] Precios en la búsqueda (pedido del 02-11: «que siempre saque precio de distintas fuentes… con el objetivo
+      del precio costo que me entregue el mayor margen»): hasta 3 alternativas por línea; `depurar_precios` deja
+      solo las que están escritas en la página leída y las pasa a costo neto por unidad pedida; índice
+      `proveedores/precios.json` en la rama `proveedores`; `comun.datos()` las suma al mercado de todas las páginas
+      y la evaluación toma la más barata exacta o equivalente. Tabla «Precios encontrados» en la ficha (marca la
+      mejor por línea). Búsquedas 8 y páginas 12: ~US$0,40–0,80 por licitación. 535 pruebas OK
 - [x] Pruebas (521 OK) y revisión en Chromium con una búsqueda de ejemplo
 - [x] Auditoría (pedido del 02-11, 10 hallazgos, todos corregidos con prueba): la evidencia ya no incluye las
       consultas de Claude ni el contenido cifrado; correo y teléfono se comparan completos (no como subcadena ni
@@ -110,10 +116,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
   proveedores`. Rama `feature/buscar-proveedores`; 521 pruebas OK.
   Auditoría el mismo día: 10 hallazgos corregidos (detalle en «Última tarea»); las pruebas de la ficha limpian
   las cachés de `cotizar` para no verse entre sí. 528 pruebas OK.
-- 2026-11-02 (pedido de la usuaria «¿por qué dice sin evaluar?»): de 1.990 abiertas solo 25 tienen precio de
+- 2026-11-02 (pedido de la usuaria «¿por qué dice sin evaluar?»): de 1.990 abiertas (licitaciones y Compras Ágiles) solo 25 tienen precio de
   tiendas; las demás no tienen costo y no se puede calcular el margen. Estimar con OC no sirve como arreglo (toma
   lo que pagó el Estado como costo: 1.308 NO GO falsos). Se cambió «⚪ Sin evaluar» por «⚪ Falta precio», con
   ayuda en la columna (qué hacer) y el conteo «N con decisión» sobre la tabla. 529 pruebas OK.
+- 2026-11-02 (pedido de la usuaria): la búsqueda de proveedores trae también precios de varias fuentes por línea
+  (solo los escritos en la página del producto) y la evaluación usa el más barato. Ver «Última tarea». 535 pruebas OK.
 
 - 2026-11-01 (pedido de la usuaria «Actualiza todo», 21:29 UTC): radar, OC y Compras Ágiles disparados (OK; `datos`
   del 01-11 18:37, 462 licitaciones, 1.527 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin

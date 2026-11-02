@@ -31,8 +31,9 @@ DIAS_RECORDAR = 30
 DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", NO_GO: "🔴 NO GO"}
 SIN_EVALUAR = "⚪ Falta precio"
 AYUDA_DECISION = ("GO / NO GO según el margen con los precios de tiendas. ⚪ Falta precio = todavía no hay costo para "
-                  "ninguna línea (la rutina diaria busca precios de pocas licitaciones al día): ábrela, pide "
-                  "cotización a un proveedor e ingresa su precio en Evaluación, o activa en ⚙️ Supuestos «Estimar "
+                  "ninguna línea (la rutina diaria busca precios de pocas licitaciones al día): ábrela y Claude busca "
+                  "proveedores y precios (con la clave de Claude), o pide cotización e ingresa su precio en "
+                  "Evaluación, o activa en ⚙️ Supuestos «Estimar "
                   "con OC del Estado» (referencia, no costo real).")
 COMPRA_VENTA = {True: "✅ Sí", False: "❌ No", None: "❓ Revisar"}
 AYUDA_COMPRA_VENTA = ("Compra y venta directa: productos que compras hechos y revendes. ❌ = incluye un servicio "
@@ -85,8 +86,36 @@ def _origen() -> str:
 
 
 def datos() -> dict:
-    """Licitaciones y Compras Ágiles abiertas (se vuelven a bajar con cada publicación nueva)."""
-    return preparar(_leer(_origen(), st.session_state.get("marca_datos")))
+    """Licitaciones y Compras Ágiles abiertas (se vuelven a bajar con cada publicación nueva), con los
+    precios que encontraron las búsquedas de proveedores junto a los de la rutina: la evaluación toma
+    el más barato de cada línea."""
+    prep = preparar(_leer(_origen(), st.session_state.get("marca_datos")))
+    for codigo, precios in precios_buscados().items():
+        if precios:
+            prep["mercado"].setdefault(codigo, []).extend(precios)
+    return prep
+
+
+@st.cache_resource
+def busquedas_en_memoria() -> dict:
+    """Búsquedas de proveedores hechas mientras la plataforma está encendida, para todas las sesiones:
+    si GitHub no las pudo guardar (token sin permiso), otra sesión no vuelve a pagarlas."""
+    return {}
+
+
+@st.cache_data(ttl=600, show_spinner=False)
+def _indice_precios() -> dict:
+    from radar import proveedores
+    return proveedores.leer_precios()
+
+
+def precios_buscados() -> dict:
+    """{código: precios} de las búsquedas de proveedores: las guardadas en GitHub y, encima, las de
+    esta sesión o de otra sesión abierta."""
+    precios = dict(_indice_precios())
+    for fuente in (busquedas_en_memoria(), st.session_state.get("prov_resultados") or {}):
+        precios |= {codigo: res.get("precios") or [] for codigo, res in fuente.items() if isinstance(res, dict)}
+    return precios
 
 
 @st.cache_data(ttl=1800, show_spinner=False)

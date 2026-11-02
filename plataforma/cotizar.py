@@ -35,11 +35,8 @@ def _guardado(codigo: str) -> dict | None:
     return prov.leer(codigo)
 
 
-@st.cache_resource
 def _memoria() -> dict:
-    """Búsquedas hechas mientras la plataforma está encendida, para todas las sesiones: si GitHub no
-    las pudo guardar (token sin permiso), otra sesión no vuelve a pagarlas."""
-    return {}
+    return comun.busquedas_en_memoria()
 
 
 def busqueda(codigo: str) -> dict | None:
@@ -83,7 +80,7 @@ def _buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict) -> dict | N
     codigo = lic["codigo"]
     ss = st.session_state
     ss.setdefault("prov_intentadas", set()).add(codigo)
-    with st.status("Buscando proveedores en la web… (1 a 2 minutos). Espera a que termine antes de tocar "
+    with st.status("Buscando proveedores y precios en la web… (2 a 3 minutos). Espera a que termine antes de tocar "
                    "otra cosa.", expanded=False) as estado:
         try:
             resultado = prov.buscar(lic, items, clave_api, cfg)
@@ -109,12 +106,13 @@ def _buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict) -> dict | N
         try:
             prov.guardar(codigo, resultado, comun.secreto("github_token"), rama=cfg["rama"])
             _guardado.clear()
+            comun._indice_precios.clear()
             guardado = ""
         except (prov.ErrorGitHub, requests.RequestException) as e:   # sin guardar igual sirve en esta sesión
             guardado = f" No quedó guardada en GitHub ({e}); queda mientras tengas la plataforma abierta."
-        n = len(resultado["proveedores"])
-        estado.update(label=f"Listo: {n} proveedor{'es' if n != 1 else ''} encontrado{'s' if n != 1 else ''}."
-                      + guardado, state="complete")
+        n, m = len(resultado["proveedores"]), len(resultado.get("precios") or [])
+        estado.update(label=f"Listo: {n} proveedor{'es' if n != 1 else ''} y {m} precio{'s' if m != 1 else ''} "
+                      f"encontrado{'s' if n + m != 1 else ''}." + guardado, state="complete")
     return resultado
 
 
@@ -147,6 +145,55 @@ def _tabla(resultado: dict, items: list[dict]) -> None:
         "Nota": st.column_config.TextColumn(width=200)})
 
 
+def _tabla_precios(resultado: dict, items: list[dict]) -> None:
+    """Las alternativas de precio por línea, de la más barata a la más cara: la primera de cada línea
+    es la que usa la evaluación (si no hay una exacta o equivalente más barata de la rutina)."""
+    import pandas as pd
+    precios = resultado.get("precios") or []
+    if "precios" not in resultado:
+        st.caption("Esta búsqueda es anterior a la de precios: «Buscar de nuevo» trae también precios.")
+        return
+    if not precios:
+        st.caption("No se encontraron precios escritos en las páginas de los productos: pide cotización abajo.")
+        return
+    productos = {it.get("linea"): prov.nombre_item(it, 40) for it in items}
+    cantidades = {it.get("linea"): it.get("cantidad") for it in items}
+    filas, vistas = [], set()
+    for m in sorted(precios, key=lambda m: (m.get("linea"), m.get("precio_unitario_neto") or 0)):
+        linea = m.get("linea")
+        cantidad = cantidades.get(linea)
+        filas.append({
+            "Línea": linea, "Producto pedido": productos.get(linea), "Mejor": linea not in vistas,
+            "Proveedor": m.get("tienda"), "Producto": m.get("producto_mercado"),
+            "Precio publicado": comun.pesos(m.get("precio")),
+            "IVA": "incluido" if m.get("iva_incluido") else "+ IVA",
+            "Costo neto unitario": comun.pesos(m.get("precio_unitario_neto")),
+            "Costo neto línea": comun.pesos((m.get("precio_unitario_neto") or 0) * cantidad) if cantidad else None,
+            "Coincidencia": m.get("coincidencia"), "Link": m.get("url"), "Nota": m.get("nota")})
+        vistas.add(linea)
+    lineas = len({f["Línea"] for f in filas})
+    st.markdown(f"##### Precios encontrados · {len(filas)} alternativas para {lineas} de {len(items)} líneas")
+    st.caption("De la más barata a la más cara por línea. La evaluación (GO / NO GO) usa la más barata exacta o "
+               "equivalente; una aproximada solo si no hay otra. Cada precio aparece escrito en su página; "
+               "confírmalo con el proveedor antes de ofertar.")
+    st.dataframe(pd.DataFrame(filas), hide_index=True, placeholder="—", column_config={
+        "Línea": st.column_config.NumberColumn(width=50),
+        "Producto pedido": st.column_config.TextColumn(width=150),
+        "Mejor": st.column_config.CheckboxColumn(width=55, help="La más barata de esa línea"),
+        "Proveedor": st.column_config.TextColumn(width=120),
+        "Producto": st.column_config.TextColumn(width=180),
+        "Precio publicado": st.column_config.NumberColumn(format="localized", width=95),
+        "IVA": st.column_config.TextColumn(width=70),
+        "Costo neto unitario": st.column_config.NumberColumn(format="localized", width=95,
+                                                             help="Sin IVA y por unidad pedida"),
+        "Costo neto línea": st.column_config.NumberColumn(format="localized", width=100,
+                                                          help="Costo neto unitario × cantidad pedida"),
+        "Coincidencia": st.column_config.TextColumn(width=95, help="exacta = el mismo producto; equivalente = "
+                                                    "cumple lo pedido, otra marca; aproximada = le falta algo"),
+        "Link": st.column_config.LinkColumn(display_text="Ver", width=50),
+        "Nota": st.column_config.TextColumn(width=180)})
+
+
 def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
     """Proveedores (busca solo al abrir) y la solicitud de cotización, al final de la ficha."""
     codigo = lic["codigo"]
@@ -165,16 +212,20 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
         else:
             st.caption(motivo)
             if st.button("Buscar proveedores", icon="🔎", key=f"prov_buscar_{codigo}",
-                         help="Claude busca en la web a quién comprarle (unos US$0,20–0,40 por búsqueda)."):
+                         help="Claude busca en la web a quién comprarle y a qué precio (unos US$0,40–0,80 por búsqueda)."):
                 resultado = _buscar(lic, items, clave_api, cfg)
+        if resultado and resultado.get("precios"):
+            st.rerun()      # la evaluación de arriba se vuelve a calcular con los precios encontrados
     if resultado:
         st.caption(comun.md(
             f"Búsqueda del {comun.fecha_hora(resultado.get('fecha'))} · {resultado.get('busquedas', 0)} búsquedas "
             f"web · costo aprox. US$ {resultado.get('costo_usd', 0):.2f}. Los correos y teléfonos son los que "
-            "aparecen en sus páginas; lo que no se encontró va «por confirmar»."))
+            "aparecen en sus páginas; lo que no se encontró va «por confirmar». Los precios encontrados ya cuentan en "
+            "la evaluación de esta licitación."))
         if resultado.get("resumen"):
             st.markdown(comun.md(resultado["resumen"]))
         _tabla(resultado, items)
+        _tabla_precios(resultado, items)
         if clave_api and st.button("Buscar de nuevo", icon="🔄", key=f"prov_otra_{codigo}",
                                    help="Otra búsqueda (tiene costo); reemplaza la guardada"):
             st.session_state.setdefault("prov_resultados", {}).pop(codigo, None)

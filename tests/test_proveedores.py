@@ -162,15 +162,17 @@ class _R:
         return self._datos
 
 
-def test_guardar_crea_la_rama_huerfana_y_escribe_el_json(monkeypatch):
-    pedidos = []
+def test_guardar_crea_la_rama_huerfana_y_escribe_el_json_y_el_indice_de_precios(monkeypatch):
+    pedidos, creada = [], []
 
     def get(url, **k):
         pedidos.append(("GET", url))
-        return _R(404)
+        return _R(200, {}) if creada and "/branches/" in url else _R(404)
 
     def post(url, json=None, **k):
         pedidos.append(("POST", url, json))
+        if url.endswith("/refs"):
+            creada.append(True)
         return _R(201, {"sha": "abc"})
 
     def put(url, json=None, **k):
@@ -180,16 +182,32 @@ def test_guardar_crea_la_rama_huerfana_y_escribe_el_json(monkeypatch):
     monkeypatch.setattr(prov.requests, "get", get)
     monkeypatch.setattr(prov.requests, "post", post)
     monkeypatch.setattr(prov.requests, "put", put)
-    prov.guardar("2-2-COT26", {"proveedores": [{"nombre": "Ñandú"}]}, "token", rama="proveedores")
+    precio = {"linea": 1, "tienda": "Ñandú", "precio_unitario_neto": 100.0}
+    datos = {"proveedores": [{"nombre": "Ñandú"}], "precios": [precio]}
+    prov.guardar("2-2-COT26", datos, "token", rama="proveedores")
     creados = [p[1].rsplit("/", 1)[-1] for p in pedidos if p[0] == "POST"]
-    assert creados == ["blobs", "trees", "commits", "refs"]
+    assert creados == ["blobs", "trees", "commits", "refs"]                      # la rama se crea una vez
     assert next(p[2] for p in pedidos if p[1].endswith("/commits"))["parents"] == []     # huérfana
-    put_ = next(p for p in pedidos if p[0] == "PUT")
-    assert put_[1].endswith("/contents/proveedores/2-2-COT26.json") and put_[2]["branch"] == "proveedores"
-    assert json.loads(base64.b64decode(put_[2]["content"])) == {"proveedores": [{"nombre": "Ñandú"}]}
-    assert "sha" not in put_[2]
+    puts = [p for p in pedidos if p[0] == "PUT"]
+    assert puts[0][1].endswith("/contents/proveedores/2-2-COT26.json") and puts[0][2]["branch"] == "proveedores"
+    assert json.loads(base64.b64decode(puts[0][2]["content"])) == datos
+    assert "sha" not in puts[0][2]
+    assert puts[1][1].endswith("/contents/proveedores/precios.json")
+    assert json.loads(base64.b64decode(puts[1][2]["content"])) == {"2-2-COT26": [precio]}
     with pytest.raises(prov.ErrorGitHub, match="Falta el token"):
         prov.guardar("2-2-COT26", {}, None)
+
+
+def test_indice_de_precios_conserva_otras_licitaciones_y_reintenta_si_otra_sesion_escribio(monkeypatch):
+    previo = {"9-9-LE26": [{"linea": 1}], "2-2-COT26": [{"linea": 7}]}
+    contenido = base64.b64encode(json.dumps(previo).encode()).decode()
+    monkeypatch.setattr(prov.requests, "get", lambda url, **k: _R(200, {"sha": "s", "content": contenido}))
+    puts, respuestas = [], [_R(200), _R(409), _R(200)]       # el índice choca una vez con otra sesión
+    monkeypatch.setattr(prov.requests, "put", lambda url, json=None, **k: puts.append((url, json))
+                        or respuestas.pop(0))
+    prov.guardar("2-2-COT26", {"proveedores": [], "precios": []}, "token", rama="proveedores")
+    indices = [json.loads(base64.b64decode(j["content"])) for u, j in puts if u.endswith("precios.json")]
+    assert len(indices) == 2 and indices[-1] == {"9-9-LE26": [{"linea": 1}]}    # sin precios: sale del índice
 
 
 def test_guardar_reemplaza_con_el_sha_y_avisa_sin_permiso(monkeypatch):
@@ -201,6 +219,13 @@ def test_guardar_reemplaza_con_el_sha_y_avisa_sin_permiso(monkeypatch):
     monkeypatch.setattr(prov.requests, "put", lambda url, **k: _R(403))
     with pytest.raises(prov.ErrorGitHub, match="Contents: Read and write"):
         prov.guardar("1-1-LE26", {}, "token", rama="proveedores")
+
+
+def test_leer_precios_tolera_lo_que_no_es_indice(monkeypatch):
+    monkeypatch.setattr(prov.requests, "get", lambda url, **k: _R(200, {"1": [{"linea": 1}, "x"], "2": "y"}))
+    assert prov.leer_precios(rama="proveedores") == {"1": [{"linea": 1}]}
+    monkeypatch.setattr(prov.requests, "get", lambda url, **k: _R(404))
+    assert prov.leer_precios(rama="proveedores") == {}
 
 
 def test_leer_devuelve_la_busqueda_o_none(monkeypatch):
@@ -261,6 +286,8 @@ def plataforma(tmp_path, monkeypatch):
     import cotizar
     cotizar._memoria().clear()
     cotizar._guardado.clear()
+    monkeypatch.setattr(prov, "leer_precios", lambda **k: {})
+    cotizar.comun._indice_precios.clear()
     guardados = []
     monkeypatch.setattr(prov, "guardar", lambda codigo, datos, token, **k: guardados.append((codigo, token)))
     return guardados
@@ -375,3 +402,104 @@ def test_lista_ignora_proveedores_sin_nombre(tmp_path, monkeypatch):
     finally:
         archivo.unlink()
     assert nombres == [None, "Con nombre"]
+
+
+# --- Precios (02-11): alternativas por línea, solo si el precio está escrito en la página -----------
+
+def test_precio_en_la_pagina_con_formato_chileno_y_no_dentro_de_otro_numero():
+    assert prov._precio_en(14990, "Precio: $14.990 IVA incluido")
+    assert prov._precio_en(14990.0, "$ 14990")
+    assert prov._precio_en(14990, "14,990.00")
+    assert prov._precio_en(14990, "Oferta $14.990,00")
+    assert not prov._precio_en(14990, "$114.990")
+    assert not prov._precio_en(14990, "$14.990.000")
+    assert not prov._precio_en(4990, "$14.990")
+
+
+def test_depurar_precios_deja_los_respaldados_en_formato_mercado_del_mas_barato_al_mas_caro():
+    texto = "Silla A $59.990 · Silla B $45.000 + IVA · Caja 12 sillas $480.000"
+    urls = {"https://a.cl/silla", "https://b.cl/silla"}
+    precios = [
+        {"linea": 1, "proveedor": "A", "producto": "Silla A", "precio": 59990, "iva_incluido": True, "unidades": 1,
+         "coincidencia": "exacta", "url": "https://a.cl/silla", "nota": None},
+        {"linea": 1, "proveedor": "B", "producto": "Silla B", "precio": 45000, "iva_incluido": False, "unidades": 1,
+         "coincidencia": "equivalente", "url": "https://b.cl/silla", "nota": None},
+        {"linea": 1, "proveedor": "C", "producto": "Caja", "precio": 480000, "iva_incluido": True, "unidades": 12,
+         "coincidencia": "rara", "url": "https://c.cl/caja", "nota": None},
+        {"linea": 1, "proveedor": "Inventado", "producto": "Silla", "precio": 30000, "iva_incluido": True,
+         "unidades": 1, "coincidencia": "exacta", "url": "https://d.cl", "nota": None},   # no está en la página
+        {"linea": 9, "proveedor": "A", "producto": "Otra", "precio": 59990, "iva_incluido": True, "unidades": 1,
+         "coincidencia": "exacta", "url": "https://a.cl/silla", "nota": None},          # línea que no existe
+        {"linea": 1, "proveedor": "Sin link", "producto": "Silla", "precio": 45000, "iva_incluido": False,
+         "unidades": 1, "coincidencia": "exacta", "url": "a.cl", "nota": None},
+        "basura",
+    ]
+    items = [{"linea": 1, "cantidad": 10}]
+    r = prov.depurar_precios(precios, texto, urls, items, "1-1-LE26", "2026-11-02T10:00-03:00")
+    assert [m["tienda"] for m in r] == ["C", "B", "A"]
+    caja, b, a = r
+    assert caja["precio_unitario_neto"] == round(480000 / 1.19 / 12, 2) and caja["coincidencia"] == "aproximada"
+    assert not caja["verificado"]                                       # la página no salió en la búsqueda
+    assert b["precio_unitario_neto"] == 45000 and b["verificado"]       # «+ IVA»: ya es neto
+    assert a["precio_unitario_neto"] == round(59990 / 1.19, 2)
+    assert a["codigo"] == "1-1-LE26" and a["fecha_consulta"] == "2026-11-02" and a["origen"] == prov.ORIGEN_PRECIO
+    assert [m["clave"] for m in r] == ["1-1-LE26|1|c1", "1-1-LE26|1|c2", "1-1-LE26|1|c3"]
+
+
+def test_buscar_devuelve_los_precios_respaldados(monkeypatch):
+    datos = {"resumen": "ok", "proveedores": [], "precios": [
+        {"linea": 1, "proveedor": "Mochilas Chile", "producto": "Mochila 30 L", "precio": 12990,
+         "iva_incluido": True, "unidades": 1, "coincidencia": "exacta", "url": "https://www.mochilas.cl/m30",
+         "nota": None},
+        {"linea": 1, "proveedor": "Otra", "producto": "Mochila", "precio": 9990, "iva_incluido": True, "unidades": 1,
+         "coincidencia": "exacta", "url": "https://otra.cl/m", "nota": None}]}
+    final = _respuesta([
+        _Bloque(type="web_fetch_tool_result", content=_Bloque(
+            type="web_fetch_result", url="https://www.mochilas.cl/m30",
+            content=_Bloque(type="document", source=_Bloque(type="text", data="Mochila escolar 30 L $12.990")))),
+        _Bloque(type="text", text=json.dumps(datos))])
+    r = prov.buscar(LIC, ITEMS, "clave", CFG, cliente=_Cliente([final]),
+                    ahora=datetime(2026, 11, 2, 10, 0, tzinfo=prov.CHILE))
+    assert [m["tienda"] for m in r["precios"]] == ["Mochilas Chile"]      # 9.990 no estaba en ninguna página
+    assert r["precios"][0]["verificado"] and r["precios"][0]["precio_unitario_neto"] == round(12990 / 1.19, 2)
+
+
+PRECIO_SILLA = {"codigo": "1-1-LE26", "linea": 1, "tienda": "Sillas Pro", "producto_mercado": "Silla ergonómica X",
+                "url": "https://sillaspro.cl/x", "precio": 35990, "iva_incluido": True, "unidades_equivalentes": 1,
+                "precio_unitario_neto": round(35990 / 1.19, 2), "coincidencia": "exacta", "verificado": True,
+                "fecha_consulta": "2026-11-02", "nota": None, "origen": prov.ORIGEN_PRECIO,
+                "clave": "1-1-LE26|1|c1", "opcion": 1}
+
+
+def test_ficha_muestra_los_precios_y_la_evaluacion_los_usa(plataforma, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+
+    con_precios = ENCONTRADOS | {"precios": [PRECIO_SILLA]}
+    monkeypatch.setattr(prov, "buscar", lambda lic, items, clave, cfg=None, **k: con_precios)
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["anthropic_api_key"] = "sk-prueba"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    tabla = at.dataframe[-1].value
+    assert list(tabla["Proveedor"]) == ["Sillas Pro"] and list(tabla["Mejor"]) == [True]
+    assert list(tabla["Costo neto línea"]) == [round(35990 / 1.19 * 10)]
+    assert any("1 alternativas para 1 de 1 líneas" in m.value for m in at.markdown)
+
+    # Otra página de la misma plataforma (otra sesión): el precio guardado entra a la evaluación.
+    import cotizar
+    cotizar._memoria().clear()
+    monkeypatch.setattr(prov, "leer_precios", lambda **k: {"1-1-LE26": [PRECIO_SILLA]})
+    cotizar.comun._indice_precios.clear()
+    lista = AppTest.from_function(_lista, args=(str(RAIZ),), default_timeout=60).run()
+    assert not lista.exception, [e.value for e in lista.exception]
+    decision = lista.dataframe[0].value["Decisión"][0]
+    assert decision != "⚪ Falta precio"
+
+
+def _lista(raiz: str) -> None:
+    import sys
+
+    sys.path.insert(0, raiz + "/plataforma")
+    import explorar
+
+    explorar.licitaciones()

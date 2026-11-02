@@ -7,6 +7,10 @@ deja listo el correo para pedir la cotización formal. Aquí queda lo que no dep
   chilenos de lo que se pide y devuelve una lista estructurada. Nunca se inventan datos de contacto:
   un correo o teléfono queda solo si aparece en una página que Claude leyó en esa búsqueda
   (`depurar`); si no, va como «por confirmar».
+- Precios: en la misma búsqueda Claude abre las páginas de producto y trae hasta
+  `precios_por_linea` alternativas por línea, de fuentes distintas. Un precio queda solo si aparece
+  escrito en la página que Claude leyó (`depurar_precios`); queda en el formato de `mercado.json`
+  (precio unitario neto) y la evaluación usa el más barato de cada línea: el que deja más margen.
 - `leer(codigo)` y `guardar(codigo, datos, token)`: la búsqueda queda en la rama `proveedores` del
   repositorio (un JSON por licitación) para no pagarla dos veces. Esa rama no la toca el radar
   (la rama `datos` se reemplaza entera en cada publicación).
@@ -34,12 +38,17 @@ API_GITHUB = "https://api.github.com"
 RAW = "https://raw.githubusercontent.com"
 CARPETA = "proveedores"
 TIPOS = ["fabricante", "importador", "distribuidor mayorista", "tienda", "otro"]
+COINCIDENCIAS = ["exacta", "equivalente", "aproximada"]
+IVA = 0.19
+INDICE_PRECIOS = "precios.json"   # {código: [precios]} de todas las búsquedas, para la evaluación
+ORIGEN_PRECIO = "Búsqueda con Claude"
 CONFIG = {
     "modelo": "claude-opus-5-5",
     "esfuerzo": "medium",
-    "max_busquedas": 5,
-    "max_paginas": 6,
+    "max_busquedas": 8,
+    "max_paginas": 12,
     "maximo": 6,
+    "precios_por_linea": 3,
     "buscar_al_abrir": True,
     "maximo_al_abrir_por_sesion": 10,
     "rama": "proveedores",
@@ -65,9 +74,26 @@ ESQUEMA = {
                          "nota"],
             "additionalProperties": False,
         }},
+        "precios": {"type": "array", "items": {
+            "type": "object",
+            "properties": {
+                "linea": {"type": "integer"},
+                "proveedor": {"type": "string"},
+                "producto": {"type": "string"},
+                "precio": {"type": "number"},
+                "iva_incluido": {"type": "boolean"},
+                "unidades": {"type": "number"},
+                "coincidencia": {"type": "string", "enum": COINCIDENCIAS},
+                "url": {"type": "string"},
+                "nota": _NULO,
+            },
+            "required": ["linea", "proveedor", "producto", "precio", "iva_incluido", "unidades", "coincidencia",
+                         "url", "nota"],
+            "additionalProperties": False,
+        }},
         "resumen": {"type": "string"},
     },
-    "required": ["proveedores", "resumen"],
+    "required": ["proveedores", "precios", "resumen"],
     "additionalProperties": False,
 }
 
@@ -120,8 +146,20 @@ def pedido(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
         "- «lineas» son los números de línea del pedido que ese proveedor vende.\n"
         "- «productos»: qué vende de lo pedido, en una frase; «nota»: lo que conviene saber (mínimo de compra, "
         "despacho a regiones, si hay que pedir cotización por formulario).\n"
+        "\n\nPrecios (el objetivo es el costo más bajo, para tener el mayor margen):\n"
+        f"- En «precios» trae hasta {cfg['precios_por_linea']} alternativas por línea, de proveedores o tiendas "
+        "distintas, empezando por las más baratas. Si no alcanzan las búsquedas para todas, prioriza las líneas "
+        "de mayor cantidad.\n"
+        "- Abre la página del producto (lectura de páginas) y copia el precio tal como aparece escrito en ella, "
+        "en pesos chilenos. Nunca estimes ni calcules un precio: si no lo ves escrito, no lo pongas.\n"
+        "- «url» es la página del producto donde aparece ese precio; «iva_incluido»: true si el precio es con "
+        "IVA (lo normal en tiendas), false si la página dice «+ IVA» o «neto».\n"
+        "- «unidades»: cuántas unidades de las que pide el comprador cubre ese precio (1 si es por unidad; 12 si "
+        "es una caja de 12 y se piden unidades).\n"
+        "- «coincidencia»: exacta (el mismo producto), equivalente (cumple todo lo pedido, otra marca) o "
+        "aproximada (le falta algo de lo pedido: dilo en «nota»).\n"
         "- «resumen»: dos frases sobre qué tan fácil es abastecer este pedido y qué líneas quedaron sin "
-        "proveedor."
+        "proveedor o sin precio."
     )
 
 
@@ -292,6 +330,57 @@ def _conversar(crear, opciones: dict, texto: str) -> tuple:
     return respuesta, bloques, uso
 
 
+def _precio_en(precio: float, texto: str) -> bool:
+    """El precio escrito en la página: 14.990, 14990 o 14,990 (con o sin decimales), no como parte
+    de otro número."""
+    n = int(round(precio))
+    formas = {str(n), f"{n:,}".replace(",", "."), f"{n:,}"}
+    patron = "|".join(re.escape(f) for f in sorted(formas, key=len, reverse=True))
+    return re.search(rf"(?<![\d.,])(?:{patron})(?!\d)(?![.,]\d{{3}})", texto) is not None
+
+
+def _numero(valor) -> float | None:
+    try:
+        n = float(valor)
+    except (TypeError, ValueError):
+        return None
+    return n if n > 0 else None
+
+
+def depurar_precios(precios: list, texto: str, urls: set[str], items: list[dict], codigo: str | None,
+                    fecha: str) -> list[dict]:
+    """Los precios que se pueden respaldar, en el formato de `mercado.json` (precio unitario neto).
+
+    Queda un precio si su línea existe, la URL es un link y el número aparece escrito en lo que
+    devolvieron las herramientas. `verificado` = la URL es una de las páginas que se leyeron.
+    Por línea quedan ordenados del más barato al más caro."""
+    lineas = {it.get("linea") for it in items}
+    limpios = []
+    for p in precios if isinstance(precios, list) else []:
+        if not isinstance(p, dict):
+            continue
+        precio, unidades = _numero(p.get("precio")), _numero(p.get("unidades")) or 1.0
+        url = str(p.get("url") or "")
+        linea = p.get("linea")
+        if (precio is None or linea not in lineas or not url.startswith(("https://", "http://"))
+                or not _precio_en(precio, texto)):
+            continue
+        iva = p.get("iva_incluido") is not False
+        coincidencia = p.get("coincidencia") if p.get("coincidencia") in COINCIDENCIAS else "aproximada"
+        limpios.append({
+            "codigo": codigo, "linea": linea, "tienda": str(p.get("proveedor") or _dominio(url)),
+            "producto_mercado": str(p.get("producto") or ""), "url": url, "precio": precio, "iva_incluido": iva,
+            "unidades_equivalentes": unidades,
+            "precio_unitario_neto": round(precio / (1 + IVA if iva else 1) / unidades, 2),
+            "coincidencia": coincidencia, "verificado": url in urls, "fecha_consulta": fecha[:10],
+            "nota": p.get("nota") or None, "origen": ORIGEN_PRECIO,
+        })
+    limpios.sort(key=lambda m: (m["linea"], m["precio_unitario_neto"]))
+    for n, m in enumerate(limpios, 1):
+        m["clave"], m["opcion"] = f"{codigo}|{m['linea']}|c{n}", n
+    return limpios
+
+
 def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None, cliente=None,
            ahora: datetime | None = None) -> dict:
     """Busca proveedores con Claude (búsqueda web) y devuelve el resultado listo para guardar."""
@@ -320,17 +409,19 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
     if not isinstance(datos, dict):
         raise ErrorBusqueda("No se pudo leer la lista de proveedores. Intenta de nuevo.")
     texto, urls = evidencia(bloques)
+    fecha = (ahora or datetime.now(CHILE)).isoformat(timespec="minutes")
     precio = cfg["precio_usd"]
     costo = (uso["entrada"] * precio["entrada_mtok"] + uso["salida"] * precio["salida_mtok"]) / 1e6 \
         + uso["busquedas"] * precio["busqueda"]
     return {
         "codigo": lic.get("codigo"),
-        "fecha": (ahora or datetime.now(CHILE)).isoformat(timespec="minutes"),
+        "fecha": fecha,
         "modelo": getattr(respuesta, "model", cfg["modelo"]),
         "busquedas": uso["busquedas"], "costo_usd": round(costo, 2),
         "resumen": datos.get("resumen") or "",
         "proveedores": depurar(datos.get("proveedores") if isinstance(datos.get("proveedores"), list) else [],
                                texto, urls)[: cfg["maximo"]],
+        "precios": depurar_precios(datos.get("precios"), texto, urls, items, lic.get("codigo"), fecha),
     }
 
 
@@ -384,30 +475,78 @@ def _crear_rama(token: str, repo: str, rama: str, timeout: float) -> None:
         raise _error(ref)
 
 
+def _asegurar_rama(token: str, repo: str, rama: str, timeout: float) -> None:
+    existe = requests.get(f"{API_GITHUB}/repos/{repo}/branches/{rama}", headers=_cabeceras(token), timeout=timeout)
+    if existe.status_code == 404:
+        _crear_rama(token, repo, rama, timeout)
+    elif existe.status_code != 200:
+        raise _error(existe)
+
+
+def _escribir(ruta: str, contenido, mensaje: str, token: str, repo: str, rama: str, timeout: float,
+              intentos: int = 2) -> None:
+    """Escribe un JSON en la rama. `contenido` puede ser una función que recibe lo que había (o None) y
+    devuelve lo nuevo: si otra sesión escribió entremedio (409), se vuelve a leer y se reintenta."""
+    url = f"{API_GITHUB}/repos/{repo}/contents/{ruta}"
+    for intento in range(intentos):
+        actual = requests.get(url, params={"ref": rama}, headers=_cabeceras(token), timeout=timeout)
+        previo = None
+        if actual.status_code == 404:
+            _asegurar_rama(token, repo, rama, timeout)
+        elif actual.status_code != 200:
+            raise _error(actual)
+        else:
+            try:
+                previo = json.loads(base64.b64decode(actual.json().get("content") or ""))
+            except ValueError:
+                previo = None
+        datos = contenido(previo) if callable(contenido) else contenido
+        cuerpo = {"message": mensaje, "branch": rama,
+                  "content": base64.b64encode(json.dumps(datos, ensure_ascii=False, indent=1).encode()).decode()}
+        if actual.status_code == 200:
+            cuerpo["sha"] = actual.json().get("sha")
+        r = requests.put(url, json=cuerpo, headers=_cabeceras(token), timeout=timeout)
+        if r.status_code in (200, 201):
+            return
+        if r.status_code not in (409, 422) or intento == intentos - 1:
+            raise _error(r)
+
+
 def guardar(codigo: str, datos: dict, token: str | None, repo: str = REPO, rama: str | None = None,
             timeout: float = 20) -> None:
-    """Escribe `proveedores/<código>.json` en la rama (la crea la primera vez)."""
+    """Escribe `proveedores/<código>.json` en la rama (la crea la primera vez) y pone sus precios en
+    `proveedores/precios.json`, el índice que lee la evaluación."""
     if not token:
         raise ErrorGitHub("Falta el token de GitHub (secreto github_token).")
     rama = rama or configuracion()["rama"]
-    url = f"{API_GITHUB}/repos/{repo}/contents/{CARPETA}/{codigo}.json"
-    actual = requests.get(url, params={"ref": rama}, headers=_cabeceras(token), timeout=timeout)
-    if actual.status_code == 404:
-        existe = requests.get(f"{API_GITHUB}/repos/{repo}/branches/{rama}", headers=_cabeceras(token),
-                              timeout=timeout)
-        if existe.status_code == 404:
-            _crear_rama(token, repo, rama, timeout)
-        elif existe.status_code != 200:
-            raise _error(existe)
-    elif actual.status_code != 200:
-        raise _error(actual)
-    cuerpo = {"message": f"Proveedores para {codigo} (plataforma)", "branch": rama,
-              "content": base64.b64encode(json.dumps(datos, ensure_ascii=False, indent=1).encode()).decode()}
-    if actual.status_code == 200:
-        cuerpo["sha"] = actual.json().get("sha")
-    r = requests.put(url, json=cuerpo, headers=_cabeceras(token), timeout=timeout)
-    if r.status_code not in (200, 201):
-        raise _error(r)
+    _escribir(f"{CARPETA}/{codigo}.json", datos, f"Proveedores para {codigo} (plataforma)", token, repo, rama,
+              timeout)
+    precios = datos.get("precios") or []
+
+    def indice(previo):
+        previo = previo if isinstance(previo, dict) else {}
+        if precios:
+            previo[codigo] = precios
+        else:
+            previo.pop(codigo, None)
+        return previo
+
+    _escribir(f"{CARPETA}/{INDICE_PRECIOS}", indice, f"Precios de {codigo} (plataforma)", token, repo, rama,
+              timeout)
+
+
+def leer_precios(repo: str = REPO, rama: str | None = None, timeout: float = 15) -> dict:
+    """{código: [precios]} de todas las búsquedas guardadas ({} si no hay o GitHub no responde)."""
+    rama = rama or configuracion()["rama"]
+    try:
+        r = requests.get(f"{RAW}/{repo}/{rama}/{CARPETA}/{INDICE_PRECIOS}", timeout=timeout)
+        datos = r.json() if r.status_code == 200 else {}
+    except (requests.RequestException, ValueError):
+        return {}
+    if not isinstance(datos, dict):
+        return {}
+    return {codigo: [m for m in lista if isinstance(m, dict)] for codigo, lista in datos.items()
+            if isinstance(lista, list)}
 
 
 # --- Solicitud de cotización --------------------------------------------------------------------

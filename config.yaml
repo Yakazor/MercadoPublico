@@ -1683,9 +1683,10 @@ evaluacion:
 proveedores:
   modelo: "claude-opus-5-5"
   esfuerzo: "medium"             # low / medium / high: más esfuerzo, búsquedas más completas y caras
-  max_busquedas: 5               # búsquedas web por licitación
-  max_paginas: 6                 # páginas que Claude abre (contacto de proveedores)
+  max_busquedas: 8               # búsquedas web por licitación
+  max_paginas: 12                # páginas que Claude abre (contacto de proveedores y páginas de producto)
   maximo: 6                      # proveedores por licitación
+  precios_por_linea: 3           # alternativas de precio por línea, de fuentes distintas (la evaluación usa la más barata)
   buscar_al_abrir: true          # false: solo con el botón «Buscar proveedores»
   maximo_al_abrir_por_sesion: 10 # tope de búsquedas automáticas por sesión (cuida el gasto)
   rama: "proveedores"
