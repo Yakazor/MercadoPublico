@@ -79,7 +79,8 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
       una vez (caché). 528 pruebas OK
 - [ ] La usuaria agrega `anthropic_api_key` en los secretos de Streamlit y el permiso Contents: Read and write
       al `github_token`; probar una búsqueda real (no se pudo probar la API desde la sesión: sin clave)
-- [ ] Unir el PR
+- [x] Unir el PR (#13, 02-11 14:50 UTC, con la auditoría previa de otra sesión: precio «verificado» solo si se
+      abrió su página, tope diario de búsquedas automáticas)
 
 ## Tarea anterior: actualización diaria con créditos de Claude (pedido del 25-10) — terminada
 
