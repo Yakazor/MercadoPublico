@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-10-26, 03:00 UTC)
+## Estado (actualizado 2026-11-02, auditoría)
 
 | Tema | Estado |
 |---|---|
@@ -110,6 +110,20 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-11-02 (auditoría, pedido de la usuaria): workflows de los últimos 3 días, todos en verde (el cron del
+  radar sigue atrasándose 5–6 h; la rutina lo dispara a las 8:00). Evaluación del 02-11 al día: 27 evaluadas,
+  16 GO con condiciones y 11 NO GO, con la fila de IVA de las compras en todas. Ninguna Compra Ágil de 1er llamado
+  cotizada después de la regla EMT (las 5 con precios son del 25 y 26-10). Sin RUT reales en el repo (solo los de
+  ejemplo en las pruebas). **Llevado a la principal el PR #11** (auditoria-datos), que nunca se unió:
+  «Órdenes de compra históricas» restaura la caché de Compras Ágiles antes de publicar (sin eso, cada día la
+  plataforma quedaba sin Compras Ágiles hasta la siguiente corrida de Compras Ágiles) y RUTINA paso 2 revisa si
+  corrió un radar completo en 12 h en vez de `generado` (Compras Ágiles lo renueva cada 3 h). El PR #11 queda
+  redundante (se puede cerrar). **PR #13** (buscar-proveedores, de otra sesión) abierto y sin unir: 535
+  pruebas OK con `anthropic` instalado, respeta la regla EMT y guarda los precios netos (el IVA se suma
+  como costo). Para que funcione hace falta el secreto `anthropic_api_key` en Streamlit. Ojo con el gasto:
+  busca sola al abrir cada ficha (US$0,20–0,40 cada búsqueda, hasta 10 por sesión).
+  Ramas sin trabajo pendiente: ordenes-compra, plataforma, arreglo-ficha, actualizacion-diaria y bitacora-pr9.
 
 - 2026-11-02 (rutina 11:00 UTC): radar y OC disparados (`datos` cambió 11:13 y 11:16; datos del 02-11 08:15, 462
   licitaciones, 1.379 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 29-101-LE26

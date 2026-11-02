@@ -29,8 +29,12 @@ Hay tres pedidos posibles:
 0. Dependencias (una vez por sesión): `pip install -q -r requirements.txt pytest`.
 1. Repo al día: `git fetch origin feature/api-mercadopublico && git checkout feature/api-mercadopublico && git reset --hard origin/feature/api-mercadopublico`.
 2. Clona la rama datos: `git clone -q --depth 1 --branch datos https://github.com/Yakazor/MercadoPublico.git <tmp>/datos`.
-   Si `generado` de `<tmp>/datos/meta.json` tiene **menos de 6 horas**, usa esos datos y salta
-   al paso 5b (precios de mercado). Si no, anota el sha (`git ls-remote origin refs/heads/datos`) y sigue.
+   ¿Corrió el radar completo en las **últimas 12 horas**? Revísalo con
+   `gh api "repos/Yakazor/MercadoPublico/actions/workflows/radar-diario.yml/runs?branch=feature/api-mercadopublico&per_page=15" --jq '.workflow_runs[] | [.display_title, .conclusion, .created_at] | @tsv'`:
+   cuenta solo una de título «Radar diario de licitaciones» con `success` (las «Publicar datos (solo exportar)»
+   no consultan la API). Si la hay, usa esos datos y salta al paso 5b (precios de mercado). Si no (o si `gh`
+   falla), anota el sha (`git ls-remote origin refs/heads/datos`) y sigue. No uses `generado` de meta.json:
+   Compras Ágiles lo renueva cada 3 horas aunque el radar no haya corrido.
 3. Dispara los workflows (radar y OC) con un push al archivo disparador. Cada paso va en
    su propia llamada, sin `;`, `&&`, `cd` ni pipes (así calzan con los permisos de
    `.claude/settings.json`; un comando compuesto lo bloquea el modo automático):
