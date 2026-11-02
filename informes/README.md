@@ -33,6 +33,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2408-183-LE26](presupuestos/2408-183-LE26.md) ELEMENTOS DE ESTIMULACIÓN Y MATERIAL DIDÁCTICO PROGRAMA RED LOCAL DE A | Deporte, juguetes y material didáctico | 2026-11-05 | 0/1 | $0 | $0 | $0 | $9.160.000 | falta 1 precio |
 | [1709-29-LE26](presupuestos/1709-29-LE26.md) CANASTA DE SUMINISTRO DE GRUPO ELECTROGENO | Materiales de construcción, eléctricos e iluminación | 2026-11-05 | 0/5 | $0 | $0 | $0 | — | faltan 5 precios |
 | [3568-31-L126](presupuestos/3568-31-L126.md) ADQUISICIÓN DE MATERIALES DE FERRETERÍA PARA FERIAS VERANO 2026 - 2027 | Ferretería y herramientas | 2026-11-05 | 7/17 | $3.387.872 | $4.837.882 | $677.574 | $3.450.000 | supera monto, faltan 10 precios, sin verificar |
+| [3436-107-LE26](presupuestos/3436-107-LE26.md) AJUAR INGRESO 2027 - MOCHILA Y OTROS 1100065012 | Vestuario, uniformes y textiles | 2026-11-05 | 3/3 | $52.266.897 | $74.637.129 | $10.453.379 | $59.652.000 | supera monto, sin verificar |
 | [1754-55-LE26](presupuestos/1754-55-LE26.md) Adquisición de mobiliario equipamiento clínico menor electrodomésticos | Mobiliario de oficina, escolar y almacenaje | 2026-11-05 | 0/4 | $0 | $0 | $0 | $13.947.811 | faltan 4 precios |
 | [2018-37-LE26](presupuestos/2018-37-LE26.md) VESTUARIO DE PROTECCIÓN ANTÁRTICO | Vestuario, uniformes y textiles | 2026-11-05 | 3/8 | $1.725.403 | $2.463.875 | $345.081 | $25.487.420 | faltan 5 precios, sin verificar |
 | [2585-111-LE26](presupuestos/2585-111-LE26.md) ADQ. HERRAMIENTAS Y MATERIALES DE FERRETERIA DIPRESEH ORD. N°692 IMA | Ferretería y herramientas | 2026-11-05 | 22/49 | $3.013.439 | $4.303.190 | $602.688 | $23.500.000 | faltan 27 precios, sin verificar |
@@ -49,7 +50,9 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [635-183-L126](presupuestos/635-183-L126.md) ADQUISICIÓN DE HERRAMIENTAS PARA DIAGNÓSTICO Y CONTROL DE INFRAESTRUCT | Ferretería y herramientas | 2026-11-06 | 4/9 | $128.058 | $182.867 | $25.612 | $1.600.000 | faltan 5 precios, sin verificar |
 | [1904-10-LE26](presupuestos/1904-10-LE26.md) ADQUISICION DE NEUMATICOS Y LLANTA | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-06 | 4/12 | $3.948.315 | $5.638.194 | $789.663 | — | faltan 8 precios, sin verificar |
 | [1057448-53-LE26](presupuestos/1057448-53-LE26.md) ADQ DE SILLAS VARIAS BIP 30418022 BIP 40001311 | Mobiliario de oficina, escolar y almacenaje | 2026-11-09 | 2/7 | $4.588.500 | $6.552.378 | $917.700 | — | faltan 5 precios, sin verificar |
+| [1380-211-LE26](presupuestos/1380-211-LE26.md) PPTA 315 ADQUISICION DE COLCHONES Y FUNDAS | Electrodomésticos, hogar y menaje | 2026-11-09 | 0/3 | $0 | $0 | $0 | $18.838.544 | faltan 3 precios |
 | [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-09 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
+| [2483-255-LE26](presupuestos/2483-255-LE26.md) ADQUISICIÓN DE INSUMOS MEDICOS Y OTROS EQUIPAMIENTOS PARA VEHÍCULOS DE | Insumos médicos no regulados y aseo | 2026-11-09 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
 | [1703-17-LE26](presupuestos/1703-17-LE26.md) ADQUISICIÓN DE UNIFORMES CLÍNICOS PARA FUNCIONARIO | Vestuario, uniformes y textiles | 2026-11-09 | 1/5 | $10.346.332 | $14.774.562 | $2.069.266 | $12.000.000 | supera monto, faltan 4 precios |
 | [218-55-LE26](presupuestos/218-55-LE26.md) Adquisición de Juguetes Navidad Comunal 2026 | Deporte, juguetes y material didáctico | 2026-11-09 | 0/6 | $0 | $0 | $0 | $55.000.000 | faltan 6 precios |
 | [1216088-27-LE26](presupuestos/1216088-27-LE26.md) SUMINISTRO DE PRODUCTOS DE ASEO | Insumos médicos no regulados y aseo | 2026-11-10 | 0/4 | $0 | $0 | $0 | $48.000.000 | faltan 4 precios |
@@ -58,6 +61,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1725-232-LE26](presupuestos/1725-232-LE26.md) LIBROS DE AUTORES NACIONALES Y SU DISTRIBUCIÓN | Deporte, juguetes y material didáctico | 2026-11-11 | 0/10 | $0 | $0 | $0 | $37.500.000 | faltan 10 precios |
 | [1362-13-LE26](presupuestos/1362-13-LE26.md) COMPRA DE NEUMATICOS PROVINCIA TALAGANTE | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-11 | 5/9 | $1.858.269 | $2.653.608 | $371.654 | — | faltan 4 precios, sin verificar |
 | [2258-237-LE26](presupuestos/2258-237-LE26.md) INSUMOS PARA IMPRESORAS ZEBRA DEL HRA | Computación y electrónica | 2026-11-12 | 0/6 | $0 | $0 | $0 | — | faltan 6 precios |
+| [29-101-LE26](presupuestos/29-101-LE26.md) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | Vestuario, uniformes y textiles | 2026-11-12 | 4/4 | $87.000.901 | $124.237.286 | $17.400.180 | — | sin verificar |
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 
 ## Ya cerradas

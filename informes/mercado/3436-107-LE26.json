@@ -1,0 +1,126 @@
+{
+ "codigo": "3436-107-LE26",
+ "nombre": "AJUAR INGRESO 2027 - MOCHILA Y OTROS 1100065012",
+ "fecha_consulta": "2026-11-02",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Mochila 40 litros color coyote",
+   "consulta": "mochila tactica 40 litros coyote Chile",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Mochila táctica militar camping 30 litros verde",
+     "url": "https://www.easy.cl/mochila-tactica-militar-camping-30-litros-verde-mkgx05yazy/p",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "aproximada",
+     "nota": "30 L y verde: no cumple 40 L coyote.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    },
+    {
+     "tienda": "Falabella (EKOI)",
+     "producto_mercado": "Mochila Táctica Militar De Asalto 40 Litros",
+     "url": "https://www.falabella.com/falabella-cl/shop/mochila-40-litros",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "aproximada",
+     "nota": "Listado de Falabella; color coyote no confirmado; la especificación está en un anexo.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Guantes tácticos (par)",
+   "consulta": "guantes tacticos precio Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (Importclick)",
+     "producto_mercado": "Guante táctico moto/bicicleta",
+     "url": "https://www.falabella.com/falabella-cl/shop/guantes-tacticos",
+     "precio": 10990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9235.29,
+     "coincidencia": "aproximada",
+     "nota": "Precio del listado; especificación en anexo por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Guantes Mechanix Wear M-Pact tácticos sin dedos",
+     "url": "https://www.lider.cl/ip/selecciona-tu-proyecto/guantes-mechanix-wear-m-pact-tacticos-sin-dedos-resistentes-a-impactos/00078151363103",
+     "precio": 59990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 50411.76,
+     "coincidencia": "aproximada",
+     "nota": "Sin dedos.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Linterna frontal",
+   "consulta": "linterna frontal LED Chile",
+   "opciones": [
+    {
+     "tienda": "Lider (Everbrite)",
+     "producto_mercado": "Linterna frontal LED paquete de 5, 4 modos",
+     "url": "https://www.lider.cl/ip/iluminacion-y-electricidad/linterna-frontal-led-paquete-de-5-4-modos-de-iluminacion-baterias/00082090972875",
+     "precio": 43990,
+     "iva_incluido": true,
+     "contenido": "pack 5 unidades",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 7393.28,
+     "coincidencia": "equivalente",
+     "nota": "Especificación en anexo por confirmar (lúmenes, batería).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    },
+    {
+     "tienda": "Lider (Energizer)",
+     "producto_mercado": "Linterna Frontal LED Energizer 2 Pack 100 lúmenes",
+     "url": "https://www.lider.cl/ip/iluminacion-y-electricidad/linterna-frontal-led-energizer-2-pack-100-lumenes-negra/00395721397926",
+     "precio": 35990,
+     "iva_incluido": true,
+     "contenido": "pack 2 unidades",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 15121.85,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    },
+    {
+     "tienda": "Lider (BIAT)",
+     "producto_mercado": "Linterna frontal recargable BIAT 230 Wide Beam impermeable",
+     "url": "https://www.lider.cl/ip/iluminacion-y-electricidad/linterna-frontal-recargable-biat-230-wide-beam-impermeable/00503119273885",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "nota": "Recargable.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  }
+ ]
+}

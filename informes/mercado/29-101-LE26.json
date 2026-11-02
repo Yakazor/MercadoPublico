@@ -1,0 +1,105 @@
+{
+ "codigo": "29-101-LE26",
+ "nombre": "ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027",
+ "fecha_consulta": "2026-11-02",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Camisa blanca manga larga masculina",
+   "consulta": "camisa blanca manga larga hombre Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (NEWPORT)",
+     "producto_mercado": "Camisa Manga Larga Algodón Hombre Regular Fit",
+     "url": "https://www.falabella.com/falabella-cl/collection/camisa-blanca",
+     "precio": 14990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12596.64,
+     "coincidencia": "aproximada",
+     "nota": "Precio del listado de la colección «camisa blanca»; color y modelo exacto por confirmar en la ficha. Precio retail: por 1.000 unidades pedir cotización a fabricante.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Camisa polo manga corta (blanca / foliage green)",
+   "consulta": "polera polo pique manga corta blanca hombre",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Polera Algodón Pique Manga Corta Hombre (blanca)",
+     "url": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-corta-hombre/00046050350164",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "aproximada",
+     "nota": "Blanca disponible en varias tallas; el color foliage green no se encontró. Precio retail.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Camisa celeste manga larga masculina",
+   "consulta": "camisa celeste manga larga hombre Chile",
+   "opciones": [
+    {
+     "tienda": "Falabella (Gran Vía)",
+     "producto_mercado": "Camisa Celeste Hombre Manga Larga Slim Fit Lisa Gran Vía",
+     "url": "https://www.falabella.com/falabella-cl/shop/camisa-celeste-hombre",
+     "precio": 18990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 15957.98,
+     "coincidencia": "aproximada",
+     "nota": "Precio del listado (8.990 / 9.990: oferta y normal no se distinguen); ficha por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Sostén deportivo blanco",
+   "consulta": "sosten deportivo blanco mujer Chile",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Sostén Deportivo Mujer Elasticado Peto Sujetador",
+     "url": "https://www.lider.cl/ip/vestuario/sosten-deportivo-mujer-elasticado-peto-sujetador/00046179777981",
+     "precio": 8999,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7562.18,
+     "coincidencia": "aproximada",
+     "nota": "El color blanco no está confirmado en esta publicación.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Top Deportivo Para Mujer Tirantes Cruzados Fitness Gym (blanco)",
+     "url": "https://www.lider.cl/ip/vestuario/top-deportivo-para-mujer-tirantes-cruzados-fitness-gym/00046060230151",
+     "precio": 15000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 12605.04,
+     "coincidencia": "equivalente",
+     "nota": "Blanco talla S.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  }
+ ]
+}

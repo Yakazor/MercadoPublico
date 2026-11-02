@@ -111,6 +111,13 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (rutina 11:00 UTC): radar y OC disparados (`datos` cambió 11:13 y 11:16; datos del 02-11 08:15, 462
+  licitaciones, 1.379 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin verificar): 29-101-LE26
+  vestuario interior ALR (4/4; GO con condiciones, pero a precio de tienda la oferta casi duplica las OC del Estado:
+  solo con fabricante bajo ~$9.000 neto por prenda), 3436-107-LE26 ajuar mochila (3/3; NO GO, supera el estimado),
+  1380-211-LE26 colchones clínicos y 2483-255-LE26 insumos de rescate por monto global (0, sin precio en tiendas).
+  Top: 29-101-LE26, 2111-330-LE26 y 1090-17-LE26. Proveedores de 29-101 sin correo publicado. 511 pruebas OK.
+
 - 2026-11-02 (pedido de la usuaria): proveedores al abrir la ficha y correo de solicitud de cotización (ver
   «Última tarea»). Costo por búsqueda ~US$0,20–0,40 con `claude-opus-5-5`; se configura en `config.yaml >
   proveedores`. Rama `feature/buscar-proveedores`; 521 pruebas OK.
