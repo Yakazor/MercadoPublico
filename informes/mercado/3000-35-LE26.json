@@ -197,8 +197,8 @@
      "nota": "Precio 'desde' del listado; no confirma engomada.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-11-02",
-     "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $14.990."
+     "precio_pagina": 15000.0,
+     "verificacion_pagina": "2026-11-02: la página muestra $15.000."
     }
    ],
    "nota": "Auditoría 2026-10-21: la referencia OC de esta línea («Tienda de deporte», $1.303.450, 2 órdenes) es genérica y es la misma para las 59 líneas, así que la razón precio/referencia no indica un error; se revisaron unidad y conversión y están bien."

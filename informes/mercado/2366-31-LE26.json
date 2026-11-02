@@ -495,9 +495,9 @@
      "contenido": "1 unidad",
      "nota": "Original Brother. La búsqueda confirma $138.990 (TodoToner vende el original a $139.990). No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $138.990).",
      "fecha_consulta": "2026-10-17",
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 138290.0,
-     "verificacion_pagina": "2026-11-02: no se pudo abrir la página (ConnectionError)."
+     "verificacion_pagina": "2026-11-02: la página muestra $138.290."
     }
    ]
   }
