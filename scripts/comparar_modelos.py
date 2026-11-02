@@ -31,7 +31,7 @@ def una(modelo: str, lic: dict, items: list[dict], clave: str, salida: Path) -> 
     try:
         r = prov.buscar(lic, items, clave, cfg)
     except Exception as e:  # noqa: BLE001 — se informa en el resumen y se sigue con las demás
-        r = {"error": f"{type(e).__name__}: {e}"[:500]}
+        r = {"error": f"{type(e).__name__}: {e}"[:1500]}
     r |= {"segundos": round(time.time() - inicio), "lineas_pedidas": len(items), "modelo_pedido": modelo}
     (salida / f"{modelo}_{lic['codigo']}.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
     return r
@@ -83,6 +83,10 @@ def main():
     for _, r in resultados:
         total[r["modelo_pedido"]] = total.get(r["modelo_pedido"], 0) + (r.get("costo_usd") or 0)
     lineas += ["", "Costo total por modelo: " + ", ".join(f"{m} US$ {c:.2f}" for m, c in total.items()), ""]
+    errores = [f"- {codigo} · {r['modelo_pedido']}: {r['error']}" for codigo, r in resultados if r.get("error")]
+    if errores:
+        lineas += ["## Errores (mensaje completo)", "", *errores, "",
+                   "Una búsqueda con error no informa su costo, pero si alcanzó a buscar sí se cobró.", ""]
     (salida / "resumen.md").write_text("\n".join(lineas), encoding="utf-8")
     print("\n".join(lineas))
 
