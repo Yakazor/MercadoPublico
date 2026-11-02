@@ -112,6 +112,10 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (pedido de la usuaria): búsqueda de proveedores manual. La ficha muestra «Búsqueda manual» y el
+  botón «🔎 Buscar proveedores» (principal) con el modelo, el costo aproximado y el tope por búsqueda en la ayuda;
+  `buscar_al_abrir: false` en config.yaml. «Buscar de nuevo» sigue para repetirla.
+
 - 2026-11-02 (pedido de la usuaria: Haiku y que no vuelva a gastar de más; la prueba quemó ~US$15):
   `proveedores.modelo: claude-haiku-5-5`, 5 búsquedas y 6 páginas (antes 8 y 12), cada página cortada en 8.000
   tokens (`max_content_tokens`), `tope_usd_por_busqueda` 0,60 (se corta entre rondas y el error informa lo

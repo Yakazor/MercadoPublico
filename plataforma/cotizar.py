@@ -106,7 +106,8 @@ def _motivo_sin_auto(lic: dict, cfg: dict, items: list[dict] | None = None, merc
     """Por qué no se busca solo al abrir (None = se busca)."""
     ss = st.session_state
     if not cfg.get("buscar_al_abrir"):
-        return "La búsqueda automática está apagada (`proveedores.buscar_al_abrir`)."
+        return ("Búsqueda manual: aprieta «Buscar proveedores» y Claude busca en la web a quién comprarle y a qué "
+                "precio. Nada se busca ni se cobra solo.")
     minima = comun.supuestos().get("cobertura_minima", 0.8)
     hay = cobertura(items or [], mercado or [])
     if hay >= minima:
@@ -289,8 +290,10 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
             resultado = _buscar(lic, items, clave_api, cfg)
         else:
             st.caption(motivo)
-            if st.button("Buscar proveedores", icon="🔎", key=f"prov_buscar_{codigo}",
-                         help="Claude busca en la web a quién comprarle y a qué precio (de ~US$0,30 con Haiku a ~US$2 con Opus por búsqueda)."):
+            tope = cfg.get("tope_usd_por_busqueda")
+            if st.button("Buscar proveedores", icon="🔎", type="primary", key=f"prov_buscar_{codigo}",
+                         help=f"Una búsqueda con {cfg['modelo']}: ~US$0,30 con Haiku"
+                              + (f", nunca más de US$ {tope:.2f}" if tope else "") + ". Tarda 1 a 3 minutos."):
                 resultado = _buscar(lic, items, clave_api, cfg)
         if resultado and resultado.get("precios"):
             st.rerun()      # la evaluación de arriba se vuelve a calcular con los precios encontrados

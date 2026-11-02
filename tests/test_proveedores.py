@@ -607,7 +607,7 @@ def test_con_la_busqueda_automatica_apagada_solo_busca_con_el_boton(plataforma, 
     at.secrets["anthropic_api_key"] = "sk-prueba"
     at.run()
     assert not at.exception, [e.value for e in at.exception]
-    assert llamadas == [] and any("apagada" in c.value for c in at.caption)
+    assert llamadas == [] and any("Búsqueda manual" in c.value for c in at.caption)
     next(b for b in at.button if b.label == "Buscar proveedores").click().run()
     assert llamadas == ["sk-prueba"]
 
