@@ -1,5 +1,6 @@
 # Dependencias de la plataforma (Streamlit Cloud usa este archivo por estar junto a app.py).
-streamlit>=1.50
+streamlit>=1.66        # placeholder en las tablas (celdas vacías como «—»)
+anthropic>=2.3         # búsqueda de proveedores con Claude
 requests>=2.31
 python-dotenv>=1.0
 PyYAML>=6.0

@@ -110,7 +110,9 @@ workflow «Verificar precios e informes PDF» y genera los PDF.
 1. `python3 scripts/evaluar_licitaciones.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json`.
 2. Lee `informes/evaluacion/README.md`. Para las 3 primeras que no sean NO GO:
    - Abre su informe y revisa riesgos y condiciones.
-   - **Proveedores:** busca con WebSearch (máximo 3 búsquedas por licitación) distribuidores
+   - **Proveedores:** si la plataforma ya los buscó (`git show origin/proveedores:proveedores/<codigo>.json`
+     después de `git fetch origin proveedores`), úsalos y no busques de nuevo. Si no, busca con WebSearch
+     (máximo 3 búsquedas por licitación) distribuidores
      chilenos de lo que piden, priorizando los de la región de entrega o Santiago. Escribe
      `informes/evaluacion/proveedores/<codigo>.json`: lista de
      `{"nombre", "correo", "web", "contacto", "especialidad", "respuesta", "entrega", "costo_referencial", "fuente"}`.

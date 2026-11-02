@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 
 import comun
+import cotizar
 import manuales
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
 from radar.plataforma import es_compra_agil, filtrar, ranking, solo_emt, soy_emt
@@ -115,7 +116,7 @@ def _explorar(compra_agil: bool) -> None:
                                                             help="1 = solo empresas de menor tamaño; 2 = todas")}
     evento = st.dataframe(
         pd.DataFrame(filas), hide_index=True, on_select="rerun", selection_mode="single-row", key=f"{pre}_tabla",
-        height=420, column_config=config)
+        height=420, column_config=config, placeholder="—")
     # La selección queda guardada aunque la lista cambie (filtros, datos recién publicados): un
     # índice que ya no existe no abre nada.
     if evento.selection.rows and evento.selection.rows[0] < len(lista):
@@ -169,7 +170,8 @@ def ficha(lic: dict, prep: dict) -> None:
                 "Pagado Estado": st.column_config.TextColumn(
                     alignment="right", width=110,
                     help="Mediana del precio unitario neto en órdenes de compra de productos parecidos"),
-                "N° OC": st.column_config.TextColumn(alignment="right", width=60, help="Órdenes de compra comparadas")})
+                "N° OC": st.column_config.TextColumn(alignment="right", width=60, help="Órdenes de compra comparadas")},
+                placeholder="—")
         else:
             st.caption("El radar no trae los ítems de esta licitación: revísalos en la ficha.")
 
@@ -203,7 +205,7 @@ def ficha(lic: dict, prep: dict) -> None:
                                                                  help="Precio unitario sin IVA"),
                     "Coincidencia": st.column_config.TextColumn(width=100),
                     "Verificado": st.column_config.CheckboxColumn(width=80),
-                    "Link": st.column_config.LinkColumn(display_text="Ver", width=50)})
+                    "Link": st.column_config.LinkColumn(display_text="Ver", width=50)}, placeholder="—")
             if faltan:
                 st.caption(f"Sin precio de tiendas: línea{'s' if len(faltan) > 1 else ''} {', '.join(faltan)}. "
                            "Cotízalas con un proveedor o pídele a Claude que las busque.")
@@ -225,3 +227,6 @@ def ficha(lic: dict, prep: dict) -> None:
         if b.button("Orden de compra al proveedor", icon="🧾", width="stretch", key=f"abrir_oc_{codigo}"):
             comun.ir_a("orden", codigo)
         c.link_button("Abrir en Mercado Público", lic.get("url") or "", icon="🔗", width="stretch")
+
+        # Al final: si Claude tiene que buscar proveedores (1 a 2 minutos), lo de arriba ya se ve.
+        cotizar.seccion(lic, items, mercado)

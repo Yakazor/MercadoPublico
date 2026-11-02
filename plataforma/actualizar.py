@@ -122,6 +122,6 @@ def _seguimiento(token: str | None) -> None:
         "Proceso": st.column_config.TextColumn(width=240), "Estado": st.column_config.TextColumn(width=140),
         "Inicio": st.column_config.TextColumn(width=95), "Duración": st.column_config.TextColumn(width=80),
         "Cómo": st.column_config.TextColumn(width=105),
-        "Detalle": st.column_config.LinkColumn(display_text="Ver en GitHub", width=110)})
+        "Detalle": st.column_config.LinkColumn(display_text="Ver en GitHub", width=110)}, placeholder="—")
     if token:
         st.caption("Se revisa sola cada 30 segundos.")

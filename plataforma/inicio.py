@@ -10,7 +10,7 @@ from radar.plataforma import es_compra_agil, ranking
 def _tabla(df: pd.DataFrame, codigos: list[str], clave: str, **config) -> None:
     """Tabla en la que tocar una fila abre esa licitación en Evaluación."""
     evento = st.dataframe(df, hide_index=True, on_select="rerun", selection_mode="single-row", key=clave,
-                          column_config=config)
+                          column_config=config, placeholder="—")
     if evento.selection.rows and evento.selection.rows[0] < len(codigos):
         comun.ir_a("evaluacion", codigos[evento.selection.rows[0]])
 

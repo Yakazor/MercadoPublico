@@ -51,7 +51,24 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
 
-## Última tarea: actualización diaria con créditos de Claude (pedido del 25-10) — terminada
+## Última tarea: proveedores al abrir una licitación (pedido del 02-11) — en revisión (rama `feature/buscar-proveedores`)
+
+Pedido: «al abrir las Compras Ágiles o licitaciones, empieza a buscar proveedores y déjame el correo para la
+cotización formal» (captura de Evaluación con «None» en la tabla).
+
+- [x] `src/radar/proveedores.py`: búsqueda con la API de Claude (búsqueda y lectura web, salida JSON, respaldo de
+      modelo, reintentos más simples si la API rechaza las opciones); `depurar` solo deja correos/teléfonos que
+      aparecen en páginas leídas; guarda en la rama huérfana `proveedores` (no lanza workflows ni reinicia la
+      plataforma); `solicitud` arma el correo con las líneas que vende el proveedor; enlaces a Gmail y mailto
+- [x] `plataforma/cotizar.py`: al final de la ficha busca solo al abrir (tope por sesión, no en 1er llamado sin
+      EMT ni en servicios), tabla de proveedores y panel «Solicitud de cotización»; también en Evaluación
+- [x] «None» → «—» en todas las tablas (`placeholder`, Streamlit ≥ 1.66)
+- [x] Pruebas (521 OK) y revisión en Chromium con una búsqueda de ejemplo
+- [ ] La usuaria agrega `anthropic_api_key` en los secretos de Streamlit y el permiso Contents: Read and write
+      al `github_token`; probar una búsqueda real (no se pudo probar la API desde la sesión: sin clave)
+- [ ] Unir el PR
+
+## Tarea anterior: actualización diaria con créditos de Claude (pedido del 25-10) — terminada
 
 - [x] Tarea programada todos los días 7:59 hora de Chile (aplicado en la tarea)
 - [x] Radar de GitHub todos los días 10:07 UTC (PR #9)
@@ -80,6 +97,10 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-11-02 (pedido de la usuaria): proveedores al abrir la ficha y correo de solicitud de cotización (ver
+  «Última tarea»). Costo por búsqueda ~US$0,20–0,40 con `claude-opus-5-5`; se configura en `config.yaml >
+  proveedores`. Rama `feature/buscar-proveedores`; 521 pruebas OK.
 
 - 2026-11-01 (pedido de la usuaria «Actualiza todo», 21:29 UTC): radar, OC y Compras Ágiles disparados (OK; `datos`
   del 01-11 18:37, 462 licitaciones, 1.527 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin

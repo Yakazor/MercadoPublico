@@ -230,7 +230,7 @@ def pagina() -> None:
                                                                                        width=125),
                                  "Precio unitario c/IVA": st.column_config.NumberColumn(min_value=0, format="localized",
                                                                                         width=125),
-                             })
+                             }, placeholder="—")
     st.session_state["oc_items_actual"] = editado
 
     st.markdown("**Condiciones**")

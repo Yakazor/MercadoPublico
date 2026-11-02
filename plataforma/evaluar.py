@@ -1,14 +1,13 @@
 """Evaluación GO / NO GO de una licitación o Compra Ágil con tus cotizaciones, y el ranking."""
-import json
-
 import pandas as pd
 import streamlit as st
 
 import comun
-from evaluar_licitaciones import REMITENTE, correos, go_no_go, informe, pct, proveedores
-from radar.config import cargar_config, hoy_chile, ruta_proyecto
+import cotizar
+from evaluar_licitaciones import correos, go_no_go, informe, pct
+from radar.config import hoy_chile
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
-from radar.plataforma import es_compra_agil, evaluar_licitacion, mercado_por_item, opciones, ranking
+from radar.plataforma import es_compra_agil, evaluar_licitacion, opciones, ranking
 from radar.presupuesto import IVA, armar_presupuesto
 
 VISTAS = ["Una licitación", "Ranking"]
@@ -59,7 +58,7 @@ def _una(prep: dict) -> None:
     ops = opciones(items, mercado, comun.cotizaciones().get(codigo), comun.estimar_oc(), comun.margen(), comun.otros(),
                    not comun.supuestos()["recupera_iva_compras"])
     p, ev = evaluar_licitacion(lic, items, ops, comun.supuestos(), comun.margen(), comun.otros())
-    _resultado(lic, p, ev, mercado)
+    _resultado(lic, items, p, ev, mercado)
 
 
 def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict], compra_agil: bool) -> None:
@@ -98,7 +97,7 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict], compra_ag
                 format="localized", width=125, help="Mediana del precio unitario neto en órdenes de compra parecidas"),
             "Tu cotización (unitario)": st.column_config.NumberColumn(
                 min_value=0, format="localized", width=130, help="Precio por unidad que te dio el proveedor"),
-        })
+        }, placeholder="—")
     if not mercado:
         comun.pedir_precios(codigo, compra_agil)
     precios = {str(int(linea)): float(v) for linea, v in zip(editado["Línea"], editado["Tu cotización (unitario)"])
@@ -112,14 +111,14 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict], compra_ag
         comun.cotizaciones().pop(codigo, None)
 
 
-def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
+def _resultado(lic: dict, items: list[dict], p: dict, ev, mercado: list[dict]) -> None:
     c, m, i = ev.costos, ev.margenes, ev.ingresos
     st.subheader("Resultado")
     if p["items_sin_precio"] == len(p["items"]):
-        st.info("Ninguna línea tiene precio todavía. Pide cotización a proveedores (correos abajo) e ingresa sus "
+        st.info("Ninguna línea tiene precio todavía. Pide cotización a un proveedor (solicitud abajo) e ingresa sus "
                 "precios en la tabla, pide a Claude precios de tiendas (texto de arriba) o activa «Estimar con OC del Estado» "
                 "en ⚙️ Supuestos.")
-        _documentos(lic, p, ev, mercado, con_precios=False)
+        _documentos(lic, items, p, ev, mercado, con_precios=False)
         return
     comun.aviso_decision(ev)
     k = st.columns(3) + st.columns(3)
@@ -181,14 +180,14 @@ def _resultado(lic: dict, p: dict, ev, mercado: list[dict]) -> None:
             "Fuente": st.column_config.TextColumn(width=100),
             "Tipo de precio": st.column_config.TextColumn(
                 width=130, help="exacta / equivalente / aproximada / estimada (OC), y si se verificó en la tienda"),
-            "Link": st.column_config.LinkColumn(display_text="Ver", width=50)})
+            "Link": st.column_config.LinkColumn(display_text="Ver", width=50)}, placeholder="—")
 
-    _documentos(lic, p, ev, mercado)
+    _documentos(lic, items, p, ev, mercado)
 
 
-def _documentos(lic: dict, p: dict, ev, mercado: list[dict], con_precios: bool = True) -> None:
-    provs, remitente = _proveedores(lic["codigo"], mercado)
-    texto_correos = correos(lic, p, provs, remitente, hoy_chile())
+def _documentos(lic: dict, items: list[dict], p: dict, ev, mercado: list[dict], con_precios: bool = True) -> None:
+    provs = cotizar.lista(lic["codigo"], mercado)
+    texto_correos = correos(lic, p, provs, cotizar.remitente(), hoy_chile())
     st.subheader("Documentos")
     d = st.columns(4)
     if con_precios:
@@ -201,19 +200,8 @@ def _documentos(lic: dict, p: dict, ev, mercado: list[dict], con_precios: bool =
     if d[3].button("Orden de compra", icon="🧾", type="primary", width="stretch",
                    help="Arma la orden al proveedor con estos ítems y costos"):
         comun.ir_a("orden", lic["codigo"])
-    with st.expander("Ver correos a proveedores", expanded=not con_precios):
-        st.caption("Copia el texto con el botón de cada recuadro. Nunca se envían solos; revisa el correo del "
-                   "proveedor en su web antes de enviar.")
-        st.markdown(comun.md(texto_correos.split("\n", 2)[-1].replace("\n## ", "\n#### ").removeprefix("## ")))
-
-
-def _proveedores(codigo: str, mercado: list[dict]) -> tuple[list[dict], dict]:
-    archivo = ruta_proyecto(f"informes/mercado/{codigo}.json")
-    origen = json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else mercado_por_item(mercado)
-    provs = proveedores(codigo, origen, ruta_proyecto("informes/evaluacion/proveedores"))
-    remitente = REMITENTE | ((cargar_config().get("evaluacion") or {}).get("remitente") or {}) | dict(
-        comun.secreto("remitente") or {})
-    return provs, remitente
+    with st.expander("Solicitud de cotización a un proveedor", expanded=not con_precios):
+        cotizar.panel_correo(lic, items, provs)
 
 
 def _ranking(prep: dict) -> None:
@@ -255,4 +243,4 @@ def _ranking(prep: dict) -> None:
             "Margen neto": st.column_config.NumberColumn(format="%.0f %%", width=85),
             "Oferta c/IVA": st.column_config.NumberColumn(format="localized", width=105),
             "Monto estimado": st.column_config.NumberColumn(format="localized", width=105),
-            "Cierre": st.column_config.TextColumn(width=70)})
+            "Cierre": st.column_config.TextColumn(width=70)}, placeholder="—")

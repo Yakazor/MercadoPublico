@@ -447,8 +447,20 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
 
 - **Datos:** los JSON de la rama `datos` (los mismos del dashboard), que GitHub actualiza
   solo. La plataforma los vuelve a leer cada 30 minutos o con «Recargar datos».
-- **Claude:** no necesita API key. Los precios de tiendas, los proveedores y el Claude Log
-  siguen viniendo de la rutina programada de Claude.
+- **Claude:** los precios de tiendas y el Claude Log vienen de la rutina programada de Claude
+  (sin API key).
+- **Proveedores al abrir una licitación o Compra Ágil:** al final de la ficha, Claude busca en la web
+  a quién comprarle (fabricantes, importadores, mayoristas o tiendas, con correo, teléfono y la página
+  de donde salió cada dato) y deja listo el correo de **solicitud de cotización** para el proveedor que
+  elijas, con las líneas que vende, la entrega y el plazo para responder: «Abrir en Gmail» o «Abrir en
+  mi correo» lo abren para que lo revises y lo envíes tú (nunca se envía solo). Necesita el secreto
+  `anthropic_api_key` (clave de la API de Claude, en https://console.anthropic.com); cada búsqueda cuesta
+  unos US$0,20–0,40 y queda guardada en la rama `proveedores` del repositorio (si el `github_token` tiene
+  además permiso **Contents: Read and write**), así que no se paga dos veces. Un correo o teléfono solo
+  aparece si estaba escrito en una página que Claude leyó; si no, queda «por confirmar». Sin la clave se
+  muestran los proveedores de la rutina diaria o las tiendas con precio, y el correo igual queda listo.
+  Se ajusta en `config.yaml > proveedores` (modelo, búsquedas, tope de búsquedas automáticas por sesión,
+  o `buscar_al_abrir: false` para buscar solo con el botón).
 - **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
   este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la
   clave, no la clave). «Cerrar sesión», arriba a la derecha, la olvida; cambiar la clave en los
@@ -458,7 +470,8 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
   `.streamlit/secrets.toml.example`). Las cotizaciones y órdenes viven solo en tu sesión:
   descarga el Excel, y el JSON si quieres retomar una orden.
 - **Actualizar desde la plataforma:** necesita el secreto `github_token`, un token
-  *fine-grained* de GitHub solo para este repositorio con permiso **Actions: Read and write**,
+  *fine-grained* de GitHub solo para este repositorio con permiso **Actions: Read and write**
+  (y **Contents: Read and write** para guardar las búsquedas de proveedores),
   y que la plataforma tenga `clave`. Lanza «Compras Ágiles» y «Radar diario» salvo que ya
   estén corriendo o en cola (una corrida nueva cancelaría la que espera en el mismo grupo).
 - **Compras Ágiles al día:** al terminar, el workflow «Compras Ágiles» lanza el radar en modo

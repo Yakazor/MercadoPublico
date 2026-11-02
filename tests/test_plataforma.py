@@ -308,7 +308,8 @@ def test_sin_precios_de_tiendas_muestra_el_pedido_para_claude(tmp_path, monkeypa
     monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
     ficha = AppTest.from_function(_ficha_sin_precios, args=(str(RAIZ),), default_timeout=60).run()
     assert not ficha.exception, [e.value for e in ficha.exception]
-    assert [c.value for c in ficha.code] == ["PRECIOS para: 2-2-COT26"]
+    # El primer recuadro es el pedido para Claude; el último, el correo de solicitud de cotización.
+    assert ficha.code[0].value == "PRECIOS para: 2-2-COT26"
     evaluacion = AppTest.from_function(_pagina, args=("evaluar", "pagina", str(RAIZ)), default_timeout=60)
     evaluacion.session_state["codigo"] = "2-2-COT26"
     evaluacion.run()
