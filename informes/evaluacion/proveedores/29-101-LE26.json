@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Uniformes Spring (fábrica de camisas)",
+  "correo": null,
+  "web": null,
+  "contacto": "Irarrázaval 3263, Ñuñoa (teléfono y correo por confirmar)",
+  "especialidad": "Confección de camisas de hombre desde 1970",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/uniformes-spring/nunoa/300262556/esp"
+ },
+ {
+  "nombre": "Confecciones Jelves",
+  "correo": null,
+  "web": null,
+  "contacto": "Vergara 239, Santiago (formulario en la ficha; correo por confirmar)",
+  "especialidad": "Uniformes, delantales y uniformes de salud",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://mercantil.com/empresa/confecciones-jelves/santiago/502007529/eng"
+ },
+ {
+  "nombre": "Lider (Andesland) — polera pique manga corta",
+  "correo": null,
+  "web": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-corta-hombre/00046050350164",
+  "contacto": null,
+  "especialidad": "Retail: referencia de precio de polera pique ($19.990 c/IVA)",
+  "respuesta": null,
+  "entrega": "Despacho a Santiago",
+  "costo_referencial": 19990,
+  "fuente": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-corta-hombre/00046050350164"
+ }
+]

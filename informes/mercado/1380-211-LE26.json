@@ -1,0 +1,28 @@
+{
+ "codigo": "1380-211-LE26",
+ "nombre": "PPTA 315 ADQUISICION DE COLCHONES Y FUNDAS",
+ "fecha_consulta": "2026-11-02",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Colchón viscoelástico neonatal para cuna térmica",
+   "consulta": "colchon viscoelastico neonatal cuna termica Chile",
+   "opciones": [],
+   "nota": "No se encontró en tiendas chilenas un colchón viscoelástico para cuna térmica (producto clínico); pedir cotización a distribuidores de equipamiento neonatal."
+  },
+  {
+   "linea": 2,
+   "producto": "Funda colchón flotación seca 3 secciones",
+   "consulta": "funda colchon camilla impermeable Chile",
+   "opciones": [],
+   "nota": "Funda clínica específica (colchón antiescaras de flotación seca); no se encontró en tiendas. Pedir cotización a distribuidores clínicos."
+  },
+  {
+   "linea": 3,
+   "producto": "Funda colchonetas camilla",
+   "consulta": "funda colchoneta camilla impermeable Chile",
+   "opciones": [],
+   "nota": "Solo aparecieron cubrecolchones de cama (Sodimac desde 2.990) que no son fundas de camilla; medidas en las bases. Sin precio comparable."
+  }
+ ]
+}

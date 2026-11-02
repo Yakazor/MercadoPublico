@@ -1,0 +1,31 @@
+{
+ "codigo": "2483-255-LE26",
+ "nombre": "ADQUISICIÓN DE INSUMOS MEDICOS Y OTROS EQUIPAMIENTOS PARA VEHÍCULOS DE RESCATE DE LA DSPC",
+ "fecha_consulta": "2026-11-02",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Productos de inmovilización y antisépticos",
+   "opciones": [],
+   "nota": "La línea es un «paquete» por monto global, sin detalle de productos ni cantidades en el radar: el listado está en las bases. No se buscó precio."
+  },
+  {
+   "linea": 2,
+   "producto": "Materiales quirúrgicos",
+   "opciones": [],
+   "nota": "La línea es un «paquete» por monto global, sin detalle de productos ni cantidades en el radar: el listado está en las bases. No se buscó precio."
+  },
+  {
+   "linea": 3,
+   "producto": "Dispositivos de diagnóstico",
+   "opciones": [],
+   "nota": "La línea es un «paquete» por monto global, sin detalle de productos ni cantidades en el radar: el listado está en las bases. No se buscó precio."
+  },
+  {
+   "linea": 4,
+   "producto": "Desfibriladores DEA y accesorios",
+   "opciones": [],
+   "nota": "La línea es un «paquete» por monto global, sin detalle de productos ni cantidades en el radar: el listado está en las bases. No se buscó precio."
+  }
+ ]
+}
