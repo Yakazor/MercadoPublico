@@ -219,10 +219,10 @@
      "coincidencia": "equivalente",
      "nota": "precio visto en el listado de búsqueda (no se pudo abrir la ficha desde la sesión); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
-     "verificado": true,
+     "verificado": false,
      "verificado_en": "2026-11-01",
-     "precio_pagina": 19000.0,
-     "verificacion_pagina": "2026-11-01: la página muestra $19.000."
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $19.990, no $18.990: puede haber cambiado."
     },
     {
      "tienda": "Paris (Ekol)",
@@ -480,6 +480,6 @@
  "verificacion_paginas": {
   "fecha": "2026-11-01",
   "opciones": 21,
-  "verificadas": 14
+  "verificadas": 13
  }
 }

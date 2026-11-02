@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-01. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-02. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -40,7 +40,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2366-44-LE26](presupuestos/2366-44-LE26.md) ACCESORIOS COMPUTACIONALES MEMO N79 PYD | Computación y electrónica | 2026-11-05 | 3/14 | $1.550.942 | $2.214.746 | $310.188 | $21.931.700 | faltan 11 precios, sin verificar |
 | [2335-67-LE26](presupuestos/2335-67-LE26.md) INSUMOS CLINICOS OP 602 | Insumos médicos no regulados y aseo | 2026-11-06 | 0/7 | $0 | $0 | $0 | $8.140.000 | faltan 7 precios |
 | [4407-29-L126](presupuestos/4407-29-L126.md) INSUMOS MEDICOS CONVENIO FOFAR | Insumos médicos no regulados y aseo | 2026-11-06 | 0/7 | $0 | $0 | $0 | $2.780.034 | faltan 7 precios |
-| [4629-34-LE26](presupuestos/4629-34-LE26.md) ADQUISICIÓN DE VESTUARIO - DT | Vestuario, uniformes y textiles | 2026-11-06 | 4/5 | $27.667.132 | $39.508.665 | $5.533.426 | $32.162.500 | supera monto, falta 1 precio |
+| [4629-34-LE26](presupuestos/4629-34-LE26.md) ADQUISICIÓN DE VESTUARIO - DT | Vestuario, uniformes y textiles | 2026-11-06 | 4/5 | $27.667.132 | $39.508.665 | $5.533.426 | $32.162.500 | supera monto, falta 1 precio, sin verificar |
 | [1295444-14-L126](presupuestos/1295444-14-L126.md) ELEMENTOS DE PROTECCIÓN PERSONAL PARA EL CEMENTERIO GENERAL DE CONCEPC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 8/16 | $1.469.497 | $2.098.442 | $293.899 | $4.000.000 | faltan 8 precios, sin verificar |
 | [4236-30-LE26](presupuestos/4236-30-LE26.md) ADQUISICION DE JUGUETES PROGRAMA NAVIDAD AÑO 2026 | Deporte, juguetes y material didáctico | 2026-11-06 | 0/18 | $0 | $0 | $0 | — | faltan 18 precios |
 | [979-73-LE26](presupuestos/979-73-LE26.md) Adquisición de Elementos de Protección Personal NC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 14/18 | $6.542.613 | $9.342.852 | $1.308.523 | $10.900.000 | faltan 4 precios, sin verificar |

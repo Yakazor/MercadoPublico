@@ -89,10 +89,10 @@
      "coincidencia": "equivalente",
      "nota": "búsqueda del 25-10; modelo de hombre, piden unisex. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
-     "verificado": true,
+     "verificado": false,
      "verificado_en": "2026-11-01",
-     "precio_pagina": 19000.0,
-     "verificacion_pagina": "2026-11-01: la página muestra $19.000."
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $19.990, no $18.990: puede haber cambiado."
     }
    ]
   },
@@ -123,6 +123,6 @@
  "verificacion_paginas": {
   "fecha": "2026-11-01",
   "opciones": 5,
-  "verificadas": 5
+  "verificadas": 4
  }
 }

@@ -151,8 +151,8 @@
      "nota": "Original. La búsqueda confirma $238.592 pagando con transferencia y $246.990 con otros medios. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $238.592).",
      "fecha_consulta": "2026-10-17",
      "verificado_en": "2026-10-30",
-     "precio_pagina": 251990.0,
-     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $251.990, no $237.990: puede haber cambiado."
+     "precio_pagina": 255980.0,
+     "verificacion_pagina": "2026-11-01: la página abrió y el precio más parecido es $255.980, no $237.990: puede haber cambiado."
     },
     {
      "tienda": "Dipy",
@@ -192,7 +192,7 @@
      "nota": "Estaba AGOTADO en la consulta anterior. Dejé el precio más alto visto ($89.990) como presupuesto conservador; la búsqueda también muestra $49.990 y $34.990. Hay que confirmar precio y reposición. No pude abrir la página. Precio actualizado al que mostró la página el 2026-10-20 (antes $89.990).",
      "fecha_consulta": "2026-10-17",
      "precio_pagina": 71414.0,
-     "verificacion_pagina": "2026-11-01: no se pudo abrir la página (ConnectionError).",
+     "verificacion_pagina": "2026-11-01: la página muestra $71.414.",
      "verificado_en": "2026-11-01"
     },
     {
