@@ -1,6 +1,6 @@
 # Evaluación comercial de licitaciones
 
-Actualizado: 2026-11-02. 1841 oportunidades vigentes en el Excel, 27 con precios de mercado evaluadas: 0 GO, 16 GO con condiciones y 11 NO GO.
+Actualizado: 2026-11-02. 1850 oportunidades vigentes en el Excel, 27 con precios de mercado evaluadas: 0 GO, 16 GO con condiciones y 11 NO GO.
 
 - [Excel con todas las licitaciones, la evaluación y el Claude Log](Licitaciones_evaluadas.xlsx)
 
@@ -8,7 +8,7 @@ Actualizado: 2026-11-02. 1841 oportunidades vigentes en el Excel, 27 con precios
 
 | Licitación | Cierre | Oferta c/IVA | Monto estimado | Margen neto | Riesgo | Prob. | Decisión | Documentos |
 |---|---|---:|---:|---:|---|---:|---|---|
-| [29-101-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=29-101-LE26) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | 2026-11-12 | $124.237.286 | — | 17 % | Medio | 25% | 🟡 GO CON CONDICIONES | [informe](licitaciones/29-101-LE26_informe.md) · [GO/NO GO](licitaciones/29-101-LE26_go_no_go.md) · [correos](licitaciones/29-101-LE26_correos.md) |
+| [29-101-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=29-101-LE26) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | 2026-11-12 | $124.237.286 | — | 17 % | Bajo | 25% | 🟡 GO CON CONDICIONES | [informe](licitaciones/29-101-LE26_informe.md) · [GO/NO GO](licitaciones/29-101-LE26_go_no_go.md) · [correos](licitaciones/29-101-LE26_correos.md) |
 | [2111-330-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=2111-330-LE26) SUMINISTRO ROPA DE TRABAJO II | 2026-11-04 | $23.934.021 | — | 17 % | Bajo | 25% | 🟡 GO CON CONDICIONES | [informe](licitaciones/2111-330-LE26_informe.md) · [GO/NO GO](licitaciones/2111-330-LE26_go_no_go.md) · [correos](licitaciones/2111-330-LE26_correos.md) |
 | [1090-17-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1090-17-LE26) Herramientas Programa PET 2026 | 2026-11-03 | $11.296.856 | $19.504.636 | 15 % | Medio | 35% | 🟡 GO CON CONDICIONES | [informe](licitaciones/1090-17-LE26_informe.md) · [GO/NO GO](licitaciones/1090-17-LE26_go_no_go.md) · [correos](licitaciones/1090-17-LE26_correos.md) |
 | [979-73-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=979-73-LE26) Adquisición de Elementos de Protección Personal NC | 2026-11-06 | $9.342.852 | $10.900.000 | 17 % | Medio | 25% | 🟡 GO CON CONDICIONES | [informe](licitaciones/979-73-LE26_informe.md) · [GO/NO GO](licitaciones/979-73-LE26_go_no_go.md) · [correos](licitaciones/979-73-LE26_correos.md) |

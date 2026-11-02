@@ -45,9 +45,9 @@
      "nota": "búsqueda del 25-10; bordado y especificación de bases por confirmar",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 77990.0,
-     "verificacion_pagina": "2026-11-01: la página muestra $77.990."
+     "verificacion_pagina": "2026-11-02: la página muestra $77.990."
     }
    ]
   },
@@ -59,7 +59,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-01",
+  "fecha": "2026-11-02",
   "opciones": 1,
   "verificadas": 1
  }
