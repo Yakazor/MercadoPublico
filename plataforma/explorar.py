@@ -82,7 +82,7 @@ def _explorar(compra_agil: bool) -> None:
         estado = next(k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt)
         lista = [l for l in lista if cv.get(l["codigo"], (None, ""))[0] is estado]
     bloqueadas = compra_agil and not soy_emt()   # 🚫 = 1er llamado: sin EMT no se puede cotizar
-    con_decision = sum(1 for l in lista if l["codigo"] in evaluadas)
+    con_decision = sum(1 for l in lista if evaluadas.get(l["codigo"], comun.SIN_EVALUAR) != comun.SIN_EVALUAR)
     st.caption(f"{len(lista)} de {len(todas)} abiertas; {con_decision} con decisión (las demás: ⚪ falta precio). "
                "💲 = tiene precios de tiendas. "
                + ("🚫 = 1er llamado, no puedes cotizarla. " if bloqueadas else "")

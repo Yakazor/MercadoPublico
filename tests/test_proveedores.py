@@ -552,3 +552,22 @@ def test_tope_diario_de_busquedas_automaticas_vale_para_todas_las_sesiones(plata
     assert llamadas == []
     assert any("búsquedas automáticas de hoy" in c.value for c in at.caption)
     assert any(b.label == "Buscar proveedores" for b in at.button)
+
+
+def test_no_busca_sola_si_ya_hay_precios_o_el_monto_es_bajo(plataforma, monkeypatch):
+    import os
+    from pathlib import Path
+    from streamlit.testing.v1 import AppTest
+    import cotizar
+
+    assert cotizar.cobertura([{"linea": 1}, {"linea": 2}], [{"linea": 1}, {"linea": 1, "descartado": True}]) == 0.5
+    llamadas = []
+    monkeypatch.setattr(prov, "buscar", lambda lic, items, clave, cfg=None, **k: llamadas.append(clave) or ENCONTRADOS)
+    datos = Path(os.environ["RADAR_DATOS"])
+    lic = _datos()["licitaciones"][0] | {"monto_estimado": 300_000}
+    (datos / "licitaciones.json").write_text(json.dumps([lic]), encoding="utf-8")
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["anthropic_api_key"] = "sk-prueba"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert llamadas == [] and any("Monto estimado bajo" in c.value for c in at.caption)

@@ -6,7 +6,7 @@ import comun
 import cotizar
 from evaluar_licitaciones import correos, go_no_go, informe, pct
 from radar.config import hoy_chile
-from radar.evaluacion import CONDICIONADO, GO, NO_GO
+from radar.evaluacion import CONDICIONADO, FALTA_PRECIO, GO, NO_GO
 from radar.plataforma import es_compra_agil, evaluar_licitacion, opciones, ranking
 from radar.presupuesto import IVA, armar_presupuesto
 
@@ -208,7 +208,7 @@ def _ranking(prep: dict) -> None:
     a, b, c = st.columns([1.2, 1.6, 1.6])
     tipo = a.segmented_control("Mostrar", ["Todas", "Licitaciones", "Compras Ágiles"], default="Todas",
                                required=True, key="rank_tipo")
-    decisiones = b.multiselect("Decisión", [GO, CONDICIONADO, NO_GO], default=[GO, CONDICIONADO], key="rank_dec",
+    decisiones = b.multiselect("Decisión", [GO, CONDICIONADO, FALTA_PRECIO, NO_GO], default=[GO, CONDICIONADO], key="rank_dec",
                                format_func=comun.DECISION_CORTA.get)
     cv_txt = c.segmented_control("Compra y venta directa", ["Todas", *comun.COMPRA_VENTA.values()], default="Todas",
                                  required=True, key="rank_cv", help=comun.AYUDA_COMPRA_VENTA)

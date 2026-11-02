@@ -112,7 +112,10 @@ costos están en `config.yaml > evaluacion`. GitHub vuelve a correr el script en
 workflow «Verificar precios e informes PDF» y genera los PDF.
 
 1. `python3 scripts/evaluar_licitaciones.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json`.
-2. Lee `informes/evaluacion/README.md`. Para las 3 primeras que no sean NO GO:
+2. Lee `informes/evaluacion/README.md`. Las «⚪ FALTA PRECIO» tienen precio para menos del 80 % de las
+   líneas: la próxima corrida del paso 5b debe priorizar sus líneas sin precio (con ellas pueden pasar a GO).
+   Sin monto estimado, la evaluación compara la oferta con lo que el Estado pagó en OC parecidas (NO GO si
+   la supera en más de 20 %). Para las 3 primeras que no sean NO GO:
    - Abre su informe y revisa riesgos y condiciones.
    - **Proveedores:** si la plataforma ya los buscó (`git show origin/proveedores:proveedores/<codigo>.json`
      después de `git fetch origin proveedores`), úsalos y no busques de nuevo; sus «precios» (respaldados

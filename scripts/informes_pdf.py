@@ -6,6 +6,10 @@ Uso:
 Convierte cada .md a HTML (títulos, tablas, listas, citas, negrita y links) y lo
 imprime a PDF horizontal con Chromium (Playwright) en informes/pdf/. Los links a
 tiendas y a Mercado Público quedan activos en el PDF.
+
+Un PDF se vuelve a imprimir solo si cambió su contenido: la huella (SHA-256) del HTML de cada uno
+queda en informes/pdf/huellas.json. Chromium graba la fecha de creación dentro del PDF, así que
+reimprimir uno igual igual cambiaba el archivo y cada corrida subía ~200 PDF al historial.
 """
 import html
 import re
@@ -77,6 +81,8 @@ def convertir(md, titulo, orient):
 
 
 
+import hashlib
+import json
 import os
 
 import _ruta  # noqa: F401
@@ -100,24 +106,62 @@ def destinos() -> list[tuple]:
     return [(md, base / "pdf" / f"{nombre}.pdf") for md, nombre in pares if md.exists()]
 
 
-def main():
-    from playwright.sync_api import sync_playwright
+def huella(contenido: str) -> str:
+    return hashlib.sha256(contenido.encode("utf-8")).hexdigest()
 
+
+def pendientes(pares: list[tuple], huellas: dict) -> list[tuple]:
+    """(md, pdf, html, huella) de los PDF que faltan o cuyo contenido cambió."""
+    salida = []
+    for md, pdf in pares:
+        texto = md.read_text(encoding="utf-8")
+        titulo = next((l[2:] for l in texto.splitlines() if l.startswith("# ")), "Informe")
+        contenido = convertir(texto, titulo, "landscape")
+        h = huella(contenido + PIE)
+        if not pdf.exists() or huellas.get(pdf.name) != h:
+            salida.append((md, pdf, contenido, h))
+    return salida
+
+
+def main():
     pares = destinos()
     if not pares:
         return
-    pares[0][1].parent.mkdir(parents=True, exist_ok=True)
+    carpeta = pares[0][1].parent
+    carpeta.mkdir(parents=True, exist_ok=True)
+    archivo = carpeta / "huellas.json"
+    try:
+        huellas = json.loads(archivo.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        huellas = {}
+    hacer = pendientes(pares, huellas)
+    print(f"{len(hacer)} de {len(pares)} PDF con cambios")
+    vigentes = {pdf.name for _, pdf in pares}
+    huellas = {k: v for k, v in huellas.items() if k in vigentes}
+    # Los de licitaciones que ya no tienen informe (cerraron o salieron del top) se borran: la ficha de
+    # la plataforma ofrecía descargar una evaluación antigua.
+    for viejo in carpeta.glob("*.pdf"):
+        if viejo.name not in vigentes and viejo.name.startswith(("Evaluacion_", "Presupuesto_")):
+            viejo.unlink()
+            print(f"borrado informes/pdf/{viejo.name}")
+    if hacer:
+        _imprimir(hacer, huellas)
+    archivo.write_text(json.dumps(dict(sorted(huellas.items())), indent=0) + "\n", encoding="utf-8")
+
+
+def _imprimir(hacer: list[tuple], huellas: dict) -> None:
+    from playwright.sync_api import sync_playwright
+
     with sync_playwright() as p:
         # CHROMIUM_PATH: usar un Chromium ya instalado en vez del de Playwright.
         navegador = p.chromium.launch(executable_path=os.environ.get("CHROMIUM_PATH") or None)
         pagina = navegador.new_page()
-        for md, pdf in pares:
-            texto = md.read_text(encoding="utf-8")
-            titulo = next((l[2:] for l in texto.splitlines() if l.startswith("# ")), "Informe")
-            pagina.set_content(convertir(texto, titulo, "landscape"))
+        for md, pdf, contenido, h in hacer:
+            pagina.set_content(contenido)
             pagina.pdf(path=str(pdf), format="A4", landscape=True, print_background=True,
                        display_header_footer=True, header_template="<span></span>", footer_template=PIE,
                        margin={"top": "14mm", "bottom": "16mm", "left": "12mm", "right": "12mm"})
+            huellas[pdf.name] = h
             print(f"informes/pdf/{pdf.name}")
         navegador.close()
 

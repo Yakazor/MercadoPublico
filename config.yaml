@@ -1661,6 +1661,13 @@ evaluacion:
   # Si no, el IVA de la compra es costo y el de la venta se paga entero al SII: costos y ofertas
   # se calculan sobre el precio con IVA.
   recupera_iva_compras: false
+  # Bajo este % de líneas con precio no hay decisión: ⚪ FALTA PRECIO (el margen saldría de una parte del pedido).
+  cobertura_minima: 0.8
+  # Sin monto estimado publicado, el techo es lo que el Estado pagó en OC parecidas: NO GO si la oferta de esas
+  # líneas lo supera en más de tolerancia_sobre_oc, siempre que haya referencia en al menos referencia_minima
+  # de las líneas con precio.
+  tolerancia_sobre_oc: 0.20
+  referencia_minima: 0.5
   utm: 72151                     # CLP (octubre 2026, por confirmar en sii.cl)
   garantia_desde_utm: 1000       # fiel cumplimiento sobre 1.000 UTM
   garantia_pct: 0.05
@@ -1689,6 +1696,9 @@ proveedores:
   precios_por_linea: 3           # alternativas de precio por línea, de fuentes distintas (la evaluación usa la más barata)
   buscar_al_abrir: true          # false: solo con el botón «Buscar proveedores»
   maximo_al_abrir_por_dia: 10    # tope diario de búsquedas automáticas, sumando todas las sesiones (cuida el gasto)
+  # La búsqueda automática solo corre si falta precio (menos de evaluacion.cobertura_minima de las líneas) y el
+  # monto estimado llega a este mínimo (sin monto publicado sí busca). Con el botón se puede buscar igual.
+  monto_minimo_al_abrir: 1000000
   rama: "proveedores"
   precio_usd:                    # para estimar el costo de cada búsqueda
     entrada_mtok: 4.0

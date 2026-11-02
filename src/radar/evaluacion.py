@@ -16,9 +16,14 @@ from .filtro import normalizar
 from .presupuesto import IVA
 
 GO, CONDICIONADO, NO_GO = "GO", "GO CON CONDICIONES", "NO GO"
-ETIQUETA = {GO: "🟢 GO (postular)", CONDICIONADO: "🟡 GO CON CONDICIONES", NO_GO: "🔴 NO GO"}
+# Con precio para menos de `cobertura_minima` de las líneas el margen sale de una parte del pedido:
+# no hay decisión todavía (ni GO ni NO GO por margen), hay que conseguir los precios que faltan.
+FALTA_PRECIO = "FALTA PRECIO"
+DECISIONES = [GO, CONDICIONADO, FALTA_PRECIO, NO_GO]
+ETIQUETA = {GO: "🟢 GO (postular)", CONDICIONADO: "🟡 GO CON CONDICIONES", FALTA_PRECIO: "⚪ FALTA PRECIO",
+            NO_GO: "🔴 NO GO"}
 RECOMENDACION = {GO: "✅ ALTA RECOMENDACIÓN", CONDICIONADO: "🟡 RECOMENDACIÓN CONDICIONADA",
-                 NO_GO: "🔴 NO RECOMENDADA"}
+                 FALTA_PRECIO: "⚪ SIN DECISIÓN: FALTAN PRECIOS", NO_GO: "🔴 NO RECOMENDADA"}
 
 SUPUESTOS = {
     "utm": 72151,                      # CLP, octubre 2026 (por confirmar en sii.cl)
@@ -35,6 +40,13 @@ SUPUESTOS = {
     # Sin crédito fiscal el IVA de las compras no se recupera: es costo, y el de la venta se
     # paga entero al SII.
     "recupera_iva_compras": False,
+    # Bajo este % de líneas con precio no hay decisión (FALTA PRECIO).
+    "cobertura_minima": 0.8,
+    # Sin monto estimado, el techo es lo que el Estado pagó en OC parecidas: NO GO si la oferta
+    # de esas líneas lo supera en más de este %, con referencia en al menos `referencia_minima`
+    # de las líneas con precio.
+    "tolerancia_sobre_oc": 0.20,
+    "referencia_minima": 0.5,
 }
 
 # Zona logística desde Santiago (despacho como % del costo de la mercadería).
@@ -135,6 +147,23 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     if zona in ("lejana", "extrema"):
         puntos += 1
         riesgos.append(f"Entrega en {lic.get('region')}: despacho caro y lento desde Santiago.")
+    # Sin monto estimado: techo con las OC del Estado de productos parecidos.
+    con_referencia = sum(1 for it in p["items"] if it.get("referencia_comparable"))
+    techo_oc = None
+    if not monto and con_precio and con_referencia >= s["referencia_minima"] * con_precio \
+            and p.get("referencia_oc_neta") and p.get("oferta_con_referencia"):
+        techo_oc = p["referencia_oc_neta"] * (1 + s["tolerancia_sobre_oc"])
+    sobre_oc = techo_oc is not None and p["oferta_con_referencia"] > techo_oc
+    if not monto:
+        riesgos.append("Sin monto estimado publicado: " + (
+            f"el techo es lo que el Estado pagó en OC parecidas (${p['referencia_oc_neta']:,.0f} neto en "
+            f"{con_referencia} línea(s)).".replace(",", ".") if techo_oc is not None
+            else "no hay techo de precio con qué comparar la oferta."))
+    if sobre_oc:
+        puntos += 2
+        riesgos.append(f"La oferta de las líneas con referencia (${p['oferta_con_referencia']:,.0f} neto) supera en "
+                       f"{p['oferta_con_referencia'] / p['referencia_oc_neta'] - 1:.0%} lo que el Estado pagó en "
+                       f"OC parecidas.".replace(",", "."))
     if monto and oferta_total > monto:
         puntos += 2
         riesgos.append(f"La oferta (${oferta_total:,.0f}) supera el monto estimado (${monto:,.0f}).".replace(",", "."))
@@ -181,10 +210,19 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
         # Ofertar sobre el presupuesto del organismo casi nunca se adjudica (y sin crédito fiscal
         # no hay margen para bajar el precio).
         razones.append("La oferta supera el monto estimado del organismo.")
+    if sobre_oc:
+        razones.append(f"Sin monto estimado, la oferta supera en más de {s['tolerancia_sobre_oc']:.0%} lo que el Estado "
+                       "pagó en órdenes de compra parecidas.")
     if razones:
         decision = NO_GO
+    elif cobertura < s["cobertura_minima"]:
+        decision = FALTA_PRECIO
+        condiciones.append(f"Conseguir precio de las {n_items - con_precio} líneas que faltan: con {con_precio} de "
+                           f"{n_items} el margen sale de una parte del pedido.")
+        razones.append(f"Hay precio para {cobertura:.0%} de las líneas (mínimo {s['cobertura_minima']:.0%}): "
+                       "todavía no se puede decidir.")
     else:
-        if cobertura < 0.8:
+        if cobertura < 1:
             condiciones.append("Conseguir precio de los ítems que faltan antes de ofertar.")
         if p.get("lineas_globales"):
             condiciones.append("Revisar en las bases la cantidad real de las líneas globales.")
@@ -231,5 +269,5 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
 
 def puntaje(e: Evaluacion) -> float:
     """Para ordenar: decisión primero, luego utilidad esperada (margen × probabilidad)."""
-    orden = {GO: 2, CONDICIONADO: 1, NO_GO: 0}[e.decision]
+    orden = {GO: 3, CONDICIONADO: 2, FALTA_PRECIO: 1, NO_GO: 0}[e.decision]
     return orden * 1e12 + max(e.margenes["neto"], 0) * e.probabilidad

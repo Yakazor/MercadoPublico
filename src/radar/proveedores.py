@@ -51,6 +51,7 @@ CONFIG = {
     "precios_por_linea": 3,
     "buscar_al_abrir": True,
     "maximo_al_abrir_por_dia": 10,
+    "monto_minimo_al_abrir": 1_000_000,
     "rama": "proveedores",
     "precio_usd": {"entrada_mtok": 4.0, "salida_mtok": 20.0, "busqueda": 0.01},
 }

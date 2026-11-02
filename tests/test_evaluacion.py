@@ -6,7 +6,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 import pytest
 
-from radar.evaluacion import CONDICIONADO, GO, NO_GO, evaluar, puntaje, zona_logistica
+from radar.evaluacion import CONDICIONADO, FALTA_PRECIO, GO, NO_GO, evaluar, puntaje, zona_logistica
 from radar.presupuesto import armar_presupuesto
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -41,8 +41,44 @@ def test_aproximados_y_precios_faltantes_condicionan():
     ev = evaluar(_lic(), _presupuesto(coincidencia="aproximada"))
     assert ev.decision == CONDICIONADO
     assert any("aproximados" in c for c in ev.condiciones)
+    ev = evaluar(_lic(monto_estimado=10_000_000), _presupuesto(lineas=5, con_precio=4))
+    assert ev.decision == CONDICIONADO and ev.cobertura == 0.8
+    assert any("faltan" in c for c in ev.condiciones)
+
+
+def test_con_precio_para_menos_del_80_por_ciento_de_las_lineas_falta_precio():
+    # Con la mitad de las líneas el margen sale de medio pedido: ni GO ni NO GO por margen.
     ev = evaluar(_lic(monto_estimado=8_000_000), _presupuesto(lineas=4, con_precio=2))
-    assert ev.decision == CONDICIONADO and ev.cobertura == 0.5
+    assert ev.decision == FALTA_PRECIO and ev.cobertura == 0.5
+    assert "2 líneas que faltan" in ev.condiciones[0] and "50%" in ev.razones[0]
+    assert puntaje(evaluar(_lic(), _presupuesto())) > puntaje(ev)
+    # La regla de monto manda: sobre el monto es NO GO aunque falten precios.
+    assert evaluar(_lic(monto_estimado=100_000), _presupuesto(lineas=4, con_precio=2)).decision == NO_GO
+    assert evaluar(_lic(), _presupuesto(lineas=4, con_precio=2), {"cobertura_minima": 0.5}).decision != FALTA_PRECIO
+
+
+def _con_referencia(ref, lineas=2, con_ref=2):
+    items = [{"codigo": "1-1-LE26", "linea": n, "producto": "Silla", "cantidad": 100, "unidad": "Unidad",
+              "ref_mediana": ref if n <= con_ref else None} for n in range(1, lineas + 1)]
+    mercado = [{"linea": n, "precio_unitario_neto": 10_000, "coincidencia": "exacta", "verificado": True,
+                "tienda": "Tienda"} for n in range(1, lineas + 1)]
+    return armar_presupuesto(items, mercado, iva_es_costo=True)
+
+
+def test_sin_monto_estimado_el_techo_son_las_oc_del_estado():
+    sin_monto = _lic(monto_estimado=None)
+    p = _con_referencia(10_000)                 # el Estado pagó 10.000; la oferta sale ~15.000 por unidad
+    ev = evaluar(sin_monto, p)
+    assert ev.decision == NO_GO
+    assert any("órdenes de compra parecidas" in r for r in ev.razones)
+    assert any("supera en" in r for r in ev.riesgos)
+    # Bajo el techo (pagó 14.000 → techo 16.800): sigue evaluándose por margen.
+    assert evaluar(sin_monto, _con_referencia(14_000)).decision != NO_GO
+    # Con referencia en pocas líneas (1 de 3) no hay techo confiable.
+    ev = evaluar(sin_monto, _con_referencia(10_000, lineas=3, con_ref=1))
+    assert ev.decision != NO_GO and any("no hay techo" in r for r in ev.riesgos)
+    # Con monto publicado manda el monto, no las OC.
+    assert evaluar(_lic(monto_estimado=10_000_000), p).decision != NO_GO
 
 
 def test_no_go_por_cierre_monto_o_sin_precios():

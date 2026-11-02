@@ -15,7 +15,7 @@ import streamlit as st  # noqa: E402
 from streamlit.errors import StreamlitSecretNotFoundError, StreamlitValueAssignmentNotAllowedError  # noqa: E402
 
 from evaluar_licitaciones import clp  # noqa: E402,F401
-from radar.evaluacion import CONDICIONADO, GO, NO_GO  # noqa: E402
+from radar.evaluacion import CONDICIONADO, FALTA_PRECIO, GO, NO_GO  # noqa: E402
 from radar.filtro import normalizar  # noqa: E402
 from radar.plataforma import (ORIGEN_DATOS, compra_venta, leer_datos, origen_en_commit, preparar,  # noqa: E402
                               supuestos_config, version_datos)
@@ -28,10 +28,11 @@ PAGINAS: dict = {}
 COOKIE_ACCESO = "radar_acceso"
 DIAS_RECORDAR = 30
 # Textos cortos para que las tablas quepan en una pantalla de notebook (~900 px de ancho útil).
-DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", NO_GO: "🔴 NO GO"}
 SIN_EVALUAR = "⚪ Falta precio"
-AYUDA_DECISION = ("GO / NO GO según el margen con los precios de tiendas. ⚪ Falta precio = todavía no hay costo para "
-                  "ninguna línea (la rutina diaria busca precios de pocas licitaciones al día): ábrela y Claude busca "
+# FALTA PRECIO (precio para menos del 80 % de las líneas) se muestra igual que «sin evaluar».
+DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", FALTA_PRECIO: SIN_EVALUAR, NO_GO: "🔴 NO GO"}
+AYUDA_DECISION = ("GO / NO GO según el margen con los precios de tiendas. ⚪ Falta precio = hay costo para menos del "
+                  "80 % de las líneas (la rutina diaria busca precios de pocas licitaciones al día): ábrela y Claude busca "
                   "proveedores y precios (con la clave de Claude), o pide cotización e ingresa su precio en "
                   "Evaluación, o activa en ⚙️ Supuestos «Estimar "
                   "con OC del Estado» (referencia, no costo real).")
@@ -271,4 +272,4 @@ def numero_texto(valor) -> str:
 
 def aviso_decision(ev) -> None:
     texto = md(f"**{ev.etiqueta}** · {ev.recomendacion}")
-    {GO: st.success, CONDICIONADO: st.warning}.get(ev.decision, st.error)(texto)
+    {GO: st.success, CONDICIONADO: st.warning, FALTA_PRECIO: st.info}.get(ev.decision, st.error)(texto)

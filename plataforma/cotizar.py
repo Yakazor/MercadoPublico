@@ -76,11 +76,27 @@ def lista(codigo: str, mercado: list[dict]) -> list[dict]:
     return encontrados + [p for p in otros if p.get("nombre") and p["nombre"].lower() not in vistos]
 
 
-def _motivo_sin_auto(lic: dict, cfg: dict) -> str | None:
+def cobertura(items: list[dict], mercado: list[dict]) -> float:
+    """Parte de las líneas que ya tienen algún precio (de la rutina, de una búsqueda o estimado)."""
+    lineas = {it.get("linea") for it in items}
+    con_precio = {m.get("linea") for m in mercado or [] if not m.get("descartado")} & lineas
+    return len(con_precio) / len(lineas) if lineas else 0.0
+
+
+def _motivo_sin_auto(lic: dict, cfg: dict, items: list[dict] | None = None, mercado: list[dict] | None = None) -> str | None:
     """Por qué no se busca solo al abrir (None = se busca)."""
     ss = st.session_state
     if not cfg.get("buscar_al_abrir"):
         return "La búsqueda automática está apagada (`proveedores.buscar_al_abrir`)."
+    minima = comun.supuestos().get("cobertura_minima", 0.8)
+    hay = cobertura(items or [], mercado or [])
+    if hay >= minima:
+        return (f"Ya hay precio para {hay:.0%} de las líneas, así que no se buscó sola (cuida el gasto); "
+                "usa el botón si quieres más alternativas.")
+    monto, minimo = lic.get("monto_estimado"), cfg.get("monto_minimo_al_abrir") or 0
+    if monto and lic.get("moneda") in (None, "CLP") and monto < minimo:
+        return (f"Monto estimado bajo ${minimo:,.0f}, así que no se buscó sola (cuida el gasto); ".replace(",", ".")
+                + "usa el botón si te interesa.")
     if es_compra_agil(lic) and solo_emt(lic) and not soy_emt():
         return "Es de 1er llamado y no puedes cotizarla, así que no se buscó sola."
     estado, _ = comun.compra_venta_por_codigo().get(lic["codigo"], (None, ""))
@@ -229,7 +245,7 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
         return
     resultado = busqueda(codigo)
     if resultado is None and clave_api:
-        motivo = _motivo_sin_auto(lic, cfg)
+        motivo = _motivo_sin_auto(lic, cfg, items, mercado)
         if motivo is None:
             _sumar_automatica()
             resultado = _buscar(lic, items, clave_api, cfg)

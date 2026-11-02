@@ -305,7 +305,8 @@ def resumen(evaluadas: list[tuple], seleccion: list[tuple], total: int, hoy: dat
     conteo = Counter(e.decision for _, _, e in evaluadas)
     lineas = ["# Evaluación comercial de licitaciones", "",
               f"Actualizado: {hoy.isoformat()}. {total} oportunidades vigentes en el Excel, {len(evaluadas)} con precios "
-              f"de mercado evaluadas: {conteo.get('GO', 0)} GO, {conteo.get('GO CON CONDICIONES', 0)} GO con condiciones "
+              f"de mercado evaluadas: {conteo.get('GO', 0)} GO, {conteo.get('GO CON CONDICIONES', 0)} GO con condiciones, "
+              f"{conteo.get('FALTA PRECIO', 0)} con falta de precio (menos del 80 % de las líneas) "
               f"y {conteo.get('NO GO', 0)} NO GO.", "",
               "- [Excel con todas las licitaciones, la evaluación y el Claude Log](Licitaciones_evaluadas.xlsx)", "",
               "## Recomendaciones para decidir", "",
@@ -325,7 +326,8 @@ def resumen(evaluadas: list[tuple], seleccion: list[tuple], total: int, hoy: dat
     entrada = {
         "fecha": hoy.isoformat(), "autor": "Sistema (script)",
         "licitaciones_procesadas": f"{total} vigentes; {len(evaluadas)} evaluadas; informes de {len(seleccion)}",
-        "resultado": f"{conteo.get('GO', 0)} GO, {conteo.get('GO CON CONDICIONES', 0)} con condiciones, {conteo.get('NO GO', 0)} NO GO",
+        "resultado": f"{conteo.get('GO', 0)} GO, {conteo.get('GO CON CONDICIONES', 0)} con condiciones, "
+                     f"{conteo.get('FALTA PRECIO', 0)} falta precio, {conteo.get('NO GO', 0)} NO GO",
         "riesgos": "; ".join(sorted({r.split(':')[0] for _, _, e in seleccion for r in e.riesgos}))[:500],
         "decisiones": "; ".join(f"{lic['codigo']}: {e.decision}" for lic, _, e in seleccion),
         "recomendaciones": " ".join(accion)[:800],

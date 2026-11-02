@@ -112,6 +112,25 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (ideas de mejora, pedido de la usuaria «aplícalas»):
+  - **⚪ FALTA PRECIO** (`evaluacion.FALTA_PRECIO`): con precio para menos del 80 % de las líneas
+    (`evaluacion.cobertura_minima`) no hay GO; antes salía «GO con condiciones» con el margen de una parte del
+    pedido. En la plataforma se ve como «⚪ Falta precio»; en el ranking es un filtro más.
+  - **Techo con OC sin monto estimado:** NO GO si la oferta de las líneas con referencia supera en más de 20 %
+    (`tolerancia_sobre_oc`) lo que el Estado pagó en OC parecidas, con referencia en al menos la mitad de las
+    líneas con precio (`referencia_minima`). Simulación con los datos del 02-11: de 16 «GO con condiciones» a 0;
+    12 pasan a falta precio y 4 a NO GO (29-101-LE26 +82 % sobre OC, 2111-330-LE26 +245 %, 1904-10-LE26 +25 %,
+    5611-23-LE26). Ojo: 2111-330 era el «GO» pedido el 01-11 (ropa de trabajo HUAP); un +245 % puede ser también
+    una referencia de otra presentación: revisar las OC antes de descartarla.
+  - **Búsqueda de proveedores automática** solo si falta precio (bajo `cobertura_minima`) y el monto estimado
+    llega a `proveedores.monto_minimo_al_abrir` ($1.000.000; sin monto sí busca). El botón sigue disponible.
+  - **PDF solo si cambia su contenido** (`informes/pdf/huellas.json`, SHA-256 del HTML): antes ~200 PDF por
+    corrida (138 sin cambios, solo la fecha interna de Chromium). Se borran los PDF de evaluaciones que ya no
+    tienen informe (36: la ficha ofrecía descargar evaluaciones antiguas).
+  - No aplicada: saltarse el detalle de las Compras Ágiles de 1er llamado. El llamado solo viene en el detalle
+    (`convocatoria.estado_convocatoria`), no en el listado: igual habría que pedirlo.
+  - Ramas sin trabajo pendiente borradas (ver Estado).
+
 - 2026-11-02 (auditoría del PR #13 antes de unirlo, pedido de la usuaria): uso de la API revisado contra la
   documentación vigente (herramientas `web_search_20260209`/`web_fetch_20260209`, `output_config` con esfuerzo y
   JSON, respaldo `fallbacks: "default"`, `pause_turn`, precio de Claude Opus 5.5 US$4/20 por MTok): correcto.
