@@ -1,6 +1,6 @@
 # GO / NO GO: 979-73-LE26
 
-## Resultado: 🟡 GO CON CONDICIONES
+## Resultado: ⚪ FALTA PRECIO
 
 | Indicador | Valor |
 |---|---|
@@ -19,11 +19,10 @@
 
 ## Por qué
 
-- La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
+- Hay precio para 78% de las líneas (mínimo 80%): todavía no se puede decidir.
 
 ## Condiciones para postular
 
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
+- Conseguir precio de las 4 líneas que faltan: con 14 de 18 el margen sale de una parte del pedido.
 
 Costo total estimado $6.550.612 neto; punto de equilibrio $7.795.228 con IVA (oferta mínima que cubre todos los costos).

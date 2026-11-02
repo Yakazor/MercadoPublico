@@ -1,6 +1,6 @@
 # Informe ejecutivo: COMPRA DE NEUMATICOS PROVINCIA TALAGANTE
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
 
 ## Resumen general
 
@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $2.256.767 |
 | Oferta sugerida con IVA | $2.653.608 |
 
-**Riesgos financieros:** 4 de 9 ítems sin precio de mercado: el costo real es mayor.; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo)..
+**Riesgos financieros:** 4 de 9 ítems sin precio de mercado: el costo real es mayor.; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($3.403.286 neto en 5 línea(s))..
 
 ## Análisis operacional
 
@@ -48,6 +48,7 @@
 
 - 4 de 9 ítems sin precio de mercado: el costo real es mayor.
 - 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).
+- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($3.403.286 neto en 5 línea(s)).
 
 ## Proveedores recomendados
 
@@ -63,11 +64,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 56% de las líneas (mínimo 80%): todavía no se puede decidir.
 
 Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
+- Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido.
 
 ## Supuestos
 
