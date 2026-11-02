@@ -144,9 +144,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; confirmar precio vigente",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página muestra $77.990.",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 77990.0
     }
    ]
@@ -213,9 +213,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile; el dato de la búsqueda era de caché (dic-2024): confirmar precio vigente",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página muestra $119.990.",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 119990.0
     }
    ]
@@ -237,9 +237,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 11990.0
     }
    ]
@@ -261,9 +261,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 11990.0
     }
    ]
@@ -285,9 +285,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 11990.0
     }
    ]
@@ -309,9 +309,9 @@
      "coincidencia": "exacta",
      "nota": "tienda oficial HP Chile: cada botella GT52 a $11.990 en la página del combo",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página muestra $11.990.",
      "verificado": true,
-     "verificado_en": "2026-11-01",
+     "verificado_en": "2026-11-02",
      "precio_pagina": 11990.0
     }
    ]
@@ -442,7 +442,7 @@
      "coincidencia": "exacta",
      "nota": "precio «desde» en la página de categoría de HP Chile; confirmar",
      "fecha_consulta": "2026-10-25",
-     "verificacion_pagina": "2026-11-02: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-02: la página abrió y el precio más parecido es $454.990, no $358.990: puede haber cambiado.",
      "verificado": false,
      "precio_pagina": 454990.0
     }
