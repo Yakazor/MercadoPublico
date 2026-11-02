@@ -463,7 +463,7 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
   además permiso **Contents: Read and write**), así que no se paga dos veces. Un correo o teléfono solo
   aparece si estaba escrito en una página que Claude leyó; si no, queda «por confirmar». Sin la clave se
   muestran los proveedores de la rutina diaria o las tiendas con precio, y el correo igual queda listo.
-  Se ajusta en `config.yaml > proveedores` (modelo, búsquedas, `precios_por_linea`, tope de búsquedas automáticas por sesión,
+  Se ajusta en `config.yaml > proveedores` (modelo, búsquedas, `precios_por_linea`, tope diario de búsquedas automáticas,
   o `buscar_al_abrir: false` para buscar solo con el botón).
 - **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
   este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la

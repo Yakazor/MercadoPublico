@@ -51,7 +51,7 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
 
-## Última tarea: proveedores al abrir una licitación (pedido del 02-11) — en revisión (rama `feature/buscar-proveedores`)
+## Última tarea: proveedores al abrir una licitación (pedido del 02-11) — unida a la principal tras auditoría (PR #13)
 
 Pedido: «al abrir las Compras Ágiles o licitaciones, empieza a buscar proveedores y déjame el correo para la
 cotización formal» (captura de Evaluación con «None» en la tabla).
@@ -111,6 +111,19 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (auditoría del PR #13 antes de unirlo, pedido de la usuaria): uso de la API revisado contra la
+  documentación vigente (herramientas `web_search_20260209`/`web_fetch_20260209`, `output_config` con esfuerzo y
+  JSON, respaldo `fallbacks: "default"`, `pause_turn`, precio de Claude Opus 5.5 US$4/20 por MTok): correcto.
+  Respeta la regla EMT, el IVA de las compras como costo (guarda precios netos) y no guarda datos personales.
+  Corregido antes de unir: (1) un precio quedaba «verificado» si la URL salía en la búsqueda y el número en
+  cualquier página: ahora solo si Claude abrió la página de ese producto y el precio está escrito ahí
+  (`paginas()`), con columna «Verificado» en la tabla de precios; (2) el pedido de respaldo sin formato JSON no
+  pedía precios; (3) el tope de búsquedas automáticas era por sesión (se reiniciaba al recargar): ahora es diario
+  y suma todas las sesiones (`maximo_al_abrir_por_dia: 10`); (4) costos citados distintos (US$0,20–0,40 y
+  0,40–0,80): queda 0,40–0,80 en todas partes. 538 pruebas OK. Unido a la principal: el PR #13 queda redundante.
+  **Para usarlo en la plataforma:** secreto `anthropic_api_key` y, para guardar las búsquedas, `github_token` con
+  Contents: Read and write.
+
 - 2026-11-02 (auditoría, pedido de la usuaria): workflows de los últimos 3 días, todos en verde (el cron del
   radar sigue atrasándose 5–6 h; la rutina lo dispara a las 8:00). Evaluación del 02-11 al día: 27 evaluadas,
   16 GO con condiciones y 11 NO GO, con la fila de IVA de las compras en todas. Ninguna Compra Ágil de 1er llamado
@@ -122,7 +135,7 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
   redundante (se puede cerrar). **PR #13** (buscar-proveedores, de otra sesión) abierto y sin unir: 535
   pruebas OK con `anthropic` instalado, respeta la regla EMT y guarda los precios netos (el IVA se suma
   como costo). Para que funcione hace falta el secreto `anthropic_api_key` en Streamlit. Ojo con el gasto:
-  busca sola al abrir cada ficha (US$0,20–0,40 cada búsqueda, hasta 10 por sesión).
+  busca sola al abrir cada ficha (ver la entrada de arriba: costo y tope corregidos).
   Ramas sin trabajo pendiente: ordenes-compra, plataforma, arreglo-ficha, actualizacion-diaria y bitacora-pr9.
 
 - 2026-11-02 (rutina 11:00 UTC): radar y OC disparados (`datos` cambió 11:13 y 11:16; datos del 02-11 08:15, 462

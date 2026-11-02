@@ -285,6 +285,7 @@ def plataforma(tmp_path, monkeypatch):
     monkeypatch.syspath_prepend(str(RAIZ / "plataforma"))
     import cotizar
     cotizar._memoria().clear()
+    cotizar._automaticas().clear()
     cotizar._guardado.clear()
     monkeypatch.setattr(prov, "leer_precios", lambda **k: {})
     cotizar.comun._indice_precios.clear()
@@ -488,6 +489,7 @@ def test_ficha_muestra_los_precios_y_la_evaluacion_los_usa(plataforma, monkeypat
     # Otra página de la misma plataforma (otra sesión): el precio guardado entra a la evaluación.
     import cotizar
     cotizar._memoria().clear()
+    cotizar._automaticas().clear()
     monkeypatch.setattr(prov, "leer_precios", lambda **k: {"1-1-LE26": [PRECIO_SILLA]})
     cotizar.comun._indice_precios.clear()
     lista = AppTest.from_function(_lista, args=(str(RAIZ),), default_timeout=60).run()
@@ -503,3 +505,50 @@ def _lista(raiz: str) -> None:
     import explorar
 
     explorar.licitaciones()
+
+
+def test_precio_verificado_solo_si_esta_en_la_pagina_de_ese_producto():
+    bloques = [
+        _Bloque(type="web_fetch_tool_result", content=_Bloque(
+            type="web_fetch_result", url="https://a.cl/silla",
+            content=_Bloque(type="document", source=_Bloque(type="text", data="Silla ergonómica $59.990")))),
+        _Bloque(type="web_fetch_tool_result", content=_Bloque(
+            type="web_fetch_result", url="https://b.cl/silla",
+            content=_Bloque(type="document", source=_Bloque(type="text", data="Silla oficina $45.000 + IVA")))),
+    ]
+    leidas = prov.paginas(bloques)
+    assert set(leidas) == {"https://a.cl/silla", "https://b.cl/silla"}
+    texto, urls = prov.evidencia(bloques)
+    precios = [
+        {"linea": 1, "proveedor": "A", "producto": "Silla", "precio": 59990, "iva_incluido": True, "unidades": 1,
+         "coincidencia": "exacta", "url": "https://a.cl/silla", "nota": None},
+        # 45.000 está escrito, pero en la página de B, no en la de C (que Claude no abrió)
+        {"linea": 1, "proveedor": "C", "producto": "Silla", "precio": 45000, "iva_incluido": False, "unidades": 1,
+         "coincidencia": "exacta", "url": "https://c.cl/silla", "nota": None},
+        # la página de A se abrió, pero este precio no está en ella
+        {"linea": 1, "proveedor": "A2", "producto": "Silla", "precio": 45000, "iva_incluido": False, "unidades": 1,
+         "coincidencia": "exacta", "url": "https://a.cl/silla", "nota": None},
+    ]
+    r = {m["tienda"]: m for m in prov.depurar_precios(precios, texto, urls, [{"linea": 1}], "1-1-LE26",
+                                                      "2026-11-02T10:00-03:00", leidas)}
+    assert r["A"]["verificado"] and not r["C"]["verificado"] and not r["A2"]["verificado"]
+
+
+def test_pedido_sin_formato_json_tambien_pide_precios():
+    assert '"precios"' in prov._SOLO_JSON and '"iva_incluido"' in prov._SOLO_JSON
+
+
+def test_tope_diario_de_busquedas_automaticas_vale_para_todas_las_sesiones(plataforma, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    import cotizar
+
+    llamadas = []
+    monkeypatch.setattr(prov, "buscar", lambda lic, items, clave, cfg=None, **k: llamadas.append(clave) or ENCONTRADOS)
+    cotizar._automaticas()[cotizar.hoy_chile().isoformat()] = 10      # otras sesiones ya gastaron el tope
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["anthropic_api_key"] = "sk-prueba"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert llamadas == []
+    assert any("búsquedas automáticas de hoy" in c.value for c in at.caption)
+    assert any(b.label == "Buscar proveedores" for b in at.button)

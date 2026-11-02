@@ -50,7 +50,7 @@ CONFIG = {
     "maximo": 6,
     "precios_por_linea": 3,
     "buscar_al_abrir": True,
-    "maximo_al_abrir_por_sesion": 10,
+    "maximo_al_abrir_por_dia": 10,
     "rama": "proveedores",
     "precio_usd": {"entrada_mtok": 4.0, "salida_mtok": 20.0, "busqueda": 0.01},
 }
@@ -205,6 +205,22 @@ def evidencia(bloques: list) -> tuple[str, set[str]]:
     return "\n".join(textos), urls
 
 
+def paginas(bloques: list) -> dict[str, str]:
+    """{url: texto} de cada página que Claude abrió (web_fetch): para comprobar que un precio está
+    escrito en la página de ese producto y no en otra."""
+    leidas: dict[str, str] = {}
+    for b in bloques:
+        d = _a_dict(b)
+        if d.get("type") != "web_fetch_tool_result" or not isinstance(d.get("content"), dict):
+            continue
+        url = d["content"].get("url")
+        if isinstance(url, str):
+            textos: list[str] = []
+            _recorrer(d["content"].get("content"), textos, set())
+            leidas[url] = leidas.get(url, "") + "\n" + "\n".join(textos)
+    return leidas
+
+
 def _solo_digitos(texto: str) -> str:
     return re.sub(r"\D", "", texto or "")
 
@@ -295,7 +311,8 @@ def _json_del_texto(texto: str) -> dict | None:
 
 _SOLO_JSON = ("\n\nResponde solo con un objeto JSON, sin texto antes ni después, con esta forma: "
               '{"resumen": "...", "proveedores": [{"nombre", "tipo", "lineas", "productos", "web", "correo", '
-              '"telefono", "ciudad", "fuente", "nota"}]} (null donde no haya dato).')
+              '"telefono", "ciudad", "fuente", "nota"}], "precios": [{"linea", "proveedor", "producto", "precio", '
+              '"iva_incluido", "unidades", "coincidencia", "url", "nota"}]} (null donde no haya dato).')
 
 
 def _pedidos(cliente, cfg: dict, herramientas: list[dict]) -> list:
@@ -348,11 +365,12 @@ def _numero(valor) -> float | None:
 
 
 def depurar_precios(precios: list, texto: str, urls: set[str], items: list[dict], codigo: str | None,
-                    fecha: str) -> list[dict]:
+                    fecha: str, leidas: dict[str, str] | None = None) -> list[dict]:
     """Los precios que se pueden respaldar, en el formato de `mercado.json` (precio unitario neto).
 
     Queda un precio si su línea existe, la URL es un link y el número aparece escrito en lo que
-    devolvieron las herramientas. `verificado` = la URL es una de las páginas que se leyeron.
+    devolvieron las herramientas. `verificado` = la URL es una de las páginas que se leyeron (con
+    `leidas`, las páginas abiertas: el precio además tiene que estar escrito en la de ese producto).
     Por línea quedan ordenados del más barato al más caro."""
     lineas = {it.get("linea") for it in items}
     limpios = []
@@ -372,7 +390,8 @@ def depurar_precios(precios: list, texto: str, urls: set[str], items: list[dict]
             "producto_mercado": str(p.get("producto") or ""), "url": url, "precio": precio, "iva_incluido": iva,
             "unidades_equivalentes": unidades,
             "precio_unitario_neto": round(precio / (1 + IVA if iva else 1) / unidades, 2),
-            "coincidencia": coincidencia, "verificado": url in urls, "fecha_consulta": fecha[:10],
+            "coincidencia": coincidencia,
+            "verificado": url in leidas and _precio_en(precio, leidas[url]) if leidas is not None else url in urls, "fecha_consulta": fecha[:10],
             "nota": p.get("nota") or None, "origen": ORIGEN_PRECIO,
         })
     limpios.sort(key=lambda m: (m["linea"], m["precio_unitario_neto"]))
@@ -421,7 +440,8 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
         "resumen": datos.get("resumen") or "",
         "proveedores": depurar(datos.get("proveedores") if isinstance(datos.get("proveedores"), list) else [],
                                texto, urls)[: cfg["maximo"]],
-        "precios": depurar_precios(datos.get("precios"), texto, urls, items, lic.get("codigo"), fecha),
+        "precios": depurar_precios(datos.get("precios"), texto, urls, items, lic.get("codigo"), fecha,
+                                   paginas(bloques)),
     }
 
 

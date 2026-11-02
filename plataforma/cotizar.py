@@ -35,6 +35,25 @@ def _guardado(codigo: str) -> dict | None:
     return prov.leer(codigo)
 
 
+@st.cache_resource
+def _automaticas() -> dict:
+    """{fecha: búsquedas automáticas} de todas las sesiones mientras la plataforma está encendida: el tope
+    diario no se reinicia al recargar la página ni al abrirla en otro equipo."""
+    return {}
+
+
+def _automaticas_hoy() -> int:
+    return _automaticas().get(hoy_chile().isoformat(), 0)
+
+
+def _sumar_automatica() -> None:
+    hoy = hoy_chile().isoformat()
+    cuenta = _automaticas()
+    for fecha in [f for f in cuenta if f != hoy]:
+        cuenta.pop(fecha, None)
+    cuenta[hoy] = cuenta.get(hoy, 0) + 1
+
+
 def _memoria() -> dict:
     return comun.busquedas_en_memoria()
 
@@ -70,8 +89,9 @@ def _motivo_sin_auto(lic: dict, cfg: dict) -> str | None:
     if lic["codigo"] in ss.setdefault("prov_intentadas", set()):
         # No resultó o se interrumpió (tocar otra cosa mientras busca corta la página): no se paga de nuevo sola.
         return "La búsqueda anterior no terminó o no resultó; puedes intentarla de nuevo con el botón."
-    if ss.get("prov_automaticas", 0) >= cfg.get("maximo_al_abrir_por_sesion", 10):
-        return "Ya se hicieron las búsquedas automáticas de esta sesión (tope en `proveedores`)."
+    tope = cfg.get("maximo_al_abrir_por_dia", cfg.get("maximo_al_abrir_por_sesion", 10))
+    if _automaticas_hoy() >= tope:
+        return f"Ya se hicieron las {tope} búsquedas automáticas de hoy (tope en `proveedores`); usa el botón."
     return None
 
 
@@ -169,13 +189,15 @@ def _tabla_precios(resultado: dict, items: list[dict]) -> None:
             "IVA": "incluido" if m.get("iva_incluido") else "+ IVA",
             "Costo neto unitario": comun.pesos(m.get("precio_unitario_neto")),
             "Costo neto línea": comun.pesos((m.get("precio_unitario_neto") or 0) * cantidad) if cantidad else None,
-            "Coincidencia": m.get("coincidencia"), "Link": m.get("url"), "Nota": m.get("nota")})
+            "Coincidencia": m.get("coincidencia"), "Verificado": bool(m.get("verificado")), "Link": m.get("url"),
+            "Nota": m.get("nota")})
         vistas.add(linea)
     lineas = len({f["Línea"] for f in filas})
     st.markdown(f"##### Precios encontrados · {len(filas)} alternativas para {lineas} de {len(items)} líneas")
     st.caption("De la más barata a la más cara por línea. La evaluación (GO / NO GO) usa la más barata exacta o "
-               "equivalente; una aproximada solo si no hay otra. Cada precio aparece escrito en su página; "
-               "confírmalo con el proveedor antes de ofertar.")
+               "equivalente; una aproximada solo si no hay otra. Verificado = Claude abrió la página del producto y "
+               "el precio está escrito ahí; los demás salieron en los resultados de búsqueda. Confírmalo con el "
+               "proveedor antes de ofertar.")
     st.dataframe(pd.DataFrame(filas), hide_index=True, placeholder="—", column_config={
         "Línea": st.column_config.NumberColumn(width=50),
         "Producto pedido": st.column_config.TextColumn(width=150),
@@ -190,6 +212,8 @@ def _tabla_precios(resultado: dict, items: list[dict]) -> None:
                                                           help="Costo neto unitario × cantidad pedida"),
         "Coincidencia": st.column_config.TextColumn(width=95, help="exacta = el mismo producto; equivalente = "
                                                     "cumple lo pedido, otra marca; aproximada = le falta algo"),
+        "Verificado": st.column_config.CheckboxColumn(width=80, help="El precio está escrito en la página del "
+                                                      "producto que Claude abrió"),
         "Link": st.column_config.LinkColumn(display_text="Ver", width=50),
         "Nota": st.column_config.TextColumn(width=180)})
 
@@ -207,7 +231,7 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
     if resultado is None and clave_api:
         motivo = _motivo_sin_auto(lic, cfg)
         if motivo is None:
-            st.session_state["prov_automaticas"] = st.session_state.get("prov_automaticas", 0) + 1
+            _sumar_automatica()
             resultado = _buscar(lic, items, clave_api, cfg)
         else:
             st.caption(motivo)
