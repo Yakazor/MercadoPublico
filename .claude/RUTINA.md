@@ -52,9 +52,11 @@ Hay tres pedidos posibles:
    un loop de Bash en segundo plano (nunca un sleep largo en primer plano), hasta ver dos
    cambios o 100 minutos en total.
 5. Vuelve a clonar la rama datos (paso 2, borrando antes `<tmp>/datos`).
-5b. **Precios de mercado** (gasta créditos; máximo 4 licitaciones por corrida):
-   1. `python3 scripts/seleccionar_mercado.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --salida <tmp>/lote.json --maximo 4 --compras-agiles 2`
-      (elige abiertas sin precios, 3+ días para el cierre, ítems concretos, sin servicios ni registro ISP;
+5b. **Precios de mercado** (gasta créditos; máximo 8 licitaciones por corrida, pedido del 02-11):
+   1. `python3 scripts/seleccionar_mercado.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --salida <tmp>/lote.json --maximo 8 --compras-agiles 2`
+      (primero las que quedaron **a medias** —`"completar": true` en el lote—, solo con las líneas que les
+      faltan y salvo que ya sean NO GO por monto; busca solo esas líneas, `guardar_mercado.py` las suma a lo
+      que había. Después, abiertas sin precios, 3+ días para el cierre, ítems concretos, sin servicios ni registro ISP;
       2 cupos para Compras Ágiles con 1+ día, primero de la Región Metropolitana). La usuaria **no
       clasifica como Empresa de Menor Tamaño** (`compra_agil.soy_emt: false` en config.yaml): el script
       salta las Compras Ágiles de 1er llamado, porque no puede cotizarlas. Si el lote queda sin Compras

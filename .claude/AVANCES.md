@@ -112,6 +112,14 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (pedido de la usuaria: que la rutina cubra más): `seleccionar_mercado.py` retoma primero las
+  licitaciones a medias (con precio en algunas líneas) solo con las líneas que faltan (`completar: true`),
+  salvo las que ya son NO GO por monto u OC (completarlas solo sube la oferta); antes una licitación ya
+  buscada nunca volvía. `guardar_mercado.py` combina la búsqueda nueva con la guardada (conserva líneas y
+  opciones, sin repetir URL). RUTINA 5b: `--maximo 8` (antes 4). Con los datos del 02-11 el lote serían 8
+  licitaciones a medias (53 líneas); quedan ~73 nuevas en espera. Ojo: el doble de licitaciones gasta
+  aproximadamente el doble de créditos de la cuenta de la rutina (la corrida del 25-10 fueron ~US$3,6 por 4).
+
 - 2026-11-02 (pedido de la usuaria): búsqueda de proveedores manual. La ficha muestra «Búsqueda manual» y el
   botón «🔎 Buscar proveedores» (principal) con el modelo, el costo aproximado y el tope por búsqueda en la ayuda;
   `buscar_al_abrir: false` en config.yaml. «Buscar de nuevo» sigue para repetirla.

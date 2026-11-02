@@ -8,6 +8,10 @@ Uso:
 (también acepta directamente la lista). Cada opción queda con su fecha de consulta y
 con precio_unitario_neto recalculado (precio / 1,19 si incluye IVA / unidades
 equivalentes), para que el presupuesto no dependa de la aritmética de la búsqueda.
+
+Si la licitación ya tenía precios (una búsqueda que completa las líneas que faltaban), se
+combinan: las líneas que no vienen en la búsqueda nueva se conservan y en las que vienen se
+suman las opciones nuevas a las anteriores (sin repetir la misma URL).
 """
 import json
 import sys
@@ -28,6 +32,28 @@ def neto_por_unidad(op: dict) -> float | None:
         return None
     neto = precio / (1 + IVA) if op.get("iva_incluido", True) else precio
     return round(neto / unidades, 2)
+
+
+def combinar(destino: Path, nueva: dict) -> dict:
+    """La búsqueda nueva sobre la guardada (si hay): conserva líneas y opciones anteriores."""
+    try:
+        previa = json.loads(destino.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return nueva
+    nuevas = {i.get("linea"): i for i in nueva.get("items") or []}
+    items = []
+    for viejo in previa.get("items") or []:
+        item = nuevas.pop(viejo.get("linea"), None)
+        if item is None:
+            items.append(viejo)
+            continue
+        urls = {o.get("url") for o in item.get("opciones") or []}
+        item["opciones"] = sorted((item.get("opciones") or []) + [o for o in viejo.get("opciones") or []
+                                                                 if o.get("url") not in urls],
+                                  key=lambda o: o.get("precio_unitario_neto") or 0)
+        items.append(item)
+    items += list(nuevas.values())
+    return previa | nueva | {"items": sorted(items, key=lambda i: i.get("linea") or 0)}
 
 
 def main():
@@ -51,6 +77,7 @@ def main():
                     opciones.append(op)
             item["opciones"] = sorted(opciones, key=lambda o: o["precio_unitario_neto"])
         destino = carpeta / f"{lic['codigo']}.json"
+        lic = combinar(destino, lic)
         destino.write_text(json.dumps(lic, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         con_precio = sum(1 for i in lic.get("items") or [] if i["opciones"])
         print(f"{destino.name}: {con_precio}/{len(lic.get('items') or [])} ítems con precio")
