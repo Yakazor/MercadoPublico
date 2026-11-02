@@ -466,3 +466,21 @@ def test_montos_en_markdown_no_se_leen_como_formula():
     assert comun.md("La oferta ($881.874) supera el monto ($800.000).") == \
         r"La oferta (\$881.874) supera el monto (\$800.000)."
     assert comun.numero_texto(None) == "—" and comun.numero_texto(72450.4) == "72.450"
+
+
+def test_licitaciones_sin_precio_dicen_que_falta_y_cuantas_tienen_decision(tmp_path, monkeypatch):
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    datos = _datos()
+    for lic in datos["licitaciones"]:
+        lic["fecha_cierre"] = "2099-01-01 12:00:00"
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    at = AppTest.from_function(_pagina, args=("explorar", "licitaciones", str(RAIZ)), default_timeout=60).run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert any("con decisión (las demás: ⚪ falta precio)" in c.value for c in at.caption)
+    tabla = at.dataframe[0].value
+    assert "⚪ Sin evaluar" not in set(tabla["Decisión"])
+    assert set(tabla["Decisión"]) <= {"🟢 GO", "🟡 Con condiciones", "🔴 NO GO", "⚪ Falta precio"}

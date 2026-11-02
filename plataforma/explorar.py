@@ -82,7 +82,9 @@ def _explorar(compra_agil: bool) -> None:
         estado = next(k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt)
         lista = [l for l in lista if cv.get(l["codigo"], (None, ""))[0] is estado]
     bloqueadas = compra_agil and not soy_emt()   # 🚫 = 1er llamado: sin EMT no se puede cotizar
-    st.caption(f"{len(lista)} de {len(todas)} abiertas. 💲 = tiene precios de tiendas. "
+    con_decision = sum(1 for l in lista if l["codigo"] in evaluadas)
+    st.caption(f"{len(lista)} de {len(todas)} abiertas; {con_decision} con decisión (las demás: ⚪ falta precio). "
+               "💲 = tiene precios de tiendas. "
                + ("🚫 = 1er llamado, no puedes cotizarla. " if bloqueadas else "")
                + "Toca una fila para ver el detalle, con el organismo, los ítems y el link a Mercado Público.")
     filas = []
@@ -104,6 +106,7 @@ def _explorar(compra_agil: bool) -> None:
               {"Código": 125, "Nombre": 255, "Organismo": 140, "Monto ($)": 95}) | comunes
     config = {col: st.column_config.TextColumn(width=ancho) for col, ancho in anchos.items()}
     config["Compra-venta"] = st.column_config.TextColumn(width=anchos["Compra-venta"], help=comun.AYUDA_COMPRA_VENTA)
+    config["Decisión"] = st.column_config.TextColumn(width=anchos["Decisión"], help=comun.AYUDA_DECISION)
     config |= {
         "Monto ($)": st.column_config.NumberColumn(format="localized", width=anchos["Monto ($)"]),
         "Cierre": st.column_config.DatetimeColumn(format="DD-MM HH:mm", width=anchos["Cierre"]),

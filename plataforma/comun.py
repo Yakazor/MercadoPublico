@@ -29,7 +29,11 @@ COOKIE_ACCESO = "radar_acceso"
 DIAS_RECORDAR = 30
 # Textos cortos para que las tablas quepan en una pantalla de notebook (~900 px de ancho útil).
 DECISION_CORTA = {GO: "🟢 GO", CONDICIONADO: "🟡 Con condiciones", NO_GO: "🔴 NO GO"}
-SIN_EVALUAR = "⚪ Sin evaluar"
+SIN_EVALUAR = "⚪ Falta precio"
+AYUDA_DECISION = ("GO / NO GO según el margen con los precios de tiendas. ⚪ Falta precio = todavía no hay costo para "
+                  "ninguna línea (la rutina diaria busca precios de pocas licitaciones al día): ábrela, pide "
+                  "cotización a un proveedor e ingresa su precio en Evaluación, o activa en ⚙️ Supuestos «Estimar "
+                  "con OC del Estado» (referencia, no costo real).")
 COMPRA_VENTA = {True: "✅ Sí", False: "❌ No", None: "❓ Revisar"}
 AYUDA_COMPRA_VENTA = ("Compra y venta directa: productos que compras hechos y revendes. ❌ = incluye un servicio "
                       "(instalación, mantención, confección, arriendo, capacitación, licencias) o exige registro ISP. "

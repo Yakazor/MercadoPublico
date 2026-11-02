@@ -441,7 +441,7 @@ factura y la Guía del Radar, las plantillas y los informes en PDF de `informes/
 cómo van; cuando termina el radar, la plataforma vuelve a leer los datos). Los supuestos (margen, otros costos, valor hora, costo
 financiero y despacho por zona) se cambian en el botón ⚙️ Supuestos, arriba, y valen para todas las
 páginas. Licitaciones, Compras Ágiles, Inicio y el ranking muestran y filtran la **decisión** (🟢 GO,
-🟡 con condiciones, 🔴 NO GO, ⚪ sin evaluar) y si es **compra y venta directa** (✅ productos que se
+🟡 con condiciones, 🔴 NO GO, ⚪ falta precio: aún no hay costo de ninguna línea) y si es **compra y venta directa** (✅ productos que se
 compran hechos y se revenden; ❌ incluye instalación, mantención, confección, arriendo, capacitación,
 licencias o exige registro ISP; ❓ la cantidad o el producto están en las bases).
 
