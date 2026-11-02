@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $102.622.896 |
 | Oferta sugerida con IVA | $124.237.286 |
 
-**Riesgos financieros:** La mayoría de los precios no está verificada en la página de la tienda.; 3 de 4 precios son de productos aproximados (otra medida, marca o modelo)..
+**Riesgos financieros:** 3 de 4 precios son de productos aproximados (otra medida, marca o modelo)..
 
 ## Análisis operacional
 
@@ -46,7 +46,6 @@
 
 ## Riesgos detectados
 
-- La mayoría de los precios no está verificada en la página de la tienda.
 - 3 de 4 precios son de productos aproximados (otra medida, marca o modelo).
 
 ## Proveedores recomendados

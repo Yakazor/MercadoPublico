@@ -19,8 +19,11 @@
      "precio_unitario_neto": 12596.64,
      "coincidencia": "aproximada",
      "nota": "Precio del listado de la colección «camisa blanca»; color y modelo exacto por confirmar en la ficha. Precio retail: por 1.000 unidades pedir cotización a fabricante.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-02"
+     "verificado": true,
+     "fecha_consulta": "2026-11-02",
+     "verificado_en": "2026-11-02",
+     "precio_pagina": 14990.0,
+     "verificacion_pagina": "2026-11-02: la página muestra $14.990."
     }
    ]
   },
@@ -40,8 +43,11 @@
      "precio_unitario_neto": 16798.32,
      "coincidencia": "aproximada",
      "nota": "Blanca disponible en varias tallas; el color foliage green no se encontró. Precio retail.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-02"
+     "verificado": true,
+     "fecha_consulta": "2026-11-02",
+     "verificado_en": "2026-11-02",
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-02: la página muestra $19.990."
     }
    ]
   },
@@ -62,7 +68,9 @@
      "coincidencia": "aproximada",
      "nota": "Precio del listado (8.990 / 9.990: oferta y normal no se distinguen); ficha por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-02"
+     "fecha_consulta": "2026-11-02",
+     "precio_pagina": 19800.0,
+     "verificacion_pagina": "2026-11-02: la página abrió y el precio más parecido es $19.800, no $18.990: puede haber cambiado."
     }
    ]
   },
@@ -82,8 +90,11 @@
      "precio_unitario_neto": 7562.18,
      "coincidencia": "aproximada",
      "nota": "El color blanco no está confirmado en esta publicación.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-02"
+     "verificado": true,
+     "fecha_consulta": "2026-11-02",
+     "verificado_en": "2026-11-02",
+     "precio_pagina": 8999.0,
+     "verificacion_pagina": "2026-11-02: la página muestra $8.999."
     },
     {
      "tienda": "Lider",
@@ -96,10 +107,18 @@
      "precio_unitario_neto": 12605.04,
      "coincidencia": "equivalente",
      "nota": "Blanco talla S.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-02"
+     "verificado": true,
+     "fecha_consulta": "2026-11-02",
+     "verificado_en": "2026-11-02",
+     "precio_pagina": 15000.0,
+     "verificacion_pagina": "2026-11-02: la página muestra $15.000."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-02",
+  "opciones": 5,
+  "verificadas": 4
+ }
 }

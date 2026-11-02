@@ -27,5 +27,10 @@
    "opciones": [],
    "nota": "La línea es un «paquete» por monto global, sin detalle de productos ni cantidades en el radar: el listado está en las bases. No se buscó precio."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-02",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
