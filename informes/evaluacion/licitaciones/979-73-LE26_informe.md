@@ -1,6 +1,6 @@
 # Informe ejecutivo: Adquisición de Elementos de Protección Personal NC
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
 
 ## Resumen general
 
@@ -62,11 +62,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 78% de las líneas (mínimo 80%): todavía no se puede decidir.
 
 Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
+- Conseguir precio de las 4 líneas que faltan: con 14 de 18 el margen sale de una parte del pedido.
 
 ## Supuestos
 

@@ -1,6 +1,6 @@
 # Informe ejecutivo: Herramientas Programa PET 2026
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
 
 ## Resumen general
 
@@ -62,12 +62,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 54% de las líneas (mínimo 80%): todavía no se puede decidir.
 
 Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
+- Conseguir precio de las 6 líneas que faltan: con 7 de 13 el margen sale de una parte del pedido.
 
 ## Supuestos
 

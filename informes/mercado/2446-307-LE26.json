@@ -165,7 +165,7 @@
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-10-31",
      "precio_pagina": 22990.0,
-     "verificacion_pagina": "2026-11-02: la página abrió y el precio más parecido es $22.990, no $21.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-02: no se pudo abrir la página (ReadTimeout)."
     }
    ]
   },
@@ -579,8 +579,8 @@
      "nota": "Listado muestra 19.990 y 17.991. Precio tomado del listado; la asociacion precio-producto en el listado puede ser ambigua, verificar.",
      "fecha_consulta": "2026-10-18",
      "verificado_en": "2026-11-02",
-     "precio_pagina": 20000.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $20.000."
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-02: la página muestra $19.990."
     }
    ]
   },

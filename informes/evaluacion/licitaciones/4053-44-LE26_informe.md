@@ -1,6 +1,6 @@
 # Informe ejecutivo: VESTUARIO INSTITUCIONAL - CESFAM MARIQUINA 2026
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
 
 ## Resumen general
 
@@ -63,11 +63,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 17% de las líneas (mínimo 80%): todavía no se puede decidir.
 
 Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
+- Conseguir precio de las 5 líneas que faltan: con 1 de 6 el margen sale de una parte del pedido.
 
 ## Supuestos
 
