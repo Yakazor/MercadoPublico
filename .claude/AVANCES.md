@@ -112,6 +112,14 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (comparación de modelos con la clave de la usuaria): 4 corridas de «Comparar modelos de búsqueda»
+  (nº 1 y 3 canceladas, nº 2 completa, nº 4 cancelada porque el saldo bajó de US$10,01 a 1,46). Gasto total
+  ~US$12. La nº 2: Haiku en 1057448-53-LE26 (sillas) 6 proveedores, 11 precios, 7/7 líneas, US$0,31; Sonnet en
+  1362-13-LE26 4/9 líneas, US$0,54; las demás fallaron con 400 por saldo agotado. **Opus gastó ~US$1,5–2 por
+  búsqueda** (lee hasta 12 páginas y las reenvía en cada ronda); el costo que calcula `buscar` no cuenta las
+  búsquedas que fallan. Por eso `proveedores.buscar_al_abrir: false` (solo con el botón). Pendiente: decidir
+  modelo (Haiku parece suficiente) y bajar `max_paginas` antes de volver a encender la búsqueda automática.
+
 - 2026-11-02 (prueba de modelos, pedido de la usuaria): la búsqueda de proveedores elige modelo en
   `config.yaml > proveedores.modelo` (Opus 5.5, Sonnet 5.5 o Haiku 5.5). Haiku usa las herramientas web básicas
   (`web_search_20250305`/`web_fetch_20250910`) y no tiene respaldo de modelo; el costo se calcula con la tarifa

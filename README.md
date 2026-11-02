@@ -458,7 +458,7 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
   elijas, con las líneas que vende, la entrega y el plazo para responder: «Abrir en Gmail» o «Abrir en
   mi correo» lo abren para que lo revises y lo envíes tú (nunca se envía solo). Necesita el secreto
   `anthropic_api_key` (clave de la API de Claude, en https://console.anthropic.com); cada búsqueda cuesta
-  unos US$0,40–0,80 y queda guardada en la rama `proveedores` del repositorio (los precios, además, en
+  de ~US$0,30 (Haiku) a ~US$2 (Opus) y queda guardada en la rama `proveedores` del repositorio (los precios, además, en
   `proveedores/precios.json`) (si el `github_token` tiene
   además permiso **Contents: Read and write**), así que no se paga dos veces. Un correo o teléfono solo
   aparece si estaba escrito en una página que Claude leyó; si no, queda «por confirmar». Sin la clave se

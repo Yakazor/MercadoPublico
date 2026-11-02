@@ -252,7 +252,7 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
         else:
             st.caption(motivo)
             if st.button("Buscar proveedores", icon="🔎", key=f"prov_buscar_{codigo}",
-                         help="Claude busca en la web a quién comprarle y a qué precio (unos US$0,40–0,80 por búsqueda)."):
+                         help="Claude busca en la web a quién comprarle y a qué precio (de ~US$0,30 con Haiku a ~US$2 con Opus por búsqueda)."):
                 resultado = _buscar(lic, items, clave_api, cfg)
         if resultado and resultado.get("precios"):
             st.rerun()      # la evaluación de arriba se vuelve a calcular con los precios encontrados

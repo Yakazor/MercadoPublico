@@ -286,6 +286,10 @@ def plataforma(tmp_path, monkeypatch):
     import cotizar
     cotizar._memoria().clear()
     cotizar._automaticas().clear()
+    # config.yaml la tiene apagada (gasto): estas pruebas ven la búsqueda automática encendida.
+    original = prov.configuracion
+    monkeypatch.setattr(prov, "configuracion", lambda: original() | {"buscar_al_abrir": True})
+    cotizar._config.clear()
     cotizar._guardado.clear()
     monkeypatch.setattr(prov, "leer_precios", lambda **k: {})
     cotizar.comun._indice_precios.clear()
@@ -586,3 +590,22 @@ def test_herramientas_y_costo_segun_el_modelo():
     # Haiku: la petición de más de 100 mil tokens va a la tarifa larga.
     assert prov.costo_usd("claude-haiku-5-5", usos, 0) == pytest.approx(
         (50_000 * 0.10 + 2_000 * 0.50 + 150_000 * 0.50 + 4_000 * 2.50) / 1e6)
+
+
+
+def test_con_la_busqueda_automatica_apagada_solo_busca_con_el_boton(plataforma, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    import cotizar
+
+    original = prov.configuracion
+    monkeypatch.setattr(prov, "configuracion", lambda: original() | {"buscar_al_abrir": False})
+    cotizar._config.clear()
+    llamadas = []
+    monkeypatch.setattr(prov, "buscar", lambda lic, items, clave, cfg=None, **k: llamadas.append(clave) or ENCONTRADOS)
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["anthropic_api_key"] = "sk-prueba"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert llamadas == [] and any("apagada" in c.value for c in at.caption)
+    next(b for b in at.button if b.label == "Buscar proveedores").click().run()
+    assert llamadas == ["sk-prueba"]

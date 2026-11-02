@@ -1685,7 +1685,7 @@ evaluacion:
 
 # Proveedores en la plataforma: al abrir una licitación o Compra Ágil, Claude busca en la web a
 # quién comprarle (necesita el secreto `anthropic_api_key` en Streamlit) y deja listo el correo
-# de solicitud de cotización. Cada búsqueda cuesta unos US$0,40–0,80 (modelo + búsquedas + páginas) y queda
+# de solicitud de cotización. Cada búsqueda cuesta de ~US$0,30 (Haiku) a ~US$2 (Opus), según el modelo y las páginas que lea y queda
 # guardada en la rama `proveedores` (con el secreto `github_token`), así que no se paga dos veces.
 proveedores:
   modelo: "claude-opus-5-5"
@@ -1694,7 +1694,9 @@ proveedores:
   max_paginas: 12                # páginas que Claude abre (contacto de proveedores y páginas de producto)
   maximo: 6                      # proveedores por licitación
   precios_por_linea: 3           # alternativas de precio por línea, de fuentes distintas (la evaluación usa la más barata)
-  buscar_al_abrir: true          # false: solo con el botón «Buscar proveedores»
+  # Apagada el 02-11: en la prueba, Claude Opus gastó ~US$1,5–2 por búsqueda (lee hasta 12 páginas y las
+  # reenvía en cada ronda). Encender solo con un modelo más barato y un límite de gasto en console.anthropic.com.
+  buscar_al_abrir: false         # true: busca sola al abrir la ficha; false: solo con el botón «Buscar proveedores»
   maximo_al_abrir_por_dia: 10    # tope diario de búsquedas automáticas, sumando todas las sesiones (cuida el gasto)
   # La búsqueda automática solo corre si falta precio (menos de evaluacion.cobertura_minima de las líneas) y el
   # monto estimado llega a este mínimo (sin monto publicado sí busca). Con el botón se puede buscar igual.
