@@ -19,10 +19,15 @@ from radar.plataforma import es_compra_agil, mercado_por_item, solo_emt, soy_emt
 LARGO_GMAIL = 7000   # sobre esto el enlace a Gmail puede no abrir: mejor copiar el texto
 
 
+@st.cache_data(show_spinner=False)
+def _config() -> tuple[dict, dict]:
+    """config.yaml una vez por proceso: `proveedores` y la firma de `evaluacion.remitente`."""
+    return prov.configuracion(), (cargar_config().get("evaluacion") or {}).get("remitente") or {}
+
+
 def remitente() -> dict:
     """Firma del correo: config.yaml, con lo de los secretos encima (`[remitente]`)."""
-    return REMITENTE | ((cargar_config().get("evaluacion") or {}).get("remitente") or {}) | dict(
-        comun.secreto("remitente") or {})
+    return REMITENTE | _config()[1] | dict(comun.secreto("remitente") or {})
 
 
 @st.cache_data(ttl=600, show_spinner=False)
@@ -51,8 +56,8 @@ def lista(codigo: str, mercado: list[dict]) -> list[dict]:
     origen = json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else mercado_por_item(mercado)
     otros = proveedores_rutina(codigo, origen,
                                ruta_proyecto("informes/evaluacion/proveedores"))
-    vistos = {p.get("nombre", "").lower() for p in encontrados}
-    return encontrados + [p for p in otros if p.get("nombre", "").lower() not in vistos]
+    vistos = {(p.get("nombre") or "").lower() for p in encontrados}
+    return encontrados + [p for p in otros if p.get("nombre") and p["nombre"].lower() not in vistos]
 
 
 def _motivo_sin_auto(lic: dict, cfg: dict) -> str | None:
@@ -65,8 +70,9 @@ def _motivo_sin_auto(lic: dict, cfg: dict) -> str | None:
     estado, _ = comun.compra_venta_por_codigo().get(lic["codigo"], (None, ""))
     if estado is False:
         return "Incluye servicios o registro ISP (no es compra y venta directa), así que no se buscó sola."
-    if lic["codigo"] in ss.setdefault("prov_fallidas", set()):
-        return "La búsqueda anterior no resultó."
+    if lic["codigo"] in ss.setdefault("prov_intentadas", set()):
+        # No resultó o se interrumpió (tocar otra cosa mientras busca corta la página): no se paga de nuevo sola.
+        return "La búsqueda anterior no terminó o no resultó; puedes intentarla de nuevo con el botón."
     if ss.get("prov_automaticas", 0) >= cfg.get("maximo_al_abrir_por_sesion", 10):
         return "Ya se hicieron las búsquedas automáticas de esta sesión (tope en `proveedores`)."
     return None
@@ -76,7 +82,9 @@ def _buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict) -> dict | N
     import anthropic
     codigo = lic["codigo"]
     ss = st.session_state
-    with st.status("Buscando proveedores en la web… (1 a 2 minutos)", expanded=False) as estado:
+    ss.setdefault("prov_intentadas", set()).add(codigo)
+    with st.status("Buscando proveedores en la web… (1 a 2 minutos). Espera a que termine antes de tocar "
+                   "otra cosa.", expanded=False) as estado:
         try:
             resultado = prov.buscar(lic, items, clave_api, cfg)
         except prov.ErrorBusqueda as e:
@@ -94,12 +102,10 @@ def _buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict) -> dict | N
         else:
             error = None
         if error:
-            ss.setdefault("prov_fallidas", set()).add(codigo)
             estado.update(label=error, state="error")
             return None
         ss.setdefault("prov_resultados", {})[codigo] = resultado
         _memoria()[codigo] = resultado
-        ss.get("prov_fallidas", set()).discard(codigo)
         try:
             prov.guardar(codigo, resultado, comun.secreto("github_token"), rama=cfg["rama"])
             _guardado.clear()
@@ -144,7 +150,7 @@ def _tabla(resultado: dict, items: list[dict]) -> None:
 def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
     """Proveedores (busca solo al abrir) y la solicitud de cotización, al final de la ficha."""
     codigo = lic["codigo"]
-    cfg = prov.configuracion()
+    cfg = _config()[0]
     clave_api = comun.secreto("anthropic_api_key")
     st.markdown("#### Proveedores")
     if not items:
@@ -203,7 +209,8 @@ def panel_correo(lic: dict, items: list[dict], proveedores: list[dict]) -> None:
     defecto = [x for x in elegido.get("lineas") or [] if x in productos] or todas
     lineas = b.multiselect("Líneas a cotizar", todas, default=defecto, key=f"cot_lineas_{codigo}_{i}",
                            format_func=lambda x: f"{x} · {productos[x][:40]}")
-    correo = prov.solicitud(lic, items, elegido, remitente(), hoy_chile(), lineas)
+    firma = remitente()
+    correo = prov.solicitud(lic, items, elegido, firma, hoy_chile(), lineas)
     correo["para"] = st.text_input("Para", correo["para"], key=f"cot_para_{codigo}_{i}",
                                    placeholder="correo del proveedor (búscalo en su web si no aparece)")
     st.text_input("Asunto", correo["asunto"], disabled=True, key=f"cot_asunto_{codigo}_{i}")
@@ -220,7 +227,7 @@ def panel_correo(lic: dict, items: list[dict], proveedores: list[dict]) -> None:
     avisos = ["Nada se envía solo: el correo se abre listo para que lo revises y lo envíes tú."]
     if len(gmail) > LARGO_GMAIL:
         avisos.append("Es muy largo para abrirlo con un enlace: copia el texto (botón del recuadro) o descárgalo.")
-    if any(str(v).startswith("[") for v in remitente().values()):
+    if any(str(v).startswith("[") for v in firma.values()):
         avisos.append("Tu firma está incompleta: agrega `[remitente]` (empresa, nombre, cargo, contacto) en los "
                       "secretos de la plataforma.")
     st.caption(" ".join(avisos))

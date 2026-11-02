@@ -25,6 +25,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+from .actualizacion import _cabeceras
 from .config import cargar_config
 
 CHILE = ZoneInfo("America/Santiago")
@@ -134,12 +135,18 @@ def _a_dict(bloque) -> dict:
     return bloque.model_dump() if hasattr(bloque, "model_dump") else dict(bloque)
 
 
+# Campos de los resultados que no son texto de una página: contenido cifrado (base64, con dígitos al
+# azar) e identificadores.
+_NO_ES_TEXTO = {"encrypted_content", "encrypted_index", "tool_use_id", "id", "type", "page_age", "media_type"}
+
+
 def _recorrer(valor, textos: list[str], urls: set[str]) -> None:
     if isinstance(valor, dict):
         for clave, v in valor.items():
             if clave == "url" and isinstance(v, str):
                 urls.add(v)
-            _recorrer(v, textos, urls)
+            if clave not in _NO_ES_TEXTO:
+                _recorrer(v, textos, urls)
     elif isinstance(valor, list):
         for v in valor:
             _recorrer(v, textos, urls)
@@ -148,12 +155,14 @@ def _recorrer(valor, textos: list[str], urls: set[str]) -> None:
 
 
 def evidencia(bloques: list) -> tuple[str, set[str]]:
-    """Texto y URLs de lo que Claude buscó y leyó (resultados de las herramientas, no su respuesta)."""
+    """Texto y URLs de lo que devolvieron las herramientas (resultados de búsqueda, páginas leídas y
+    su filtrado). No cuenta lo que escribió Claude: su respuesta, su razonamiento ni las consultas que
+    hizo (una consulta «ventas@empresa.cl» no prueba que ese correo exista)."""
     textos: list[str] = []
     urls: set[str] = set()
     for b in bloques:
         d = _a_dict(b)
-        if d.get("type") not in ("text", "thinking", "redacted_thinking"):
+        if str(d.get("type", "")).endswith("_tool_result"):
             _recorrer(d, textos, urls)
     return "\n".join(textos), urls
 
@@ -169,25 +178,41 @@ def _dominio(url: str | None) -> str:
         return ""
 
 
+def _correo_en(correo: str, texto: str) -> bool:
+    """El correo completo, no como parte de otro («to@x.cl» no está en «contacto@x.cl»)."""
+    return re.search(rf"(?<![\w.+-]){re.escape(correo)}(?![\w-])", texto, re.I) is not None
+
+
+def _telefono_en(telefono: str, texto: str) -> bool:
+    """Los últimos 8 dígitos seguidos (con espacios, puntos, guiones o paréntesis entre ellos) en un
+    mismo texto: no se juntan cifras de precios o códigos distintos."""
+    digitos = _solo_digitos(telefono)
+    if len(digitos) < 8:
+        return False
+    patron = r"[ .()\-]?".join(digitos[-8:])
+    return re.search(rf"(?<!\d){patron}(?!\d)", texto) is not None
+
+
 def depurar(proveedores: list[dict], texto: str, urls: set[str]) -> list[dict]:
     """Deja solo los datos que se pueden respaldar con lo que se leyó en la búsqueda.
 
-    Un correo queda si aparece escrito en una página leída; un teléfono, si sus dígitos aparecen.
+    Un correo queda si aparece escrito (completo) en lo que devolvieron las herramientas; un teléfono,
+    si sus últimos 8 dígitos aparecen seguidos en un mismo texto.
     Una fuente o web que no es un link (http/https) se descarta. `verificado` = la fuente es una de las páginas
     que devolvió la búsqueda."""
-    bajo = texto.lower()
-    digitos = _solo_digitos(texto)
     dominios = {_dominio(u) for u in urls}
     limpios = []
     for p in proveedores:
+        if not isinstance(p, dict):
+            continue
         p = dict(p)
         avisos = []
-        correo = (p.get("correo") or "").strip()
-        if correo and not (_CORREO.fullmatch(correo) and correo.lower() in bajo):
+        correo = str(p.get("correo") or "").strip()
+        if correo and not (_CORREO.fullmatch(correo) and _correo_en(correo, texto)):
             p["correo"] = None
             avisos.append("correo por confirmar")
-        telefono = (p.get("telefono") or "").strip()
-        if telefono and not (len(_solo_digitos(telefono)) >= 8 and _solo_digitos(telefono)[-8:] in digitos):
+        telefono = str(p.get("telefono") or "").strip()
+        if telefono and not _telefono_en(telefono, texto):
             p["telefono"] = None
             avisos.append("teléfono por confirmar")
         for campo in ("web", "fuente"):
@@ -196,7 +221,8 @@ def depurar(proveedores: list[dict], texto: str, urls: set[str]) -> list[dict]:
         p["verificado"] = bool(p.get("fuente")) and (p["fuente"] in urls or _dominio(p["fuente"]) in dominios)
         if avisos:
             p["nota"] = "; ".join(x for x in (p.get("nota"), *avisos) if x)
-        p["lineas"] = sorted({int(x) for x in p.get("lineas") or []})
+        lineas = p.get("lineas") if isinstance(p.get("lineas"), list) else []
+        p["lineas"] = sorted({int(x) for x in lineas if isinstance(x, int) or str(x).isdigit()})
         if p.get("nombre"):
             limpios.append(p)
     return limpios
@@ -303,18 +329,12 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
         "modelo": getattr(respuesta, "model", cfg["modelo"]),
         "busquedas": uso["busquedas"], "costo_usd": round(costo, 2),
         "resumen": datos.get("resumen") or "",
-        "proveedores": depurar(datos.get("proveedores") or [], texto, urls)[: cfg["maximo"]],
+        "proveedores": depurar(datos.get("proveedores") if isinstance(datos.get("proveedores"), list) else [],
+                               texto, urls)[: cfg["maximo"]],
     }
 
 
 # --- Rama `proveedores` del repositorio --------------------------------------------------------
-
-def _cabeceras(token: str | None) -> dict:
-    c = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
-    if token:
-        c["Authorization"] = f"Bearer {token}"
-    return c
-
 
 def _error(r: requests.Response) -> ErrorGitHub:
     if r.status_code == 401:
@@ -422,8 +442,10 @@ def solicitud(lic: dict, items: list[dict], proveedor: dict | None, remitente: d
     pedidos = [it for it in items if not elegidas or it.get("linea") in elegidas] or items
     agil = lic.get("tipo") == "Compra Ágil"
     nombre = proveedor.get("nombre") or "[Proveedor]"
-    cierre = (lic.get("fecha_cierre") or "")[:10]
-    cierre_txt = date.fromisoformat(cierre).strftime("%d-%m-%Y") if cierre else "próximamente"
+    try:
+        cierre_txt = date.fromisoformat((lic.get("fecha_cierre") or "")[:10]).strftime("%d-%m-%Y")
+    except ValueError:
+        cierre_txt = "próximamente"
     entrega = _destino(lic)
     plazo = lic.get("plazo_entrega_dias")
     firma = [x for x in (remitente.get("nombre"), remitente.get("cargo"), remitente.get("empresa"),

@@ -255,6 +255,12 @@ def plataforma(tmp_path, monkeypatch):
         (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
     monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
     monkeypatch.setattr(prov, "leer", lambda codigo, **k: None)    # sin red: nada guardado
+    # Las cachés de la plataforma viven en el proceso: se limpian para que una prueba no vea
+    # las búsquedas de otra.
+    monkeypatch.syspath_prepend(str(RAIZ / "plataforma"))
+    import cotizar
+    cotizar._memoria().clear()
+    cotizar._guardado.clear()
     guardados = []
     monkeypatch.setattr(prov, "guardar", lambda codigo, datos, token, **k: guardados.append((codigo, token)))
     return guardados
@@ -287,3 +293,85 @@ def test_ficha_busca_sola_al_abrir_guarda_y_arma_el_correo(plataforma, monkeypat
     assert at.code[-1].value.startswith("Estimados/as Sillas Pro:")
     at.run()                                                         # otra corrida: no vuelve a pagar la búsqueda
     assert llamadas == ["sk-prueba"]
+
+
+# --- Auditoría (02-11): casos que dejaban pasar datos inventados o rompían la ficha ------------------
+
+def test_evidencia_no_cuenta_lo_que_escribio_claude_ni_el_contenido_cifrado():
+    bloques = [
+        _Bloque(type="server_tool_use", name="web_search", input={"query": "ventas@inventado.cl 22223333"}),
+        _Bloque(type="web_search_tool_result", content=[_Bloque(
+            type="web_search_result", url="https://real.cl", title="Real", encrypted_content="QWx9 87654321 abc")]),
+        _Bloque(type="text", text="Escriban a ventas@inventado.cl"),
+    ]
+    texto, urls = prov.evidencia(bloques)
+    assert urls == {"https://real.cl"} and "Real" in texto
+    assert "inventado" not in texto and "87654321" not in texto
+    limpio = prov.depurar([{"nombre": "X", "correo": "ventas@inventado.cl", "telefono": "+56 2 8765 4321",
+                            "fuente": "https://real.cl"}], texto, urls)[0]
+    assert limpio["correo"] is None and limpio["telefono"] is None
+
+
+def test_correo_completo_y_telefono_en_un_mismo_texto():
+    texto = "Contacto: contacto@empresa.cl\nPrecio $12.345\nCódigo 678"
+    assert prov._correo_en("contacto@empresa.cl", texto)
+    assert not prov._correo_en("to@empresa.cl", texto)              # está dentro de otro correo
+    assert not prov._telefono_en("+56 9 1234 5678", texto)           # cifras de precio y código juntas
+    assert prov._telefono_en("+56 9 1234 5678", "Fono: +56 9 1234-5678")
+    assert prov._telefono_en("(2) 2345 6789", "Llámanos al 2 2345 6789")
+
+
+def test_depurar_tolera_respuestas_sin_el_formato_esperado():
+    limpio = prov.depurar(["texto suelto", {"nombre": "Y", "lineas": ["1-3", 2, "4"], "correo": 5}], "", set())
+    assert [p["nombre"] for p in limpio] == ["Y"]
+    assert limpio[0]["lineas"] == [2, 4] and limpio[0]["correo"] is None
+
+
+def test_solicitud_con_fecha_de_cierre_mal_formada():
+    c = prov.solicitud(LIC | {"fecha_cierre": "2026-11-1 15:00"}, ITEMS, None, {}, date(2026, 11, 2))
+    assert "el proceso cierra el próximamente" in c["cuerpo"]
+
+
+def test_el_correo_de_la_rutina_usa_el_mismo_plazo_de_respuesta():
+    import sys
+    sys.path.insert(0, str(RAIZ / "scripts"))
+    from evaluar_licitaciones import respuesta_antes
+    for cierre in ("2026-11-10 15:00:00", "2026-11-03 10:00:00", None, "mal"):
+        lic = {"fecha_cierre": cierre}
+        assert respuesta_antes(lic, date(2026, 11, 2)) == prov.responder_antes(lic, date(2026, 11, 2))
+
+
+def test_busqueda_interrumpida_no_se_repite_sola(plataforma, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+
+    llamadas = []
+
+    def lenta(lic, items, clave, cfg=None, **k):   # como si el usuario hubiera cortado la corrida
+        llamadas.append(clave)
+        raise prov.ErrorBusqueda("interrumpida")
+    monkeypatch.setattr(prov, "buscar", lenta)
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["anthropic_api_key"] = "sk-prueba"
+    at.run()
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert llamadas == ["sk-prueba"]                                  # la segunda corrida no vuelve a pagar
+    assert any("no terminó o no resultó" in c.value for c in at.caption)
+    assert any(b.label == "Buscar proveedores" for b in at.button)
+
+
+def test_lista_ignora_proveedores_sin_nombre(tmp_path, monkeypatch):
+    pytest.importorskip("streamlit")
+    import sys
+    sys.path.insert(0, str(RAIZ / "plataforma"))
+    import cotizar
+
+    carpeta = RAIZ / "informes" / "evaluacion" / "proveedores"
+    archivo = carpeta / "0-0-PRUEBA.json"
+    archivo.write_text(json.dumps([{"nombre": None}, {"nombre": "Con nombre"}]), encoding="utf-8")
+    try:
+        monkeypatch.setattr(cotizar, "busqueda", lambda codigo: {"proveedores": [{"nombre": None}]})
+        nombres = [p.get("nombre") for p in cotizar.lista("0-0-PRUEBA", [])]
+    finally:
+        archivo.unlink()
+    assert nombres == [None, "Con nombre"]

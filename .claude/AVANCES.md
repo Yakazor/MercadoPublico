@@ -64,6 +64,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
       EMT ni en servicios), tabla de proveedores y panel «Solicitud de cotización»; también en Evaluación
 - [x] «None» → «—» en todas las tablas (`placeholder`, Streamlit ≥ 1.66)
 - [x] Pruebas (521 OK) y revisión en Chromium con una búsqueda de ejemplo
+- [x] Auditoría (pedido del 02-11, 10 hallazgos, todos corregidos con prueba): la evidencia ya no incluye las
+      consultas de Claude ni el contenido cifrado; correo y teléfono se comparan completos (no como subcadena ni
+      contra dígitos pegados); una búsqueda automática interrumpida no se vuelve a pagar sola (queda el botón);
+      `depurar` tolera respuestas fuera de esquema; fecha de cierre mal formada → «próximamente»; proveedores sin
+      nombre se saltan; `responder_antes` y las cabeceras de GitHub ya no están duplicadas; `config.yaml` se lee
+      una vez (caché). 528 pruebas OK
 - [ ] La usuaria agrega `anthropic_api_key` en los secretos de Streamlit y el permiso Contents: Read and write
       al `github_token`; probar una búsqueda real (no se pudo probar la API desde la sesión: sin clave)
 - [ ] Unir el PR
@@ -101,6 +107,8 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 - 2026-11-02 (pedido de la usuaria): proveedores al abrir la ficha y correo de solicitud de cotización (ver
   «Última tarea»). Costo por búsqueda ~US$0,20–0,40 con `claude-opus-5-5`; se configura en `config.yaml >
   proveedores`. Rama `feature/buscar-proveedores`; 521 pruebas OK.
+  Auditoría el mismo día: 10 hallazgos corregidos (detalle en «Última tarea»); las pruebas de la ficha limpian
+  las cachés de `cotizar` para no verse entre sí. 528 pruebas OK.
 
 - 2026-11-01 (pedido de la usuaria «Actualiza todo», 21:29 UTC): radar, OC y Compras Ágiles disparados (OK; `datos`
   del 01-11 18:37, 462 licitaciones, 1.527 Compras Ágiles, ninguna de 2º llamado). Precios con WebSearch (sin

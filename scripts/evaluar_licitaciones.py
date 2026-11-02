@@ -22,7 +22,7 @@ import argparse
 import json
 import shutil
 from collections import Counter
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
 from openpyxl import Workbook
@@ -36,6 +36,7 @@ from radar.config import cargar_config, hoy_chile, ruta_proyecto
 from radar.evaluacion import NO_GO, evaluar, puntaje
 from radar.plataforma import dias_al_cierre, supuestos_config
 from radar.presupuesto import armar_presupuesto
+from radar.proveedores import responder_antes
 
 URL_LICITACION = "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={}"
 REMITENTE = {"empresa": "[Empresa]", "nombre": "[Nombre]", "cargo": "[Cargo]", "contacto": "[Contacto]"}
@@ -82,9 +83,9 @@ def observaciones(lic: dict, ev) -> str:
 
 
 def respuesta_antes(lic: dict, hoy: date) -> date:
-    """Dos días antes del cierre, sin pasar de hoy + 3 ni quedar antes de mañana."""
-    cierre = date.fromisoformat((lic.get("fecha_cierre") or "")[:10]) if lic.get("fecha_cierre") else hoy + timedelta(5)
-    return max(hoy + timedelta(1), min(cierre - timedelta(2), hoy + timedelta(3)))
+    """Dos días antes del cierre, sin pasar de hoy + 3 ni quedar antes de mañana (la misma regla del
+    correo de solicitud de cotización de la plataforma)."""
+    return responder_antes(lic, hoy)
 
 
 def proveedores(codigo: str, mercado: dict, carpeta: Path) -> list[dict]:
