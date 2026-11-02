@@ -54,6 +54,25 @@ def _sumar_automatica() -> None:
     cuenta[hoy] = cuenta.get(hoy, 0) + 1
 
 
+@st.cache_resource
+def _gasto() -> dict:
+    """{fecha: US$} gastados en búsquedas hoy, sumando todas las sesiones (se reinicia si la
+    plataforma se reinicia: el tope firme es el límite de gasto de console.anthropic.com)."""
+    return {}
+
+
+def gasto_hoy() -> float:
+    return _gasto().get(hoy_chile().isoformat(), 0.0)
+
+
+def _sumar_gasto(usd: float) -> None:
+    hoy = hoy_chile().isoformat()
+    gasto = _gasto()
+    for fecha in [f for f in gasto if f != hoy]:
+        gasto.pop(fecha, None)
+    gasto[hoy] = gasto.get(hoy, 0.0) + (usd or 0.0)
+
+
 def _memoria() -> dict:
     return comun.busquedas_en_memoria()
 
@@ -111,29 +130,45 @@ def _motivo_sin_auto(lic: dict, cfg: dict, items: list[dict] | None = None, merc
     return None
 
 
+def _mensaje_error(e: Exception) -> str:
+    import anthropic
+    if isinstance(e, prov.ErrorBusqueda):
+        return str(e)
+    if isinstance(e, anthropic.AuthenticationError):
+        return "La clave de la API de Claude (secreto anthropic_api_key) no es válida."
+    if isinstance(e, anthropic.PermissionDeniedError):
+        return "La clave de la API de Claude no tiene permiso para buscar en la web."
+    if isinstance(e, anthropic.RateLimitError):
+        return "La API de Claude pidió esperar un poco (límite de uso). Intenta en unos minutos."
+    if isinstance(e, anthropic.BadRequestError) and "credit" in str(e).lower():
+        return "Se acabó el saldo de la API de Claude: recarga en console.anthropic.com › Facturación."
+    if isinstance(e, anthropic.APIStatusError):
+        return f"La API de Claude respondió con un error ({e.status_code}). Intenta de nuevo."
+    return "No hubo conexión con la API de Claude. Intenta de nuevo."
+
+
 def _buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict) -> dict | None:
     import anthropic
     codigo = lic["codigo"]
     ss = st.session_state
+    tope = cfg.get("tope_usd_diario") or 0
+    if tope and gasto_hoy() >= tope:
+        st.warning(f"Ya se gastaron US$ {gasto_hoy():.2f} hoy en búsquedas (tope diario US$ {tope:.2f}, "
+                   "`proveedores.tope_usd_diario`). Vuelve mañana o sube el tope.")
+        return None
     ss.setdefault("prov_intentadas", set()).add(codigo)
     with st.status("Buscando proveedores y precios en la web… (2 a 3 minutos). Espera a que termine antes de tocar "
                    "otra cosa.", expanded=False) as estado:
         try:
             resultado = prov.buscar(lic, items, clave_api, cfg)
-        except prov.ErrorBusqueda as e:
-            error = str(e)
-        except anthropic.AuthenticationError:
-            error = "La clave de la API de Claude (secreto anthropic_api_key) no es válida."
-        except anthropic.PermissionDeniedError:
-            error = "La clave de la API de Claude no tiene permiso para buscar en la web."
-        except anthropic.RateLimitError:
-            error = "La API de Claude pidió esperar un poco (límite de uso). Intenta en unos minutos."
-        except anthropic.APIStatusError as e:
-            error = f"La API de Claude respondió con un error ({e.status_code}). Intenta de nuevo."
-        except anthropic.APIConnectionError:
-            error = "No hubo conexión con la API de Claude. Intenta de nuevo."
+        except Exception as e:
+            _sumar_gasto(getattr(e, "costo_usd", 0.0))   # lo que alcanzó a gastar antes del error
+            if not isinstance(e, (prov.ErrorBusqueda, anthropic.APIError)):
+                raise
+            error = _mensaje_error(e)
         else:
             error = None
+            _sumar_gasto(resultado.get("costo_usd") or 0.0)
         if error:
             estado.update(label=error, state="error")
             return None
@@ -240,6 +275,9 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
     cfg = _config()[0]
     clave_api = comun.secreto("anthropic_api_key")
     st.markdown("#### Proveedores")
+    if clave_api and cfg.get("tope_usd_diario"):
+        st.caption(f"Gastado hoy en búsquedas: US$ {gasto_hoy():.2f} de US$ {cfg['tope_usd_diario']:.2f} "
+                   f"(modelo {cfg['modelo']}).")
     if not items:
         st.caption("Sin ítems en el radar: revisa la ficha en Mercado Público para saber qué cotizar.")
         return

@@ -43,10 +43,13 @@ IVA = 0.19
 INDICE_PRECIOS = "precios.json"   # {código: [precios]} de todas las búsquedas, para la evaluación
 ORIGEN_PRECIO = "Búsqueda con Claude"
 CONFIG = {
-    "modelo": "claude-opus-5-5",
+    "modelo": "claude-haiku-5-5",
     "esfuerzo": "medium",
-    "max_busquedas": 8,
-    "max_paginas": 12,
+    "max_busquedas": 5,
+    "max_paginas": 6,
+    "max_tokens_pagina": 8000,        # cada página leída se corta aquí (las de tienda traen menús y listados)
+    "tope_usd_por_busqueda": 0.60,    # se corta la búsqueda si lo pasa
+    "tope_usd_diario": 3.0,           # suma de todas las búsquedas del día en la plataforma
     "maximo": 6,
     "precios_por_linea": 3,
     "buscar_al_abrir": True,
@@ -77,7 +80,7 @@ def herramientas(cfg: dict) -> list[dict]:
         {"type": "web_search_20250305" if basicas else "web_search_20260209", "name": "web_search",
          "max_uses": cfg["max_busquedas"], "user_location": _usuario_chile()},
         {"type": "web_fetch_20250910" if basicas else "web_fetch_20260209", "name": "web_fetch",
-         "max_uses": cfg["max_paginas"]},
+         "max_uses": cfg["max_paginas"], "max_content_tokens": cfg["max_tokens_pagina"]},
     ]
 
 
@@ -137,7 +140,10 @@ ESQUEMA = {
 
 
 class ErrorBusqueda(Exception):
-    pass
+    """`costo_usd`: lo que alcanzó a gastar la búsqueda antes de cortarse (0 si la API la rechazó)."""
+    def __init__(self, mensaje: str, costo_usd: float = 0.0):
+        super().__init__(mensaje)
+        self.costo_usd = costo_usd
 
 
 class ErrorGitHub(Exception):
@@ -175,6 +181,18 @@ def pedido(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
         "mayoristas o tiendas que vendan a empresas) que puedan cotizar estos productos. Prefiere a los que "
         "cubren más líneas, a los que venden por volumen y a los que están en la región de entrega o en "
         "Santiago. Excluye vendedores particulares, avisos clasificados y tiendas sin despacho en Chile.\n\n"
+        f"Cómo trabajar (presupuesto limitado: {cfg['max_busquedas']} búsquedas y {cfg['max_paginas']} páginas "
+        "en total, cada una cuesta):\n"
+        "1. Planifica antes de buscar: agrupa las líneas parecidas (p. ej. todas las de ferretería) y haz una "
+        "búsqueda por grupo, no una por línea. Usa el nombre genérico del producto y la medida clave, en "
+        "español, sin marcas salvo que el pedido exija una.\n"
+        "2. Prefiere tiendas que venden varias líneas del pedido (un proveedor que cubre 5 líneas vale más que "
+        "5 proveedores de una).\n"
+        "3. Abre solo páginas de producto (con precio) o de contacto. No abras portadas, categorías, "
+        "resultados de búsqueda internos, PDF ni catálogos largos. Si un resultado de búsqueda ya muestra el "
+        "precio y la URL del producto, igual abre esa página: solo vale el precio escrito en una página abierta.\n"
+        "4. No repitas búsquedas parecidas ni abras dos veces la misma página. Cuando tengas un precio para "
+        "las líneas de mayor cantidad, termina: es mejor una respuesta parcial que agotar el presupuesto.\n\n"
         "Reglas:\n"
         "- Usa la búsqueda web en español y en el mercado chileno (.cl).\n"
         "- Para el correo y el teléfono abre la página de contacto del proveedor (lectura de páginas) y copia "
@@ -368,14 +386,25 @@ def _pedidos(cliente, cfg: dict, herramientas: list[dict]) -> list:
     ]
 
 
-def _conversar(crear, opciones: dict, texto: str) -> tuple:
+def _conversar(crear, opciones: dict, texto: str, cfg: dict | None = None) -> tuple:
     """Un pedido completo: si el servidor pausa su ciclo de herramientas («pause_turn»), se
-    reenvía la conversación para que siga. Devuelve la última respuesta, los bloques y el uso."""
+    reenvía la conversación para que siga. Devuelve la última respuesta, los bloques y el uso.
+
+    Cada ronda reenvía todo lo leído, así que el costo crece rápido: si lo gastado pasa
+    `tope_usd_por_busqueda`, se corta (ErrorBusqueda con lo gastado). Si la API falla a mitad de
+    camino, el error lleva `costo_usd` con lo que ya se había gastado."""
+    cfg = cfg or {}
+    tope = cfg.get("tope_usd_por_busqueda")
     mensajes = [{"role": "user", "content": texto}]
     bloques, uso = [], {"entrada": 0, "salida": 0, "busquedas": 0, "peticiones": []}
     respuesta = None
     for _ in range(4):
-        respuesta = crear(messages=mensajes, **opciones)
+        try:
+            respuesta = crear(messages=mensajes, **opciones)
+        except Exception as e:
+            if uso["peticiones"]:   # ya había gastado: que se sepa cuánto
+                e.costo_usd = costo_usd(opciones.get("model", ""), uso["peticiones"], uso["busquedas"], cfg)
+            raise
         bloques += list(respuesta.content)
         u = respuesta.usage
         entrada = (u.input_tokens or 0) + (getattr(u, "cache_read_input_tokens", 0) or 0)
@@ -385,6 +414,11 @@ def _conversar(crear, opciones: dict, texto: str) -> tuple:
         uso["busquedas"] += getattr(getattr(u, "server_tool_use", None), "web_search_requests", 0) or 0
         if respuesta.stop_reason != "pause_turn":
             break
+        gastado = costo_usd(opciones.get("model", ""), uso["peticiones"], uso["busquedas"], cfg)
+        if tope and gastado >= tope:
+            raise ErrorBusqueda(f"Se detuvo al llegar al tope de US$ {tope:.2f} por búsqueda "
+                                f"(gastó US$ {gastado:.2f}). Sube `proveedores.tope_usd_por_busqueda` si hace falta.",
+                                gastado)
         mensajes.append({"role": "assistant", "content": respuesta.content})
     return respuesta, bloques, uso
 
@@ -448,29 +482,37 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
     cfg = cfg or configuracion()
     cliente = cliente or _cliente(clave_api)
     texto_pedido = pedido(lic, items, cfg)
-    motivo = ""
+    motivo, gastado = "", 0.0   # gastado: lo que cobraron intentos que fallaron a mitad de camino
+    respuesta = None
     for crear, opciones, pedir_json in _pedidos(cliente, cfg, herramientas(cfg)):
         try:
-            respuesta, bloques, uso = _conversar(crear, opciones, texto_pedido + (_SOLO_JSON if pedir_json else ""))
+            respuesta, bloques, uso = _conversar(crear, opciones, texto_pedido + (_SOLO_JSON if pedir_json else ""),
+                                                 cfg)
             break
-        except _rechazos() as e:   # 400: la API no aceptó estas opciones (no se cobra); se prueba más simple
+        except _rechazos() as e:   # 400: la API no aceptó estas opciones; se prueba más simple
             motivo = str(getattr(e, "message", "") or e)
-            continue
-    else:
-        raise ErrorBusqueda("La API de Claude no aceptó la búsqueda (no se cobra)" + (f": {motivo[:300]}" if motivo else ".")
-                            + " Intenta de nuevo más tarde.")
-    if respuesta is None or respuesta.stop_reason == "refusal":
-        raise ErrorBusqueda("Claude no hizo esta búsqueda (la rechazó). Intenta de nuevo más tarde.")
+            gastado += getattr(e, "costo_usd", 0.0)
+            if "credit" in motivo.lower():   # sin saldo: los demás intentos también fallarían
+                break
+    if respuesta is None:
+        sin_saldo = "credit" in motivo.lower()
+        raise ErrorBusqueda(("Se acabó el saldo de la API de Claude: recarga en console.anthropic.com › Facturación."
+                             if sin_saldo else "La API de Claude no aceptó la búsqueda"
+                             + (f": {motivo[:300]}" if motivo else ".") + " Intenta de nuevo más tarde."), gastado)
+    modelo = getattr(respuesta, "model", None) or cfg["modelo"]
+    costo = gastado + costo_usd(modelo, uso["peticiones"], uso["busquedas"], cfg)
+    if respuesta.stop_reason == "refusal":
+        raise ErrorBusqueda("Claude no hizo esta búsqueda (la rechazó). Intenta de nuevo más tarde.", costo)
     if respuesta.stop_reason == "max_tokens":
-        raise ErrorBusqueda("La respuesta quedó cortada. Intenta de nuevo.")
+        raise ErrorBusqueda("La respuesta quedó cortada. Intenta de nuevo.", costo)
+    if respuesta.stop_reason == "pause_turn":
+        raise ErrorBusqueda("La búsqueda no terminó en las rondas permitidas. Intenta de nuevo.", costo)
     textos = [b.text for b in respuesta.content if getattr(b, "type", "") == "text"]
     datos = _json_del_texto(textos[-1]) if textos else None
     if not isinstance(datos, dict):
-        raise ErrorBusqueda("No se pudo leer la lista de proveedores. Intenta de nuevo.")
+        raise ErrorBusqueda("No se pudo leer la lista de proveedores. Intenta de nuevo.", costo)
     texto, urls = evidencia(bloques)
     fecha = (ahora or datetime.now(CHILE)).isoformat(timespec="minutes")
-    modelo = getattr(respuesta, "model", None) or cfg["modelo"]
-    costo = costo_usd(modelo, uso["peticiones"], uso["busquedas"], cfg)
     return {
         "codigo": lic.get("codigo"),
         "fecha": fecha,

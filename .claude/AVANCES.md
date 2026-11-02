@@ -112,6 +112,14 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (pedido de la usuaria: Haiku y que no vuelva a gastar de más; la prueba quemó ~US$15):
+  `proveedores.modelo: claude-haiku-5-5`, 5 búsquedas y 6 páginas (antes 8 y 12), cada página cortada en 8.000
+  tokens (`max_content_tokens`), `tope_usd_por_busqueda` 0,60 (se corta entre rondas y el error informa lo
+  gastado) y `tope_usd_diario` 3,0 en la plataforma (suma todas las sesiones; se reinicia si la app se
+  reinicia). Sin saldo no reintenta y lo dice. El pedido a Claude ahora trae «Cómo trabajar»: agrupar líneas
+  por búsqueda, abrir solo páginas de producto o contacto, no repetir, terminar con respuesta parcial.
+  `buscar_al_abrir` sigue apagada. Recomendado a la usuaria: límite de gasto en console.anthropic.com.
+
 - 2026-11-02 (comparación de modelos con la clave de la usuaria): 4 corridas de «Comparar modelos de búsqueda»
   (nº 1 y 3 canceladas, nº 2 completa, nº 4 cancelada porque el saldo bajó de US$10,01 a 1,46). Gasto total
   ~US$12. La nº 2: Haiku en 1057448-53-LE26 (sillas) 6 proveedores, 11 precios, 7/7 líneas, US$0,31; Sonnet en

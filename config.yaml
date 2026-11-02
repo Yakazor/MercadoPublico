@@ -1688,10 +1688,16 @@ evaluacion:
 # de solicitud de cotización. Cada búsqueda cuesta de ~US$0,30 (Haiku) a ~US$2 (Opus), según el modelo y las páginas que lea y queda
 # guardada en la rama `proveedores` (con el secreto `github_token`), así que no se paga dos veces.
 proveedores:
-  modelo: "claude-opus-5-5"
+  # Claude Haiku 5.5 (02-11): en la prueba encontró precio para 7/7 líneas por US$0,31; Opus gastó
+  # ~US$1,5–2 por búsqueda. Otros: claude-sonnet-5-5 (~US$0,50) o claude-opus-5-5 (caro).
+  modelo: "claude-haiku-5-5"
   esfuerzo: "medium"             # low / medium / high: más esfuerzo, búsquedas más completas y caras
-  max_busquedas: 8               # búsquedas web por licitación
-  max_paginas: 12                # páginas que Claude abre (contacto de proveedores y páginas de producto)
+  max_busquedas: 5               # búsquedas web por licitación (US$0,01 cada una)
+  max_paginas: 6                 # páginas que Claude abre: cada una se reenvía en cada ronda (lo que más gasta)
+  max_tokens_pagina: 8000        # cada página se corta en este largo
+  tope_usd_por_busqueda: 0.60    # la búsqueda se corta si pasa este gasto
+  tope_usd_diario: 3.0           # suma de las búsquedas del día en la plataforma (además pon un límite en
+                                 # console.anthropic.com › Facturación › Límites de gasto)
   maximo: 6                      # proveedores por licitación
   precios_por_linea: 3           # alternativas de precio por línea, de fuentes distintas (la evaluación usa la más barata)
   # Apagada el 02-11: en la prueba, Claude Opus gastó ~US$1,5–2 por búsqueda (lee hasta 12 páginas y las

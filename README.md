@@ -463,8 +463,10 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
   además permiso **Contents: Read and write**), así que no se paga dos veces. Un correo o teléfono solo
   aparece si estaba escrito en una página que Claude leyó; si no, queda «por confirmar». Sin la clave se
   muestran los proveedores de la rutina diaria o las tiendas con precio, y el correo igual queda listo.
-  Se ajusta en `config.yaml > proveedores` (modelo, búsquedas, `precios_por_linea`, tope diario de búsquedas automáticas,
-  o `buscar_al_abrir: false` para buscar solo con el botón).
+  Se ajusta en `config.yaml > proveedores`: modelo (Claude Haiku 5.5 por defecto, el más barato), búsquedas y
+  páginas por licitación, `tope_usd_por_busqueda` (US$0,60: la búsqueda se corta al pasarlo),
+  `tope_usd_diario` (US$3, sumando todas las sesiones) y `buscar_al_abrir` (apagada: busca solo con el botón).
+  El tope firme es el **límite de gasto** de console.anthropic.com › Facturación.
 - **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
   este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la
   clave, no la clave). «Cerrar sesión», arriba a la derecha, la olvida; cambiar la clave en los

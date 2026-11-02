@@ -10,7 +10,7 @@ import pytest
 from radar import proveedores as prov
 
 RAIZ = Path(__file__).resolve().parents[1]
-CFG = prov.CONFIG
+CFG = prov.CONFIG | {"modelo": "claude-opus-5-5"}   # la cadena completa de pedidos (con respaldo de modelo)
 LIC = {"codigo": "2-2-COT26", "nombre": "Mochilas escolares", "organismo": "Municipalidad de Lo Prado",
        "tipo": "Compra Ágil", "region": "Región Metropolitana de Santiago", "comuna": "Lo Prado",
        "direccion_entrega": "Av. San Pablo 5959", "fecha_cierre": "2026-11-10 15:00:00", "plazo_entrega_dias": 5.0}
@@ -286,6 +286,7 @@ def plataforma(tmp_path, monkeypatch):
     import cotizar
     cotizar._memoria().clear()
     cotizar._automaticas().clear()
+    cotizar._gasto().clear()
     # config.yaml la tiene apagada (gasto): estas pruebas ven la búsqueda automática encendida.
     original = prov.configuracion
     monkeypatch.setattr(prov, "configuracion", lambda: original() | {"buscar_al_abrir": True})
@@ -609,3 +610,45 @@ def test_con_la_busqueda_automatica_apagada_solo_busca_con_el_boton(plataforma, 
     assert llamadas == [] and any("apagada" in c.value for c in at.caption)
     next(b for b in at.button if b.label == "Buscar proveedores").click().run()
     assert llamadas == ["sk-prueba"]
+
+
+def test_la_busqueda_se_corta_al_pasar_el_tope_de_gasto():
+    # Cada ronda de la prueba son 20.000 tokens de entrada y 3.000 de salida con Opus: US$0,14 + 2 búsquedas.
+    pausas = [_respuesta([_Bloque(type="text", text="...")], stop="pause_turn") for _ in range(4)]
+    cfg = CFG | {"tope_usd_por_busqueda": 0.25}
+    cliente = _Cliente(pausas)
+    with pytest.raises(prov.ErrorBusqueda, match="tope de US\\$ 0.25") as e:
+        prov.buscar(LIC, ITEMS, "c", cfg, cliente=cliente)
+    assert len(cliente.pedidos) == 2 and e.value.costo_usd >= 0.25          # no siguió gastando
+
+
+def test_sin_saldo_no_reintenta_y_lo_dice(monkeypatch):
+    monkeypatch.setattr(prov, "_rechazos", lambda: (_Rechazo,))
+    cliente = _Cliente([_Rechazo("Your credit balance is too low to access the Anthropic API.")])
+    with pytest.raises(prov.ErrorBusqueda, match="saldo"):
+        prov.buscar(LIC, ITEMS, "c", CFG, cliente=cliente)
+    assert len(cliente.pedidos) == 1
+
+
+def test_haiku_por_defecto_con_paginas_cortas():
+    cfg = prov.CONFIG
+    assert cfg["modelo"] == "claude-haiku-5-5"
+    lectura = next(h for h in prov.herramientas(cfg) if h["name"] == "web_fetch")
+    assert lectura["max_content_tokens"] == cfg["max_tokens_pagina"] and lectura["max_uses"] == cfg["max_paginas"]
+    assert "Planifica antes de buscar" in prov.pedido(LIC, ITEMS, cfg)
+
+
+def test_tope_diario_de_gasto_en_la_plataforma(plataforma, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    import cotizar
+
+    llamadas = []
+    monkeypatch.setattr(prov, "buscar", lambda lic, items, clave, cfg=None, **k: llamadas.append(clave) or ENCONTRADOS)
+    cotizar._gasto().clear()
+    cotizar._gasto()[cotizar.hoy_chile().isoformat()] = 99.0
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["anthropic_api_key"] = "sk-prueba"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert llamadas == [] and any("tope diario" in w.value for w in at.warning)
+    cotizar._gasto().clear()
