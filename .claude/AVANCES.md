@@ -112,6 +112,16 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-02 (prueba de modelos, pedido de la usuaria): la búsqueda de proveedores elige modelo en
+  `config.yaml > proveedores.modelo` (Opus 5.5, Sonnet 5.5 o Haiku 5.5). Haiku usa las herramientas web básicas
+  (`web_search_20250305`/`web_fetch_20250910`) y no tiene respaldo de modelo; el costo se calcula con la tarifa
+  de cada modelo (`TARIFAS`, Haiku con tarifa larga sobre 100 mil tokens). La comparación no se pudo correr
+  desde Claude Code: la API responde 400 «Requests sent from a sandbox with restricted network access are not
+  allowed to use tool web_fetch» (no se cobra). Nuevo workflow **«Comparar modelos de búsqueda»**
+  (`scripts/comparar_modelos.py`), que necesita el secreto de repositorio `ANTHROPIC_API_KEY`. El error 400
+  ahora muestra el motivo de la API. La clave que la usuaria pegó en el chat no quedó en ningún archivo:
+  recomendar rotarla en console.anthropic.com después de guardarla en Streamlit y GitHub.
+
 - 2026-11-02 (ideas de mejora, pedido de la usuaria «aplícalas»):
   - **⚪ FALTA PRECIO** (`evaluacion.FALTA_PRECIO`): con precio para menos del 80 % de las líneas
     (`evaluacion.cobertura_minima`) no hay GO; antes salía «GO con condiciones» con el margen de una parte del

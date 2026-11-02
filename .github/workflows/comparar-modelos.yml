@@ -1,0 +1,61 @@
+name: Comparar modelos de búsqueda
+
+# Busca proveedores y precios de las mismas licitaciones con cada modelo de Claude y deja una tabla
+# en el resumen de la corrida (proveedores, precios, líneas cubiertas, verificados, costo y tiempo).
+# Necesita el secreto del repositorio ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions).
+# Cada búsqueda cuesta unos US$0,10–0,80 en la cuenta de esa clave; no guarda nada en el repositorio.
+# Corre aquí y no en Claude Code: la lectura de páginas (web_fetch) no se permite desde un entorno
+# con la red restringida.
+on:
+  workflow_dispatch:
+    inputs:
+      codigos:
+        description: "Códigos de licitación separados por espacio"
+        required: true
+        default: "1057448-53-LE26 1362-13-LE26 1090-17-LE26"
+      modelos:
+        description: "Modelos separados por espacio"
+        required: true
+        default: "claude-opus-5-5 claude-sonnet-5-5 claude-haiku-5-5"
+
+jobs:
+  comparar:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Datos publicados (rama datos)
+        run: |
+          mkdir -p "$RUNNER_TEMP/datos"
+          for f in licitaciones items; do
+            curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/datos/$f.json" -o "$RUNNER_TEMP/datos/$f.json"
+          done
+
+      - name: Comparar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CODIGOS: ${{ inputs.codigos }}
+          MODELOS: ${{ inputs.modelos }}
+        run: |
+          set -o pipefail
+          # Solo caracteres de códigos y nombres de modelo (nada que el shell interprete).
+          CODIGOS=$(echo "$CODIGOS" | tr -cd 'A-Za-z0-9 -')
+          MODELOS=$(echo "$MODELOS" | tr -cd 'a-z0-9 -')
+          python scripts/comparar_modelos.py --datos "$RUNNER_TEMP/datos" --codigos $CODIGOS --modelos $MODELOS \
+            --salida comparacion | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: comparacion-modelos-${{ github.run_number }}
+          path: comparacion
+          retention-days: 14
+          if-no-files-found: ignore

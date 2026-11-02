@@ -571,3 +571,18 @@ def test_no_busca_sola_si_ya_hay_precios_o_el_monto_es_bajo(plataforma, monkeypa
     at.run()
     assert not at.exception, [e.value for e in at.exception]
     assert llamadas == [] and any("Monto estimado bajo" in c.value for c in at.caption)
+
+
+def test_herramientas_y_costo_segun_el_modelo():
+    opus = prov.configuracion() | {"modelo": "claude-opus-5-5"}
+    haiku = opus | {"modelo": "claude-haiku-5-5"}
+    assert {h["type"] for h in prov.herramientas(opus)} == {"web_search_20260209", "web_fetch_20260209"}
+    assert {h["type"] for h in prov.herramientas(haiku)} == {"web_search_20250305", "web_fetch_20250910"}
+    # Haiku no tiene respaldo de modelo: parte directo con el pedido normal.
+    assert len(prov._pedidos(_Cliente([]), haiku, [])) == 2 and len(prov._pedidos(_Cliente([]), opus, [])) == 3
+    usos = [(50_000, 2_000), (150_000, 4_000)]
+    assert prov.costo_usd("claude-opus-5-5", usos, 5) == pytest.approx((200_000 * 4 + 6_000 * 20) / 1e6 + 0.05)
+    assert prov.costo_usd("claude-sonnet-5-5", usos, 0) == pytest.approx((200_000 * 2 + 6_000 * 10) / 1e6)
+    # Haiku: la petición de más de 100 mil tokens va a la tarifa larga.
+    assert prov.costo_usd("claude-haiku-5-5", usos, 0) == pytest.approx(
+        (50_000 * 0.10 + 2_000 * 0.50 + 150_000 * 0.50 + 4_000 * 2.50) / 1e6)

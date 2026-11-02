@@ -1700,9 +1700,7 @@ proveedores:
   # monto estimado llega a este mínimo (sin monto publicado sí busca). Con el botón se puede buscar igual.
   monto_minimo_al_abrir: 1000000
   rama: "proveedores"
-  precio_usd:                    # para estimar el costo de cada búsqueda
-    entrada_mtok: 4.0
-    salida_mtok: 20.0
+  precio_usd:                    # búsqueda web (las tarifas por token de cada modelo están en radar/proveedores.py)
     busqueda: 0.01
 
 # Órdenes de compra: para los precios basta una muestra. Se piden a lo más estas

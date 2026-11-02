@@ -53,8 +53,45 @@ CONFIG = {
     "maximo_al_abrir_por_dia": 10,
     "monto_minimo_al_abrir": 1_000_000,
     "rama": "proveedores",
-    "precio_usd": {"entrada_mtok": 4.0, "salida_mtok": 20.0, "busqueda": 0.01},
+    "precio_usd": {"busqueda": 0.01},
 }
+# US$ por millón de tokens (entrada, salida) de cada modelo. Claude Haiku 5.5 cobra más cuando una
+# petición pasa de 100 mil tokens de entrada (lo normal al leer varias páginas).
+TARIFAS = {
+    "claude-opus-5-5": (4.0, 20.0),
+    "claude-sonnet-5-5": (2.0, 10.0),
+    "claude-haiku-5-5": (0.10, 0.50),
+}
+TARIFA_HAIKU_LARGA = (0.50, 2.50)
+
+
+def _es_haiku(modelo: str) -> bool:
+    return "haiku" in (modelo or "")
+
+
+def herramientas(cfg: dict) -> list[dict]:
+    """Búsqueda y lectura web. Con filtrado dinámico (menos tokens) en Opus y Sonnet; Claude Haiku 5.5
+    solo acepta las versiones básicas."""
+    basicas = _es_haiku(cfg["modelo"])
+    return [
+        {"type": "web_search_20250305" if basicas else "web_search_20260209", "name": "web_search",
+         "max_uses": cfg["max_busquedas"], "user_location": _usuario_chile()},
+        {"type": "web_fetch_20250910" if basicas else "web_fetch_20260209", "name": "web_fetch",
+         "max_uses": cfg["max_paginas"]},
+    ]
+
+
+def costo_usd(modelo: str, usos: list[tuple[int, int]], busquedas: int, cfg: dict | None = None) -> float:
+    """Costo aproximado: tokens de cada petición a la tarifa del modelo, más las búsquedas web. Si el
+    modelo no está en TARIFAS se usa `precio_usd.entrada_mtok`/`salida_mtok` de config (o la de Opus)."""
+    precio = (cfg or {}).get("precio_usd") or {}
+    base = next((t for m, t in TARIFAS.items() if (modelo or "").startswith(m)),
+                (precio.get("entrada_mtok", 4.0), precio.get("salida_mtok", 20.0)))
+    total = 0.0
+    for entrada, salida in usos:
+        tarifa = TARIFA_HAIKU_LARGA if _es_haiku(modelo) and entrada > 100_000 else base
+        total += (entrada * tarifa[0] + salida * tarifa[1]) / 1e6
+    return total + busquedas * precio.get("busqueda", 0.01)
 _CORREO = re.compile(r"[\w.+-]+@[\w-]+(\.[\w-]+)+")
 _NULO = {"anyOf": [{"type": "string"}, {"type": "null"}]}
 ESQUEMA = {
@@ -317,13 +354,15 @@ _SOLO_JSON = ("\n\nResponde solo con un objeto JSON, sin texto antes ni después
 
 
 def _pedidos(cliente, cfg: dict, herramientas: list[dict]) -> list:
-    """Del pedido más completo al más simple: con respaldo de modelo (si Claude Opus rechaza la
-    petición, la retoma otro modelo) y JSON garantizado; sin respaldo; y sin el formato JSON."""
+    """Del pedido más completo al más simple: con respaldo de modelo (si Claude rechaza la petición,
+    la retoma otro modelo; Claude Haiku 5.5 no tiene respaldo) y JSON garantizado; sin respaldo; y sin
+    el formato JSON."""
     formato = {"effort": cfg["esfuerzo"], "format": {"type": "json_schema", "schema": ESQUEMA}}
     base = {"model": cfg["modelo"], "max_tokens": 16000, "tools": herramientas}
-    return [
+    con_respaldo = [] if _es_haiku(cfg["modelo"]) else [
         (cliente.beta.messages.create, base | {"output_config": formato, "betas": ["server-side-fallback-2026-07-01"],
-                                               "fallbacks": "default"}, False),
+                                               "fallbacks": "default"}, False)]
+    return con_respaldo + [
         (cliente.messages.create, base | {"output_config": formato}, False),
         (cliente.messages.create, base | {"output_config": {"effort": cfg["esfuerzo"]}}, True),
     ]
@@ -333,14 +372,16 @@ def _conversar(crear, opciones: dict, texto: str) -> tuple:
     """Un pedido completo: si el servidor pausa su ciclo de herramientas («pause_turn»), se
     reenvía la conversación para que siga. Devuelve la última respuesta, los bloques y el uso."""
     mensajes = [{"role": "user", "content": texto}]
-    bloques, uso = [], {"entrada": 0, "salida": 0, "busquedas": 0}
+    bloques, uso = [], {"entrada": 0, "salida": 0, "busquedas": 0, "peticiones": []}
     respuesta = None
     for _ in range(4):
         respuesta = crear(messages=mensajes, **opciones)
         bloques += list(respuesta.content)
         u = respuesta.usage
-        uso["entrada"] += (u.input_tokens or 0) + (getattr(u, "cache_read_input_tokens", 0) or 0)
+        entrada = (u.input_tokens or 0) + (getattr(u, "cache_read_input_tokens", 0) or 0)
+        uso["entrada"] += entrada
         uso["salida"] += u.output_tokens or 0
+        uso["peticiones"].append((entrada, u.output_tokens or 0))
         uso["busquedas"] += getattr(getattr(u, "server_tool_use", None), "web_search_requests", 0) or 0
         if respuesta.stop_reason != "pause_turn":
             break
@@ -406,20 +447,18 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
     """Busca proveedores con Claude (búsqueda web) y devuelve el resultado listo para guardar."""
     cfg = cfg or configuracion()
     cliente = cliente or _cliente(clave_api)
-    herramientas = [
-        {"type": "web_search_20260209", "name": "web_search", "max_uses": cfg["max_busquedas"],
-         "user_location": _usuario_chile()},
-        {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": cfg["max_paginas"]},
-    ]
     texto_pedido = pedido(lic, items, cfg)
-    for crear, opciones, pedir_json in _pedidos(cliente, cfg, herramientas):
+    motivo = ""
+    for crear, opciones, pedir_json in _pedidos(cliente, cfg, herramientas(cfg)):
         try:
             respuesta, bloques, uso = _conversar(crear, opciones, texto_pedido + (_SOLO_JSON if pedir_json else ""))
             break
-        except _rechazos():   # 400: la API no aceptó estas opciones (no se cobra); se prueba más simple
+        except _rechazos() as e:   # 400: la API no aceptó estas opciones (no se cobra); se prueba más simple
+            motivo = str(getattr(e, "message", "") or e)
             continue
     else:
-        raise ErrorBusqueda("La API de Claude no aceptó la búsqueda. Intenta de nuevo más tarde.")
+        raise ErrorBusqueda("La API de Claude no aceptó la búsqueda (no se cobra)" + (f": {motivo[:300]}" if motivo else ".")
+                            + " Intenta de nuevo más tarde.")
     if respuesta is None or respuesta.stop_reason == "refusal":
         raise ErrorBusqueda("Claude no hizo esta búsqueda (la rechazó). Intenta de nuevo más tarde.")
     if respuesta.stop_reason == "max_tokens":
@@ -430,14 +469,14 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
         raise ErrorBusqueda("No se pudo leer la lista de proveedores. Intenta de nuevo.")
     texto, urls = evidencia(bloques)
     fecha = (ahora or datetime.now(CHILE)).isoformat(timespec="minutes")
-    precio = cfg["precio_usd"]
-    costo = (uso["entrada"] * precio["entrada_mtok"] + uso["salida"] * precio["salida_mtok"]) / 1e6 \
-        + uso["busquedas"] * precio["busqueda"]
+    modelo = getattr(respuesta, "model", None) or cfg["modelo"]
+    costo = costo_usd(modelo, uso["peticiones"], uso["busquedas"], cfg)
     return {
         "codigo": lic.get("codigo"),
         "fecha": fecha,
-        "modelo": getattr(respuesta, "model", cfg["modelo"]),
+        "modelo": modelo,
         "busquedas": uso["busquedas"], "costo_usd": round(costo, 2),
+        "tokens": {"entrada": uso["entrada"], "salida": uso["salida"]},
         "resumen": datos.get("resumen") or "",
         "proveedores": depurar(datos.get("proveedores") if isinstance(datos.get("proveedores"), list) else [],
                                texto, urls)[: cfg["maximo"]],
