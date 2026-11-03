@@ -25,8 +25,11 @@
      "precio_unitario_neto": 2176.47,
      "coincidencia": "equivalente",
      "nota": "Precio del listado de Falabella; ficha exacta por confirmar.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "verificado": true,
+     "fecha_consulta": "2026-11-03",
+     "verificado_en": "2026-11-03",
+     "precio_pagina": 2590.0,
+     "verificacion_pagina": "2026-11-03: la página muestra $2.590."
     }
    ]
   },
@@ -55,7 +58,7 @@
      "verificado": false,
      "verificado_en": "2026-11-02",
      "precio_pagina": 17990.0,
-     "verificacion_pagina": "2026-11-02: la página abrió y el precio más parecido es $17.990, no $17.290: puede haber cambiado."
+     "verificacion_pagina": "2026-11-03: la página abrió y el precio más parecido es $17.990, no $17.290: puede haber cambiado."
     }
    ]
   },
@@ -76,9 +79,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-11-02",
+     "verificado_en": "2026-11-03",
      "precio_pagina": 890.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $890."
+     "verificacion_pagina": "2026-11-03: la página muestra $890."
     }
    ]
   },
@@ -99,9 +102,9 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-02",
+     "verificado_en": "2026-11-03",
      "precio_pagina": 1890.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $1.890."
+     "verificacion_pagina": "2026-11-03: la página muestra $1.890."
     }
    ]
   },
@@ -122,9 +125,9 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-02",
+     "verificado_en": "2026-11-03",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $15.990."
+     "verificacion_pagina": "2026-11-03: la página muestra $15.990."
     }
    ]
   },
@@ -175,9 +178,9 @@
      "nota": "otro listado la muestra a $28.042. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-11-02",
+     "verificado_en": "2026-11-03",
      "precio_pagina": 32990.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $32.990."
+     "verificacion_pagina": "2026-11-03: la página muestra $32.990."
     }
    ]
   },
@@ -205,7 +208,7 @@
      "fecha_consulta": "2026-10-30",
      "verificado": false,
      "precio_pagina": 37990.0,
-     "verificacion_pagina": "2026-11-02: la página abrió y el precio más parecido es $37.990, no $35.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-03: la página abrió y el precio más parecido es $37.990, no $35.990: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -220,9 +223,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "verificado_en": "2026-11-02",
+     "verificado_en": "2026-11-03",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $29.990."
+     "verificacion_pagina": "2026-11-03: la página muestra $29.990."
     }
    ]
   },
@@ -243,16 +246,16 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-02",
+     "verificado_en": "2026-11-03",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-02: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-03: la página muestra $11.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-02",
-  "opciones": 8,
-  "verificadas": 6
+  "fecha": "2026-11-03",
+  "opciones": 9,
+  "verificadas": 7
  }
 }

@@ -19,7 +19,8 @@
      "coincidencia": "equivalente",
      "nota": "Distribución español con Ñ; SKU K72324ES por confirmar en la ficha.",
      "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "fecha_consulta": "2026-11-03",
+     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -39,7 +40,8 @@
      "coincidencia": "equivalente",
      "nota": "Supera lo pedido (Ryzen 7 5700, DDR4); confirmar que la especificación de las bases lo admite.",
      "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "fecha_consulta": "2026-11-03",
+     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -59,7 +61,8 @@
      "coincidencia": "equivalente",
      "nota": "Supera lo pedido (Ryzen 7 5700, DDR4); confirmar que la especificación de las bases lo admite.",
      "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "fecha_consulta": "2026-11-03",
+     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -85,7 +88,8 @@
      "coincidencia": "aproximada",
      "nota": "1 TB en vez de 2 TB pedidos.",
      "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "fecha_consulta": "2026-11-03",
+     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -107,5 +111,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-03",
+  "opciones": 4,
+  "verificadas": 0
+ }
 }
