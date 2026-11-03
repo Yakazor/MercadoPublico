@@ -1,0 +1,111 @@
+{
+ "codigo": "3885-68-LE26",
+ "nombre": "ADQ. EQUIPOS COMPUTACIONALES Y ACCESORIOS",
+ "fecha_consulta": "2026-11-03",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Kit teclado + mouse Kensington Pro Fit K72324ES o equivalente, Inalambrico/Rubber Dome, color negro",
+   "opciones": [
+    {
+     "tienda": "Paris (Tech Box SpA)",
+     "producto_mercado": "Combo teclado mouse inalámbrico Kensington Pro Fit",
+     "url": "https://www.paris.cl/combo-teclado-mouse-inalambrico-kensington-pro-fit-MKUVNRTPDG.html",
+     "precio": 36990,
+     "iva_incluido": true,
+     "contenido": "1 kit",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31084.03,
+     "coincidencia": "equivalente",
+     "nota": "Distribución español con Ñ; SKU K72324ES por confirmar en la ficha.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "PC gamer equivalente a guanaco AMD Ryzen 7 Pc de escritorio procesador CPU 57000 8 núcleos/20mb, Memoria Ram 32Gm DD4 32",
+   "opciones": [
+    {
+     "tienda": "Paris (HyperPC)",
+     "producto_mercado": "PC Gamer AMD Ryzen 7 8700 32GB DDR5 1TB RTX 5060 Ti 16GB",
+     "url": "https://www.paris.cl/pc-gamer-amd-ryzen-7-8700-32gb-ddr5-1tb-rtx-5060-ti-16gb-MKZ8YH2GBG.html",
+     "precio": 2097990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1763016.81,
+     "coincidencia": "equivalente",
+     "nota": "Supera lo pedido (Ryzen 7 5700, DDR4); confirmar que la especificación de las bases lo admite.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Pc gamer equivalente a Zorro Chilote AMD Ryzen 7 PC de escritorio, Procesador CPU 57000 8 núcleos/20MB, Memoria Ram 32GB",
+   "opciones": [
+    {
+     "tienda": "Paris (HyperPC)",
+     "producto_mercado": "PC Gamer AMD Ryzen 7 8700 32GB DDR5 1TB RTX 5060 Ti 16GB",
+     "url": "https://www.paris.cl/pc-gamer-amd-ryzen-7-8700-32gb-ddr5-1tb-rtx-5060-ti-16gb-MKZ8YH2GBG.html",
+     "precio": 2097990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1763016.81,
+     "coincidencia": "equivalente",
+     "nota": "Supera lo pedido (Ryzen 7 5700, DDR4); confirmar que la especificación de las bases lo admite.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Notebook equivalente a apple MacBook 14”, procesador CPU M5 Pro 15-core CPU, Memoria Ram 24GB, Almacenamiento SSD 1TB, T",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 5,
+   "producto": "Notebook equivalente a  Lenovo Legion 5i 15.1”, procesador CPU Intel core i9-14900HX, Memoria Ram 32GB, Almacenamiento S",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Notebook Legion 5 Intel Core i9-14900HX RTX 5070 32GB RAM 1TB SSD 15.1\" WQXGA 165Hz",
+     "url": "https://www.paris.cl/notebook-legion-5-intel-core-i9-14900hx-nvidia-rtx-5070-32gb-ram-1tb-ssd-151-wqxga-165hz-227611999.html",
+     "precio": 2099990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1764697.48,
+     "coincidencia": "aproximada",
+     "nota": "1 TB en vez de 2 TB pedidos.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Monitor 27” equivalente ASUS TUF Gaming VG279QM5Aresolucion FullHD 1920x1080, tipo de panel IPS, tiempo de repuesta 0.3m",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 7,
+   "producto": "Teclado equivalente a Apple Magic Keyboard USB-C periféricos, sku MXCL3LA/A, conexión / puerto bluetooth/usb-C, color ne",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 8,
+   "producto": "Mouese equivalente a Apple Magic Mouse – negro periféricos, SKU MXK63AM/A, Tipo/conectividad Superficie Multitouch/Bluet",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
+  }
+ ]
+}

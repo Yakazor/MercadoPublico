@@ -112,6 +112,13 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-03 (rutina 11:00 UTC): último radar completo de hace ~15 h → radar y OC disparados (`datos` cambió 11:39 y
+  11:45; datos del 03-11 08:44, 433 licitaciones, 657 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (7 a
+  completar): 3885-68-LE26 computación (nueva, 4/8), 4053-44-LE26 completa tops Cherokee y parkas (pasa a NO GO: supera
+  el estimado), 1295444-14-L126 +1 línea; las demás sin precios nuevos. WebFetch no abre paris.cl ni apple.com desde
+  la sesión (red): precios solo de resultados de búsqueda. Ninguna GO; top: 979-73-LE26, 3885-68-LE26 y
+  1057448-53-LE26 (todas «falta precio»). Se usó --maximo 8 (RUTINA del 02-11) aunque la tarea dice 4. 550 pruebas OK.
+
 - 2026-11-02 (pedido de la usuaria: que la rutina cubra más): `seleccionar_mercado.py` retoma primero las
   licitaciones a medias (con precio en algunas líneas) solo con las líneas que faltan (`completar: true`),
   salvo las que ya son NO GO por monto u OC (completarlas solo sube la oferta); antes una licitación ya

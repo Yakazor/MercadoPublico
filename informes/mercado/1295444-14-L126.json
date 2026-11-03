@@ -1,26 +1,40 @@
 {
  "codigo": "1295444-14-L126",
  "nombre": "ELEMENTOS DE PROTECCIÓN PERSONAL PARA EL CEMENTERIO GENERAL DE CONCEPCION",
- "fecha_consulta": "2026-10-30",
+ "fecha_consulta": "2026-11-03",
  "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
  "items": [
   {
    "linea": 1,
    "producto": "Guantes de nitrilo",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 2,
    "producto": "Traje de papel",
-   "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "opciones": [
+    {
+     "tienda": "Falabella (BAUMART)",
+     "producto_mercado": "Buzo desechable blanco Coverall Ultra Ligero",
+     "url": "https://www.falabella.com/falabella-cl/shop/buzo-desechable-blanco",
+     "precio": 2590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2176.47,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado de Falabella; ficha exacta por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
   },
   {
    "linea": 4,
    "producto": "Sobre lentes",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 5,
@@ -124,25 +138,25 @@
    "linea": 9,
    "producto": "Guante anticorte",
    "opciones": [],
-   "nota": "solo apareció un guante anticorte de malla de acero (carnicero); por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 10,
    "producto": "Protector solar",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 11,
    "producto": "Filtro multiorgánico",
    "opciones": [],
-   "nota": "filtros 3M 6003 sin precio chileno; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 12,
    "producto": "Filtro P100",
    "opciones": [],
-   "nota": "filtro 3M 2091 P100 sin precio chileno; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 13,
@@ -171,7 +185,7 @@
    "linea": 14,
    "producto": "Trajes de soldador",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 15,

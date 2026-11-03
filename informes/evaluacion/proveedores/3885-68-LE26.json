@@ -1,0 +1,24 @@
+[
+ {
+  "nombre": "HyperPC (vende en Paris.cl)",
+  "correo": null,
+  "web": "https://www.paris.cl/pc-gamer-amd-ryzen-7-8700-32gb-ddr5-1tb-rtx-5060-ti-16gb-MKZ8YH2GBG.html",
+  "contacto": null,
+  "especialidad": "PC gamer armados (Ryzen 7, 32 GB, 1 TB); referencia de las líneas 2 y 3",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": 2097990,
+  "fuente": "https://www.paris.cl/pc-gamer-amd-ryzen-7-8700-32gb-ddr5-1tb-rtx-5060-ti-16gb-MKZ8YH2GBG.html"
+ },
+ {
+  "nombre": "Tech Box SpA (vende en Paris.cl)",
+  "correo": null,
+  "web": "https://www.paris.cl/combo-teclado-mouse-inalambrico-kensington-pro-fit-MKUVNRTPDG.html",
+  "contacto": null,
+  "especialidad": "Periféricos Kensington (combo Pro Fit)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": 36990,
+  "fuente": "https://www.paris.cl/combo-teclado-mouse-inalambrico-kensington-pro-fit-MKUVNRTPDG.html"
+ }
+]

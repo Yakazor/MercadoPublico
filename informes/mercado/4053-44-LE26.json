@@ -1,32 +1,46 @@
 {
  "codigo": "4053-44-LE26",
  "nombre": "VESTUARIO INSTITUCIONAL - CESFAM MARIQUINA 2026",
- "fecha_consulta": "2026-10-31",
+ "fecha_consulta": "2026-11-03",
  "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
  "items": [
   {
    "linea": 1,
    "producto": "TOP CLINICOS - SIMILAR A \"CHEROKEE O KOI\" VER BASES TECNICAS DE LICITACION",
-   "opciones": [],
-   "nota": "top clínico tipo Cherokee/Koi: sin precio chileno en la búsqueda; cotizar con distribuidor de uniformes clínicos"
+   "opciones": [
+    {
+     "tienda": "Falabella (MyScrubs)",
+     "producto_mercado": "Top clínico Cherokee Revolution WW610",
+     "url": "https://www.falabella.com/falabella-cl/seller/MyScrubs",
+     "precio": 34990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 29403.36,
+     "coincidencia": "equivalente",
+     "nota": "Marca pedida (Cherokee); precio del listado del vendedor.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
   },
   {
    "linea": 2,
    "producto": "CONJUNTO DEPORTIVO HOMBRE - POLERA, POLERON Y PANTALON DE BUZO",
    "opciones": [],
-   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 3,
    "producto": "POLERAS PIQUÉ - VER BASES TECNICAS DE LICITACION",
    "opciones": [],
-   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 4,
    "producto": "BLUSAS - VER BASES TECNICAS DE LICITACION",
    "opciones": [],
-   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 5,
@@ -54,8 +68,36 @@
   {
    "linea": 6,
    "producto": "PARKAS 3 EN 1 MUJER - VER BASES TECNICAS DE LICITACION",
-   "opciones": [],
-   "nota": "vestuario con especificación en bases técnicas; sin precio comparable en la búsqueda; por confirmar"
+   "opciones": [
+    {
+     "tienda": "Falabella (HardWork)",
+     "producto_mercado": "Parka mujer HardWork Reno 3 en 1 verde oliva",
+     "url": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer",
+     "precio": 54990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46210.08,
+     "coincidencia": "equivalente",
+     "nota": "Precio de oferta (-50 %) del listado; stock para 171 unidades por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    },
+    {
+     "tienda": "Falabella (Quebec)",
+     "producto_mercado": "Parka mujer Quebec Ottawa 3 en 1 negra",
+     "url": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
   }
  ],
  "verificacion_paginas": {

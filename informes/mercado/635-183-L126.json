@@ -1,7 +1,7 @@
 {
  "codigo": "635-183-L126",
  "nombre": "ADQUISICIÓN DE HERRAMIENTAS PARA DIAGNÓSTICO Y CONTROL DE INFRAESTRUCTURAS, OT 5905.",
- "fecha_consulta": "2026-10-31",
+ "fecha_consulta": "2026-11-03",
  "verificacion": "sin verificar: búsqueda con WebSearch; la sesión no puede abrir las páginas de las tiendas (las revisa el workflow «Verificar precios e informes PDF»)",
  "items": [
   {
@@ -31,7 +31,7 @@
    "linea": 2,
    "producto": "Termohigrómetro digital portátil, similar a las especificaciones técnicas adjuntas.",
    "opciones": [],
-   "nota": "solo termohigrómetros básicos de Shein (importados); por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 3,
@@ -60,7 +60,7 @@
    "linea": 4,
    "producto": "inclinómetro digital portátil, compacto y de un eje, similar a las especificaciones técnicas adjuntas.",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 5,
@@ -89,13 +89,13 @@
    "linea": 6,
    "producto": "Martillo geológico, similar a las especificaciones técnicas adjuntas.",
    "opciones": [],
-   "nota": "solo martillos Estwing de carpintería (importados por Lider); el geológico, por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 7,
    "producto": "Martillo telescópico, similar a las especificaciones técnicas adjuntas.",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   },
   {
    "linea": 8,
@@ -124,7 +124,7 @@
    "linea": 9,
    "producto": "Nivel digital portátil con brazo angular abatible, similar a las especificaciones técnicas adjuntas.",
    "opciones": [],
-   "nota": "sin precio en tiendas chilenas en los resultados de búsqueda; por confirmar"
+   "nota": "Sin precio en tiendas chilenas en los resultados de búsqueda del 03-11; pedir cotización a distribuidor."
   }
  ],
  "verificacion_paginas": {
