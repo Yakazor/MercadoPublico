@@ -1,0 +1,133 @@
+{
+ "codigo": "979-77-LE26",
+ "nombre": "Adquisición de elementos de protección personal",
+ "fecha_consulta": "2026-11-04",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "PROTECTOR AUDITIVO ENDAURAL",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 2,
+   "producto": "GUANTE DE ESPUMA DE NITRILO",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 3,
+   "producto": "BOTOTO SEGURIDAD PROFESIONAL CAÑA MEDIA DAMA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 4,
+   "producto": "PANTALON CONTROL UV- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 5,
+   "producto": "CHAQUETA 3 en 1 c/ POLAR- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 6,
+   "producto": "CHALECO REFLECTANTE NARANJO- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [
+    {
+     "tienda": "Sodimac (RFX)",
+     "producto_mercado": "Chaleco reflectante talla única naranjo RFX",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/chalecos-reflectantes",
+     "precio": 4190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3521.01,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado; la licitación pide muestra.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "CAMISA CONTROL UV- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 8,
+   "producto": "POLERA CONTROL UV- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 9,
+   "producto": "PROTECTOR SOLAR",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 10,
+   "producto": "CASCO SE SEGURIDAD BLANCO",
+   "opciones": [
+    {
+     "tienda": "Sodimac (MSA)",
+     "producto_mercado": "Casco de seguridad blanco MSA",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34981/Cascos-de-Seguridad",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "POLAR- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 12,
+   "producto": "BUZO DESECHABLE",
+   "opciones": [
+    {
+     "tienda": "Falabella (BAUMART)",
+     "producto_mercado": "Buzo desechable blanco Coverall Ultra Ligero",
+     "url": "https://www.falabella.com/falabella-cl/shop/buzo-desechable-blanco",
+     "precio": 2590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2176.47,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado (búsqueda del 03-11).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "CUBRE PANTALON AZUL O NEGRO",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 14,
+   "producto": "CAPA DE AGUA  IMPERMEABLE- CONSIDERA ENTREGA DE MUESTRA",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  }
+ ]
+}

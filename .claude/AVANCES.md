@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-04 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (el push dio error 500
+  de GitHub dos veces; salió al tercer intento). `datos` cambió 11:40 y 11:46 (03-11 → 04-11 08:44, 454 licitaciones,
+  826 Compras Ágiles, ninguna de 2º llamado). Lote de 8: 3996-45-LE26 computación (3/11), 979-78-LE26 eléctricos
+  (2/10), 979-77-LE26 EPP (3/14), 3951-58-L126 salud (1/9, NO GO por monto), 1075963-447-LE26 quirúrgicos (0/20); las
+  3 a completar sin precios nuevos. Ninguna GO; top: 979-73-LE26, 3996-45-LE26 y 3885-68-LE26. 550 pruebas OK.
+
 - 2026-11-03 (rutina 11:00 UTC): último radar completo de hace ~15 h → radar y OC disparados (`datos` cambió 11:39 y
   11:45; datos del 03-11 08:44, 433 licitaciones, 657 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (7 a
   completar): 3885-68-LE26 computación (nueva, 4/8), 4053-44-LE26 completa tops Cherokee y parkas (pasa a NO GO: supera

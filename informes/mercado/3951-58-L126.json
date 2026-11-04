@@ -1,0 +1,75 @@
+{
+ "codigo": "3951-58-L126",
+ "nombre": "ADQUISICIÓN DE INSUMOS MÉDICOS PARA MAS SALUD COMUNITARIA DEL CONSULTORIO VÍCTOR DOMINGO SILVA, AÑO 2026",
+ "fecha_consulta": "2026-11-04",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Monitor de Presión Arterial",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 2,
+   "producto": "Oxímetro de Pulso",
+   "opciones": [
+    {
+     "tienda": "Mercado Libre",
+     "producto_mercado": "Oxímetro digital de pulso fingertip",
+     "url": "https://articulo.mercadolibre.cl/MLC-435477123-oximetro-digital-monitor-fingertip-barato-a-solo-16999-pi-_JM",
+     "precio": 16999,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 14284.87,
+     "coincidencia": "equivalente",
+     "nota": "Publicación de marketplace; certificación ISP por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Glucómetro Medidor de Glucosa y Cetonas",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 4,
+   "producto": "Tallímetro retráctil portátil elástico",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 5,
+   "producto": "Balanza digital",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 6,
+   "producto": "Cinta métrica",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 7,
+   "producto": "Tabla Snellen Tumbling E",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 8,
+   "producto": "Tabla Snellen",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 9,
+   "producto": "Fonendoscopio",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  }
+ ]
+}

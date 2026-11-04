@@ -1,0 +1,115 @@
+{
+ "codigo": "3996-45-LE26",
+ "nombre": "Adquisición de Equipos Computacionales y Periféricos",
+ "fecha_consulta": "2026-11-04",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Computador AIO similar LENOVO TC M90A GEN 6 que incluya WINDOWS 11 PRO procesador INTEL CORE ULTRA 7 265 VPRO, RAM 32GB ",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 2,
+   "producto": "Computador AIO similar a LENOVO THINKCENTRE M90A, que incluya WINDOWS 11 PRO procesador INTEL CORE ULTRA 5 235 VPRO, RAM",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 3,
+   "producto": "Notebook similar a HP 250 G9, procesador similar a Intel Core i3-1215U RAM 16GB 512GB SSD LAN pantalla de 15,6 Pulg Win1",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 4,
+   "producto": "Monitor 27” 1920*1080 IPS con certificado eyesafe y low blue light, similar a lenovo thinkvision T27-40",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 5,
+   "producto": "UPS Online 220V 3kVA 3000VA 2700W En Línea Doble Conversión certificada con normas IEC con salidas de conector IEC 320 C",
+   "opciones": [
+    {
+     "tienda": "Lider (Tech Box SpA)",
+     "producto_mercado": "UPS APC Easy On-line doble conversión 3000VA",
+     "url": "https://www.lider.cl/ip/f/ups-apc-easy-on-line-doble-conversion-3000va/00073130433797",
+     "precio": 729990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 613436.97,
+     "coincidencia": "equivalente",
+     "nota": "Precio de oferta (antes .499.990); confirmar salidas IEC C13 y potencia 2.700 W.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Impresora Multifuncional similar a Canon Pixma G3160, A4, USB, Wi-Fi, Escáner plano, compatible con windows 10/11, Compa",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Impresora multifuncional Canon Pixma G3110",
+     "url": "https://www.lider.cl/browse/computacion/marcas-destacadas/canon/89057520_88137561_25811328",
+     "precio": 139990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 117638.66,
+     "coincidencia": "aproximada",
+     "nota": "Modelo G3110, no G3160 (sin precio en Chile en la búsqueda).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Smart TV de 43” Crystal UHD 4K, wi-fi, Bluetooth, puertos HDMI, y USB, similar a Samsung U8200F, que incluya el soporte ",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Televisor Samsung 43\" Crystal UHD U8000H 4K Smart TV 2026",
+     "url": "https://www.lider.cl/ip/tv/televisor-43-crystal-uhd-u8000h-4k-smart-tv-2026-/00880609796433",
+     "precio": 259990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 218478.99,
+     "coincidencia": "equivalente",
+     "nota": "Sin el soporte tipo brazo que pide la línea.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Smart TV de 55” Crystal UHD 4K, wi-fi, Bluetooth, puertos HDMI, y USB, similar a Samsung U8000H, que incluya el soporte ",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 9,
+   "producto": "Parlante Inalambrico Recargable Bluetooth Boombox similar a  Aiwa 70w Funcion Tws Aw-b403",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 10,
+   "producto": "Alargador carrete 4 posiciones salidas 10a 16a/ 25mts con protección de sobreconsumo 2200w certificado, con enchufes T10",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 11,
+   "producto": "Reloj Cronómetro de Carrera similar a GAN XIN 57 cm LED con Control Remoto: Gran pantalla LED de 57 cm x 16 cm con dígit",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  }
+ ]
+}

@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-03. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-04. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,7 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [1090-17-LE26](presupuestos/1090-17-LE26.md) Herramientas Programa PET 2026 | Ferretería y herramientas | 2026-11-03 | 7/13 | $7.910.963 | $11.296.856 | $1.582.193 | $19.504.636 | faltan 6 precios, sin verificar |
 | [3614-42-LE26](presupuestos/3614-42-LE26.md) INSUMOS MEDICOS DESAM Y PIE DIABETICO | Insumos médicos no regulados y aseo | 2026-11-04 | 1/17 | $776.412 | $1.108.716 | $155.282 | $8.124.075 | faltan 16 precios, sin verificar |
 | [2832-42-L126](presupuestos/2832-42-L126.md) ADQUISICION DE ARTICULOS DEPORTIVOS PARA EL DEPARTAMENTO DE SALUD DE Q | Deporte, juguetes y material didáctico | 2026-11-04 | 4/9 | $624.456 | $891.723 | $124.891 | $1.430.160 | faltan 5 precios, sin verificar |
 | [2111-330-LE26](presupuestos/2111-330-LE26.md) SUMINISTRO ROPA DE TRABAJO II | Vestuario, uniformes y textiles | 2026-11-04 | 4/4 | $16.760.519 | $23.934.021 | $3.352.104 | — | sin verificar |
@@ -44,16 +43,21 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1380-211-LE26](presupuestos/1380-211-LE26.md) PPTA 315 ADQUISICION DE COLCHONES Y FUNDAS | Electrodomésticos, hogar y menaje | 2026-11-09 | 0/3 | $0 | $0 | $0 | $18.838.544 | faltan 3 precios |
 | [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-09 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
 | [2483-255-LE26](presupuestos/2483-255-LE26.md) ADQUISICIÓN DE INSUMOS MEDICOS Y OTROS EQUIPAMIENTOS PARA VEHÍCULOS DE | Insumos médicos no regulados y aseo | 2026-11-09 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
+| [979-78-LE26](presupuestos/979-78-LE26.md) Adquisición de materiales eléctricos | Materiales de construcción, eléctricos e iluminación | 2026-11-09 | 2/10 | $1.959.292 | $2.797.869 | $391.858 | $7.480.000 | faltan 8 precios, sin verificar |
 | [1703-17-LE26](presupuestos/1703-17-LE26.md) ADQUISICIÓN DE UNIFORMES CLÍNICOS PARA FUNCIONARIO | Vestuario, uniformes y textiles | 2026-11-09 | 1/5 | $10.346.332 | $14.774.562 | $2.069.266 | $12.000.000 | supera monto, faltan 4 precios |
 | [218-55-LE26](presupuestos/218-55-LE26.md) Adquisición de Juguetes Navidad Comunal 2026 | Deporte, juguetes y material didáctico | 2026-11-09 | 0/6 | $0 | $0 | $0 | $55.000.000 | faltan 6 precios |
 | [1216088-27-LE26](presupuestos/1216088-27-LE26.md) SUMINISTRO DE PRODUCTOS DE ASEO | Insumos médicos no regulados y aseo | 2026-11-10 | 0/4 | $0 | $0 | $0 | $48.000.000 | faltan 4 precios |
 | [4053-44-LE26](presupuestos/4053-44-LE26.md) VESTUARIO INSTITUCIONAL - CESFAM MARIQUINA 2026 | Vestuario, uniformes y textiles | 2026-11-10 | 3/6 | $22.397.213 | $31.983.220 | $4.479.443 | $30.000.000 | supera monto, faltan 3 precios |
 | [1641-427-LP26](presupuestos/1641-427-LP26.md) TCA - KIT RESINCRONIZADOR CRTP Y BALONES | Deporte, juguetes y material didáctico | 2026-11-10 | 0/15 | $0 | $0 | $0 | — | faltan 15 precios |
 | [1725-232-LE26](presupuestos/1725-232-LE26.md) LIBROS DE AUTORES NACIONALES Y SU DISTRIBUCIÓN | Deporte, juguetes y material didáctico | 2026-11-11 | 0/10 | $0 | $0 | $0 | $37.500.000 | faltan 10 precios |
+| [3951-58-L126](presupuestos/3951-58-L126.md) ADQUISICIÓN DE INSUMOS MÉDICOS PARA MAS SALUD COMUNITARIA DEL CONSULTO | Insumos médicos no regulados y aseo | 2026-11-11 | 1/9 | $35.698 | $50.977 | $7.140 | $835.290 | faltan 8 precios, sin verificar |
 | [1362-13-LE26](presupuestos/1362-13-LE26.md) COMPRA DE NEUMATICOS PROVINCIA TALAGANTE | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-11 | 5/9 | $1.858.269 | $2.653.608 | $371.654 | — | faltan 4 precios, sin verificar |
 | [2258-237-LE26](presupuestos/2258-237-LE26.md) INSUMOS PARA IMPRESORAS ZEBRA DEL HRA | Computación y electrónica | 2026-11-12 | 0/6 | $0 | $0 | $0 | — | faltan 6 precios |
 | [3885-68-LE26](presupuestos/3885-68-LE26.md) ADQ. EQUIPOS COMPUTACIONALES Y ACCESORIOS | Computación y electrónica | 2026-11-12 | 4/8 | $6.727.287 | $9.606.566 | $1.345.457 | $10.000.000 | faltan 4 precios, línea global, sin verificar |
 | [29-101-LE26](presupuestos/29-101-LE26.md) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | Vestuario, uniformes y textiles | 2026-11-12 | 4/4 | $87.000.901 | $124.237.286 | $17.400.180 | — | sin verificar |
+| [3996-45-LE26](presupuestos/3996-45-LE26.md) Adquisición de Equipos Computacionales y Periféricos | Computación y electrónica | 2026-11-13 | 3/11 | $4.472.884 | $6.387.279 | $894.577 | $13.670.000 | faltan 8 precios, sin verificar |
+| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 3/14 | $677.302 | $967.188 | $135.460 | $7.572.906 | faltan 11 precios, sin verificar |
+| [1075963-447-LE26](presupuestos/1075963-447-LE26.md) ADQUISICIÓN DE INSUMOS QUIRÚRGICOS ACCESORIOS DE ANESTESIA VÍA AÉREA Y | Insumos médicos no regulados y aseo | 2026-11-13 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 
 ## Ya cerradas
@@ -73,6 +77,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1079580-34-LE26](presupuestos/1079580-34-LE26.md) ADQUISICION DE REPUESTOS PARA VEHICULOS FISCALES
 - [1079596-37-LE26](presupuestos/1079596-37-LE26.md) ADQUISICION 10 BATERIAS TB65 Y 01 ESTACION CARGA
 - [1080094-17-L126](presupuestos/1080094-17-L126.md) RADIO PORTÁTIL DIGITAL VHF PARA SAMU
+- [1090-17-LE26](presupuestos/1090-17-LE26.md) Herramientas Programa PET 2026
 - [1110404-231-L126](presupuestos/1110404-231-L126.md) ADQUISICION DE TINTAS Y TONER PARA ESTABLECIMIENTOS EDUCACIONALES, PERT AL SLEP DE CHINCHORRO, ARICA. (PRODUCTOS NO REGISTRADOS EN EL CONVENIO)
 - [1113265-16-LE26](presupuestos/1113265-16-LE26.md) ADQUISICIÓN DE PROYECTORES
 - [1145-72-LE26](presupuestos/1145-72-LE26.md) Adquisición de Servidores alto rendimiento

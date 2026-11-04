@@ -1,0 +1,109 @@
+{
+ "codigo": "979-78-LE26",
+ "nombre": "Adquisición de materiales eléctricos",
+ "fecha_consulta": "2026-11-04",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "CABLE SUPERFLEX 10 AWG (COBRE)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 2,
+   "producto": "CABLE SUPERFLEX 8 AWG (COBRE)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 3,
+   "producto": "CABLE SUPERFLEX 6 AWG (COBRE)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 4,
+   "producto": "CORDON ELECTRICO 3X2,5 (COBRE)",
+   "opciones": [
+    {
+     "tienda": "Paris (TE IMPORTA)",
+     "producto_mercado": "Cable cordón eléctrico Sil flexible 3x2,5 mm2 100 m blanco SEC",
+     "url": "https://www.paris.cl/cable-cordon-electrico-sil-flexible-3x25mm2-100m-blanco-sec-blanco-MKEZFQ0Q05.html",
+     "precio": 175990,
+     "iva_incluido": true,
+     "contenido": "rollo 100 m",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 1478.91,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    },
+    {
+     "tienda": "Easy (marketplace)",
+     "producto_mercado": "Cable cordón eléctrico Sil flexible 3x2,5 mm2 100 m blanco SEC",
+     "url": "https://www.easy.cl/cable-cordon-electrico-sil-flexible-3x25mm2-100m-blanco-sec-blanco-mkezfq0q05/p",
+     "precio": 1760,
+     "iva_incluido": true,
+     "contenido": "1 metro",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1478.99,
+     "coincidencia": "equivalente",
+     "nota": "Precio por metro del listado.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "CORDON ELECTRICO 3X1,5  (COBRE)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 6,
+   "producto": "CABLE CONCENTRICO 2X4mm (COBRE)",
+   "opciones": [
+    {
+     "tienda": "Easy (Cocesa)",
+     "producto_mercado": "Cable concéntrico 2x4 mm 1 m Cocesa",
+     "url": "https://www.easy.cl/cable-concentrico-2x4-mm-1-m-cocesa-175526/p",
+     "precio": 1690,
+     "iva_incluido": true,
+     "contenido": "1 metro",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1420.17,
+     "coincidencia": "exacta",
+     "nota": "1.000 m: pedir precio por rollo a distribuidor (Gobantes, Vitel).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "CABLE CONCENTRICO 2X6mm (COBRE)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 8,
+   "producto": "CONECTOR DENTADO 10-95mm",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 9,
+   "producto": "CONECTOR DENTADO 16-95mm",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  },
+  {
+   "linea": 10,
+   "producto": "CONECTOR DENTADO 25-95mm",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+  }
+ ]
+}

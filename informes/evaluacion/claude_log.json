@@ -232,5 +232,23 @@
   "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 9 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 16 de 17 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo).; 4 de ",
   "decisiones": "979-73-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 1295444-14-L126: FALTA PRECIO; 2585-111-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 2018-37-LE26: FALTA PRECIO; 2366-44-LE26: FALTA PRECIO; 3614-42-LE26: FALTA PRECIO; 2832-42-L126: FALTA PRECIO",
   "recomendaciones": "- **979-73-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 14 de 18 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **1295444-14-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 7 líneas que faltan: con 9 de 16 el margen sale de una parte del pedido. - **2585-111-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 27 líneas que faltan: con 22 de 49 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-04",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1280 vigentes; 26 evaluadas; informes de 10",
+  "resultado": "0 GO, 0 con condiciones, 12 falta precio, 14 NO GO",
+  "riesgos": "1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 9 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 14 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 27 de 49 ítems sin precio de mercado; 3 de 14 precios son de productos aproximados",
+  "decisiones": "979-73-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1295444-14-L126: FALTA PRECIO; 2585-111-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 2018-37-LE26: FALTA PRECIO; 2366-44-LE26: FALTA PRECIO",
+  "recomendaciones": "- **979-73-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 14 de 18 el margen sale de una parte del pedido. - **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 3 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-04",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 (3 a completar). Precios con WebSearch, sin abrir las páginas: 3996-45-LE26 equipos computacionales (3/11: UPS APC 3000VA, TV Samsung 43\" U8000H, impresora Canon G3110 aproximada), 979-78-LE26 materiales eléctricos (2/10: cordón 3x2,5 y concéntrico 2x4), 979-77-LE26 EPP (3/14: chaleco, casco, buzo), 3951-58-L126 insumos de salud (1/9). 1075963-447-LE26 insumos quirúrgicos (0/20) y las líneas faltantes de 1057448-53, 3885-68 y 1362-13 no tienen precio en tiendas. Sin Compras Ágiles de 2º llamado.",
+  "resultado": "Ninguna GO: 12 con falta de precio y 14 NO GO. 3951-58-L126 queda NO GO (monto estimado 35.290 no alcanza). Top 3: 979-73-LE26 (cierra 06-11), 3996-45-LE26 (13-11) y 3885-68-LE26 (12-11).",
+  "riesgos": "Precios de listados sin verificar; muchas líneas sin precio. Cables Superflex y equipos Lenovo solo se consiguen por cotización a distribuidores.",
+  "decisiones": "No ofertar sin completar al menos 80 % de las líneas. Priorizar 979-73-LE26 por su cierre cercano.",
+  "recomendaciones": "Hoy: cotizar a un distribuidor de EPP las 4 líneas que faltan de 979-73-LE26 (cierra el 06-11). Para 979-78-LE26 pedir precio de Superflex 10/8/6 AWG y conectores dentados a Vitel Energía (correo publicado en su sitio) o Gobantes. Para 3996-45-LE26 cotizar los AIO Lenovo M90a Gen 6 a un canal Lenovo. Usar «Buscar proveedores» de la plataforma."
  }
 ]
