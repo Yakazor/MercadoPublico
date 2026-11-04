@@ -21,9 +21,9 @@
      "nota": "Marca pedida (Cherokee); precio del listado del vendedor.",
      "verificado": true,
      "fecha_consulta": "2026-11-03",
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 34990.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $34.990."
+     "verificacion_pagina": "2026-11-04: la página muestra $34.990."
     }
    ]
   },
@@ -62,9 +62,9 @@
      "nota": "búsqueda del 25-10; bordado y especificación de bases por confirmar",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 77990.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $77.990."
+     "verificacion_pagina": "2026-11-04: la página muestra $77.990."
     }
    ]
   },
@@ -85,9 +85,9 @@
      "nota": "Precio de oferta (-50 %) del listado; stock para 171 unidades por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-03",
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 54990.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $54.990."
+     "verificacion_pagina": "2026-11-04: la página muestra $54.990."
     },
     {
      "tienda": "Falabella (Quebec)",
@@ -102,15 +102,15 @@
      "nota": "Precio del listado.",
      "verificado": true,
      "fecha_consulta": "2026-11-03",
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $69.990."
+     "verificacion_pagina": "2026-11-04: la página muestra $69.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-03",
+  "fecha": "2026-11-04",
   "opciones": 4,
   "verificadas": 4
  }

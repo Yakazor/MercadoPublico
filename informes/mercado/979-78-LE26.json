@@ -37,7 +37,8 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "fecha_consulta": "2026-11-04",
+     "verificacion_pagina": "2026-11-04: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy (marketplace)",
@@ -51,7 +52,8 @@
      "coincidencia": "equivalente",
      "nota": "Precio por metro del listado.",
      "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "fecha_consulta": "2026-11-04",
+     "verificacion_pagina": "2026-11-04: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -77,7 +79,8 @@
      "coincidencia": "exacta",
      "nota": "1.000 m: pedir precio por rollo a distribuidor (Gobantes, Vitel).",
      "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "fecha_consulta": "2026-11-04",
+     "verificacion_pagina": "2026-11-04: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -105,5 +108,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-04",
+  "opciones": 3,
+  "verificadas": 0
+ }
 }

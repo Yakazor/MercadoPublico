@@ -123,5 +123,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-04",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

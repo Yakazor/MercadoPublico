@@ -19,10 +19,10 @@
      "unidades_equivalentes": 0.1,
      "precio_unitario_neto": 117033.61,
      "coincidencia": "aproximada",
-     "verificado": true,
+     "verificado": false,
      "nota": "Solo 10 m (no 100 m); equivalencia 0.1 rollo de 100 m; no confirma 120 LED ni 6000K.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-11-03: la página muestra $13.649.",
+     "verificacion_pagina": "2026-11-04: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano.",
      "verificado_en": "2026-11-03",
      "precio_pagina": 13649.0
     }
@@ -54,7 +54,7 @@
      "verificado": false,
      "nota": "Potencia no especificada por el comprador.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-04: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -69,7 +69,7 @@
      "verificado": false,
      "nota": "",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-04: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -91,9 +91,9 @@
      "verificado": true,
      "nota": "Página de listado; medida/potencia no especificadas por comprador.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 12890.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $12.890."
+     "verificacion_pagina": "2026-11-04: la página muestra $12.890."
     }
    ]
   },
@@ -122,9 +122,9 @@
      "verificado": true,
      "nota": "Página de listado; medida/potencia no especificadas por comprador.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 12890.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $12.890."
+     "verificacion_pagina": "2026-11-04: la página muestra $12.890."
     }
    ]
   },
@@ -146,9 +146,9 @@
      "verificado": true,
      "nota": "Página de listado.",
      "fecha_consulta": "2026-10-18",
-     "verificado_en": "2026-11-03",
+     "verificado_en": "2026-11-04",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-11-03: la página muestra $8.990."
+     "verificacion_pagina": "2026-11-04: la página muestra $8.990."
     }
    ]
   },
@@ -184,14 +184,14 @@
      "verificado": false,
      "nota": "18W y luz fría; se piden 24W.",
      "fecha_consulta": "2026-10-18",
-     "verificacion_pagina": "2026-11-03: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-04: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-03",
+  "fecha": "2026-11-04",
   "opciones": 7,
-  "verificadas": 4
+  "verificadas": 3
  }
 }

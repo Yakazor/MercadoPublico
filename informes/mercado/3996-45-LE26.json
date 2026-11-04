@@ -43,7 +43,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio de oferta (antes .499.990); confirmar salidas IEC C13 y potencia 2.700 W.",
      "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "fecha_consulta": "2026-11-04",
+     "precio_pagina": 960500.0,
+     "verificacion_pagina": "2026-11-04: la página abrió y el precio más parecido es $960.500, no $729.990: puede haber cambiado."
     }
    ]
   },
@@ -62,8 +64,11 @@
      "precio_unitario_neto": 117638.66,
      "coincidencia": "aproximada",
      "nota": "Modelo G3110, no G3160 (sin precio en Chile en la búsqueda).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "verificado": true,
+     "fecha_consulta": "2026-11-04",
+     "verificado_en": "2026-11-04",
+     "precio_pagina": 139990.0,
+     "verificacion_pagina": "2026-11-04: la página muestra $139.990."
     }
    ]
   },
@@ -83,7 +88,9 @@
      "coincidencia": "equivalente",
      "nota": "Sin el soporte tipo brazo que pide la línea.",
      "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "fecha_consulta": "2026-11-04",
+     "precio_pagina": 229990.0,
+     "verificacion_pagina": "2026-11-04: la página abrió y el precio más parecido es $229.990, no $259.990: puede haber cambiado."
     }
    ]
   },
@@ -111,5 +118,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-04",
+  "opciones": 3,
+  "verificadas": 1
+ }
 }

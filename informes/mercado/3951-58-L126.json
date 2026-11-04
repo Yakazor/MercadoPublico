@@ -25,7 +25,8 @@
      "coincidencia": "equivalente",
      "nota": "Publicación de marketplace; certificación ISP por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "fecha_consulta": "2026-11-04",
+     "verificacion_pagina": "2026-11-04: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -71,5 +72,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-04",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

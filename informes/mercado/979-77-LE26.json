@@ -48,8 +48,11 @@
      "precio_unitario_neto": 3521.01,
      "coincidencia": "equivalente",
      "nota": "Precio del listado; la licitación pide muestra.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "verificado": true,
+     "fecha_consulta": "2026-11-04",
+     "verificado_en": "2026-11-04",
+     "precio_pagina": 4190.0,
+     "verificacion_pagina": "2026-11-04: la página muestra $4.190."
     }
    ]
   },
@@ -86,8 +89,11 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "equivalente",
      "nota": "Precio del listado.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "verificado": true,
+     "fecha_consulta": "2026-11-04",
+     "verificado_en": "2026-11-04",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-11-04: la página muestra $11.990."
     }
    ]
   },
@@ -112,8 +118,11 @@
      "precio_unitario_neto": 2176.47,
      "coincidencia": "equivalente",
      "nota": "Precio del listado (búsqueda del 03-11).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "verificado": true,
+     "fecha_consulta": "2026-11-03",
+     "verificado_en": "2026-11-04",
+     "precio_pagina": 2590.0,
+     "verificacion_pagina": "2026-11-04: la página muestra $2.590."
     }
    ]
   },
@@ -129,5 +138,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-04",
+  "opciones": 3,
+  "verificadas": 3
+ }
 }

@@ -56,7 +56,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [3885-68-LE26](presupuestos/3885-68-LE26.md) ADQ. EQUIPOS COMPUTACIONALES Y ACCESORIOS | Computación y electrónica | 2026-11-12 | 4/8 | $6.727.287 | $9.606.566 | $1.345.457 | $10.000.000 | faltan 4 precios, línea global, sin verificar |
 | [29-101-LE26](presupuestos/29-101-LE26.md) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | Vestuario, uniformes y textiles | 2026-11-12 | 4/4 | $87.000.901 | $124.237.286 | $17.400.180 | — | sin verificar |
 | [3996-45-LE26](presupuestos/3996-45-LE26.md) Adquisición de Equipos Computacionales y Periféricos | Computación y electrónica | 2026-11-13 | 3/11 | $4.472.884 | $6.387.279 | $894.577 | $13.670.000 | faltan 8 precios, sin verificar |
-| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 3/14 | $677.302 | $967.188 | $135.460 | $7.572.906 | faltan 11 precios, sin verificar |
+| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 3/14 | $677.302 | $967.188 | $135.460 | $7.572.906 | faltan 11 precios |
 | [1075963-447-LE26](presupuestos/1075963-447-LE26.md) ADQUISICIÓN DE INSUMOS QUIRÚRGICOS ACCESORIOS DE ANESTESIA VÍA AÉREA Y | Insumos médicos no regulados y aseo | 2026-11-13 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 
