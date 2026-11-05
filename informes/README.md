@@ -52,9 +52,9 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [29-101-LE26](presupuestos/29-101-LE26.md) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | Vestuario, uniformes y textiles | 2026-11-12 | 4/4 | $87.000.901 | $124.237.286 | $17.400.180 | — | sin verificar |
 | [3996-45-LE26](presupuestos/3996-45-LE26.md) Adquisición de Equipos Computacionales y Periféricos | Computación y electrónica | 2026-11-13 | 5/11 | $4.971.592 | $7.099.434 | $994.318 | $13.670.000 | faltan 6 precios, sin verificar |
 | [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-13 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
-| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 5/14 | $1.182.983 | $1.689.299 | $236.597 | $7.572.906 | faltan 9 precios, sin verificar |
+| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 5/14 | $1.182.983 | $1.689.299 | $236.597 | $7.572.906 | faltan 9 precios |
 | [1075963-447-LE26](presupuestos/1075963-447-LE26.md) ADQUISICIÓN DE INSUMOS QUIRÚRGICOS ACCESORIOS DE ANESTESIA VÍA AÉREA Y | Insumos médicos no regulados y aseo | 2026-11-13 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
-| [1134432-78-LE26](presupuestos/1134432-78-LE26.md) ADQUISICIÓN DE JUGUETES PARA CELEBRACIÓN DE NAVIDAD COMUNAL 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 3/14 | $28.553.699 | $40.774.682 | $5.710.740 | $30.000.000 | supera monto, faltan 11 precios, sin verificar |
+| [1134432-78-LE26](presupuestos/1134432-78-LE26.md) ADQUISICIÓN DE JUGUETES PARA CELEBRACIÓN DE NAVIDAD COMUNAL 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 3/14 | $28.553.699 | $40.774.682 | $5.710.740 | $30.000.000 | supera monto, faltan 11 precios |
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 
 ## Ya cerradas

@@ -84,8 +84,11 @@
      "precio_unitario_neto": 37806.72,
      "coincidencia": "equivalente",
      "nota": "Envío desde EE.UU.; precio retail, 200 unidades requieren importador.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-05",
+     "precio_pagina": 44246.0,
+     "verificacion_pagina": "2026-11-05: la página muestra $44.246."
     }
    ]
   },
@@ -104,8 +107,11 @@
      "precio_unitario_neto": 36126.05,
      "coincidencia": "aproximada",
      "nota": "Hay genéricas desde .990 en el listado de Lider sin ficha identificada.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-05",
+     "precio_pagina": 43990.0,
+     "verificacion_pagina": "2026-11-05: la página muestra $43.990."
     }
    ]
   },
@@ -124,10 +130,18 @@
      "precio_unitario_neto": 40327.73,
      "coincidencia": "aproximada",
      "nota": "No es tipo S8.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-05",
+     "precio_pagina": 47990.0,
+     "verificacion_pagina": "2026-11-05: la página muestra $47.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-05",
+  "opciones": 3,
+  "verificadas": 3
+ }
 }
