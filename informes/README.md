@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-04. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-05. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,10 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [3614-42-LE26](presupuestos/3614-42-LE26.md) INSUMOS MEDICOS DESAM Y PIE DIABETICO | Insumos médicos no regulados y aseo | 2026-11-04 | 1/17 | $776.412 | $1.108.716 | $155.282 | $8.124.075 | faltan 16 precios, sin verificar |
-| [2832-42-L126](presupuestos/2832-42-L126.md) ADQUISICION DE ARTICULOS DEPORTIVOS PARA EL DEPARTAMENTO DE SALUD DE Q | Deporte, juguetes y material didáctico | 2026-11-04 | 4/9 | $624.456 | $891.723 | $124.891 | $1.430.160 | faltan 5 precios, sin verificar |
-| [2111-330-LE26](presupuestos/2111-330-LE26.md) SUMINISTRO ROPA DE TRABAJO II | Vestuario, uniformes y textiles | 2026-11-04 | 4/4 | $16.760.519 | $23.934.021 | $3.352.104 | — | sin verificar |
-| [45-56-L126](presupuestos/45-56-L126.md) SUMINISTRO DE MOBILIARIO PARA 4 DIRECCIONES REGIONALES | Mobiliario de oficina, escolar y almacenaje | 2026-11-04 | 0/4 | $0 | $0 | $0 | $7.100.000 | faltan 4 precios |
 | [2408-183-LE26](presupuestos/2408-183-LE26.md) ELEMENTOS DE ESTIMULACIÓN Y MATERIAL DIDÁCTICO PROGRAMA RED LOCAL DE A | Deporte, juguetes y material didáctico | 2026-11-05 | 0/1 | $0 | $0 | $0 | $9.160.000 | falta 1 precio |
 | [1709-29-LE26](presupuestos/1709-29-LE26.md) CANASTA DE SUMINISTRO DE GRUPO ELECTROGENO | Materiales de construcción, eléctricos e iluminación | 2026-11-05 | 0/5 | $0 | $0 | $0 | — | faltan 5 precios |
 | [3568-31-L126](presupuestos/3568-31-L126.md) ADQUISICIÓN DE MATERIALES DE FERRETERÍA PARA FERIAS VERANO 2026 - 2027 | Ferretería y herramientas | 2026-11-05 | 7/17 | $3.387.872 | $4.837.882 | $677.574 | $3.450.000 | supera monto, faltan 10 precios, sin verificar |
@@ -41,7 +37,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1904-10-LE26](presupuestos/1904-10-LE26.md) ADQUISICION DE NEUMATICOS Y LLANTA | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-06 | 4/12 | $3.948.315 | $5.638.194 | $789.663 | — | faltan 8 precios, sin verificar |
 | [1057448-53-LE26](presupuestos/1057448-53-LE26.md) ADQ DE SILLAS VARIAS BIP 30418022 BIP 40001311 | Mobiliario de oficina, escolar y almacenaje | 2026-11-09 | 2/7 | $4.588.500 | $6.552.378 | $917.700 | — | faltan 5 precios, sin verificar |
 | [1380-211-LE26](presupuestos/1380-211-LE26.md) PPTA 315 ADQUISICION DE COLCHONES Y FUNDAS | Electrodomésticos, hogar y menaje | 2026-11-09 | 0/3 | $0 | $0 | $0 | $18.838.544 | faltan 3 precios |
-| [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-09 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
 | [2483-255-LE26](presupuestos/2483-255-LE26.md) ADQUISICIÓN DE INSUMOS MEDICOS Y OTROS EQUIPAMIENTOS PARA VEHÍCULOS DE | Insumos médicos no regulados y aseo | 2026-11-09 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
 | [979-78-LE26](presupuestos/979-78-LE26.md) Adquisición de materiales eléctricos | Materiales de construcción, eléctricos e iluminación | 2026-11-09 | 2/10 | $1.959.292 | $2.797.869 | $391.858 | $7.480.000 | faltan 8 precios, sin verificar |
 | [1703-17-LE26](presupuestos/1703-17-LE26.md) ADQUISICIÓN DE UNIFORMES CLÍNICOS PARA FUNCIONARIO | Vestuario, uniformes y textiles | 2026-11-09 | 1/5 | $10.346.332 | $14.774.562 | $2.069.266 | $12.000.000 | supera monto, faltan 4 precios |
@@ -55,9 +50,11 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2258-237-LE26](presupuestos/2258-237-LE26.md) INSUMOS PARA IMPRESORAS ZEBRA DEL HRA | Computación y electrónica | 2026-11-12 | 0/6 | $0 | $0 | $0 | — | faltan 6 precios |
 | [3885-68-LE26](presupuestos/3885-68-LE26.md) ADQ. EQUIPOS COMPUTACIONALES Y ACCESORIOS | Computación y electrónica | 2026-11-12 | 4/8 | $6.727.287 | $9.606.566 | $1.345.457 | $10.000.000 | faltan 4 precios, línea global, sin verificar |
 | [29-101-LE26](presupuestos/29-101-LE26.md) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | Vestuario, uniformes y textiles | 2026-11-12 | 4/4 | $87.000.901 | $124.237.286 | $17.400.180 | — | sin verificar |
-| [3996-45-LE26](presupuestos/3996-45-LE26.md) Adquisición de Equipos Computacionales y Periféricos | Computación y electrónica | 2026-11-13 | 3/11 | $4.472.884 | $6.387.279 | $894.577 | $13.670.000 | faltan 8 precios, sin verificar |
-| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 3/14 | $677.302 | $967.188 | $135.460 | $7.572.906 | faltan 11 precios |
+| [3996-45-LE26](presupuestos/3996-45-LE26.md) Adquisición de Equipos Computacionales y Periféricos | Computación y electrónica | 2026-11-13 | 5/11 | $4.971.592 | $7.099.434 | $994.318 | $13.670.000 | faltan 6 precios, sin verificar |
+| [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-13 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
+| [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 5/14 | $1.182.983 | $1.689.299 | $236.597 | $7.572.906 | faltan 9 precios, sin verificar |
 | [1075963-447-LE26](presupuestos/1075963-447-LE26.md) ADQUISICIÓN DE INSUMOS QUIRÚRGICOS ACCESORIOS DE ANESTESIA VÍA AÉREA Y | Insumos médicos no regulados y aseo | 2026-11-13 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
+| [1134432-78-LE26](presupuestos/1134432-78-LE26.md) ADQUISICIÓN DE JUGUETES PARA CELEBRACIÓN DE NAVIDAD COMUNAL 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 3/14 | $28.553.699 | $40.774.682 | $5.710.740 | $30.000.000 | supera monto, faltan 11 precios, sin verificar |
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 
 ## Ya cerradas
@@ -116,6 +113,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1956-37-COT26](presupuestos/1956-37-COT26.md) ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS EN CASINO DEPROV CORDILLERA
 - [2098-155-LE26](presupuestos/2098-155-LE26.md) ADQUISICION DE FOCOS Y PANELES LED
 - [2099-55-L126](presupuestos/2099-55-L126.md) ADQUISICION DE EQUIPOS PARA LOS LABORATORIOS DE LA SECRETARÍA REGIONAL MINISTERIAL DE SALUD XII REGIÓN DE MAGALLANES Y ANTÁRTICA CHILENA
+- [2111-330-LE26](presupuestos/2111-330-LE26.md) SUMINISTRO ROPA DE TRABAJO II
 - [2274-55-LE26](presupuestos/2274-55-LE26.md) ADQUISICIÓN DE MOBILIARIO Y AIRE ACONDICIONADO PARA ATENCIÓN INFANTIL EN CCR. PRAPS AIDIA 2026 DC 164 EXP. 16212
 - [2279-74-LE26](presupuestos/2279-74-LE26.md) SP 780 ADQUISICION DE ELEMENTOS DE PROTECCION PERSONAL
 - [2335-63-LE26](presupuestos/2335-63-LE26.md) INSUMOS CLINICOS OP 553-554-555-556
@@ -145,6 +143,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [2765-60-LE26](presupuestos/2765-60-LE26.md) Adquisición Vestuario para Funcionarios de Segurid
 - [2771-64-LE26](presupuestos/2771-64-LE26.md) ADQUISICION DE JUGUETES NAVIDAD EN CHIGUAYANTE 2026
 - [2775-121-LE26](presupuestos/2775-121-LE26.md) ADQUISICIÓN DE TERMOFUSOR HIDRÁULICO PARA PINTURA TERMOPLÁSTICA Y KIT DE ZAPATAS
+- [2832-42-L126](presupuestos/2832-42-L126.md) ADQUISICION DE ARTICULOS DEPORTIVOS PARA EL DEPARTAMENTO DE SALUD DE QUILLOTA
 - [2981-278-LE26](presupuestos/2981-278-LE26.md) JENAINPOL - ADQUISICIÓN DE 18 BATERIAS TB65 PARA DRONES MATRICE 300 Y 350 RTK
 - [2981-296-LE26](presupuestos/2981-296-LE26.md) TARJETA O TICKET ELECTRONICO DE VESTUARIO PARA EQUIPOS FRONTERA
 - [2981-298-LE26](presupuestos/2981-298-LE26.md) INSUMOS DE LABORATORIO BIOQUIMICA JENACIF
@@ -161,6 +160,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [3540-72-L126](presupuestos/3540-72-L126.md) Lubricantes y grasa para vehículos y maquinarias (P.2408-2409)
 - [3540-74-LE26](presupuestos/3540-74-LE26.md) Repuestos y filtros para camiones y bus
 - [3567-42-LE26](presupuestos/3567-42-LE26.md) JUGUETES DE NAVIDAD AÑO 2026.
+- [3614-42-LE26](presupuestos/3614-42-LE26.md) INSUMOS MEDICOS DESAM Y PIE DIABETICO
 - [3654-36-LE26](presupuestos/3654-36-LE26.md) ADQUISICIÓN DE ELEMENTOS DE PROTECCIÓN CORPORAL
 - [3666-13-LE26](presupuestos/3666-13-LE26.md) Adquisición de juguetes Navidad 2026 Tiltil
 - [3675-8-L126](presupuestos/3675-8-L126.md) TONER Y TINTAS PARA EL DEPARTAMENTRO DE SALUD
@@ -182,6 +182,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [4469-209-L126](presupuestos/4469-209-L126.md) SC 40658 (JRA) - ADQ DE COCINA MONTESSORI Y SILLAS DE PARVULO.
 - [4469-211-L126](presupuestos/4469-211-L126.md) SC 40681-40683 (JRA) - IMPRESION DE 2 LIBROS DPTO DE ARTES INTEGRADAS VCM UPA 2493
 - [4469-219-L126](presupuestos/4469-219-L126.md) S.C. N° 40791-40793 (P.C) ADQUISICIÓN DE PROYECTOR , TABLET Y OTROS ; PROY. UPA RED 25994
+- [45-56-L126](presupuestos/45-56-L126.md) SUMINISTRO DE MOBILIARIO PARA 4 DIRECCIONES REGIONALES
 - [4629-30-L126](presupuestos/4629-30-L126.md) ELEMENTOS DE PROTECCIÓN PERSONAL PARA DT E1Ó2-RT9
 - [4768-55-LE26](presupuestos/4768-55-LE26.md) ADQUISICION DE JUGUETES DE NAVIDAD 2026
 - [5061-41-L126](presupuestos/5061-41-L126.md) SP1522 Adquisición de impresoras laser para establecimientos de salud, Según especificaciones técnicas.

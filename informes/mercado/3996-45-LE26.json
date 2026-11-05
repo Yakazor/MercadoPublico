@@ -1,7 +1,7 @@
 {
  "codigo": "3996-45-LE26",
  "nombre": "Adquisición de Equipos Computacionales y Periféricos",
- "fecha_consulta": "2026-11-04",
+ "fecha_consulta": "2026-11-05",
  "items": [
   {
    "linea": 1,
@@ -97,8 +97,22 @@
   {
    "linea": 8,
    "producto": "Smart TV de 55” Crystal UHD 4K, wi-fi, Bluetooth, puertos HDMI, y USB, similar a Samsung U8000H, que incluya el soporte ",
-   "opciones": [],
-   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "LED Smart TV 55\" 4K Crystal UHD Vision AI U8000H 2026",
+     "url": "https://www.paris.cl/led-smart-tv-55-4k-crystal-uhd-vision-ai-u8000h-2026-477724999.html",
+     "precio": 369990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 310915.97,
+     "coincidencia": "equivalente",
+     "nota": "Sin el soporte tipo brazo que pide la línea.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
   },
   {
    "linea": 9,
@@ -109,8 +123,22 @@
   {
    "linea": 10,
    "producto": "Alargador carrete 4 posiciones salidas 10a 16a/ 25mts con protección de sobreconsumo 2200w certificado, con enchufes T10",
-   "opciones": [],
-   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+   "opciones": [
+    {
+     "tienda": "Sodimac (HALUX)",
+     "producto_mercado": "Carrete alargador 4 tomas 25 m schuko negro",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/415388X/carrete-alargador-4-tomas-25-m-schuko-negro",
+     "precio": 34990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 29403.36,
+     "coincidencia": "equivalente",
+     "nota": "Listados muestran 0.209–4.990; confirmar enchufes T10A (la ficha dice 10A/schuko).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
   },
   {
    "linea": 11,

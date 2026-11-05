@@ -1,7 +1,7 @@
 {
  "codigo": "979-77-LE26",
  "nombre": "Adquisición de elementos de protección personal",
- "fecha_consulta": "2026-11-04",
+ "fecha_consulta": "2026-11-05",
  "items": [
   {
    "linea": 1,
@@ -100,8 +100,36 @@
   {
    "linea": 11,
    "producto": "POLAR- CONSIDERA ENTREGA DE MUESTRA",
-   "opciones": [],
-   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+   "opciones": [
+    {
+     "tienda": "Sodimac (TOPSAFE)",
+     "producto_mercado": "Chaqueta polar negra TOPSAFE talla L",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/polar-hombre",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado; la licitación pide muestra.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    },
+    {
+     "tienda": "Lider (Andesland)",
+     "producto_mercado": "Chaqueta Polar Corporativa Hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
   },
   {
    "linea": 12,
@@ -135,8 +163,22 @@
   {
    "linea": 14,
    "producto": "CAPA DE AGUA  IMPERMEABLE- CONSIDERA ENTREGA DE MUESTRA",
-   "opciones": [],
-   "nota": "Sin precio en tiendas chilenas en la búsqueda del 04-11; pedir cotización a distribuidor."
+   "opciones": [
+    {
+     "tienda": "Sodimac (FG Safety)",
+     "producto_mercado": "Capa impermeable azul Holt FG Safety",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/capa-de-agua",
+     "precio": 5690,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4781.51,
+     "coincidencia": "equivalente",
+     "nota": "Listado muestra .690–.290; se usa el menor, confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
   }
  ],
  "verificacion_paginas": {

@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-05 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:42 y
+  11:51; datos del 05-11 08:50, 468 licitaciones, 592 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (7 a
+  completar): 1134432-78-LE26 juguetes de Navidad (nueva, 3/14, NO GO a precio retail), 979-77-LE26 +2 líneas
+  (5/14), 3996-45-LE26 +2 líneas (5/11). Ninguna GO; top sin cambio: 979-73-LE26 (cierra 06-11), 3996-45-LE26 y
+  3885-68-LE26. 550 pruebas OK.
+
 - 2026-11-04 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (el push dio error 500
   de GitHub dos veces; salió al tercer intento). `datos` cambió 11:40 y 11:46 (03-11 → 04-11 08:44, 454 licitaciones,
   826 Compras Ágiles, ninguna de 2º llamado). Lote de 8: 3996-45-LE26 computación (3/11), 979-78-LE26 eléctricos

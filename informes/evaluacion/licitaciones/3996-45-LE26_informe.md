@@ -8,47 +8,47 @@
 - **Organismo comprador:** I MUNICIPALIDAD DE COLTAUCO (Región del Libertador General Bernardo O´Higgins)
 - **Fecha de cierre:** 2026-11-13 09:01
 - **Monto referencial:** $13.670.000
-- **Ítems:** 11 (27% con precio de mercado)
+- **Ítems:** 11 (45% con precio de mercado)
 
 ## Análisis económico
 
 | Concepto | Monto (neto) |
 |---|---:|
-| Costos directos (mercadería a precio de tienda) | $3.579.739 |
-| IVA de las compras (sin crédito fiscal) | $680.151 |
-| Logística (despacho 6 %, zona media) | $214.784 |
+| Costos directos (mercadería a precio de tienda) | $3.978.866 |
+| IVA de las compras (sin crédito fiscal) | $755.984 |
+| Logística (despacho 6 %, zona media) | $238.732 |
 | Horas hombre (9.75 h × $6.000) | $58.500 |
 | Garantía de fiel cumplimiento | $0 |
-| Costo financiero (30 días hasta el pago) | $63.898 |
+| Costo financiero (30 días hasta el pago) | $71.023 |
 | Subcontratación | $0 |
-| **Costo total** | **$4.597.073** |
-| Ingreso (oferta sugerida) | $5.367.461 |
-| **Margen bruto** | $1.107.571 (21 %) |
-| **Margen neto** | $770.389 (14 %) |
+| **Costo total** | **$5.103.105** |
+| Ingreso (oferta sugerida) | $5.965.911 |
+| **Margen bruto** | $1.231.061 (21 %) |
+| **Margen neto** | $862.806 (14 %) |
 | Rentabilidad sobre costos | 17 % |
-| Punto de equilibrio (oferta mínima con IVA) | $5.470.517 |
-| Oferta sugerida con IVA | $6.387.279 |
+| Punto de equilibrio (oferta mínima con IVA) | $6.072.695 |
+| Oferta sugerida con IVA | $7.099.434 |
 
-**Riesgos financieros:** 8 de 11 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo)..
+**Riesgos financieros:** 6 de 11 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo)..
 
 ## Análisis operacional
 
 - **Capacidad de cumplimiento:** factibilidad operativa baja, complejidad media.
-- **Recursos requeridos:** capital de trabajo de unos $4.259.890 con IVA para comprar la mercadería, 9.75 horas de trabajo y transporte a Región del Libertador General Bernardo O´Higgins.
+- **Recursos requeridos:** capital de trabajo de unos $4.734.850 con IVA para comprar la mercadería, 9.75 horas de trabajo y transporte a Región del Libertador General Bernardo O´Higgins.
 - **Dependencias críticas:** stock y precio del proveedor al momento de la orden de compra; precios de tienda sin verificar hasta abrir cada link.
 - **Requisitos técnicos, garantías, experiencia y certificaciones:** están en las bases y anexos de la ficha (la API no los entrega). Revísalos antes de ofertar.
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 9
+- **Días para el cierre:** 8
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
-- 8 de 11 ítems sin precio de mercado: el costo real es mayor.
+- 6 de 11 ítems sin precio de mercado: el costo real es mayor.
 - La mayoría de los precios no está verificada en la página de la tienda.
-- 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).
+- 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).
 
 ## Proveedores recomendados
 
@@ -61,10 +61,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 27% de las líneas (mínimo 80%): todavía no se puede decidir.
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 45% de las líneas (mínimo 80%): todavía no se puede decidir.
 
 Condiciones:
-- Conseguir precio de las 8 líneas que faltan: con 3 de 11 el margen sale de una parte del pedido.
+- Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido.
 
 ## Supuestos
 

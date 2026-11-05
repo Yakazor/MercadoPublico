@@ -1,0 +1,133 @@
+{
+ "codigo": "1134432-78-LE26",
+ "nombre": "ADQUISICIÓN DE JUGUETES PARA CELEBRACIÓN DE NAVIDAD COMUNAL 2026",
+ "fecha_consulta": "2026-11-05",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Vaca caminadora eléctrica luces de estrellas 3 colores, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 2,
+   "producto": "Set balde de playa con embudo y accesorios, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 3,
+   "producto": "Juego rana atrapa pelotitas, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 4,
+   "producto": "Juego pinball y arco de futbol diseño espacial, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 5,
+   "producto": "Juego lanza pelotas de velcro diseño espacial, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 6,
+   "producto": "Astronauta volador con sensor, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 7,
+   "producto": "Audífonos con estuche de carga led transparente, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 8,
+   "producto": "Pingüino bailarín con luces y música, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 9,
+   "producto": "Correpasillos con diseño de animales, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 10,
+   "producto": "Set de masitas dentista frenillos, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 11,
+   "producto": "Juego de mesa de pool, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [],
+   "nota": "Juguete genérico de importación: sin precio en tiendas chilenas el 05-11; cotizar a importador por volumen."
+  },
+  {
+   "linea": 12,
+   "producto": "Cámara Infantil de impresión termal y lápices colores, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Cámara de impresión instantánea Contixo Kids KC4 Pink",
+     "url": "https://www.lider.cl/ip/fotografia/camara-de-impresion-instantanea-contixo-kids-kc4-pink/00001722259580",
+     "precio": 44990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 37806.72,
+     "coincidencia": "equivalente",
+     "nota": "Envío desde EE.UU.; precio retail, 200 unidades requieren importador.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Consola de video portátil, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [
+    {
+     "tienda": "Lider (My Arcade)",
+     "producto_mercado": "Consola de juegos portátil My Arcade Tetris Pocket Player Pro",
+     "url": "https://www.lider.cl/ip/vehiculos-y-radiocontrolados/consola-de-juegos-portatil-my-arcade-tetris-pocket-player-pro/00084562007028",
+     "precio": 42990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 36126.05,
+     "coincidencia": "aproximada",
+     "nota": "Hay genéricas desde .990 en el listado de Lider sin ficha identificada.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Set Reloj Inteligente del tipo S8 o equivalente, de acuerdo a requerimiento técnico bases de licitación",
+   "opciones": [
+    {
+     "tienda": "Lider (Justice)",
+     "producto_mercado": "Smartwatch Justice iTime niños digital rosa",
+     "url": "https://www.lider.cl/ip/relojes-inteligentes/smartwatch-justice-itime-ninos-digital-rosa-silicona-jse4631wm/00129868839976",
+     "precio": 47990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 40327.73,
+     "coincidencia": "aproximada",
+     "nota": "No es tipo S8.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}
