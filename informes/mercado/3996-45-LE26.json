@@ -45,7 +45,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-04",
      "precio_pagina": 960500.0,
-     "verificacion_pagina": "2026-11-05: la página abrió y el precio más parecido es $960.500, no $729.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-06: la página abrió y el precio más parecido es $960.500, no $729.990: puede haber cambiado."
     }
    ]
   },
@@ -66,9 +66,9 @@
      "nota": "Modelo G3110, no G3160 (sin precio en Chile en la búsqueda).",
      "verificado": true,
      "fecha_consulta": "2026-11-04",
-     "verificado_en": "2026-11-05",
+     "verificado_en": "2026-11-06",
      "precio_pagina": 139990.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $139.990."
+     "verificacion_pagina": "2026-11-06: la página muestra $139.990."
     }
    ]
   },
@@ -90,7 +90,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-04",
      "precio_pagina": 229990.0,
-     "verificacion_pagina": "2026-11-05: la página abrió y el precio más parecido es $229.990, no $259.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-06: la página abrió y el precio más parecido es $229.990, no $259.990: puede haber cambiado."
     }
    ]
   },
@@ -111,7 +111,7 @@
      "nota": "Sin el soporte tipo brazo que pide la línea.",
      "verificado": false,
      "fecha_consulta": "2026-11-05",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -139,7 +139,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-05",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-11-05: la página abrió y el precio más parecido es $49.990, no $34.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-06: la página abrió y el precio más parecido es $49.990, no $34.990: puede haber cambiado."
     }
    ]
   },
@@ -151,7 +151,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-05",
+  "fecha": "2026-11-06",
   "opciones": 5,
   "verificadas": 1
  }

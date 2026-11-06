@@ -39,9 +39,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-31",
      "verificado": true,
-     "verificado_en": "2026-11-05",
+     "verificado_en": "2026-11-06",
      "precio_pagina": 99990.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $99.990."
+     "verificacion_pagina": "2026-11-06: la página muestra $99.990."
     }
    ]
   },
@@ -105,8 +105,8 @@
      "fecha_consulta": "2026-10-31",
      "verificado": true,
      "precio_pagina": 25453.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $25.453.",
-     "verificado_en": "2026-11-05"
+     "verificacion_pagina": "2026-11-06: la página muestra $25.453.",
+     "verificado_en": "2026-11-06"
     }
    ]
   },
@@ -127,9 +127,9 @@
      "nota": "otro listado lo muestra a $79.990 con descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-31",
      "verificado": true,
-     "verificado_en": "2026-11-05",
+     "verificado_en": "2026-11-06",
      "precio_pagina": 129990.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $129.990."
+     "verificacion_pagina": "2026-11-06: la página muestra $129.990."
     }
    ]
   },
@@ -149,13 +149,13 @@
      "coincidencia": "exacta",
      "nota": "oferta $21.500. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-31",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-05",
+  "fecha": "2026-11-06",
   "opciones": 4,
   "verificadas": 3
  }

@@ -271,20 +271,20 @@
  },
  {
   "fecha": "2026-11-06",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "1074 vigentes; 19 evaluadas; informes de 10",
-  "resultado": "0 GO, 0 con condiciones, 6 falta precio, 13 NO GO",
-  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 4 precios son de productos aproximados (",
-  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 29-101-LE26: NO GO; 979-73-LE26: NO GO; 4629-34-LE26: NO GO; 1134432-78-LE26: NO GO",
-  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-06",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote de 8 (7 a completar). 3268-35-LE26 máquinas de ejercicio ILUS (Magallanes, nueva): 11/11 líneas con precios publicados por ILUS Fitness (3 aproximadas). Las 7 a completar no tuvieron precios nuevos (líneas sin precio en tiendas los días anteriores: van a cotización). Sin Compras Ágiles de 2º llamado.",
   "resultado": "Ninguna GO: 6 con falta de precio y 13 NO GO. 3268-35-LE26 NO GO: a precio de lista de ILUS la oferta (1,2 M) supera los 0,8 M estimados; el fabricante probablemente oferte directo. 979-73-LE26 cerró hoy sin completar precios.",
   "riesgos": "Despacho a Magallanes caro. Precios de listados sin verificar en su página.",
   "decisiones": "Top 3: 3996-45-LE26 (13-11), 3885-68-LE26 (12-11) y 1057448-53-LE26 (09-11), todas con falta de precio.",
   "recomendaciones": "Para 3268-35-LE26 solo convendría con precio de distribuidor de ILUS (pedir descuento por volumen, 30 % o más). Priorizar cotizar las líneas faltantes de 3996-45-LE26 (AIO Lenovo, notebooks HP) y 1057448-53-LE26 (sillas, cierra 09-11)."
+ },
+ {
+  "fecha": "2026-11-06",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1074 vigentes; 19 evaluadas; informes de 10",
+  "resultado": "0 GO, 0 con condiciones, 6 falta precio, 13 NO GO",
+  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 4 precios son de productos aproximados (",
+  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 29-101-LE26: NO GO; 979-73-LE26: NO GO; 4629-34-LE26: NO GO; 1134432-78-LE26: NO GO",
+  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
  }
 ]

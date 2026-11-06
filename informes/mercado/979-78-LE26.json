@@ -38,7 +38,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-04",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy (marketplace)",
@@ -53,7 +53,7 @@
      "nota": "Precio por metro del listado.",
      "verificado": false,
      "fecha_consulta": "2026-11-04",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -80,7 +80,7 @@
      "nota": "1.000 m: pedir precio por rollo a distribuidor (Gobantes, Vitel).",
      "verificado": false,
      "fecha_consulta": "2026-11-04",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -110,7 +110,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-05",
+  "fecha": "2026-11-06",
   "opciones": 3,
   "verificadas": 0
  }

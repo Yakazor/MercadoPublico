@@ -20,9 +20,9 @@
      "coincidencia": "equivalente",
      "nota": "búsqueda del 27-10; piden Michelin o similar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
-     "verificado": true,
-     "precio_pagina": 87290.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $87.290.",
+     "verificado": false,
+     "precio_pagina": 159990.0,
+     "verificacion_pagina": "2026-11-06: la página abrió y el precio más parecido es $159.990, no $85.990: puede haber cambiado.",
      "verificado_en": "2026-11-05"
     }
    ]
@@ -56,9 +56,9 @@
      "nota": "piden Michelin o similar. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
      "verificado": true,
-     "precio_pagina": 77590.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $77.590.",
-     "verificado_en": "2026-11-05"
+     "precio_pagina": 76990.0,
+     "verificacion_pagina": "2026-11-06: la página muestra $76.990.",
+     "verificado_en": "2026-11-06"
     }
    ]
   },
@@ -78,7 +78,7 @@
      "coincidencia": "aproximada",
      "nota": "dibujo de tracción; piden X Multi Z2 (direccional/mixto). Precio vía Knasta (comparador). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -99,9 +99,9 @@
      "nota": "búsqueda del 27-10; no es versión C. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-05",
+     "verificado_en": "2026-11-06",
      "precio_pagina": 64500.0,
-     "verificacion_pagina": "2026-11-05: la página muestra $64.500."
+     "verificacion_pagina": "2026-11-06: la página muestra $64.500."
     }
    ]
   },
@@ -121,7 +121,7 @@
      "coincidencia": "equivalente",
      "nota": "precio vía Knasta (comparador de Lider). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-30",
-     "verificacion_pagina": "2026-11-05: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -139,8 +139,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-05",
+  "fecha": "2026-11-06",
   "opciones": 5,
-  "verificadas": 3
+  "verificadas": 2
  }
 }

@@ -34,7 +34,7 @@
      "fecha_consulta": "2026-10-25",
      "verificado": false,
      "precio_pagina": 40000.0,
-     "verificacion_pagina": "2026-11-05: la página abrió y el precio más parecido es $40.000, no $37.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-06: la página abrió y el precio más parecido es $40.000, no $37.990: puede haber cambiado."
     }
    ]
   },
@@ -46,7 +46,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-05",
+  "fecha": "2026-11-06",
   "opciones": 1,
   "verificadas": 0
  }
