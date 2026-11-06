@@ -1,6 +1,6 @@
 # GO / NO GO: 979-73-LE26
 
-## Resultado: ⚪ FALTA PRECIO
+## Resultado: 🔴 NO GO
 
 | Indicador | Valor |
 |---|---|
@@ -19,10 +19,6 @@
 
 ## Por qué
 
-- Hay precio para 78% de las líneas (mínimo 80%): todavía no se puede decidir.
-
-## Condiciones para postular
-
-- Conseguir precio de las 4 líneas que faltan: con 14 de 18 el margen sale de una parte del pedido.
+- Cierra hoy o ya cerró: no hay tiempo para cotizar.
 
 Costo total estimado $6.550.612 neto; punto de equilibrio $7.795.228 con IVA (oferta mínima que cubre todos los costos).

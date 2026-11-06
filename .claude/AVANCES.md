@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-06 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:42 y
+  11:48; datos del 06-11 08:47, 474 licitaciones, 600 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (7 a
+  completar, sin precios nuevos): 3268-35-LE26 máquinas de ejercicio ILUS (Magallanes, 11/11 con precios de ILUS
+  Fitness; NO GO, $41,2 M contra $30,8 M estimados). Ninguna GO; top: 3996-45-LE26, 3885-68-LE26 y 1057448-53-LE26.
+  550 pruebas OK.
+
 - 2026-11-05 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:42 y
   11:51; datos del 05-11 08:50, 468 licitaciones, 592 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (7 a
   completar): 1134432-78-LE26 juguetes de Navidad (nueva, 3/14, NO GO a precio retail), 979-77-LE26 +2 líneas

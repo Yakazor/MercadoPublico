@@ -1,0 +1,227 @@
+{
+ "codigo": "3268-35-LE26",
+ "nombre": "GBA 1682026 ADQ. DE MAQUINAS DE EJERCICIOS.",
+ "fecha_consulta": "2026-11-06",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ILUS XTRA COMERCIAL CURVE TREADMILL O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Trotadora curva comercial ILUS (SKU 1027100901)",
+     "url": "https://ilusfitness.com/en/products/ilus-xtra-commercial-curved-treadmill",
+     "precio": 2590000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2176470.59,
+     "coincidencia": "exacta",
+     "nota": "Sin motor; retiro en Bodega Quilicura.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "DRAX REDON NR25XA TREADMILL O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "DRAXFIT New Redon NRED25X",
+     "url": "https://ilusfitness.com/en/products/draxfit-nred25x-treadmill-nred25x",
+     "precio": 5790000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4865546.22,
+     "coincidencia": "aproximada",
+     "nota": "Modelo hermano; la ficha del NR25XA no muestra precio.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "ILUS MONSTER SER (MANCUERNAS HEXAGONALES 5 A 40 KG + RACK ) O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Monster Set mancuernas hexagonales 5 a 40 kg + rack (SMH540R)",
+     "url": "https://ilusfitness.com/en/products/ilus-monster-set-mancuernas-hexagonales-5-a-40-kg-rack",
+     "precio": 1620000,
+     "iva_incluido": true,
+     "contenido": "1 pack",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1361344.54,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "ILUS DYNAMIS 4 STACK JUNGLE O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS 4 Stack Jungle (SKU 1121100692)",
+     "url": "https://ilusfitness.com/en/products/1121100692-ilus-4-stack-jungle",
+     "precio": 6590000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5537815.13,
+     "coincidencia": "aproximada",
+     "nota": "La ficha Dynamis 4 Stack Jungle no muestra precio; este es otro modelo de 4 estaciones.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "ILUS ALPHA BIKE O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Alpha Bike (la ficha muestra ILUS IC1 Bicycle)",
+     "url": "https://ilusfitness.com/en/products/ilus-alpha-bike",
+     "precio": 649900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 546134.45,
+     "coincidencia": "equivalente",
+     "nota": "Confirmar modelo con ILUS.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "BANCO AJUSTABLE ILUS KAIROS EVOLVE O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Banco ajustable ILUS Kairos Evolve (SKU 1121100592)",
+     "url": "https://ilusfitness.com/en/products/1121100592-banco-ajustable-ilus-kairos-evolve",
+     "precio": 430000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 361344.54,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "ÁRBOL DE DISCOS ILUS KAIROS O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Árbol de discos ILUS Kairos",
+     "url": "https://ilusfitness.com/en/products/1224100521-arbol-de-discos-ilus-kairos",
+     "precio": 190000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 159663.87,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "SET DISCOS BUMPERS ILUS HI-TEMP BOUNCE 10 A 45 LBS",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Set discos bumpers ILUS Hi-Temp Bounce 10 a 45 lb (SDIHTB)",
+     "url": "https://ilusfitness.com/en/products/set-discos-bumpers-ilus-hi-temp-bounce-10-a-45-lb",
+     "precio": 390000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 327731.09,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Máquina Escaladora High Performance – Comercial O EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Escaladora ILUS X1 Climber (SKU 1010089701)",
+     "url": "https://ilusfitness.com/en/products/escaladora-ilus-x1-1010089701",
+     "precio": 4190000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3521008.4,
+     "coincidencia": "equivalente",
+     "nota": "Preventa; confirmar que sea uso comercial.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "BARRA OLÍMPICA 28MM – 200CM 160 KG",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Barra Woman ILUS 1000 lb Cerakote",
+     "url": "https://ilusfitness.com/en/products/1113100438-barra-woman-ilus-1000lb-cerakote-turquesa",
+     "precio": 179900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 151176.47,
+     "coincidencia": "aproximada",
+     "nota": "25 mm de diámetro, no 28 mm.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Esquiadora Skierg Air X200 o EQUIVALENTE",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Air Ski Erg Machine",
+     "url": "https://ilusfitness.com/en/products/ilus-air-ski-erg-machine",
+     "precio": 790000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 663865.55,
+     "coincidencia": "equivalente",
+     "nota": "Preventa.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-06"
+    }
+   ]
+  }
+ ]
+}

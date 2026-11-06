@@ -1,6 +1,6 @@
 # Informe ejecutivo: Adquisición de Elementos de Protección Personal NC
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,7 +48,7 @@
 
 - 4 de 18 ítems sin precio de mercado: el costo real es mayor.
 - 3 de 14 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 
@@ -62,10 +62,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 78% de las líneas (mínimo 80%): todavía no se puede decidir.
-
-Condiciones:
-- Conseguir precio de las 4 líneas que faltan: con 14 de 18 el margen sale de una parte del pedido.
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar.
 
 ## Supuestos
 
