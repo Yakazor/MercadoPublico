@@ -286,5 +286,23 @@
   "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 14 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 4 precios son de productos aproximados (",
   "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 29-101-LE26: NO GO; 979-73-LE26: NO GO; 4629-34-LE26: NO GO; 1134432-78-LE26: NO GO",
   "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-07",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "739 vigentes; 16 evaluadas; informes de 10",
+  "resultado": "0 GO, 0 con condiciones, 7 falta precio, 9 NO GO",
+  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 precios son de productos aproximados",
+  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 1134432-78-LE26: NO GO; 3268-35-LE26: NO GO",
+  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-07",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 (6 a completar, sin precios nuevos). Nuevas: 1057420-43-L126 implementos deportivos Hospital de Huépil (10/15, casi todo ILUS Fitness) y 867990-146-L126 insumos de impresión 3D en resina (2/13: resinas Elegoo aproximadas y alcohol isopropílico 99,7 %). Sin Compras Ágiles de 2º llamado.",
+  "resultado": "Ninguna GO: 7 con falta de precio y 9 NO GO. 1057420-43-L126 NO GO: la oferta de las líneas con referencia supera 415 % lo que el Estado pagó en OC parecidas (compran implementos genéricos, no ILUS). 867990-146-L126 queda con falta de precio (15 % de líneas, margen 13 %).",
+  "riesgos": "Precios de listados sin verificar; resinas con envío desde EE.UU.",
+  "decisiones": "Top 3 sin cambio: 3996-45-LE26 (13-11), 3885-68-LE26 (12-11) y 1057448-53-LE26 (09-11).",
+  "recomendaciones": "1057448-53-LE26 cierra el lunes 09-11: si interesa, cotizar hoy las sillas ecocuero a un fabricante. Para 1057420-43-L126 solo con implementos genéricos de importador (precio de OC)."
  }
 ]

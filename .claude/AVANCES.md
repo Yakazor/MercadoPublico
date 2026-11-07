@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-07 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:38 y
+  11:44; datos del 07-11 08:43, 466 licitaciones, 273 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (6 a
+  completar, sin precios nuevos): 1057420-43-L126 implementos deportivos (10/15, NO GO: 415 % sobre lo pagado en OC) y
+  867990-146-L126 insumos de impresión 3D (2/13). Ninguna GO; top sin cambio: 3996-45-LE26, 3885-68-LE26 y
+  1057448-53-LE26. 550 pruebas OK.
+
 - 2026-11-06 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:42 y
   11:48; datos del 06-11 08:47, 474 licitaciones, 600 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (7 a
   completar, sin precios nuevos): 3268-35-LE26 máquinas de ejercicio ILUS (Magallanes, 11/11 con precios de ILUS

@@ -1,0 +1,237 @@
+{
+ "codigo": "1057420-43-L126",
+ "nombre": "ADQUISICION DE IMPLEMENTOS DEPORTIVOS PARA EL HOSPITAL DE HUÉPIL",
+ "fecha_consulta": "2026-11-07",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "MANCUERNA HEXAGONAL 30 KILOS",
+   "opciones": [
+    {
+     "tienda": "Falabella (ATLETIS)",
+     "producto_mercado": "Mancuerna Hexagonal 30 Kg Negro",
+     "url": "https://www.falabella.com/falabella-cl/shop/mancuernas-hexagonales",
+     "precio": 63990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 53773.11,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado con descuento; confirmar si es unidad.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "MANCUERNA HEXAGONAL 15 KILOS",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Mancuerna hexagonal ILUS 15 kg",
+     "url": "https://ilusfitness.com/en/products/fzamc037s0000-par-mancuernas-hexagonales-ilus",
+     "precio": 59400,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 49915.97,
+     "coincidencia": "equivalente",
+     "nota": "La ficha no aclara si el precio es por unidad o por par.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "PESA RUSA TIPO KETTLEBEL 32 KILOS",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Kettlebell 32 kg",
+     "url": "https://ilusfitness.com/en/products/fzakb061s0000-ilus-kettlebell",
+     "precio": 99000,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 83193.28,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "PESA RUSA TIPO KETTLEBEL 8 KILOS",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Kettlebell 8 kg",
+     "url": "https://ilusfitness.com/en/products/fzakb061s0000-ilus-kettlebell",
+     "precio": 26900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 22605.04,
+     "coincidencia": "exacta",
+     "nota": "La licitación repite la línea 5 (kettlebell 8 kg y core roller).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Pack de bandas elásticas cerradas diferentes resistencias (4 bandas cada pack)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 7,
+   "producto": "Medio balón tipo  Bossu",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Bosu Ball Black",
+     "url": "https://ilusfitness.com/en/products/ilus-bosu-ball-black-1211100823",
+     "precio": 87900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 73865.55,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Balón medicinal 9 kilos",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Wall Ball 9 kg balón medicinal",
+     "url": "https://ilusfitness.com/en/products/ilus-wall-ball-9-kg-balon-medicinal",
+     "precio": 44900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 37731.09,
+     "coincidencia": "equivalente",
+     "nota": "La ficha aparecía agotada; 9.900–4.900, se usa el mayor.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Disco tipo bumper 45 libras",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Par discos bumpers ILUS Hi-Temp Bounce 45 lb",
+     "url": "https://ilusfitness.com/en/products/par-discos-bumpers-ilus-hi-temp-bounce-fzabu072s0000",
+     "precio": 159900,
+     "iva_incluido": true,
+     "contenido": "par (2 discos)",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 67184.87,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Booty plyo box",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Plyo Box 3 en 1 V2",
+     "url": "https://ilusfitness.com/en/products/1223100211-ilus-plyo-box-3-en-1-v2",
+     "precio": 169900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 142773.11,
+     "coincidencia": "aproximada",
+     "nota": "Cajón de madera 3 en 1, no tipo booty.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Pelotas de pilates pequeñas",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 12,
+   "producto": "Balon  para yoga",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "ILUS Swiss Ball 65 cm negro",
+     "url": "https://ilusfitness.com/en/products/1211100410-ilus-swiss-ball-65-cm-negro",
+     "precio": 12900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10840.34,
+     "coincidencia": "equivalente",
+     "nota": "Oferta .900 en el listado; se usa el precio normal.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Step aeróbico 2 niveles",
+   "opciones": [
+    {
+     "tienda": "ILUS Fitness",
+     "producto_mercado": "Step aeróbico ILUS",
+     "url": "https://ilusfitness.com/en/products/step-aerobico-ilus-1244100732",
+     "precio": 57900,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 48655.46,
+     "coincidencia": "equivalente",
+     "nota": "Listado 5.900–7.900; se usa el mayor.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Set de Bastones de gimnasia (5 a 10 unidades)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 15,
+   "producto": "Par mancuerna vinílica 0.5kg",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 16,
+   "producto": "Set 3 a 5 Bandas Elásticas Tpe para ejercicio de  pilates  - Elástico Resistencia",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  }
+ ]
+}

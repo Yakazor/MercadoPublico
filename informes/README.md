@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-06. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-07. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,17 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [2335-67-LE26](presupuestos/2335-67-LE26.md) INSUMOS CLINICOS OP 602 | Insumos médicos no regulados y aseo | 2026-11-06 | 0/7 | $0 | $0 | $0 | $8.140.000 | faltan 7 precios |
-| [4407-29-L126](presupuestos/4407-29-L126.md) INSUMOS MEDICOS CONVENIO FOFAR | Insumos médicos no regulados y aseo | 2026-11-06 | 0/7 | $0 | $0 | $0 | $2.780.034 | faltan 7 precios |
-| [1709-29-LE26](presupuestos/1709-29-LE26.md) CANASTA DE SUMINISTRO DE GRUPO ELECTROGENO | Materiales de construcción, eléctricos e iluminación | 2026-11-06 | 0/5 | $0 | $0 | $0 | — | faltan 5 precios |
-| [4629-34-LE26](presupuestos/4629-34-LE26.md) ADQUISICIÓN DE VESTUARIO - DT | Vestuario, uniformes y textiles | 2026-11-06 | 4/5 | $27.667.132 | $39.508.665 | $5.533.426 | $32.162.500 | supera monto, falta 1 precio |
-| [1295444-14-L126](presupuestos/1295444-14-L126.md) ELEMENTOS DE PROTECCIÓN PERSONAL PARA EL CEMENTERIO GENERAL DE CONCEPC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 9/16 | $2.285.347 | $3.263.475 | $457.069 | $4.000.000 | faltan 7 precios, sin verificar |
-| [4236-30-LE26](presupuestos/4236-30-LE26.md) ADQUISICION DE JUGUETES PROGRAMA NAVIDAD AÑO 2026 | Deporte, juguetes y material didáctico | 2026-11-06 | 0/18 | $0 | $0 | $0 | — | faltan 18 precios |
-| [979-73-LE26](presupuestos/979-73-LE26.md) Adquisición de Elementos de Protección Personal NC | Seguridad, EPP, señalética y protección contra incendios | 2026-11-06 | 14/18 | $6.542.613 | $9.342.852 | $1.308.523 | $10.900.000 | faltan 4 precios, sin verificar |
-| [2107-168-LE26](presupuestos/2107-168-LE26.md) ADQUISICIÓN DE INSUMOS DE OFICINA PARA DPTO. LOGISTICA | Artículos de oficina y librería | 2026-11-06 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
-| [4451-129-L126](presupuestos/4451-129-L126.md) ADQ. HERRAMIENTAS Y OTROS PARA ALUMBRADO PUBLICO | Ferretería y herramientas | 2026-11-06 | 4/14 | $488.812 | $698.023 | $97.762 | $2.400.000 | faltan 10 precios, sin verificar |
-| [635-183-L126](presupuestos/635-183-L126.md) ADQUISICIÓN DE HERRAMIENTAS PARA DIAGNÓSTICO Y CONTROL DE INFRAESTRUCT | Ferretería y herramientas | 2026-11-06 | 4/9 | $128.058 | $182.867 | $25.612 | $1.600.000 | faltan 5 precios |
-| [1904-10-LE26](presupuestos/1904-10-LE26.md) ADQUISICION DE NEUMATICOS Y LLANTA | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-06 | 4/12 | $3.948.315 | $5.638.194 | $789.663 | — | faltan 8 precios, sin verificar |
 | [1057448-53-LE26](presupuestos/1057448-53-LE26.md) ADQ DE SILLAS VARIAS BIP 30418022 BIP 40001311 | Mobiliario de oficina, escolar y almacenaje | 2026-11-09 | 2/7 | $4.588.500 | $6.552.378 | $917.700 | — | faltan 5 precios, sin verificar |
 | [1380-211-LE26](presupuestos/1380-211-LE26.md) PPTA 315 ADQUISICION DE COLCHONES Y FUNDAS | Electrodomésticos, hogar y menaje | 2026-11-09 | 0/3 | $0 | $0 | $0 | $18.838.544 | faltan 3 precios |
 | [2483-255-LE26](presupuestos/2483-255-LE26.md) ADQUISICIÓN DE INSUMOS MEDICOS Y OTROS EQUIPAMIENTOS PARA VEHÍCULOS DE | Insumos médicos no regulados y aseo | 2026-11-09 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
@@ -36,13 +25,16 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [4053-44-LE26](presupuestos/4053-44-LE26.md) VESTUARIO INSTITUCIONAL - CESFAM MARIQUINA 2026 | Vestuario, uniformes y textiles | 2026-11-10 | 3/6 | $22.397.213 | $31.983.220 | $4.479.443 | $30.000.000 | supera monto, faltan 3 precios |
 | [218-55-LE26](presupuestos/218-55-LE26.md) Adquisición de Juguetes Navidad Comunal 2026 | Deporte, juguetes y material didáctico | 2026-11-10 | 0/6 | $0 | $0 | $0 | $55.000.000 | faltan 6 precios |
 | [1641-427-LP26](presupuestos/1641-427-LP26.md) TCA - KIT RESINCRONIZADOR CRTP Y BALONES | Deporte, juguetes y material didáctico | 2026-11-10 | 0/15 | $0 | $0 | $0 | — | faltan 15 precios |
+| [635-183-L126](presupuestos/635-183-L126.md) ADQUISICIÓN DE HERRAMIENTAS PARA DIAGNÓSTICO Y CONTROL DE INFRAESTRUCT | Ferretería y herramientas | 2026-11-10 | 4/9 | $128.058 | $182.867 | $25.612 | $1.600.000 | faltan 5 precios |
 | [1725-232-LE26](presupuestos/1725-232-LE26.md) LIBROS DE AUTORES NACIONALES Y SU DISTRIBUCIÓN | Deporte, juguetes y material didáctico | 2026-11-11 | 0/10 | $0 | $0 | $0 | $37.500.000 | faltan 10 precios |
 | [3951-58-L126](presupuestos/3951-58-L126.md) ADQUISICIÓN DE INSUMOS MÉDICOS PARA MAS SALUD COMUNITARIA DEL CONSULTO | Insumos médicos no regulados y aseo | 2026-11-11 | 1/9 | $35.698 | $50.977 | $7.140 | $835.290 | faltan 8 precios, sin verificar |
 | [1362-13-LE26](presupuestos/1362-13-LE26.md) COMPRA DE NEUMATICOS PROVINCIA TALAGANTE | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-11 | 5/9 | $1.858.269 | $2.653.608 | $371.654 | — | faltan 4 precios, sin verificar |
 | [2258-237-LE26](presupuestos/2258-237-LE26.md) INSUMOS PARA IMPRESORAS ZEBRA DEL HRA | Computación y electrónica | 2026-11-12 | 0/6 | $0 | $0 | $0 | — | faltan 6 precios |
 | [3885-68-LE26](presupuestos/3885-68-LE26.md) ADQ. EQUIPOS COMPUTACIONALES Y ACCESORIOS | Computación y electrónica | 2026-11-12 | 4/8 | $6.727.287 | $9.606.566 | $1.345.457 | $10.000.000 | faltan 4 precios, línea global, sin verificar |
 | [29-101-LE26](presupuestos/29-101-LE26.md) ALR VESTUARIO INTERIOR INSTITUCIONAL AÑO 2026-2027 | Vestuario, uniformes y textiles | 2026-11-12 | 4/4 | $87.000.901 | $124.237.286 | $17.400.180 | — | sin verificar |
+| [1057420-43-L126](presupuestos/1057420-43-L126.md) ADQUISICION DE IMPLEMENTOS DEPORTIVOS PARA EL HOSPITAL DE HUÉPIL | Deporte, juguetes y material didáctico | 2026-11-12 | 11/16 | $1.778.417 | $2.539.579 | $355.683 | — | faltan 5 precios, sin verificar |
 | [3996-45-LE26](presupuestos/3996-45-LE26.md) Adquisición de Equipos Computacionales y Periféricos | Computación y electrónica | 2026-11-13 | 5/11 | $4.971.592 | $7.099.434 | $994.318 | $13.670.000 | faltan 6 precios, sin verificar |
+| [867990-146-L126](presupuestos/867990-146-L126.md) Ps 91733 CC 102 Adquisición de insumos para laboratorio | Instrumental e insumos de laboratorio (sin reactivos) | 2026-11-13 | 2/13 | $1.231.844 | $1.759.074 | $246.369 | $2.546.600 | faltan 11 precios, sin verificar |
 | [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-13 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
 | [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 5/14 | $1.182.983 | $1.689.299 | $236.597 | $7.572.906 | faltan 9 precios |
 | [1075963-447-LE26](presupuestos/1075963-447-LE26.md) ADQUISICIÓN DE INSUMOS QUIRÚRGICOS ACCESORIOS DE ANESTESIA VÍA AÉREA Y | Insumos médicos no regulados y aseo | 2026-11-13 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
@@ -82,6 +74,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1242028-21-L126](presupuestos/1242028-21-L126.md) Adquisición de uniformes de primavera-verano para colaboradores de la Corporación SEMCO
 - [1247197-75-LE26](presupuestos/1247197-75-LE26.md) ADQUISICIÓN DE SERVIDORES COMPUTACIONALES
 - [1271359-137-LE26](presupuestos/1271359-137-LE26.md) ADQ. DE ARTICULOS DEPORTIVOS Y OTROS – DIREDUC
+- [1295444-14-L126](presupuestos/1295444-14-L126.md) ELEMENTOS DE PROTECCIÓN PERSONAL PARA EL CEMENTERIO GENERAL DE CONCEPCION
 - [1389183-68-LE26](presupuestos/1389183-68-LE26.md) MOBILIARIO Y OTROS PARA LICEOS TP
 - [1395865-18-LE26](presupuestos/1395865-18-LE26.md) ADQUISICIÓN SISTEMA DE MICRÓFONOS INALÁMBRICOS HEADSET - ÁREA TÉCNICA TEATRO REGIONAL CERVANTES
 - [1415863-3-LE26](presupuestos/1415863-3-LE26.md) SERV DE SUMINISTRO CALZADO DE SEGURIDAD
@@ -101,17 +94,21 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [1604-6-LE26](presupuestos/1604-6-LE26.md) ADQ. 50 NEUMÁTICOS PARA CAMIONETAS SIFRON
 - [1658-245-LE26](presupuestos/1658-245-LE26.md) P.312-2026 ADQUISICIÓN DE TABLETS PARA DIFERENRES UNIDADES MUNICIPALES
 - [1702-34-L126](presupuestos/1702-34-L126.md) PROVISIÓN E INSTALACIÓN DE ESTACIÓN DE TRABAJO CTR
+- [1709-29-LE26](presupuestos/1709-29-LE26.md) CANASTA DE SUMINISTRO DE GRUPO ELECTROGENO
 - [1725-222-LE26](presupuestos/1725-222-LE26.md) ADQ. E INST. SIST. BARRAS COLGADO VESTUARIO BAFONA
 - [1754-55-LE26](presupuestos/1754-55-LE26.md) Adquisición de mobiliario equipamiento clínico menor electrodomésticos y elementos de seguridad
 - [188-97-LE26](presupuestos/188-97-LE26.md) ADQUISICIÓN DE ARTICULOS DEPORTIVOS ADULTO MAYOR
+- [1904-10-LE26](presupuestos/1904-10-LE26.md) ADQUISICION DE NEUMATICOS Y LLANTA
 - [1956-37-COT26](presupuestos/1956-37-COT26.md) ADQUISICIÓN DE TERMOS HERVIDORES PARA EL USO DE LAS Y LOS FUNCIONARIOS EN CASINO DEPROV CORDILLERA
 - [2018-37-LE26](presupuestos/2018-37-LE26.md) VESTUARIO DE PROTECCIÓN ANTÁRTICO
 - [2098-155-LE26](presupuestos/2098-155-LE26.md) ADQUISICION DE FOCOS Y PANELES LED
 - [2099-55-L126](presupuestos/2099-55-L126.md) ADQUISICION DE EQUIPOS PARA LOS LABORATORIOS DE LA SECRETARÍA REGIONAL MINISTERIAL DE SALUD XII REGIÓN DE MAGALLANES Y ANTÁRTICA CHILENA
+- [2107-168-LE26](presupuestos/2107-168-LE26.md) ADQUISICIÓN DE INSUMOS DE OFICINA PARA DPTO. LOGISTICA
 - [2111-330-LE26](presupuestos/2111-330-LE26.md) SUMINISTRO ROPA DE TRABAJO II
 - [2274-55-LE26](presupuestos/2274-55-LE26.md) ADQUISICIÓN DE MOBILIARIO Y AIRE ACONDICIONADO PARA ATENCIÓN INFANTIL EN CCR. PRAPS AIDIA 2026 DC 164 EXP. 16212
 - [2279-74-LE26](presupuestos/2279-74-LE26.md) SP 780 ADQUISICION DE ELEMENTOS DE PROTECCION PERSONAL
 - [2335-63-LE26](presupuestos/2335-63-LE26.md) INSUMOS CLINICOS OP 553-554-555-556
+- [2335-67-LE26](presupuestos/2335-67-LE26.md) INSUMOS CLINICOS OP 602
 - [2366-31-LE26](presupuestos/2366-31-LE26.md) TONER SIMILAR-EQUIV. HP Y BROTHER IMP. - SC N.45
 - [2366-44-LE26](presupuestos/2366-44-LE26.md) ACCESORIOS COMPUTACIONALES MEMO N79 PYD
 - [2402-98-LE26](presupuestos/2402-98-LE26.md) CEREMONIA PREMIACIÓN AÑOS DE SERVICIO Y MEDALLA SANTA CRUZ DE TRIANA AÑO 2026”.
@@ -174,16 +171,20 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [3890-217-E226](presupuestos/3890-217-E226.md) ADQ. SILLAS EJEC. PARA UNIDADES MUNICIPALES FREIRE
 - [4037-378-COT26](presupuestos/4037-378-COT26.md) IMPRESORA MULTIFUNCIONAL PARA USO EN DIRECCION DE OBRAS
 - [4190-32-LE26](presupuestos/4190-32-LE26.md) Instrumentos Musicales
+- [4236-30-LE26](presupuestos/4236-30-LE26.md) ADQUISICION DE JUGUETES PROGRAMA NAVIDAD AÑO 2026
 - [4284-164-L126](presupuestos/4284-164-L126.md) Servicio de alimentación galvanos y flores para celebración del día del funcionario municipal 2026 SEGUN NUMERAL 5 B.A.G Bases administrativas Generales
 - [4307-4-LE26](presupuestos/4307-4-LE26.md) ADQUISICION DE UNIFORMES Y OTROS LICEO C-44
 - [4358-31-L126](presupuestos/4358-31-L126.md) Adquisición de Vestuario para Escuela El Saber de Nacimiento
 - [4375-136-LE26](presupuestos/4375-136-LE26.md) CONVENIO PRODUCTOS DE ASEO PARA HGGB
+- [4407-29-L126](presupuestos/4407-29-L126.md) INSUMOS MEDICOS CONVENIO FOFAR
 - [4449-36-L126](presupuestos/4449-36-L126.md) Habilitación de Biblioteca e Instalación de mobiliario en Regimén cerrado de Coronel
+- [4451-129-L126](presupuestos/4451-129-L126.md) ADQ. HERRAMIENTAS Y OTROS PARA ALUMBRADO PUBLICO
 - [4469-209-L126](presupuestos/4469-209-L126.md) SC 40658 (JRA) - ADQ DE COCINA MONTESSORI Y SILLAS DE PARVULO.
 - [4469-211-L126](presupuestos/4469-211-L126.md) SC 40681-40683 (JRA) - IMPRESION DE 2 LIBROS DPTO DE ARTES INTEGRADAS VCM UPA 2493
 - [4469-219-L126](presupuestos/4469-219-L126.md) S.C. N° 40791-40793 (P.C) ADQUISICIÓN DE PROYECTOR , TABLET Y OTROS ; PROY. UPA RED 25994
 - [45-56-L126](presupuestos/45-56-L126.md) SUMINISTRO DE MOBILIARIO PARA 4 DIRECCIONES REGIONALES
 - [4629-30-L126](presupuestos/4629-30-L126.md) ELEMENTOS DE PROTECCIÓN PERSONAL PARA DT E1Ó2-RT9
+- [4629-34-LE26](presupuestos/4629-34-LE26.md) ADQUISICIÓN DE VESTUARIO - DT
 - [4768-55-LE26](presupuestos/4768-55-LE26.md) ADQUISICION DE JUGUETES DE NAVIDAD 2026
 - [5061-41-L126](presupuestos/5061-41-L126.md) SP1522 Adquisición de impresoras laser para establecimientos de salud, Según especificaciones técnicas.
 - [514862-130-LE26](presupuestos/514862-130-LE26.md) 10032967 reposición puertas SAPU LA FAENA
@@ -213,3 +214,4 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 - [950753-8-L126](presupuestos/950753-8-L126.md) Servicio de re-impresión del libro: Redes del coleccionismo. El rol de coleccionistas, museos y objetos precolombinos en el montaje del presente, para la Subdirección de Investigación”
 - [960858-4-L126](presupuestos/960858-4-L126.md) ADQUISICIÓN DE LIBROS Y MATERIAL DE ENSEÑANZA PARA ESCUELA MIGUEL HUENTELEN DE COLLIPULLI
 - [979-67-LE26](presupuestos/979-67-LE26.md) Adquisición de materiales construcción para plaza de pesaje de la Dirección de Vialidad
+- [979-73-LE26](presupuestos/979-73-LE26.md) Adquisición de Elementos de Protección Personal NC

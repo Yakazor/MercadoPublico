@@ -1,0 +1,141 @@
+{
+ "codigo": "867990-146-L126",
+ "nombre": "Ps 91733 CC 102 Adquisición de insumos para laboratorio",
+ "fecha_consulta": "2026-11-07",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Resina UV 8K Gris Espacial 1000g Elegoo o similar",
+   "opciones": [
+    {
+     "tienda": "Lider (envío desde EE.UU.)",
+     "producto_mercado": "Resina Elegoo mejorada 8K tipo ABS 3.0 2000 g",
+     "url": "https://www.lider.cl/ip/impresion/resina-elegoo-mejorada-8k-tipo-abs-3-0-2000-g-para-impresoras-3d/00697602176541",
+     "precio": 65990,
+     "iva_incluido": true,
+     "contenido": "2.000 g",
+     "unidades_equivalentes": 2,
+     "precio_unitario_neto": 27726.89,
+     "coincidencia": "aproximada",
+     "nota": "Tipo ABS 8K, no estándar gris espacial.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    },
+    {
+     "tienda": "Lider (envío desde EE.UU.)",
+     "producto_mercado": "Resina Elegoo Ultra gris tipo ABS 1000 g",
+     "url": "https://www.lider.cl/ip/especiales/resina-elegoo-ultra-gris-tipo-abs-1000-g/00693270490976",
+     "precio": 47990,
+     "iva_incluido": true,
+     "contenido": "1.000 g",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 40327.73,
+     "coincidencia": "aproximada",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Resina Lavable al Agua",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "Pack 5 Película FEP Halot Mage/Pro Creality o similar",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "Pack 2 Película FEP Set Film Anycubic",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 5,
+   "producto": "Mascarilla respiradora",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 6,
+   "producto": "Filtros de recambio para mascarilla respiradora vapores orgánicos (par)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 7,
+   "producto": "Filtros de papel/pintura para resina (pack 50)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 8,
+   "producto": "Alicates de corte de precisión",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 9,
+   "producto": "Alcohol Isopropílico 99,9%",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Dideval)",
+     "producto_mercado": "Alcohol isopropílico 99,7% 1 litro Dideval",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/alcohol-isopropilico",
+     "precio": 4590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3857.14,
+     "coincidencia": "aproximada",
+     "nota": "99,7 % (se pide 99,9 %); precio con descuento del listado.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    },
+    {
+     "tienda": "Easy (Química Universal)",
+     "producto_mercado": "Alcohol isopropílico 1 lt",
+     "url": "https://www.easy.cl/alcohol-isopropilico-1-lt-1284665/p",
+     "precio": 7690,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6462.18,
+     "coincidencia": "aproximada",
+     "nota": "Pureza por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-07"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Guantes de nitrilo",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 11,
+   "producto": "Guantes de nitrilo",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 12,
+   "producto": "Guantes de nitrilo",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  },
+  {
+   "linea": 13,
+   "producto": "Gafas de seguridad antiempañantes",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
+  }
+ ]
+}
