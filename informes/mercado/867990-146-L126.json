@@ -19,7 +19,9 @@
      "coincidencia": "aproximada",
      "nota": "Tipo ABS 8K, no estándar gris espacial.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "precio_pagina": 73990.0,
+     "verificacion_pagina": "2026-11-07: la página abrió y el precio más parecido es $73.990, no $65.990: puede haber cambiado."
     },
     {
      "tienda": "Lider (envío desde EE.UU.)",
@@ -33,7 +35,9 @@
      "coincidencia": "aproximada",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "precio_pagina": 45990.0,
+     "verificacion_pagina": "2026-11-07: la página abrió y el precio más parecido es $45.990, no $47.990: puede haber cambiado."
     }
    ]
   },
@@ -94,8 +98,11 @@
      "precio_unitario_neto": 3857.14,
      "coincidencia": "aproximada",
      "nota": "99,7 % (se pide 99,9 %); precio con descuento del listado.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "verificado": true,
+     "fecha_consulta": "2026-11-07",
+     "verificado_en": "2026-11-07",
+     "precio_pagina": 4590.0,
+     "verificacion_pagina": "2026-11-07: la página muestra $4.590."
     },
     {
      "tienda": "Easy (Química Universal)",
@@ -109,7 +116,8 @@
      "coincidencia": "aproximada",
      "nota": "Pureza por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -137,5 +145,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-07",
+  "opciones": 4,
+  "verificadas": 1
+ }
 }

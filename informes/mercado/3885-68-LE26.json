@@ -20,7 +20,7 @@
      "nota": "Distribución español con Ñ; SKU K72324ES por confirmar en la ficha.",
      "verificado": false,
      "fecha_consulta": "2026-11-03",
-     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -41,7 +41,7 @@
      "nota": "Supera lo pedido (Ryzen 7 5700, DDR4); confirmar que la especificación de las bases lo admite.",
      "verificado": false,
      "fecha_consulta": "2026-11-03",
-     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -62,7 +62,7 @@
      "nota": "Supera lo pedido (Ryzen 7 5700, DDR4); confirmar que la especificación de las bases lo admite.",
      "verificado": false,
      "fecha_consulta": "2026-11-03",
-     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -89,7 +89,7 @@
      "nota": "1 TB en vez de 2 TB pedidos.",
      "verificado": false,
      "fecha_consulta": "2026-11-03",
-     "verificacion_pagina": "2026-11-06: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -113,7 +113,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-06",
+  "fecha": "2026-11-07",
   "opciones": 4,
   "verificadas": 0
  }

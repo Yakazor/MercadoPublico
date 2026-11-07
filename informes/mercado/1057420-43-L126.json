@@ -19,7 +19,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio del listado con descuento; confirmar si es unidad.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "precio_pagina": 60990.0,
+     "verificacion_pagina": "2026-11-07: la página abrió y el precio más parecido es $60.990, no $63.990: puede haber cambiado."
     }
    ]
   },
@@ -39,7 +41,8 @@
      "coincidencia": "equivalente",
      "nota": "La ficha no aclara si el precio es por unidad o por par.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -59,7 +62,8 @@
      "coincidencia": "exacta",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -79,7 +83,8 @@
      "coincidencia": "exacta",
      "nota": "La licitación repite la línea 5 (kettlebell 8 kg y core roller).",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -105,7 +110,8 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -125,7 +131,8 @@
      "coincidencia": "equivalente",
      "nota": "La ficha aparecía agotada; 9.900–4.900, se usa el mayor.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -145,7 +152,8 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -165,7 +173,8 @@
      "coincidencia": "aproximada",
      "nota": "Cajón de madera 3 en 1, no tipo booty.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -191,7 +200,8 @@
      "coincidencia": "equivalente",
      "nota": "Oferta .900 en el listado; se usa el precio normal.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -211,7 +221,8 @@
      "coincidencia": "equivalente",
      "nota": "Listado 5.900–7.900; se usa el mayor.",
      "verificado": false,
-     "fecha_consulta": "2026-11-07"
+     "fecha_consulta": "2026-11-07",
+     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -233,5 +244,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 07-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-07",
+  "opciones": 10,
+  "verificadas": 0
+ }
 }
