@@ -112,6 +112,11 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-08 (rutina 11:00 UTC): último radar completo de hace ~18 h → radar y OC disparados; `datos` cambió solo una
+  vez (11:15, radar; las OC no publicaron en 100 min). Datos del 08-11 08:15, 468 licitaciones, 248 Compras Ágiles,
+  ninguna de 2º llamado. Lote de 8 (6 a completar, sin precios nuevos): 4964-30-LE26 juguetes (6/8, NO GO: $29,1 M
+  contra $15 M); 4284-176-L126 no se buscó (líneas con varios productos). Ninguna GO; top sin cambio. 550 pruebas OK.
+
 - 2026-11-07 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:38 y
   11:44; datos del 07-11 08:43, 466 licitaciones, 273 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (6 a
   completar, sin precios nuevos): 1057420-43-L126 implementos deportivos (10/15, NO GO: 415 % sobre lo pagado en OC) y

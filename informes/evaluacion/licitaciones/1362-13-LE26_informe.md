@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 4
+- **Días para el cierre:** 3
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -49,7 +49,7 @@
 - 4 de 9 ítems sin precio de mercado: el costo real es mayor.
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($3.414.304 neto en 5 línea(s)).
 
 ## Proveedores recomendados

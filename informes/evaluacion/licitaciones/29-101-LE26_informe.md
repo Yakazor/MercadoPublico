@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 5
-- **Viabilidad:** Alta.
+- **Días para el cierre:** 4
+- **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 3 de 4 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($57.240.000 neto en 4 línea(s)).
 - La oferta de las líneas con referencia ($104.401.081 neto) supera en 82% lo que el Estado pagó en OC parecidas.
 
