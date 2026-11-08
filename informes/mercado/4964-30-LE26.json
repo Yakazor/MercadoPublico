@@ -19,7 +19,8 @@
      "coincidencia": "equivalente",
      "nota": "Precio con descuento del listado.",
      "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "fecha_consulta": "2026-11-08",
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Paris",
@@ -33,7 +34,8 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "fecha_consulta": "2026-11-08",
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -52,8 +54,11 @@
      "precio_unitario_neto": 11756.3,
      "coincidencia": "aproximada",
      "nota": "Con sonido, sin luz.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "verificado": true,
+     "fecha_consulta": "2026-11-08",
+     "verificado_en": "2026-11-08",
+     "precio_pagina": 13990.0,
+     "verificacion_pagina": "2026-11-08: la página muestra $13.990."
     }
    ]
   },
@@ -73,7 +78,8 @@
      "coincidencia": "equivalente",
      "nota": "Precio registrado por Knasta para Lider; confirmar en Lider.",
      "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "fecha_consulta": "2026-11-08",
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -99,7 +105,8 @@
      "coincidencia": "aproximada",
      "nota": "Solo protecciones: falta la patineta.",
      "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "fecha_consulta": "2026-11-08",
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -119,7 +126,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio con descuento del listado.",
      "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "fecha_consulta": "2026-11-08",
+     "precio_pagina": 32990.0,
+     "verificacion_pagina": "2026-11-08: la página abrió y el precio más parecido es $32.990, no $29.990: puede haber cambiado."
     }
    ]
   },
@@ -145,9 +154,16 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-08"
+     "fecha_consulta": "2026-11-08",
+     "precio_pagina": 32165.0,
+     "verificacion_pagina": "2026-11-08: la página abrió y el precio más parecido es $32.165, no $33.627: puede haber cambiado."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-08",
+  "opciones": 7,
+  "verificadas": 1
+ }
 }

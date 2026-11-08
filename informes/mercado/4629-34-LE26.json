@@ -21,9 +21,9 @@
      "nota": "modelo de mujer, no unisex; falta el logo bordado y la especificación de las bases. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-11-01",
      "verificado": true,
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $69.990."
+     "verificacion_pagina": "2026-11-08: la página muestra $69.990."
     },
     {
      "tienda": "Lider (vende Andesland)",
@@ -38,9 +38,9 @@
      "nota": "búsqueda del 25-10; falta el logo bordado y la especificación de las bases",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 77990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $77.990."
+     "verificacion_pagina": "2026-11-08: la página muestra $77.990."
     }
    ]
   },
@@ -67,9 +67,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda; falta el logo bordado y la especificación de las bases",
      "fecha_consulta": "2026-11-01",
      "verificado": true,
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 47990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $47.990."
+     "verificacion_pagina": "2026-11-08: la página muestra $47.990."
     }
    ]
   },
@@ -91,8 +91,8 @@
      "fecha_consulta": "2026-10-25",
      "verificado": false,
      "verificado_en": "2026-11-06",
-     "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-07: la página abrió y el precio más parecido es $19.990, no $18.990: puede haber cambiado."
+     "precio_pagina": 20000.0,
+     "verificacion_pagina": "2026-11-08: la página abrió y el precio más parecido es $20.000, no $18.990: puede haber cambiado."
     }
    ]
   },
@@ -113,15 +113,15 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda; falta el logo bordado y la especificación de las bases",
      "fecha_consulta": "2026-11-01",
      "verificado": true,
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 46990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $46.990."
+     "verificacion_pagina": "2026-11-08: la página muestra $46.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-07",
+  "fecha": "2026-11-08",
   "opciones": 5,
   "verificadas": 4
  }

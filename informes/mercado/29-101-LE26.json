@@ -21,9 +21,9 @@
      "nota": "Precio del listado de la colección «camisa blanca»; color y modelo exacto por confirmar en la ficha. Precio retail: por 1.000 unidades pedir cotización a fabricante.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $14.990."
+     "verificacion_pagina": "2026-11-08: la página muestra $14.990."
     }
    ]
   },
@@ -45,9 +45,9 @@
      "nota": "Blanca disponible en varias tallas; el color foliage green no se encontró. Precio retail.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-08: la página muestra $19.990."
     }
    ]
   },
@@ -69,9 +69,9 @@
      "nota": "Precio del listado (8.990 / 9.990: oferta y normal no se distinguen); ficha por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "precio_pagina": 18990.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $18.990.",
-     "verificado_en": "2026-11-07"
+     "precio_pagina": 19550.0,
+     "verificacion_pagina": "2026-11-08: la página muestra $19.550.",
+     "verificado_en": "2026-11-08"
     }
    ]
   },
@@ -93,9 +93,9 @@
      "nota": "El color blanco no está confirmado en esta publicación.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 8999.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $8.999."
+     "verificacion_pagina": "2026-11-08: la página muestra $8.999."
     },
     {
      "tienda": "Lider",
@@ -110,15 +110,15 @@
      "nota": "Blanco talla S.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "verificado_en": "2026-11-07",
+     "verificado_en": "2026-11-08",
      "precio_pagina": 15000.0,
-     "verificacion_pagina": "2026-11-07: la página muestra $15.000."
+     "verificacion_pagina": "2026-11-08: la página muestra $15.000."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-07",
+  "fecha": "2026-11-08",
   "opciones": 5,
   "verificadas": 5
  }

@@ -307,20 +307,20 @@
  },
  {
   "fecha": "2026-11-08",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "716 vigentes; 17 evaluadas; informes de 10",
-  "resultado": "0 GO, 0 con condiciones, 7 falta precio, 10 NO GO",
-  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 precios son de productos aproximados",
-  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 1134432-78-LE26: NO GO; 3268-35-LE26: NO GO",
-  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-08",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote de 8 (6 a completar, sin precios nuevos). Nuevas: 4964-30-LE26 juguetes de Navidad Valparaíso (6/8: alfombra con piano, elefante musical, burbujero de empuje, set de protecciones, piedras de equilibrio y mesa de hockey) y 4284-176-L126 galvanos y oficina (no se buscó: cada línea agrupa varios productos distintos). Sin Compras Ágiles de 2º llamado.",
   "resultado": "Ninguna GO: 7 con falta de precio y 10 NO GO. 4964-30-LE26 NO GO: a precio retail la oferta (9,1 M) duplica el monto disponible (5 M); la mesa de hockey (281 unidades a ~3.600) se come casi todo.",
   "riesgos": "La rama datos cambió una sola vez (radar 11:15 UTC); las OC no publicaron en 100 minutos, la referencia OC es la del día anterior.",
   "decisiones": "Top 3 sin cambio: 3996-45-LE26 (13-11), 3885-68-LE26 (12-11) y 1057448-53-LE26 (cierra mañana 09-11).",
   "recomendaciones": "Juguetes municipales solo con importador mayorista (precio por volumen bajo la mitad del retail). Si interesa 1057448-53-LE26, hoy es el último día para cotizar las sillas."
+ },
+ {
+  "fecha": "2026-11-08",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "715 vigentes; 17 evaluadas; informes de 10",
+  "resultado": "0 GO, 0 con condiciones, 7 falta precio, 10 NO GO",
+  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 precios son de productos aproximados",
+  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1057448-53-LE26: FALTA PRECIO; 979-78-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 1134432-78-LE26: NO GO; 3268-35-LE26: NO GO",
+  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1057448-53-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **979-78-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 8 líneas que faltan: con 2 de 10 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
  }
 ]

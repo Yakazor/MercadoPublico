@@ -21,7 +21,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-07",
      "precio_pagina": 60990.0,
-     "verificacion_pagina": "2026-11-07: la página abrió y el precio más parecido es $60.990, no $63.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-08: la página abrió y el precio más parecido es $60.990, no $63.990: puede haber cambiado."
     }
    ]
   },
@@ -42,7 +42,7 @@
      "nota": "La ficha no aclara si el precio es por unidad o por par.",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -63,7 +63,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -84,7 +84,7 @@
      "nota": "La licitación repite la línea 5 (kettlebell 8 kg y core roller).",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -111,7 +111,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -132,7 +132,7 @@
      "nota": "La ficha aparecía agotada; 9.900–4.900, se usa el mayor.",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -153,7 +153,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -174,7 +174,7 @@
      "nota": "Cajón de madera 3 en 1, no tipo booty.",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -201,7 +201,7 @@
      "nota": "Oferta .900 en el listado; se usa el precio normal.",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -222,7 +222,7 @@
      "nota": "Listado 5.900–7.900; se usa el mayor.",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-07: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-08: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -246,7 +246,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-07",
+  "fecha": "2026-11-08",
   "opciones": 10,
   "verificadas": 0
  }
