@@ -325,20 +325,20 @@
  },
  {
   "fecha": "2026-11-09",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "691 vigentes; 18 evaluadas; informes de 10",
-  "resultado": "0 GO, 0 con condiciones, 5 falta precio, 13 NO GO",
-  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 precios son de productos aproximados",
-  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 4042-10-CO26: NO GO; 1134432-78-LE26: NO GO; 1057448-53-LE26: NO GO; 3268-35-LE26: NO GO",
-  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido. - **979-77-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 9 líneas que faltan: con 5 de 14 el margen sale de una parte del pedido. - **867990-146-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 11 líneas que faltan: con 2 de 13 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-09",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote de 8 (4 a completar, sin precios nuevos). Nueva cotizable: 4042-10-CO26 vestuario institucional Los Lagos (6/6). No cotizables por línea: 2310-24-LE26 mobiliario escolar y 1057421-44-LE26 uniformes (líneas por establecimiento o estamento sin detalle) y 4284-176-L126 galvanos (líneas con varios productos). Sin Compras Ágiles de 2º llamado.",
   "resultado": "Ninguna GO: 5 con falta de precio y 13 NO GO. 4042-10-CO26 NO GO: la oferta supera 361 % lo pagado en OC parecidas (chaquetas de pluma retail ~0.000). 1057448-53-LE26 cierra hoy (sin completar).",
   "riesgos": "Neumáticos de camión (1362-13-LE26) solo por cotización a distribuidor; Sodimac publica el 12.00 R24 sin precio visible.",
   "decisiones": "Top 3: 3996-45-LE26 (13-11), 3885-68-LE26 (12-11) y 1362-13-LE26 (11-11). Proveedores de neumáticos agregados (Michelin Chile, Caren, Sodimac).",
   "recomendaciones": "Para 1362-13-LE26 pedir hoy precio de 12.00R24 y 295/80R22.5 a Michelin/Caren y revisar la ficha de Sodimac. Las licitaciones de vestuario y juguetes municipales no compiten a precio retail: solo con fabricante o importador."
+ },
+ {
+  "fecha": "2026-11-09",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "691 vigentes; 18 evaluadas; informes de 10",
+  "resultado": "0 GO, 0 con condiciones, 5 falta precio, 13 NO GO",
+  "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 precios son de productos aproximados",
+  "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 4042-10-CO26: NO GO; 1134432-78-LE26: NO GO; 1057448-53-LE26: NO GO; 3268-35-LE26: NO GO",
+  "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido. - **979-77-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 9 líneas que faltan: con 5 de 14 el margen sale de una parte del pedido. - **867990-146-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 11 líneas que faltan: con 2 de 13 el margen sale de una parte del pedido."
  }
 ]

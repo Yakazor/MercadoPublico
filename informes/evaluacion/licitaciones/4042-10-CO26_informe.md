@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $12.906.192 |
 | Oferta sugerida con IVA | $14.505.061 |
 
-**Riesgos financieros:** La mayoría de los precios no está verificada en la página de la tienda.; Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.644.500 neto en 6 línea(s))..
+**Riesgos financieros:** Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.644.500 neto en 6 línea(s))..
 
 ## Análisis operacional
 
@@ -46,7 +46,6 @@
 
 ## Riesgos detectados
 
-- La mayoría de los precios no está verificada en la página de la tienda.
 - Entrega en Región de los Lagos: despacho caro y lento desde Santiago.
 - Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.644.500 neto en 6 línea(s)).
 - La oferta de las líneas con referencia ($12.189.127 neto) supera en 361% lo que el Estado pagó en OC parecidas.

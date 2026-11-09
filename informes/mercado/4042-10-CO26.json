@@ -19,7 +19,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio con descuento del listado; tallas dama/varón por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "fecha_consulta": "2026-11-09",
+     "precio_pagina": 100000.0,
+     "verificacion_pagina": "2026-11-09: la página abrió y el precio más parecido es $100.000, no $89.990: puede haber cambiado."
     },
     {
      "tienda": "Falabella (Marmot)",
@@ -32,8 +34,11 @@
      "precio_unitario_neto": 75621.85,
      "coincidencia": "equivalente",
      "nota": "Precio con descuento del listado.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $89.990."
     }
    ]
   },
@@ -52,8 +57,11 @@
      "precio_unitario_neto": 10915.97,
      "coincidencia": "equivalente",
      "nota": "Búsqueda del 05-11.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $12.990."
     },
     {
      "tienda": "Lider (Andesland)",
@@ -66,8 +74,11 @@
      "precio_unitario_neto": 25201.68,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 29990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $29.990."
     }
    ]
   },
@@ -86,8 +97,11 @@
      "precio_unitario_neto": 13932.77,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 16580.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $16.580."
     },
     {
      "tienda": "Falabella (Garsil)",
@@ -100,8 +114,11 @@
      "precio_unitario_neto": 16798.32,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $19.990."
     }
    ]
   },
@@ -120,8 +137,11 @@
      "precio_unitario_neto": 16789.92,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 19980.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $19.980."
     },
     {
      "tienda": "Sodimac (Blue Mountain)",
@@ -134,8 +154,11 @@
      "precio_unitario_neto": 21840.34,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 25990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $25.990."
     }
    ]
   },
@@ -154,8 +177,11 @@
      "precio_unitario_neto": 16798.32,
      "coincidencia": "equivalente",
      "nota": "Búsqueda del 02-11.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-02"
+     "verificado": true,
+     "fecha_consulta": "2026-11-02",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $19.990."
     }
    ]
   },
@@ -174,8 +200,11 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-09",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-11-09: la página muestra $11.990."
     },
     {
      "tienda": "Lider",
@@ -189,9 +218,16 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "fecha_consulta": "2026-11-09",
+     "precio_pagina": 14200.0,
+     "verificacion_pagina": "2026-11-09: la página abrió y el precio más parecido es $14.200, no $12.990: puede haber cambiado."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-09",
+  "opciones": 11,
+  "verificadas": 9
+ }
 }

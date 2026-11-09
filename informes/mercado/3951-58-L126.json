@@ -26,7 +26,7 @@
      "nota": "Publicación de marketplace; certificación ISP por confirmar.",
      "verificado": false,
      "fecha_consulta": "2026-11-04",
-     "verificacion_pagina": "2026-11-08: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-11-09: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -74,7 +74,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-08",
+  "fecha": "2026-11-09",
   "opciones": 1,
   "verificadas": 0
  }
