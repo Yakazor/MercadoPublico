@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-09 (rutina 11:03 UTC): último radar completo de hace ~18 h → radar y OC disparados (`datos` cambió 11:09 y
+  11:18; datos del 09-11 08:17, 468 licitaciones, 223 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (4 a
+  completar, sin precios nuevos): 4042-10-CO26 vestuario Los Lagos (6/6, NO GO: 361 % sobre OC); 2310-24, 1057421-44 y
+  4284-176 no cotizables por línea. Ninguna GO; top: 3996-45-LE26, 3885-68-LE26 y 1362-13-LE26 (proveedores de
+  neumáticos agregados). 550 pruebas OK.
+
 - 2026-11-08 (rutina 11:00 UTC): último radar completo de hace ~18 h → radar y OC disparados; `datos` cambió solo una
   vez (11:15, radar; las OC no publicaron en 100 min). Datos del 08-11 08:15, 468 licitaciones, 248 Compras Ágiles,
   ninguna de 2º llamado. Lote de 8 (6 a completar, sin precios nuevos): 4964-30-LE26 juguetes (6/8, NO GO: $29,1 M

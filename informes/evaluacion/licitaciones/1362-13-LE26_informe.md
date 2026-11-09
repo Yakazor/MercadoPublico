@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 3
+- **Días para el cierre:** 2
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -49,18 +49,16 @@
 - 4 de 9 ítems sin precio de mercado: el costo real es mayor.
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($3.414.304 neto en 5 línea(s)).
 
 ## Proveedores recomendados
 
 | # | Proveedor | Especialidad | Correo | Sitio web | Contacto | Respuesta / entrega | Costo referencial |
 |---:|---|---|---|---|---|---|---|
-| 1 | Lider (vende Comercial SP) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-245-70-r16-111t-roadcruza-ra1100-at/00046126674782) | — | por confirmar | — |
-| 2 | Lider (Rockblade) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-245-75-r16-rock-737-111t/00046696607202) | — | por confirmar | — |
-| 3 | Lider (Grenlander) | Precio publicado para 1 línea(s) | por confirmar | [web](https://knasta.cl/detail/lider/00046975798766/grenlander-neumatico-215-75-r175-dd678-135-133j-18pr-traccion-tbr) | — | por confirmar | — |
-| 4 | Lider | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/ip/neumaticos-y-llantas/neumatico-225-75-r16-at/00045055237236) | — | por confirmar | — |
-| 5 | Lider (Torque) | Precio publicado para 1 línea(s) | por confirmar | [web](https://knasta.cl/detail/lider/00046441956686/torque-neumatico-215-75-r15-at701-at-100s) | — | por confirmar | — |
+| 1 | Sodimac (neumático 12.00 R24) | Neumático camión 12.00 R24 (índice 160, 4.500 kg); precio por confirmar en la ficha | por confirmar | [web](https://www.sodimac.cl/sodimac-cl/product/3681963/neumatico-12.00-r24) | — | por confirmar | — |
+| 2 | Michelin Chile Ltda | Neumáticos camión, buses y minería (camión/bus vía Caren desde 03-2026) | por confirmar | [web](https://www.michelin.cl) | Luis Carrera 1131, Santiago; (56-2) 2640 5959 (según directorio Portal Minero, por confirmar) | por confirmar | — |
+| 3 | Caren (representante Michelin camión y bus) | Representación exclusiva Michelin camiones y buses desde Antofagasta al sur | por confirmar | — | — | por confirmar | — |
 
 Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedir precio por volumen.
 

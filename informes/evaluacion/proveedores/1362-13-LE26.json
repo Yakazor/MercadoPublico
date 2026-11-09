@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Sodimac (neumático 12.00 R24)",
+  "correo": null,
+  "web": "https://www.sodimac.cl/sodimac-cl/product/3681963/neumatico-12.00-r24",
+  "contacto": null,
+  "especialidad": "Neumático camión 12.00 R24 (índice 160, 4.500 kg); precio por confirmar en la ficha",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.sodimac.cl/sodimac-cl/product/3681963/neumatico-12.00-r24"
+ },
+ {
+  "nombre": "Michelin Chile Ltda",
+  "correo": null,
+  "web": "https://www.michelin.cl",
+  "contacto": "Luis Carrera 1131, Santiago; (56-2) 2640 5959 (según directorio Portal Minero, por confirmar)",
+  "especialidad": "Neumáticos camión, buses y minería (camión/bus vía Caren desde 03-2026)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.portalminero.com/index.php/proveedor/michelin-chile-ltda"
+ },
+ {
+  "nombre": "Caren (representante Michelin camión y bus)",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Representación exclusiva Michelin camiones y buses desde Antofagasta al sur",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.reporteminero.cl/noticia/noticias/2026/03/michelin-caren-alianza-chile-neumaticos-camiones-buses"
+ }
+]

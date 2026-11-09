@@ -1,0 +1,197 @@
+{
+ "codigo": "4042-10-CO26",
+ "nombre": "VESTUARIO INSTITUCIONAL ",
+ "fecha_consulta": "2026-11-09",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Adquisición de 87 chaquetas insuladas de pluma o equivalente, distribuidas de la siguiente manera:\r\n",
+   "opciones": [
+    {
+     "tienda": "Falabella (Doite)",
+     "producto_mercado": "Parka deportiva pluma Eboni Doite",
+     "url": "https://www.falabella.com/falabella-cl/collection/parkas-nieve-mujer",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "equivalente",
+     "nota": "Precio con descuento del listado; tallas dama/varón por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    },
+    {
+     "tienda": "Falabella (Marmot)",
+     "producto_mercado": "Chaqueta pluma Jena Marmot",
+     "url": "https://www.falabella.com/falabella-cl/product/80730673/chaqueta-deportiva-mujer-marmot/80730802",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "equivalente",
+     "nota": "Precio con descuento del listado.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Adquisición de 34 polar, distribuidas de la siguiente manera: Dama: 19 unidades. Tallas: XS, S, M, L",
+   "opciones": [
+    {
+     "tienda": "Sodimac (TOPSAFE)",
+     "producto_mercado": "Chaqueta polar negra TOPSAFE",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/polar-hombre",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "equivalente",
+     "nota": "Búsqueda del 05-11.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    },
+    {
+     "tienda": "Lider (Andesland)",
+     "producto_mercado": "Chaqueta Polar Corporativa Hombre",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Adquisición de 34 Pantalon termico Softshell Impermeable, Con Micropolar, distribuidas de la siguien",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Pantalón térmico softshell impermeable hombre invierno",
+     "url": "https://www.lider.cl/ip/vestuario/pantalon-termico-softshell-impermeable-hombre-invierno-frio-marron-m/00411576601781",
+     "precio": 16580,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13932.77,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    },
+    {
+     "tienda": "Falabella (Garsil)",
+     "producto_mercado": "Pantalón térmico mujer tipo softshell con micropolar impermeable",
+     "url": "https://www.falabella.com/falabella-cl/product/142435999/Pantalon-Termico-Para-Mujer-Tipo-Softshell-Con-Micropolar-Impermeable/142436007",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Adquisición de  10 chaquetas semi impermeable para TENS y Conductores del Servicio de Urgencia, dist",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Chaqueta hombre 100% impermeable cierre con gorro H81",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-hombre-100-impermeable-cierre-con-gorro-h81/00079325426981",
+     "precio": 19980,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16789.92,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    },
+    {
+     "tienda": "Sodimac (Blue Mountain)",
+     "producto_mercado": "Chaqueta corta viento outdoor hombre térmica impermeable",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/casaca-hombre",
+     "precio": 25990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21840.34,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Adquisición de 20 poletas tipo pique para TENS. y Conductores del Servicio de Urgencia, distribuidas",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Polera algodón pique manga corta hombre",
+     "url": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-corta-hombre/00046050350164",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "nota": "Búsqueda del 02-11.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Adquisición de 20 Pantalon para TENS. y Conductores del Servicio de Urgencia, distribuidas de la sig",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Pantalón trabajo cargo azul Alaska",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10957/Pantalones-y-Buzos-de-Trabajo",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Pantalón cargo térmico hombre gabardina forro polar trabajo azul",
+     "url": "https://www.lider.cl/ip/vestuario/pantalon-cargo-termico-hombre-gabardina-forro-polar-trabajo-azul/00046431247651",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  }
+ ]
+}

@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-08. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-09. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -38,6 +38,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1057544-363-LE26](presupuestos/1057544-363-LE26.md) Compra por Suministro de Tintas y Tóner para impresoras de distintos m | Artículos de oficina y librería | 2026-11-13 | 4/15 | $100.716 | $143.822 | $20.143 | — | faltan 11 precios |
 | [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-13 | 5/14 | $1.182.983 | $1.689.299 | $236.597 | $7.572.906 | faltan 9 precios |
 | [1075963-447-LE26](presupuestos/1075963-447-LE26.md) ADQUISICIÓN DE INSUMOS QUIRÚRGICOS ACCESORIOS DE ANESTESIA VÍA AÉREA Y | Insumos médicos no regulados y aseo | 2026-11-13 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
+| [4042-10-CO26](presupuestos/4042-10-CO26.md) VESTUARIO INSTITUCIONAL | Vestuario, uniformes y textiles | 2026-11-16 | 6/6 | $10.157.606 | $14.505.061 | $2.031.521 | — | sin verificar |
 | [4964-30-LE26](presupuestos/4964-30-LE26.md) JUGUETES PARA SER ENTREGADOS EN NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 6/8 | $20.388.205 | $29.114.356 | $4.077.641 | $15.000.000 | supera monto, faltan 2 precios, sin verificar |
 | [1134432-78-LE26](presupuestos/1134432-78-LE26.md) ADQUISICIÓN DE JUGUETES PARA CELEBRACIÓN DE NAVIDAD COMUNAL 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 3/14 | $28.553.699 | $40.774.682 | $5.710.740 | $30.000.000 | supera monto, faltan 11 precios |
 | [3268-35-LE26](presupuestos/3268-35-LE26.md) GBA 1682026 ADQ. DE MAQUINAS DE EJERCICIOS. | Deporte, juguetes y material didáctico | 2026-11-19 | 11/11 | $28.885.185 | $41.248.044 | $5.777.037 | $30.800.000 | supera monto, sin verificar |

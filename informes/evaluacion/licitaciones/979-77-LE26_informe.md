@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 5
-- **Viabilidad:** Alta.
+- **Días para el cierre:** 4
+- **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 9 de 14 ítems sin precio de mercado: el costo real es mayor.
-- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 
