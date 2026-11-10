@@ -21,9 +21,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $13.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $13.990."
     }
    ]
   },
@@ -44,9 +44,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 13990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $13.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $13.990."
     }
    ]
   },
@@ -67,9 +67,9 @@
      "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 4990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $4.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $4.990."
     },
     {
      "tienda": "Sodimac (Tramontina)",
@@ -84,9 +84,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $12.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $12.990."
     }
    ]
   },
@@ -130,9 +130,10 @@
      "coincidencia": "aproximada",
      "nota": "piden mango corto; precio con 30% de descuento. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
-     "verificado": false,
-     "precio_pagina": 7480.0,
-     "verificacion_pagina": "2026-11-09: la página abrió y el precio más parecido es $7.480, no $6.990: puede haber cambiado."
+     "verificado": true,
+     "precio_pagina": 6792.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $6.792.",
+     "verificado_en": "2026-11-10"
     }
    ]
   },
@@ -153,9 +154,9 @@
      "nota": "precio con 50% de descuento (lista $29.990). precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $14.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $14.990."
     }
    ]
   },
@@ -188,9 +189,9 @@
      "nota": "confirmar que incluye mango. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 7990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $7.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $7.990."
     }
    ]
   },
@@ -211,16 +212,16 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-27",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 14990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $14.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $14.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-09",
+  "fecha": "2026-11-10",
   "opciones": 8,
-  "verificadas": 7
+  "verificadas": 8
  }
 }

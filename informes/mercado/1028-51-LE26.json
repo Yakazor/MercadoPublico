@@ -24,8 +24,11 @@
      "precio_unitario_neto": 10075.63,
      "coincidencia": "aproximada",
      "nota": "Color blanco; se pide naranjo. Búsqueda del 04-11.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-04"
+     "verificado": true,
+     "fecha_consulta": "2026-11-04",
+     "verificado_en": "2026-11-10",
+     "precio_pagina": 11990.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $11.990."
     }
    ]
   },
@@ -44,8 +47,11 @@
      "precio_unitario_neto": 16789.92,
      "coincidencia": "aproximada",
      "nota": "Impermeable; térmica por confirmar. Búsqueda del 09-11.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-10",
+     "precio_pagina": 19980.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $19.980."
     }
    ]
   },
@@ -64,8 +70,11 @@
      "precio_unitario_neto": 13932.77,
      "coincidencia": "aproximada",
      "nota": "Búsqueda del 09-11.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-09"
+     "verificado": true,
+     "fecha_consulta": "2026-11-09",
+     "verificado_en": "2026-11-10",
+     "precio_pagina": 16580.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $16.580."
     }
    ]
   },
@@ -99,5 +108,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-10",
+  "opciones": 3,
+  "verificadas": 3
+ }
 }

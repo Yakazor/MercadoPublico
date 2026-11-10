@@ -34,7 +34,7 @@
      "fecha_consulta": "2026-10-31",
      "verificado": false,
      "precio_pagina": 52000.0,
-     "verificacion_pagina": "2026-11-09: la página abrió y el precio más parecido es $52.000, no $46.000: puede haber cambiado."
+     "verificacion_pagina": "2026-11-10: la página abrió y el precio más parecido es $52.000, no $46.000: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -50,8 +50,8 @@
      "fecha_consulta": "2026-10-31",
      "verificado": true,
      "precio_pagina": 60990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $60.990.",
-     "verificado_en": "2026-11-09"
+     "verificacion_pagina": "2026-11-10: la página muestra $60.990.",
+     "verificado_en": "2026-11-10"
     }
    ]
   },
@@ -73,7 +73,7 @@
      "fecha_consulta": "2026-10-31",
      "verificado": false,
      "precio_pagina": 52000.0,
-     "verificacion_pagina": "2026-11-09: la página abrió y el precio más parecido es $52.000, no $46.000: puede haber cambiado."
+     "verificacion_pagina": "2026-11-10: la página abrió y el precio más parecido es $52.000, no $46.000: puede haber cambiado."
     }
    ]
   },
@@ -97,7 +97,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-09",
+  "fecha": "2026-11-10",
   "opciones": 3,
   "verificadas": 1
  }

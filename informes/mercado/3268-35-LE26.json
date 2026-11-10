@@ -20,7 +20,7 @@
      "nota": "Sin motor; retiro en Bodega Quilicura.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -41,7 +41,7 @@
      "nota": "Modelo hermano; la ficha del NR25XA no muestra precio.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -62,7 +62,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -83,7 +83,7 @@
      "nota": "La ficha Dynamis 4 Stack Jungle no muestra precio; este es otro modelo de 4 estaciones.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -104,7 +104,7 @@
      "nota": "Confirmar modelo con ILUS.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -125,7 +125,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -146,7 +146,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -167,7 +167,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -188,7 +188,7 @@
      "nota": "Preventa; confirmar que sea uso comercial.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -209,7 +209,7 @@
      "nota": "25 mm de diámetro, no 28 mm.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   },
@@ -230,13 +230,13 @@
      "nota": "Preventa.",
      "verificado": false,
      "fecha_consulta": "2026-11-06",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 404."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-09",
+  "fecha": "2026-11-10",
   "opciones": 11,
   "verificadas": 0
  }

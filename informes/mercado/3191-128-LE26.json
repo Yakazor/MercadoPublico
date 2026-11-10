@@ -19,7 +19,8 @@
      "coincidencia": "aproximada",
      "nota": "Juego doméstico/hotelero, no textil hospitalario según bases.",
      "verificado": false,
-     "fecha_consulta": "2026-11-10"
+     "fecha_consulta": "2026-11-10",
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -59,5 +60,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-10",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

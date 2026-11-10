@@ -21,9 +21,9 @@
      "nota": "búsqueda del 25-10. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-10-25",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $11.990."
     }
    ]
   },
@@ -46,7 +46,7 @@
      "verificado": false,
      "verificado_en": "2026-11-02",
      "precio_pagina": 7590.0,
-     "verificacion_pagina": "2026-11-09: la página abrió y el precio más parecido es $7.590, no $7.290: puede haber cambiado."
+     "verificacion_pagina": "2026-11-10: la página abrió y el precio más parecido es $7.590, no $7.290: puede haber cambiado."
     }
    ]
   },
@@ -67,9 +67,9 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-11-01",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 46990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $46.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $46.990."
     }
    ]
   },
@@ -89,7 +89,7 @@
      "coincidencia": "aproximada",
      "nota": "precio vía Knasta (comparador de Lider); confirmar tela. precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-11-01",
-     "verificacion_pagina": "2026-11-09: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider (vende Andesland)",
@@ -104,15 +104,15 @@
      "nota": "precio visto en el listado de búsqueda (la sesión no puede abrir la ficha); confirmar en la tienda",
      "fecha_consulta": "2026-11-01",
      "verificado": true,
-     "verificado_en": "2026-11-09",
+     "verificado_en": "2026-11-10",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-09: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-10: la página muestra $19.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-09",
+  "fecha": "2026-11-10",
   "opciones": 5,
   "verificadas": 3
  }

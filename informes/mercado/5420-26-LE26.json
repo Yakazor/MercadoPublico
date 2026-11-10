@@ -18,8 +18,11 @@
      "precio_unitario_neto": 75621.85,
      "coincidencia": "equivalente",
      "nota": "Precio del listado; «profesional»: confirmar requisitos de las bases.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-10"
+     "verificado": true,
+     "fecha_consulta": "2026-11-10",
+     "verificado_en": "2026-11-10",
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $89.990."
     },
     {
      "tienda": "Lider (AOC)",
@@ -32,8 +35,11 @@
      "precio_unitario_neto": 92428.57,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-10"
+     "verificado": true,
+     "fecha_consulta": "2026-11-10",
+     "verificado_en": "2026-11-10",
+     "precio_pagina": 109990.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $109.990."
     }
    ]
   },
@@ -77,7 +83,8 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-10"
+     "fecha_consulta": "2026-11-10",
+     "verificacion_pagina": "2026-11-10: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -90,8 +97,11 @@
      "precio_unitario_neto": 31084.03,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-10"
+     "verificado": true,
+     "fecha_consulta": "2026-11-10",
+     "verificado_en": "2026-11-10",
+     "precio_pagina": 36990.0,
+     "verificacion_pagina": "2026-11-10: la página muestra $36.990."
     }
    ]
   },
@@ -101,5 +111,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-10",
+  "opciones": 4,
+  "verificadas": 3
+ }
 }
