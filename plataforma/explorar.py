@@ -30,6 +30,7 @@ def _explorar(compra_agil: bool) -> None:
         st.title("Compras Ágiles")
         st.caption("Hasta 100 UTM: se cotiza el total con IVA y despacho. En el primer llamado solo pueden "
                    "cotizar empresas de menor tamaño; el plazo de entrega lo fija el comprador.")
+        comun.avisar_compras_agiles(prep["meta"])
         emt = soy_emt()
         if not emt:
             st.info("No clasificas como Empresa de Menor Tamaño: solo puedes cotizar en el **2º llamado**. "

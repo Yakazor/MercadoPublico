@@ -22,7 +22,7 @@ from __future__ import annotations
 import io
 import json
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -277,6 +277,26 @@ def soy_emt(config: dict | None = None) -> bool:
 def solo_emt(lic: dict) -> bool:
     """Compra Ágil de 1er llamado: solo pueden cotizar empresas de menor tamaño."""
     return lic.get("tipo") == COMPRA_AGIL and lic.get("llamado") == 1
+
+
+def compras_agiles_atrasadas(meta: dict, ahora: datetime, horas: float = 24) -> str | None:
+    """Aviso si el listado de Compras Ágiles lleva más de `horas` sin avanzar (None si está al día o no
+    se sabe). El workflow termina bien aunque la API de Mercado Público responda 504: del 06 al 10-11 no
+    trajo ninguna compra nueva y nadie lo notó."""
+    hasta = (meta or {}).get("compras_agiles_listado_hasta")
+    if not hasta:
+        return None
+    try:
+        listado = datetime.fromisoformat(str(hasta))
+    except ValueError:
+        return None
+    if listado.tzinfo is None and ahora.tzinfo is not None:
+        listado = listado.replace(tzinfo=ahora.tzinfo)
+    if ahora - listado <= timedelta(hours=horas):
+        return None
+    return (f"Las Compras Ágiles no se actualizan desde el {listado:%d-%m %H:%M}: la API de Mercado Público no está "
+            "respondiendo. La lista puede estar incompleta (también las de 2º llamado); revisa directamente en "
+            "Mercado Público.")
 
 
 def supuestos_config(config: dict | None = None) -> dict:

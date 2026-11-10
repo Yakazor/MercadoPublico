@@ -237,6 +237,14 @@ def region_corta(region: str | None) -> str:
     return next((corta for clave, corta in _REGIONES if clave in texto), region or "")
 
 
+def avisar_compras_agiles(meta: dict) -> None:
+    """Aviso visible si el listado de Compras Ágiles lleva más de un día sin avanzar."""
+    from radar.plataforma import compras_agiles_atrasadas
+    aviso = compras_agiles_atrasadas(meta, pd.Timestamp.now(tz="America/Santiago").to_pydatetime())
+    if aviso:
+        st.warning(aviso, icon="⚠️")
+
+
 def fecha_hora(texto: str | None, corta: bool = False) -> str:
     if not texto:
         return "—"

@@ -106,6 +106,10 @@ def main():
         "licitaciones": int((vigentes["tipo"] != "Compra Ágil").sum()),
         "compras_agiles": int((vigentes["tipo"] == "Compra Ágil").sum()) if agiles else None,
         "compras_agiles_generado": agiles.get("generado") if agiles else None,
+        # Hasta cuándo quedó completo el listado: si la API no responde (504), «generado» se renueva igual
+        # en cada corrida, pero el listado no avanza. La plataforma avisa cuando se queda atrás.
+        "compras_agiles_listado_hasta": agiles.get("listado_hasta") if agiles else None,
+        "compras_agiles_detenida": agiles.get("detenida") if agiles else None,
         "productos_con_precio": len(precios),
         "items": len(items),
         "oc_desde": dias[0] if dias else None,

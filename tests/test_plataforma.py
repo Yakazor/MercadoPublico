@@ -484,3 +484,15 @@ def test_licitaciones_sin_precio_dicen_que_falta_y_cuantas_tienen_decision(tmp_p
     tabla = at.dataframe[0].value
     assert "⚪ Sin evaluar" not in set(tabla["Decisión"])
     assert set(tabla["Decisión"]) <= {"🟢 GO", "🟡 Con condiciones", "🔴 NO GO", "⚪ Falta precio"}
+
+
+def test_aviso_si_las_compras_agiles_no_avanzan():
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    from radar.plataforma import compras_agiles_atrasadas
+    ahora = datetime(2026, 11, 10, 9, 0, tzinfo=ZoneInfo("America/Santiago"))
+    aviso = compras_agiles_atrasadas({"compras_agiles_listado_hasta": "2026-11-06T16:54:13"}, ahora)
+    assert aviso.startswith("Las Compras Ágiles no se actualizan desde el 06-11 16:54")
+    assert compras_agiles_atrasadas({"compras_agiles_listado_hasta": "2026-11-10T02:00:00"}, ahora) is None
+    assert compras_agiles_atrasadas({}, ahora) is None and compras_agiles_atrasadas(None, ahora) is None
+    assert compras_agiles_atrasadas({"compras_agiles_listado_hasta": "no es fecha"}, ahora) is None

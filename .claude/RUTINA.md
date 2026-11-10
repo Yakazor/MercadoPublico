@@ -81,7 +81,9 @@ Hay tres pedidos posibles:
    informes PDF», que abre cada tienda y rehace los PDF.
 8. Publica los precios nuevos en la plataforma sin esperar: `gh workflow run radar-diario.yml -R Yakazor/MercadoPublico --ref feature/api-mercadopublico -f solo_exportar=true`
    (no llama a la API). Si `gh` no puede, no pasa nada: «Compras Ágiles» los publica en menos de 3 horas.
-9. Resumen de 3–6 líneas con PushNotification: licitaciones con precios nuevos y su decisión,
+9. (Antes del resumen: si `compras_agiles_listado_hasta` de `<tmp>/datos/meta.json` tiene más de 24 horas, la API
+   de Compras Ágiles no está respondiendo: dilo en el resumen en vez de «ninguna de 2º llamado».)
+   Resumen de 3–6 líneas con PushNotification: licitaciones con precios nuevos y su decisión,
    las 3 mejores oportunidades (de `informes/evaluacion/README.md`), Compras Ágiles abiertas de 2º
    llamado (las únicas que puede cotizar; `llamado` en licitaciones.json) y cualquier error. Termina con el link de la plataforma.
 

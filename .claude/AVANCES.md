@@ -112,7 +112,7 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
-- 2026-11-10 (auditoría y mejoras, pedido de la usuaria «revisa, audita y mejora»; 554 pruebas OK):
+- 2026-11-10 (auditoría y mejoras, pedido de la usuaria «revisa, audita y mejora»; 555 pruebas OK):
   - **Estado:** workflows de la semana todos en verde; sin claves ni tokens en el repo ni en su historial; la
     rutina corrió todos los días (03 al 09-11) y no hubo ninguna GO.
   - **NO GO falsos por el «techo con OC» (corregido).** La referencia OC es la mediana del producto ONU, que
@@ -142,9 +142,15 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
     oferta sale ~1,5 veces el precio de tienda con IVA. De 16 evaluadas, recuperar el IVA y bajar el margen a
     10 % solo cambia 2: lo que mueve la aguja es comprar a precio de distribuidor (las «falta precio» y los
     «supera el monto» necesitan cotización de proveedor, no más búsquedas en tiendas).
-  - **Pendiente de revisar:** las Compras Ágiles publicadas bajaron de 1.379 (02-11) a 92 (09-11) con el
-    workflow en verde y corridas de 10 min justos; no se alcanzó a leer el registro. PR #11 y #13 siguen
-    abiertos (ya incluidos en la principal) y las 7 ramas viejas sin borrar (el modo automático no deja).
+  - **Compras Ágiles sin actualizar desde el 06-11 (aviso agregado).** La API de Compra Ágil responde HTTP 504
+    («Endpoint request timed out») en el listado y en los detalles: el workflow termina en verde con «0 listadas»
+    y «listado completo hasta 2026-11-06T16:54» (corridas del 09 y 10-11), por eso bajaron de 1.379 a 87 y el
+    «ninguna de 2º llamado» de la rutina no era confiable. No es un error del código (es el servidor de Mercado
+    Público), pero pasaba inadvertido: `meta.json` publica ahora `compras_agiles_listado_hasta` y la plataforma
+    (Inicio y Compras Ágiles) avisa si lleva más de 24 h sin avanzar (`plataforma.compras_agiles_atrasadas`);
+    RUTINA paso 9 lo informa. Si sigue así varios días: preguntar a la Mesa de Ayuda (600 0061 211) por la API.
+  - **Pendiente de la usuaria:** PR #11 y #13 siguen abiertos (ya incluidos en la principal) y las 7 ramas viejas
+    sin borrar (el modo automático no deja borrarlas desde aquí).
 
 - 2026-11-10 (rutina 11:00 UTC): último radar completo de hace ~14 h → radar y OC disparados (`datos` cambió 11:39 y
   11:45; datos del 10-11 08:44, 433 licitaciones, 87 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (3 a
