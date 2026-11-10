@@ -41,12 +41,15 @@ jobs:
       - run: pip install -r requirements.txt playwright
       - run: python -m playwright install --with-deps chromium
 
+      # Solo las licitaciones abiertas: las cerradas se archivan en informes/mercado/cerradas/ (antes cada
+      # corrida verificaba y reescribía también las ~175 cerradas: 379 archivos al día).
       - name: Verificar precios en las páginas de las tiendas
-        run: python scripts/verificar_precios.py
+        run: |
+          git clone -q --depth 1 --branch datos "https://github.com/${{ github.repository }}.git" "$RUNNER_TEMP/datos"
+          python scripts/verificar_precios.py --licitaciones "$RUNNER_TEMP/datos/licitaciones.json"
 
       - name: Presupuestos con la verificación
         run: |
-          git clone -q --depth 1 --branch datos "https://github.com/${{ github.repository }}.git" "$RUNNER_TEMP/datos"
           python scripts/presupuesto.py --items "$RUNNER_TEMP/datos/items.json" \
             --licitaciones "$RUNNER_TEMP/datos/licitaciones.json"
 

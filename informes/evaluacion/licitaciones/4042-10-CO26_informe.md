@@ -1,6 +1,6 @@
 # Informe ejecutivo: VESTUARIO INSTITUCIONAL
 
-**🔴 NO RECOMENDADA** · 🔴 NO GO
+**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
 
 ## Resumen general
 
@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $12.906.192 |
 | Oferta sugerida con IVA | $14.505.061 |
 
-**Riesgos financieros:** Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.654.750 neto en 6 línea(s))..
+**Riesgos financieros:** Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo CO admite hasta 1.000 UTM ($72.151.000)..
 
 ## Análisis operacional
 
@@ -47,8 +47,7 @@
 ## Riesgos detectados
 
 - Entrega en Región de los Lagos: despacho caro y lento desde Santiago.
-- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.654.750 neto en 6 línea(s)).
-- La oferta de las líneas con referencia ($12.189.127 neto) supera en 359% lo que el Estado pagó en OC parecidas.
+- Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo CO admite hasta 1.000 UTM ($72.151.000).
 
 ## Proveedores recomendados
 
@@ -64,7 +63,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🔴 NO RECOMENDADA.** Sin monto estimado, la oferta supera en más de 20% lo que el Estado pagó en órdenes de compra parecidas.
+**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
+
+Condiciones:
+- Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
 
 ## Supuestos
 

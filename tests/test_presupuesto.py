@@ -249,30 +249,58 @@ def test_alertas_del_indice():
     assert script.alertas({}, _p(items_sin_precio=1)) == ["falta 1 precio"]
 
 
-def test_script_separa_vigentes_y_cerradas(tmp_path, monkeypatch):
+def test_script_archiva_las_cerradas_y_solo_presupuesta_las_abiertas(tmp_path, monkeypatch):
     mercado = tmp_path / "mercado"
     mercado.mkdir()
     (mercado / "1-1-LE26.json").write_text(json.dumps(MERCADO), encoding="utf-8")
-    (mercado / "9-9-LE26.json").write_text(
-        json.dumps({"codigo": "9-9-LE26", "nombre": "Licitación vieja", "items": []}), encoding="utf-8")
+    vieja = {"codigo": "9-9-LE26", "nombre": "Licitación vieja", "items": []}
+    (mercado / "9-9-LE26.json").write_text(json.dumps(vieja), encoding="utf-8")
+    (tmp_path / "p").mkdir()
+    (tmp_path / "p" / "9-9-LE26.md").write_text("presupuesto vacío de una cerrada", encoding="utf-8")
     lics = [{"codigo": "1-1-LE26", "nombre": "Toldos y kits", "monto_estimado": 100000, "moneda": "CLP",
              "fecha_cierre": "2026-10-23 15:00:00", "rubro_nombre": "Mobiliario"}]
     (tmp_path / "items.json").write_text(json.dumps(ITEMS), encoding="utf-8")
     (tmp_path / "licitaciones.json").write_text(json.dumps(lics), encoding="utf-8")
-    monkeypatch.setattr(sys, "argv", [
-        "presupuesto.py", "--items", str(tmp_path / "items.json"), "--licitaciones", str(tmp_path / "licitaciones.json"),
-        "--mercado", str(mercado), "--salida", str(tmp_path / "p"), "--indice", str(tmp_path / "README.md"),
-        "--mercado-json", str(tmp_path / "mercado.json")])
-    script.main()
+    argv = ["presupuesto.py", "--items", str(tmp_path / "items.json"), "--licitaciones", str(tmp_path / "licitaciones.json"),
+            "--mercado", str(mercado), "--salida", str(tmp_path / "p"), "--indice", str(tmp_path / "README.md"),
+            "--mercado-json", str(tmp_path / "mercado.json")]
 
-    vigentes, cerradas = (tmp_path / "README.md").read_text(encoding="utf-8").split("## Ya cerradas")
+    # Con pocas licitaciones abiertas (datos incompletos) no archiva, pero tampoco escribe presupuestos vacíos.
+    monkeypatch.setattr(sys, "argv", argv)
+    script.main()
+    assert (mercado / "9-9-LE26.json").exists() and not (tmp_path / "p" / "9-9-LE26.csv").exists()
+    assert (tmp_path / "p" / "9-9-LE26.md").read_text(encoding="utf-8") == "presupuesto vacío de una cerrada"
+
+    monkeypatch.setattr(sys, "argv", argv + ["--minimo-abiertas", "1"])
+    script.main()
+    indice = (tmp_path / "README.md").read_text(encoding="utf-8")
     assert "| Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | " \
-           "Monto estimado | Alertas |" in vigentes
-    fila = next(f for f in vigentes.splitlines() if f.startswith("| [1-1-LE26]"))
+           "Monto estimado | Alertas |" in indice
+    fila = next(f for f in indice.splitlines() if f.startswith("| [1-1-LE26]"))
     assert fila.endswith("| $100.000 | supera monto, falta 1 precio, línea global, sin verificar |")
-    assert "9-9-LE26" not in vigentes and "ya no vigente" not in vigentes
-    assert "- [9-9-LE26](presupuestos/9-9-LE26.md) Licitación vieja" in cerradas
-    # El dashboard no recibe las descartadas.
+    # La cerrada sale del trabajo diario: sus precios quedan archivados y su presupuesto se borra.
+    assert "9-9-LE26" not in indice and "Licitaciones ya cerradas: 1." in indice
+    assert not (mercado / "9-9-LE26.json").exists() and (mercado / "cerradas" / "9-9-LE26.json").exists()
+    assert not (tmp_path / "p" / "9-9-LE26.md").exists()
+    assert (tmp_path / "p" / "1-1-LE26.md").exists() and (tmp_path / "p" / "1-1-LE26.csv").exists()
+    # El dashboard no recibe las descartadas ni las cerradas.
     dashboard = json.loads((tmp_path / "mercado.json").read_text(encoding="utf-8"))
     assert [o["tienda"] for o in dashboard] == ["Sodimac", "Lider"]
-    assert (tmp_path / "p" / "1-1-LE26.md").exists() and (tmp_path / "p" / "9-9-LE26.csv").exists()
+
+    # Si vuelve a aparecer abierta (el radar la había perdido), sus precios vuelven.
+    (tmp_path / "licitaciones.json").write_text(json.dumps(lics + [{"codigo": "9-9-LE26", "nombre": "Vieja"}]),
+                                                encoding="utf-8")
+    script.main()
+    assert (mercado / "9-9-LE26.json").exists() and not (mercado / "cerradas" / "9-9-LE26.json").exists()
+    assert (tmp_path / "p" / "9-9-LE26.md").exists()
+
+
+def test_verificar_precios_solo_revisa_las_licitaciones_abiertas(tmp_path):
+    import verificar_precios
+    rutas = [tmp_path / "1-1-LE26.json", tmp_path / "9-9-LE26.json"]
+    lista = tmp_path / "licitaciones.json"
+    lista.write_text(json.dumps([{"codigo": "1-1-LE26"}]), encoding="utf-8")
+    assert verificar_precios.solo_abiertas(rutas, lista, minimo=1) == rutas[:1]
+    assert verificar_precios.solo_abiertas(rutas, lista) == rutas                 # lista corta: datos incompletos
+    assert verificar_precios.solo_abiertas(rutas, None) == rutas
+    assert verificar_precios.solo_abiertas(rutas, tmp_path / "no-existe.json") == rutas

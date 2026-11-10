@@ -1,7 +1,10 @@
 """Verifica los precios de mercado abriendo la página de cada tienda.
 
 Uso:
-    python scripts/verificar_precios.py [informes/mercado/*.json]
+    python scripts/verificar_precios.py [informes/mercado/*.json] [--licitaciones licitaciones.json]
+
+Con `--licitaciones` (las abiertas, de la rama datos) solo verifica los precios de esas: los de una
+licitación cerrada ya no sirven (y `presupuesto.py` los archiva en informes/mercado/cerradas/).
 
 Las búsquedas de precios corren en un entorno que no puede abrir sitios .cl, así que
 cada opción queda con "verificado": false. Este script corre en GitHub Actions, que sí
@@ -12,6 +15,7 @@ más a un 3 % del publicado; si no, deja en "verificacion_pagina" qué encontró
 """
 from __future__ import annotations
 
+import argparse
 import html
 import json
 import re
@@ -131,8 +135,26 @@ def verificar_archivo(ruta: Path, sesion: requests.Session, hoy: str) -> tuple[i
     return total, verificadas
 
 
+def solo_abiertas(rutas: list[Path], licitaciones: Path | None, minimo: int = 50) -> list[Path]:
+    """Las rutas de licitaciones abiertas. Sin lista, o con una de menos de `minimo` (datos incompletos), todas."""
+    if licitaciones is None:
+        return rutas
+    try:
+        abiertas = {l.get("codigo") for l in json.loads(licitaciones.read_text(encoding="utf-8"))}
+    except (OSError, ValueError):
+        return rutas
+    return [r for r in rutas if r.stem in abiertas] if len(abiertas) >= minimo else rutas
+
+
 def main():
-    rutas = [Path(a) for a in sys.argv[1:]] or sorted(ruta_proyecto("informes/mercado").glob("*.json"))
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("rutas", nargs="*", type=Path)
+    ap.add_argument("--licitaciones", type=Path, help="licitaciones.json de la rama datos: solo se verifican las abiertas")
+    args = ap.parse_args()
+    todas = args.rutas or sorted(ruta_proyecto("informes/mercado").glob("*.json"))
+    rutas = solo_abiertas(todas, args.licitaciones)
+    if len(rutas) < len(todas):
+        print(f"{len(todas) - len(rutas)} archivos de licitaciones cerradas no se verifican")
     hoy = hoy_chile().isoformat()
     sesion = requests.Session()
     for ruta in rutas:

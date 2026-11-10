@@ -69,15 +69,17 @@ def _mercado(tmp_path, codigo, precios: dict):
 def test_las_que_quedaron_a_medias_vuelven_primero_solo_con_las_lineas_que_faltan(tmp_path, monkeypatch):
     import seleccionar_mercado as script
     lics = [_lic("1-1-LE26", "2026-10-30 15:00:00"),                                   # nueva
-            _lic("2-2-LE26", "2026-10-30 15:00:00", monto_estimado=10_000_000),         # a medias
+            _lic("2-2-LE26", "2026-10-30 15:00:00", monto_estimado=10_000_000),         # a medias: línea 2 nunca buscada
             _lic("3-3-LE26", "2026-10-30 15:00:00"),                                   # completa
             _lic("4-4-LE26", "2026-10-30 15:00:00"),                                   # buscada sin resultado
-            _lic("5-5-LE26", "2026-10-30 15:00:00", monto_estimado=100)]               # NO GO por monto
+            _lic("5-5-LE26", "2026-10-30 15:00:00", monto_estimado=100),               # NO GO por monto
+            _lic("6-6-LE26", "2026-10-30 15:00:00", monto_estimado=10_000_000)]         # línea 2 ya buscada sin precio
     dos_lineas = [_item(l["codigo"]) | {"linea": n} for l in lics for n in (1, 2)]
-    _mercado(tmp_path, "2-2-LE26", {1: 5000, 2: None})
+    _mercado(tmp_path, "2-2-LE26", {1: 5000})
     _mercado(tmp_path, "3-3-LE26", {1: 5000, 2: 5000})
     _mercado(tmp_path, "4-4-LE26", {1: None, 2: None})
-    _mercado(tmp_path, "5-5-LE26", {1: 5000, 2: None})
+    _mercado(tmp_path, "5-5-LE26", {1: 5000})
+    _mercado(tmp_path, "6-6-LE26", {1: 5000, 2: None})
     (tmp_path / "items.json").write_text(json.dumps(dos_lineas))
     (tmp_path / "lics.json").write_text(json.dumps(lics))
     monkeypatch.setattr(script, "hoy_chile", lambda: date(2026, 10, 24))
@@ -89,6 +91,11 @@ def test_las_que_quedaron_a_medias_vuelven_primero_solo_con_las_lineas_que_falta
     assert [e["codigo"] for e in lote] == ["2-2-LE26", "1-1-LE26"]
     assert lote[0]["completar"] and [i["linea"] for i in lote[0]["items"]] == [2]
     assert "completar" not in lote[1] and len(lote[1]["items"]) == 2
+    # Con --reintentar vuelve también la línea que ya se buscó sin precio (6-6).
+    monkeypatch.setattr(sys, "argv", sys.argv + ["--reintentar"])
+    script.main()
+    lote = json.loads((tmp_path / "lote.json").read_text())
+    assert [e["codigo"] for e in lote] == ["2-2-LE26", "6-6-LE26", "1-1-LE26"]
 
 
 def test_guardar_mercado_combina_con_lo_que_habia(tmp_path):

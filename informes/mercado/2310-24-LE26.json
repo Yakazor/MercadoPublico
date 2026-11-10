@@ -1,0 +1,49 @@
+{
+ "codigo": "2310-24-LE26",
+ "nombre": "ADQUISICION DE MOBILIARIO ESCOLAR ESTABLECIMIENTOS",
+ "fecha_consulta": "2026-11-09",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ADQUISICION DE MOBILIARIO ESC. BAJO LOS ROMEROS",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 2,
+   "producto": "ADQUISICION DE MOBILIARIO ESC. EDUARDO FREI",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 3,
+   "producto": "ADQUISICION DE MOBILIARIO LICEO JUAN MORALES",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 4,
+   "producto": "ADQUISICION DE MOBILIARIO LUIS MALDONADO BOGGIANO",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 5,
+   "producto": "ADQUISICION DE MOBILIARIO ESC. SAN PEDRO",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 6,
+   "producto": "ADQUISICION DE MOBILIARIO ESC. REINO DE DINAMARCA",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 7,
+   "producto": "ADQUISICION DE MOBILIARIO ESC. LAS PALMAS DE TRES ESQUINAS",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  }
+ ]
+}

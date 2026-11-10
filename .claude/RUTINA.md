@@ -54,16 +54,24 @@ Hay tres pedidos posibles:
 5. Vuelve a clonar la rama datos (paso 2, borrando antes `<tmp>/datos`).
 5b. **Precios de mercado** (gasta créditos; máximo 8 licitaciones por corrida, pedido del 02-11):
    1. `python3 scripts/seleccionar_mercado.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --salida <tmp>/lote.json --maximo 8 --compras-agiles 2`
-      (primero las que quedaron **a medias** —`"completar": true` en el lote—, solo con las líneas que les
-      faltan y salvo que ya sean NO GO por monto; busca solo esas líneas, `guardar_mercado.py` las suma a lo
-      que había. Después, abiertas sin precios, 3+ días para el cierre, ítems concretos, sin servicios ni registro ISP;
+      (primero las que tienen líneas que **nunca se buscaron** —`"completar": true` en el lote—, solo con
+      esas líneas y salvo que ya sean NO GO por monto; `guardar_mercado.py` las suma a lo que había. Una línea
+      ya buscada sin precio **no vuelve** (desde el 10-11: del 03 al 09-11 se repitieron cada día sin resultado):
+      necesita cotización de un proveedor. Después, abiertas sin precios, 3+ días para el cierre, ítems
+      concretos, sin servicios ni registro ISP;
       2 cupos para Compras Ágiles con 1+ día, primero de la Región Metropolitana). La usuaria **no
       clasifica como Empresa de Menor Tamaño** (`compra_agil.soy_emt: false` en config.yaml): el script
       salta las Compras Ágiles de 1er llamado, porque no puede cotizarlas. Si el lote queda sin Compras
       Ágiles, es normal (casi todas las abiertas son de 1er llamado); no las agregues a mano.
    2. Si el lote tiene licitaciones, pasos 3 y 4 de «PRECIOS para» (workflow `precios-mercado-chile`
       o WebSearch con sus reglas; `guardar_mercado.py`). Prioriza tiendas y distribuidores de Santiago.
+      **Guarda siempre todas las líneas del lote**, también las que no tuvieron precio (`"opciones": []` y una
+      `"nota"`). Si una licitación no se puede cotizar por línea (cada línea agrupa varios productos o
+      establecimientos), guarda igual su JSON con todas las líneas sin opciones y la nota «No cotizable por
+      línea…»: así no vuelve al lote al día siguiente.
 6. Presupuestos: `python3 scripts/presupuesto.py --items <tmp>/datos/items.json --licitaciones <tmp>/datos/licitaciones.json --mercado-json <tmp>/mercado.json`.
+   (Archiva solo las licitaciones cerradas: mueve sus precios a `informes/mercado/cerradas/` y borra su presupuesto;
+   esos movimientos van en el commit de la corrida.)
 6b. **Evaluación comercial** (ver «Evaluación comercial» al final): corre el script y
    completa proveedores y el Claude Log de las 3 mejores oportunidades.
 7. `python3 -m pytest -q`. Si pasan y cambió algo en `informes/`: agrega una línea a la bitácora de

@@ -9,8 +9,9 @@ para ofertar (3+ días; las Compras Ágiles duran 1 o 2 días, a ellas les basta
 de productos regulados ni incluyan servicios (`compra_venta` no las marca como «no»),
 con 1 a 20 ítems concretos (con cantidad, sin "1 Global" ni "según bases"), de un
 monto manejable para partir (hasta `--monto-maximo`). Las que ya tienen precios en informes/mercado/
-pero les faltan líneas («falta precio» en la evaluación) van primero y solo con las líneas que faltan
-(`completar: true`); `guardar_mercado.py` combina lo nuevo con lo anterior. Ordena por ítems concretos y monto;
+pero tienen líneas que nunca se buscaron van primero y solo con esas líneas (`completar: true`);
+`guardar_mercado.py` combina lo nuevo con lo anterior. Una línea ya buscada sin precio (queda en el JSON
+con `opciones: []`) no se repite: necesita cotización de un proveedor (`--reintentar` la vuelve a buscar). Ordena por ítems concretos y monto;
 como mucho `--por-rubro` licitaciones por rubro. `--compras-agiles N` reserva los primeros N cupos para
 Compras Ágiles, primero las de la Región Metropolitana (despacho más barato desde Santiago); no
 cuentan en el tope por rubro de las licitaciones. Los días al cierre se cuentan desde hoy (el
@@ -48,7 +49,21 @@ def sin_remedio(lic: dict, items: list[dict], archivo: Path, supuestos: dict) ->
     if len(p["items"]) == p["items_sin_precio"]:
         return False
     ev = evaluar(lic | {"dias_restantes": None}, p, supuestos)
-    return ev.decision == NO_GO and any("monto" in r or "órdenes de compra" in r for r in ev.razones)
+    return ev.decision == NO_GO and any("monto" in r or "órdenes de compra" in r or "tope" in r for r in ev.razones)
+
+
+def lineas_buscadas(carpeta: Path) -> dict[str, set]:
+    """{código: líneas que ya se buscaron, con o sin precio} de informes/mercado/. Una línea buscada
+    sin resultado queda en el JSON con `opciones: []` y su nota («pedir cotización a distribuidor»)."""
+    salida = {}
+    for archivo in carpeta.glob("*.json"):
+        try:
+            datos = json.loads(archivo.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        items = datos.get("items") if isinstance(datos, dict) else None
+        salida[archivo.stem] = {i.get("linea") for i in items or []}
+    return salida
 
 
 def lineas_con_precio(carpeta: Path) -> dict[str, set]:
@@ -76,6 +91,8 @@ def main():
     ap.add_argument("--por-rubro", type=int, default=2)
     ap.add_argument("--monto-maximo", type=float, default=60_000_000, help="monto estimado máximo en CLP")
     ap.add_argument("--codigos", default="", help="códigos separados por coma (se buscan sí o sí)")
+    ap.add_argument("--reintentar", action="store_true",
+                    help="vuelve a buscar también las líneas ya buscadas sin precio (por defecto no se repiten)")
     ap.add_argument("--compras-agiles", type=int, default=0,
                     help="cupos reservados para Compras Ágiles (primero las de la Región Metropolitana)")
     args = ap.parse_args()
@@ -83,6 +100,9 @@ def main():
     items = json.loads(Path(args.items).read_text(encoding="utf-8"))
     lics = json.loads(Path(args.licitaciones).read_text(encoding="utf-8"))
     con_precio = lineas_con_precio(Path(args.mercado))
+    # Lo ya buscado no se repite: del 03 al 09-11 la rutina volvió cada día sobre las mismas líneas sin
+    # precio en tiendas («6 a completar, sin precios nuevos»). Esas líneas necesitan cotización de proveedor.
+    buscadas = con_precio if args.reintentar else lineas_buscadas(Path(args.mercado))
     pedidos = [c.strip() for c in args.codigos.split(",") if c.strip()]
     hoy = hoy_chile()
     config = cargar_config()
@@ -111,7 +131,7 @@ def main():
             its = por_codigo.get(l["codigo"], [])
             if l["codigo"] in con_precio:
                 # Ya buscada: solo vuelve si le faltan líneas (y sí tiene alguna con precio).
-                its_faltan = [i for i in its if i.get("linea") not in con_precio[l["codigo"]]]
+                its_faltan = [i for i in its if i.get("linea") not in buscadas.get(l["codigo"], ())]
                 # Sin líneas faltantes, o una búsqueda anterior que no encontró nada: no se repite.
                 if not its_faltan or not con_precio[l["codigo"]]:
                     continue

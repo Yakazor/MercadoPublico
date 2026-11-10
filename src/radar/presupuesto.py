@@ -32,6 +32,12 @@ UNIDADES_GLOBALES = {"global", "gl", "kit", "lote", "servicio", "unidad no defin
 # Razón referencia OC / costo unitario con gastos fuera de este rango: la mediana de OC
 # mezcla presentaciones (toldo de $27.723 con referencia de $1.790.250) y no sirve para comparar.
 RAZON_REFERENCIA = (0.1, 10.0)
+# Una mediana de OC sirve como techo de precio solo si es precisa: varias órdenes y precios parejos.
+# El producto ONU «Vestuario» junta calcetines y parkas (179 OC, de $7.200 a $30.000 entre p25 y p75):
+# su mediana no dice cuánto se paga por una parka. La mitad de los productos tiene 1 o 2 OC.
+REFERENCIA_MIN_ORDENES = 5
+REFERENCIA_MAX_DISPERSION = 2.0        # p75 / p25
+REFERENCIA_MAX_MEDIANA_P25 = 1.4       # para datos publicados sin p75
 
 
 def _palabras(texto: str) -> set[str]:
@@ -60,6 +66,18 @@ def referencia_comparable(referencia: float | None, costo: float | None) -> bool
     return RAZON_REFERENCIA[0] <= referencia / costo <= RAZON_REFERENCIA[1]
 
 
+def referencia_confiable(item: dict) -> bool:
+    """La referencia OC del ítem es precisa: 5+ órdenes y precios parejos (p75 a lo más el doble del
+    p25). Solo estas cuentan como techo de precio en la evaluación."""
+    n = _numero(item.get("ref_n_ordenes")) or 0
+    mediana, p25, p75 = (_numero(item.get(k)) for k in ("ref_mediana", "ref_p25", "ref_p75"))
+    if n < REFERENCIA_MIN_ORDENES or not mediana or not p25:
+        return False
+    if p75:
+        return p75 / p25 <= REFERENCIA_MAX_DISPERSION
+    return mediana / p25 <= REFERENCIA_MAX_MEDIANA_P25
+
+
 @dataclass
 class Referencia:
     producto: str
@@ -68,6 +86,7 @@ class Referencia:
     n_ordenes: int
     similitud: float
     rubro: str | None
+    p75: float | None = None
 
 
 class ReferenciasOC:
@@ -122,6 +141,7 @@ class ReferenciasOC:
             n_ordenes=int(fila.get("n_ordenes") or 0),
             similitud=round(similitud, 2),
             rubro=fila.get("rubro"),
+            p75=_numero(fila.get("precio_p75")),
         )
 
 
@@ -144,6 +164,7 @@ def items_licitacion_presupuesto(codigo: str, rubro: str | None, detalle: dict,
             "ref_producto": ref.producto if ref else None,
             "ref_mediana": ref.mediana if ref else None,
             "ref_p25": ref.p25 if ref else None,
+            "ref_p75": ref.p75 if ref else None,
             "ref_n_ordenes": ref.n_ordenes if ref else None,
             "ref_similitud": ref.similitud if ref else None,
         })
@@ -162,6 +183,8 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
     - la referencia OC solo se compara (y entra en `referencia_oc_neta`) si está entre
       0,1 y 10 veces el costo con gastos (`referencia_comparable`); si no, es otra
       presentación del producto;
+    - `referencia_confiable_neta` y `oferta_con_referencia_confiable`: lo mismo, solo con las
+      referencias precisas (`referencia_confiable`): son las que la evaluación usa como techo;
     - `lineas_globales`: líneas con precio cuya unidad es Global, Kit, Servicio o Lote;
     - todo en CLP neto; el total con IVA se agrega al final;
     - `iva_es_costo`: sin crédito fiscal (sin giro con IVA, o compras con boleta) el IVA de la
@@ -185,6 +208,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
             por_linea[linea], prioridad[linea] = m | {"precio_unitario_neto": precio}, nota
     filas, costo_total, oferta_total, referencia_total, oferta_con_referencia = [], 0.0, 0.0, 0.0, 0.0
     sin_precio, sin_verificar, lineas_globales, iva_compras = 0, 0, [], 0.0
+    referencia_confiable_total, oferta_con_confiable, lineas_confiables = 0.0, 0.0, 0
     for item in items:
         cantidad = _numero(item.get("cantidad")) or 0.0
         mejor = por_linea.get(item.get("linea"))
@@ -194,6 +218,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         oferta = costo_gastos * (1 + margen) if costo_gastos is not None else None
         ref = _numero(item.get("ref_mediana"))
         comparable = referencia_comparable(ref, costo_gastos)
+        confiable = bool(comparable) and referencia_confiable(item)
         es_global = unidad_global(item.get("unidad"))
         if costo is None:
             sin_precio += 1
@@ -204,6 +229,10 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
             if comparable:
                 referencia_total += ref * cantidad
                 oferta_con_referencia += oferta * cantidad
+            if confiable:
+                referencia_confiable_total += ref * cantidad
+                oferta_con_confiable += oferta * cantidad
+                lineas_confiables += 1
             if es_global:
                 lineas_globales.append(item.get("linea"))
             if not mejor.get("verificado"):
@@ -222,6 +251,7 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
             "subtotal_costo": costo_gastos * cantidad if costo_gastos is not None else None,
             "subtotal_oferta": oferta * cantidad if oferta is not None else None,
             "referencia_comparable": comparable,
+            "referencia_confiable": confiable if comparable is not None else None,
             # Contra una referencia no comparable el margen sale absurdo (miles por ciento o casi
             # −100 %): no se informa.
             "margen_vs_referencia": (ref / costo_gastos - 1) if comparable else None,
@@ -241,6 +271,10 @@ def armar_presupuesto(items: list[dict], mercado: list[dict], margen: float = 0.
         "referencia_oc_neta": referencia_total or None,
         # Oferta de los mismos ítems que tienen referencia comparable: es la que se compara con ella.
         "oferta_con_referencia": oferta_con_referencia or None,
+        # Solo referencias precisas (5+ OC y precios parejos): el techo de precio de la evaluación.
+        "referencia_confiable_neta": referencia_confiable_total or None,
+        "oferta_con_referencia_confiable": oferta_con_confiable or None,
+        "lineas_con_referencia_confiable": lineas_confiables,
         "margen": margen,
         "otros_costos": otros_costos,
     }

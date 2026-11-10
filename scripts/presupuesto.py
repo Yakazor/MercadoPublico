@@ -10,7 +10,7 @@ Lee:
 Escribe:
     informes/presupuestos/<codigo>.md y .csv   presupuesto por licitación
     informes/README.md                          índice de presupuestos (vigentes con
-                                                alertas; las ya cerradas al final)
+                                                alertas; las cerradas se archivan)
     --mercado-json <ruta>                       (opcional) todas las opciones no
                                                 descartadas en una tabla, para el dashboard
 
@@ -217,11 +217,41 @@ def markdown(lic: dict, mercado: dict, p: dict) -> str:
     return "\n".join(lineas)
 
 
-def indice(resumen: list[tuple], margen: float, otros_costos: float) -> str:
-    """Índice de presupuestos. `resumen`: (licitación, mercado, presupuesto, vigente).
-    Vigentes = las que siguen en licitaciones.json; las demás van en «Ya cerradas»."""
-    vigentes = sorted((r for r in resumen if r[3]), key=lambda r: r[0].get("fecha_cierre") or "")
-    cerradas = sorted((r for r in resumen if not r[3]), key=lambda r: r[0].get("codigo") or "")
+MINIMO_ABIERTAS = 50   # con menos licitaciones abiertas los datos están incompletos: no se archiva nada
+
+
+def archivar_cerradas(mercado: Path, salida: Path, abiertas: set[str], minimo: int = MINIMO_ABIERTAS) -> tuple[int, int]:
+    """Saca del trabajo diario las licitaciones que ya no están abiertas: sus precios de mercado pasan a
+    `<mercado>/cerradas/` (no se vuelven a verificar ni entran a los informes) y se borra su presupuesto,
+    que sin los ítems publicados queda vacío ($0, sin líneas). Si una vuelve a aparecer abierta, sus precios
+    vuelven. Con menos de `minimo` licitaciones abiertas no hace nada: los datos están incompletos.
+
+    Devuelve (archivadas, restauradas). Auditoría del 10-11: 175 de 198 archivos eran de licitaciones
+    cerradas y cada corrida volvía a verificar sus precios y a reescribir sus informes (379 archivos al día)."""
+    if len(abiertas) < minimo:
+        return 0, 0
+    archivo = mercado / "cerradas"
+    restauradas = 0
+    for ruta in sorted(archivo.glob("*.json")) if archivo.is_dir() else []:
+        if ruta.stem in abiertas and not (mercado / ruta.name).exists():
+            ruta.replace(mercado / ruta.name)
+            restauradas += 1
+    archivadas = 0
+    for ruta in sorted(mercado.glob("*.json")):
+        if ruta.stem in abiertas:
+            continue
+        archivo.mkdir(exist_ok=True)
+        ruta.replace(archivo / ruta.name)
+        for extension in (".md", ".csv"):
+            (salida / f"{ruta.stem}{extension}").unlink(missing_ok=True)
+        archivadas += 1
+    return archivadas, restauradas
+
+
+def indice(resumen: list[tuple], margen: float, otros_costos: float, cerradas: int = 0) -> str:
+    """Índice de presupuestos de las licitaciones abiertas. `resumen`: (licitación, mercado, presupuesto).
+    `cerradas`: cuántas hay archivadas en `mercado/cerradas/` (solo se informa el número)."""
+    vigentes = sorted(resumen, key=lambda r: r[0].get("fecha_cierre") or "")
     lineas = [
         "# Informes",
         "",
@@ -247,7 +277,7 @@ def indice(resumen: list[tuple], margen: float, otros_costos: float) -> str:
         "| Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |",
         "|---|---|---|---:|---:|---:|---:|---:|---|",
     ]
-    for lic, mercado, p, _ in vigentes:
+    for lic, mercado, p in vigentes:
         codigo = lic.get("codigo")
         n = len(p["items"])
         lineas.append(
@@ -257,9 +287,8 @@ def indice(resumen: list[tuple], margen: float, otros_costos: float) -> str:
             f"{_clp(lic.get('monto_estimado')) if lic.get('moneda') in (None, 'CLP') else '—'} | "
             f"{', '.join(alertas(lic, p)) or '—'} |")
     if cerradas:
-        lineas += ["", "## Ya cerradas", ""]
-        lineas += [f"- [{lic.get('codigo')}](presupuestos/{lic.get('codigo')}.md) {_celda(lic.get('nombre'))}"
-                   for lic, *_ in cerradas]
+        lineas += ["", f"Licitaciones ya cerradas: {cerradas}. Sus precios de mercado quedan archivados en "
+                       "`informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes)."]
     lineas.append("")
     return "\n".join(lineas)
 
@@ -272,6 +301,8 @@ def main():
     ap.add_argument("--salida", default=str(ruta_proyecto("informes/presupuestos")))
     ap.add_argument("--indice", default=str(ruta_proyecto("informes/README.md")))
     ap.add_argument("--mercado-json", help="escribe todas las opciones en una tabla JSON (dashboard)")
+    ap.add_argument("--minimo-abiertas", type=int, default=MINIMO_ABIERTAS,
+                    help="no archiva las cerradas si hay menos licitaciones abiertas que esto (datos incompletos)")
     ap.add_argument("--margen", type=float, default=0.20)
     ap.add_argument("--otros-costos", type=float, default=0.05)
     args = ap.parse_args()
@@ -286,26 +317,32 @@ def main():
     iva_es_costo = not (cargar_config().get("evaluacion") or {}).get("recupera_iva_compras", True)
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
+    archivadas, restauradas = archivar_cerradas(Path(args.mercado), salida, set(lics), args.minimo_abiertas)
+    if archivadas or restauradas:
+        print(f"{archivadas} licitaciones cerradas archivadas en {Path(args.mercado) / 'cerradas'}; {restauradas} restauradas")
     resumen, todas = [], []
     for archivo in sorted(Path(args.mercado).glob("*.json")):
         mercado = json.loads(archivo.read_text(encoding="utf-8"))
         codigo = mercado.get("codigo") or archivo.stem
+        if codigo not in lics:      # cerrada sin archivar (datos incompletos): su presupuesto saldría vacío
+            continue
         opciones = opciones_mercado(mercado)
         todas += opciones
-        lic = lics.get(codigo) or {"codigo": codigo, "nombre": mercado.get("nombre")}
+        lic = lics[codigo]
         p = armar_presupuesto(por_codigo.get(codigo, []), opciones, args.margen, args.otros_costos, iva_es_costo)
         (salida / f"{codigo}.md").write_text(markdown(lic, mercado, p), encoding="utf-8")
         tabla = pd.DataFrame(p["items"])
-        dinero = ["ref_mediana", "ref_p25", "costo_unitario_neto", "oferta_unitaria_neta", "subtotal_costo", "subtotal_oferta"]
+        dinero = ["ref_mediana", "ref_p25", "ref_p75", "costo_unitario_neto", "oferta_unitaria_neta", "subtotal_costo", "subtotal_oferta"]
         # Columnas sin ningún valor (todo None) quedan como object: se pasan a número antes de redondear.
         for col, decimales in [(c, 0) for c in dinero] + [("margen_vs_referencia", 3)]:
             if col in tabla:
                 tabla[col] = pd.to_numeric(tabla[col], errors="coerce").round(decimales)
         # Punto y coma y coma decimal: Excel en español lo abre bien.
         tabla.to_csv(salida / f"{codigo}.csv", sep=";", decimal=",", index=False, encoding="utf-8-sig")
-        resumen.append((lic, mercado, p, codigo in lics))
+        resumen.append((lic, mercado, p))
 
-    Path(args.indice).write_text(indice(resumen, args.margen, args.otros_costos), encoding="utf-8")
+    en_archivo = len(list((Path(args.mercado) / "cerradas").glob("*.json")))
+    Path(args.indice).write_text(indice(resumen, args.margen, args.otros_costos, en_archivo), encoding="utf-8")
     if args.mercado_json:
         Path(args.mercado_json).write_text(json.dumps(opciones_dashboard(todas), ensure_ascii=False), encoding="utf-8")
     print(f"{len(resumen)} presupuestos en {salida}")

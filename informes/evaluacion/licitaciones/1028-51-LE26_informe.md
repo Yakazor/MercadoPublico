@@ -1,0 +1,71 @@
+# Informe ejecutivo: Elementos de protección personal CAD
+
+**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
+
+## Resumen general
+
+- **Licitación:** [1028-51-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1028-51-LE26) (LE)
+- **Organismo comprador:** MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF (Región de Valparaíso)
+- **Fecha de cierre:** 2026-11-16 15:00
+- **Monto referencial:** —
+- **Ítems:** 9 (33% con precio de mercado)
+
+## Análisis económico
+
+| Concepto | Monto (neto) |
+|---|---:|
+| Costos directos (mercadería a precio de tienda) | $4.059.025 |
+| IVA de las compras (sin crédito fiscal) | $771.215 |
+| Logística (despacho 6 %, zona media) | $243.542 |
+| Horas hombre (9.25 h × $6.000) | $55.500 |
+| Garantía de fiel cumplimiento | $0 |
+| Costo financiero (30 días hasta el pago) | $72.454 |
+| Subcontratación | $0 |
+| **Costo total** | **$5.201.735** |
+| Ingreso (oferta sugerida) | $6.086.103 |
+| **Margen bruto** | $1.255.862 (21 %) |
+| **Margen neto** | $884.367 (15 %) |
+| Rentabilidad sobre costos | 17 % |
+| Punto de equilibrio (oferta mínima con IVA) | $6.190.065 |
+| Oferta sugerida con IVA | $7.242.462 |
+
+**Riesgos financieros:** 6 de 9 ítems sin precio de mercado: el costo real es mayor.; 3 de 3 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000)..
+
+## Análisis operacional
+
+- **Capacidad de cumplimiento:** factibilidad operativa baja, complejidad media.
+- **Recursos requeridos:** capital de trabajo de unos $4.830.240 con IVA para comprar la mercadería, 9.25 horas de trabajo y transporte a Región de Valparaíso.
+- **Dependencias críticas:** stock y precio del proveedor al momento de la orden de compra; precios de tienda sin verificar hasta abrir cada link.
+- **Requisitos técnicos, garantías, experiencia y certificaciones:** están en las bases y anexos de la ficha (la API no los entrega). Revísalos antes de ofertar.
+
+## Análisis de plazos
+
+- **Días para el cierre:** 6
+- **Viabilidad:** Alta.
+- **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
+
+## Riesgos detectados
+
+- 6 de 9 ítems sin precio de mercado: el costo real es mayor.
+- 3 de 3 precios son de productos aproximados (otra medida, marca o modelo).
+- Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
+
+## Proveedores recomendados
+
+| # | Proveedor | Especialidad | Correo | Sitio web | Contacto | Respuesta / entrega | Costo referencial |
+|---:|---|---|---|---|---|---|---|
+| 1 | Lider | Precio publicado para 2 línea(s) | por confirmar | [web](https://www.lider.cl/ip/vestuario/chaqueta-hombre-100-impermeable-cierre-con-gorro-h81/00079325426981) | — | por confirmar | — |
+| 2 | Sodimac (MSA) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.sodimac.cl/sodimac-cl/lista/CATG34981/Cascos-de-Seguridad) | — | por confirmar | — |
+
+Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedir precio por volumen.
+
+## Conclusión ejecutiva
+
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 33% de las líneas (mínimo 80%): todavía no se puede decidir.
+
+Condiciones:
+- Conseguir precio de las 6 líneas que faltan: con 3 de 9 el margen sale de una parte del pedido.
+
+## Supuestos
+
+Despacho por zona {'cercana': 0.03, 'media': 0.06, 'lejana': 0.09, 'extrema': 0.12}; 4 h base + 0.25 h por línea + 3 h de entrega a $6.000/h; garantía 5 % sobre 1000 UTM (UTM $72.151) con costo de emisión 2 %; costo financiero 1.5 % mensual. Probabilidad de adjudicación: heurística. Se cambian en config.yaml > evaluacion.

@@ -57,9 +57,12 @@ def test_con_precio_para_menos_del_80_por_ciento_de_las_lineas_falta_precio():
     assert evaluar(_lic(), _presupuesto(lineas=4, con_precio=2), {"cobertura_minima": 0.5}).decision != FALTA_PRECIO
 
 
-def _con_referencia(ref, lineas=2, con_ref=2):
-    items = [{"codigo": "1-1-LE26", "linea": n, "producto": "Silla", "cantidad": 100, "unidad": "Unidad",
-              "ref_mediana": ref if n <= con_ref else None} for n in range(1, lineas + 1)]
+def _con_referencia(ref, lineas=2, con_ref=2, ordenes=12, p25=None, p75=None, cantidad=100):
+    """Líneas a $10.000 neto de tienda; las primeras `con_ref` con referencia OC (precisa por defecto:
+    12 órdenes y p25–p75 a ±10 % de la mediana)."""
+    items = [{"codigo": "1-1-LE26", "linea": n, "producto": "Silla", "cantidad": cantidad, "unidad": "Unidad",
+              **({"ref_mediana": ref, "ref_n_ordenes": ordenes, "ref_p25": p25 or ref * 0.9, "ref_p75": p75 or ref * 1.1}
+                 if n <= con_ref else {"ref_mediana": None})} for n in range(1, lineas + 1)]
     mercado = [{"linea": n, "precio_unitario_neto": 10_000, "coincidencia": "exacta", "verificado": True,
                 "tienda": "Tienda"} for n in range(1, lineas + 1)]
     return armar_presupuesto(items, mercado, iva_es_costo=True)
@@ -74,11 +77,56 @@ def test_sin_monto_estimado_el_techo_son_las_oc_del_estado():
     assert any("supera en" in r for r in ev.riesgos)
     # Bajo el techo (pagó 14.000 → techo 16.800): sigue evaluándose por margen.
     assert evaluar(sin_monto, _con_referencia(14_000)).decision != NO_GO
-    # Con referencia en pocas líneas (1 de 3) no hay techo confiable.
+    # Con referencia en pocas líneas (1 de 3) no hay techo.
     ev = evaluar(sin_monto, _con_referencia(10_000, lineas=3, con_ref=1))
-    assert ev.decision != NO_GO and any("no hay techo" in r for r in ev.riesgos)
+    assert ev.decision != NO_GO and any("no hay una referencia precisa" in r for r in ev.riesgos)
     # Con monto publicado manda el monto, no las OC.
     assert evaluar(_lic(monto_estimado=10_000_000), p).decision != NO_GO
+
+
+def test_una_mediana_de_categoria_amplia_o_de_pocas_oc_no_es_techo():
+    # Auditoría del 10-11: «Vestuario» (179 OC, p25 $7.200, mediana $12.900, p75 $30.000) marcaba NO GO una
+    # parka de pluma, y «Pesas» (2 OC) una mancuerna de 30 kg. Esas referencias no son un techo de precio.
+    sin_monto = _lic(monto_estimado=None)
+    dispersa = evaluar(sin_monto, _con_referencia(10_000, p25=5_600, p75=23_000))
+    pocas = evaluar(sin_monto, _con_referencia(10_000, ordenes=2))
+    for ev in (dispersa, pocas):
+        assert ev.decision == CONDICIONADO                           # ya no es NO GO…
+        assert any("revisar en las bases el presupuesto" in c for c in ev.condiciones)   # …pero tampoco GO a ciegas
+        assert not any("supera en" in r for r in ev.riesgos)
+    p = _con_referencia(10_000, p25=5_600, p75=23_000)
+    assert p["referencia_oc_neta"] and p["referencia_confiable_neta"] is None
+    assert [i["referencia_confiable"] for i in p["items"]] == [False, False]
+    # Datos publicados antes de ref_p75: se usa mediana / p25.
+    from radar.presupuesto import referencia_confiable
+    assert referencia_confiable({"ref_mediana": 100, "ref_p25": 90, "ref_n_ordenes": 8})
+    assert not referencia_confiable({"ref_mediana": 12_900, "ref_p25": 7_200, "ref_n_ordenes": 179})
+    assert not referencia_confiable({"ref_mediana": 100, "ref_p25": 90, "ref_n_ordenes": 4})
+    assert not referencia_confiable({"ref_mediana": 100})
+
+
+def test_sin_monto_la_oferta_no_puede_pasar_el_tope_del_tipo_de_licitacion():
+    # LE: menos de 1.000 UTM ($72.151.000). 2 líneas × 2.600 u × ~$15.000 neto = ~$78 M neto.
+    grande = _con_referencia(None, con_ref=0, cantidad=2_600)
+    ev = evaluar(_lic(monto_estimado=None, tipo="LE"), grande)
+    assert ev.decision == NO_GO
+    assert "Sin monto estimado, la oferta supera el tope del tipo de licitación (LE: hasta 1.000 UTM)." in ev.razones
+    assert any(r.endswith("(LE: hasta 1.000 UTM, $72.151.000).") for r in ev.riesgos)
+    assert ev.supuestos["con_garantia"]                               # sin monto, la garantía sale de la oferta
+    # El mismo pedido en una LP (hasta 2.000 UTM) o LR (sin tope) no choca con el tope.
+    for tipo in ("LP", "LR"):
+        assert not any("tope" in r for r in evaluar(_lic(monto_estimado=None, tipo=tipo), grande).razones)
+    # Con monto publicado manda el monto.
+    assert not any("tope" in r for r in evaluar(_lic(monto_estimado=200_000_000, tipo="LE"), grande).razones)
+    chica = evaluar(_lic(monto_estimado=None, tipo="L1"), _con_referencia(None, con_ref=0))
+    assert not chica.supuestos["con_garantia"] and any("admite hasta 100 UTM" in r for r in chica.riesgos)
+
+
+def test_sobre_el_monto_dice_cuanto_mas_barato_hay_que_comprar():
+    ev = evaluar(_lic(monto_estimado=1_000_000), _presupuesto())      # oferta $1.499.400
+    assert ev.decision == NO_GO and any("un 33% más barato" in r for r in ev.riesgos)
+    parcial = evaluar(_lic(monto_estimado=1_000_000), _presupuesto(lineas=2, con_precio=1))
+    assert any("al menos un 33% más barato" in r for r in parcial.riesgos)
 
 
 def test_no_go_por_cierre_monto_o_sin_precios():

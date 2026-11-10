@@ -1,0 +1,37 @@
+{
+ "codigo": "1057421-44-LE26",
+ "nombre": "ADQUISICIÓN DE UNIFORMES PARA FUNCIONARIOS",
+ "fecha_consulta": "2026-11-09",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "LÍNEA 5: ROPA DE ABRIGO",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 2,
+   "producto": "LÍNEA 1 CLINICOS Y OTROS",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 3,
+   "producto": "LÍNEA 3: SAMU",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 4,
+   "producto": "LÍNEA 2: ADMINISTRATIVOS",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  },
+  {
+   "linea": 5,
+   "producto": "LÍNEA 4: TERRENO",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
+  }
+ ]
+}

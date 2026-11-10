@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-11-02, auditoría)
+## Estado (actualizado 2026-11-10, auditoría)
 
 | Tema | Estado |
 |---|---|
@@ -111,6 +111,40 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+- 2026-11-10 (auditoría y mejoras, pedido de la usuaria «revisa, audita y mejora»; 554 pruebas OK):
+  - **Estado:** workflows de la semana todos en verde; sin claves ni tokens en el repo ni en su historial; la
+    rutina corrió todos los días (03 al 09-11) y no hubo ninguna GO.
+  - **NO GO falsos por el «techo con OC» (corregido).** La referencia OC es la mediana del producto ONU, que
+    suele ser una categoría amplia: «Vestuario» (179 OC, p25 $7.200, mediana $12.900, p75 $30.000) marcaba NO GO
+    una parka de pluma («361 % sobre OC») y «Pesas» (2 OC) una mancuerna de 30 kg («415 %»). La mitad de los
+    productos tiene 1 o 2 OC. Ahora el techo solo usa referencias precisas (`presupuesto.referencia_confiable`:
+    5+ OC y p75 ≤ 2 × p25; `ref_p75` se publica desde ahora en items.json) y, sin monto estimado, vale el **tope
+    legal del tipo de licitación** (`evaluacion.TOPE_TIPO_UTM`: L1/E2 100 UTM, LE/CO 1.000, LP/B2 2.000, LQ/H2
+    5.000). Sin monto ni referencia precisa queda la condición «revisar en las bases el presupuesto». Efecto:
+    4042-10-CO26 pasa de NO GO a GO con condiciones y 1028-51-LE26 a falta precio; 29-101-LE26 sigue NO GO
+    (oferta neta $104 M > 1.000 UTM). Con los datos del 10-11: 19 evaluadas, 1 GO con condiciones, 9 falta
+    precio y 9 NO GO.
+  - Sin monto publicado la **garantía** se calcula con la oferta (antes no se contaba nunca). El riesgo «supera
+    el monto» dice cuánto más barato habría que comprar para entrar (p. ej. 3268-35-LE26: 25 %).
+  - **La rutina repetía búsquedas sin resultado (corregido).** Del 03 al 09-11 volvió cada día sobre las mismas
+    líneas sin precio («6 a completar, sin precios nuevos»): `seleccionar_mercado.py` ya no repite una línea
+    buscada (`--reintentar` la fuerza). Tres licitaciones no cotizables por línea (2310-24-LE26, 1057421-44-LE26
+    y 4284-176-L126) volvían al lote porque no quedaba registro: ahora tienen su JSON sin opciones y RUTINA 5b
+    pide guardarlo siempre. Con los datos del 09-11 el lote son 8 licitaciones nuevas.
+  - **Informes de licitaciones cerradas (corregido).** 175 de 198 archivos de `informes/mercado/` eran de
+    licitaciones cerradas: cada corrida volvía a verificar sus precios y reescribía 379 archivos, y 171 de sus
+    presupuestos estaban vacíos ($0, sin ítems: items.json solo trae las abiertas). `presupuesto.py` las archiva
+    en `informes/mercado/cerradas/` (vuelven solas si la licitación reaparece; no archiva con menos de 50
+    abiertas) y borra su presupuesto; `verificar_precios.py --licitaciones` solo revisa las abiertas. Quedan 29
+    presupuestos y 45 PDF (antes 201 y 224).
+  - **Hallazgo de negocio (sin cambio de código):** con precios de tienda, IVA sin crédito y margen 20 % la
+    oferta sale ~1,5 veces el precio de tienda con IVA. De 16 evaluadas, recuperar el IVA y bajar el margen a
+    10 % solo cambia 2: lo que mueve la aguja es comprar a precio de distribuidor (las «falta precio» y los
+    «supera el monto» necesitan cotización de proveedor, no más búsquedas en tiendas).
+  - **Pendiente de revisar:** las Compras Ágiles publicadas bajaron de 1.379 (02-11) a 92 (09-11) con el
+    workflow en verde y corridas de 10 min justos; no se alcanzó a leer el registro. PR #11 y #13 siguen
+    abiertos (ya incluidos en la principal) y las 7 ramas viejas sin borrar (el modo automático no deja).
 
 - 2026-11-10 (rutina 11:00 UTC): último radar completo de hace ~14 h → radar y OC disparados (`datos` cambió 11:39 y
   11:45; datos del 10-11 08:44, 433 licitaciones, 87 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (3 a

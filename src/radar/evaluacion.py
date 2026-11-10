@@ -42,12 +42,18 @@ SUPUESTOS = {
     "recupera_iva_compras": False,
     # Bajo este % de líneas con precio no hay decisión (FALTA PRECIO).
     "cobertura_minima": 0.8,
-    # Sin monto estimado, el techo es lo que el Estado pagó en OC parecidas: NO GO si la oferta
-    # de esas líneas lo supera en más de este %, con referencia en al menos `referencia_minima`
+    # Sin monto estimado, el techo es lo que el Estado pagó en OC parecidas, solo con referencias
+    # precisas (5+ OC y precios parejos, `presupuesto.referencia_confiable`): NO GO si la oferta
+    # de esas líneas lo supera en más de este %, con referencia precisa en al menos `referencia_minima`
     # de las líneas con precio.
     "tolerancia_sobre_oc": 0.20,
     "referencia_minima": 0.5,
 }
+
+# Tope del tipo de licitación en UTM (Ley de Compras): el organismo elige el tipo según su presupuesto,
+# así que una oferta sobre el tope está fuera de lo que puede adjudicar. L1/E2: menos de 100 UTM;
+# LE/CO: menos de 1.000; LP/B2: menos de 2.000; LQ/H2: menos de 5.000 (LR/I2: sin tope).
+TOPE_TIPO_UTM = {"L1": 100, "E2": 100, "LE": 1000, "CO": 1000, "LP": 2000, "B2": 2000, "LQ": 5000, "H2": 5000}
 
 # Zona logística desde Santiago (despacho como % del costo de la mercadería).
 _ZONAS = {
@@ -64,6 +70,11 @@ def zona_logistica(region: str | None) -> str:
         if any(normalizar(c) in texto for c in claves):
             return zona
     return "media"
+
+
+def _miles(valor: float) -> str:
+    """1234567.8 → «1.234.568» (sin tocar las comas del resto de la frase)."""
+    return f"{valor:,.0f}".replace(",", ".")
 
 
 def _nivel(puntos: int, bajo: int, medio: int) -> str:
@@ -114,7 +125,8 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     logistica = directo * s["logistica_pct"][zona]
     horas = s["horas_base"] + s["horas_por_linea"] * n_items + s["horas_por_entrega"]
     mano_obra = horas * s["valor_hora"]
-    con_garantia = bool(monto and monto >= s["garantia_desde_utm"] * s["utm"])
+    # Sin monto publicado, la garantía depende de lo que se adjudique: se usa la oferta.
+    con_garantia = (monto or oferta_total or 0) >= s["garantia_desde_utm"] * s["utm"]
     garantia = oferta_total * s["garantia_pct"] * s["costo_emision_garantia_pct"] if con_garantia else 0.0
     financiero = directo * (1 + IVA) * s["tasa_financiera_mensual"]
     indirectos = logistica + mano_obra + garantia + financiero
@@ -147,26 +159,38 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     if zona in ("lejana", "extrema"):
         puntos += 1
         riesgos.append(f"Entrega en {lic.get('region')}: despacho caro y lento desde Santiago.")
-    # Sin monto estimado: techo con las OC del Estado de productos parecidos.
-    con_referencia = sum(1 for it in p["items"] if it.get("referencia_comparable"))
+    # Sin monto estimado hay dos techos: el tope legal del tipo de licitación y lo que el Estado pagó
+    # en OC, solo con referencias precisas (una mediana de categoría amplia no es un techo).
+    tope_utm = TOPE_TIPO_UTM.get(str(lic.get("tipo") or "").upper())
+    tope_tipo = tope_utm * s["utm"] if tope_utm and not monto else None
+    sobre_tipo = tope_tipo is not None and oferta_neta > tope_tipo
+    con_referencia = p.get("lineas_con_referencia_confiable") or 0
+    ref_oc, oferta_ref = p.get("referencia_confiable_neta"), p.get("oferta_con_referencia_confiable")
     techo_oc = None
-    if not monto and con_precio and con_referencia >= s["referencia_minima"] * con_precio \
-            and p.get("referencia_oc_neta") and p.get("oferta_con_referencia"):
-        techo_oc = p["referencia_oc_neta"] * (1 + s["tolerancia_sobre_oc"])
-    sobre_oc = techo_oc is not None and p["oferta_con_referencia"] > techo_oc
+    if not monto and con_precio and ref_oc and oferta_ref and con_referencia >= s["referencia_minima"] * con_precio:
+        techo_oc = ref_oc * (1 + s["tolerancia_sobre_oc"])
+    sobre_oc = techo_oc is not None and oferta_ref > techo_oc
+    sin_techo = not monto and techo_oc is None
     if not monto:
         riesgos.append("Sin monto estimado publicado: " + (
-            f"el techo es lo que el Estado pagó en OC parecidas (${p['referencia_oc_neta']:,.0f} neto en "
-            f"{con_referencia} línea(s)).".replace(",", ".") if techo_oc is not None
-            else "no hay techo de precio con qué comparar la oferta."))
+            f"el techo es lo que el Estado pagó en OC parecidas (${_miles(ref_oc)} neto en "
+            f"{con_referencia} línea(s) con referencia precisa)." if techo_oc is not None
+            else "no hay una referencia precisa de OC con qué comparar la oferta"
+            + (f"; el tipo {lic.get('tipo')} admite hasta {_miles(tope_utm)} UTM (${_miles(tope_tipo)})."
+               if tope_tipo else ".")))
+    if sobre_tipo:
+        puntos += 2
+        riesgos.append(f"La oferta neta (${_miles(oferta_neta)}) supera el tope del tipo de licitación "
+                       f"({lic.get('tipo')}: hasta {_miles(tope_utm)} UTM, ${_miles(tope_tipo)}).")
     if sobre_oc:
         puntos += 2
-        riesgos.append(f"La oferta de las líneas con referencia (${p['oferta_con_referencia']:,.0f} neto) supera en "
-                       f"{p['oferta_con_referencia'] / p['referencia_oc_neta'] - 1:.0%} lo que el Estado pagó en "
-                       f"OC parecidas.".replace(",", "."))
+        riesgos.append(f"La oferta de las líneas con referencia precisa (${_miles(oferta_ref)} neto) supera en "
+                       f"{oferta_ref / ref_oc - 1:.0%} lo que el Estado pagó en OC parecidas.")
     if monto and oferta_total > monto:
         puntos += 2
-        riesgos.append(f"La oferta (${oferta_total:,.0f}) supera el monto estimado (${monto:,.0f}).".replace(",", "."))
+        riesgos.append(f"La oferta (${_miles(oferta_total)}) supera el monto estimado (${_miles(monto)}): para entrar "
+                       f"habría que comprar {'al menos ' if cobertura < 1 else ''}un {1 - monto / oferta_total:.0%} más "
+                       "barato (pide precio de distribuidor).")
     if lic.get("alertas_regulatorias"):
         puntos += 2
         riesgos.append(f"Productos con registro ISP: {lic['alertas_regulatorias']}.")
@@ -210,6 +234,9 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
         # Ofertar sobre el presupuesto del organismo casi nunca se adjudica (y sin crédito fiscal
         # no hay margen para bajar el precio).
         razones.append("La oferta supera el monto estimado del organismo.")
+    if sobre_tipo:
+        razones.append(f"Sin monto estimado, la oferta supera el tope del tipo de licitación ({lic.get('tipo')}: "
+                       f"hasta {_miles(tope_utm)} UTM).")
     if sobre_oc:
         razones.append(f"Sin monto estimado, la oferta supera en más de {s['tolerancia_sobre_oc']:.0%} lo que el Estado "
                        "pagó en órdenes de compra parecidas.")
@@ -224,6 +251,9 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
     else:
         if cobertura < 1:
             condiciones.append("Conseguir precio de los ítems que faltan antes de ofertar.")
+        if sin_techo:
+            condiciones.append("Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto "
+                               "disponible antes de ofertar.")
         if p.get("lineas_globales"):
             condiciones.append("Revisar en las bases la cantidad real de las líneas globales.")
         if margen_neto_pct < 0.10:

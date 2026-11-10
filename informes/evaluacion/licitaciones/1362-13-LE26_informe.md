@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $2.256.767 |
 | Oferta sugerida con IVA | $2.653.608 |
 
-**Riesgos financieros:** 4 de 9 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($3.410.568 neto en 5 línea(s))..
+**Riesgos financieros:** 4 de 9 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.610.608 neto en 3 línea(s) con referencia precisa)..
 
 ## Análisis operacional
 
@@ -50,7 +50,7 @@
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).
 - Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
-- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($3.410.568 neto en 5 línea(s)).
+- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.610.608 neto en 3 línea(s) con referencia precisa).
 
 ## Proveedores recomendados
 
