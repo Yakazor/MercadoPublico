@@ -652,3 +652,142 @@ def test_tope_diario_de_gasto_en_la_plataforma(plataforma, monkeypatch):
     assert not at.exception, [e.value for e in at.exception]
     assert llamadas == [] and any("tope diario" in w.value for w in at.warning)
     cotizar._gasto().clear()
+
+
+# --- Sin la API: Claude en Chrome (10-11) --------------------------------------------------------
+
+RESPUESTA_CHROME = '''Listo, esto encontré:
+
+```json
+{
+  "resumen": "Fácil de abastecer en Santiago.",
+  "proveedores": [
+    {"nombre": "Sillas Pro", "tipo": "fabricante", "lineas": [1], "productos": "Sillas de oficina",
+     "web": "https://sillaspro.cl", "correo": "ventas@sillaspro.cl", "telefono": "+56 2 2345 6789",
+     "ciudad": "Santiago", "fuente": "https://sillaspro.cl/contacto", "nota": null},
+    {"nombre": "Oficina Sur", "tipo": "tienda", "lineas": [1], "productos": "Sillas", "web": "https://oficinasur.cl",
+     "correo": "contacto@oficinasur.cl", "telefono": null, "ciudad": null,
+     "fuente": "https://oficinasur.cl/contacto", "nota": "Despacha a regiones"}
+  ],
+  "precios": [
+    {"linea": 1, "proveedor": "Sillas Pro", "producto": "Silla ergonómica Pro", "precio": 35.990,
+     "iva_incluido": true, "unidades": 1, "coincidencia": "exacta", "url": "https://sillaspro.cl/silla", "nota": null},
+    {"linea": 1, "proveedor": "Oficina Sur", "producto": "Silla ejecutiva", "precio": "$ 29.990",
+     "iva_incluido": false, "unidades": 1, "coincidencia": "equivalente", "url": "https://oficinasur.cl/silla",
+     "nota": null},
+    {"linea": 7, "proveedor": "Otra", "producto": "Mesa", "precio": 50000, "iva_incluido": true, "unidades": 1,
+     "coincidencia": "exacta", "url": "https://otra.cl/mesa", "nota": null},
+    {"linea": 1, "proveedor": "Sin link", "producto": "Silla", "precio": 20000, "iva_incluido": true,
+     "unidades": 1, "coincidencia": "exacta", "url": "sillas.cl", "nota": null}
+  ]
+}
+```
+'''
+PAGINAS_CHROME = {
+    "https://sillaspro.cl/silla": "<h1>Silla ergonómica Pro</h1><span>$35.990</span>",
+    "https://sillaspro.cl/contacto": "Escríbenos a ventas@sillaspro.cl o llama al (2) 2345 6789",
+    "https://sillaspro.cl": "Fábrica de sillas",
+    "https://oficinasur.cl/contacto": "Formulario de contacto",       # el correo no está escrito aquí
+}
+
+
+def test_instruccion_para_claude_en_chrome_pide_el_json_que_la_plataforma_lee():
+    datos = _datos()
+    texto = prov.pedido_chrome(datos["licitaciones"][0], datos["items"])
+    assert "Línea 1: Silla — Silla ergonómica (10 Unidad)" in texto and "1-1-LE26" in texto
+    assert '"precios": [' in texto and "14990, no 14.990" in texto
+    assert "no inicies sesión" in texto and "Nunca estimes ni calcules un precio" in texto
+    assert f"«{prov.CUADRO_CHROME}»" in texto and f"«{prov.BOTON_CHROME}»" in texto
+    assert "búsquedas y" not in texto               # el presupuesto de búsquedas es de la API, no del navegador
+
+
+def test_importar_comprueba_en_las_paginas_lo_que_trajo_claude_en_chrome():
+    datos = _datos()
+    abiertas = []
+
+    def abrir(url):
+        abiertas.append(url)
+        return PAGINAS_CHROME.get(url)
+
+    resultado, descartados = prov.importar(datos["licitaciones"][0], datos["items"], RESPUESTA_CHROME,
+                                           ahora=datetime(2026, 11, 10, 15, 0), abrir=abrir)
+    assert descartados == 2                                            # la línea 7 no existe y uno no trae link
+    assert resultado["origen"] == "chrome" and resultado["costo_usd"] == 0 and resultado["busquedas"] == 0
+    barato, caro = resultado["precios"]
+    # "$ 29.990" + IVA es más caro neto que 35.990 con IVA incluido (30.244): manda el neto.
+    assert (barato["tienda"], barato["precio"], barato["precio_unitario_neto"]) == ("Oficina Sur", 29990, 29990)
+    assert (caro["tienda"], caro["precio"], caro["precio_unitario_neto"]) == ("Sillas Pro", 35990, round(35990 / 1.19, 2))
+    assert caro["verificado"] is True and barato["verificado"] is False   # la página de Oficina Sur no abrió
+    assert {m["origen"] for m in resultado["precios"]} == {prov.ORIGEN_CHROME}
+    assert [m["clave"] for m in resultado["precios"]] == ["1-1-LE26|1|c1", "1-1-LE26|1|c2"]
+    pro, sur = resultado["proveedores"]
+    assert pro["correo"] == "ventas@sillaspro.cl" and pro["telefono"] == "+56 2 2345 6789" and pro["verificado"]
+    # No está escrito en su página: no se usa para escribirle, pero queda a la vista «por confirmar».
+    assert sur["correo"] is None and sur["nota"] == "Despacha a regiones; correo por confirmar: contacto@oficinasur.cl"
+    assert "https://otra.cl/mesa" in abiertas and "sillas.cl" not in abiertas
+
+
+def test_importar_rechaza_lo_que_no_es_la_respuesta():
+    datos = _datos()
+    for texto in ("", "No encontré nada, lo siento.", '{"resumen": "nada", "proveedores": [], "precios": []}'):
+        with pytest.raises(prov.ErrorBusqueda, match="bloque JSON completo"):
+            prov.importar(datos["licitaciones"][0], datos["items"], texto, abrir=lambda url: None)
+
+
+def test_al_comprobar_no_se_abren_direcciones_internas_ni_se_repiten():
+    abiertas = []
+    leidas = prov._abrir_paginas(
+        ["http://127.0.0.1/admin", "http://localhost/x", "ftp://tienda.cl/a", None, "http://[::1]/x",
+         "https://tienda.cl/p", "https://tienda.cl/p", "https://caida.cl/p"],
+        lambda url: abiertas.append(url) or ("ok" if "tienda" in url else None))
+    assert sorted(abiertas) == ["https://caida.cl/p", "https://tienda.cl/p"]
+    assert leidas == {"https://tienda.cl/p": "ok"}
+
+
+def test_sumar_no_repite_proveedores_ni_precios_y_acumula_el_costo():
+    otro = PRECIO_SILLA | {"tienda": "Oficina Sur", "url": "https://oficinasur.cl/silla", "precio": 29990,
+                           "precio_unitario_neto": 25201.68, "clave": "1-1-LE26|1|c1"}
+    previa = ENCONTRADOS | {"precios": [PRECIO_SILLA]}
+    nueva = {"codigo": "1-1-LE26", "fecha": "2026-11-10T15:00-03:00", "origen": "chrome", "busquedas": 0,
+             "costo_usd": 0.0, "resumen": "Nueva", "precios": [otro, PRECIO_SILLA | {"nota": "visto hoy"}],
+             "proveedores": [{"nombre": "sillas pro ", "lineas": [1]}, {"nombre": "Oficina Sur", "lineas": [1]}]}
+    suma = prov.sumar(previa, nueva)
+    assert [p["nombre"] for p in suma["proveedores"]] == ["sillas pro ", "Oficina Sur"]
+    assert [(m["tienda"], m["clave"], m["opcion"]) for m in suma["precios"]] == [
+        ("Oficina Sur", "1-1-LE26|1|c1", 1), ("Sillas Pro", "1-1-LE26|1|c2", 2)]
+    assert suma["precios"][1]["nota"] == "visto hoy"                    # manda lo nuevo
+    assert suma["costo_usd"] == 0.31 and suma["busquedas"] == 3 and suma["origen"] == "chrome"
+    assert previa["precios"][0]["clave"] == "1-1-LE26|1|c1"            # la guardada no se toca
+    assert prov.sumar(None, nueva) is nueva
+
+
+def test_ficha_trae_la_respuesta_de_claude_en_chrome_sin_la_api(plataforma, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+
+    monkeypatch.setattr(prov, "buscar", lambda *a, **k: pytest.fail("no debe usar la API"))
+    monkeypatch.setattr(prov, "abrir_pagina", lambda url, **k: PAGINAS_CHROME.get(url))
+    at = AppTest.from_function(_ficha, args=(str(RAIZ),), default_timeout=60)
+    at.secrets["github_token"] = "gh-prueba"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    instruccion = next(c.value for c in at.code if "Claude" in c.value or "Línea 1" in c.value)
+    assert "Línea 1: Silla — Silla ergonómica" in instruccion and at.code[-1].value.startswith("Estimados/as")
+    guardar = next(b for b in at.button if b.label == prov.BOTON_CHROME)
+
+    guardar.click().run()                                              # vacío: avisa y no guarda
+    assert any("está vacío" in w.value for w in at.warning) and plataforma == []
+    at.text_area[0].set_value("no es la respuesta")
+    next(b for b in at.button if b.label == prov.BOTON_CHROME).click().run()
+    assert any("bloque JSON completo" in e.value for e in at.error) and plataforma == []
+
+    at.text_area[0].set_value(RESPUESTA_CHROME)
+    next(b for b in at.button if b.label == prov.BOTON_CHROME).click().run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert plataforma == [("1-1-LE26", "gh-prueba")]
+    aviso = at.success[0].value
+    assert "2 proveedores y 2 precios (1 de 2 comprobados" in aviso and "descartaron 2 precios" in aviso
+    assert at.text_area[0].value in ("", None)                         # el cuadro queda limpio
+    assert any("Traída de Claude en Chrome" in c.value and "sin costo de API" in c.value for c in at.caption)
+    precios = at.dataframe[-1].value
+    assert list(precios["Proveedor"]) == ["Oficina Sur", "Sillas Pro"] and list(precios["Verificado"]) == [False, True]
+    assert at.text_input[0].value == "ventas@sillaspro.cl"            # «Para» del correo: el comprobado

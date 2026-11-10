@@ -2,8 +2,10 @@
 
 Al abrir una licitación o Compra Ágil, Claude busca en la web a quién comprarle (si están el
 secreto `anthropic_api_key` y `proveedores.buscar_al_abrir`), y la búsqueda queda guardada en la
-rama `proveedores` para no repetirla. Abajo, el correo para pedir la cotización formal al
-proveedor elegido, listo para abrir en Gmail o en el programa de correo: nunca se envía solo.
+rama `proveedores` para no repetirla. Sin gastar de la API, «Buscar con Claude en Chrome» arma la
+instrucción para la extensión del navegador (usa el plan de Claude) y trae su respuesta. Abajo, el
+correo para pedir la cotización formal al proveedor elegido, listo para abrir en Gmail o en el
+programa de correo: nunca se envía solo.
 """
 import json
 
@@ -173,19 +175,91 @@ def _buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict) -> dict | N
         if error:
             estado.update(label=error, state="error")
             return None
-        ss.setdefault("prov_resultados", {})[codigo] = resultado
-        _memoria()[codigo] = resultado
-        try:
-            prov.guardar(codigo, resultado, comun.secreto("github_token"), rama=cfg["rama"])
-            _guardado.clear()
-            comun._indice_precios.clear()
-            guardado = ""
-        except (prov.ErrorGitHub, requests.RequestException) as e:   # sin guardar igual sirve en esta sesión
-            guardado = f" No quedó guardada en GitHub ({e}); queda mientras tengas la plataforma abierta."
+        guardado = _guardar(codigo, resultado, cfg)
         n, m = len(resultado["proveedores"]), len(resultado.get("precios") or [])
         estado.update(label=f"Listo: {n} proveedor{'es' if n != 1 else ''} y {m} precio{'s' if m != 1 else ''} "
                       f"encontrado{'s' if n + m != 1 else ''}." + guardado, state="complete")
     return resultado
+
+
+def _guardar(codigo: str, resultado: dict, cfg: dict) -> str:
+    """Deja la búsqueda en esta sesión, en la memoria de la plataforma y en GitHub. Devuelve el aviso
+    si GitHub no la guardó (igual sirve mientras la plataforma esté abierta)."""
+    st.session_state.setdefault("prov_resultados", {})[codigo] = resultado
+    _memoria()[codigo] = resultado
+    try:
+        prov.guardar(codigo, resultado, comun.secreto("github_token"), rama=cfg["rama"])
+    except (prov.ErrorGitHub, requests.RequestException) as e:
+        return f" No quedó guardada en GitHub ({e}); queda mientras tengas la plataforma abierta."
+    _guardado.clear()
+    comun._indice_precios.clear()
+    return ""
+
+
+def _plural(n: int, uno: str, varios: str) -> str:
+    return f"{n} {uno if n == 1 else varios}"
+
+
+def panel_chrome(lic: dict, items: list[dict], cfg: dict | None = None) -> None:
+    """Sin la API: la instrucción para Claude en Chrome y el cuadro para traer su respuesta.
+
+    Una página no puede abrir la extensión ni escribirle: se copia la instrucción, se pega en el
+    panel de Claude en Chrome y, cuando termina, su respuesta se pega aquí (o la pega él mismo)."""
+    if not items:
+        return
+    cfg = cfg or _config()[0]
+    codigo = lic["codigo"]
+    ss = st.session_state
+    aviso = ss.setdefault("chrome_avisos", {}).pop(codigo, None)
+    if aviso:
+        st.success(aviso, icon="✅")
+    with st.expander("Buscar con Claude en Chrome · sin costo de API", icon="🧭", expanded=bool(aviso)):
+        st.caption(comun.md(
+            "Usa tu plan de Claude, no el saldo de la API. **1.** Copia la instrucción (botón del recuadro). "
+            "**2.** Abre Claude en Chrome (el ícono de la extensión, arriba a la derecha del navegador), pégala "
+            "y envíala: busca en las tiendas unos minutos. **3.** Cuando termine, pega su respuesta en el "
+            f"cuadro de abajo y aprieta «{prov.BOTON_CHROME}» (si esta pestaña sigue abierta, él mismo lo "
+            "intenta)."))
+        st.code(prov.pedido_chrome(lic, items, cfg), language=None, wrap_lines=True, height=220)
+        cuadro = f"chrome_texto_{codigo}"
+        with st.form(f"chrome_{codigo}", border=False, enter_to_submit=False):
+            texto = st.text_area(prov.CUADRO_CHROME, key=cuadro, height=150,
+                                 placeholder="Pega aquí la respuesta completa de Claude (el bloque que empieza "
+                                             "con { y termina con })")
+            hay = bool(busqueda(codigo))
+            sumar = st.checkbox("Sumar a lo que ya hay guardado para esta licitación", value=True, disabled=not hay,
+                                key=f"chrome_sumar_{codigo}",
+                                help="Sin la marca, la respuesta reemplaza a la búsqueda guardada")
+            enviado = st.form_submit_button(prov.BOTON_CHROME, icon="💾", type="primary")
+        if not enviado:
+            return
+        if not (texto or "").strip():
+            st.warning("El cuadro está vacío: pega primero la respuesta de Claude en Chrome.")
+            return
+        with st.spinner("Abriendo las páginas para comprobar los precios y los contactos…"):
+            try:
+                nuevo, descartados = prov.importar(lic, items, texto, cfg)
+            except prov.ErrorBusqueda as e:
+                st.error(str(e))
+                return
+        if not nuevo["proveedores"] and not nuevo["precios"]:
+            st.error("La respuesta no trae precios ni proveedores que sirvan: cada precio necesita una línea del "
+                     "pedido, el link de la página del producto y el precio en pesos.")
+            return
+        resultado = prov.sumar(busqueda(codigo), nuevo) if sumar and hay else nuevo
+        guardado = _guardar(codigo, resultado, cfg)
+        precios = nuevo["precios"]
+        comprobados = sum(1 for m in precios if m.get("verificado"))
+        ss["chrome_avisos"][codigo] = (
+            f"Guardado: {_plural(len(nuevo['proveedores']), 'proveedor', 'proveedores')} y "
+            f"{_plural(len(precios), 'precio', 'precios')}"
+            + (f" ({comprobados} de {len(precios)} comprobados en la página de la tienda; los demás, revísalos "
+               "en su link)" if precios else "")
+            + (f". Se {'descartó' if descartados == 1 else 'descartaron'} "
+               f"{_plural(descartados, 'precio', 'precios')} sin línea del pedido, link o monto" if descartados else "")
+            + "." + guardado)
+        del ss[cuadro]      # el cuadro queda vacío para la próxima vez
+        st.rerun()          # la evaluación de arriba se vuelve a calcular con los precios traídos
 
 
 def _tabla(resultado: dict, items: list[dict]) -> None:
@@ -247,9 +321,9 @@ def _tabla_precios(resultado: dict, items: list[dict]) -> None:
     lineas = len({f["Línea"] for f in filas})
     st.markdown(f"##### Precios encontrados · {len(filas)} alternativas para {lineas} de {len(items)} líneas")
     st.caption("De la más barata a la más cara por línea. La evaluación (GO / NO GO) usa la más barata exacta o "
-               "equivalente; una aproximada solo si no hay otra. Verificado = Claude abrió la página del producto y "
-               "el precio está escrito ahí; los demás salieron en los resultados de búsqueda. Confírmalo con el "
-               "proveedor antes de ofertar.")
+               "equivalente; una aproximada solo si no hay otra. Verificado = el precio está escrito en la página "
+               "del producto (la abrió Claude al buscar, o la plataforma al traer la respuesta de Claude en Chrome); "
+               "los demás no se pudieron comprobar: míralos en su link. Confírmalo con el proveedor antes de ofertar.")
     st.dataframe(pd.DataFrame(filas), hide_index=True, placeholder="—", column_config={
         "Línea": st.column_config.NumberColumn(width=50),
         "Producto pedido": st.column_config.TextColumn(width=150),
@@ -265,7 +339,7 @@ def _tabla_precios(resultado: dict, items: list[dict]) -> None:
         "Coincidencia": st.column_config.TextColumn(width=95, help="exacta = el mismo producto; equivalente = "
                                                     "cumple lo pedido, otra marca; aproximada = le falta algo"),
         "Verificado": st.column_config.CheckboxColumn(width=80, help="El precio está escrito en la página del "
-                                                      "producto que Claude abrió"),
+                                                      "producto"),
         "Link": st.column_config.LinkColumn(display_text="Ver", width=50),
         "Nota": st.column_config.TextColumn(width=180)})
 
@@ -298,9 +372,15 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
         if resultado and resultado.get("precios"):
             st.rerun()      # la evaluación de arriba se vuelve a calcular con los precios encontrados
     if resultado:
+        costo = resultado.get("costo_usd") or 0
+        if resultado.get("origen") == "chrome":
+            origen = (f"Traída de Claude en Chrome el {comun.fecha_hora(resultado.get('fecha'))} · "
+                      + (f"sumada a una búsqueda con la API (US$ {costo:.2f})" if costo else "sin costo de API"))
+        else:
+            origen = (f"Búsqueda del {comun.fecha_hora(resultado.get('fecha'))} · {resultado.get('busquedas', 0)} "
+                      f"búsquedas web · costo aprox. US$ {costo:.2f}")
         st.caption(comun.md(
-            f"Búsqueda del {comun.fecha_hora(resultado.get('fecha'))} · {resultado.get('busquedas', 0)} búsquedas "
-            f"web · costo aprox. US$ {resultado.get('costo_usd', 0):.2f}. Los correos y teléfonos son los que "
+            f"{origen}. Los correos y teléfonos son los que "
             "aparecen en sus páginas; lo que no se encontró va «por confirmar». Los precios encontrados ya cuentan en "
             "la evaluación de esta licitación."))
         if resultado.get("resumen"):
@@ -317,8 +397,9 @@ def seccion(lic: dict, items: list[dict], mercado: list[dict]) -> None:
     elif not clave_api:
         st.info("Para que Claude busque proveedores al abrir cada licitación, agrega el secreto "
                 "`anthropic_api_key` (tu clave de la API de Claude, de console.anthropic.com) en los secretos de "
-                "la plataforma. Mientras tanto se muestran los proveedores de la rutina diaria o las tiendas "
-                "con precio, si hay.")
+                "la plataforma. Sin la API puedes usar «Buscar con Claude en Chrome», aquí abajo. Mientras tanto "
+                "se muestran los proveedores de la rutina diaria o las tiendas con precio, si hay.")
+    panel_chrome(lic, items, cfg)
     panel_correo(lic, items, lista(codigo, mercado))
 
 
@@ -337,13 +418,16 @@ def panel_correo(lic: dict, items: list[dict], proveedores: list[dict]) -> None:
     a, b = st.columns([1, 2])
     i = a.selectbox("Proveedor", range(len(opciones)), format_func=etiqueta, key=f"cot_prov_{codigo}")
     elegido = opciones[i]
+    # El proveedor va en la clave: si una búsqueda cambia la lista, «Para» y las líneas no se quedan
+    # con lo del proveedor que antes ocupaba ese lugar.
+    quien = f"{codigo}_{i}_{elegido.get('nombre')}"
     todas = list(productos)
     defecto = [x for x in elegido.get("lineas") or [] if x in productos] or todas
-    lineas = b.multiselect("Líneas a cotizar", todas, default=defecto, key=f"cot_lineas_{codigo}_{i}",
+    lineas = b.multiselect("Líneas a cotizar", todas, default=defecto, key=f"cot_lineas_{quien}",
                            format_func=lambda x: f"{x} · {productos[x][:40]}")
     firma = remitente()
     correo = prov.solicitud(lic, items, elegido, firma, hoy_chile(), lineas)
-    correo["para"] = st.text_input("Para", correo["para"], key=f"cot_para_{codigo}_{i}",
+    correo["para"] = st.text_input("Para", correo["para"], key=f"cot_para_{quien}_{correo['para']}",
                                    placeholder="correo del proveedor (búscalo en su web si no aparece)")
     st.text_input("Asunto", correo["asunto"], disabled=True, key=f"cot_asunto_{codigo}_{i}")
     st.code(correo["cuerpo"], language=None, wrap_lines=True)

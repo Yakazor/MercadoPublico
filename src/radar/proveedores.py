@@ -11,6 +11,10 @@ deja listo el correo para pedir la cotización formal. Aquí queda lo que no dep
   `precios_por_linea` alternativas por línea, de fuentes distintas. Un precio queda solo si aparece
   escrito en la página que Claude leyó (`depurar_precios`); queda en el formato de `mercado.json`
   (precio unitario neto) y la evaluación usa el más barato de cada línea: el que deja más margen.
+- Sin la API: `pedido_chrome(lic, items)` es la instrucción para Claude en Chrome (la extensión del
+  navegador, que usa el plan de Claude y no el saldo de la API) e `importar(lic, items, texto)` trae
+  su respuesta. Como ahí no hay registro de lo que leyó, la plataforma abre las páginas para
+  comprobar cada precio y cada contacto; lo que no se pudo comprobar queda marcado, nunca como cierto.
 - `leer(codigo)` y `guardar(codigo, datos, token)`: la búsqueda queda en la rama `proveedores` del
   repositorio (un JSON por licitación) para no pagarla dos veces. Esa rama no la toca el radar
   (la rama `datos` se reemplaza entera en cada publicación).
@@ -21,8 +25,10 @@ deja listo el correo para pedir la cotización formal. Aquí queda lo que no dep
 from __future__ import annotations
 
 import base64
+import html
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta
 from urllib.parse import quote, urlencode, urlsplit
 from zoneinfo import ZoneInfo
@@ -42,6 +48,13 @@ COINCIDENCIAS = ["exacta", "equivalente", "aproximada"]
 IVA = 0.19
 INDICE_PRECIOS = "precios.json"   # {código: [precios]} de todas las búsquedas, para la evaluación
 ORIGEN_PRECIO = "Búsqueda con Claude"
+ORIGEN_CHROME = "Claude en Chrome"   # búsqueda hecha en el navegador (plan de Claude, sin API)
+PAGINAS_A_COMPROBAR = 30             # de una respuesta de Claude en Chrome, cuántas páginas se abren
+NAVEGADOR = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                   "Chrome/126.0 Safari/537.36"),
+    "Accept-Language": "es-CL,es;q=0.9",
+}
 CONFIG = {
     "modelo": "claude-haiku-5-5",
     "esfuerzo": "medium",
@@ -160,9 +173,8 @@ def _destino(lic: dict) -> str:
     return ", ".join(x for x in (lic.get("direccion_entrega"), lic.get("comuna"), lic.get("region")) if x) or "Chile"
 
 
-def pedido(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
-    """Lo que se le pide a Claude: los ítems, dónde se entregan y las reglas de la búsqueda."""
-    cfg = cfg or configuracion()
+def _encabezado(lic: dict, items: list[dict]) -> str:
+    """Quién pregunta, qué licitación es y los productos pedidos: el comienzo de la instrucción."""
     lineas = []
     for it in items[:40]:
         cant = f"{it['cantidad']:g} {it.get('unidad') or ''}".strip() if it.get("cantidad") is not None else ""
@@ -176,7 +188,14 @@ def pedido(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
         f"productos hechos y revendiéndolos. Busca a quién comprárselos.\n\n"
         f"{tipo.capitalize()}: {lic.get('codigo')} — {lic.get('nombre') or ''}\n"
         f"Comprador: {lic.get('organismo') or '—'}\nEntrega en: {_destino(lic)}\n\nProductos pedidos:\n"
-        + "\n".join(lineas) + "\n\n"
+        + "\n".join(lineas) + "\n\n")
+
+
+def pedido(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
+    """Lo que se le pide a Claude: los ítems, dónde se entregan y las reglas de la búsqueda."""
+    cfg = cfg or configuracion()
+    return (
+        _encabezado(lic, items) +
         f"Encuentra hasta {cfg['maximo']} proveedores en Chile (fabricantes, importadores, distribuidores "
         "mayoristas o tiendas que vendan a empresas) que puedan cotizar estos productos. Prefiere a los que "
         "cubren más líneas, a los que venden por volumen y a los que están en la región de entrega o en "
@@ -216,6 +235,61 @@ def pedido(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
         "aproximada (le falta algo de lo pedido: dilo en «nota»).\n"
         "- «resumen»: dos frases sobre qué tan fácil es abastecer este pedido y qué líneas quedaron sin "
         "proveedor o sin precio."
+    )
+
+
+_FORMA_CHROME = """{
+  "resumen": "dos frases: qué tan fácil es abastecer el pedido y qué líneas quedaron sin precio",
+  "proveedores": [
+    {"nombre": "", "tipo": "fabricante | importador | distribuidor mayorista | tienda | otro",
+     "lineas": [1, 2], "productos": "", "web": "", "correo": null, "telefono": null, "ciudad": null,
+     "fuente": "", "nota": null}
+  ],
+  "precios": [
+    {"linea": 1, "proveedor": "", "producto": "", "precio": 14990, "iva_incluido": true, "unidades": 1,
+     "coincidencia": "exacta | equivalente | aproximada", "url": "", "nota": null}
+  ]
+}"""
+CUADRO_CHROME = "Respuesta de Claude en Chrome"   # el cuadro de la plataforma donde se pega la respuesta
+BOTON_CHROME = "Guardar precios"
+
+
+def pedido_chrome(lic: dict, items: list[dict], cfg: dict | None = None) -> str:
+    """La instrucción para Claude en Chrome (la extensión del navegador): la misma búsqueda, pero
+    navegando las tiendas con el plan de Claude, sin gastar saldo de la API. Su respuesta (un JSON)
+    se trae a la plataforma con `importar`."""
+    cfg = cfg or configuracion()
+    return (
+        _encabezado(lic, items) +
+        "Qué hacer (solo leer páginas: no inicies sesión, no agregues nada al carro, no llenes formularios "
+        "y no compres nada):\n"
+        "1. Busca en Google, en español y en tiendas o distribuidores de Chile (.cl), cada producto. Agrupa las "
+        "líneas parecidas y usa el nombre genérico y la medida clave, sin marcas salvo que el pedido exija una.\n"
+        f"2. Abre la página del producto y copia el precio tal como aparece escrito. Trae hasta "
+        f"{cfg['precios_por_linea']} alternativas por línea, de tiendas distintas, empezando por las más baratas. "
+        "Prefiere distribuidores mayoristas y tiendas que venden a empresas y que cubren varias líneas.\n"
+        "3. Nunca estimes ni calcules un precio: si no lo ves escrito en la página de ese producto, no lo pongas.\n"
+        f"4. De hasta {cfg['maximo']} proveedores, abre su página de contacto y copia el correo y el teléfono tal "
+        "como aparecen. Si no los ves escritos, deja null: nunca armes uno del tipo ventas@dominio.\n"
+        "5. Si las líneas son muchas, empieza por las de mayor cantidad y no abras más de unas 25 páginas: es "
+        "mejor una respuesta parcial que una muy larga.\n\n"
+        "Al terminar, responde solo con un bloque de código JSON con esta forma (null donde no haya dato):\n\n"
+        + _FORMA_CHROME + "\n\n"
+        "Campos:\n"
+        "- «precio»: número entero en pesos chilenos, sin puntos, comas ni signo (14990, no 14.990).\n"
+        "- «iva_incluido»: true si el precio es con IVA (lo normal en tiendas), false si la página dice «+ IVA» "
+        "o «neto».\n"
+        "- «unidades»: cuántas unidades de las que pide el comprador cubre ese precio (1 si es por unidad; 12 si "
+        "es una caja de 12 y se piden unidades).\n"
+        "- «coincidencia»: exacta (el mismo producto), equivalente (cumple todo lo pedido, otra marca) o "
+        "aproximada (le falta algo de lo pedido: dilo en «nota»).\n"
+        "- «url»: la página del producto donde está escrito ese precio; «fuente»: la página donde viste al "
+        "proveedor o su contacto. Copia los links completos, tal como están en la barra de direcciones.\n"
+        "- «lineas»: los números de línea del pedido que ese proveedor vende; «nota»: lo que conviene saber "
+        "(mínimo de compra, despacho a regiones, si hay que pedir cotización por formulario).\n\n"
+        f"Para terminar: si la pestaña «Radar Mercado Público» sigue abierta, pega el JSON en el cuadro "
+        f"«{CUADRO_CHROME}» y aprieta «{BOTON_CHROME}». En esa página no toques ningún otro botón (hay uno "
+        "que cobra). Si no puedes, deja el JSON en el chat y yo lo copio."
     )
 
 
@@ -303,8 +377,12 @@ def _telefono_en(telefono: str, texto: str) -> bool:
     return re.search(rf"(?<!\d){patron}(?!\d)", texto) is not None
 
 
-def depurar(proveedores: list[dict], texto: str, urls: set[str]) -> list[dict]:
+def depurar(proveedores: list[dict], texto: str, urls: set[str], conservar: bool = False) -> list[dict]:
     """Deja solo los datos que se pueden respaldar con lo que se leyó en la búsqueda.
+
+    `conservar`: el correo o teléfono sin respaldo sale de su campo igual (no se usa para escribirle),
+    pero queda a la vista en la nota, «por confirmar» (respuestas de Claude en Chrome: lo leyó en el
+    navegador y la plataforma no pudo abrir esa página).
 
     Un correo queda si aparece escrito (completo) en lo que devolvieron las herramientas; un teléfono,
     si sus últimos 8 dígitos aparecen seguidos en un mismo texto.
@@ -320,11 +398,12 @@ def depurar(proveedores: list[dict], texto: str, urls: set[str]) -> list[dict]:
         correo = str(p.get("correo") or "").strip()
         if correo and not (_CORREO.fullmatch(correo) and _correo_en(correo, texto)):
             p["correo"] = None
-            avisos.append("correo por confirmar")
+            avisos.append("correo por confirmar" + (f": {correo}" if conservar and _CORREO.fullmatch(correo) else ""))
         telefono = str(p.get("telefono") or "").strip()
         if telefono and not _telefono_en(telefono, texto):
             p["telefono"] = None
-            avisos.append("teléfono por confirmar")
+            avisos.append("teléfono por confirmar"
+                          + (f": {telefono[:25]}" if conservar and len(_solo_digitos(telefono)) >= 8 else ""))
         for campo in ("web", "fuente"):
             if p.get(campo) and not str(p[campo]).startswith(("https://", "http://")):
                 p[campo] = None
@@ -440,12 +519,21 @@ def _numero(valor) -> float | None:
     return n if n > 0 else None
 
 
-def depurar_precios(precios: list, texto: str, urls: set[str], items: list[dict], codigo: str | None,
-                    fecha: str, leidas: dict[str, str] | None = None) -> list[dict]:
+def _numerar(precios: list[dict], codigo: str | None) -> list[dict]:
+    """Del más barato al más caro por línea, con su `clave` y número de opción."""
+    precios.sort(key=lambda m: (m.get("linea") or 0, m.get("precio_unitario_neto") or 0))
+    for n, m in enumerate(precios, 1):
+        m["clave"], m["opcion"] = f"{codigo}|{m.get('linea')}|c{n}", n
+    return precios
+
+
+def depurar_precios(precios: list, texto: str | None, urls: set[str], items: list[dict], codigo: str | None,
+                    fecha: str, leidas: dict[str, str] | None = None, origen: str = ORIGEN_PRECIO) -> list[dict]:
     """Los precios que se pueden respaldar, en el formato de `mercado.json` (precio unitario neto).
 
     Queda un precio si su línea existe, la URL es un link y el número aparece escrito en lo que
-    devolvieron las herramientas. `verificado` = la URL es una de las páginas que se leyeron (con
+    devolvieron las herramientas (`texto`; con None no se exige: respuestas de Claude en Chrome, de
+    las que no hay registro). `verificado` = la URL es una de las páginas que se leyeron (con
     `leidas`, las páginas abiertas: el precio además tiene que estar escrito en la de ese producto).
     Por línea quedan ordenados del más barato al más caro."""
     lineas = {it.get("linea") for it in items}
@@ -457,7 +545,7 @@ def depurar_precios(precios: list, texto: str, urls: set[str], items: list[dict]
         url = str(p.get("url") or "")
         linea = p.get("linea")
         if (precio is None or linea not in lineas or not url.startswith(("https://", "http://"))
-                or not _precio_en(precio, texto)):
+                or (texto is not None and not _precio_en(precio, texto))):
             continue
         iva = p.get("iva_incluido") is not False
         coincidencia = p.get("coincidencia") if p.get("coincidencia") in COINCIDENCIAS else "aproximada"
@@ -468,12 +556,9 @@ def depurar_precios(precios: list, texto: str, urls: set[str], items: list[dict]
             "precio_unitario_neto": round(precio / (1 + IVA if iva else 1) / unidades, 2),
             "coincidencia": coincidencia,
             "verificado": url in leidas and _precio_en(precio, leidas[url]) if leidas is not None else url in urls, "fecha_consulta": fecha[:10],
-            "nota": p.get("nota") or None, "origen": ORIGEN_PRECIO,
+            "nota": p.get("nota") or None, "origen": origen,
         })
-    limpios.sort(key=lambda m: (m["linea"], m["precio_unitario_neto"]))
-    for n, m in enumerate(limpios, 1):
-        m["clave"], m["opcion"] = f"{codigo}|{m['linea']}|c{n}", n
-    return limpios
+    return _numerar(limpios, codigo)
 
 
 def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None, cliente=None,
@@ -524,6 +609,98 @@ def buscar(lic: dict, items: list[dict], clave_api: str, cfg: dict | None = None
                                texto, urls)[: cfg["maximo"]],
         "precios": depurar_precios(datos.get("precios"), texto, urls, items, lic.get("codigo"), fecha,
                                    paginas(bloques)),
+    }
+
+
+# --- Sin la API: la respuesta de Claude en Chrome ---------------------------------------------
+
+# "precio": 14.990 (o "$14.990", o "14990") → 14990: como número JSON, 14.990 se leería 14,99 pesos.
+_PRECIO_ESCRITO = re.compile(r'("precio"\s*:\s*)"?\$?\s*(\d{1,3}(?:[.,]\d{3})+|\d+)"?(?=\s*[,}])')
+
+
+def _publica(url) -> bool:
+    """Un link http(s) a un sitio con nombre de dominio: no una IP ni un equipo de la red interna."""
+    if not str(url or "").startswith(("https://", "http://")):
+        return False
+    sitio = _dominio(url)
+    return "." in sitio and ":" not in sitio and _solo_digitos(sitio) != sitio.replace(".", "")
+
+
+def abrir_pagina(url: str, timeout: float = 10) -> str | None:
+    """El contenido de una página (None si no abre), para comprobar lo que trajo Claude en Chrome."""
+    try:
+        r = requests.get(url, headers=NAVEGADOR, timeout=timeout)
+    except requests.RequestException:
+        return None
+    return html.unescape(r.text) if r.status_code == 200 else None
+
+
+def _abrir_paginas(urls: list, abrir, maximo: int = PAGINAS_A_COMPROBAR) -> dict[str, str]:
+    """{url: contenido} de las que abrieron, varias a la vez y sin repetir."""
+    unicas = list(dict.fromkeys(u for u in urls if _publica(u)))[:maximo]
+    if not unicas:
+        return {}
+    with ThreadPoolExecutor(max_workers=8) as grupo:
+        contenidos = list(grupo.map(abrir, unicas))
+    return {u: c for u, c in zip(unicas, contenidos) if c}
+
+
+def importar(lic: dict, items: list[dict], texto: str, cfg: dict | None = None, ahora: datetime | None = None,
+             abrir=None) -> tuple[dict, int]:
+    """La respuesta de Claude en Chrome como una búsqueda lista para guardar, sin costo de API.
+
+    De esa búsqueda no hay registro de lo leído, así que la plataforma abre las páginas
+    (`abrir(url)` → contenido o None) para comprobar. `verificado` = el precio está escrito en la
+    página de ese producto; el que no se pudo comprobar queda sin la marca (muchas tiendas cargan el
+    precio con JavaScript o no le responden a un servidor). Un correo o teléfono que no aparece en
+    las páginas abiertas no se usa: queda en la nota, «por confirmar».
+
+    Devuelve el resultado y cuántos precios se descartaron (línea que no existe, sin link o sin
+    precio)."""
+    cfg = cfg or configuracion()
+    datos = _json_del_texto(_PRECIO_ESCRITO.sub(lambda m: m.group(1) + _solo_digitos(m.group(2)), texto or ""))
+    listas = {k: [x for x in datos.get(k) if isinstance(x, dict)] if isinstance(datos, dict)
+              and isinstance(datos.get(k), list) else [] for k in ("proveedores", "precios")}
+    if not listas["proveedores"] and not listas["precios"]:
+        raise ErrorBusqueda("No se pudo leer la respuesta: pega el bloque JSON completo que escribió Claude, "
+                            "desde la primera { hasta la última }.")
+    fecha = (ahora or datetime.now(CHILE)).isoformat(timespec="minutes")
+    urls = [p.get("url") for p in listas["precios"]]
+    urls += [p.get(campo) for p in listas["proveedores"][: cfg["maximo"]] for campo in ("fuente", "web")]
+    leidas = _abrir_paginas(urls, abrir or abrir_pagina)
+    precios = depurar_precios(listas["precios"], None, set(leidas), items, lic.get("codigo"), fecha, leidas,
+                              origen=ORIGEN_CHROME)
+    return {
+        "codigo": lic.get("codigo"),
+        "fecha": fecha,
+        "modelo": ORIGEN_CHROME, "origen": "chrome",
+        "busquedas": 0, "costo_usd": 0.0,
+        "resumen": str(datos.get("resumen") or ""),
+        "proveedores": depurar(listas["proveedores"], "\n".join(leidas.values()), set(leidas),
+                               conservar=True)[: cfg["maximo"]],
+        "precios": precios,
+    }, len(listas["precios"]) - len(precios)
+
+
+def sumar(previa: dict | None, nueva: dict) -> dict:
+    """La búsqueda nueva sobre la que ya había: proveedores sin repetir (por nombre) y precios sin
+    repetir (por línea y link), mandando lo nuevo; el costo y las búsquedas web se acumulan."""
+    if not previa:
+        return nueva
+
+    def nombre(p: dict) -> str:
+        return str(p.get("nombre") or "").strip().lower()
+
+    nombres = {nombre(p) for p in nueva.get("proveedores") or []}
+    vistos = {(m.get("linea"), m.get("url")) for m in nueva.get("precios") or []}
+    precios = [dict(m) for m in (nueva.get("precios") or [])
+               + [m for m in previa.get("precios") or [] if (m.get("linea"), m.get("url")) not in vistos]]
+    return previa | nueva | {
+        "proveedores": (nueva.get("proveedores") or [])
+        + [p for p in previa.get("proveedores") or [] if nombre(p) not in nombres],
+        "precios": _numerar(precios, nueva.get("codigo")),
+        "busquedas": (previa.get("busquedas") or 0) + (nueva.get("busquedas") or 0),
+        "costo_usd": round((previa.get("costo_usd") or 0) + (nueva.get("costo_usd") or 0), 2),
     }
 
 

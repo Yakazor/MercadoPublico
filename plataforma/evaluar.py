@@ -200,6 +200,7 @@ def _documentos(lic: dict, items: list[dict], p: dict, ev, mercado: list[dict], 
     if d[3].button("Orden de compra", icon="🧾", type="primary", width="stretch",
                    help="Arma la orden al proveedor con estos ítems y costos"):
         comun.ir_a("orden", lic["codigo"])
+    cotizar.panel_chrome(lic, items)      # precios sin gastar de la API; al guardar, la evaluación se recalcula
     with st.expander("Solicitud de cotización a un proveedor", expanded=not con_precios):
         cotizar.panel_correo(lic, items, provs)
 

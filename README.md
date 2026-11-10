@@ -466,6 +466,14 @@ licencias o exige registro ISP; ❓ la cantidad o el producto están en las base
   Se ajusta en `config.yaml > proveedores`: modelo (Claude Haiku 5.5 por defecto, el más barato), búsquedas y
   páginas por licitación, `tope_usd_por_busqueda` (US$0,60: la búsqueda se corta al pasarlo),
   `tope_usd_diario` (US$3, sumando todas las sesiones) y `buscar_al_abrir` (apagada: busca solo con el botón).
+- **Sin gastar de la API — «Buscar con Claude en Chrome»:** en la ficha y en Evaluación, ese bloque arma
+  la instrucción de la licitación para la extensión Claude en Chrome (usa el plan de Claude, no el saldo
+  de la API). Una página no puede abrir la extensión por sí sola: se copia la instrucción, se pega en el
+  panel de Claude en Chrome y, cuando termina, su respuesta (un JSON) se pega en el cuadro «Respuesta de
+  Claude en Chrome» y se guarda (la instrucción le pide que lo haga él mismo si la pestaña sigue abierta).
+  Al guardar, la plataforma abre las páginas para comprobar: un precio queda «verificado» solo si está
+  escrito en la página del producto, y un correo o teléfono que no aparece en la página del proveedor no
+  se usa (queda en la nota, «por confirmar»). Los precios entran a la evaluación igual que los de la API.
   El tope firme es el **límite de gasto** de console.anthropic.com › Facturación.
 - **Acceso:** con `clave` en los secretos la plataforma la pide al entrar. Marcando «Recordarme en
   este equipo» no la vuelve a pedir por 30 días en ese navegador (guarda una llave derivada de la

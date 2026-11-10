@@ -25,7 +25,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `gh api repos/Yakazor/MercadoPublico/pulls -f title=… -f head=<rama> -f base=feature/api-mercadopublico -F body=@<archivo>`.
   El modo automático no deja unir un PR sin revisión: lo une la usuaria en GitHub (o lo pide explícitamente).
 
-## Estado (actualizado 2026-11-10, auditoría)
+## Estado (actualizado 2026-11-10, auditoría y búsqueda con Claude en Chrome)
 
 | Tema | Estado |
 |---|---|
@@ -112,6 +112,26 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-10 (búsqueda sin API, pedido de la usuaria: «un botón para que se active Claude Chrome y busque
+  por ahí, para no gastar de la API»; 561 pruebas OK):
+  - **Límite real:** una página web no puede abrir la extensión Claude en Chrome ni escribirle (solo se abre
+    con su ícono; tiene atajos «/» y tareas programadas, pero nada que una página pueda llamar). El enlace
+    `claude.ai/new?q=` no está documentado y hay reportes de que dejó de funcionar: no se usó.
+  - **Lo que quedó:** bloque «Buscar con Claude en Chrome · sin costo de API» en la ficha y en Evaluación
+    (`cotizar.panel_chrome`): la instrucción de esa licitación lista para copiar (`proveedores.pedido_chrome`,
+    pide un JSON con la misma forma que la búsqueda con la API) y el cuadro «Respuesta de Claude en Chrome» +
+    «Guardar precios» (`proveedores.importar`). La instrucción le pide a Claude en Chrome que pegue él mismo
+    la respuesta si la pestaña sigue abierta, sin tocar otro botón. **No se pudo probar con la extensión real
+    desde la sesión**: probado con AppTest; falta que la usuaria lo pruebe en su navegador.
+  - **Sin inventar datos:** de esa búsqueda no hay registro de lo leído, así que al guardar la plataforma abre
+    hasta 30 páginas (solo sitios públicos, no IP ni red interna). Precio «verificado» = escrito en la página
+    del producto; el que no se pudo comprobar queda sin la marca (tiendas con JavaScript o que bloquean
+    servidores). Correo o teléfono que no está en la página del proveedor: fuera de su campo, en la nota como
+    «por confirmar: …». «14.990» escrito como número se lee 14990, no 14,99.
+  - «Sumar a lo que ya hay» (`proveedores.sumar`) junta la respuesta con la búsqueda guardada sin repetir;
+    sin la marca, la reemplaza. Se guarda en la rama `proveedores` como cualquier búsqueda (costo US$ 0).
+  - De paso: el «Para» y las líneas del correo quedaban con lo del proveedor anterior tras una búsqueda
+    manual (la clave del campo no cambiaba); ahora la clave lleva el proveedor.
 - 2026-11-10 (auditoría y mejoras, pedido de la usuaria «revisa, audita y mejora»; 555 pruebas OK):
   - **Estado:** workflows de la semana todos en verde; sin claves ni tokens en el repo ni en su historial; la
     rutina corrió todos los días (03 al 09-11) y no hubo ninguna GO.
