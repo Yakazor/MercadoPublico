@@ -45,5 +45,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: cada línea agrupa varios productos o establecimientos (rutina del 08 y 09-11). Revisar el detalle en las bases y pedir cotización a un proveedor."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-10",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
