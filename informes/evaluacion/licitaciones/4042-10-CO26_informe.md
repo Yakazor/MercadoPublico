@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $12.906.192 |
 | Oferta sugerida con IVA | $14.505.061 |
 
-**Riesgos financieros:** Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.644.500 neto en 6 línea(s))..
+**Riesgos financieros:** Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.654.750 neto en 6 línea(s))..
 
 ## Análisis operacional
 
@@ -40,15 +40,15 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 7
+- **Días para el cierre:** 6
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - Entrega en Región de los Lagos: despacho caro y lento desde Santiago.
-- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.644.500 neto en 6 línea(s)).
-- La oferta de las líneas con referencia ($12.189.127 neto) supera en 361% lo que el Estado pagó en OC parecidas.
+- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($2.654.750 neto en 6 línea(s)).
+- La oferta de las líneas con referencia ($12.189.127 neto) supera en 359% lo que el Estado pagó en OC parecidas.
 
 ## Proveedores recomendados
 

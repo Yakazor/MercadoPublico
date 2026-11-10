@@ -340,5 +340,23 @@
   "riesgos": "1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 precios son de productos aproximados",
   "decisiones": "3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 4042-10-CO26: NO GO; 1134432-78-LE26: NO GO; 1057448-53-LE26: NO GO; 3268-35-LE26: NO GO",
   "recomendaciones": "- **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido. - **979-77-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 9 líneas que faltan: con 5 de 14 el margen sale de una parte del pedido. - **867990-146-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 11 líneas que faltan: con 2 de 13 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-10",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "520 vigentes; 19 evaluadas; informes de 10",
+  "resultado": "0 GO, 0 con condiciones, 7 falta precio, 12 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 11 de 14 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados ",
+  "decisiones": "3191-128-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 29-101-LE26: NO GO; 4042-10-CO26: NO GO; 1134432-78-LE26: NO GO",
+  "recomendaciones": "- **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **5420-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido. - **1362-13-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 5 de 9 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-10",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 (3 a completar, sin precios nuevos). Nuevas con precios: 5420-26-LE26 periféricos Arica (2/7: monitores 24\" y auriculares Logitech H390), 3191-128-LE26 textiles hospitalarios (1/7, sábana aproximada), 1028-51-LE26 EPP Valparaíso (3/9 aproximadas; NO GO). No se buscó 1638-105-LE26 juguetes (los juguetes municipales han salido NO GO a precio retail) ni 5052-35-LE26 (9 productos sueltos de 1 unidad). Sin Compras Ágiles de 2º llamado.",
+  "resultado": "Ninguna GO: 7 con falta de precio y 12 NO GO. Top 3: 3191-128-LE26 (textiles, 0 M, cierra 24-11), 5420-26-LE26 (periféricos, 9,3 M, cierra 16-11) y 3996-45-LE26 (13-11).",
+  "riesgos": "Textiles hospitalarios y escáneres documentales solo por cotización (no hay precios en retail). Precios de listados sin verificar.",
+  "decisiones": "Se agregaron proveedores para 3191-128-LE26 (Rehuce) y 5420-26-LE26 (Intcomex, Ingram Micro).",
+  "recomendaciones": "Hay tiempo para 3191-128-LE26 (hasta el 24-11): pedir cotización por volumen de sábanas, batas y fundas a fabricantes de textil hospitalario. Para 5420-26-LE26 cotizar escáneres, SSD y videoconferencia con un mayorista o canal autorizado."
  }
 ]

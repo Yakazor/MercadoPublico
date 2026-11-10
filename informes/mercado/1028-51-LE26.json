@@ -1,0 +1,103 @@
+{
+ "codigo": "1028-51-LE26",
+ "nombre": "Elementos de protección personal CAD",
+ "fecha_consulta": "2026-11-10",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Crema protectora UV",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 2,
+   "producto": "Casco Naranjo",
+   "opciones": [
+    {
+     "tienda": "Sodimac (MSA)",
+     "producto_mercado": "Casco de seguridad MSA (blanco)",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34981/Cascos-de-Seguridad",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "nota": "Color blanco; se pide naranjo. Búsqueda del 04-11.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Chaqueta térmica Impermeable",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Chaqueta hombre 100% impermeable cierre con gorro H81",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-hombre-100-impermeable-cierre-con-gorro-h81/00079325426981",
+     "precio": 19980,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16789.92,
+     "coincidencia": "aproximada",
+     "nota": "Impermeable; térmica por confirmar. Búsqueda del 09-11.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Pantalón protector impermeable",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Pantalón térmico softshell impermeable hombre",
+     "url": "https://www.lider.cl/ip/vestuario/pantalon-termico-softshell-impermeable-hombre-invierno-frio-marron-m/00411576601781",
+     "precio": 16580,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13932.77,
+     "coincidencia": "aproximada",
+     "nota": "Búsqueda del 09-11.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Filtro de polvo para mascarilla doble vía",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 6,
+   "producto": "Porta Visor",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 7,
+   "producto": "Visor de malla",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 8,
+   "producto": "Protector auditivo tipo fono no adosado",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 9,
+   "producto": "Bota para la nieve",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  }
+ ]
+}

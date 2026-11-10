@@ -1,0 +1,105 @@
+{
+ "codigo": "5420-26-LE26",
+ "nombre": "Adquisición de equipos periféricos",
+ "fecha_consulta": "2026-11-10",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Monitor profesional de 24”",
+   "opciones": [
+    {
+     "tienda": "Sodimac (ViewSonic)",
+     "producto_mercado": "Monitor ViewSonic VA240A-H 24\" Full HD IPS 120 Hz",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/monitor-24-pulgadas",
+     "precio": 89990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 75621.85,
+     "coincidencia": "equivalente",
+     "nota": "Precio del listado; «profesional»: confirmar requisitos de las bases.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-10"
+    },
+    {
+     "tienda": "Lider (AOC)",
+     "producto_mercado": "Monitor Pivot AOC 24\" IPS FHD 75 Hz 24P2U",
+     "url": "https://www.lider.cl/ip/accesorios-computacion/monitor-pivot-aoc-24-ips-fhd-75hz-24p2u/00692340892601",
+     "precio": 109990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 92428.57,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-10"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Unidad de almacenamiento externo portátil\r\nde estado sólido, SSD, de 1TB o superior",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "Equipo multifuncional monocromático de alto volumen, con impresión, copiado y digitalización en colo",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "Escáner documental de escritorio con alimentador automático",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 5,
+   "producto": "Escáner documental de red con alimentador automático de documentos",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 6,
+   "producto": "Auriculares supraaurales alámbricos con micrófono integrado",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Audífono con cable Logitech H390",
+     "url": "https://www.paris.cl/audifono-con-cable-logitech-h390-MK3AR3UUR1.html",
+     "precio": 33466,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 28122.69,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-10"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Audífonos mic alámbrico USB H390 negro",
+     "url": "https://www.lider.cl/ip/audifonos-y-accesorios/audifonos-mic-alambrico-usb-h390-negro/00009785504687",
+     "precio": 36990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31084.03,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-10"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Sistema de video conferencia",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+[
+ {
+  "nombre": "Intcomex Chile (mayorista)",
+  "correo": null,
+  "web": "https://www.intcomex.com",
+  "contacto": "Rosario Norte 615 piso 6, Las Condes; centro de distribución en Pudahuel (por confirmar)",
+  "especialidad": "Mayorista TI: monitores (ASUS) y periféricos; vende a revendedores",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.intcomex.com/en/about-us/"
+ },
+ {
+  "nombre": "Ingram Micro Chile (mayorista)",
+  "correo": null,
+  "web": null,
+  "contacto": "Av. Providencia 1760 piso 11 (por confirmar)",
+  "especialidad": "Mayorista TI; distribuidor de monitores BenQ en Chile",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.itsitio.com/dispositivos/benq-firma-un-acuerdo-para-volver-al-mercado-de-chile/"
+ },
+ {
+  "nombre": "Lider / Paris (Logitech H390)",
+  "correo": null,
+  "web": "https://www.paris.cl/audifono-con-cable-logitech-h390-MK3AR3UUR1.html",
+  "contacto": null,
+  "especialidad": "Referencia retail de auriculares H390",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": 33466,
+  "fuente": "https://www.paris.cl/audifono-con-cable-logitech-h390-MK3AR3UUR1.html"
+ }
+]

@@ -1,0 +1,63 @@
+{
+ "codigo": "3191-128-LE26",
+ "nombre": "ADQUISICIÓN TEXTILES HOSPITALARIOS H.N. A.N.",
+ "fecha_consulta": "2026-11-10",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "SÁBANAS LISA DE CAMA ADULTO, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\", NUM",
+   "opciones": [
+    {
+     "tienda": "Easy (Línea Hotel)",
+     "producto_mercado": "Sábana 200 hilos 1 plaza blanco (encimera, bajera y funda)",
+     "url": "https://www.easy.cl/sabana-200-h-1-p-blanco-mkgxnh66si/p",
+     "precio": 16990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 14277.31,
+     "coincidencia": "aproximada",
+     "nota": "Juego doméstico/hotelero, no textil hospitalario según bases.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-10"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "SÁBANA ELASTICADA DE CAMA ADULTO, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\"",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "BATA PACIENTE ADULTO, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\", NUMERAL 3.",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "CUBRE CAMA ADULTO, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\", NUMERAL 6., D",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 5,
+   "producto": "FUNDA ALMOHADA BLANCA, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\", NUMERAL 5",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 6,
+   "producto": "ALMOHADA IMPERMEABLE, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\", NUMERAL 7.",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  },
+  {
+   "linea": 7,
+   "producto": "BATA PACIENTE UCI, DE ACUERDO A TÍTULO 4. ESPECIFICACIONES TÉCNICAS DE \"LOS TEXTILES\", NUMERAL 4., D",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 10-11; pedir cotización."
+  }
+ ]
+}

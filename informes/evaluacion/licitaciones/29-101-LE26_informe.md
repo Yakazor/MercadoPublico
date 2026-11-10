@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $102.622.896 |
 | Oferta sugerida con IVA | $124.237.286 |
 
-**Riesgos financieros:** 3 de 4 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($58.050.000 neto en 4 línea(s))..
+**Riesgos financieros:** 3 de 4 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($58.275.000 neto en 4 línea(s))..
 
 ## Análisis operacional
 
@@ -40,16 +40,16 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 3
+- **Días para el cierre:** 2
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 3 de 4 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
-- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($58.050.000 neto en 4 línea(s)).
-- La oferta de las líneas con referencia ($104.401.081 neto) supera en 80% lo que el Estado pagó en OC parecidas.
+- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
+- Sin monto estimado publicado: el techo es lo que el Estado pagó en OC parecidas ($58.275.000 neto en 4 línea(s)).
+- La oferta de las líneas con referencia ($104.401.081 neto) supera en 79% lo que el Estado pagó en OC parecidas.
 
 ## Proveedores recomendados
 

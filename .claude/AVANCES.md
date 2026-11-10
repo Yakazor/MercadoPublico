@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-10 (rutina 11:00 UTC): último radar completo de hace ~14 h → radar y OC disparados (`datos` cambió 11:39 y
+  11:45; datos del 10-11 08:44, 433 licitaciones, 87 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (3 a
+  completar, sin precios nuevos): 5420-26-LE26 periféricos (2/7), 3191-128-LE26 textiles hospitalarios (1/7),
+  1028-51-LE26 EPP (3/9, NO GO); juguetes 1638-105 y 5052-35 no se buscaron. Ninguna GO; top: 3191-128-LE26,
+  5420-26-LE26 y 3996-45-LE26 (proveedores agregados a las dos primeras). 550 pruebas OK.
+
 - 2026-11-09 (rutina 11:03 UTC): último radar completo de hace ~18 h → radar y OC disparados (`datos` cambió 11:09 y
   11:18; datos del 09-11 08:17, 468 licitaciones, 223 Compras Ágiles, ninguna de 2º llamado). Lote de 8 (4 a
   completar, sin precios nuevos): 4042-10-CO26 vestuario Los Lagos (6/6, NO GO: 361 % sobre OC); 2310-24, 1057421-44 y

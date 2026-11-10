@@ -10,7 +10,7 @@
 | Fecha de cierre | 2026-11-12 12:00 |
 | Oferta sugerida (c/IVA) | $124.237.286 |
 | Margen esperado | 17 % neto · 21 % bruto ($18.163.353 neto) |
-| Riesgo general | Medio |
+| Riesgo general | Alto |
 | Complejidad | Baja |
 | Factibilidad operativa | Alta |
 | Factibilidad financiera | Alta |

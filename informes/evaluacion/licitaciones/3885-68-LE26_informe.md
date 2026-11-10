@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 3
+- **Días para el cierre:** 2
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -50,7 +50,7 @@
 - Líneas con unidad Global/Kit: la cantidad real está en las bases.
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 1 de 4 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de Tarapacá: despacho caro y lento desde Santiago.
 
 ## Proveedores recomendados

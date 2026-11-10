@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 4
+- **Días para el cierre:** 3
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -49,7 +49,7 @@
 - 6 de 11 ítems sin precio de mercado: el costo real es mayor.
 - La mayoría de los precios no está verificada en la página de la tienda.
 - 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 
