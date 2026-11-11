@@ -105,5 +105,10 @@
    "opciones": [],
    "nota": "Insumos clínicos de pabellón en volúmenes hospitalarios (hasta 432.000 unidades): no hay precio en tiendas; cotizar a distribuidor clínico."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-11",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -36,8 +36,11 @@
      "precio_unitario_neto": 46210.08,
      "coincidencia": "aproximada",
      "nota": "Búsqueda del 03-11; especificación SERNAGEOMIN en bases.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "verificado": true,
+     "fecha_consulta": "2026-11-03",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 54990.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $54.990."
     }
    ]
   },
@@ -56,8 +59,11 @@
      "precio_unitario_neto": 46210.08,
      "coincidencia": "aproximada",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-03"
+     "verificado": true,
+     "fecha_consulta": "2026-11-03",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 54990.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $54.990."
     }
    ]
   },
@@ -76,8 +82,11 @@
      "precio_unitario_neto": 25201.68,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 29990.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $29.990."
     }
    ]
   },
@@ -96,10 +105,18 @@
      "precio_unitario_neto": 25201.68,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-05"
+     "verificado": true,
+     "fecha_consulta": "2026-11-05",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 29990.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $29.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-11",
+  "opciones": 4,
+  "verificadas": 4
+ }
 }

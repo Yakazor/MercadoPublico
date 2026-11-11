@@ -37,7 +37,9 @@
      "coincidencia": "exacta",
      "nota": "Listados 4.250–6.180.",
      "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "fecha_consulta": "2026-11-11",
+     "precio_pagina": 27441.0,
+     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $27.441, no $24.250: puede haber cambiado."
     }
    ]
   },
@@ -56,8 +58,11 @@
      "precio_unitario_neto": 9000.0,
      "coincidencia": "exacta",
      "nota": "Listados 0.330–0.710; se usa el mayor.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "verificado": true,
+     "fecha_consulta": "2026-11-11",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 10490.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $10.490."
     }
    ]
   },
@@ -95,7 +100,9 @@
      "coincidencia": "equivalente",
      "nota": "Listados .015–.058.",
      "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "fecha_consulta": "2026-11-11",
+     "precio_pagina": 5478.0,
+     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $5.478, no $6.058: puede haber cambiado."
     }
    ]
   },
@@ -114,8 +121,11 @@
      "precio_unitario_neto": 1813.45,
      "coincidencia": "exacta",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "verificado": true,
+     "fecha_consulta": "2026-11-11",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 11000.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $11.000."
     }
    ]
   },
@@ -135,7 +145,9 @@
      "coincidencia": "exacta",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "fecha_consulta": "2026-11-11",
+     "precio_pagina": 4313.0,
+     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $4.313, no $3.594: puede haber cambiado."
     }
    ]
   },
@@ -154,8 +166,11 @@
      "precio_unitario_neto": 3261.34,
      "coincidencia": "exacta",
      "nota": "",
-     "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "verificado": true,
+     "fecha_consulta": "2026-11-11",
+     "verificado_en": "2026-11-11",
+     "precio_pagina": 3881.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $3.881."
     }
    ]
   },
@@ -189,5 +204,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-11",
+  "opciones": 6,
+  "verificadas": 3
+ }
 }
