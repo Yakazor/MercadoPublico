@@ -358,5 +358,23 @@
   "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 11 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de ",
   "decisiones": "4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO; 1362-13-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO; 1057420-43-L126: FALTA PRECIO",
   "recomendaciones": "- **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **5420-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido. - **3885-68-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 4 líneas que faltan: con 4 de 8 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-11",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "511 vigentes; 21 evaluadas; informes de 10",
+  "resultado": "0 GO, 1 con condiciones, 12 falta precio, 8 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 1",
+  "decisiones": "4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO",
+  "recomendaciones": "- **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **5420-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-11",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 nuevas (ninguna a completar: desde el 10-11 una línea ya buscada no vuelve). Con precios: 1427185-2-LE26 EPP y logística La Serena/Coquimbo (8/11), 1057404-111-CO26 ropa de trabajo Hospital Arauco (6/10), 691944-40-L126 ferretería Biobío (6/17), 1562-90-LE26 EPP SERNAGEOMIN 8,1 M (4/7; botas Meindl sin precio en Chile). Guardadas sin precio con nota: 1638-105-LE26 juguetes, 608-236-LR26 insumos de pabellón, 3996-55-L126 prendas con logo, 5052-35-LE26 insumos varios. Se archivaron 5 licitaciones cerradas.",
+  "resultado": "1 GO con condiciones (4042-10-CO26 vestuario Los Lagos, 100 % de líneas, margen 11 %), 12 con falta de precio y 8 NO GO. Ojo con 4042-10-CO26: queda GO solo porque no hay monto estimado ni referencia precisa; las OC parecidas suman ,7 M contra 2,2 M neto de nuestra oferta.",
+  "riesgos": "API de Compras Ágiles con HTTP 429 (límite de tasa): el listado llega al 10-11 17:59. Precios de listados sin verificar.",
+  "decisiones": "Top 3: 4042-10-CO26 (16-11), 3191-128-LE26 (24-11) y 1562-90-LE26 (20-11). Proveedores agregados a 4042-10 y 1562-90.",
+  "recomendaciones": "Antes de ofertar 4042-10-CO26, leer en las bases el presupuesto disponible: si se parece a lo pagado en OC (~ M), no conviene. Para 1562-90-LE26 cotizar las botas Meindl Rolle Evo GTX con un importador outdoor."
  }
 ]

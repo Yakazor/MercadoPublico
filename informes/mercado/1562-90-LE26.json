@@ -1,0 +1,105 @@
+{
+ "codigo": "1562-90-LE26",
+ "nombre": "ELEMENTOS DE PROTECCION PERSONAL SERNAGEOMIN",
+ "fecha_consulta": "2026-11-11",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Especificaciones Técnicas modelo 996 Rolle Evo GTX 42 o similar",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 2,
+   "producto": "Especificaciones Técnicas modelo 996 Rolle Evo GTX 42 o similar",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "Bota de trekking MID (caña media), diseñada para actividades de senderismo, trekking y desplazamient",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "Parka 3 en 1 con exterior impermeable e interior desmontable térmico, múltiples bolsillos, ajustes y",
+   "opciones": [
+    {
+     "tienda": "Falabella (HardWork)",
+     "producto_mercado": "Parka mujer HardWork Reno 3 en 1",
+     "url": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer",
+     "precio": 54990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46210.08,
+     "coincidencia": "aproximada",
+     "nota": "Búsqueda del 03-11; especificación SERNAGEOMIN en bases.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Parka 3 en 1 con exterior impermeable e interior desmontable térmico, múltiples bolsillos, ajustes y",
+   "opciones": [
+    {
+     "tienda": "Falabella (HardWork)",
+     "producto_mercado": "Parka mujer HardWork Reno 3 en 1",
+     "url": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer",
+     "precio": 54990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 46210.08,
+     "coincidencia": "aproximada",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-03"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Se requiere adquirir chaquetas de polar para hombres y mujeres, confeccionadas en tejido microfleece",
+   "opciones": [
+    {
+     "tienda": "Lider (Andesland)",
+     "producto_mercado": "Chaqueta Polar Corporativa",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Se requiere adquirir chaquetas de polar para hombres y mujeres, confeccionadas en tejido microfleece",
+   "opciones": [
+    {
+     "tienda": "Lider (Andesland)",
+     "producto_mercado": "Chaqueta Polar Corporativa",
+     "url": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282",
+     "precio": 29990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 25201.68,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  }
+ ]
+}

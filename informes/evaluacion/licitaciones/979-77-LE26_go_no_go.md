@@ -7,14 +7,14 @@
 | Licitación | [979-77-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=979-77-LE26) Adquisición de elementos de protección personal |
 | Cliente | MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF |
 | Monto estimado | $7.572.906 |
-| Fecha de cierre | 2026-11-13 15:01 |
+| Fecha de cierre | 2026-11-17 15:01 |
 | Oferta sugerida (c/IVA) | $1.689.299 |
 | Margen esperado | 13 % neto · 21 % bruto ($184.626 neto) |
-| Riesgo general | Medio |
+| Riesgo general | Bajo |
 | Complejidad | Media |
 | Factibilidad operativa | Baja |
 | Factibilidad financiera | Alta |
-| Factibilidad de plazos | Media |
+| Factibilidad de plazos | Alta |
 | Probabilidad de adjudicación | 55% (estimación heurística) |
 
 ## Por qué

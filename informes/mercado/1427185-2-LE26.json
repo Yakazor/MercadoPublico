@@ -1,0 +1,185 @@
+{
+ "codigo": "1427185-2-LE26",
+ "nombre": "EPP Y E. LOGÍSTICOS H. LA SERENA Y H. COQUIMBO",
+ "fecha_consulta": "2026-11-11",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ITEM N°1 Casco de seguridad. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (MSA)",
+     "producto_mercado": "Casco de seguridad MSA blanco",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG34981/Cascos-de-Seguridad",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "Búsqueda del 04-11; especificación en anexo.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "ITEM N°2 Chalecos geólogos. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Chaleco reflectante geólogo naranjo ALASKA",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110302593/Chaleco-Reflectivo-Geologo/110317857",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "Precio verificado el 01-11 en la rutina.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "ITEM N°3 Lentes de seguridad. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (3M)",
+     "producto_mercado": "Lentes de seguridad Virtua max transparente",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat874909/proteccion-de-ojos",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "ITEM N°4 Zapato de seguridad. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Norseg)",
+     "producto_mercado": "Zapato de seguridad Norseg Manchester ST",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/zapato-de-seguridad-hombre",
+     "precio": 56990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47890.76,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "ITEM N°5 Cubre calzado desechable. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 6,
+   "producto": "ITEM N°6 Mesa plegable 1.80 mts. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Falabella (Sodimac)",
+     "producto_mercado": "Mesa plegable tipo maleta 180 cm",
+     "url": "https://www.falabella.com/falabella-cl/collection/plegables-camping",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "ITEM N°7 Carro de arrastre plegable. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Lider (Hyper Tough)",
+     "producto_mercado": "Carro plegable 35 kg",
+     "url": "https://www.lider.cl/ip/especiales/carro-plegable-35-kg/00502959435999",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "nota": "Especificación en anexo (capacidad por confirmar).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "ITEM N°8 Pisos plásticos. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 9,
+   "producto": "ITEM N°9 Sillas plegables. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Silla plegable con asa",
+     "url": "https://www.falabella.com/falabella-cl/collection/plegables-camping",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "ITEM N°10 Toldos. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Just Home Collection)",
+     "producto_mercado": "Toldo plegable 3x3 verde",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/toldo-plegable",
+     "precio": 32990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 27722.69,
+     "coincidencia": "equivalente",
+     "nota": "Medida por confirmar en anexo.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "ITEM N°11 Termo hervidor eléctrico. De acuerdo a especificaciones técnicas adjuntas",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  }
+ ]
+}

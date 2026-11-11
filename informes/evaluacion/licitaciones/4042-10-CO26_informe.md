@@ -40,12 +40,13 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 6
+- **Días para el cierre:** 5
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
+- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de los Lagos: despacho caro y lento desde Santiago.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo CO admite hasta 1.000 UTM ($72.151.000).
 
@@ -53,11 +54,8 @@
 
 | # | Proveedor | Especialidad | Correo | Sitio web | Contacto | Respuesta / entrega | Costo referencial |
 |---:|---|---|---|---|---|---|---|
-| 1 | Lider | Precio publicado para 4 línea(s) | por confirmar | [web](https://www.lider.cl/ip/vestuario/pantalon-termico-softshell-impermeable-hombre-invierno-frio-marron-m/00411576601781) | — | por confirmar | — |
-| 2 | Falabella (Doite) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.falabella.com/falabella-cl/collection/parkas-nieve-mujer) | — | por confirmar | — |
-| 3 | Falabella (Marmot) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.falabella.com/falabella-cl/product/80730673/chaqueta-deportiva-mujer-marmot/80730802) | — | por confirmar | — |
-| 4 | Sodimac (TOPSAFE) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.sodimac.cl/sodimac-cl/b/polar-hombre) | — | por confirmar | — |
-| 5 | Lider (Andesland) | Precio publicado para 1 línea(s) | por confirmar | [web](https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282) | — | por confirmar | — |
+| 1 | Falabella (Doite / Marmot) | Chaquetas de pluma (Doite Eboni, Marmot Jena) ~9.990 | por confirmar | [web](https://www.falabella.com/falabella-cl/collection/parkas-nieve-mujer) | — | por confirmar | 89990 |
+| 2 | Lider (softshell, polar, pantalón cargo) | Pantalón softshell, chaqueta impermeable, pantalón cargo térmico | por confirmar | [web](https://www.lider.cl/ip/vestuario/pantalon-termico-softshell-impermeable-hombre-invierno-frio-marron-m/00411576601781) | — | Despacho a Santiago; Los Lagos por confirmar | 16580 |
 
 Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedir precio por volumen.
 

@@ -1,0 +1,151 @@
+{
+ "codigo": "1057404-111-CO26",
+ "nombre": "SUMINISTRO ROPA DE TRABAJO HOSPITAL ARAUCO",
+ "fecha_consulta": "2026-11-11",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ZAPATOS DE SEGURIDAD HOMBRE SIMILAR LIPPI",
+   "opciones": [
+    {
+     "tienda": "Sodimac (B2B, Lippi)",
+     "producto_mercado": "Zapato seguridad Lippi Pro Work Reaction Light Mid",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10787/Zapatos-de-Seguridad/",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "exacta",
+     "nota": "Precio con descuento del listado.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "PANTALONES JEANS IGNIFUGO CARGO  SIMILAR AA+",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "CAMISAS IGNIFUGAS AZUL MARINO SIMILAR AA+",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "POLERONES MICROPOLAR TERMICO MANGA LARGA AZUL",
+   "opciones": [
+    {
+     "tienda": "Sodimac (TOPSAFE)",
+     "producto_mercado": "Chaqueta polar negra TOPSAFE",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/polar-hombre",
+     "precio": 12990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10915.97,
+     "coincidencia": "aproximada",
+     "nota": "Polar, no polerón; color azul por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "POLERAS PIQUE  MANGA CORTA GRIS",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Polera algodón pique manga corta hombre",
+     "url": "https://www.lider.cl/ip/vestuario/polera-algodon-pique-manga-corta-hombre/00046050350164",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "equivalente",
+     "nota": "Color gris por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-02"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "ZAPATO DE SEGURIDAD SIMILAR LIPPI MUJER",
+   "opciones": [
+    {
+     "tienda": "Sodimac (B2B, Lippi)",
+     "producto_mercado": "Zapato seguridad Lippi Pro Work Reaction Light Mid",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10787/Zapatos-de-Seguridad/",
+     "precio": 69990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 58815.13,
+     "coincidencia": "aproximada",
+     "nota": "Modelo de hombre; versión mujer por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "PANTALONES CARGO HARDWORK",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Alaska)",
+     "producto_mercado": "Pantalón trabajo cargo azul Alaska",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG10957/Pantalones-y-Buzos-de-Trabajo",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "aproximada",
+     "nota": "Se pide HardWork.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-09"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "GUANTES DE SEGURIDAD (100 ud de cada talla S-M-L)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 9,
+   "producto": "TAPON AUDITIVO REUTILIZABLE CON CORDON",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 10,
+   "producto": "ANTIPARRAS DE SEGURIDAD",
+   "opciones": [
+    {
+     "tienda": "Sodimac (3M)",
+     "producto_mercado": "Lentes de seguridad Virtua max transparente",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat874909/proteccion-de-ojos",
+     "precio": 4990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4193.28,
+     "coincidencia": "aproximada",
+     "nota": "Lentes, no antiparras.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  }
+ ]
+}

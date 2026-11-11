@@ -1,0 +1,193 @@
+{
+ "codigo": "691944-40-L126",
+ "nombre": "Adquisición malla faenera esmalte corrosivo y otros",
+ "fecha_consulta": "2026-11-11",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Cajas tornillos 3\" (caja 100 unidades)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 2,
+   "producto": "Rollos Malla faenera(1x45m)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "Tornillos de anclaje metalicos de 3/4\"",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "Tira Perfil metálico 80x40x2mm",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil rectangular acero 80x40x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110294780/perfil-rectangular-acero-80x40x2-mm-6-m/110294783",
+     "precio": 24250,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20378.15,
+     "coincidencia": "exacta",
+     "nota": "Listados 4.250–6.180.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Tira Perfil metálico 40x20x2mm",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil rectangular 40x20x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/perfil-40-x-20-x-2",
+     "precio": 10710,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9000.0,
+     "coincidencia": "exacta",
+     "nota": "Listados 0.330–0.710; se usa el mayor.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Tira Perfiles 2\" e=3mm",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 7,
+   "producto": "Tira Perfiles 1\" 1/2 e=3mm",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 8,
+   "producto": "Tira ángulo acero plegado",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 9,
+   "producto": "\"Tiras fierro de construcción de 12mm\"",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Fierro A-63 12 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/fierro-estriado-12-mm",
+     "precio": 6058,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5090.76,
+     "coincidencia": "equivalente",
+     "nota": "Listados .015–.058.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 10,
+   "producto": "Kg alambre recocido N°18",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Inchalam)",
+     "producto_mercado": "Alambre negro recocido #18 5 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110308560/-18-5-kg-Alambre-negro-recocido/110308563",
+     "precio": 10790,
+     "iva_incluido": true,
+     "contenido": "5 kg",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 1813.45,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "Kg. Electrodo 6011",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Electrodo 6011 1/8\" 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/343609/electrodo-6011-1-8-1-kg",
+     "precio": 3594,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3020.17,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Kg. Electrodo 7018",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Electrodo 7018 1/8\" 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/321060/electrodo-7018-1-8-1-kg",
+     "precio": 3881,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3261.34,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Tineta membrana de curado",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 14,
+   "producto": "Galón Esmalte anticorrosivo triple acción",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 15,
+   "producto": "Pletina metálica 15x15 e=5mm",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 16,
+   "producto": "Tineta desmoldante del tipo Sikaform",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 17,
+   "producto": "Autoperforante cabeza de lenteja 8x1 5/8",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 11-11; pedir cotización."
+  }
+ ]
+}

@@ -112,6 +112,13 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-11 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:39 y
+  11:51; datos del 11-11 08:51, 454 licitaciones, 57 Compras Ágiles; la API de Compras Ágiles respondió HTTP 429 y su
+  listado llega al 10-11 17:59). Lote de 8 nuevas (regla del 10-11: no se repiten líneas): 1427185-2-LE26 (8/11),
+  1057404-111-CO26 (6/10), 691944-40-L126 (6/17), 1562-90-LE26 (4/7); 4 guardadas sin precio con nota. 5 cerradas
+  archivadas. 4042-10-CO26 pasa a GO con condiciones (sin monto ni referencia precisa; ojo: OC parecidas $2,7 M vs
+  $12,2 M). Top: 4042-10-CO26, 3191-128-LE26 y 1562-90-LE26. 561 pruebas OK.
+
 - 2026-11-10 (búsqueda sin API, pedido de la usuaria: «un botón para que se active Claude Chrome y busque
   por ahí, para no gastar de la API»; 561 pruebas OK):
   - **Límite real:** una página web no puede abrir la extensión Claude en Chrome ni escribirle (solo se abre

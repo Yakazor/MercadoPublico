@@ -6,7 +6,7 @@
 
 - **Licitación:** [979-77-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=979-77-LE26) (LE)
 - **Organismo comprador:** MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF (Región Metropolitana de Santiago)
-- **Fecha de cierre:** 2026-11-13 15:01
+- **Fecha de cierre:** 2026-11-17 15:01
 - **Monto referencial:** $7.572.906
 - **Ítems:** 14 (36% con precio de mercado)
 
@@ -40,14 +40,13 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 3
-- **Viabilidad:** Media.
+- **Días para el cierre:** 6
+- **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 9 de 14 ítems sin precio de mercado: el costo real es mayor.
-- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 

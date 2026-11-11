@@ -1,0 +1,24 @@
+[
+ {
+  "nombre": "Falabella (HardWork, parkas 3 en 1)",
+  "correo": null,
+  "web": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer",
+  "contacto": null,
+  "especialidad": "Parkas 3 en 1 (HardWork Reno 4.990, Quebec Ottawa)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": 54990,
+  "fuente": "https://www.falabella.com/falabella-cl/shop/parka-3-en-1-mujer"
+ },
+ {
+  "nombre": "Andesland (vende en Lider)",
+  "correo": null,
+  "web": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282",
+  "contacto": null,
+  "especialidad": "Chaquetas polares corporativas",
+  "respuesta": null,
+  "entrega": "Despacho a Santiago",
+  "costo_referencial": 29990,
+  "fuente": "https://www.lider.cl/ip/vestuario/chaqueta-polar-corporativa-hombre/00046047693282"
+ }
+]
