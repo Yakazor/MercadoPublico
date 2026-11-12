@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-11. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-12. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,7 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [1725-232-LE26](presupuestos/1725-232-LE26.md) LIBROS DE AUTORES NACIONALES Y SU DISTRIBUCIÓN | Deporte, juguetes y material didáctico | 2026-11-11 | 0/10 | $0 | $0 | $0 | $37.500.000 | faltan 10 precios |
 | [3951-58-L126](presupuestos/3951-58-L126.md) ADQUISICIÓN DE INSUMOS MÉDICOS PARA MAS SALUD COMUNITARIA DEL CONSULTO | Insumos médicos no regulados y aseo | 2026-11-11 | 1/9 | $35.698 | $50.977 | $7.140 | $835.290 | faltan 8 precios, sin verificar |
 | [1362-13-LE26](presupuestos/1362-13-LE26.md) COMPRA DE NEUMATICOS PROVINCIA TALAGANTE | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-11 | 5/9 | $1.858.269 | $2.653.608 | $371.654 | — | faltan 4 precios, sin verificar |
 | [2258-237-LE26](presupuestos/2258-237-LE26.md) INSUMOS PARA IMPRESORAS ZEBRA DEL HRA | Computación y electrónica | 2026-11-12 | 0/6 | $0 | $0 | $0 | — | faltan 6 precios |
@@ -49,4 +48,4 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 | [608-236-LR26](presupuestos/608-236-LR26.md) CME ADQUISICIÓN DE INSUMOS CLÍNICOS Y MATERIAL MÉDICO QUIRÚRGICO PARA  | Insumos médicos no regulados y aseo | 2026-12-11 | 0/17 | $0 | $0 | $0 | — | faltan 17 precios |
 
-Licitaciones ya cerradas: 180. Sus precios de mercado quedan archivados en `informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes).
+Licitaciones ya cerradas: 181. Sus precios de mercado quedan archivados en `informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes).

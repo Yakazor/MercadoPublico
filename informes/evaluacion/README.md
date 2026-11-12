@@ -1,6 +1,6 @@
 # Evaluación comercial de licitaciones
 
-Actualizado: 2026-11-11. 511 oportunidades vigentes en el Excel, 21 con precios de mercado evaluadas: 0 GO, 1 GO con condiciones, 12 con falta de precio (menos del 80 % de las líneas) y 8 NO GO.
+Actualizado: 2026-11-11. 526 oportunidades vigentes en el Excel, 21 con precios de mercado evaluadas: 0 GO, 1 GO con condiciones, 12 con falta de precio (menos del 80 % de las líneas) y 8 NO GO.
 
 - [Excel con todas las licitaciones, la evaluación y el Claude Log](Licitaciones_evaluadas.xlsx)
 

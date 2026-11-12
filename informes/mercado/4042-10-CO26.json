@@ -217,11 +217,11 @@
      "precio_unitario_neto": 10915.97,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "precio_pagina": 12300.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $12.300, no $12.990: puede haber cambiado.",
-     "verificado_en": "2026-11-10"
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-11-11: la página muestra $12.990.",
+     "verificado_en": "2026-11-11"
     }
    ]
   }
@@ -229,6 +229,6 @@
  "verificacion_paginas": {
   "fecha": "2026-11-11",
   "opciones": 11,
-  "verificadas": 9
+  "verificadas": 10
  }
 }
