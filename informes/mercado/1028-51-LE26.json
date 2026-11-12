@@ -26,9 +26,9 @@
      "nota": "Color blanco; se pide naranjo. Búsqueda del 04-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-04",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $11.990."
     }
    ]
   },
@@ -49,9 +49,9 @@
      "nota": "Impermeable; térmica por confirmar. Búsqueda del 09-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 19980.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $19.980."
+     "verificacion_pagina": "2026-11-12: la página muestra $19.980."
     }
    ]
   },
@@ -72,9 +72,9 @@
      "nota": "Búsqueda del 09-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 16580.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $16.580."
+     "verificacion_pagina": "2026-11-12: la página muestra $16.580."
     }
    ]
   },
@@ -110,7 +110,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-11",
+  "fecha": "2026-11-12",
   "opciones": 3,
   "verificadas": 3
  }

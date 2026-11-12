@@ -57,5 +57,10 @@
    "opciones": [],
    "nota": "No se buscó: monto bajo (59.140) con productos sueltos de 1–2 unidades."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-12",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

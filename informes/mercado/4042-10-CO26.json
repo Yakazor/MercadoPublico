@@ -21,7 +21,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-09",
      "precio_pagina": 100000.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $100.000, no $89.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $100.000, no $89.990: puede haber cambiado."
     },
     {
      "tienda": "Falabella (Marmot)",
@@ -36,9 +36,9 @@
      "nota": "Precio con descuento del listado.",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 89990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $89.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $89.990."
     }
    ]
   },
@@ -59,9 +59,9 @@
      "nota": "Búsqueda del 05-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $12.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $12.990."
     },
     {
      "tienda": "Lider (Andesland)",
@@ -76,9 +76,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $29.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $29.990."
     }
    ]
   },
@@ -99,9 +99,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 16580.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $16.580."
+     "verificacion_pagina": "2026-11-12: la página muestra $16.580."
     },
     {
      "tienda": "Falabella (Garsil)",
@@ -116,9 +116,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $19.990."
     }
    ]
   },
@@ -139,9 +139,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 19980.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $19.980."
+     "verificacion_pagina": "2026-11-12: la página muestra $19.980."
     },
     {
      "tienda": "Sodimac (Blue Mountain)",
@@ -156,9 +156,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 25990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $25.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $25.990."
     }
    ]
   },
@@ -179,9 +179,9 @@
      "nota": "Búsqueda del 02-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $19.990."
     }
    ]
   },
@@ -202,9 +202,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $11.990."
     },
     {
      "tienda": "Lider",
@@ -220,14 +220,14 @@
      "verificado": true,
      "fecha_consulta": "2026-11-09",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $12.990.",
-     "verificado_en": "2026-11-11"
+     "verificacion_pagina": "2026-11-12: la página muestra $12.990.",
+     "verificado_en": "2026-11-12"
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-11",
+  "fecha": "2026-11-12",
   "opciones": 11,
   "verificadas": 10
  }

@@ -33,5 +33,10 @@
    "opciones": [],
    "nota": "Equipamiento médico (sillones clínicos, monitor multiparámetro, instrumental): cotizar a distribuidor clínico."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-12",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

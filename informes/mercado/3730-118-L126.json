@@ -27,5 +27,10 @@
    "opciones": [],
    "nota": "No se buscó: monto bajo (.000.000), muebles de una unidad sin especificación."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-12",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

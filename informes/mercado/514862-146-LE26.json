@@ -45,5 +45,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-12",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

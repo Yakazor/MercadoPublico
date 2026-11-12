@@ -86,9 +86,9 @@
      "nota": "Envío desde EE.UU.; precio retail, 200 unidades requieren importador.",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 44246.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $44.246."
+     "verificacion_pagina": "2026-11-12: la página muestra $44.246."
     }
    ]
   },
@@ -110,8 +110,8 @@
      "verificado": false,
      "fecha_consulta": "2026-11-05",
      "verificado_en": "2026-11-10",
-     "precio_pagina": 41553.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $41.553, no $42.990: puede haber cambiado."
+     "precio_pagina": 41469.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $41.469, no $42.990: puede haber cambiado."
     }
    ]
   },
@@ -132,15 +132,15 @@
      "nota": "No es tipo S8.",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 47990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $47.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $47.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-11",
+  "fecha": "2026-11-12",
   "opciones": 3,
   "verificadas": 2
  }

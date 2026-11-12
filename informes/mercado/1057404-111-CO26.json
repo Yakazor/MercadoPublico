@@ -20,9 +20,9 @@
      "nota": "Precio con descuento del listado.",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $69.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $69.990."
     }
    ]
   },
@@ -55,9 +55,9 @@
      "nota": "Polar, no polerón; color azul por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $12.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $12.990."
     }
    ]
   },
@@ -78,9 +78,9 @@
      "nota": "Color gris por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-02",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $19.990."
     }
    ]
   },
@@ -101,9 +101,9 @@
      "nota": "Modelo de hombre; versión mujer por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 69990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $69.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $69.990."
     }
    ]
   },
@@ -124,9 +124,9 @@
      "nota": "Se pide HardWork.",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $11.990."
     }
    ]
   },
@@ -157,18 +157,18 @@
      "precio_unitario_neto": 4193.28,
      "coincidencia": "aproximada",
      "nota": "Lentes, no antiparras.",
-     "verificado": true,
+     "verificado": false,
      "fecha_consulta": "2026-11-11",
      "verificado_en": "2026-11-11",
-     "precio_pagina": 4990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $4.990."
+     "precio_pagina": 4790.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $4.790, no $4.990: puede haber cambiado."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-11",
+  "fecha": "2026-11-12",
   "opciones": 6,
-  "verificadas": 6
+  "verificadas": 5
  }
 }

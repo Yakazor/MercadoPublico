@@ -39,7 +39,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-11",
      "precio_pagina": 27441.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $27.441, no $24.250: puede haber cambiado."
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $27.441, no $24.250: puede haber cambiado."
     }
    ]
   },
@@ -60,9 +60,9 @@
      "nota": "Listados 0.330–0.710; se usa el mayor.",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 10490.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $10.490."
+     "verificacion_pagina": "2026-11-12: la página muestra $10.490."
     }
    ]
   },
@@ -102,7 +102,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-11",
      "precio_pagina": 6376.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $6.376, no $6.058: puede haber cambiado."
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $6.376, no $6.058: puede haber cambiado."
     }
    ]
   },
@@ -123,9 +123,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 11000.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $11.000."
+     "verificacion_pagina": "2026-11-12: la página muestra $11.000."
     }
    ]
   },
@@ -147,7 +147,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-11",
      "precio_pagina": 4313.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $4.313, no $3.594: puede haber cambiado."
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $4.313, no $3.594: puede haber cambiado."
     }
    ]
   },
@@ -166,11 +166,11 @@
      "precio_unitario_neto": 3261.34,
      "coincidencia": "exacta",
      "nota": "",
-     "verificado": true,
+     "verificado": false,
      "fecha_consulta": "2026-11-11",
      "verificado_en": "2026-11-11",
-     "precio_pagina": 3881.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $3.881."
+     "precio_pagina": 49990.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $49.990, no $3.881: puede haber cambiado."
     }
    ]
   },
@@ -206,8 +206,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-11",
+  "fecha": "2026-11-12",
   "opciones": 6,
-  "verificadas": 3
+  "verificadas": 2
  }
 }

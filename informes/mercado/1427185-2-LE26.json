@@ -20,9 +20,9 @@
      "nota": "Búsqueda del 04-11; especificación en anexo.",
      "verificado": true,
      "fecha_consulta": "2026-11-04",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $11.990."
     }
    ]
   },
@@ -43,9 +43,9 @@
      "nota": "Precio verificado el 01-11 en la rutina.",
      "verificado": true,
      "fecha_consulta": "2026-11-01",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $11.990."
     }
    ]
   },
@@ -64,11 +64,11 @@
      "precio_unitario_neto": 4193.28,
      "coincidencia": "equivalente",
      "nota": "",
-     "verificado": true,
+     "verificado": false,
      "fecha_consulta": "2026-11-11",
      "verificado_en": "2026-11-11",
-     "precio_pagina": 4990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $4.990."
+     "precio_pagina": 4790.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $4.790, no $4.990: puede haber cambiado."
     }
    ]
   },
@@ -89,9 +89,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 56990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $56.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $56.990."
     }
    ]
   },
@@ -118,9 +118,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $49.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $49.990."
     }
    ]
   },
@@ -141,8 +141,8 @@
      "nota": "Especificación en anexo (capacidad por confirmar).",
      "verificado": false,
      "fecha_consulta": "2026-11-11",
-     "precio_pagina": 17990.0,
-     "verificacion_pagina": "2026-11-11: la página abrió y el precio más parecido es $17.990, no $12.990: puede haber cambiado."
+     "precio_pagina": 9990.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $9.990, no $12.990: puede haber cambiado."
     }
    ]
   },
@@ -169,9 +169,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $19.990."
     }
    ]
   },
@@ -192,9 +192,9 @@
      "nota": "Medida por confirmar en anexo.",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-11",
+     "verificado_en": "2026-11-12",
      "precio_pagina": 32990.0,
-     "verificacion_pagina": "2026-11-11: la página muestra $32.990."
+     "verificacion_pagina": "2026-11-12: la página muestra $32.990."
     }
    ]
   },
@@ -206,8 +206,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-11",
+  "fecha": "2026-11-12",
   "opciones": 8,
-  "verificadas": 7
+  "verificadas": 6
  }
 }

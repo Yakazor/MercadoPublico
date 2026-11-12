@@ -37,7 +37,9 @@
      "coincidencia": "aproximada",
      "nota": "La licitación dice «Unidad»: confirmar si es kg.",
      "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "fecha_consulta": "2026-11-11",
+     "precio_pagina": 4313.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $4.313, no $3.594: puede haber cambiado."
     }
    ]
   },
@@ -57,7 +59,9 @@
      "coincidencia": "aproximada",
      "nota": "Se pide 5/32\"; unidad por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-11"
+     "fecha_consulta": "2026-11-11",
+     "precio_pagina": 4313.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $4.313, no $3.594: puede haber cambiado."
     }
    ]
   },
@@ -83,7 +87,9 @@
      "coincidencia": "aproximada",
      "nota": "Formato (galón) por confirmar en bases.",
      "verificado": false,
-     "fecha_consulta": "2026-11-12"
+     "fecha_consulta": "2026-11-12",
+     "precio_pagina": 31990.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $31.990, no $30.990: puede haber cambiado."
     }
    ]
   },
@@ -103,7 +109,9 @@
      "coincidencia": "aproximada",
      "nota": "Precio del blanco; naranja por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-12"
+     "fecha_consulta": "2026-11-12",
+     "precio_pagina": 31990.0,
+     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $31.990, no $30.990: puede haber cambiado."
     }
    ]
   },
@@ -113,5 +121,10 @@
    "opciones": [],
    "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-12",
+  "opciones": 4,
+  "verificadas": 0
+ }
 }

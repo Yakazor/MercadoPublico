@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $23.360.073 |
 | Oferta sugerida con IVA | $26.311.535 |
 
-**Riesgos financieros:** 2 de 5 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000)..
+**Riesgos financieros:** 2 de 5 ítems sin precio de mercado: el costo real es mayor.; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000)..
 
 ## Análisis operacional
 
@@ -47,7 +47,6 @@
 ## Riesgos detectados
 
 - 2 de 5 ítems sin precio de mercado: el costo real es mayor.
-- La mayoría de los precios no está verificada en la página de la tienda.
 - 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).
 - Cierra en 4 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de los Lagos: despacho caro y lento desde Santiago.
