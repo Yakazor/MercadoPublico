@@ -1,0 +1,79 @@
+{
+ "codigo": "2048-94-LE26",
+ "nombre": "Adquisición de contenedores de basura para el Nuevo Hospital de Ancud",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Línea 1: Papelero de Oficina",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  },
+  {
+   "linea": 2,
+   "producto": "Línea 2: Basurero Clínico y/o Baño 25 lts",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Basurero pedal 25 L con sujeta bolsa gris (referencia Stern 5.600)",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/basurero-con-pedal",
+     "precio": 25600,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21512.61,
+     "coincidencia": "aproximada",
+     "nota": "Basurero clínico: confirmar especificación.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Línea 3: Basurero Clínico y/o Baño 50 Lts",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Factorynet)",
+     "producto_mercado": "Basurero con pedal 50 litros",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/basurero-con-pedal",
+     "precio": 16490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13857.14,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Línea 4: Basurero de alimentación 80 lts",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  },
+  {
+   "linea": 5,
+   "producto": "Línea 5: Basurero alimentación 240 lts",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Kleine Wolke)",
+     "producto_mercado": "Contenedor de basura 240 L con ruedas gris",
+     "url": "https://www.sodimac.cl/sodimac-cl/category/scat963520/contenedores-de-basura",
+     "precio": 44990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 37806.72,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  }
+ ]
+}

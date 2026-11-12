@@ -1,0 +1,49 @@
+{
+ "codigo": "514862-146-LE26",
+ "nombre": "PROYECTORES PARA ESTABLECIMIENTOS REDUCA 10033041",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "PROYECTOR ESTÁNDAR DE ALTA CONECTIVIDAD (D-171)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  },
+  {
+   "linea": 2,
+   "producto": "PROYECTOR DE ALTA LUMINOSIDAD Y AJUSTE AVANZADO (D-187)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  },
+  {
+   "linea": 3,
+   "producto": "PROYECTOR ESTÁNDAR DLP Y SOPORTE MULTIMEDIA (D-202)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  },
+  {
+   "linea": 4,
+   "producto": "PROYECTOR ESTÁNDAR DE ALTA CONECTIVIDAD (D-213)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  },
+  {
+   "linea": 5,
+   "producto": "PROYECTOR ESTÁNDAR DE ALTA CONECTIVIDAD (D-230)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  },
+  {
+   "linea": 6,
+   "producto": "PROYECTOR ESTÁNDAR DLP Y SOPORTE MULTIMEDIA (E-192)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  },
+  {
+   "linea": 7,
+   "producto": "PROYECTOR DE ALTA LUMINOSIDAD Y AJUSTE AVANZADO (E-210)",
+   "opciones": [],
+   "nota": "No cotizable por línea: proyectores descritos solo por código de modelo (D-171, E-192…); especificación en bases."
+  }
+ ]
+}

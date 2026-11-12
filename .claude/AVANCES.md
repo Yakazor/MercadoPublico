@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-12 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:12 y
+  11:51; datos del 12-11 08:50, 457 licitaciones, 247 Compras Ágiles; la API de Compras Ágiles sigue con HTTP 429,
+  listado al 11-11 16:44). Lote de 8 nuevas: 1171142-118-LE26 calzado de seguridad (4/4, **GO con condiciones**:
+  $23,2 M c/IVA vs $24,5 M, margen 13 %), 4809-75-LE26 ferretería (4/9), 2048-94-LE26 basureros (3/5); 5 guardadas sin
+  precio con nota. 2 cerradas archivadas. Top: 1171142-118-LE26, 4042-10-CO26 y 3191-128-LE26. 570 pruebas OK.
+
 - 2026-11-12 (correcciones del «Informe de pruebas y fallas» del 11-11, 16 hallazgos; 570 pruebas OK):
   - 1 y 3 Evaluación: con líneas sin precio la oferta, el margen y el equilibrio dicen «· parcial (X de N
     líneas)» y la probabilidad sale «—» si falta precio; avisos si la oferta supera el monto estimado o queda

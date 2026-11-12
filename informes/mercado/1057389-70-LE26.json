@@ -1,0 +1,37 @@
+{
+ "codigo": "1057389-70-LE26",
+ "nombre": "Equipos Médicos- Sillones e Instrumental HSJV",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "1. CAJA DE INSTRUMENTAL QUIRÚRGICO PARA EXTRACCIÓN DIFÍCIL DE TORNILLOS DE MATERIAL DE OSTEOSÍNTESIS",
+   "opciones": [],
+   "nota": "Equipamiento médico (sillones clínicos, monitor multiparámetro, instrumental): cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 2,
+   "producto": "2. MONITOR MULTIPARÁMETRO DE SIGNOS VITALES CON CARRO DE TRANSPORTE",
+   "opciones": [],
+   "nota": "Equipamiento médico (sillones clínicos, monitor multiparámetro, instrumental): cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 3,
+   "producto": "3. BALANZA AGITADORA DE BOLSAS DE SANGRE",
+   "opciones": [],
+   "nota": "Equipamiento médico (sillones clínicos, monitor multiparámetro, instrumental): cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 4,
+   "producto": "4. SILLÓN PARA DIÁLISIS",
+   "opciones": [],
+   "nota": "Equipamiento médico (sillones clínicos, monitor multiparámetro, instrumental): cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 5,
+   "producto": "5. SILLÓN CLÍNICO RECLINABLE CMA",
+   "opciones": [],
+   "nota": "Equipamiento médico (sillones clínicos, monitor multiparámetro, instrumental): cotizar a distribuidor clínico."
+  }
+ ]
+}

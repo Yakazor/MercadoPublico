@@ -1,0 +1,37 @@
+{
+ "codigo": "4587-25-LE26",
+ "nombre": "ADQUISICION COMPUTADORES E IMPRESORAS PARA DESAM",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "LINEA N°1 ANEXO N°4 \r COMPUTADORES ALL IN ONE (VER ESPECIFICACIONES TECNICAS)",
+   "opciones": [],
+   "nota": "No cotizable por línea: computadores e impresoras según Anexo N°4 (especificación en bases)."
+  },
+  {
+   "linea": 2,
+   "producto": "LINEA N°2 ANEXO N°4 COMPUTADORES ALL IN ONE (VER ESPECIFICACIONES TECNICAS)",
+   "opciones": [],
+   "nota": "No cotizable por línea: computadores e impresoras según Anexo N°4 (especificación en bases)."
+  },
+  {
+   "linea": 3,
+   "producto": "LINEA N°3 ANEXO N°4 IMPRESORA A COLOR (VER ESPECIFICACIONES TECNICAS)",
+   "opciones": [],
+   "nota": "No cotizable por línea: computadores e impresoras según Anexo N°4 (especificación en bases)."
+  },
+  {
+   "linea": 4,
+   "producto": "LINEA N°4 ANEXO N°4 IMPRESORA MULTIFUNCIONAL (VER ESPECIFICACIONES TECNICAS)",
+   "opciones": [],
+   "nota": "No cotizable por línea: computadores e impresoras según Anexo N°4 (especificación en bases)."
+  },
+  {
+   "linea": 5,
+   "producto": "LINEA N°5 ANEXO N°4 IMPRESORA TERMICA (VER ESPECIFICACIONES TECNICAS)",
+   "opciones": [],
+   "nota": "No cotizable por línea: computadores e impresoras según Anexo N°4 (especificación en bases)."
+  }
+ ]
+}

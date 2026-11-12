@@ -1,0 +1,117 @@
+{
+ "codigo": "4809-75-LE26",
+ "nombre": "MATERIALES DE FERRETERIA",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "PERNO HEXAGONAL AC ZINC (GRADO 2) 1/4\" x 2,1/2\"",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  },
+  {
+   "linea": 2,
+   "producto": "ARANDELA / GOLILLA PLANA CORRRIENTE 5/16\"",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  },
+  {
+   "linea": 3,
+   "producto": "TUERCA HEXAGONAL G2 P/ PERNO SEÑAL 1/4\"",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  },
+  {
+   "linea": 4,
+   "producto": "SOLDADURA P/AZUL 6011 1/8\"",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Electrodo 6011 1/8\" 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/343609/electrodo-6011-1-8-1-kg",
+     "precio": 3594,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3020.17,
+     "coincidencia": "aproximada",
+     "nota": "La licitación dice «Unidad»: confirmar si es kg.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "SOLDADURA 6011 5/32\"",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Electrodo 6011 1/8\" 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/343609/electrodo-6011-1-8-1-kg",
+     "precio": 3594,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3020.17,
+     "coincidencia": "aproximada",
+     "nota": "Se pide 5/32\"; unidad por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "SOLDADURA 6010 DE 5/32\"",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  },
+  {
+   "linea": 7,
+   "producto": "PINTURA ESMALTE SINTETICO BLANCO",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Revor)",
+     "producto_mercado": "Esmalte sintético blanco brillante 1 galón",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11126/Esmaltes-Sinteticos/",
+     "precio": 30990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 26042.02,
+     "coincidencia": "aproximada",
+     "nota": "Formato (galón) por confirmar en bases.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "PINTURA ESMALTE SINTÉTICO NARANJA",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Revor)",
+     "producto_mercado": "Esmalte sintético 1 galón (color naranja por confirmar)",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG11126/Esmaltes-Sinteticos/",
+     "precio": 30990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 26042.02,
+     "coincidencia": "aproximada",
+     "nota": "Precio del blanco; naranja por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "PINTURA LATEX BLANCO",
+   "opciones": [],
+   "nota": "Sin precio en tiendas chilenas en la búsqueda del 12-11; pedir cotización."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "codigo": "3730-118-L126",
+ "nombre": "MOBILIARIO Y EQUIPAMIENTO PARA OFICINA OLN.",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ESTRITORIO RECTAGULAR",
+   "opciones": [],
+   "nota": "No se buscó: monto bajo (.000.000), muebles de una unidad sin especificación."
+  },
+  {
+   "linea": 2,
+   "producto": "SILLA ERGONOMETRICA",
+   "opciones": [],
+   "nota": "No se buscó: monto bajo (.000.000), muebles de una unidad sin especificación."
+  },
+  {
+   "linea": 3,
+   "producto": "MUEBLE AEREO",
+   "opciones": [],
+   "nota": "No se buscó: monto bajo (.000.000), muebles de una unidad sin especificación."
+  },
+  {
+   "linea": 4,
+   "producto": "BIBLIOTECA DE DOS NIVELES",
+   "opciones": [],
+   "nota": "No se buscó: monto bajo (.000.000), muebles de una unidad sin especificación."
+  }
+ ]
+}

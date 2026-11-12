@@ -376,5 +376,23 @@
   "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 11 de 13 ítems sin precio de mercado; 2 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 1",
   "decisiones": "4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 3885-68-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 867990-146-L126: FALTA PRECIO",
   "recomendaciones": "- **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **5420-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 2 de 7 el margen sale de una parte del pedido. - **3996-45-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 5 de 11 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-12",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "704 vigentes; 22 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 12 falta precio, 8 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (ot",
+  "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO",
+  "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-12",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 nuevas. Con precios: 1171142-118-LE26 calzado de seguridad CAPLC Araucanía (4/4), 4809-75-LE26 ferretería (4/9), 2048-94-LE26 basureros Hospital de Ancud (3/5). Guardadas sin precio con nota: 514862-146-LE26 proyectores y 4587-25-LE26 computadores (especificación por código o anexo), 1057389-70-LE26 equipos médicos, 4469-253-L126 y 3730-118-L126 (monto bajo). 2 cerradas archivadas.",
+  "resultado": "2 GO con condiciones: 1171142-118-LE26 (oferta 3,2 M c/IVA bajo los 4,5 M estimados, margen 13 %, todas las líneas) y 4042-10-CO26 (sin monto ni referencia precisa). 12 con falta de precio y 8 NO GO.",
+  "riesgos": "1171142-118-LE26: 2 de 4 precios aproximados (caña alta por confirmar) y despacho a la Araucanía; las bases suelen pedir certificación NCh772 y carta de distribuidor del fabricante. API de Compras Ágiles con HTTP 429 (listado al 11-11 16:44).",
+  "decisiones": "Top 3: 1171142-118-LE26 (cierra 19-11), 4042-10-CO26 (16-11) y 3191-128-LE26 (24-11). Proveedores de calzado agregados (Norseg/Forus, Comercial Macme, BAY6).",
+  "recomendaciones": "Hoy: pedir cotización por volumen a Norseg (Forus) y Comercial Macme para 287 pares de seguridad caña alta y a BAY6 para 90 zuecos de cocina; confirmar certificación NCh772 y plazo a la Araucanía. Con precio mayorista el margen debería mejorar."
  }
 ]

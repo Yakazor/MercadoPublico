@@ -1,0 +1,115 @@
+{
+ "codigo": "1171142-118-LE26",
+ "nombre": "CALZADOS DE SEGURIDAD PARA FUNCIONARIOS DEL CAPLC",
+ "fecha_consulta": "2026-11-12",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Zapatos de seguridad hombre caña alta",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Norseg)",
+     "producto_mercado": "Zapato de seguridad Norseg Manchester ST",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/zapato-de-seguridad-hombre",
+     "precio": 56990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47890.76,
+     "coincidencia": "aproximada",
+     "nota": "Caña alta por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Zapato antideslizante de cocina",
+   "opciones": [
+    {
+     "tienda": "Falabella (BAY6)",
+     "producto_mercado": "Zueco cocina gastronómico antideslizante unisex BAY6",
+     "url": "https://www.falabella.com/falabella-cl/product/117184964/Zapato-o-Zueco-Cocina-Gastronomico-Antideslizante-Unisex-BAY6/117184974",
+     "precio": 19980,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16789.92,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    },
+    {
+     "tienda": "Paris (BAY6)",
+     "producto_mercado": "Zapato zueco antideslizante cocina de seguridad punta acero",
+     "url": "https://www.paris.cl/zapato-zueco-antideslizante-cocina-de-seguridad-punta-acero-MK10XJQJUF.html",
+     "precio": 36990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 31084.03,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Zapatos de seguridad mujer caña alta",
+   "opciones": [
+    {
+     "tienda": "Falabella (Sodimac, Bata Industrials)",
+     "producto_mercado": "Zapato de seguridad mujer Eagle",
+     "url": "https://www.falabella.com/falabella-cl/brand/BATA%20INDUSTRIALS",
+     "precio": 41990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 35285.71,
+     "coincidencia": "aproximada",
+     "nota": "Caña alta por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    },
+    {
+     "tienda": "Sodimac (Norseg)",
+     "producto_mercado": "Zapato de seguridad Norseg Oporto CT mujer",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/zapato-de-seguridad-de-mujer",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-12"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Zapatos de seguridad hombre caña baja",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Norseg)",
+     "producto_mercado": "Zapato de seguridad Norseg Manchester ST",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/zapato-de-seguridad-hombre",
+     "precio": 56990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 47890.76,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  }
+ ]
+}
