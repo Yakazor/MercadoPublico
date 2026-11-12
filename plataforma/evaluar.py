@@ -8,7 +8,7 @@ from evaluar_licitaciones import correos, go_no_go, informe, pct
 from radar.config import hoy_chile
 from radar.evaluacion import CONDICIONADO, FALTA_PRECIO, GO, NO_GO
 from radar.plataforma import es_compra_agil, evaluar_licitacion, opciones, ranking
-from radar.presupuesto import IVA, armar_presupuesto
+from radar.presupuesto import IVA, armar_presupuesto, referencia_confiable
 
 VISTAS = ["Una licitación", "Ranking"]
 
@@ -81,6 +81,8 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict], compra_ag
             "Unidad": it.get("unidad"), "Mejor tienda": t.get("tienda") or "—",
             "Precio tienda (neto)": comun.pesos(t.get("costo_unitario_neto")),
             "Pagado por el Estado": comun.pesos(it.get("ref_mediana")),
+            "Ref. OC": None if not it.get("ref_mediana") else ("precisa" if referencia_confiable(it)
+                                                               else "categoría amplia"),
             "Tu cotización (unitario)": (ingresadas.get("precios") or {}).get(str(it.get("linea"))),
         } for it, t in zip(items, tiendas)]).astype({"Tu cotización (unitario)": float})
     editado = st.data_editor(
@@ -94,7 +96,12 @@ def _cotizaciones(codigo: str, items: list[dict], mercado: list[dict], compra_ag
             "Mejor tienda": st.column_config.TextColumn(width=120),
             "Precio tienda (neto)": st.column_config.NumberColumn(format="localized", width=110),
             "Pagado por el Estado": st.column_config.NumberColumn(
-                format="localized", width=125, help="Mediana del precio unitario neto en órdenes de compra parecidas"),
+                format="localized", width=125, help="Mediana del precio unitario neto en órdenes de compra del mismo "
+                                                    "producto ONU (una categoría: puede mezclar modelos muy distintos)"),
+            "Ref. OC": st.column_config.TextColumn(
+                width=110, help="precisa = 5 o más órdenes y precios parecidos entre sí (sirve para comparar); "
+                                "categoría amplia = pocas órdenes o productos muy distintos (p. ej. todos los "
+                                "notebooks): no compares el precio de tienda con ella"),
             "Tu cotización (unitario)": st.column_config.NumberColumn(
                 min_value=0, format="localized", width=130, help="Precio por unidad que te dio el proveedor"),
         }, placeholder="—")
@@ -121,21 +128,38 @@ def _resultado(lic: dict, items: list[dict], p: dict, ev, mercado: list[dict]) -
         _documentos(lic, items, p, ev, mercado, con_precios=False)
         return
     comun.aviso_decision(ev)
+    n, sin_precio = len(p["items"]), p["items_sin_precio"]
+    # Con líneas sin precio, la oferta, el margen y el equilibrio salen de una parte del pedido: se dice en
+    # la misma cifra, no solo en un aviso.
+    parcial = f" · parcial ({n - sin_precio} de {n} líneas)" if sin_precio else ""
+    ayuda_parcial = (f" Solo incluye las {n - sin_precio} líneas con precio: con las otras {sin_precio} será mayor."
+                     if sin_precio else "")
     k = st.columns(3) + st.columns(3)
-    k[0].metric("Oferta sugerida c/IVA", comun.clp(i["oferta_total"]),
-                help="Costo × (1 + otros costos) × (1 + margen) + IVA")
+    k[0].metric("Oferta sugerida c/IVA" + parcial, comun.clp(i["oferta_total"]),
+                help="Costo × (1 + otros costos) × (1 + margen) + IVA." + ayuda_parcial)
     k[1].metric("Monto estimado", comun.clp(i["monto_estimado"]) if i["monto_estimado"] else "—")
-    k[2].metric("Margen neto", pct(m["neto_pct"]), comun.con_signo(m["neto"]))
-    k[3].metric("Punto de equilibrio c/IVA", comun.clp(m["equilibrio_total"]),
-                help="Oferta mínima que cubre todos los costos, directos e indirectos")
-    k[4].metric("Prob. de adjudicación", f"{ev.probabilidad:.0%}", help="Estimación heurística para ordenar")
+    k[2].metric("Margen neto" + parcial, pct(m["neto_pct"]), comun.con_signo(m["neto"]),
+                help="Margen sobre la oferta neta, después de todos los costos." + ayuda_parcial)
+    k[3].metric("Punto de equilibrio c/IVA" + parcial, comun.clp(m["equilibrio_total"]),
+                help="Oferta mínima que cubre todos los costos, directos e indirectos." + ayuda_parcial)
+    sin_decision = ev.decision == FALTA_PRECIO
+    k[4].metric("Prob. de adjudicación", "—" if sin_decision else f"{ev.probabilidad:.0%}",
+                help="Sin decisión todavía: faltan precios." if sin_decision else "Estimación heurística para ordenar")
     k[5].metric("Riesgo", ev.riesgo, help="Según precios faltantes o aproximados, plazos, región, monto y registro ISP")
     if es_compra_agil(lic):
         st.caption("Compra Ágil: cotiza el total con IVA y despacho incluido.")
-    sin_precio = p["items_sin_precio"]
     if sin_precio:
-        st.info(f"{sin_precio} de {len(p['items'])} líneas sin precio: ingresa su cotización arriba o activa "
-                "«Estimar con OC del Estado» en los supuestos.")
+        st.info(f"{sin_precio} de {n} líneas sin precio: las cifras de arriba son parciales. Ingresa su cotización "
+                "arriba o activa «Estimar con OC del Estado» en ⚙️ Supuestos.")
+    monto, oferta = i["monto_estimado"], i["oferta_total"]
+    if monto and oferta > monto:
+        st.warning(f"La oferta sugerida ({comun.clp(oferta)}) supera el monto estimado ({comun.clp(monto)}) en "
+                   f"{oferta / monto - 1:.0%}: casi nunca se adjudica sobre el presupuesto. Baja el margen en "
+                   "⚙️ Supuestos o consigue precio de distribuidor.")
+    if oferta < m["equilibrio_total"]:
+        st.warning(f"La oferta sugerida ({comun.clp(oferta)}) queda bajo el punto de equilibrio "
+                   f"({comun.clp(m['equilibrio_total'])}): con este margen perderías plata. Sube el margen en "
+                   "⚙️ Supuestos.")
 
     a, b = st.columns(2)
     with a:
@@ -210,17 +234,22 @@ def _ranking(prep: dict) -> None:
     tipo = a.segmented_control("Mostrar", ["Todas", "Licitaciones", "Compras Ágiles"], default="Todas",
                                required=True, key="rank_tipo")
     decisiones = b.multiselect("Decisión", [GO, CONDICIONADO, FALTA_PRECIO, NO_GO], default=[GO, CONDICIONADO], key="rank_dec",
-                               format_func=comun.DECISION_CORTA.get)
+                               format_func=comun.DECISION_CORTA.get, placeholder="Todas")
+    decisiones = decisiones or [GO, CONDICIONADO, FALTA_PRECIO, NO_GO]      # vacío = todas, como los otros filtros
     cv_txt = c.segmented_control("Compra y venta directa", ["Todas", *comun.COMPRA_VENTA.values()], default="Todas",
                                  required=True, key="rank_cv", help=comun.AYUDA_COMPRA_VENTA)
     cv = comun.compra_venta_por_codigo()
     estado = next((k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt), "todas")
-    filas = [(l, p, e) for l, p, e in ranking(prep, comun.supuestos(), comun.margen(), comun.otros(),
-                                              comun.estimar_oc(), comun.cotizaciones())
+    evaluadas = ranking(prep, comun.supuestos(), comun.margen(), comun.otros(), comun.estimar_oc(), comun.cotizaciones())
+    filas = [(l, p, e) for l, p, e in evaluadas
              if e.decision in decisiones and (tipo == "Todas" or es_compra_agil(l) == (tipo == "Compras Ágiles"))
              and (estado == "todas" or cv.get(l["codigo"], (None, ""))[0] is estado)]
-    st.caption(f"{len(filas)} evaluadas con al menos un precio, de mejor a peor (decisión y luego margen × "
-               "probabilidad). ⚡ = Compra Ágil. Toca una fila para abrir su evaluación, con riesgos y costos.")
+    st.caption(f"{comun.evaluadas_texto(len(filas), len(evaluadas))}, de mejor a peor (decisión y luego margen × "
+               "probabilidad). ⚡ = Compra Ágil. Marca la casilla a la izquierda de una fila para abrir su evaluación.")
+    if not filas:
+        st.info("Ninguna evaluada con estos filtros. Agrega decisiones en «Decisión» (por ejemplo ⚪ Falta precio) "
+                "o elige «Todas».")
+        return
     codigos = [l["codigo"] for l, _, _ in filas]
 
     def abrir():

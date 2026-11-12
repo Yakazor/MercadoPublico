@@ -20,8 +20,9 @@ def pagina() -> None:
     lics, meta = prep["licitaciones"], prep["meta"]
     st.title("Radar Mercado Público")
     col, boton = st.columns([4, 1], vertical_alignment="bottom")
-    col.caption(f"Datos del radar: {comun.fecha_hora(meta.get('generado'))} · Compras Ágiles: "
-                f"{comun.fecha_hora(meta.get('compras_agiles_generado'))}. Se actualizan solos en GitHub.")
+    col.caption(f"Datos publicados: {comun.fecha_hora(meta.get('generado'))} · Compras Ágiles: "
+                f"{comun.fecha_hora(meta.get('compras_agiles_generado'))}. Se actualizan solos en GitHub: las "
+                "licitaciones cada mañana y las Compras Ágiles cada 3 horas (cada vez que se publican, cambia la hora).")
     if boton.button("Recargar datos", icon="🔄", width="stretch"):
         comun.recargar()
         st.rerun()
@@ -40,12 +41,14 @@ def pagina() -> None:
     k[0].metric("Licitaciones abiertas", len(lics) - len(agiles))
     k[1].metric("Compras Ágiles abiertas", len(agiles))
     k[2].metric("Cierran en 2 días o menos", len(pronto))
-    k[3].metric("Con precios para evaluar", len(evaluadas))
+    k[3].metric("Evaluadas", len(evaluadas), help="Licitaciones y Compras Ágiles con al menos un precio, sea cual sea "
+                "la decisión. Es la misma cifra del Ranking (Evaluación) y de Licitaciones + Compras Ágiles.")
     k[4].metric("GO / con condiciones", f"{conteo.get(GO, 0)} / {conteo.get(CONDICIONADO, 0)}")
 
     with st.container():
         st.subheader("Mejores oportunidades")
-        st.caption("Evaluadas con tus supuestos, de mejor a peor. Toca una fila para ver su evaluación.")
+        st.caption("Evaluadas con tus supuestos, de mejor a peor. Marca la casilla a la izquierda de una fila para "
+                   "ver su evaluación.")
         top = evaluadas[:15]
         cv = comun.compra_venta_por_codigo()
         df = pd.DataFrame([{
@@ -69,7 +72,7 @@ def pagina() -> None:
                 "Cierre": st.column_config.TextColumn(width=80)})
     with st.container():
         st.subheader("Cierran pronto")
-        st.caption("En 2 días o menos. Toca una fila para abrir su evaluación.")
+        st.caption("En 2 días o menos. Marca la casilla a la izquierda de una fila para abrir su evaluación.")
         cierran = sorted(pronto, key=lambda l: l.get("fecha_cierre") or "")[:15]
         df = pd.DataFrame([{
             "Código": l["codigo"], "Tipo": "Compra Ágil" if es_compra_agil(l) else l.get("tipo"),

@@ -88,8 +88,20 @@ def totales(datos: dict) -> dict:
             "total": neto + iva}
 
 
+def rut_valido(rut) -> bool:
+    """RUT chileno con su dígito verificador (módulo 11): «76.000.000-0», «76000000-0» o «760000000»."""
+    limpio = re.sub(r"[.\s-]", "", str(rut or "")).upper()
+    if not re.fullmatch(r"\d{1,8}[\dK]", limpio):
+        return False
+    cuerpo, dv = limpio[:-1], limpio[-1]
+    suma = sum(int(d) * (2 + i % 6) for i, d in enumerate(reversed(cuerpo)))
+    esperado = {11: "0", 10: "K"}.get(11 - suma % 11, str(11 - suma % 11))
+    return dv == esperado and int(cuerpo) > 0
+
+
 def validar(datos: dict) -> list[str]:
-    """Datos que faltan para enviar la orden (vacía = completa)."""
+    """Datos que faltan o están mal para enviar la orden (vacía = completa). Un RUT escrito pero con
+    el dígito verificador malo queda como «<parte>.rut_invalido»."""
     faltan = []
     tipo = (datos.get("comprador") or {}).get("tipo", "persona_natural")
     if tipo not in CAMPOS_COMPRADOR:
@@ -104,6 +116,10 @@ def validar(datos: dict) -> list[str]:
     for campo in ("razon_social", "rut"):
         if not (datos.get("proveedor") or {}).get(campo):
             faltan.append(f"proveedor.{campo}")
+    for parte in ("comprador", "proveedor"):
+        rut = (datos.get(parte) or {}).get("rut")
+        if rut and not rut_valido(rut):
+            faltan.append(f"{parte}.rut_invalido")
     items = datos.get("items") or []
     if not items:
         faltan.append("items")

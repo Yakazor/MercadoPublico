@@ -112,6 +112,25 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-12 (correcciones del «Informe de pruebas y fallas» del 11-11, 16 hallazgos; 570 pruebas OK):
+  - 1 y 3 Evaluación: con líneas sin precio la oferta, el margen y el equilibrio dicen «· parcial (X de N
+    líneas)» y la probabilidad sale «—» si falta precio; avisos si la oferta supera el monto estimado o queda
+    bajo el punto de equilibrio. Un NO GO con precios parciales lo dice («con todas, el costo y la oferta
+    serían mayores»): con margen 0 el NO GO por margen negativo es correcto (lo pone el supuesto).
+  - 2 Orden de compra: `orden_proveedor.rut_valido` (módulo 11) y `validar` marca `<parte>.rut_invalido`; con
+    faltantes, Excel y PDF solo se descargan marcando «Descargar igual, como borrador incompleto».
+  - 4 Monto mínimo > máximo: aviso y no filtra (los 179 eran las que no informan monto, que el filtro no
+    descarta: ahora el texto dice cuántas son). 12 Búsqueda: cada palabra debe ser comienzo de palabra.
+  - 5 Una sola cifra: «evaluadas (con al menos un precio)» en Inicio, Licitaciones y Ranking (`comun.evaluadas_texto`).
+  - 6 Compras Ágiles sin 2º llamado: mensaje con cuántas hay de 1er llamado y botón «Ver las de 1er llamado».
+  - 7 Ranking con Decisión vacía = todas; 8 «Sin resultados» en vez de la tabla «empty»; 9 «Marca la casilla a
+    la izquierda de una fila» (Streamlit solo selecciona con la casilla); 10 placeholders en español (el
+    «Upload / 200MB per file» del cargador de archivos no se puede traducir en Streamlit: lo explica la ayuda);
+    11 «1 evaluada»; 15 la hora de «Datos publicados» cambia cada 3 h con las Compras Ágiles (aclarado).
+  - Sin cambio: 13 (los avisos de configuración son para la dueña, que administra la app), 14 (no existe rama
+    `main`: `feature/api-mercadopublico` es la principal), 16 (no es mal emparejamiento: la línea 5 es un Legion
+    i9 a $2.099.990 en Paris; los $563.025 son la mediana de todos los notebooks. La tabla de precios ahora
+    marca «Ref. OC: precisa / categoría amplia»).
 - 2026-11-11 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:39 y
   11:51; datos del 11-11 08:51, 454 licitaciones, 57 Compras Ágiles; la API de Compras Ágiles respondió HTTP 429 y su
   listado llega al 10-11 17:59). Lote de 8 nuevas (regla del 10-11: no se repiten líneas): 1427185-2-LE26 (8/11),

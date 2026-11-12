@@ -278,6 +278,14 @@ def numero_texto(valor) -> str:
     return "—" if valor is None or pd.isna(valor) else f"{round(valor):,}".replace(",", ".")
 
 
+def evaluadas_texto(mostradas: int, total: int) -> str:
+    """La misma cifra en Inicio, Licitaciones y el Ranking: «evaluadas» = con al menos un precio (de tiendas,
+    de una búsqueda, de tus cotizaciones o estimado con OC), sea cual sea la decisión."""
+    nombre = "evaluada" if total == 1 else "evaluadas"
+    return (f"{total} {nombre} (con al menos un precio)" if mostradas == total
+            else f"{mostradas} de {total} {nombre} (con al menos un precio)")
+
+
 def aviso_decision(ev) -> None:
     texto = md(f"**{ev.etiqueta}** · {ev.recomendacion}")
     {GO: st.success, CONDICIONADO: st.warning, FALTA_PRECIO: st.info}.get(ev.decision, st.error)(texto)

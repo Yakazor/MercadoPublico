@@ -242,6 +242,10 @@ def evaluar(lic: dict, p: dict, supuestos: dict | None = None) -> Evaluacion:
                        "pagó en órdenes de compra parecidas.")
     if razones:
         decision = NO_GO
+        if cobertura < 1:
+            # Con las líneas que faltan el costo y la oferta solo suben: un NO GO por monto o techo sigue en pie.
+            razones.append(f"Calculado con precio para {con_precio} de {n_items} líneas: con todas, el costo y la "
+                           "oferta serían mayores.")
     elif cobertura < s["cobertura_minima"]:
         decision = FALTA_PRECIO
         condiciones.append(f"Conseguir precio de las {n_items - con_precio} líneas que faltan: con {con_precio} de "

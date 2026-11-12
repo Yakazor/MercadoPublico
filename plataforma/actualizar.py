@@ -41,7 +41,9 @@ def pagina() -> None:
     st.title("Actualizar datos")
     st.caption("Los datos vienen de la API de Mercado Público y se consultan en GitHub Actions, no en esta página. "
                "Corren solos: Compras Ágiles cada 3 horas (y se publican al terminar), licitaciones cada mañana "
-               "(antes de las 8, con la rutina de Claude) y precios de órdenes de compra todos los días.")
+               "(antes de las 8, con la rutina de Claude) y precios de órdenes de compra todos los días. La hora de "
+               "publicación de abajo cambia cada 3 horas con las Compras Ágiles, aunque las licitaciones sean de "
+               "la mañana.")
     meta = comun.datos()["meta"]
     generado = comun.datos_generados(meta)
     st.markdown(f"**Datos que estás viendo:** publicados el {generado:%d-%m-%Y a las %H:%M}" if generado

@@ -34,8 +34,8 @@ def _explorar(compra_agil: bool) -> None:
         emt = soy_emt()
         if not emt:
             st.info("No clasificas como Empresa de Menor Tamaño: solo puedes cotizar en el **2º llamado**. "
-                    "Se muestran esas; elige «Todos» en Llamado (Más filtros) para ver también las de 1er llamado. "
-                    "Si te clasifican como EMT, cambia `compra_agil.soy_emt` a true en config.yaml.")
+                    "Se muestran esas; elige «Todos» en Llamado (Más filtros) para ver también las de 1er llamado.",
+                    icon="ℹ️")
     else:
         st.title("Licitaciones")
         st.caption("Licitaciones abiertas de tus rubros. Las bases y anexos están en la ficha de Mercado Público "
@@ -59,6 +59,9 @@ def _explorar(compra_agil: bool) -> None:
         monto_min = b.number_input("Monto mínimo ($)", 0, step=100_000, key=f"{pre}_min")
         monto_max = c.number_input("Monto máximo ($)", 0, step=100_000, key=f"{pre}_max",
                                    help="0 = sin tope. Las que no informan monto se muestran igual.")
+        if monto_min and monto_max and monto_min > monto_max:
+            st.warning("El monto mínimo es mayor que el máximo: no se aplica el filtro de monto. Corrige uno de los dos.")
+            monto_min = monto_max = 0
         solo_precios = d.toggle("Solo con precios de tiendas", key=f"{pre}_precios")
         plazo = llamado = None
         if compra_agil:
@@ -83,11 +86,27 @@ def _explorar(compra_agil: bool) -> None:
         estado = next(k for k, v in comun.COMPRA_VENTA.items() if v == cv_txt)
         lista = [l for l in lista if cv.get(l["codigo"], (None, ""))[0] is estado]
     bloqueadas = compra_agil and not soy_emt()   # 🚫 = 1er llamado: sin EMT no se puede cotizar
+    con_precio = sum(1 for l in lista if l["codigo"] in evaluadas)
     con_decision = sum(1 for l in lista if evaluadas.get(l["codigo"], comun.SIN_EVALUAR) != comun.SIN_EVALUAR)
-    st.caption(f"{len(lista)} de {len(todas)} abiertas; {con_decision} con decisión (las demás: ⚪ falta precio). "
-               "💲 = tiene precios de tiendas. "
+    sin_monto = sum(1 for l in lista if l.get("monto_estimado") is None) if (monto_min or monto_max) else 0
+    st.caption(f"{len(lista)} de {len(todas)} abiertas · {comun.evaluadas_texto(con_precio, con_precio)}, "
+               f"{con_decision} con decisión (las demás: ⚪ falta precio). "
+               + (f"Incluye {sin_monto} sin monto informado (el filtro de monto no las descarta). " if sin_monto else "")
+               + "💲 = tiene precios de tiendas. "
                + ("🚫 = 1er llamado, no puedes cotizarla. " if bloqueadas else "")
-               + "Toca una fila para ver el detalle, con el organismo, los ítems y el link a Mercado Público.")
+               + "Marca la casilla a la izquierda de una fila para ver el detalle, con el organismo, los ítems y el "
+                 "link a Mercado Público.")
+    if not lista:
+        primeras = [l for l in todas if l.get("llamado") == 1]
+        if compra_agil and llamado == 2 and primeras:
+            st.info(f"Ninguna Compra Ágil del 2º llamado ahora. Hay {len(primeras)} de 1er llamado (solo para "
+                    "empresas de menor tamaño: puedes verlas, pero no cotizarlas).", icon="ℹ️")
+            st.button("Ver las de 1er llamado", icon="👀", key="ca_ver_primeras",
+                      on_click=lambda: st.session_state.update(ca_llamado="Todos"))
+        else:
+            st.info("Sin resultados con esta búsqueda y estos filtros. Prueba con menos palabras o quita filtros "
+                    "(Decisión, Compra y venta directa, Más filtros).", icon="🔍")
+        return
     filas = []
     for l in lista:
         marca = ("🚫 " if bloqueadas and solo_emt(l) else "") + ("💲 " if l["codigo"] in prep["mercado"] else "")

@@ -151,7 +151,11 @@ def filtrar(lics: list[dict], *, texto: str = "", compra_agil: bool | None = Non
         if palabras:
             buscable = normalizar(" ".join(str(lic.get(k) or "") for k in
                                            ("codigo", "nombre", "organismo", "palabras_detectadas", "comuna")))
-            if not all(p in buscable for p in palabras):
+            # Cada palabra tiene que ser el comienzo de una palabra de la licitación («silla» encuentra
+            # «sillas», pero «or» ya no encuentra «mayor» ni «computador»). El código completo también vale.
+            tokens = buscable.split()
+            if not (normalizar(texto) in buscable and len(palabras) > 1
+                    or all(any(t.startswith(p) for t in tokens) for p in palabras)):
                 continue
         if rubros and lic.get("rubro_nombre") not in rubros:
             continue

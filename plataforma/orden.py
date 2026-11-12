@@ -152,7 +152,9 @@ def _datos() -> dict:
 def _faltan_texto(faltan: list[str], tipo: str) -> list[str]:
     nombres = {f"comprador.{c}": f"Comprador: {e}" for e, c in CAMPOS_COMPRADOR[tipo]}
     nombres |= {f"proveedor.{c}": f"Proveedor: {e}" for e, c in PROVEEDOR}
-    nombres |= {"numero": "Número de la orden", "fecha": "Fecha", "items": "Al menos un ítem"}
+    nombres |= {"numero": "Número de la orden", "fecha": "Fecha", "items": "Al menos un ítem",
+                "comprador.rut_invalido": "Comprador: el RUT no es válido (revisa el dígito verificador)",
+                "proveedor.rut_invalido": "Proveedor: el RUT no es válido (revisa el dígito verificador)"}
     texto = []
     for f in faltan:
         if f.startswith("items["):
@@ -191,7 +193,9 @@ def pagina() -> None:
                              help="Si compras cada línea en una tienda distinta, haz una orden por tienda.")
         c.button("Cargar ítems", type="primary", disabled=not codigo, width="stretch", on_click=_cargar_licitacion,
                  args=(codigo, None if tienda == "Todas las líneas" else tienda))
-        st.file_uploader("O sube una orden guardada (.json)", type="json", key="subir_oc", on_change=_cargar_json)
+        st.file_uploader("O sube una orden guardada (.json)", type="json", key="subir_oc", on_change=_cargar_json,
+                         help="Arrastra aquí el archivo .json que guardaste con «Guardar datos», o haz clic para "
+                              "elegirlo (el botón del recuadro dice «Upload»: Streamlit no lo traduce).")
 
     st.subheader("Orden")
     a, b, c = st.columns(3)
@@ -251,21 +255,25 @@ def pagina() -> None:
     k[2].metric("Total", comun.clp(t["total"]))
     k[3].metric("Ítems", len(datos["items"]))
     faltan = validar(datos)
+    borrador = True
     if faltan:
-        st.warning("Falta completar (la orden se descarga igual, con esas celdas vacías): "
-                   + "; ".join(_faltan_texto(faltan, datos["comprador"]["tipo"])) + ".")
+        st.warning("Falta completar o corregir: " + "; ".join(_faltan_texto(faltan, datos["comprador"]["tipo"])) + ".")
+        borrador = st.checkbox("Descargar igual, como borrador incompleto", key="borrador_oc",
+                               help="Para enviarla al proveedor, completa primero lo que falta.")
+    listo = not faltan or borrador
 
     numero = datos["numero"] or "orden"
     a, b, c = st.columns(3)
-    a.download_button("Descargar Excel", orden_xlsx(datos), f"{numero}.xlsx", icon="📥", type="primary", width="stretch",
+    a.download_button("Descargar Excel", orden_xlsx(datos) if listo else b"", f"{numero}.xlsx", icon="📥",
+                      type="primary", width="stretch", disabled=not listo,
                       mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
     b.download_button("Guardar datos (.json)", json.dumps(datos, ensure_ascii=False, indent=2), f"{numero}.json",
                       "application/json", icon="💾", width="stretch",
                       help="Para retomarla después con «sube una orden guardada». Trae tus datos personales.")
     if shutil.which("soffice") or shutil.which("libreoffice"):
-        if c.button("Preparar PDF", icon="🖨️", width="stretch"):
+        if c.button("Preparar PDF", icon="🖨️", width="stretch", disabled=not listo):
             st.session_state["oc_pdf"] = (numero, _pdf(datos))
-        if st.session_state.get("oc_pdf", (None,))[0] == numero:
+        if listo and st.session_state.get("oc_pdf", (None,))[0] == numero:
             c.download_button("Descargar PDF", st.session_state["oc_pdf"][1], f"{numero}.pdf", "application/pdf",
                               icon="📄", width="stretch")
     else:

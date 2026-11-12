@@ -496,3 +496,84 @@ def test_aviso_si_las_compras_agiles_no_avanzan():
     assert compras_agiles_atrasadas({"compras_agiles_listado_hasta": "2026-11-10T02:00:00"}, ahora) is None
     assert compras_agiles_atrasadas({}, ahora) is None and compras_agiles_atrasadas(None, ahora) is None
     assert compras_agiles_atrasadas({"compras_agiles_listado_hasta": "no es fecha"}, ahora) is None
+
+
+# --- Informe de pruebas del 11-11 ------------------------------------------------------------------
+
+def _app(tmp_path, monkeypatch, modulo, funcion):
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    datos = _datos()
+    for lic in datos["licitaciones"]:
+        lic["fecha_cierre"] = "2099-01-01 12:00:00"
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    return AppTest.from_function(_pagina, args=(modulo, funcion, str(RAIZ)), default_timeout=60)
+
+
+def test_busqueda_por_comienzo_de_palabra_y_por_codigo():
+    lics = preparar(_datos(), AHORA)["licitaciones"]
+    codigos = lambda texto: [l["codigo"] for l in filtrar(lics, texto=texto)]  # noqa: E731
+    assert codigos("' OR 1") == []                      # «or» y «1» ya no calzan con trozos de otras palabras
+    assert codigos("mochila") == ["2-2-COT26"] and codigos("utiles") == ["4-4-LE26"]
+    assert codigos("2-2-COT26") == ["2-2-COT26"] and codigos("zzzzqq") == []
+
+
+def test_monto_minimo_mayor_que_el_maximo_avisa_y_no_filtra(tmp_path, monkeypatch):
+    at = _app(tmp_path, monkeypatch, "explorar", "licitaciones").run()
+    total = len(at.dataframe[0].value)
+    at.number_input(key="lic_min").set_value(5_000_000)
+    at.number_input(key="lic_max").set_value(1_000_000).run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert any("mínimo es mayor que el máximo" in w.value for w in at.warning)
+    assert len(at.dataframe[0].value) == total
+
+
+def test_sin_resultados_lo_dice_en_vez_de_una_tabla_vacia(tmp_path, monkeypatch):
+    at = _app(tmp_path, monkeypatch, "explorar", "licitaciones").run()
+    at.text_input(key="lic_texto").set_value("zzzzqq").run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert not at.dataframe and any("Sin resultados" in i.value for i in at.info)
+
+
+def test_compras_agiles_sin_2o_llamado_ofrece_ver_las_de_1er_llamado(tmp_path, monkeypatch):
+    at = _app(tmp_path, monkeypatch, "explorar", "compras_agiles").run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert any("Hay 1 de 1er llamado" in i.value for i in at.info) and not at.dataframe
+    next(b for b in at.button if b.label == "Ver las de 1er llamado").click().run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert list(at.dataframe[0].value["Código"]) == ["2-2-COT26"]
+
+
+def test_evaluacion_con_lineas_sin_precio_muestra_cifras_parciales(tmp_path, monkeypatch):
+    at = _app(tmp_path, monkeypatch, "evaluar", "pagina")
+    at.session_state["codigo"] = "1-1-LE26"
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    etiquetas = {m.label: m.value for m in at.metric}
+    assert "Oferta sugerida c/IVA · parcial (1 de 2 líneas)" in etiquetas
+    assert "Margen neto · parcial (1 de 2 líneas)" in etiquetas
+    assert etiquetas["Prob. de adjudicación"] == "—"               # falta precio: sin decisión
+
+
+def test_ranking_sin_filtro_de_decision_muestra_todas(tmp_path, monkeypatch):
+    at = _app(tmp_path, monkeypatch, "evaluar", "pagina").run()
+    vista = at.segmented_control(key="eval_vista")
+    vista.set_value(vista.options[1]).run()
+    assert not at.exception, [e.value for e in at.exception]
+    at.multiselect(key="rank_dec").set_value([]).run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert any(c.value.startswith("1 evaluada (con al menos un precio)") for c in at.caption)
+    assert len(at.dataframe[0].value) == 1
+
+
+def test_evaluacion_avisa_oferta_bajo_el_equilibrio_o_sobre_el_monto():
+    from radar.evaluacion import NO_GO
+    lic = _lic("1-1-LE26", monto_estimado=100_000)
+    items = _datos()["items"][:2]
+    ops = opciones(items, [{"linea": 1, "precio_unitario_neto": 40_000, "coincidencia": "exacta", "verificado": True}])
+    _, ev = evaluar_licitacion(lic, items, ops, {}, 0.20, 0.05)
+    assert ev.decision == NO_GO
+    assert any("Calculado con precio para 1 de 2 líneas" in r for r in ev.razones)

@@ -123,3 +123,16 @@ def test_textos_con_igual_quedan_como_texto():
     assert len(textos) == 2 and all(c.data_type == "s" for c in textos)
     # Las fórmulas de la planilla siguen siendo fórmulas.
     assert any(c.data_type == "f" for fila in ws.iter_rows() for c in fila)
+
+
+def test_rut_con_digito_verificador():
+    from radar.orden_proveedor import rut_valido
+    for bueno in ("76.000.000-0", "76000000-0", "11.111.111-1", "1-9", "10.000.013-k", "10000013K"):
+        assert rut_valido(bueno), bueno
+    for malo in ("abc", "<b>1</b>", "12345678901234567890", "76.000.000-1", "0-0", "", None, "11.111.111"):
+        assert not rut_valido(malo), malo
+
+
+def test_validar_marca_el_rut_mal_escrito_aunque_el_campo_no_este_vacio():
+    faltan = validar(_datos(proveedor={"razon_social": "Proveedor SpA", "rut": "abc"}))
+    assert faltan == ["proveedor.rut_invalido"]

@@ -424,6 +424,7 @@ def panel_correo(lic: dict, items: list[dict], proveedores: list[dict]) -> None:
     todas = list(productos)
     defecto = [x for x in elegido.get("lineas") or [] if x in productos] or todas
     lineas = b.multiselect("Líneas a cotizar", todas, default=defecto, key=f"cot_lineas_{quien}",
+                           placeholder="Elige las líneas",
                            format_func=lambda x: f"{x} · {productos[x][:40]}")
     firma = remitente()
     correo = prov.solicitud(lic, items, elegido, firma, hoy_chile(), lineas)
