@@ -112,6 +112,11 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- 2026-11-13 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:41 y
+  11:54; datos del 13-11 08:51, 456 licitaciones, 132 Compras Ágiles; API de Compras Ágiles con HTTP 429 por tercer día,
+  listado al 12-11 17:30). Lote de 8 nuevas, 7 no cotizables por línea (guardadas con nota); 1490609-5-LE26 1/4 (TV).
+  4 cerradas archivadas. Top sin cambio: 1171142-118-LE26 y 4042-10-CO26 (GO con condiciones) y 3191-128-LE26.
+
 - 2026-11-12 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:12 y
   11:51; datos del 12-11 08:50, 457 licitaciones, 247 Compras Ágiles; la API de Compras Ágiles sigue con HTTP 429,
   listado al 11-11 16:44). Lote de 8 nuevas: 1171142-118-LE26 calzado de seguridad (4/4, **GO con condiciones**:

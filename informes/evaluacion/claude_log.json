@@ -394,5 +394,23 @@
   "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (ot",
   "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 3996-45-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO",
   "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-13",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "588 vigentes; 20 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 12 falta precio, 6 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 7 ítems sin precio de mercado; 4 de 4 prec",
+  "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO",
+  "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-13",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 nuevas, casi todas no cotizables por línea: juguetes por rango de edad (3516-54, 2288-34), tóner agrupados (3948-59), equipos según formulario (1057822-60), kits de iluminación (1316747-39), postes de señalética (2263-98) y mobiliario urbano (928-29). Solo 1490609-5-LE26 tuvo un precio (TV 50\" LG 99.990). Todas guardadas con nota para no repetirlas. 4 cerradas archivadas.",
+  "resultado": "2 GO con condiciones sin cambio: 1171142-118-LE26 calzado de seguridad (cierra 19-11) y 4042-10-CO26 vestuario (cierra 16-11). 12 con falta de precio y 6 NO GO.",
+  "riesgos": "API de Compras Ágiles con HTTP 429 por tercer día (listado al 12-11 17:30).",
+  "decisiones": "Top 3: 1171142-118-LE26, 4042-10-CO26 y 3191-128-LE26.",
+  "recomendaciones": "Prioridad: cotizar el calzado de seguridad de 1171142-118-LE26 (cierra el 19-11) con Norseg/Forus y Comercial Macme. Para 4042-10-CO26 confirmar el presupuesto en las bases antes del 16-11."
  }
 ]

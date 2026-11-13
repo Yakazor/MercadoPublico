@@ -1,6 +1,6 @@
 # Evaluación comercial de licitaciones
 
-Actualizado: 2026-11-12. 704 oportunidades vigentes en el Excel, 22 con precios de mercado evaluadas: 0 GO, 2 GO con condiciones, 12 con falta de precio (menos del 80 % de las líneas) y 8 NO GO.
+Actualizado: 2026-11-13. 588 oportunidades vigentes en el Excel, 20 con precios de mercado evaluadas: 0 GO, 2 GO con condiciones, 12 con falta de precio (menos del 80 % de las líneas) y 6 NO GO.
 
 - [Excel con todas las licitaciones, la evaluación y el Claude Log](Licitaciones_evaluadas.xlsx)
 
@@ -14,10 +14,10 @@ Actualizado: 2026-11-12. 704 oportunidades vigentes en el Excel, 22 con precios 
 | [1562-90-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1562-90-LE26) ELEMENTOS DE PROTECCION PERSONAL SERNAGEOMIN | 2026-11-20 | $17.404.479 | $58.100.000 | 17 % | Bajo | 35% | ⚪ FALTA PRECIO | [informe](licitaciones/1562-90-LE26_informe.md) · [GO/NO GO](licitaciones/1562-90-LE26_go_no_go.md) · [correos](licitaciones/1562-90-LE26_correos.md) |
 | [2048-94-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=2048-94-LE26) Adquisición de contenedores de basura para el Nuevo Hospital | 2026-11-16 | $26.311.535 | — | 11 % | Medio | 25% | ⚪ FALTA PRECIO | [informe](licitaciones/2048-94-LE26_informe.md) · [GO/NO GO](licitaciones/2048-94-LE26_go_no_go.md) · [correos](licitaciones/2048-94-LE26_correos.md) |
 | [5420-26-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=5420-26-LE26) Adquisición de equipos periféricos | 2026-11-16 | $11.954.117 | $49.300.000 | 11 % | Medio | 55% | ⚪ FALTA PRECIO | [informe](licitaciones/5420-26-LE26_informe.md) · [GO/NO GO](licitaciones/5420-26-LE26_go_no_go.md) · [correos](licitaciones/5420-26-LE26_correos.md) |
-| [3996-45-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=3996-45-LE26) Adquisición de Equipos Computacionales y Periféricos | 2026-11-13 | $7.099.434 | $13.670.000 | 14 % | Alto | 35% | ⚪ FALTA PRECIO | [informe](licitaciones/3996-45-LE26_informe.md) · [GO/NO GO](licitaciones/3996-45-LE26_go_no_go.md) · [correos](licitaciones/3996-45-LE26_correos.md) |
 | [1427185-2-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1427185-2-LE26) EPP Y E. LOGÍSTICOS H. LA SERENA Y H. COQUIMBO | 2026-11-24 | $15.646.780 | — | 13 % | Medio | 15% | ⚪ FALTA PRECIO | [informe](licitaciones/1427185-2-LE26_informe.md) · [GO/NO GO](licitaciones/1427185-2-LE26_go_no_go.md) · [correos](licitaciones/1427185-2-LE26_correos.md) |
 | [4809-75-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=4809-75-LE26) MATERIALES DE FERRETERIA | 2026-11-17 | $6.848.961 | $10.001.950 | 12 % | Alto | 35% | ⚪ FALTA PRECIO | [informe](licitaciones/4809-75-LE26_informe.md) · [GO/NO GO](licitaciones/4809-75-LE26_go_no_go.md) · [correos](licitaciones/4809-75-LE26_correos.md) |
 | [1028-51-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1028-51-LE26) Elementos de protección personal CAD | 2026-11-16 | $7.242.462 | — | 15 % | Medio | 15% | ⚪ FALTA PRECIO | [informe](licitaciones/1028-51-LE26_informe.md) · [GO/NO GO](licitaciones/1028-51-LE26_go_no_go.md) · [correos](licitaciones/1028-51-LE26_correos.md) |
+| [979-77-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=979-77-LE26) Adquisición de elementos de protección personal | 2026-11-17 | $1.689.299 | $7.572.906 | 13 % | Medio | 55% | ⚪ FALTA PRECIO | [informe](licitaciones/979-77-LE26_informe.md) · [GO/NO GO](licitaciones/979-77-LE26_go_no_go.md) · [correos](licitaciones/979-77-LE26_correos.md) |
 
 ## Qué hacer ahora
 

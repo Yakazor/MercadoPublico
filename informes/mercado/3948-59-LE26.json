@@ -1,0 +1,49 @@
+{
+ "codigo": "3948-59-LE26",
+ "nombre": "ADQUISICIÓN TINTAS TÓNER E INSUMOS PARA IMPRESORA",
+ "fecha_consulta": "2026-11-13",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "LINEA 1:Toner TN 419 Brother o similar",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  },
+  {
+   "linea": 2,
+   "producto": "LINEA 2:Tintas LC 3017 Brother o similar",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  },
+  {
+   "linea": 3,
+   "producto": "LINEA 3:Distintos tipos de toner",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  },
+  {
+   "linea": 4,
+   "producto": "LINEA 4:Tintas BT5001 Y BTD60 Brother o similar",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  },
+  {
+   "linea": 5,
+   "producto": "LINEA 5:Toner TN 217 Brother o similar",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  },
+  {
+   "linea": 6,
+   "producto": "LINEA 6:Toner TN 617 Brother o similar",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  },
+  {
+   "linea": 7,
+   "producto": "LINEA 7:Repuestos impresora",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios tóner/tintas (cantidades en bases)."
+  }
+ ]
+}

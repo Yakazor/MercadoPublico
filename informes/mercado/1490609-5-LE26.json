@@ -1,0 +1,45 @@
+{
+ "codigo": "1490609-5-LE26",
+ "nombre": "ADQUISICIÓN DE TELEVISORES INTELIGENTES MÁQUINAS DE CORTE Y GRABADO LÁSER Y ESTUFAS A COMBUSTIÓN LENTA DIRECCIÓN REGIONAL DE LA ARAUCANÍA DEL SERVICIO DE BIODIVERSIDAD Y ÁREAS PROTEGIDAS",
+ "fecha_consulta": "2026-11-13",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Televisor inteligente de uso institucional de 50 pulgadas",
+   "opciones": [
+    {
+     "tienda": "Falabella (LG Electronics Chile)",
+     "producto_mercado": "Smart TV 50\" LG NANO 4K UHD AI NU85 2026",
+     "url": "https://www.falabella.com/falabella-cl/product/155093745/smart-tv-50-lg-nano-4k-uhd-ai-nu85-2026",
+     "precio": 299990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 252092.44,
+     "coincidencia": "equivalente",
+     "nota": "«Uso institucional»: confirmar requisitos en bases.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-13"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "AlgoLaser Pixi 3 W o equivalente técnico",
+   "opciones": [],
+   "nota": "Sin precio en Chile: AlgoLaser Pixi solo en USD en el sitio del fabricante; «Patagonia Alcázar» no identificado."
+  },
+  {
+   "linea": 3,
+   "producto": "Tipo, modelo marca Línea Patagonia Alcázar  480 o equivalente técnico",
+   "opciones": [],
+   "nota": "Sin precio en Chile: AlgoLaser Pixi solo en USD en el sitio del fabricante; «Patagonia Alcázar» no identificado."
+  },
+  {
+   "linea": 4,
+   "producto": "Tipo modelo marca, Línea Patagonia Alcázar 380 o equivalente técnico",
+   "opciones": [],
+   "nota": "Sin precio en Chile: AlgoLaser Pixi solo en USD en el sitio del fabricante; «Patagonia Alcázar» no identificado."
+  }
+ ]
+}
