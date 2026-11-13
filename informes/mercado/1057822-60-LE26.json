@@ -33,5 +33,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: equipos «según formulario adjunto» (especificación en bases)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-13",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -27,5 +27,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: cada línea es un kit completo (paneles, cintas, cabezas móviles, baterías); monto bajo ( M)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-13",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

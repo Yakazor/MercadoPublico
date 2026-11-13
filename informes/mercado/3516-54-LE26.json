@@ -63,5 +63,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: cada línea es un lote de juguetes por rango de edad y sexo (contenido en bases)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-13",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

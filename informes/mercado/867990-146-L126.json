@@ -21,7 +21,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-07",
      "precio_pagina": 74990.0,
-     "verificacion_pagina": "2026-11-12: la página abrió y el precio más parecido es $74.990, no $65.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-13: la página abrió y el precio más parecido es $74.990, no $65.990: puede haber cambiado."
     },
     {
      "tienda": "Lider (envío desde EE.UU.)",
@@ -37,8 +37,8 @@
      "verificado": true,
      "fecha_consulta": "2026-11-07",
      "precio_pagina": 46990.0,
-     "verificacion_pagina": "2026-11-12: la página muestra $46.990.",
-     "verificado_en": "2026-11-12"
+     "verificacion_pagina": "2026-11-13: la página muestra $46.990.",
+     "verificado_en": "2026-11-13"
     }
    ]
   },
@@ -101,9 +101,9 @@
      "nota": "99,7 % (se pide 99,9 %); precio con descuento del listado.",
      "verificado": true,
      "fecha_consulta": "2026-11-07",
-     "verificado_en": "2026-11-12",
+     "verificado_en": "2026-11-13",
      "precio_pagina": 4590.0,
-     "verificacion_pagina": "2026-11-12: la página muestra $4.590."
+     "verificacion_pagina": "2026-11-13: la página muestra $4.590."
     },
     {
      "tienda": "Easy (Química Universal)",
@@ -118,7 +118,7 @@
      "nota": "Pureza por confirmar.",
      "verificado": false,
      "fecha_consulta": "2026-11-07",
-     "verificacion_pagina": "2026-11-12: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-13: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -148,7 +148,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-12",
+  "fecha": "2026-11-13",
   "opciones": 4,
   "verificadas": 2
  }

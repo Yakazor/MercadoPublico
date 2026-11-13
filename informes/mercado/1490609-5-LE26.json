@@ -18,8 +18,11 @@
      "precio_unitario_neto": 252092.44,
      "coincidencia": "equivalente",
      "nota": "«Uso institucional»: confirmar requisitos en bases.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-13"
+     "verificado": true,
+     "fecha_consulta": "2026-11-13",
+     "verificado_en": "2026-11-13",
+     "precio_pagina": 299989.0,
+     "verificacion_pagina": "2026-11-13: la página muestra $299.989."
     }
    ]
   },
@@ -41,5 +44,10 @@
    "opciones": [],
    "nota": "Sin precio en Chile: AlgoLaser Pixi solo en USD en el sitio del fabricante; «Patagonia Alcázar» no identificado."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-13",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

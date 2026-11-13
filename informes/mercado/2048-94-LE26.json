@@ -26,9 +26,9 @@
      "nota": "Basurero clínico: confirmar especificación.",
      "verificado": true,
      "fecha_consulta": "2026-11-12",
-     "verificado_en": "2026-11-12",
+     "verificado_en": "2026-11-13",
      "precio_pagina": 25000.0,
-     "verificacion_pagina": "2026-11-12: la página muestra $25.000."
+     "verificacion_pagina": "2026-11-13: la página muestra $25.000."
     }
    ]
   },
@@ -49,9 +49,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-12",
-     "verificado_en": "2026-11-12",
+     "verificado_en": "2026-11-13",
      "precio_pagina": 16490.0,
-     "verificacion_pagina": "2026-11-12: la página muestra $16.490."
+     "verificacion_pagina": "2026-11-13: la página muestra $16.490."
     }
    ]
   },
@@ -78,15 +78,15 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-12",
-     "verificado_en": "2026-11-12",
+     "verificado_en": "2026-11-13",
      "precio_pagina": 44990.0,
-     "verificacion_pagina": "2026-11-12: la página muestra $44.990."
+     "verificacion_pagina": "2026-11-13: la página muestra $44.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-12",
+  "fecha": "2026-11-13",
   "opciones": 3,
   "verificadas": 3
  }
