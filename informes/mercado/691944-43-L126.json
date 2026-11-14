@@ -1,0 +1,161 @@
+{
+ "codigo": "691944-43-L126",
+ "nombre": "Adquisición materiales de ferretería ",
+ "fecha_consulta": "2026-11-14",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Perfil metalico 40x20x2mm",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil rectangular 40x20x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/perfil-40-x-20-x-2",
+     "precio": 10710,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9000.0,
+     "coincidencia": "exacta",
+     "nota": "Precio de la búsqueda del 11-11 (licitación 691944-40).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Perfil metalico 80x40x2mm",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Perfil rectangular acero 80x40x2 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110294780/perfil-rectangular-acero-80x40x2-mm-6-m/110294783",
+     "precio": 24250,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20378.15,
+     "coincidencia": "exacta",
+     "nota": "Precio de la búsqueda del 11-11 (licitación 691944-40).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Kg Electrodo 6011 3/32 punta azul",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Bauker)",
+     "producto_mercado": "Electrodo 6011 1/8\" 1 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/343609/electrodo-6011-1-8-1-kg",
+     "precio": 3594,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3020.17,
+     "coincidencia": "aproximada",
+     "nota": "Se pide 3/32\". Precio de la búsqueda del 11-11 (licitación 691944-40).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Caja Autoperforante cabeza de lenteja 8x1 5/8, zincado",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 5,
+   "producto": "Tineta Desmoldante del tipo Sikaform o similar tecnico",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 6,
+   "producto": "Kg Alambre N°18, recocido",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Inchalam)",
+     "producto_mercado": "Alambre negro recocido #18 5 kg",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110308560/-18-5-kg-Alambre-negro-recocido/110308563",
+     "precio": 10790,
+     "iva_incluido": true,
+     "contenido": "5 kg",
+     "unidades_equivalentes": 5,
+     "precio_unitario_neto": 1813.45,
+     "coincidencia": "exacta",
+     "nota": "Precio de la búsqueda del 11-11 (licitación 691944-40).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "tornillos 3\" (caja 100 unidades)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 8,
+   "producto": "Malla faenera(1x45m)",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 9,
+   "producto": "Tira Fierro de construcción estriado de 10mm A 44",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 10,
+   "producto": "Kg Puente adherente (del tipo colmafix 32) para hormigón",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 11,
+   "producto": "Tira Fierro de construcción estriado de 12mm A 44",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Fierro A-63 12 mm 6 m",
+     "url": "https://www.sodimac.cl/sodimac-cl/b/fierro-estriado-12-mm",
+     "precio": 6058,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5090.76,
+     "coincidencia": "aproximada",
+     "nota": "Se pide A44. Precio de la búsqueda del 11-11 (licitación 691944-40).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-11"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Tiras Tubería hidráulica PVC 75mm PN6",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 13,
+   "producto": "Rollo Cinta water stop (15mts)  0-15 o similar técnico",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  },
+  {
+   "linea": 14,
+   "producto": "caja de Sellante asfaltico sellante en base a poliuretano paté AKfix 600 ml o similar técnico",
+   "opciones": [],
+   "nota": "Sin precio en tiendas en la búsqueda del 11-11; pedir cotización."
+  }
+ ]
+}

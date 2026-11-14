@@ -1,0 +1,59 @@
+{
+ "codigo": "2658-368-L126",
+ "nombre": "PINTURA Y OTROS",
+ "fecha_consulta": "2026-11-14",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Pintura alto tráfico equivalente a EPOTHAN EPOTRAF 6020 acrílica color blanca, 4GL.",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Ceresita)",
+     "producto_mercado": "Pintura demarcación vial 4 gl",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG36095/Pintura-de-alto-trafico",
+     "precio": 135490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 113857.14,
+     "coincidencia": "aproximada",
+     "nota": "Color blanco por confirmar; equivalente a Epotraf 6020 por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-14"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Pintura de alto tráfico equivalente a EPOTHAN EPOTRAF 6020 acrílica color amarillo, 4 GL",
+   "opciones": [
+    {
+     "tienda": "Sodimac (Lanco)",
+     "producto_mercado": "Pintura de demarcación vial 4 galones amarillo",
+     "url": "https://www.sodimac.cl/sodimac-cl/lista/CATG36095/Pintura-de-alto-trafico",
+     "precio": 179990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 151252.1,
+     "coincidencia": "equivalente",
+     "nota": "Equivalencia con Epotraf 6020 por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-14"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Diluyente tráfico equivalente a EPOTHAN DSS 06 tineta 19 litros.",
+   "opciones": [],
+   "nota": "Sin precio en la búsqueda del 14-11."
+  },
+  {
+   "linea": 4,
+   "producto": "Brocha equivalente a marca HELA de 3 pulgadas.",
+   "opciones": [],
+   "nota": "Sin precio en la búsqueda del 14-11."
+  }
+ ]
+}

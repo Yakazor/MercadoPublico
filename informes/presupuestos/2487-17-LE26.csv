@@ -1,0 +1,22 @@
+﻿codigo;linea;producto;descripcion;categoria;cantidad;unidad;ref_producto;ref_mediana;ref_p25;ref_p75;ref_n_ordenes;ref_similitud;tienda;producto_mercado;url;fecha_consulta;coincidencia;verificado;unidad_global;costo_unitario_neto;oferta_unitaria_neta;subtotal_costo;subtotal_oferta;referencia_comparable;referencia_confiable;margen_vs_referencia
+2487-17-LE26;1;Medidores de fase;"Medidor de resistencia de puesta a tierra
+- Cantidad: 1
+- Modelo de referencia: UNI-T UT522 o equivalente técnico, ver especificaciones técnicas en archivo adjunto.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Instrumentos de medición eléctrica;1,0;Unidad;;;;;;;;;;;;;False;;;;;;;
+2487-17-LE26;2;Medidores de fase;"Medidor de resistencia de puesta a tierra tipo pinza.
+- Cantidad: 1
+- Modelo de referencia: UNI-T UT278A+ o equivalente técnico, ver especificaciones técnicas adjuntas en archivo PDF.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Instrumentos de medición eléctrica;1,0;Unidad;;;;;;;;;;;;;False;;;;;;;
+2487-17-LE26;3;Probadores de resistencia;"Medidor de resistencia interna de baterías
+- Cantidad: 2
+- Modelo de referencia: UNI-T UT677A+ o equivalente técnico, ver especificaciones técnicas adjuntas en archivo PDF.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Instrumentos de medición para metales, metalurgia y materiales estructurales;2,0;Unidad;;;;;;;;;;;;;False;;;;;;;
+2487-17-LE26;4;Medidores de voltaje o corriente;"Analizador de calidad de energía eléctrica
+- Cantidad: 1
+- Modelo de referencia: SONEL PQM-707 o equivalente técnico,ver especificaciones técnicas adjuntas en archivo PDF.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Instrumentos de medición eléctrica;1,0;Unidad;medidores de voltaje o corriente;13000,0;9000,0;47090,0;7,0;1,0;;;;;;;False;;;;;;;
+2487-17-LE26;5;Medidores de voltaje o corriente;"Comprobador de instalaciones multifunción con medidor de resistencia de aislamiento
+- Cantidad: 1
+- Modelo de referencia: UNI-T UT513A o equivalente técnico, ver especificaciones técnicas adjuntas en archivo PDF.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Instrumentos de medición eléctrica;1,0;Unidad;medidores de voltaje o corriente;13000,0;9000,0;47090,0;7,0;1,0;;;;;;;False;;;;;;;
+2487-17-LE26;6;Medidores de frecuencia eléctrica;"Osciloscopio digital
+- Cantidad: 1
+- Modelo de referencia: Hantek DSO2D15 o equivalente técnico, ver especificaciones técnicas adjuntas en archivo PDF.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Equipo de generación y medición de luz y ondas;1,0;Unidad;medidores de frecuencia electrica;184240,0;22000,0;697500,0;5,0;1,0;;;;;;;False;;;;;;;
+2487-17-LE26;7;Medidores de voltaje o corriente;"Amperímetro de tenaza digital
+- Cantidad: 3
+- Modelo de referencia: UNI-T UT219P o equivalente técnico, ver especificaciones técnicas adjuntas en archivo PDF.";Equipamiento para laboratorios / Instrumentos de medida y experimentación / Instrumentos de medición eléctrica;3,0;Unidad;medidores de voltaje o corriente;13000,0;9000,0;47090,0;7,0;1,0;;;;;;;False;;;;;;;

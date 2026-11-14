@@ -412,5 +412,23 @@
   "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 7 ítems sin precio de mercado; 4 de 4 prec",
   "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO; 979-77-LE26: FALTA PRECIO",
   "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-14",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "717 vigentes; 19 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 13 falta precio, 4 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (ot",
+  "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 691944-43-L126: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO",
+  "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-14",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 nuevas. Con precios: 691944-43-L126 ferretería Biobío (5/14, precios de Sodimac del 11-11 reutilizados por ser el mismo pedido que 691944-40) y 2658-368-L126 pintura de tráfico (2/4, NO GO). Sin precio en CLP: 2487-17-LE26 instrumentos UNI-T/Sonel/Hantek, 1233613-83-LE26 parlantes. No cotizables por línea o clínicos: 3946-38 juguetes por edad, 4591-26 neumáticos de maquinaria, 3934-68 insumos clínicos, 1485316-2 impresoras. Todas guardadas con nota. 6 cerradas archivadas.",
+  "resultado": "2 GO con condiciones sin cambio (1171142-118-LE26 calzado, cierra 19-11; 4042-10-CO26 vestuario, cierra 16-11), 13 con falta de precio y 4 NO GO.",
+  "riesgos": "La API de Compras Ágiles volvió a avanzar (listado al 14-11 07:36) pero sigue cortando con HTTP 429.",
+  "decisiones": "Top 3: 1171142-118-LE26, 4042-10-CO26 y 3191-128-LE26.",
+  "recomendaciones": "4042-10-CO26 cierra el lunes 16-11: decidir hoy o mañana tras revisar el presupuesto en las bases. 1171142-118-LE26 (19-11): pedir cotización de calzado por volumen."
  }
 ]
