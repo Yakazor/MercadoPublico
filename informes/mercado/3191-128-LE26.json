@@ -20,7 +20,7 @@
      "nota": "Juego doméstico/hotelero, no textil hospitalario según bases.",
      "verificado": false,
      "fecha_consulta": "2026-11-10",
-     "verificacion_pagina": "2026-11-13: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-14: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -62,7 +62,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "opciones": 1,
   "verificadas": 0
  }

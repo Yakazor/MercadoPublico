@@ -50,9 +50,9 @@
      "nota": "Precio del listado; la licitación pide muestra.",
      "verificado": true,
      "fecha_consulta": "2026-11-04",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 4190.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $4.190."
+     "verificacion_pagina": "2026-11-14: la página muestra $4.190."
     }
    ]
   },
@@ -91,9 +91,9 @@
      "nota": "Precio del listado.",
      "verificado": true,
      "fecha_consulta": "2026-11-04",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $11.990."
     }
    ]
   },
@@ -114,9 +114,9 @@
      "nota": "Precio del listado; la licitación pide muestra.",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $12.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $12.990."
     },
     {
      "tienda": "Lider (Andesland)",
@@ -131,9 +131,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 29990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $29.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $29.990."
     }
    ]
   },
@@ -156,7 +156,7 @@
      "fecha_consulta": "2026-11-03",
      "verificado_en": "2026-11-08",
      "precio_pagina": 2890.0,
-     "verificacion_pagina": "2026-11-13: la página abrió y el precio más parecido es $2.890, no $2.590: puede haber cambiado."
+     "verificacion_pagina": "2026-11-14: la página abrió y el precio más parecido es $2.890, no $2.590: puede haber cambiado."
     }
    ]
   },
@@ -183,15 +183,15 @@
      "nota": "Listado muestra .690–.290; se usa el menor, confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-05",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 5690.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $5.690."
+     "verificacion_pagina": "2026-11-14: la página muestra $5.690."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "opciones": 6,
   "verificadas": 5
  }

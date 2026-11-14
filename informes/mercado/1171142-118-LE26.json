@@ -20,9 +20,9 @@
      "nota": "Caña alta por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 56990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $56.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $56.990."
     }
    ]
   },
@@ -43,9 +43,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-12",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 19980.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $19.980."
+     "verificacion_pagina": "2026-11-14: la página muestra $19.980."
     },
     {
      "tienda": "Paris (BAY6)",
@@ -60,7 +60,7 @@
      "nota": "",
      "verificado": false,
      "fecha_consulta": "2026-11-12",
-     "verificacion_pagina": "2026-11-13: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-14: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -81,9 +81,9 @@
      "nota": "Caña alta por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-12",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 41990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $41.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $41.990."
     },
     {
      "tienda": "Sodimac (Norseg)",
@@ -98,9 +98,9 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-12",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 49990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $49.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $49.990."
     }
    ]
   },
@@ -121,15 +121,15 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-11",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 56990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $56.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $56.990."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "opciones": 6,
   "verificadas": 5
  }

@@ -26,9 +26,9 @@
      "nota": "Color blanco; se pide naranjo. Búsqueda del 04-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-04",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-14: la página muestra $11.990."
     }
    ]
   },
@@ -51,7 +51,7 @@
      "fecha_consulta": "2026-11-09",
      "verificado_en": "2026-11-12",
      "precio_pagina": 20990.0,
-     "verificacion_pagina": "2026-11-13: la página abrió y el precio más parecido es $20.990, no $19.980: puede haber cambiado."
+     "verificacion_pagina": "2026-11-14: la página abrió y el precio más parecido es $20.990, no $19.980: puede haber cambiado."
     }
    ]
   },
@@ -72,9 +72,9 @@
      "nota": "Búsqueda del 09-11.",
      "verificado": true,
      "fecha_consulta": "2026-11-09",
-     "verificado_en": "2026-11-13",
+     "verificado_en": "2026-11-14",
      "precio_pagina": 16580.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $16.580."
+     "verificacion_pagina": "2026-11-14: la página muestra $16.580."
     }
    ]
   },
@@ -110,7 +110,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "opciones": 3,
   "verificadas": 2
  }

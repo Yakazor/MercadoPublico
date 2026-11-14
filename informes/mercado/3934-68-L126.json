@@ -51,5 +51,10 @@
    "opciones": [],
    "nota": "Insumos clínicos y de esterilización: cotizar a distribuidor clínico."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-14",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

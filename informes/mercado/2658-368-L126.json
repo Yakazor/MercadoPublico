@@ -19,7 +19,9 @@
      "coincidencia": "aproximada",
      "nota": "Color blanco por confirmar; equivalente a Epotraf 6020 por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-14"
+     "fecha_consulta": "2026-11-14",
+     "precio_pagina": 139990.0,
+     "verificacion_pagina": "2026-11-14: la página abrió y el precio más parecido es $139.990, no $135.490: puede haber cambiado."
     }
    ]
   },
@@ -38,8 +40,11 @@
      "precio_unitario_neto": 151252.1,
      "coincidencia": "equivalente",
      "nota": "Equivalencia con Epotraf 6020 por confirmar.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-14"
+     "verificado": true,
+     "fecha_consulta": "2026-11-14",
+     "verificado_en": "2026-11-14",
+     "precio_pagina": 179990.0,
+     "verificacion_pagina": "2026-11-14: la página muestra $179.990."
     }
    ]
   },
@@ -55,5 +60,10 @@
    "opciones": [],
    "nota": "Sin precio en la búsqueda del 14-11."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-14",
+  "opciones": 2,
+  "verificadas": 1
+ }
 }

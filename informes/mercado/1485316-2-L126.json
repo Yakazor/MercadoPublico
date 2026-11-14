@@ -27,5 +27,10 @@
    "opciones": [],
    "nota": "Impresoras descritas por especificación («ver más detalle»): no se buscó."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-14",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

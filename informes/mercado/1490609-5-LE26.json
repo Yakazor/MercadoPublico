@@ -18,11 +18,11 @@
      "precio_unitario_neto": 252092.44,
      "coincidencia": "equivalente",
      "nota": "«Uso institucional»: confirmar requisitos en bases.",
-     "verificado": true,
+     "verificado": false,
      "fecha_consulta": "2026-11-13",
      "verificado_en": "2026-11-13",
-     "precio_pagina": 299989.0,
-     "verificacion_pagina": "2026-11-13: la página muestra $299.989."
+     "precio_pagina": 279990.0,
+     "verificacion_pagina": "2026-11-14: la página abrió y el precio más parecido es $279.990, no $299.990: puede haber cambiado."
     }
    ]
   },
@@ -46,8 +46,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "opciones": 1,
-  "verificadas": 1
+  "verificadas": 0
  }
 }

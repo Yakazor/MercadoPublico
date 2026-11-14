@@ -45,5 +45,10 @@
    "opciones": [],
    "nota": "Instrumentos UNI-T, Sonel y Hantek: sin precio en CLP en la búsqueda del 14-11 (solo USD/EUR o Mercado Libre sin precio visible); cotizar a distribuidor de instrumentación."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-14",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
