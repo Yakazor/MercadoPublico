@@ -1,0 +1,25 @@
+{
+ "codigo": "5067-188-L126",
+ "nombre": "CDP 94916 CC 111 - Adquisición de toldo tipo domo y telas para domos y toldos",
+ "fecha_consulta": "2026-11-15",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "TOLDO TIPO DOMO",
+   "opciones": [],
+   "nota": "No cotizable por línea: toldo domo y telas sin medidas ni especificaciones en la ficha (están en las bases); precio por confirmar."
+  },
+  {
+   "linea": 2,
+   "producto": "TELA PARA DOMO",
+   "opciones": [],
+   "nota": "No cotizable por línea: toldo domo y telas sin medidas ni especificaciones en la ficha (están en las bases); precio por confirmar."
+  },
+  {
+   "linea": 3,
+   "producto": "TELA PARA TOLDO",
+   "opciones": [],
+   "nota": "No cotizable por línea: toldo domo y telas sin medidas ni especificaciones en la ficha (están en las bases); precio por confirmar."
+  }
+ ]
+}

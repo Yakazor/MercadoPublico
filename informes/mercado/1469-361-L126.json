@@ -1,0 +1,25 @@
+{
+ "codigo": "1469-361-L126",
+ "nombre": "INSUMOS DE LABORATORIO PARA LA ESCUELA DE AGRONOMÍA",
+ "fecha_consulta": "2026-11-15",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Cilindro con recarga de nitrógeno",
+   "opciones": [],
+   "nota": "No cotizable por línea: insumos de cromatografía y recarga de nitrógeno sin modelo/compatibilidad definida; precio por confirmar con proveedor de laboratorio."
+  },
+  {
+   "linea": 2,
+   "producto": "Liner de inyección tipo Split/Splitless con lana de cuarzo para cromatógrafo de gases.",
+   "opciones": [],
+   "nota": "No cotizable por línea: insumos de cromatografía y recarga de nitrógeno sin modelo/compatibilidad definida; precio por confirmar con proveedor de laboratorio."
+  },
+  {
+   "linea": 3,
+   "producto": "Férula compacta para sistemas de cromatografía de gases (GC) y columnas capilares.",
+   "opciones": [],
+   "nota": "No cotizable por línea: insumos de cromatografía y recarga de nitrógeno sin modelo/compatibilidad definida; precio por confirmar con proveedor de laboratorio."
+  }
+ ]
+}

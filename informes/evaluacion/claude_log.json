@@ -430,5 +430,23 @@
   "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (ot",
   "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 691944-43-L126: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO",
   "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-15",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "2296 vigentes; 20 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 13 falta precio, 5 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 ítems sin precio de mercado; 3 de 11 ítems sin precio de mercado; 3 de 3 precios son de productos aproximados (ot",
+  "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 4042-10-CO26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 2048-94-LE26: FALTA PRECIO; 5420-26-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 691944-43-L126: FALTA PRECIO; 1028-51-LE26: FALTA PRECIO",
+  "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **4042-10-CO26**: 🟡 GO CON CONDICIONES. Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **2048-94-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-15",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote de 8 nuevas. Con precios: 5148-18-LP26 discos duros externos (3/4 líneas: 1 TB Falabella, 2 TB Notebookstore, 4 TB Paris/Notebookstore; 18–22 TB sin precio en CLP). No cotizables por línea, guardadas con nota: 2277-58 libros Navidad, 2663-110 juguetes y evento, 2354-43 vestuario escenográfico, 5067-188 toldo domo, 1316747-37 kits computacionales, 1469-361 insumos de cromatografía, 5052-40 vasos compostables.",
+  "resultado": "5148-18-LP26 NO GO: oferta neta $156,7 M supera el tope LP (2.000 UTM) y la mediana de OC por disco. Sin cambio: 2 GO con condiciones (1171142-118-LE26, 4042-10-CO26), 13 con falta de precio y 5 NO GO.",
+  "riesgos": "La API de Compras Ágiles volvió a responder (listado al 15-11 08:00, sin detención). Precios de discos tomados de buscador, sin verificar.",
+  "decisiones": "Top 3 sin cambio: 1171142-118-LE26, 4042-10-CO26 y 3191-128-LE26 (ya tienen proveedores).",
+  "recomendaciones": "4042-10-CO26 cierra mañana 16-11: decidir hoy tras revisar el presupuesto en las bases. 1171142-118-LE26 (19-11): pedir cotización de calzado por volumen."
  }
 ]

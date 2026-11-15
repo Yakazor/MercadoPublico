@@ -1,0 +1,90 @@
+{
+ "codigo": "5148-18-LP26",
+ "nombre": "ADQUISICIÓN DE DISCOS DUROS EXTERNOS",
+ "fecha_consulta": "2026-11-15",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Discos duros externos de 1 TB de capacidad",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Disco duro externo Toshiba Canvio Basics 1TB USB 3.0",
+     "url": "https://www.falabella.com/falabella-cl/shop/disco-duro-externo-1tb",
+     "precio": 99990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 84025.21,
+     "coincidencia": "exacta",
+     "nota": "Rango $84.990–$99.990 según vendedor (Techbox/Alcaplus); se toma el mayor. Por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-15"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 2,
+   "producto": "Discos duros externos de 2 TB de capacidad",
+   "opciones": [
+    {
+     "tienda": "Notebookstore",
+     "producto_mercado": "Seagate Expansion External Hard Drive 2TB USB",
+     "url": "https://notebookstore.cl/seagate-expansion-external-hard-drive-2-tb-usb",
+     "precio": 118990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 99991.6,
+     "coincidencia": "exacta",
+     "nota": "$114.944 con transferencia.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-15"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 3,
+   "producto": "Discos duros externos de 4 TB de capacidad",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Disco duro externo Western Digital Elements 4TB",
+     "url": "https://www.paris.cl/disco-duro-externo-western-digital-elements-4tb-MKONWE5I1T.html",
+     "precio": 139990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 117638.66,
+     "coincidencia": "exacta",
+     "nota": "Vendido por Tech Box (marketplace).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-15"
+    },
+    {
+     "tienda": "Notebookstore",
+     "producto_mercado": "Toshiba Canvio Advance 4TB",
+     "url": "https://notebookstore.cl/4tb-canvio-advance-white",
+     "precio": 156990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 131924.37,
+     "coincidencia": "exacta",
+     "nota": "$151.652 con transferencia.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-15"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 4,
+   "producto": "Discos duros externos entre 18 y 22 TB de capacidad",
+   "opciones": [],
+   "nota": "Sin precio en pesos chilenos para discos externos de 18–22 TB (solo referencias en EUR/MXN); precio por confirmar."
+  }
+ ]
+}

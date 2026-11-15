@@ -40,13 +40,13 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 2
-- **Viabilidad:** Media.
+- **Días para el cierre:** 1
+- **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
-- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de los Lagos: despacho caro y lento desde Santiago.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo CO admite hasta 1.000 UTM ($72.151.000).
 

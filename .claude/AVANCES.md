@@ -112,6 +112,8 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **15-11 (rutina):** radar disparado (datos 11:15/11:18; 468 licitaciones, 1828 Compras Ágiles). La API de Compras Ágiles volvió a responder (listado al 15-11 08:00, sin detención); ninguna de 2º llamado. Lote de 8: 5148-18-LP26 discos duros externos con precio en 3/4 líneas → NO GO (oferta neta $156,7 M sobre el tope LP de 2.000 UTM; 18–22 TB sin precio en CLP). Las otras 7 no son cotizables por línea y se guardaron con nota. Top 3 sin cambio (1171142-118-LE26, 4042-10-CO26, 3191-128-LE26). 570 tests OK.
+
 - 2026-11-14 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:42 y
   11:48; datos del 14-11 08:46, 467 licitaciones, 250 Compras Ágiles, ninguna de 2º llamado; el listado de Compras
   Ágiles volvió a avanzar hasta 14-11 07:36, aún con HTTP 429). Lote de 8 nuevas: 691944-43-L126 (5/14), 2658-368-L126

@@ -1,0 +1,25 @@
+{
+ "codigo": "2663-110-LE26",
+ "nombre": "ADQUISICIÓN DE JUGUETES PROGRAMA NAVIDAD 2026 Y SERVICIO DE PRODUCCIÓN DE EVENTOS",
+ "fecha_consulta": "2026-11-15",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "ITEM 1: ADQUISICIÓN DE JUGUETES, PROGRAMA NAVIDAD 2026, DE ACUERDO A LO INDICADO EN LAS BASES TECNICAS.",
+   "opciones": [],
+   "nota": "No cotizable por línea: ítems globales (juguetes, producción de evento, ornamentación) según bases técnicas; precio por confirmar."
+  },
+  {
+   "linea": 2,
+   "producto": "ITEM 2: SERVICIO DE PRODUCCIÓN INTEGRAL DE EVENTO, DE ACUERDO A LO INDICADO EN LAS BASES TECNICAS.",
+   "opciones": [],
+   "nota": "No cotizable por línea: ítems globales (juguetes, producción de evento, ornamentación) según bases técnicas; precio por confirmar."
+  },
+  {
+   "linea": 3,
+   "producto": "ÍTEM 3: ADQUISICIÓN DE ORNAMENTACIÓN PARA ACTIVIDAD NAVIDEÑA, DE ACUERDO A LO INDICADO EN LAS BASES TECNICAS.",
+   "opciones": [],
+   "nota": "No cotizable por línea: ítems globales (juguetes, producción de evento, ornamentación) según bases técnicas; precio por confirmar."
+  }
+ ]
+}
