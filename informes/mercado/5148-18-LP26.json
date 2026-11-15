@@ -18,8 +18,11 @@
      "precio_unitario_neto": 84025.21,
      "coincidencia": "exacta",
      "nota": "Rango $84.990–$99.990 según vendedor (Techbox/Alcaplus); se toma el mayor. Por confirmar.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-15"
+     "verificado": true,
+     "fecha_consulta": "2026-11-15",
+     "verificado_en": "2026-11-15",
+     "precio_pagina": 99990.0,
+     "verificacion_pagina": "2026-11-15: la página muestra $99.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -40,7 +43,9 @@
      "coincidencia": "exacta",
      "nota": "$114.944 con transferencia.",
      "verificado": false,
-     "fecha_consulta": "2026-11-15"
+     "fecha_consulta": "2026-11-15",
+     "precio_pagina": 149990.0,
+     "verificacion_pagina": "2026-11-15: la página abrió y el precio más parecido es $149.990, no $118.990: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -61,7 +66,8 @@
      "coincidencia": "exacta",
      "nota": "Vendido por Tech Box (marketplace).",
      "verificado": false,
-     "fecha_consulta": "2026-11-15"
+     "fecha_consulta": "2026-11-15",
+     "verificacion_pagina": "2026-11-15: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Notebookstore",
@@ -75,7 +81,9 @@
      "coincidencia": "exacta",
      "nota": "$151.652 con transferencia.",
      "verificado": false,
-     "fecha_consulta": "2026-11-15"
+     "fecha_consulta": "2026-11-15",
+     "precio_pagina": 149990.0,
+     "verificacion_pagina": "2026-11-15: la página abrió y el precio más parecido es $149.990, no $156.990: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -86,5 +94,10 @@
    "opciones": [],
    "nota": "Sin precio en pesos chilenos para discos externos de 18–22 TB (solo referencias en EUR/MXN); precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-15",
+  "opciones": 4,
+  "verificadas": 1
+ }
 }

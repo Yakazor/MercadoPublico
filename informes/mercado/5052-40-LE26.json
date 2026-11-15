@@ -21,5 +21,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: cantidad 1 en la ficha; las cantidades reales de vasos, potes y cucharas están en las bases; precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-15",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
