@@ -38,7 +38,7 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 | Cuenta de la rutina | La tarea programada activa no aparece en la cuenta de esta sesión (yaksicazocar: solo `trig_01DtbqBbzE4aZVmpAnVjPWXQ`, desactivada desde el 22-10): vive en la otra cuenta de Claude y gasta sus créditos. Su prompt dice «sigue .claude/RUTINA.md», así que cambiar ese archivo basta para cambiar lo que hace |
 | Workflow «Órdenes de compra históricas» | Corregido (PR #3): una OC traía un carácter de control («10U\x02POCA») y openpyxl rechazaba el Excel; `texto_excel`/`sin_formulas` lo quitan. Verificado: corrida 40150220712. Los errores de los workflows quedan como anotaciones (`gh api repos/Yakazor/MercadoPublico/check-runs/<job id>/annotations`) |
 
-PRs unidos: #1 a #9 (el #9, radar diario y corrección de la rutina, el 25-10).
+PRs unidos: #1 a #9 (el #9, radar diario y corrección de la rutina, el 25-10), #13 y #14 (botón de 1er llamado, 16-11).
 
 Manuales (Claude Docs): orden de compra https://claude.ai/artifact/VqeWE84qTfsjj2xj3NJk5W ·
 guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
@@ -117,6 +117,9 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
   reasignaba la clave `ca_ver_primeras` del botón y Streamlit lo prohíbe al dibujarlo (el `try/except` nunca saltaba).
   Clave → `ver_primeras_ca`; regla en el docstring y dos pruebas: la página corrida como app.py con un cambio de filtro, y
   una revisión de que ningún botón/descarga/carga/data_editor use los prefijos conservados. 572 pruebas OK.
+  **PR #14 unido** (6104eda, pedido de la usuaria). Auditoría: plataforma local con los datos del 16-11 y Playwright,
+  29 pasos (7 páginas, filtros de Compras Ágiles y Licitaciones, «Ver las de 1er llamado», fichas, Evaluar, Ranking,
+  Orden, ida y vuelta entre páginas): sin errores. Con el código anterior falla en «elegir región», como en la captura.
 
 - **16-11 (pedido en el chat, «actualiza lo del mercado público»):** radar completo de las 20:22 UTC (<12 h) → sin disparar; datos 16-11 17:32 (525 licitaciones, 559 Compras Ágiles; listado de Compras Ágiles al 16-11 11:42, ninguna de 2º llamado; API con HTTP 429). Lote de 8, 39/77 líneas con precio (WebSearch; WebFetch no abre sitios .cl, quedan sin verificar). NO GO: 4590-26-LE26 y 994-42-LE26 neumáticos MOP (oferta 119 % y 57 % sobre OC; requieren precio de distribuidor), 4469-256-L126 impresoras/tablets (3 % sobre el monto estimado). Falta precio: 4469-257-L126 (7/12), 2703-218-L126 (3/8), 1108338-61-L126 (1/11; comodato/ISP). 867990-157-L126 y 2467-124-LE26 sin precio (especificación en bases). Cerraron hoy 4042-10-CO26, 1028-51-LE26, 5420-26-LE26 y 2048-94-LE26. Top: 1171142-118-LE26 (GO con condiciones, cierra 19-11), 3191-128-LE26, 1562-90-LE26. 570 pruebas OK.
 
