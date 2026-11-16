@@ -112,6 +112,8 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **16-11 (pedido en el chat, «actualiza lo del mercado público»):** radar completo de las 20:22 UTC (<12 h) → sin disparar; datos 16-11 17:32 (525 licitaciones, 559 Compras Ágiles; listado de Compras Ágiles al 16-11 11:42, ninguna de 2º llamado; API con HTTP 429). Lote de 8, 39/77 líneas con precio (WebSearch; WebFetch no abre sitios .cl, quedan sin verificar). NO GO: 4590-26-LE26 y 994-42-LE26 neumáticos MOP (oferta 119 % y 57 % sobre OC; requieren precio de distribuidor), 4469-256-L126 impresoras/tablets (3 % sobre el monto estimado). Falta precio: 4469-257-L126 (7/12), 2703-218-L126 (3/8), 1108338-61-L126 (1/11; comodato/ISP). 867990-157-L126 y 2467-124-LE26 sin precio (especificación en bases). Cerraron hoy 4042-10-CO26, 1028-51-LE26, 5420-26-LE26 y 2048-94-LE26. Top: 1171142-118-LE26 (GO con condiciones, cierra 19-11), 3191-128-LE26, 1562-90-LE26. 570 pruebas OK.
+
 - **15-11 (rutina):** radar disparado (datos 11:15/11:18; 468 licitaciones, 1828 Compras Ágiles). La API de Compras Ágiles volvió a responder (listado al 15-11 08:00, sin detención); ninguna de 2º llamado. Lote de 8: 5148-18-LP26 discos duros externos con precio en 3/4 líneas → NO GO (oferta neta $156,7 M sobre el tope LP de 2.000 UTM; 18–22 TB sin precio en CLP). Las otras 7 no son cotizables por línea y se guardaron con nota. Top 3 sin cambio (1171142-118-LE26, 4042-10-CO26, 3191-128-LE26). 570 tests OK.
 
 - 2026-11-14 (rutina 11:00 UTC): último radar completo de hace ~17 h → radar y OC disparados (`datos` cambió 11:42 y

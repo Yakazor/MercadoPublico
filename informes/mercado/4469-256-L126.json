@@ -1,0 +1,128 @@
+{
+ "codigo": "4469-256-L126",
+ "nombre": "SC 41264-259-243(SC) ADQUISICION DE IMPRESORAS , TINTAS Y ARTICULOS DE COMPUTACION (TABLET- GRABADORAS)",
+ "fecha_consulta": "2026-11-16",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "IMPRESORA MULTIFUNCIONAL EPSON ECOTANK L6370\nIMPRESORA MULTIFUNCIONAL O SIMILAR",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Impresora multifuncional Epson EcoTank L6370",
+     "url": "https://www.falabella.com/falabella-cl/shop/epson-ecotank",
+     "precio": 369990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 310915.97,
+     "coincidencia": "exacta",
+     "nota": "Vendida por Falabella; Paris (Techbox) al mismo precio. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "TABLET GALAXY TAB S10 LITE GRIS 256 GB RAM 8 GB\nMEMORIA 256 GB O SIMILAR",
+   "opciones": [
+    {
+     "tienda": "Falabella (ecomfinity tech)",
+     "producto_mercado": "Samsung Galaxy Tab S10 Lite X400 WiFi 10,9\" 8/256 GB gris",
+     "url": "https://www.falabella.com/falabella-cl/product/155491583/samsung-galaxy-tab-s10-x400-lite-wifi-10-9-inch-8256gb-gris",
+     "precio": 369990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 310915.97,
+     "coincidencia": "exacta",
+     "nota": "Vendedor externo. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "GRABADOR PORTATIL: GRABACIÓN ESTÉREO DE ALTA\nCALIDAD A UN DISPOSITIVO PORTÁTIL. TASCAM\nGRABADOR AUDIO DIGITAL PORTATIL24BIT/96KHZ O SIMILAR",
+   "opciones": [],
+   "nota": "Sin tienda chilena con precio de Tascam DR-05X ni equivalente (Zoom H1n): cotizar a tienda de audio."
+  },
+  {
+   "linea": 4,
+   "producto": "IMPRESORA LÁSER COLOR MULTIFUNCIONAL ECOTANK\nL3250 O SIMILAR",
+   "opciones": [
+    {
+     "tienda": "Falabella (Cintegral)",
+     "producto_mercado": "Impresora multifuncional Epson EcoTank L3250",
+     "url": "https://www.falabella.com/falabella-cl/shop/epson-l3250",
+     "precio": 199990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 168058.82,
+     "coincidencia": "exacta",
+     "nota": "La línea dice láser pero el modelo pedido es tinta (EcoTank). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Impresora multifuncional Epson EcoTank L3250 negra",
+     "url": "https://www.lider.cl/browse/computacion/marcas-destacadas/epson/89057520_88137561_78633441",
+     "precio": 239990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 201672.27,
+     "coincidencia": "exacta",
+     "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "TRABLET M11 8 GB DE CAPACIDAD 128GB CON LÁPIZ\nY TECLADO O SIMILAR",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Tablet Lenovo Tab M11 (K10) 8/128 GB WiFi con lápiz, teclado y funda",
+     "url": "https://www.falabella.com/falabella-cl/product/155336452/tablet-lenovo-tab-m11-k10-con-lapiz-teclado-y-funda-8gb-128gb-wifi",
+     "precio": 219990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 184865.55,
+     "coincidencia": "exacta",
+     "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "PACK TINTAS EPSON T544 L3250 MARCA EPSON,\nMODELO T544, COLOR\nNEGRO-CIAN-MAGENTA-AMARILLO O SIMILAR",
+   "opciones": [
+    {
+     "tienda": "Falabella (Techbox)",
+     "producto_mercado": "Tinta Epson 544 pack 4 colores",
+     "url": "https://www.falabella.com/falabella-cl/shop/tinta-epson-544",
+     "precio": 35990,
+     "iva_incluido": true,
+     "contenido": "pack 4 botellas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 30243.7,
+     "coincidencia": "exacta",
+     "nota": "Sodimac (Alcaplus) a $36.990. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  }
+ ],
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+}

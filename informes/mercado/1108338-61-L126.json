@@ -1,0 +1,88 @@
+{
+ "codigo": "1108338-61-L126",
+ "nombre": "ADQUISICION DE INSUMOS CLINICOS, APOYO A LA GESTION, VENCIMIENTO MAYOR A 2 AÑOS",
+ "fecha_consulta": "2026-11-16",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "BOTA DE UNNA MEDIDAS 10 A 10.5 CM X 9 A 10M. COMPUESTA POR VENDAS DE GASA TEJIDA DE ALGODON SEMIELASTICA O SEMIRIGIDA EMPREGNADA CON OXIDO DE ZINGY SUSTANCIAS GELATINOSAS (GLICERINA, PETROLATO, GELATINA O SIMILAR) PUEDE CONTENER EXCIPIENTES. NO ESTER",
+   "opciones": [],
+   "nota": "Sin precio publicado de bota de Unna 10 cm en Chile: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 2,
+   "producto": "APOSITO ESPUMA HIDROFILICA CON ADHESIVO PARA SACRO Y BORDE CON SILICONA 20 X 17 CM",
+   "opciones": [],
+   "nota": "Sin apósito de espuma sacro 20x17 cm con precio en Chile (hay 15x20 y 16x20 sin precio): cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 3,
+   "producto": "CINTA COLESTEROL COMPATIBLE CON EQUIPO ROCHE, MAQUINA Y LANCETA RETRACTIL DEBEN ESTAR EN LA OFERTA EN COMODATO",
+   "opciones": [],
+   "nota": "Exige equipo (máquina y lancetas) en comodato: no cotizable como compra y venta directa."
+  },
+  {
+   "linea": 4,
+   "producto": "CLORHEXIDINA JABON 2% FRASCO DE 50 ML",
+   "opciones": [],
+   "nota": "Sin precio publicado de clorhexidina jabonosa 2% 50 ml: cotizar a distribuidor clínico (producto con registro ISP)."
+  },
+  {
+   "linea": 5,
+   "producto": "CLORHEXIDINA JABON LIQ.2% BOLSA DE 800 ML, COMPATIBLE CON DISPENSADOR DIFEM",
+   "opciones": [],
+   "nota": "Bolsa 800 ml compatible con dispensador Difem: cotizar a distribuidor clínico (producto con registro ISP)."
+  },
+  {
+   "linea": 6,
+   "producto": "CONTROL BIOLOGICO AUTOCLAVE LECTURA ULTRA RAPIDA VIAL PLASTICO, SIMILAR ATTEST, REF1492V (3M) CON VENCIMIENTO MAYOR A DOS AÑOS, OFERTA DEBE INCLUIR INCUBADORA EN COMODATO MODO RAPIDO",
+   "opciones": [],
+   "nota": "Debe incluir incubadora: no cotizable como compra y venta directa."
+  },
+  {
+   "linea": 7,
+   "producto": "GUANTES EXAMEN NITRILO TALLA M",
+   "opciones": [],
+   "nota": "Sin precio en CLP de guantes de nitrilo talla M caja 100 en los resultados: cotizar a distribuidor (10.000 unidades)."
+  },
+  {
+   "linea": 8,
+   "producto": "INDICADOR QUIMICO PARA AUTOCLAVE CAJA X 250 CINTAS SIMILAR COMPLY, OFERTAR INDICANDO EL VENCIMIENTO SI NO, NO SE CONSIDERARA LA PROPUESTA",
+   "opciones": [],
+   "nota": "Sin precio publicado de indicador químico tipo Comply caja 250: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 9,
+   "producto": "LIGADURA PARA TOMA DE MUESTRA, TAMAÑO UNIVERSAL CON PIEZA REGULADORA DEL AJUSTE QUE SEA SEGURA PARA AJUSTAR Y LIBERAR RÁPIDAMENTE LA TENSION",
+   "opciones": [],
+   "nota": "Sin precio publicado de ligadura con regulador: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 10,
+   "producto": "PAPEL ELECTROCARDIOGRAMA 8 CM DE ALTO X 20 MTS. COMPATIBLE CON EQUIPO EDAN",
+   "opciones": [
+    {
+     "tienda": "Falabella (Contec)",
+     "producto_mercado": "Pack 10 rollos ECG 3 canales 80 mm x 20 m",
+     "url": "https://www.falabella.com/falabella-cl/brand/CONTEC",
+     "precio": 21900,
+     "iva_incluido": true,
+     "contenido": "pack 10 rollos",
+     "unidades_equivalentes": 10,
+     "precio_unitario_neto": 1840.34,
+     "coincidencia": "equivalente",
+     "nota": "Rollo suelto a $3.900. Confirmar compatibilidad con equipo Edan. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 11,
+   "producto": "PAPEL PARA ECOGRAFO SONY UPP 110 S ROLLO",
+   "opciones": [],
+   "nota": "Sin distribuidor chileno con precio de papel Sony UPP-110S: cotizar."
+  }
+ ],
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+}

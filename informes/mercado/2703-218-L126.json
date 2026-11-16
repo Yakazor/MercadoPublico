@@ -1,0 +1,112 @@
+{
+ "codigo": "2703-218-L126",
+ "nombre": "SC 12775 12778 12779 12792 Insumos clínicos. CESFAM.",
+ "fecha_consulta": "2026-11-16",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tejido tubular 100 % algodón de 5 cms. x 25 metros, color piel, hipoalergénico, extensible en ambas direcciones, no se deshilacha al cortarla y permeable.",
+   "opciones": [],
+   "nota": "Sin precio publicado de tejido tubular 5 cm x 25 m: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 2,
+   "producto": "Povidona yodada solución al 10%, equivalente a 1 gr de yodo activo, frasco debidamente sellado y que proteja de la luz, contenido de 250 ml, cajas por 36 unidades, vigencia superior a 1 año.",
+   "opciones": [],
+   "nota": "Povidona yodada es medicamento con registro ISP: cotizar a distribuidor farmacéutico."
+  },
+  {
+   "linea": 3,
+   "producto": "Sonda prostática adulto Foley Fr 16, de dos vías con balón y volumen posible de 0 a 15 cc, 100% silicona de larga permanencia, caja por 10 unidades, empaque individualizado.",
+   "opciones": [],
+   "nota": "Sin precio en Chile de sonda Foley 100% silicona Fr 16: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 4,
+   "producto": "Sonda prostática adulto Foley Fr 20, de dos vías con balón y volumen posible de 0 a 15 cc, 100% silicona de larga permanencia, caja por 10 unidades, empaque individualizado.",
+   "opciones": [],
+   "nota": "Sin precio en Chile de sonda Foley 100% silicona Fr 20: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 5,
+   "producto": "Sonda prostática adulto Foley Fr 24, de dos vías con balón y volumen posible de 0 a 15 cc, 100% silicona de larga permanencia, caja por 10 unidades, empaque individualizado.",
+   "opciones": [],
+   "nota": "Sin precio en Chile de sonda Foley 100% silicona Fr 24: cotizar a distribuidor clínico."
+  },
+  {
+   "linea": 6,
+   "producto": "Tubo lila de 6 ml con EDTA, para muestra de laboratorio clínico,.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Grupomes)",
+     "producto_mercado": "Tubo tapa lila 3 ml K3 13x75 mm Globalvac, 100 unidades",
+     "url": "https://www.falabella.com/falabella-cl/seller/Grupomes",
+     "precio": 15000,
+     "iva_incluido": true,
+     "contenido": "caja 100 tubos",
+     "unidades_equivalentes": 100,
+     "precio_unitario_neto": 126.05,
+     "coincidencia": "aproximada",
+     "nota": "Es de 3 ml; se piden 6 ml. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Vaselina líquida de uso externo, puro y transparente, sin olor, color y sabor. Frasco plástico de 1 L, caja por 12 unidades.",
+   "opciones": [
+    {
+     "tienda": "Falabella (Farmacias Reunidas)",
+     "producto_mercado": "Vaselina líquida cosmética 1 L Lasserre",
+     "url": "https://www.falabella.com/falabella-cl/shop/vaselina-liquida",
+     "precio": 11990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10075.63,
+     "coincidencia": "equivalente",
+     "nota": "Descrita como cosmética. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    },
+    {
+     "tienda": "Falabella (VP Chemicals)",
+     "producto_mercado": "Vaselina líquida 1 litro",
+     "url": "https://www.falabella.com/falabella-cl/brand/VP%20CHEMICALS",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "equivalente",
+     "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Venda gasa elastizada 10 x 400 cm caja 20 unidades vencimiento superior a 18 meses",
+   "opciones": [
+    {
+     "tienda": "Salcobrand (Allbriefs)",
+     "producto_mercado": "Venda gasa elástica 10 cm x 4 m",
+     "url": "https://salcobrand.cl/products/allbriefs-venda-gasa-elastica-10cm-x-4m",
+     "precio": 1499,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1259.66,
+     "coincidencia": "equivalente",
+     "nota": "Se vende por unidad, no en caja de 20. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-16"
+    }
+   ]
+  }
+ ],
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+}
