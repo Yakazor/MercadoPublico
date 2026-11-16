@@ -18,8 +18,11 @@
      "precio_unitario_neto": 310915.97,
      "coincidencia": "exacta",
      "nota": "Vendida por Falabella; Paris (Techbox) al mismo precio. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 369990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $369.990."
     }
    ]
   },
@@ -38,8 +41,11 @@
      "precio_unitario_neto": 310915.97,
      "coincidencia": "exacta",
      "nota": "Vendedor externo. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 379990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $379.990."
     }
    ]
   },
@@ -64,8 +70,11 @@
      "precio_unitario_neto": 168058.82,
      "coincidencia": "exacta",
      "nota": "La línea dice láser pero el modelo pedido es tinta (EcoTank). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 200000.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $200.000."
     },
     {
      "tienda": "Lider",
@@ -78,8 +87,11 @@
      "precio_unitario_neto": 201672.27,
      "coincidencia": "exacta",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 239990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $239.990."
     }
    ]
   },
@@ -99,7 +111,9 @@
      "coincidencia": "exacta",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 264990.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $264.990, no $219.990: puede haber cambiado."
     }
    ]
   },
@@ -118,11 +132,19 @@
      "precio_unitario_neto": 30243.7,
      "coincidencia": "exacta",
      "nota": "Sodimac (Alcaplus) a $36.990. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 35000.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $35.000."
     }
    ]
   }
  ],
- "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
+ "verificacion_paginas": {
+  "fecha": "2026-11-16",
+  "opciones": 6,
+  "verificadas": 5
+ }
 }

@@ -40,5 +40,10 @@
    "nota": "Descripción sin medidas ni materiales (están en las bases técnicas): no cotizable por línea sin esas especificaciones."
   }
  ],
- "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
+ "verificacion_paginas": {
+  "fecha": "2026-11-16",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

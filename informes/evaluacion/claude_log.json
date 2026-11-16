@@ -451,20 +451,20 @@
  },
  {
   "fecha": "2026-11-16",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "1084 vigentes; 26 evaluadas; informes de 10",
-  "resultado": "0 GO, 1 con condiciones, 11 falta precio, 14 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 ítems sin precio de mercado; 3 de 7 ",
-  "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 691944-43-L126: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 1057404-111-CO26: FALTA PRECIO; 4469-257-L126: FALTA PRECIO",
-  "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **4809-75-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 4 de 9 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-16",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote del 16-11 (8): 4590-26-LE26 y 994-42-LE26 neumáticos MOP, 4469-257-L126 mesones/madera, 4469-256-L126 impresoras y tablets, 1108338-61-L126 y 2703-218-L126 insumos clínicos, 867990-157-L126 mobiliario, 2467-124-LE26 juguetes. 39 de 77 líneas con precio (WebSearch, sin verificar: las páginas .cl no abren desde la sesión).",
   "resultado": "NO GO: 4590-26-LE26 (oferta 119 % sobre lo pagado en OC), 994-42-LE26 (57 % sobre OC) y 4469-256-L126 (oferta $3,27 M c/IVA vs monto $3,17 M, 3 % sobre el tope). FALTA PRECIO: 4469-257-L126 (7/12, margen 8 %), 2703-218-L126 (3/8), 1108338-61-L126 (1/11). 867990-157-L126 y 2467-124-LE26 guardadas sin precio: especificaciones solo en las bases.",
   "riesgos": "Neumáticos de camión y maquinaria: el precio de tienda al público no compite con lo que paga el Estado; sin distribuidor mayorista no hay margen. Insumos clínicos: varias líneas exigen comodato o registro ISP. Precios sin verificar hasta que corra «Verificar precios e informes PDF».",
   "decisiones": "Top 3 sin cambio: 1171142-118-LE26 (GO con condiciones, cierra 19-11), 3191-128-LE26 y 1562-90-LE26 (falta precio). Proveedores ya buscados en corridas anteriores, no se repitió la búsqueda.",
   "recomendaciones": "Hoy: cerrar la oferta de 1171142-118-LE26 (cierra el 19-11) confirmando los modelos aproximados con el proveedor. 4469-256-L126 entra si un distribuidor mayorista mejora en 3 % o más (Epson L6370, Tab S10 Lite, Tab M11): pedir cotización antes del 23-11. Neumáticos solo con precio de distribuidor (Aeolus/BKT vía Comercial SP)."
+ },
+ {
+  "fecha": "2026-11-16",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "1084 vigentes; 26 evaluadas; informes de 10",
+  "resultado": "0 GO, 1 con condiciones, 11 falta precio, 14 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5 precios son de productos aproximados (otra medida, marca o modelo).; 3 de 11 ítems sin precio de mercado; 3 de 7 ",
+  "decisiones": "1171142-118-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 4809-75-LE26: FALTA PRECIO; 691944-43-L126: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 979-77-LE26: FALTA PRECIO; 1057404-111-CO26: FALTA PRECIO; 4469-257-L126: FALTA PRECIO",
+  "recomendaciones": "- **1171142-118-LE26**: 🟡 GO CON CONDICIONES. Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto). - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **4809-75-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 4 de 9 el margen sale de una parte del pedido."
  }
 ]

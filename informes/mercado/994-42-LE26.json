@@ -19,7 +19,8 @@
      "coincidencia": "aproximada",
      "nota": "H/T; se pide mixto. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -33,7 +34,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 64990.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $64.990, no $78.990: puede haber cambiado."
     }
    ]
   },
@@ -53,7 +56,8 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider (vía Knasta)",
@@ -67,7 +71,8 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -86,8 +91,11 @@
      "precio_unitario_neto": 303773.11,
      "coincidencia": "equivalente",
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 357990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $357.990."
     }
    ]
   },
@@ -106,8 +114,11 @@
      "precio_unitario_neto": 303773.11,
      "coincidencia": "equivalente",
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 357990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $357.990."
     }
    ]
   },
@@ -127,7 +138,8 @@
      "coincidencia": "equivalente",
      "nota": "16PR; confirmar posición (HD969 es de tracción). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -147,7 +159,8 @@
      "coincidencia": "equivalente",
      "nota": "16PR; confirmar posición (HD969 es de tracción). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -166,8 +179,11 @@
      "precio_unitario_neto": 210075.63,
      "coincidencia": "equivalente",
      "nota": "Asignación precio-modelo deducida del listado; el AGM10 aparecía a $158.690. Confirmar. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 249990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $249.990."
     }
    ]
   },
@@ -186,8 +202,11 @@
      "precio_unitario_neto": 210075.63,
      "coincidencia": "equivalente",
      "nota": "Asignación precio-modelo deducida del listado; el AGM10 aparecía a $158.690. Confirmar. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 249990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $249.990."
     }
    ]
   },
@@ -207,7 +226,9 @@
      "coincidencia": "equivalente",
      "nota": "Página de ofertas de Raco; precio con IVA. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 118.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $118, no $92.300: puede haber cambiado."
     }
    ]
   },
@@ -232,8 +253,11 @@
      "precio_unitario_neto": 289865.55,
      "coincidencia": "equivalente",
      "nota": "Listado de marca BKT. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 339990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $339.990."
     }
    ]
   },
@@ -252,8 +276,11 @@
      "precio_unitario_neto": 299470.59,
      "coincidencia": "equivalente",
      "nota": "Listado de marca BKT. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 350000.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $350.000."
     }
    ]
   },
@@ -264,5 +291,10 @@
    "nota": "Sin precio publicado en Chile (neumático de maquinaria / OTR): cotizar a distribuidor de neumáticos industriales."
   }
  ],
- "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
+ "verificacion_paginas": {
+  "fecha": "2026-11-16",
+  "opciones": 13,
+  "verificadas": 6
+ }
 }

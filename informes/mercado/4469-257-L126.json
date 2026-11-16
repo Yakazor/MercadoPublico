@@ -18,8 +18,11 @@
      "precio_unitario_neto": 98310.92,
      "coincidencia": "equivalente",
      "nota": "Visto en listado de Sodimac. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 115990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $115.990."
     },
     {
      "tienda": "Mercado Libre (Cousiño)",
@@ -33,7 +36,8 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -52,8 +56,11 @@
      "precio_unitario_neto": 68058.82,
      "coincidencia": "equivalente",
      "nota": "Visto en listado de Sodimac. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 80990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $80.990."
     },
     {
      "tienda": "Easy (ProChef)",
@@ -67,7 +74,8 @@
      "coincidencia": "equivalente",
      "nota": "Cubierta inox, estructura galvanizada. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -86,8 +94,11 @@
      "precio_unitario_neto": 1302.52,
      "coincidencia": "exacta",
      "nota": "Precio normal; con descuento $1.472. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 1590.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $1.590."
     }
    ]
   },
@@ -106,8 +117,11 @@
      "precio_unitario_neto": 5084.03,
      "coincidencia": "exacta",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 5975.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $5.975."
     },
     {
      "tienda": "Easy",
@@ -121,7 +135,8 @@
      "coincidencia": "exacta",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -140,8 +155,11 @@
      "precio_unitario_neto": 7806.72,
      "coincidencia": "aproximada",
      "nota": "Sin cara blanca; Durolac blanco 2,8 mm sin precio atribuible. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 9290.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $9.290."
     }
    ]
   },
@@ -160,8 +178,11 @@
      "precio_unitario_neto": 19655.46,
      "coincidencia": "equivalente",
      "nota": "Visto en listado; Kolor 1 gl a $25.490. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 23390.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $23.390."
     }
    ]
   },
@@ -204,8 +225,11 @@
      "precio_unitario_neto": 46210.08,
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 55000.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $55.000."
     },
     {
      "tienda": "Sodimac (ProChef)",
@@ -218,8 +242,11 @@
      "precio_unitario_neto": 48731.09,
      "coincidencia": "equivalente",
      "nota": "Visto en listado de Sodimac. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 57990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $57.990."
     }
    ]
   },
@@ -230,5 +257,10 @@
    "nota": "Sin luminaria lineal colgante de 68 W 4000 K con precio en Chile (las que hay son de 24–40 W): cotizar a DEMASLED o distribuidor de iluminación."
   }
  ],
- "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
+ "verificacion_paginas": {
+  "fecha": "2026-11-16",
+  "opciones": 11,
+  "verificadas": 8
+ }
 }

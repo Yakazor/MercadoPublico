@@ -40,5 +40,10 @@
    "nota": "No cotizable por línea: cada línea es un surtido de juguetes por edad definido en las bases técnicas."
   }
  ],
- "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
+ "verificacion_paginas": {
+  "fecha": "2026-11-16",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

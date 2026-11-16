@@ -18,8 +18,11 @@
      "precio_unitario_neto": 303773.11,
      "coincidencia": "equivalente",
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 357990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $357.990."
     }
    ]
   },
@@ -38,8 +41,11 @@
      "precio_unitario_neto": 303773.11,
      "coincidencia": "equivalente",
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 357990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $357.990."
     }
    ]
   },
@@ -58,8 +64,11 @@
      "precio_unitario_neto": 303773.11,
      "coincidencia": "equivalente",
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 357990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $357.990."
     }
    ]
   },
@@ -78,8 +87,11 @@
      "precio_unitario_neto": 303773.11,
      "coincidencia": "equivalente",
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 357990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $357.990."
     }
    ]
   },
@@ -104,8 +116,11 @@
      "precio_unitario_neto": 320579.83,
      "coincidencia": "equivalente",
      "nota": "Listado de marca; AGM10 es de uso mixto. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 378990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $378.990."
     }
    ]
   },
@@ -125,7 +140,8 @@
      "coincidencia": "equivalente",
      "nota": "16PR; confirmar posición (HD969 es de tracción). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -151,7 +167,9 @@
      "coincidencia": "equivalente",
      "nota": "Página de ofertas de Raco; precio con IVA. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 118.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $118, no $92.300: puede haber cambiado."
     }
    ]
   },
@@ -171,7 +189,9 @@
      "coincidencia": "equivalente",
      "nota": "Página de ofertas de Raco; precio con IVA. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 118.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $118, no $92.300: puede haber cambiado."
     },
     {
      "tienda": "Lider (vía Knasta)",
@@ -185,7 +205,8 @@
      "coincidencia": "equivalente",
      "nota": "Diseño de tracción; precio registrado por Knasta. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -204,8 +225,11 @@
      "precio_unitario_neto": 319319.33,
      "coincidencia": "aproximada",
      "nota": "Convencional (no radial) y con cámara; se pide 14,9R24. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 379990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $379.990."
     }
    ]
   },
@@ -224,8 +248,11 @@
      "precio_unitario_neto": 289865.55,
      "coincidencia": "equivalente",
      "nota": "Listado de marca BKT. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
-     "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "verificado": true,
+     "fecha_consulta": "2026-11-16",
+     "verificado_en": "2026-11-16",
+     "precio_pagina": 339990.0,
+     "verificacion_pagina": "2026-11-16: la página muestra $339.990."
     }
    ]
   },
@@ -251,7 +278,8 @@
      "coincidencia": "aproximada",
      "nota": "H/T; se pide mixto. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -265,7 +293,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 64990.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $64.990, no $78.990: puede haber cambiado."
     }
    ]
   },
@@ -285,7 +315,9 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 68990.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $68.990, no $71.990: puede haber cambiado."
     },
     {
      "tienda": "Lider",
@@ -299,10 +331,17 @@
      "coincidencia": "equivalente",
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
-     "fecha_consulta": "2026-11-16"
+     "fecha_consulta": "2026-11-16",
+     "precio_pagina": 89990.0,
+     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $89.990, no $85.990: puede haber cambiado."
     }
    ]
   }
  ],
- "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)"
+ "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
+ "verificacion_paginas": {
+  "fecha": "2026-11-16",
+  "opciones": 15,
+  "verificadas": 7
+ }
 }
