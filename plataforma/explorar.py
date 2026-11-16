@@ -101,7 +101,7 @@ def _explorar(compra_agil: bool) -> None:
         if compra_agil and llamado == 2 and primeras:
             st.info(f"Ninguna Compra Ágil del 2º llamado ahora. Hay {len(primeras)} de 1er llamado (solo para "
                     "empresas de menor tamaño: puedes verlas, pero no cotizarlas).", icon="ℹ️")
-            st.button("Ver las de 1er llamado", icon="👀", key="ca_ver_primeras",
+            st.button("Ver las de 1er llamado", icon="👀", key="ver_primeras_ca",
                       on_click=lambda: st.session_state.update(ca_llamado="Todos"))
         else:
             st.info("Sin resultados con esta búsqueda y estos filtros. Prueba con menos palabras o quita filtros "
