@@ -547,6 +547,79 @@ def test_compras_agiles_sin_2o_llamado_ofrece_ver_las_de_1er_llamado(tmp_path, m
     assert list(at.dataframe[0].value["Código"]) == ["2-2-COT26"]
 
 
+def _pagina_como_app(modulo: str, funcion: str, raiz: str) -> None:
+    """Como `_pagina`, pero conservando el estado al inicio de cada corrida igual que app.py."""
+    import importlib
+    import re
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, raiz + "/plataforma")
+    import comun
+
+    app = Path(raiz, "plataforma", "app.py").read_text(encoding="utf-8")
+    prefijos = re.findall(r'"([^"]+)"', re.search(r"conservar_estado\(([^)]*)\)", app).group(1))
+    comun.conservar_estado(*prefijos)
+    getattr(importlib.import_module(modulo), funcion)()
+
+
+def test_cambiar_un_filtro_con_el_boton_de_1er_llamado_a_la_vista(tmp_path, monkeypatch):
+    # Visto en la plataforma (16-11): con «Ver las de 1er llamado» en pantalla, cambiar la Región
+    # reasignaba la clave del botón (conservar_estado) y Streamlit cortaba la página con
+    # StreamlitValueAssignmentNotAllowedError.
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    datos = _datos()
+    for lic in datos["licitaciones"]:
+        lic["fecha_cierre"] = "2099-01-01 12:00:00"
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    at = AppTest.from_function(_pagina_como_app, args=("explorar", "compras_agiles", str(RAIZ)),
+                               default_timeout=60).run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert any(b.label == "Ver las de 1er llamado" for b in at.button)
+    region = at.multiselect(key="ca_regiones")
+    region.set_value([region.options[0]]).run()
+    assert not at.exception, [e.value for e in at.exception]
+    next(b for b in at.button if b.label == "Ver las de 1er llamado").click().run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert list(at.dataframe[0].value["Código"]) == ["2-2-COT26"]
+
+
+def test_widgets_de_solo_lectura_no_usan_prefijos_conservados():
+    # conservar_estado (app.py) reasigna las claves con esos prefijos en cada corrida; en un botón,
+    # descarga, carga de archivo o data_editor eso corta la página al dibujarlo.
+    import ast
+    import re
+
+    app = (RAIZ / "plataforma" / "app.py").read_text(encoding="utf-8")
+    prefijos = tuple(re.findall(r'"([^"]+)"', re.search(r"conservar_estado\(([^)]*)\)", app).group(1)))
+    solo_lectura = {"button", "download_button", "file_uploader", "data_editor", "form", "camera_input",
+                    "audio_input"}
+    malas = []
+    for archivo in sorted((RAIZ / "plataforma").glob("*.py")):
+        for nodo in ast.walk(ast.parse(archivo.read_text(encoding="utf-8"))):
+            if not (isinstance(nodo, ast.Call) and isinstance(nodo.func, ast.Attribute)
+                    and nodo.func.attr in solo_lectura):
+                continue
+            for kw in nodo.keywords:
+                if kw.arg != "key":
+                    continue
+                v = kw.value
+                inicio = (v.value if isinstance(v, ast.Constant) else
+                          v.values[0].value if isinstance(v, ast.JoinedStr) and v.values
+                          and isinstance(v.values[0], ast.Constant) else
+                          # f"{pre}_…" en explorar.py: pre es «lic» o «ca»
+                          "ca_" if isinstance(v, ast.JoinedStr) and v.values
+                          and isinstance(v.values[0], ast.FormattedValue)
+                          and getattr(v.values[0].value, "id", None) == "pre" else None)
+                if isinstance(inicio, str) and inicio.startswith(prefijos):
+                    malas.append(f"{archivo.name}:{nodo.lineno} {nodo.func.attr} key={ast.unparse(v)}")
+    assert not malas, malas
+
+
 def test_evaluacion_con_lineas_sin_precio_muestra_cifras_parciales(tmp_path, monkeypatch):
     at = _app(tmp_path, monkeypatch, "evaluar", "pagina")
     at.session_state["codigo"] = "1-1-LE26"
