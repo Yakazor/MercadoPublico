@@ -19,7 +19,8 @@
      "coincidencia": "aproximada",
      "nota": "Piden ancho referencial 60 cm; se usa la de 90 cm.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -39,8 +40,11 @@
      "precio_unitario_neto": 29403.36,
      "coincidencia": "exacta",
      "nota": "Acero AISI-430.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "verificado": true,
+     "fecha_consulta": "2026-11-17",
+     "verificado_en": "2026-11-17",
+     "precio_pagina": 34990.0,
+     "verificacion_pagina": "2026-11-17: la página muestra $34.990."
     },
     {
      "tienda": "Paris",
@@ -54,7 +58,8 @@
      "coincidencia": "exacta",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -65,5 +70,10 @@
    "opciones": [],
    "nota": "Biombo 2 cuerpos sin especificación; precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-17",
+  "opciones": 3,
+  "verificadas": 1
+ }
 }

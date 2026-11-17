@@ -19,7 +19,8 @@
      "coincidencia": "exacta",
      "nota": "Precio de Lider visto en Knasta; fecha del registro por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -33,7 +34,8 @@
      "coincidencia": "aproximada",
      "nota": "Diseño H/T, no mixto.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -53,8 +55,11 @@
      "precio_unitario_neto": 496630.25,
      "coincidencia": "aproximada",
      "nota": "Diseño mixto, no confirmado como traccional; cámara y cubrecámara por confirmar.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "verificado": true,
+     "fecha_consulta": "2026-11-17",
+     "verificado_en": "2026-11-17",
+     "precio_pagina": 585990.0,
+     "verificacion_pagina": "2026-11-17: la página muestra $585.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -74,11 +79,19 @@
      "precio_unitario_neto": 492008.4,
      "coincidencia": "aproximada",
      "nota": "No confirmado como direccional; cámara y cubrecámara por confirmar.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "verificado": true,
+     "fecha_consulta": "2026-11-17",
+     "verificado_en": "2026-11-17",
+     "precio_pagina": 585990.0,
+     "verificacion_pagina": "2026-11-17: la página muestra $585.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-17",
+  "opciones": 4,
+  "verificadas": 2
+ }
 }

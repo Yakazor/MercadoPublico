@@ -69,5 +69,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: cada línea («transmisores», «conectores», «adaptadores»…) es un paquete sin modelo ni cantidad; el detalle está en las bases. Precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-17",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

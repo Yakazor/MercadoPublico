@@ -20,9 +20,9 @@
      "nota": "Rango $84.990–$99.990 según vendedor (Techbox/Alcaplus); se toma el mayor. Por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-15",
-     "verificado_en": "2026-11-16",
+     "verificado_en": "2026-11-17",
      "precio_pagina": 99990.0,
-     "verificacion_pagina": "2026-11-16: la página muestra $99.990."
+     "verificacion_pagina": "2026-11-17: la página muestra $99.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -42,10 +42,11 @@
      "precio_unitario_neto": 99991.6,
      "coincidencia": "exacta",
      "nota": "$114.944 con transferencia.",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-15",
-     "precio_pagina": 149990.0,
-     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $149.990, no $118.990: puede haber cambiado."
+     "precio_pagina": 121990.0,
+     "verificacion_pagina": "2026-11-17: la página muestra $121.990.",
+     "verificado_en": "2026-11-17"
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -67,7 +68,7 @@
      "nota": "Vendido por Tech Box (marketplace).",
      "verificado": false,
      "fecha_consulta": "2026-11-15",
-     "verificacion_pagina": "2026-11-16: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Notebookstore",
@@ -83,7 +84,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-15",
      "precio_pagina": 149990.0,
-     "verificacion_pagina": "2026-11-16: la página abrió y el precio más parecido es $149.990, no $156.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $149.990, no $156.990: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -96,8 +97,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-16",
+  "fecha": "2026-11-17",
   "opciones": 4,
-  "verificadas": 1
+  "verificadas": 2
  }
 }

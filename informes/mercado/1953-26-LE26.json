@@ -25,7 +25,8 @@
      "coincidencia": "equivalente",
      "nota": "Tipo de gas y certificación SEC por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -39,7 +40,9 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "precio_pagina": 1251290.0,
+     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $1.251.290, no $1.197.590: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -60,7 +63,8 @@
      "coincidencia": "equivalente",
      "nota": "Tipo de gas y certificación SEC por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -74,7 +78,9 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "precio_pagina": 1251290.0,
+     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $1.251.290, no $1.197.590: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -95,7 +101,8 @@
      "coincidencia": "equivalente",
      "nota": "Tipo de gas y certificación SEC por confirmar.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Lider",
@@ -109,7 +116,9 @@
      "coincidencia": "equivalente",
      "nota": "",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "precio_pagina": 1251290.0,
+     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $1.251.290, no $1.197.590: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -120,5 +129,10 @@
    "opciones": [],
    "nota": "Estantería de acero inoxidable sin medidas en la ficha; precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-17",
+  "opciones": 6,
+  "verificadas": 0
+ }
 }

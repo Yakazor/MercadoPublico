@@ -21,5 +21,10 @@
    "opciones": [],
    "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-17",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

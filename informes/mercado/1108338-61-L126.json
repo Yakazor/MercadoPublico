@@ -74,9 +74,9 @@
      "nota": "Rollo suelto a $3.900. Confirmar compatibilidad con equipo Edan. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-16",
+     "verificado_en": "2026-11-17",
      "precio_pagina": 21900.0,
-     "verificacion_pagina": "2026-11-16: la página muestra $21.900."
+     "verificacion_pagina": "2026-11-17: la página muestra $21.900."
     }
    ]
   },
@@ -89,7 +89,7 @@
  ],
  "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
  "verificacion_paginas": {
-  "fecha": "2026-11-16",
+  "fecha": "2026-11-17",
   "opciones": 1,
   "verificadas": 1
  }

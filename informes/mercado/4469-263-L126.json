@@ -19,7 +19,9 @@
      "coincidencia": "exacta",
      "nota": "Precio visto en el listado de Lider (antes $219.990).",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "precio_pagina": 179990.0,
+     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $179.990, no $173.990: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -40,7 +42,8 @@
      "coincidencia": "equivalente",
      "nota": "Sin telón de 60\" (va aparte, por confirmar).",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Mercado Libre (tienda oficial Levo)",
@@ -54,7 +57,8 @@
      "coincidencia": "equivalente",
      "nota": "Sin telón.",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "verificacion_pagina": "2026-11-17: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -75,7 +79,9 @@
      "coincidencia": "exacta",
      "nota": "Envío desde Estados Unidos (marketplace).",
      "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "fecha_consulta": "2026-11-17",
+     "precio_pagina": 626990.0,
+     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $626.990, no $548.990: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -95,11 +101,19 @@
      "precio_unitario_neto": 336126.05,
      "coincidencia": "exacta",
      "nota": "Pack con teclado, lápiz y funda.",
-     "verificado": false,
-     "fecha_consulta": "2026-11-17"
+     "verificado": true,
+     "fecha_consulta": "2026-11-17",
+     "verificado_en": "2026-11-17",
+     "precio_pagina": 409990.0,
+     "verificacion_pagina": "2026-11-17: la página muestra $409.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-17",
+  "opciones": 5,
+  "verificadas": 1
+ }
 }
