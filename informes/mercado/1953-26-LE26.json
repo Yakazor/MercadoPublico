@@ -1,0 +1,124 @@
+{
+ "codigo": "1953-26-LE26",
+ "nombre": "ADQUISICIÓN  MOBILIARIO PARA UNIDADES DE LA REGION",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Horno industrial de 2 cámaras para el CPF Complejo Penitenciario Valparaíso",
+   "opciones": [],
+   "nota": "Horno industrial de 2 cámaras sin especificación (gas/eléctrico, medidas); precio por confirmar."
+  },
+  {
+   "linea": 2,
+   "producto": "Anafe 6 platos, para el CDP Limache",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Anafe industrial 6 platos (Ticgas)",
+     "url": "https://www.paris.cl/anafe-industrial-6-platos-MKRIK6CBFX.html",
+     "precio": 739990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 621840.34,
+     "coincidencia": "equivalente",
+     "nota": "Tipo de gas y certificación SEC por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Anafe industrial a gas 6 quemadores GH-6S (Volter)",
+     "url": "https://www.lider.cl/ip/equipamiento-industrial/anafe-industrial-a-gas-6-quemadores-gh-6s/00046232309363",
+     "precio": 1197590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1006378.15,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 3,
+   "producto": "Anafe 6 platos, para el CPF del Complejo Penitenciario Valparaíso",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Anafe industrial 6 platos (Ticgas)",
+     "url": "https://www.paris.cl/anafe-industrial-6-platos-MKRIK6CBFX.html",
+     "precio": 739990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 621840.34,
+     "coincidencia": "equivalente",
+     "nota": "Tipo de gas y certificación SEC por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Anafe industrial a gas 6 quemadores GH-6S (Volter)",
+     "url": "https://www.lider.cl/ip/equipamiento-industrial/anafe-industrial-a-gas-6-quemadores-gh-6s/00046232309363",
+     "precio": 1197590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1006378.15,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 4,
+   "producto": "Anafe 6 platos, para el CCP San Antonio",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Anafe industrial 6 platos (Ticgas)",
+     "url": "https://www.paris.cl/anafe-industrial-6-platos-MKRIK6CBFX.html",
+     "precio": 739990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 621840.34,
+     "coincidencia": "equivalente",
+     "nota": "Tipo de gas y certificación SEC por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Anafe industrial a gas 6 quemadores GH-6S (Volter)",
+     "url": "https://www.lider.cl/ip/equipamiento-industrial/anafe-industrial-a-gas-6-quemadores-gh-6s/00046232309363",
+     "precio": 1197590,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 1006378.15,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 5,
+   "producto": "Estantería de Acero inoxidable, para el CCP San Antonio",
+   "opciones": [],
+   "nota": "Estantería de acero inoxidable sin medidas en la ficha; precio por confirmar."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "codigo": "1002-95-LP26",
+ "nombre": "Adquisición y Suministro de Material Pétreo para recebo de carpetas granulares en la Ruta V-370 Línea Sin Nombre - El Torreón",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Suministro de 3.000 m³ de material chancado bajo 1 1/2\", destinado a faenas de recebo de carpetas granulares con provisión externa de material en la Ruta V-370 Línea Sin Nombre - El Torreón, Comuna de",
+   "opciones": [],
+   "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
+  },
+  {
+   "linea": 2,
+   "producto": "Suministro de 3.000 m³ de material seleccionado bajo 2\", destinado a faenas de recebo de carpetas granulares con provisión externa de material en la Ruta V-370 Línea Sin Nombre - El Torreón, Comuna de",
+   "opciones": [],
+   "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
+  },
+  {
+   "linea": 3,
+   "producto": "Suministro de 2.000 m³ de material seleccionado bajo 4\", destinado a faenas de recebo de carpetas granulares con provisión externa de material en la Ruta V-370 Línea Sin Nombre - El Torreón, Comuna de",
+   "opciones": [],
+   "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
+  }
+ ]
+}

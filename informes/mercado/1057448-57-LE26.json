@@ -1,0 +1,31 @@
+{
+ "codigo": "1057448-57-LE26",
+ "nombre": "ADQ CONGELADORES Y REFRIGERADORES BIP 40001311-0",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Congelador clínico -25 °C 380 lts (Equipo)",
+   "opciones": [],
+   "nota": "Equipos clínicos (congeladores -25/-86 °C, refrigeradores clínicos) sin precio en retail; requieren cotización de distribuidor médico. Precio por confirmar."
+  },
+  {
+   "linea": 2,
+   "producto": "Congelador Clínico -86°C 450 Lts (Equipo)",
+   "opciones": [],
+   "nota": "Equipos clínicos (congeladores -25/-86 °C, refrigeradores clínicos) sin precio en retail; requieren cotización de distribuidor médico. Precio por confirmar."
+  },
+  {
+   "linea": 3,
+   "producto": "Refrigerador clínico 100 L (Equipo)",
+   "opciones": [],
+   "nota": "Equipos clínicos (congeladores -25/-86 °C, refrigeradores clínicos) sin precio en retail; requieren cotización de distribuidor médico. Precio por confirmar."
+  },
+  {
+   "linea": 4,
+   "producto": "Refrigerador clínico 360 L tipo vitrina (Equipo)",
+   "opciones": [],
+   "nota": "Equipos clínicos (congeladores -25/-86 °C, refrigeradores clínicos) sin precio en retail; requieren cotización de distribuidor médico. Precio por confirmar."
+  }
+ ]
+}

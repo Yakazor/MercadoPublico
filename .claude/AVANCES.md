@@ -112,6 +112,8 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **17-11 (rutina):** radar disparado (datos 11:42/11:48; 434 licitaciones, 527 Compras Ágiles; la API volvió a cortar con HTTP 429, listado al 17-11 08:00; ninguna de 2º llamado). Lote de 8: con precios 4469-263-L126 tablets/impresora/proyector → NO GO ($2,46 M vs $1,50 M), 3537-76-LE26 neumáticos → NO GO ($18,9 M vs $9,8 M), 4469-260-L126 repisas → NO GO ($0,78 M vs $0,75 M), 1953-26-LE26 anafes → falta precio (3/5). Sin precio con nota: 4928-37, 1057448-57, 1002-95, 1336-21. 10 cerradas archivadas. Top 3: 1171142-118-LE26, 994-42-LE26 y 4590-26-LE26 (proveedores nuevos para las dos de neumáticos). 572 tests OK. La corrida del 16-11 de esta sesión no se hizo (el aviso llegó junto con el del 17-11; otra sesión hizo la del 16-11).
+
 - **16-11 (error en la plataforma, rama `fix/boton-1er-llamado`):** en Compras Ágiles, con «Ver las de 1er llamado» a la
   vista, cambiar un filtro (Región) cortaba la página con StreamlitValueAssignmentNotAllowedError: `conservar_estado`
   reasignaba la clave `ca_ver_primeras` del botón y Streamlit lo prohíbe al dibujarlo (el `try/except` nunca saltaba).

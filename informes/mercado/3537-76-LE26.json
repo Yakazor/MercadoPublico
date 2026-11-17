@@ -1,0 +1,84 @@
+{
+ "codigo": "3537-76-LE26",
+ "nombre": "Adquisición de neumáticos",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Neumático mixto RT M+S 245/70 R17 de 10 a 20 PR para Camioneta CI-12094,   \r\nMarca Toyota, Modelo Hilux 4x4, Año 2018 y Camioneta CI-12108, Marca Nissan, \r\nModelo Navara MC DC SE 2,3 Año 2022",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Neumático Rockblade Rock 737 AT LT 245/70 R17 119/116S 10PR",
+     "url": "https://knasta.cl/detail/lider/00046909038818/rockblade-neumatico-245-70-r17-rock-737-at-lt-119-116s-10pr",
+     "precio": 103190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 86714.29,
+     "coincidencia": "exacta",
+     "nota": "Precio de Lider visto en Knasta; fecha del registro por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Neumático Maxtrek SU-800 245/70 R17 119/116S 10PR",
+     "url": "https://knasta.cl/detail/lider/00695958581004/neumatico-245-70-r17-maxtrek-su-800-119-116s-10pr",
+     "precio": 125990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 105873.95,
+     "coincidencia": "aproximada",
+     "nota": "Diseño H/T, no mixto.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 2,
+   "producto": "Neumático traccional 1200 R24 con cámara y cubre cámara. Para Camiones tolva CI-21180, CI-21178, CI-21179 y CI-21165",
+   "opciones": [
+    {
+     "tienda": "Falabella (Comercial SP)",
+     "producto_mercado": "Neumático Aeolus 12.00 R24 AGC51 20PR TT",
+     "url": "https://www.falabella.com/falabella-cl/brand/AEOLUS",
+     "precio": 590990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 496630.25,
+     "coincidencia": "aproximada",
+     "nota": "Diseño mixto, no confirmado como traccional; cámara y cubrecámara por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 3,
+   "producto": "Neumático direccional 1200 R24 con cámara y cubre cámara, para Camión tolva CI-21179, Marca Mercedes Benz, Modelo Arocs 3342\r\nAño 2022 y Camión tolva CI-21167, Marca Man, Modelo TGS 33.400\r\nAño 2018.",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Neumático Aeolus 12.00 R24 AGM10 20PR TT",
+     "url": "https://www.falabella.com/falabella-cl/brand/AEOLUS",
+     "precio": 585490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 492008.4,
+     "coincidencia": "aproximada",
+     "nota": "No confirmado como direccional; cámara y cubrecámara por confirmar.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  }
+ ]
+}

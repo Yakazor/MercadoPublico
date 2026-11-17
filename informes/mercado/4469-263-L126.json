@@ -1,0 +1,105 @@
+{
+ "codigo": "4469-263-L126",
+ "nombre": "S.C. N° 41244-41245 (P.C) ADQUISICIÓN DE TABLET , IMPRESORA Y OTROS ; PROY. UPA 2495",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Impresora Fotográfica de Inyección de Tinta, marca Canon, modelo Pixma iX6810 Wifi Red, para impresión en papel grueso tamaño A3 O SIMILAR\n(SC 41244)",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Impresora Canon PIXMA iX6810",
+     "url": "https://www.lider.cl/browse/computacion/impresion/impresoras-y-multifuncionales/89057520_18938454_77669169",
+     "precio": 173990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 146210.08,
+     "coincidencia": "exacta",
+     "nota": "Precio visto en el listado de Lider (antes $219.990).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 2,
+   "producto": "Proyector Portátil marca LEVO modelo Smart Lumix 9000lm, con telón manual blanco de 60 pulgadas O SIMILAR  (SC 41244)",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Proyector Smart inalámbrico Lumix 9000lm Levo",
+     "url": "https://www.paris.cl/proyector-smart-inalambrico-lumix-832272999.html",
+     "precio": 119990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 100831.93,
+     "coincidencia": "equivalente",
+     "nota": "Sin telón de 60\" (va aparte, por confirmar).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    },
+    {
+     "tienda": "Mercado Libre (tienda oficial Levo)",
+     "producto_mercado": "Proyector portátil inalámbrico Smart Lumix 9000lm BT Levo",
+     "url": "https://www.mercadolibre.cl/tienda/levo",
+     "precio": 319990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 268899.16,
+     "coincidencia": "equivalente",
+     "nota": "Sin telón.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 3,
+   "producto": "TABLET   Apple iPad 11\" generación A16 128GB WiFi 10.9 Plata  (SC 41245)",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Tablet Apple iPad 11 A16 128GB Wi-Fi plata",
+     "url": "https://www.lider.cl/ip/marcas-destacadas/tablet-apple-ipad-11-a16-de-128-gb-con-wi-fi-color-plata/00196484951043",
+     "precio": 548990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 461336.13,
+     "coincidencia": "exacta",
+     "nota": "Envío desde Estados Unidos (marketplace).",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 4,
+   "producto": "TABLET Lenovo, modelo IdeaTab Plus 12 8GB 256GB Octa Core 12.1\" 2.5K 90Hz (Wi-Fi) Teclado  Lápiz  Sleeve Lenovo O SIMILAR  (SC 41245)",
+   "opciones": [
+    {
+     "tienda": "Falabella (vendedor Lenovo)",
+     "producto_mercado": "Tablet Lenovo Idea Tab Plus MediaTek 6400 8GB 256GB + funda, teclado y lápiz",
+     "url": "https://www.falabella.com/falabella-cl/product/156016416/tablet-lenovo-idea-tab-plus-mediatek-6400-8gbram-256gbssd-funda-teclado-y-lapiz",
+     "precio": 399990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 336126.05,
+     "coincidencia": "exacta",
+     "nota": "Pack con teclado, lápiz y funda.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  }
+ ]
+}

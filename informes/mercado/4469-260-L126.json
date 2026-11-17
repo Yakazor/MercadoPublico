@@ -1,0 +1,69 @@
+{
+ "codigo": "4469-260-L126",
+ "nombre": "SC 41169 (CS) ADQUISICION DE REPISAS Y BIOMBOS ",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "REPISA MURAL DE ACERO INOXIDABLE U OTRO\nMATERIAL METÁLICO CON RESISTENCIA EQUIVALENTE A\nCORROSIÓN Y LIMPIEZA FRECUENTE, ANCHO\nREFERENCIAL 60 CM Y PROFUNDIDAD 30 CM.",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Repisa mural 90x30 cm acero inoxidable liso",
+     "url": "https://www.paris.cl/repisa-mural-90x30-cm-acero-inoxidable-liso-MK0P6R8XQH.html",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "aproximada",
+     "nota": "Piden ancho referencial 60 cm; se usa la de 90 cm.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 2,
+   "producto": "REPISA MURAL DE ACERO INOXIDABLE 90 X 30",
+   "opciones": [
+    {
+     "tienda": "Falabella (ProChef)",
+     "producto_mercado": "Repisa mural lisa 90x30 cm acero inoxidable WS-900",
+     "url": "https://www.falabella.com/falabella-cl/shop/repisa-acero-inoxidable",
+     "precio": 34990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 29403.36,
+     "coincidencia": "exacta",
+     "nota": "Acero AISI-430.",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    },
+    {
+     "tienda": "Paris",
+     "producto_mercado": "Repisa mural 90x30 cm acero inoxidable liso",
+     "url": "https://www.paris.cl/repisa-mural-90x30-cm-acero-inoxidable-liso-MK0P6R8XQH.html",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "exacta",
+     "nota": "",
+     "verificado": false,
+     "fecha_consulta": "2026-11-17"
+    }
+   ],
+   "nota": "Precio de buscador, sin verificar."
+  },
+  {
+   "linea": 3,
+   "producto": "BIOMBO 2 CUERPOS",
+   "opciones": [],
+   "nota": "Biombo 2 cuerpos sin especificación; precio por confirmar."
+  }
+ ]
+}

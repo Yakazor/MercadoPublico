@@ -1,0 +1,25 @@
+{
+ "codigo": "1336-21-LP26",
+ "nombre": "Adquisición y Suministro de Material Pétreo para recebo de carpetas granulares en la Ruta Rol V- 376 Colonia Los Indios ",
+ "fecha_consulta": "2026-11-17",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "SUMINISTRO Y ACOPIO MATERIAL PETREO BAJO 4”, RUTA V-376 COLONIA LOS INDIOS, COMUNA DE LLANQUIHUE, PROVINCIA DE LLANQUIHUE, REGIÓN DE LOS LAGOS.",
+   "opciones": [],
+   "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
+  },
+  {
+   "linea": 2,
+   "producto": "SUMINISTRO Y ACOPIO MATERIAL PETREO BAJO 2”, RUTA V-376 COLONIA LOS INDIOS, COMUNA DE LLANQUIHUE, PROVINCIA DE LLANQUIHUE, REGIÓN DE LOS LAGOS",
+   "opciones": [],
+   "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
+  },
+  {
+   "linea": 3,
+   "producto": "SUMINISTRO Y ACOPIO MATERIAL PETREO CHANCADO, RUTA V-376 COLONIA LOS INDIOS, COMUNA DE LLANQUIHUE, PROVINCIA DE LLANQUIHUE, REGIÓN DE LOS LAGOS.",
+   "opciones": [],
+   "nota": "No cotizable en retail: material pétreo a granel (m³) con transporte y acopio en ruta; requiere cotización de planta de áridos local. Precio por confirmar."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+[
+ {
+  "nombre": "Neumadiesel SpA",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Neumáticos y servicio en terreno para OTR; presencia en proyectos de Copiapó (catálogo y contacto por confirmar)",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://bnamericas.com/en/company-profile/neumadiesel-spa"
+ },
+ {
+  "nombre": "Caren (representante Michelin camión y bus)",
+  "correo": null,
+  "web": null,
+  "contacto": null,
+  "especialidad": "Importación y venta de neumáticos Michelin para camiones y buses desde Antofagasta al sur (alianza 2026); sucursal y contacto por confirmar",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.reporteminero.cl/noticia/noticias/2026/03/michelin-caren-alianza-chile-neumaticos-camiones-buses"
+ },
+ {
+  "nombre": "Michelin Chile (OTR, venta directa)",
+  "correo": null,
+  "web": "https://www.michelin.cl",
+  "contacto": null,
+  "especialidad": "Neumáticos OTR y maquinaria (venta e importación directa); canal para retroexcavadora/minicargador por confirmar",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.reporteminero.cl/noticia/noticias/2026/03/michelin-caren-alianza-chile-neumaticos-camiones-buses"
+ },
+ {
+  "nombre": "Sodimac (neumático 12.00 R24)",
+  "correo": null,
+  "web": "https://www.sodimac.cl/sodimac-cl/product/3681963/neumatico-12.00-r24",
+  "contacto": null,
+  "especialidad": "Neumático camión 12.00 R24 (índice 160); precio por confirmar",
+  "respuesta": null,
+  "entrega": null,
+  "costo_referencial": null,
+  "fuente": "https://www.sodimac.cl/sodimac-cl/product/3681963/neumatico-12.00-r24"
+ }
+]

@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-16. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-17. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,16 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [1028-51-LE26](presupuestos/1028-51-LE26.md) Elementos de protección personal CAD | Seguridad, EPP, señalética y protección contra incendios | 2026-11-16 | 3/9 | $5.071.752 | $7.242.462 | $1.014.350 | — | faltan 6 precios, sin verificar |
-| [1057420-43-L126](presupuestos/1057420-43-L126.md) ADQUISICION DE IMPLEMENTOS DEPORTIVOS PARA EL HOSPITAL DE HUÉPIL | Deporte, juguetes y material didáctico | 2026-11-16 | 11/16 | $1.778.417 | $2.539.579 | $355.683 | — | faltan 5 precios, sin verificar |
-| [4042-10-CO26](presupuestos/4042-10-CO26.md) VESTUARIO INSTITUCIONAL | Vestuario, uniformes y textiles | 2026-11-16 | 6/6 | $10.157.606 | $14.505.061 | $2.031.521 | — | sin verificar |
-| [4964-30-LE26](presupuestos/4964-30-LE26.md) JUGUETES PARA SER ENTREGADOS EN NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 6/8 | $20.388.205 | $29.114.356 | $4.077.641 | $15.000.000 | supera monto, faltan 2 precios, sin verificar |
-| [2263-98-LE26](presupuestos/2263-98-LE26.md) ADQUISICIÓN DE POSTES OMEGA PERNOS PLACAS DE ALUMINIO SEÑAL PARE DESTI | Ferretería y herramientas | 2026-11-16 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
-| [1134432-78-LE26](presupuestos/1134432-78-LE26.md) ADQUISICIÓN DE JUGUETES PARA CELEBRACIÓN DE NAVIDAD COMUNAL 2026 | Deporte, juguetes y material didáctico | 2026-11-16 | 3/14 | $28.553.699 | $40.774.682 | $5.710.740 | $30.000.000 | supera monto, faltan 11 precios |
-| [5420-26-LE26](presupuestos/5420-26-LE26.md) Adquisición de equipos periféricos | Computación y electrónica | 2026-11-16 | 2/7 | $8.371.230 | $11.954.117 | $1.674.246 | $49.300.000 | faltan 5 precios, sin verificar |
-| [1057389-70-LE26](presupuestos/1057389-70-LE26.md) Equipos Médicos- Sillones e Instrumental HSJV | Mobiliario de oficina, escolar y almacenaje | 2026-11-16 | 0/5 | $0 | $0 | $0 | — | faltan 5 precios |
-| [691944-40-L126](presupuestos/691944-40-L126.md) Adquisición malla faenera esmalte corrosivo y otros | Ferretería y herramientas | 2026-11-16 | 6/17 | $1.331.820 | $1.901.840 | $266.364 | $4.148.000 | faltan 11 precios, sin verificar |
-| [2048-94-LE26](presupuestos/2048-94-LE26.md) Adquisición de contenedores de basura para el Nuevo Hospital de Ancud | Insumos médicos no regulados y aseo | 2026-11-16 | 3/5 | $18.425.444 | $26.311.535 | $3.685.089 | — | faltan 2 precios |
 | [3996-55-L126](presupuestos/3996-55-L126.md) Adquisición de Uniformes Corporativos | Vestuario, uniformes y textiles | 2026-11-17 | 0/10 | $0 | $0 | $0 | $1.200.000 | faltan 10 precios |
 | [979-77-LE26](presupuestos/979-77-LE26.md) Adquisición de elementos de protección personal | Seguridad, EPP, señalética y protección contra incendios | 2026-11-17 | 5/14 | $1.182.983 | $1.689.299 | $236.597 | $7.572.906 | faltan 9 precios, sin verificar |
 | [4809-75-LE26](presupuestos/4809-75-LE26.md) MATERIALES DE FERRETERIA | Ferretería y herramientas | 2026-11-17 | 4/9 | $4.796.191 | $6.848.961 | $959.238 | $10.001.950 | faltan 5 precios, sin verificar |
@@ -59,11 +49,17 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [3730-118-L126](presupuestos/3730-118-L126.md) MOBILIARIO Y EQUIPAMIENTO PARA OFICINA OLN. | Mobiliario de oficina, escolar y almacenaje | 2026-11-23 | 0/4 | $0 | $0 | $0 | $1.000.000 | faltan 4 precios |
 | [4469-256-L126](presupuestos/4469-256-L126.md) SC 41264-259-243(SC) ADQUISICION DE IMPRESORAS , TINTAS Y ARTICULOS DE | Computación y electrónica | 2026-11-23 | 5/6 | $2.288.822 | $3.268.437 | $457.764 | $3.170.085 | supera monto, falta 1 precio, sin verificar |
 | [4469-257-L126](presupuestos/4469-257-L126.md) S.C. N° 41203 (P.C) ADQUISICIÓN DE MESON DE TRABAJO , MADERA, PINTURA  | Ferretería y herramientas | 2026-11-23 | 7/12 | $519.540 | $741.903 | $103.908 | $1.055.828 | faltan 5 precios |
+| [4469-260-L126](presupuestos/4469-260-L126.md) SC 41169 (CS) ADQUISICION DE REPISAS Y BIOMBOS | Mobiliario de oficina, escolar y almacenaje | 2026-11-23 | 2/3 | $545.853 | $779.478 | $109.171 | $749.749 | supera monto, falta 1 precio, sin verificar |
 | [867990-157-L126](presupuestos/867990-157-L126.md) CC 102 CDP 94502 - Adquisición de mobiliario de oficina | Mobiliario de oficina, escolar y almacenaje | 2026-11-23 | 0/6 | $0 | $0 | $0 | $3.896.920 | faltan 6 precios |
+| [3537-76-LE26](presupuestos/3537-76-LE26.md) Adquisición de neumáticos | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-23 | 3/3 | $13.254.486 | $18.927.406 | $2.650.897 | $9.800.000 | supera monto, sin verificar |
 | [4591-26-LE26](presupuestos/4591-26-LE26.md) Neumáticos para Vehículos y Maquinaria Parque de Maquinarias de la Pro | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-23 | 0/12 | $0 | $0 | $0 | — | faltan 12 precios |
 | [2354-43-LE26](presupuestos/2354-43-LE26.md) DISEÑO Y CONFECCCION DE VESTUARIO ESCENOGRAFICO PARA ELENCOS MUNICIPAL | Vestuario, uniformes y textiles | 2026-11-23 | 0/3 | $0 | $0 | $0 | $13.750.000 | faltan 3 precios |
 | [3946-38-LE26](presupuestos/3946-38-LE26.md) Compra de Juguetes de Navidad 2026 Comuna de Pichidegua. | Deporte, juguetes y material didáctico | 2026-11-23 | 0/18 | $0 | $0 | $0 | $16.000.000 | faltan 18 precios |
+| [4469-263-L126](presupuestos/4469-263-L126.md) S.C. N° 41244-41245 (P.C) ADQUISICIÓN DE TABLET , IMPRESORA Y OTROS ;  | Computación y electrónica | 2026-11-23 | 4/4 | $1.725.097 | $2.463.439 | $345.019 | $1.503.681 | supera monto, sin verificar |
 | [1108338-61-L126](presupuestos/1108338-61-L126.md) ADQUISICION DE INSUMOS CLINICOS, APOYO A LA GESTION, VENCIMIENTO MAYOR | Insumos médicos no regulados y aseo | 2026-11-23 | 1/11 | $321.931 | $459.717 | $64.386 | $6.300.000 | faltan 10 precios |
+| [4928-37-LE26](presupuestos/4928-37-LE26.md) REPUESTOS Y ACCESORIOS EQUIPAMIENTO MULTIMEDIA | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-23 | 0/11 | $0 | $0 | $0 | — | faltan 11 precios |
+| [1002-95-LP26](presupuestos/1002-95-LP26.md) Adquisición y Suministro de Material Pétreo para recebo de carpetas gr | Artículos de oficina y librería | 2026-11-24 | 0/3 | $0 | $0 | $0 | — | faltan 3 precios |
+| [1336-21-LP26](presupuestos/1336-21-LP26.md) Adquisición y Suministro de Material Pétreo para recebo de carpetas gr | Artículos de oficina y librería | 2026-11-24 | 0/3 | $0 | $0 | $0 | — | faltan 3 precios |
 | [2703-218-L126](presupuestos/2703-218-L126.md) SC 12775 12778 12779 12792 Insumos clínicos. CESFAM. | Insumos médicos no regulados y aseo | 2026-11-24 | 3/8 | $1.561.409 | $2.229.692 | $312.282 | $7.100.000 | faltan 5 precios |
 | [3191-128-LE26](presupuestos/3191-128-LE26.md) ADQUISICIÓN TEXTILES HOSPITALARIOS H.N. A.N. | Vestuario, uniformes y textiles | 2026-11-24 | 1/7 | $21.407.399 | $30.569.765 | $4.281.480 | $40.000.000 | faltan 6 precios, sin verificar |
 | [2658-368-L126](presupuestos/2658-368-L126.md) PINTURA Y OTROS | Ferretería y herramientas | 2026-11-24 | 2/4 | $7.102.777 | $10.142.766 | $1.420.555 | $7.000.000 | supera monto, faltan 2 precios, sin verificar |
@@ -73,7 +69,9 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [2467-124-LE26](presupuestos/2467-124-LE26.md) ADQ. DE JUGUETES PARA NIÑOS Y NIÑAS - NAVIDAD | Deporte, juguetes y material didáctico | 2026-11-26 | 0/6 | $0 | $0 | $0 | — | faltan 6 precios |
 | [4590-26-LE26](presupuestos/4590-26-LE26.md) Neumáticos para Vehículos y Maquinaria Parque de Maquinarias de la Pro | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-26 | 12/15 | $26.146.281 | $37.336.889 | $5.229.256 | — | faltan 3 precios, sin verificar |
 | [994-42-LE26](presupuestos/994-42-LE26.md) ADQUISICION DE NEUMATICOS PARA VEHICULOS Y MAQUINARIAS | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-26 | 11/13 | $33.440.505 | $47.753.041 | $6.688.101 | — | faltan 2 precios, sin verificar |
+| [1057448-57-LE26](presupuestos/1057448-57-LE26.md) ADQ CONGELADORES Y REFRIGERADORES BIP 40001311-0 | Electrodomésticos, hogar y menaje | 2026-11-27 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
+| [1953-26-LE26](presupuestos/1953-26-LE26.md) ADQUISICIÓN MOBILIARIO PARA UNIDADES DE LA REGION | Mobiliario de oficina, escolar y almacenaje | 2026-11-27 | 3/5 | $2.330.969 | $3.328.623 | $466.194 | — | faltan 2 precios, sin verificar |
 | [2111-316-LR26](presupuestos/2111-316-LR26.md) APÓSITOS PRESIÓN NEGATIVA CON EQ. COMODATO III | Insumos médicos no regulados y aseo | 2026-12-01 | 0/13 | $0 | $0 | $0 | — | faltan 13 precios |
 | [608-236-LR26](presupuestos/608-236-LR26.md) CME ADQUISICIÓN DE INSUMOS CLÍNICOS Y MATERIAL MÉDICO QUIRÚRGICO PARA  | Insumos médicos no regulados y aseo | 2026-12-11 | 0/17 | $0 | $0 | $0 | — | faltan 17 precios |
 
-Licitaciones ya cerradas: 193. Sus precios de mercado quedan archivados en `informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes).
+Licitaciones ya cerradas: 203. Sus precios de mercado quedan archivados en `informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes).
