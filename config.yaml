@@ -1062,7 +1062,6 @@ rubros:
       - materiales didacticos
       - juegos didacticos
       - juegos de mesa
-      - libros
       - instrumentos musicales
       - trofeos
       - medallas
@@ -1084,10 +1083,6 @@ rubros:
       - juegos infantiles
       - multicancha
       - cancha
-      - ediciones
-      - fiesta del libro
-      - feria del libro
-      - escritores
       - balon de gas
       - balones de gas
       - balon de oxigeno
@@ -1097,6 +1092,55 @@ rubros:
       - talleres
       - clases
       - escuela deportiva
+
+  # Pedido del 18-11-2026 («agrega el rubro de libros y material educativo»): una Compra Ágil
+  # de 45 diccionarios no calzaba con ningún rubro («libros» estaba en deporte_didactico).
+  libros_educativo:
+    nombre: "Libros y material educativo"
+    detectar_en_descripcion: false
+    palabras_clave:
+      - libros
+      - libro de lectura
+      - diccionarios
+      - enciclopedias
+      - atlas
+      - textos escolares
+      - cuentos
+      - novelas
+      - material educativo
+      - materiales educativos
+      - material pedagogico
+      - materiales pedagogicos
+      - recursos pedagogicos
+      - recursos educativos
+      - laminas educativas
+      - globos terraqueos
+    palabras_amplias:
+      - material educativo
+      - materiales educativos
+      - material pedagogico
+      - materiales pedagogicos
+      - recursos pedagogicos
+      - recursos educativos
+    excluir_en_nombre:
+      # Servicios editoriales y eventos, no libros para revender.
+      - ediciones
+      - edicion
+      - publicacion
+      - impresion
+      - imprenta
+      - diagramacion
+      - fiesta del libro
+      - feria del libro
+      - escritores
+      - cuentacuentos
+      - separadores
+      - libros contables
+      - libro de remuneraciones
+      - plataforma
+      - suscripcion
+      - licencias
+    excluir_grupos: [clinico, servicios]
 
   # --- Rubros agregados tras el censo de grupos (segmentos ONU 30, 39, 26, 13, 22,
   # 41, 25, 15, 23, 46): productos que se compran y revenden sin permisos grandes.
