@@ -6,7 +6,8 @@ import comun
 import cotizar
 import manuales
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
-from radar.plataforma import es_compra_agil, filtrar, ranking, solo_emt, soy_emt
+from radar.plataforma import (AYUDA_MONTO, es_compra_agil, es_nueva, filtrar, monto_referencial, ranking, solo_emt,
+                              soy_emt)
 from radar.presupuesto import armar_presupuesto
 
 DECISIONES = [comun.DECISION_CORTA[GO], comun.DECISION_CORTA[CONDICIONADO], comun.DECISION_CORTA[NO_GO],
@@ -63,6 +64,8 @@ def _explorar(compra_agil: bool) -> None:
             st.warning("El monto mínimo es mayor que el máximo: no se aplica el filtro de monto. Corrige uno de los dos.")
             monto_min = monto_max = 0
         solo_precios = d.toggle("Solo con precios de tiendas", key=f"{pre}_precios")
+        nuevas_primero = d.toggle("Más nuevas primero", key=f"{pre}_nuevas",
+                                  help="🆕 = apareció en el radar hoy o ayer. Sin esto, la tabla va por fecha de cierre.")
         plazo = llamado = None
         if compra_agil:
             a, b, _ = st.columns([1, 1, 2])
@@ -76,7 +79,8 @@ def _explorar(compra_agil: bool) -> None:
 
     lista = filtrar(todas, texto=texto, rubros=rubros, regiones=regiones, max_dias=max_dias if max_dias < 30 else None,
                     monto_min=monto_min or None, monto_max=monto_max or None,
-                    con_precios=set(prep["mercado"]) if solo_precios else None, plazo_max=plazo, llamado=llamado)
+                    con_precios=set(prep["mercado"]) if solo_precios else None, plazo_max=plazo, llamado=llamado,
+                    nuevas_primero=nuevas_primero)
     evaluadas = {l["codigo"]: comun.DECISION_CORTA[e.decision] for l, _, e in ranking(
         prep, comun.supuestos(), comun.margen(), comun.otros(), comun.estimar_oc(), comun.cotizaciones())}
     cv = comun.compra_venta_por_codigo()
@@ -89,7 +93,10 @@ def _explorar(compra_agil: bool) -> None:
     con_precio = sum(1 for l in lista if l["codigo"] in evaluadas)
     con_decision = sum(1 for l in lista if evaluadas.get(l["codigo"], comun.SIN_EVALUAR) != comun.SIN_EVALUAR)
     sin_monto = sum(1 for l in lista if l.get("monto_estimado") is None) if (monto_min or monto_max) else 0
-    st.caption(f"{len(lista)} de {len(todas)} abiertas · {comun.evaluadas_texto(con_precio, con_precio)}, "
+    hoy = pd.Timestamp.now(tz="America/Santiago").date()
+    nuevas = sum(1 for l in lista if es_nueva(l, hoy))
+    st.caption(f"{len(lista)} de {len(todas)} abiertas · {nuevas} 🆕 nuevas (hoy o ayer) · "
+               f"{comun.evaluadas_texto(con_precio, con_precio)}, "
                f"{con_decision} con decisión (las demás: ⚪ falta precio). "
                + (f"Incluye {sin_monto} sin monto informado (el filtro de monto no las descarta). " if sin_monto else "")
                + "💲 = tiene precios de tiendas. "
@@ -108,27 +115,31 @@ def _explorar(compra_agil: bool) -> None:
                     "(Decisión, Compra y venta directa, Más filtros).", icon="🔍")
         return
     filas = []
+    utm = comun.supuestos().get("utm")
     for l in lista:
-        marca = ("🚫 " if bloqueadas and solo_emt(l) else "") + ("💲 " if l["codigo"] in prep["mercado"] else "")
+        marca = ("🆕 " if es_nueva(l, hoy) else "") + ("🚫 " if bloqueadas and solo_emt(l) else "") \
+            + ("💲 " if l["codigo"] in prep["mercado"] else "")
+        monto, origen = monto_referencial(l, prep["items"].get(l["codigo"]), utm)
         fila = {"Código": l["codigo"], "Nombre": marca + (l.get("nombre") or ""),
                 "Decisión": evaluadas.get(l["codigo"], comun.SIN_EVALUAR),
                 "Compra-venta": comun.COMPRA_VENTA[cv.get(l["codigo"], (None, ""))[0]]}
         if not compra_agil:
             fila["Organismo"] = l.get("organismo")
-        fila |= {"Región": comun.region_corta(l.get("region")), "Monto ($)": comun.pesos(l.get("monto_estimado")),
+        fila |= {"Región": comun.region_corta(l.get("region")), "Monto ($)": comun.pesos(monto), "Origen": origen,
                  "Cierre": pd.to_datetime(l.get("fecha_cierre")), "Días": l.get("dias_restantes")}
         if compra_agil:
             fila |= {"Entrega": l.get("plazo_entrega_dias"), "Llamado": l.get("llamado")}
         filas.append(fila)
     # Anchos fijos: la tabla cabe en una pantalla de notebook (1366 px, menú arriba: ~1.200 px útiles).
-    comunes = {"Decisión": 140, "Compra-venta": 105, "Región": 105, "Cierre": 110, "Días": 50}
-    anchos = ({"Código": 150, "Nombre": 235, "Monto ($)": 90, "Entrega": 70, "Llamado": 60} if compra_agil else
-              {"Código": 125, "Nombre": 255, "Organismo": 140, "Monto ($)": 95}) | comunes
+    comunes = {"Decisión": 140, "Compra-venta": 105, "Región": 105, "Origen": 70, "Cierre": 110, "Días": 50}
+    anchos = ({"Código": 150, "Nombre": 195, "Monto ($)": 90, "Entrega": 70, "Llamado": 60} if compra_agil else
+              {"Código": 125, "Nombre": 215, "Organismo": 140, "Monto ($)": 95}) | comunes
     config = {col: st.column_config.TextColumn(width=ancho) for col, ancho in anchos.items()}
     config["Compra-venta"] = st.column_config.TextColumn(width=anchos["Compra-venta"], help=comun.AYUDA_COMPRA_VENTA)
     config["Decisión"] = st.column_config.TextColumn(width=anchos["Decisión"], help=comun.AYUDA_DECISION)
+    config["Origen"] = st.column_config.TextColumn(width=anchos["Origen"], help=AYUDA_MONTO)
     config |= {
-        "Monto ($)": st.column_config.NumberColumn(format="localized", width=anchos["Monto ($)"]),
+        "Monto ($)": st.column_config.NumberColumn(format="localized", width=anchos["Monto ($)"], help=AYUDA_MONTO),
         "Cierre": st.column_config.DatetimeColumn(format="DD-MM HH:mm", width=anchos["Cierre"]),
         "Días": st.column_config.NumberColumn(width=anchos["Días"], help="Días que faltan para el cierre"),
     }
@@ -152,7 +163,9 @@ def ficha(lic: dict, prep: dict) -> None:
         st.subheader(f"{codigo} · {lic.get('nombre')}")
         st.caption(" · ".join(x for x in (lic.get("organismo"), lic.get("region"), lic.get("comuna")) if x))
         k = st.columns(4)
-        k[0].metric("Monto estimado", comun.clp(lic.get("monto_estimado")) if lic.get("monto_estimado") else "—")
+        monto, origen = monto_referencial(lic, prep["items"].get(codigo), comun.supuestos().get("utm"))
+        k[0].metric("Monto estimado" if lic.get("monto_estimado") else f"Monto ({origen or 'sin dato'})",
+                    comun.clp(monto) if monto else "—", help=AYUDA_MONTO)
         k[1].metric("Cierre", comun.fecha_hora(lic.get("fecha_cierre"), corta=True))
         k[2].metric("Días al cierre", comun.dias_texto(lic.get("dias_restantes")))
         if es_compra_agil(lic):

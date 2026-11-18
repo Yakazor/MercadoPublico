@@ -28,6 +28,13 @@ compra_agil:
   max_detalles: 700           # por corrida; primero las publicadas más recientemente
   # Duran 1 o 2 días: no se revisan las que cierran antes de este plazo (no alcanzan a cotizarse).
   margen_cotizar_horas: 12
+  # 2º llamado: si nadie cotiza en el 1er llamado (solo EMT), la misma compra se reabre para
+  # todos con otro cierre, pero con su código y fecha de publicación de siempre (el listado no
+  # la vuelve a traer). Las de tus rubros que cierran su 1er llamado se revisan estos días más,
+  # cada `revisar_cada_horas` y hasta `max_revisiones` detalles por corrida (antes que las nuevas).
+  revisar_segundo_llamado_dias: 3
+  revisar_cada_horas: 6
+  max_revisiones: 60
   pausa_entre_llamadas_segundos: 4.0   # desde el inicio de la consulta anterior (~15 por minuto)
   reintentos: 3
   espera_inicial_reintento_segundos: 5

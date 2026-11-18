@@ -62,16 +62,16 @@ def _error(status, mensaje, solo_detalle=False):
 
 def _pagina(codigos, pagina, total):
     return _ok({"items": [{"codigo": c, "nombre": f"Compra de guantes {c}",
-                           "fechas": {"fecha_cierre": "2026-10-25T15:00:00Z"}} for c in codigos],
+                           "fechas": {"fecha_cierre": "2026-10-23T15:00:00Z"}} for c in codigos],
                 "paginacion": {"numero_pagina": pagina, "total_paginas": total, "total_resultados": 9}})
 
 
-def _detalle(codigo, nombre="Compra de guantes de nitrilo", productos=None):
+def _detalle(codigo, nombre="Compra de guantes de nitrilo", productos=None, cierre="2026-10-23T15:00:00Z", llamado=1):
     return _ok({
         "codigo": codigo, "nombre": nombre, "descripcion": "Para el CESFAM",
         "estado": {"codigo": "publicada", "glosa": "Publicada"},
-        "convocatoria": {"estado_convocatoria": 1},
-        "fechas": {"fecha_publicacion": "2026-10-20T10:00:00Z", "fecha_cierre": "2026-10-23T15:00:00Z"},
+        "convocatoria": {"estado_convocatoria": llamado},
+        "fechas": {"fecha_publicacion": "2026-10-20T10:00:00Z", "fecha_cierre": cierre},
         "presupuesto": {"monto_disponible_clp": 850000},
         "entrega": {"direccion_entrega": "Av. Siempre Viva 123", "plazo_entrega_dias": 5},
         "institucion": {"organismo_comprador": "Municipalidad X", "unidad_compra": "Salud",
@@ -208,9 +208,11 @@ def test_las_cerradas_salen_de_la_memoria():
     estado["abiertas"]["V"] = {"fila": {"fecha_cierre": "2026-10-21 10:00:00"}, "detalle": {}}
     estado["descartadas"]["W"] = "2026-10-20 18:00"
     estado["pendientes"]["X"] = "2026-10-25 18:00"
-    c = _cliente([_detalle("X")])
+    # V (sin llamado guardado) cerró: queda por revisar y su detalle sigue cerrado.
+    c = _cliente([_detalle("V", cierre="2026-10-21T10:00:00Z"), _detalle("X")])
     _actualizar(c, estado=estado)
     assert "V" not in estado["abiertas"] and "W" not in estado["descartadas"] and "X" in estado["abiertas"]
+    assert set(estado["por_revisar"]) == {"V"}
 
 
 def test_sin_tiempo_quedan_pendientes_para_la_proxima():
@@ -346,3 +348,76 @@ def test_la_pendiente_guarda_la_fecha_de_publicacion():
     c = _cliente([pagina, _error(429, "límite", solo_detalle=True), _error(429, "límite", solo_detalle=True)])
     _, estado = _actualizar(c)
     assert estado["pendientes"]["A"]["publicado"] == "2026-10-21T10:00:00Z"
+
+
+# --- 2º llamado (18-11-2026: desde el 25-10 no apareció ninguna; la misma compra se reabre con
+# su código y fecha de publicación, y el listado por fecha de publicación no la volvía a traer).
+
+def _cerrada_primer_llamado(codigo="A", cierre="2026-10-21 10:00:00"):
+    estado = estado_vacio()
+    estado["abiertas"][codigo] = {"fila": {"fecha_cierre": cierre, "llamado": 1}, "detalle": {}}
+    return estado
+
+
+def test_la_cerrada_en_primer_llamado_vuelve_si_se_abre_el_segundo():
+    estado = _cerrada_primer_llamado()
+    c = _cliente([_detalle("A", cierre="2026-10-21T10:00:00Z")])     # todavía cerrada
+    r, _ = _actualizar(c, estado=estado)
+    assert "A" not in estado["abiertas"] and estado["por_revisar"]["A"]["revisada"] == "2026-10-21T12:00:00"
+    assert r.revisadas == 1 and r.reabiertas == 0
+
+    # Antes de 6 horas no se vuelve a preguntar.
+    c = _cliente([])
+    actualizar_compras_agiles(c, FILTRO, estado, ahora=AHORA.replace(hour=15))
+    assert not [ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+
+    # Al día siguiente la API la muestra abierta en 2º llamado.
+    c = _cliente([_detalle("A", cierre="2026-10-24T15:00:00Z", llamado=2)])
+    r = actualizar_compras_agiles(c, FILTRO, estado, ahora=AHORA.replace(day=22))
+    fila = estado["abiertas"]["A"]["fila"]
+    assert r.reabiertas == 1 and fila["llamado"] == 2 and fila["fecha_cierre"].startswith("2026-10-24")
+    assert "A" not in estado["por_revisar"]
+
+
+def test_por_revisar_vence_a_los_tres_dias():
+    estado = _cerrada_primer_llamado()
+    _actualizar(_cliente([_detalle("A", cierre="2026-10-21T10:00:00Z")]), estado=estado)
+    c = _cliente([])
+    actualizar_compras_agiles(c, FILTRO, estado, ahora=AHORA.replace(day=24, hour=11))
+    assert "A" not in estado["por_revisar"]
+    assert not [ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+
+
+def test_la_de_segundo_llamado_que_cierra_no_se_revisa():
+    estado = _cerrada_primer_llamado()
+    estado["abiertas"]["A"]["fila"]["llamado"] = 2
+    c = _cliente([])
+    _actualizar(c, estado=estado)
+    assert not estado["por_revisar"] and not estado["abiertas"]
+
+
+def test_reaparece_en_el_listado_con_otro_cierre():
+    estado = estado_vacio()
+    estado["abiertas"]["A"] = {"fila": {"fecha_cierre": "2026-10-22 10:00:00", "llamado": 1}, "detalle": {}}
+    c = _cliente([_pagina(["A"], 1, 1), _detalle("A", cierre="2026-10-23T15:00:00Z", llamado=2)])
+    r, _ = _actualizar(c, estado=estado)
+    assert r.reabiertas == 1 and estado["abiertas"]["A"]["fila"]["llamado"] == 2
+
+
+def test_la_candidata_por_nombre_que_cierra_sin_detalle_tambien_se_revisa():
+    estado = estado_vacio()
+    estado["pendientes"]["P"] = {"cierre": "2026-10-21 18:00", "intentos": 0, "prioridad": 0}
+    estado["pendientes"]["Q"] = {"cierre": "2026-10-21 18:00", "intentos": 0, "prioridad": 1}
+    _actualizar(_cliente([]), estado=estado)
+    assert set(estado["por_revisar"]) == {"P"} and not estado["pendientes"]
+    # No se pregunta antes de su cierre (18:00).
+    c = _cliente([_detalle("P", cierre="2026-10-23T15:00:00Z", llamado=2)])
+    r = actualizar_compras_agiles(c, FILTRO, estado, ahora=AHORA.replace(hour=19))
+    assert r.reabiertas == 1 and estado["abiertas"]["P"]["fila"]["llamado"] == 2
+
+
+def test_429_al_revisar_corta_y_queda_para_la_proxima():
+    estado = _cerrada_primer_llamado()
+    c = _cliente([_error(429, "límite", solo_detalle=True), _error(429, "límite", solo_detalle=True)])
+    r, _ = _actualizar(c, estado=estado)
+    assert "429" in r.detenida and estado["por_revisar"]["A"]["revisada"] is None

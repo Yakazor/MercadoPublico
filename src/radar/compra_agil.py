@@ -11,6 +11,12 @@ La API v2 es distinta de la de licitaciones (v1):
 - páginas de 50 pueden cortarse con HTTP 504: se usa un tamaño menor y, ante un
   504, se reintenta la página con 10.
 
+2º llamado: si en el 1er llamado (solo empresas de menor tamaño) nadie cotiza, la misma
+compra se vuelve a abrir para todos con otra fecha de cierre, pero conserva su código y su
+fecha de publicación: el listado por fecha de publicación no la vuelve a traer. Por eso las
+de tus rubros que cierran su 1er llamado quedan unos días «por revisar» y se vuelve a pedir
+su detalle (`revisar_reaperturas`).
+
 Cada Compra Ágil se convierte a la forma de una licitación (`como_licitacion`)
 para reutilizar el filtro de rubros, las alertas ISP, el presupuesto y el
 dashboard sin cambios: el tipo queda "Compra Ágil".
@@ -306,6 +312,9 @@ def _cierre(valor) -> datetime | None:
         return None
 
 
+REVISAR_DIAS = 3            # días después del cierre del 1er llamado en que se busca el 2º
+REVISAR_CADA_HORAS = 6      # entre dos revisiones de la misma compra
+MAX_REVISIONES = 60         # detalles por corrida para buscar reaperturas
 MAX_INTENTOS_DETALLE = 3     # corridas en que se intenta el detalle de una compra
 MAX_FALLAS_SEGUIDAS = 15     # detalles seguidos sin respuesta: la API está caída, se sigue en la próxima
 
@@ -325,8 +334,11 @@ def estado_vacio() -> dict:
     - abiertas: {codigo: {"fila", "detalle"}} de tus rubros;
     - descartadas: {codigo: cierre} revisadas que no son de tus rubros;
     - pendientes: {codigo: {"cierre", "intentos", "prioridad"}} candidatas por nombre a las
-      que falta pedir el detalle (prioridad 0 = el nombre solo ya calza con un rubro)."""
-    return {"version": 1, "listado_hasta": None, "abiertas": {}, "descartadas": {}, "pendientes": {}}
+      que falta pedir el detalle (prioridad 0 = el nombre solo ya calza con un rubro);
+    - por_revisar: {codigo: {"cierre", "hasta", "revisada", "prioridad"}} cerradas en su 1er
+      llamado: hasta `hasta` se vuelve a pedir su detalle por si se abrió el 2º llamado."""
+    return {"version": 1, "listado_hasta": None, "abiertas": {}, "descartadas": {}, "pendientes": {},
+            "por_revisar": {}}
 
 
 @dataclass
@@ -336,6 +348,8 @@ class ResultadoCompraAgil:
     detalles: int = 0
     nuevas_en_rubros: int = 0
     pendientes: int = 0
+    revisadas: int = 0                                       # detalles pedidos para buscar el 2º llamado
+    reabiertas: int = 0                                      # cerradas que volvieron a abrirse (2º llamado)
     detenida: str | None = None                              # motivo si se cortó (cuota, tiempo)
 
 
@@ -344,7 +358,9 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                               tamano_pagina: int = TAMANO_MINIMO, max_paginas: int = 400,
                               max_detalles: int = 700, ahora: datetime | None = None,
                               hasta_monotonic: float | None = None,
-                              margen_horas: float = 12) -> ResultadoCompraAgil:
+                              margen_horas: float = 12, revisar_dias: float = REVISAR_DIAS,
+                              revisar_cada_horas: float = REVISAR_CADA_HORAS,
+                              max_revisiones: int = MAX_REVISIONES) -> ResultadoCompraAgil:
     """Suma al `estado` las Compras Ágiles publicadas desde la corrida anterior.
 
     listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas → filtro
@@ -353,7 +369,11 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
 
     Una Compra Ágil suele estar abierta 1 o 2 días y el límite de consultas de la API deja
     revisar solo una parte: primero las publicadas más recientemente (las que más tiempo
-    dejan para cotizar), y no se revisan las que cierran en menos de `margen_horas`."""
+    dejan para cotizar), y no se revisan las que cierran en menos de `margen_horas`.
+
+    Las que cierran su 1er llamado se revisan `revisar_dias` días más (cada
+    `revisar_cada_horas`, a lo más `max_revisiones` detalles por corrida y antes que las
+    nuevas): si se abrió el 2º llamado, vuelven a las abiertas con su nuevo cierre."""
     ahora = ahora or ahora_chile()
     hoy = ahora.date()
     r = ResultadoCompraAgil()
@@ -382,10 +402,23 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
             log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
     r.listadas = len(listadas)
     estado["pendientes"] = {k: _pendiente(v) for k, v in estado["pendientes"].items()}
+    por_revisar = estado.setdefault("por_revisar", {})
     conocidas = estado["abiertas"].keys() | estado["descartadas"].keys() | estado["pendientes"].keys()
     for c in listadas:
-        nombre = c.get("nombre")
-        if c.get("codigo") not in conocidas and filtro.es_candidata(nombre):
+        nombre, codigo = c.get("nombre"), c.get("codigo")
+        cierre_listado = _cierre((c.get("fechas") or {}).get("fecha_cierre"))
+        abierta = estado["abiertas"].get(codigo)
+        cierre_guardado = _cierre(((abierta or {}).get("fila") or {}).get("fecha_cierre"))
+        if codigo in por_revisar or (abierta and cierre_listado and cierre_guardado
+                                     and cierre_listado != cierre_guardado):
+            # Volvió a aparecer con otro cierre (2º llamado o plazo ampliado): se pide el
+            # detalle de nuevo antes que todo lo demás.
+            por_revisar.setdefault(codigo, {"cierre": (c.get("fechas") or {}).get("fecha_cierre"), "prioridad": 0,
+                                            "hasta": (ahora + timedelta(days=max(revisar_dias, 1)))
+                                            .isoformat(timespec="seconds")})
+            por_revisar[codigo] |= {"revisada": None, "prioridad": -1}
+            continue
+        if codigo not in conocidas and filtro.es_candidata(nombre):
             estado["pendientes"][c["codigo"]] = {
                 "cierre": (c.get("fechas") or {}).get("fecha_cierre"), "intentos": 0,
                 "publicado": (c.get("fechas") or {}).get("fecha_publicacion"),
@@ -396,13 +429,30 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     if cubierto > (anterior or desde):
         estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
 
-    # Las que ya cerraron salen de la memoria.
+    # Las que ya cerraron salen de la memoria. Las de tus rubros que cerraron su 1er llamado
+    # (y las candidatas que ya calzaban por nombre) quedan por revisar: puede abrirse el 2º.
     # Las pendientes que cierran en menos de `margen_horas` ya no alcanzan a cotizarse.
-    estado["pendientes"] = {k: v for k, v in estado["pendientes"].items()
-                            if not ((c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=margen_horas))}
+    def _a_revisar(codigo, cierre, prioridad):
+        c = _cierre(cierre)
+        if revisar_dias > 0 and c and codigo not in por_revisar:
+            por_revisar[codigo] = {"cierre": cierre, "revisada": None, "prioridad": prioridad,
+                                   "hasta": (c + timedelta(days=revisar_dias)).isoformat(timespec="seconds")}
+
+    for k, v in list(estado["pendientes"].items()):
+        if (c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=margen_horas):
+            del estado["pendientes"][k]
+            if v.get("prioridad") == 0:
+                _a_revisar(k, v["cierre"], 1)
     estado["descartadas"] = {k: v for k, v in estado["descartadas"].items() if not ((c := _cierre(v)) and c < ahora)}
-    estado["abiertas"] = {k: v for k, v in estado["abiertas"].items()
-                          if not ((c := _cierre((v.get("fila") or {}).get("fecha_cierre"))) and c < ahora)}
+    for k, v in list(estado["abiertas"].items()):
+        fila = v.get("fila") or {}
+        if (c := _cierre(fila.get("fecha_cierre"))) and c < ahora:
+            del estado["abiertas"][k]
+            if fila.get("llamado") != 2:
+                _a_revisar(k, fila.get("fecha_cierre"), 0)
+    for k, v in list(por_revisar.items()):
+        if (h := _cierre(v.get("hasta"))) and h < ahora:
+            del por_revisar[k]
     # Se reclasifican con la config.yaml vigente (sin llamar a la API): un cambio en los
     # rubros o exclusiones se aplica también a las que ya estaban guardadas.
     for codigo, abierta in list(estado["abiertas"].items()):
@@ -412,6 +462,9 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         else:
             estado["descartadas"][codigo] = abierta["fila"].get("fecha_cierre")
             del estado["abiertas"][codigo]
+
+    if not r.detenida:
+        revisar_reaperturas(cliente, filtro, estado, r, ahora, revisar_cada_horas, max_revisiones, hasta_monotonic)
 
     # Primero las más recientes (sin fecha de publicación, la de cierre más lejana), y
     # dentro de eso las que el nombre ya calza con un rubro.
@@ -464,6 +517,57 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         r.detenida = "; ".join(t for t in (listado_cortado, r.detenida) if t)
     r.pendientes = len(estado["pendientes"])
     log.info("Compras Ágiles: %d listadas, %d candidatas nuevas, %d detalles, %d nuevas en tus rubros, "
-             "%d abiertas en tus rubros, %d pendientes%s", r.listadas, r.nuevas_candidatas, r.detalles,
-             r.nuevas_en_rubros, len(estado["abiertas"]), r.pendientes, f" ({r.detenida})" if r.detenida else "")
+             "%d abiertas en tus rubros, %d pendientes, %d revisadas por 2º llamado (%d reabiertas, %d por "
+             "revisar)%s", r.listadas, r.nuevas_candidatas, r.detalles, r.nuevas_en_rubros, len(estado["abiertas"]),
+             r.pendientes, r.revisadas, r.reabiertas, len(estado.get("por_revisar") or {}),
+             f" ({r.detenida})" if r.detenida else "")
     return r
+
+
+def revisar_reaperturas(cliente: ClienteCompraAgil, filtro: FiltroRubros, estado: dict, r: ResultadoCompraAgil,
+                        ahora: datetime, cada_horas: float = REVISAR_CADA_HORAS, maximo: int = MAX_REVISIONES,
+                        hasta_monotonic: float | None = None) -> None:
+    """Vuelve a pedir el detalle de las cerradas en su 1er llamado (`estado["por_revisar"]`).
+
+    Si el cierre que informa la API ya es futuro, se abrió el 2º llamado (o se amplió el
+    plazo): vuelve a las abiertas con el llamado y el cierre nuevos. Primero las que
+    reaparecieron en el listado, después las de tus rubros y al final las candidatas por
+    nombre; cada una a lo más cada `cada_horas`."""
+    por_revisar = estado.setdefault("por_revisar", {})
+    # Solo las que ya cerraron (o reaparecieron en el listado), cada una a lo más cada `cada_horas`.
+    toca = [(k, v) for k, v in por_revisar.items()
+            if (v.get("prioridad") == -1 or ((c := _cierre(v.get("cierre"))) and c <= ahora))
+            and not ((u := _cierre(v.get("revisada"))) and u > ahora - timedelta(hours=cada_horas))]
+    toca.sort(key=lambda kv: (kv[1].get("prioridad", 1), str(kv[1].get("revisada") or "")))
+    fallas = 0
+    for codigo, pendiente in toca[:maximo]:
+        if fallas >= MAX_FALLAS_SEGUIDAS or (hasta_monotonic is not None and time.monotonic() > hasta_monotonic):
+            break
+        try:
+            det = como_licitacion(cliente.detalle(codigo))
+        except ErrorApi as e:
+            if e.fatal:
+                if e.temporal:   # 429: se sigue en la próxima corrida
+                    r.detenida = str(e)
+                    return
+                raise
+            fallas += 1
+            if e.temporal:
+                pendiente["revisada"] = ahora.isoformat(timespec="seconds")
+            else:            # 404: ya no existe
+                por_revisar.pop(codigo, None)
+            continue
+        fallas = 0
+        r.revisadas += 1
+        cierre, anterior = _cierre(det["Fechas"].get("FechaCierre")), _cierre(pendiente.get("cierre"))
+        if cierre and cierre > ahora and (pendiente.get("prioridad") == -1 or not anterior or cierre > anterior):
+            por_revisar.pop(codigo, None)
+            fila = fila_compra_agil(det, filtro, ahora.date())
+            if fila:
+                estado["abiertas"][codigo] = {"fila": fila, "detalle": det}
+                r.reabiertas += 1
+                log.info("Compra Ágil %s abierta de nuevo (llamado %s, cierra %s).", codigo, det.get("Llamado"), cierre)
+            else:
+                estado["descartadas"][codigo] = det["Fechas"].get("FechaCierre")
+        else:
+            pendiente["revisada"] = ahora.isoformat(timespec="seconds")

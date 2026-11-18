@@ -139,10 +139,73 @@ def es_compra_agil(lic: dict) -> bool:
     return lic.get("tipo") == COMPRA_AGIL
 
 
+# Rango del tipo de licitación en UTM (Ley de Compras): piso y tope. El tope está en
+# `evaluacion.TOPE_TIPO_UTM`; una Compra Ágil es de hasta 100 UTM.
+PISO_TIPO_UTM = {"LE": 100, "CO": 100, "LP": 1000, "B2": 1000, "LQ": 2000, "H2": 2000, "LR": 5000, "I2": 5000}
+TOPE_COMPRA_AGIL_UTM = 100
+# Origen del monto que muestran las tablas (columna «Origen»).
+MONTO_PUBLICADO, MONTO_OC, MONTO_TOPE, MONTO_PISO = "Publicado", "≈ OC", "≤ tope", "≥ piso"
+AYUDA_MONTO = ("Publicado = monto estimado que informó el organismo. Si no lo informó, se estima: «≈ OC» = cantidades "
+               "× lo que pagó el Estado en órdenes de compra parecidas (dentro del rango del tipo de licitación); "
+               "«≤ tope» = tope legal del tipo (L1 100 UTM, LE 1.000, LP 2.000…; Compra Ágil 100 UTM); «≥ piso» = "
+               "mínimo del tipo cuando no tiene tope (LR). Las estimaciones son una idea del tamaño, no el "
+               "presupuesto: no cambian la decisión GO / NO GO.")
+
+
+def monto_referencial(lic: dict, items: list[dict] | None = None, utm: float | None = None) -> tuple[float | None, str]:
+    """Monto para tener una idea del tamaño de la compra, y de dónde sale.
+
+    1. El monto estimado publicado.
+    2. Sin él, las cantidades × la mediana que pagó el Estado en OC parecidas (`ref_mediana`), si
+       hay referencia para al menos la mitad de las líneas (las demás se suponen del mismo valor
+       promedio) y no son todas de cantidad 1, acotado al rango legal del tipo de licitación.
+    3. Si no, el tope del tipo (o el piso, si no tiene tope)."""
+    from .evaluacion import TOPE_TIPO_UTM
+    monto = lic.get("monto_estimado")
+    if monto:
+        return float(monto), MONTO_PUBLICADO
+    utm = utm or SUPUESTOS["utm"]
+    tipo = str(lic.get("tipo") or "").upper()
+    tope_utm = TOPE_COMPRA_AGIL_UTM if es_compra_agil(lic) else TOPE_TIPO_UTM.get(tipo)
+    piso_utm = PISO_TIPO_UTM.get(tipo)
+    lineas = items or []
+    con_ref = [it for it in lineas if (it.get("ref_mediana") or 0) > 0 and (it.get("cantidad") or 0) > 0]
+    # Si todas las cantidades son 1, casi siempre las reales están en las bases (la línea es un
+    # «kit» o un ítem global): la estimación con OC saldría ínfima, así que no se usa.
+    cantidades_reales = any((it.get("cantidad") or 0) != 1 for it in lineas)
+    if lineas and cantidades_reales and len(con_ref) * 2 >= len(lineas):
+        estimado = sum(it["cantidad"] * it["ref_mediana"] for it in con_ref) * len(lineas) / len(con_ref)
+        if tope_utm:
+            estimado = min(estimado, tope_utm * utm)
+        if piso_utm:
+            estimado = max(estimado, piso_utm * utm)
+        return round(estimado), MONTO_OC
+    if tope_utm:
+        return float(tope_utm * utm), MONTO_TOPE
+    if piso_utm:
+        return float(piso_utm * utm), MONTO_PISO
+    return None, ""
+
+
+def detectada(lic: dict) -> str:
+    """Desde cuándo está en el radar: primera detección (licitaciones) o publicación (Compras Ágiles)."""
+    return str(lic.get("primera_deteccion") or lic.get("fecha_publicacion") or "")[:10]
+
+
+def es_nueva(lic: dict, hoy, dias: int = 2) -> bool:
+    """Apareció en el radar en los últimos `dias` días (hoy incluido)."""
+    try:
+        return (hoy - datetime.fromisoformat(detectada(lic)).date()).days < dias
+    except ValueError:
+        return False
+
+
 def filtrar(lics: list[dict], *, texto: str = "", compra_agil: bool | None = None, rubros=(), regiones=(),
             max_dias: int | None = None, monto_min: float | None = None, monto_max: float | None = None,
-            con_precios: set | None = None, plazo_max: float | None = None, llamado: int | None = None) -> list[dict]:
-    """Filtros de la tabla. Los de monto y plazo no descartan las que no informan ese dato."""
+            con_precios: set | None = None, plazo_max: float | None = None, llamado: int | None = None,
+            nuevas_primero: bool = False) -> list[dict]:
+    """Filtros de la tabla. Los de monto y plazo no descartan las que no informan ese dato.
+    Ordenadas por cierre (o, con `nuevas_primero`, las recién detectadas arriba)."""
     palabras = normalizar(texto).split()
     salida = []
     for lic in lics:
@@ -175,7 +238,10 @@ def filtrar(lics: list[dict], *, texto: str = "", compra_agil: bool | None = Non
         if llamado is not None and lic.get("llamado") != llamado:
             continue
         salida.append(lic)
-    return sorted(salida, key=lambda l: l.get("fecha_cierre") or "9999")
+    salida.sort(key=lambda l: l.get("fecha_cierre") or "9999")
+    if nuevas_primero:
+        salida.sort(key=detectada, reverse=True)
+    return salida
 
 
 def opciones(items: list[dict], mercado: list[dict], cotizaciones: dict | None = None, estimar_oc: bool = False,

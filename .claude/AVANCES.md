@@ -112,6 +112,27 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **18-11 (pedido de la usuaria, rama `fix/compras-agiles-2do-llamado-y-montos`):** tres arreglos.
+  - **2º llamado de Compras Ágiles:** desde el 25-10 no apareció ninguna en ~30 corridas. Causa probable: el
+    workflow lista por fecha de publicación y pide el detalle una sola vez; una compra que reabre en 2º llamado
+    conserva código y fecha de publicación (el listado no la vuelve a traer) y además se borraba de la memoria al
+    cerrar su 1er llamado. Ahora (`compra_agil.revisar_reaperturas`) las de tus rubros que cierran su 1er llamado
+    (y las candidatas que ya calzaban por nombre) quedan en `por_revisar` 3 días y se vuelve a pedir su detalle
+    cada 6 h (máx. 60 por corrida, antes que las nuevas); si el cierre pasó a ser futuro, vuelven a las abiertas
+    con el llamado nuevo. También se revisan las que reaparecen en el listado con otro cierre. Config:
+    `compra_agil.revisar_segundo_llamado_dias`, `revisar_cada_horas`, `max_revisiones`. No se pudo confirmar
+    contra la API desde la sesión (sin ticket ni salida a mercadopublico.cl): revisar en el log del workflow
+    «Compras Ágiles» la línea «N revisadas por 2º llamado (M reabiertas…)» y `reabiertas` en compras_agiles.json.
+  - **Montos que faltaban** (~180 de 450 licitaciones sin monto publicado): la plataforma muestra siempre un
+    monto con su origen (columna «Origen»): «Publicado», «≈ OC» (cantidades × mediana de OC parecidas, si hay
+    referencia en la mitad de las líneas y no son todas de cantidad 1, acotado al rango del tipo), «≤ tope» (tope
+    legal del tipo; Compra Ágil 100 UTM) o «≥ piso» (LR). Solo para dimensionar: la evaluación GO / NO GO sigue
+    usando el monto publicado (`plataforma.monto_referencial`). Datos del 17-11: 512 publicados, 54 ≈ OC,
+    122 ≤ tope, 1 ≥ piso, 2 sin dato (tipo O1).
+  - **«Veo siempre las mismas»:** el radar sí se renueva (50–60 licitaciones nuevas por día hábil), pero la tabla
+    va por cierre y cada una dura 10–20 días. Marca 🆕 (detectada hoy o ayer), cuenta de nuevas y opción «Más
+    nuevas primero» en Más filtros.
+
 - **17-11 (rutina):** radar disparado (datos 11:42/11:48; 434 licitaciones, 527 Compras Ágiles; la API volvió a cortar con HTTP 429, listado al 17-11 08:00; ninguna de 2º llamado). Lote de 8: con precios 4469-263-L126 tablets/impresora/proyector → NO GO ($2,46 M vs $1,50 M), 3537-76-LE26 neumáticos → NO GO ($18,9 M vs $9,8 M), 4469-260-L126 repisas → NO GO ($0,78 M vs $0,75 M), 1953-26-LE26 anafes → falta precio (3/5). Sin precio con nota: 4928-37, 1057448-57, 1002-95, 1336-21. 10 cerradas archivadas. Top 3: 1171142-118-LE26, 994-42-LE26 y 4590-26-LE26 (proveedores nuevos para las dos de neumáticos). 572 tests OK. La corrida del 16-11 de esta sesión no se hizo (el aviso llegó junto con el del 17-11; otra sesión hizo la del 16-11).
 
 - **16-11 (error en la plataforma, rama `fix/boton-1er-llamado`):** en Compras Ágiles, con «Ver las de 1er llamado» a la

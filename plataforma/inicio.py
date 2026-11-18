@@ -4,7 +4,7 @@ import streamlit as st
 
 import comun
 from radar.evaluacion import CONDICIONADO, GO
-from radar.plataforma import es_compra_agil, ranking
+from radar.plataforma import AYUDA_MONTO, es_compra_agil, monto_referencial, ranking
 
 
 def _tabla(df: pd.DataFrame, codigos: list[str], clave: str, **config) -> None:
@@ -77,13 +77,15 @@ def pagina() -> None:
         df = pd.DataFrame([{
             "Código": l["codigo"], "Tipo": "Compra Ágil" if es_compra_agil(l) else l.get("tipo"),
             "Nombre": l.get("nombre"), "Cierre": pd.to_datetime(l.get("fecha_cierre")),
-            "Monto": comun.pesos(l.get("monto_estimado")),
-        } for l in cierran])
+            "Monto": comun.pesos(monto), "Origen": origen,
+        } for l in cierran
+            for monto, origen in [monto_referencial(l, prep["items"].get(l["codigo"]), comun.supuestos().get("utm"))]])
         if df.empty:
             st.info("Nada cierra en los próximos 2 días.")
         else:
             _tabla(df, [l["codigo"] for l in cierran], "inicio_pronto", **{
                 "Código": st.column_config.TextColumn(width=160), "Tipo": st.column_config.TextColumn(width=100),
-                "Nombre": st.column_config.TextColumn(width=420),
+                "Nombre": st.column_config.TextColumn(width=350),
                 "Cierre": st.column_config.DatetimeColumn(format="DD-MM HH:mm", width=110),
-                "Monto": st.column_config.NumberColumn(format="localized", width=110)})
+                "Monto": st.column_config.NumberColumn(format="localized", width=110, help=AYUDA_MONTO),
+                "Origen": st.column_config.TextColumn(width=70, help=AYUDA_MONTO)})

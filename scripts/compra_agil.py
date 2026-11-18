@@ -4,6 +4,9 @@ Uso:
     python scripts/compra_agil.py                       # corrida incremental
     python scripts/compra_agil.py --max-detalles 20     # prueba corta
 
+Las de tus rubros que cierran su 1er llamado se vuelven a revisar unos días por si se
+abre el 2º llamado (misma compra, otro cierre; ver `radar.compra_agil`).
+
 Cada corrida lista solo lo publicado desde la anterior (la API entrega ~10 compras
 cada ~5 s, así que listar todo Chile de una vez toma horas) y guarda lo encontrado en
 una memoria (`rutas.compra_agil_estado`, en la caché de GitHub Actions). Escribe:
@@ -68,6 +71,9 @@ def main():
             max_detalles=args.max_detalles or ca.get("max_detalles", 700),
             hasta_monotonic=inicio + args.max_minutos * 60 if args.max_minutos else None,
             margen_horas=ca.get("margen_cotizar_horas", 12),
+            revisar_dias=ca.get("revisar_segundo_llamado_dias", 3),
+            revisar_cada_horas=ca.get("revisar_cada_horas", 6),
+            max_revisiones=ca.get("max_revisiones", 60),
         )
     except ErrorApi as e:
         # Lo obtenido hasta el error ya está en `estado`: se guarda igual.
@@ -92,6 +98,8 @@ def main():
         "listado_hasta": estado.get("listado_hasta"),
         "regiones": ca.get("regiones") or [],
         "pendientes": len(estado["pendientes"]),
+        "por_revisar": len(estado.get("por_revisar") or {}),
+        "reabiertas": r.reabiertas if r else 0,
         "detenida": r.detenida if r else "error de la API",
         "llamadas_api": cliente.llamadas,
         "filas": filas,

@@ -650,3 +650,44 @@ def test_evaluacion_avisa_oferta_bajo_el_equilibrio_o_sobre_el_monto():
     _, ev = evaluar_licitacion(lic, items, ops, {}, 0.20, 0.05)
     assert ev.decision == NO_GO
     assert any("Calculado con precio para 1 de 2 líneas" in r for r in ev.razones)
+
+
+# --- Monto para todas (18-11-2026: «lo ideal es que nunca falten para tener una idea del monto») ---
+
+from radar.plataforma import (MONTO_OC, MONTO_PISO, MONTO_PUBLICADO, MONTO_TOPE, es_nueva,  # noqa: E402
+                              monto_referencial)
+
+
+def test_monto_publicado_manda():
+    assert monto_referencial({"tipo": "LE", "monto_estimado": 5_000_000}, [], 70_000) == (5_000_000, MONTO_PUBLICADO)
+
+
+def test_monto_estimado_con_oc_y_acotado_al_tipo():
+    items = [{"cantidad": 10, "ref_mediana": 1_000_000}, {"cantidad": 5, "ref_mediana": 200_000},
+             {"cantidad": 2}]   # sin referencia: se supone del valor promedio de las otras
+    monto, origen = monto_referencial({"tipo": "LE"}, items, 70_000)
+    assert origen == MONTO_OC and monto == round(11_000_000 * 3 / 2)
+    # LE va de 100 a 1.000 UTM: una estimación fuera del rango se acota.
+    assert monto_referencial({"tipo": "LE"}, [{"cantidad": 2, "ref_mediana": 500}], 70_000) == (7_000_000, MONTO_OC)
+    assert monto_referencial({"tipo": "L1"}, [{"cantidad": 1000, "ref_mediana": 1e6}], 70_000) == (7_000_000, MONTO_OC)
+
+
+def test_sin_referencias_suficientes_usa_el_tope_o_el_piso_del_tipo():
+    items = [{"cantidad": 1, "ref_mediana": 5}, {"cantidad": 1}, {"cantidad": 1}]
+    assert monto_referencial({"tipo": "LP"}, items, 70_000) == (140_000_000, MONTO_TOPE)
+    assert monto_referencial({"tipo": "Compra Ágil"}, [], 70_000) == (7_000_000, MONTO_TOPE)
+    # Todas de cantidad 1 (las reales están en las bases): la OC no sirve para estimar.
+    assert monto_referencial({"tipo": "L1"}, [{"cantidad": 1, "ref_mediana": 2500}], 70_000) == (7_000_000, MONTO_TOPE)
+    assert monto_referencial({"tipo": "LR"}, [], 70_000) == (350_000_000, MONTO_PISO)
+    assert monto_referencial({"tipo": "XX"}, [], 70_000) == (None, "")
+
+
+def test_nuevas_y_orden_por_nuevas():
+    from datetime import date
+    hoy = date(2026, 11, 18)
+    vieja = {"codigo": "V", "primera_deteccion": "2026-11-10T08:00:00", "fecha_cierre": "2026-11-19"}
+    nueva = {"codigo": "N", "primera_deteccion": "2026-11-17T08:00:00", "fecha_cierre": "2026-11-30"}
+    ca = {"codigo": "C", "fecha_publicacion": "2026-11-18 09:00:00", "fecha_cierre": "2026-11-20"}
+    assert not es_nueva(vieja, hoy) and es_nueva(nueva, hoy) and es_nueva(ca, hoy)
+    assert [l["codigo"] for l in filtrar([vieja, nueva, ca])] == ["V", "C", "N"]
+    assert [l["codigo"] for l in filtrar([vieja, nueva, ca], nuevas_primero=True)] == ["C", "N", "V"]
