@@ -34,7 +34,9 @@ class Sesion:
         siguiente = self.respuestas[0] if self.respuestas else None
         es_detalle = siguiente is not None and (getattr(siguiente, "solo_detalle", False)
                                                 or "codigo" in ((siguiente._datos or {}).get("payload") or {}))
-        if url.endswith("/v2/compra-agil") and (siguiente is None or es_detalle):
+        # Una página marcada `solo_cambio` es del listado por último cambio: el de publicación no la toma.
+        solo_cambio = getattr(siguiente, "solo_cambio", False) and "publicado_desde" in params
+        if url.endswith("/v2/compra-agil") and (siguiente is None or es_detalle or solo_cambio):
             return _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
         return self.respuestas.pop(0)
 
@@ -421,3 +423,57 @@ def test_429_al_revisar_corta_y_queda_para_la_proxima():
     c = _cliente([_error(429, "límite", solo_detalle=True), _error(429, "límite", solo_detalle=True)])
     r, _ = _actualizar(c, estado=estado)
     assert "429" in r.detenida and estado["por_revisar"]["A"]["revisada"] is None
+
+
+
+# --- Listado por fecha de último cambio (18-11-2026: «en Mercado Público hay hartas de 2º llamado») ---
+
+def _fila(codigo, llamado, cierre="2026-10-23T15:00:00Z", nombre=None):
+    return {"codigo": codigo, "nombre": nombre or f"Compra de guantes {codigo}",
+            "convocatoria": {"estado_convocatoria": llamado, "descripcion": f"{llamado} llamado"},
+            "fechas": {"fecha_publicacion": "2026-10-15T10:00:00Z", "fecha_cierre": cierre}}
+
+
+def _pagina_filas(filas):
+    r = _ok({"items": filas, "paginacion": {"numero_pagina": 1, "total_paginas": 1, "total_resultados": len(filas)}})
+    r.solo_cambio = True
+    return r
+
+
+def test_lista_tambien_por_ultimo_cambio_y_trae_las_de_segundo_llamado():
+    # La de 2º llamado se publicó hace días: no sale en el listado por publicación (vacío),
+    # sí en el de cambios; su detalle se pide antes que el de la de 1er llamado.
+    c = _cliente([_pagina_filas([_fila("UNO", 1), _fila("DOS", 2)]),
+                  _detalle("DOS", llamado=2), _detalle("UNO")])
+    r, estado = _actualizar(c)
+    params = [ll[1] for ll in c._sesion.llamadas if ll[0].endswith("/v2/compra-agil")]
+    con_filas = [p for p in params if "cambio_desde" in p and p["numero_pagina"] == 1]
+    assert con_filas and all(p["ordenar_por"] == "FechaUltimaModificacion" for p in con_filas)
+    assert all("publicado_desde" in p for p in params if "cambio_desde" not in p)
+    detalles = [ll[0].rsplit("/", 1)[1] for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
+    assert detalles == ["DOS", "UNO"] and r.segundo_llamado == 1
+    assert estado["abiertas"]["DOS"]["fila"]["llamado"] == 2 and estado["cambios_hasta"]
+
+
+def test_la_abierta_que_pasa_a_segundo_llamado_se_vuelve_a_pedir():
+    estado = estado_vacio()
+    estado["abiertas"]["A"] = {"fila": {"fecha_cierre": "2026-10-23 15:00:00", "llamado": 1}, "detalle": {}}
+    c = _cliente([_pagina_filas([_fila("A", 2)]), _detalle("A", llamado=2)])
+    r, _ = _actualizar(c, estado=estado)
+    assert estado["abiertas"]["A"]["fila"]["llamado"] == 2
+
+
+def test_la_de_segundo_llamado_se_revisa_aunque_cierre_en_pocas_horas():
+    c = _cliente([_pagina_filas([_fila("DOS", 2, cierre="2026-10-21T18:00:00Z"),
+                                           _fila("UNO", 1, cierre="2026-10-21T18:00:00Z")]),
+                  _detalle("DOS", llamado=2, cierre="2026-10-21T18:00:00Z")])
+    _, estado = _actualizar(c)
+    assert "DOS" in estado["abiertas"] and "UNO" not in estado["abiertas"]
+
+
+def test_si_la_api_rechaza_el_listado_por_cambios_sigue_como_antes():
+    rechazo = _error(400, "parámetro inválido")
+    rechazo.solo_cambio = True
+    c = _cliente([_pagina(["A"], 1, 1), rechazo, _detalle("A")])
+    r, estado = _actualizar(c)
+    assert "A" in estado["abiertas"] and not r.detenida and not estado["cambios_hasta"]

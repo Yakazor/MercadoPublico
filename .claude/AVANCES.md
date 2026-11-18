@@ -112,6 +112,16 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **18-11 (pedido de la usuaria: «sigue apareciendo que no hay de segundo llamado y en Mercado Público hay hartas»):**
+  el PR #15 solo seguía las que cerraban su 1er llamado desde ahora; las ya reabiertas no se veían nunca. Según la
+  documentación de la API v2 (guía de terceros `ssolis-ti/compra-agil-mcp`, docs/api), el listado acepta
+  `cambio_desde`/`cambio_hasta` con `ordenar_por=FechaUltimaModificacion` y cada fila trae
+  `convocatoria.estado_convocatoria` (1 o 2). Ahora cada corrida lista además por fecha de último cambio (memoria
+  `cambios_hasta`; la primera vez, 3 días), las de 2º llamado van primero a pedir detalle (prioridad -1) y se revisan
+  hasta 3 h antes del cierre (las demás, 12 h). Si la API rechaza esos filtros (400), sigue como antes. Verificación
+  real: log del workflow «Compras Ágiles», línea «… N listadas en 2º llamado, M abiertas en 2º llamado en tus rubros».
+  Ojo: la nota del 02-11 «el llamado solo viene en el detalle» puede estar equivocada (confirmar en ese log).
+
 - **18-11 (pedido de la usuaria; PR #15, unido el 18-11 a pedido de ella):** tres arreglos.
   - **2º llamado de Compras Ágiles:** desde el 25-10 no apareció ninguna en ~30 corridas. Causa probable: el
     workflow lista por fecha de publicación y pide el detalle una sola vez; una compra que reabre en 2º llamado

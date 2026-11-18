@@ -13,9 +13,11 @@ La API v2 es distinta de la de licitaciones (v1):
 
 2º llamado: si en el 1er llamado (solo empresas de menor tamaño) nadie cotiza, la misma
 compra se vuelve a abrir para todos con otra fecha de cierre, pero conserva su código y su
-fecha de publicación: el listado por fecha de publicación no la vuelve a traer. Por eso las
-de tus rubros que cierran su 1er llamado quedan unos días «por revisar» y se vuelve a pedir
-su detalle (`revisar_reaperturas`).
+fecha de publicación: el listado por fecha de publicación no la vuelve a traer. Por eso cada
+corrida lista también por fecha de último cambio (`cambio_desde`/`cambio_hasta`, donde sí
+aparecen las reabiertas; cada fila trae `convocatoria.estado_convocatoria`) y las de 2º
+llamado van primero a pedir detalle. Además, las de tus rubros que cierran su 1er llamado
+quedan unos días «por revisar» y se vuelve a pedir su detalle (`revisar_reaperturas`).
 
 Cada Compra Ágil se convierte a la forma de una licitación (`como_licitacion`)
 para reutilizar el filtro de rubros, las alertas ISP, el presupuesto y el
@@ -176,7 +178,7 @@ def ahora_chile() -> datetime:
 
 def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: datetime, regiones: list[int] | None = None,
                       tamano_pagina: int = TAMANO_MINIMO, max_paginas: int = 400,
-                      hasta_monotonic: float | None = None) -> tuple[list[dict], datetime]:
+                      hasta_monotonic: float | None = None, por_cambio: bool = False) -> tuple[list[dict], datetime]:
     """Compras Ágiles abiertas publicadas entre `desde` y `hasta` (hora de Chile: la API
     compara su hora de Chile marcada con "Z"), y hasta qué momento quedó completo el listado.
 
@@ -187,6 +189,9 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     deben quedar las publicadas antes, que son las que cierran antes. Ventanas cortas
     también achican el corrimiento de filas mientras se pagina.
 
+    Con `por_cambio`, la ventana es de fecha de último cambio y no de publicación: ahí
+    aparecen las que se reabrieron en 2º llamado (y las recién publicadas).
+
     Si la API falla (ErrorApi temporal), el error lleva en `parcial` lo listado hasta
     la última ventana completa: no se pierde lo ya recorrido."""
     region = ",".join(str(r) for r in regiones) if regiones else None
@@ -196,9 +201,11 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     inicio = desde
     while inicio < hasta:
         fin = min(inicio + VENTANA_LISTADO - timedelta(seconds=1), hasta)
-        params = {"estado": "publicada", "region": region, "ordenar_por": "FechaPublicacion",
-                  "publicado_desde": inicio.strftime("%Y-%m-%dT%H:%M:%SZ"),
-                  "publicado_hasta": fin.strftime("%Y-%m-%dT%H:%M:%SZ")}
+        campo = "cambio" if por_cambio else "publicado"
+        params = {"estado": "publicada", "region": region,
+                  "ordenar_por": "FechaUltimaModificacion" if por_cambio else "FechaPublicacion",
+                  f"{campo}_desde": inicio.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  f"{campo}_hasta": fin.strftime("%Y-%m-%dT%H:%M:%SZ")}
         pagina = 1
         while True:
             if hasta_monotonic is not None and time.monotonic() > hasta_monotonic:
@@ -230,8 +237,17 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
             pagina += 1
         cubierto = fin
         inicio = fin + timedelta(seconds=1)
-    log.info("Compras Ágiles publicadas entre %s y %s (según la API): %d", desde, hasta, total_publicadas)
+    log.info("Compras Ágiles %s entre %s y %s (según la API): %d", "con cambios" if por_cambio else "publicadas",
+             desde, hasta, total_publicadas)
     return _sin_repetidos(items), cubierto
+
+
+def _llamado(item: dict) -> int | None:
+    """Llamado de una fila del listado (`convocatoria.estado_convocatoria`): 1, 2 o None."""
+    try:
+        return int((item.get("convocatoria") or {}).get("estado_convocatoria"))
+    except (TypeError, ValueError):
+        return None
 
 
 def _sin_repetidos(items: list[dict]) -> list[dict]:
@@ -331,19 +347,21 @@ def estado_vacio() -> dict:
     """Memoria entre corridas (se guarda en la caché de GitHub Actions).
 
     - listado_hasta: hasta qué hora de publicación ya se listó (hora de Chile);
+    - cambios_hasta: lo mismo para el listado por fecha de último cambio (2º llamado);
     - abiertas: {codigo: {"fila", "detalle"}} de tus rubros;
     - descartadas: {codigo: cierre} revisadas que no son de tus rubros;
     - pendientes: {codigo: {"cierre", "intentos", "prioridad"}} candidatas por nombre a las
       que falta pedir el detalle (prioridad 0 = el nombre solo ya calza con un rubro);
     - por_revisar: {codigo: {"cierre", "hasta", "revisada", "prioridad"}} cerradas en su 1er
       llamado: hasta `hasta` se vuelve a pedir su detalle por si se abrió el 2º llamado."""
-    return {"version": 1, "listado_hasta": None, "abiertas": {}, "descartadas": {}, "pendientes": {},
-            "por_revisar": {}}
+    return {"version": 1, "listado_hasta": None, "cambios_hasta": None, "abiertas": {}, "descartadas": {},
+            "pendientes": {}, "por_revisar": {}}
 
 
 @dataclass
 class ResultadoCompraAgil:
     listadas: int = 0
+    segundo_llamado: int = 0                                 # listadas en 2º llamado
     nuevas_candidatas: int = 0
     detalles: int = 0
     nuevas_en_rubros: int = 0
@@ -400,7 +418,34 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         else:
             listado_cortado = f"listado interrumpido ({e})"
             log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
+    if cubierto > (anterior or desde):
+        estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
+    # Segunda pasada, por fecha de último cambio: trae las reabiertas en 2º llamado, que
+    # conservan su fecha de publicación. Usa lo que quede del tiempo del listado.
+    if not r.detenida and not listado_cortado:
+        anterior_c = _cierre(estado.get("cambios_hasta"))
+        desde_c = max(anterior_c - timedelta(hours=1), ahora - timedelta(days=dias_iniciales)) if anterior_c \
+            else ahora - timedelta(days=dias_iniciales)
+        try:
+            por_cambio, cubierto_c = listar_publicadas(cliente, desde_c, ahora, regiones, tamano_pagina, max_paginas,
+                                                       hasta_monotonic=limite_listado, por_cambio=True)
+        except ErrorApi as e:
+            if e.fatal and not e.temporal:   # ticket rechazado
+                raise
+            por_cambio, cubierto_c = getattr(e, "parcial", ([], desde_c))
+            if e.fatal:
+                r.detenida = str(e)
+            elif e.temporal:
+                listado_cortado = f"listado por cambios interrumpido ({e})"
+            else:
+                # 400: la API no aceptó los filtros de cambio. No se corta la corrida: sigue
+                # como antes, solo con el listado por publicación.
+                log.warning("Listado por último cambio rechazado por la API: %s", e)
+        if cubierto_c > (anterior_c or desde_c):
+            estado["cambios_hasta"] = cubierto_c.isoformat(timespec="seconds")
+        listadas = _sin_repetidos(listadas + por_cambio)
     r.listadas = len(listadas)
+    r.segundo_llamado = sum(1 for c in listadas if _llamado(c) == 2)
     estado["pendientes"] = {k: _pendiente(v) for k, v in estado["pendientes"].items()}
     por_revisar = estado.setdefault("por_revisar", {})
     conocidas = estado["abiertas"].keys() | estado["descartadas"].keys() | estado["pendientes"].keys()
@@ -409,8 +454,10 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         cierre_listado = _cierre((c.get("fechas") or {}).get("fecha_cierre"))
         abierta = estado["abiertas"].get(codigo)
         cierre_guardado = _cierre(((abierta or {}).get("fila") or {}).get("fecha_cierre"))
-        if codigo in por_revisar or (abierta and cierre_listado and cierre_guardado
-                                     and cierre_listado != cierre_guardado):
+        llamado_guardado = ((abierta or {}).get("fila") or {}).get("llamado")
+        cambio_llamado = abierta and _llamado(c) and llamado_guardado and _llamado(c) != llamado_guardado
+        if codigo in por_revisar or cambio_llamado or (abierta and cierre_listado and cierre_guardado
+                                                       and cierre_listado != cierre_guardado):
             # Volvió a aparecer con otro cierre (2º llamado o plazo ampliado): se pide el
             # detalle de nuevo antes que todo lo demás.
             por_revisar.setdefault(codigo, {"cierre": (c.get("fechas") or {}).get("fecha_cierre"), "prioridad": 0,
@@ -422,12 +469,11 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
             estado["pendientes"][c["codigo"]] = {
                 "cierre": (c.get("fechas") or {}).get("fecha_cierre"), "intentos": 0,
                 "publicado": (c.get("fechas") or {}).get("fecha_publicacion"),
-                # Las que ya calzan solo por el nombre ("Compra de guantes de nitrilo") van
-                # antes que las que solo lo sugieren ("Compra de insumos").
-                "prioridad": 0 if filtro.evaluar(nombre=nombre).coincide else 1}
+                # Primero las de 2º llamado (las únicas que puede cotizar quien no es EMT);
+                # después las que ya calzan solo por el nombre ("Compra de guantes de nitrilo")
+                # y al final las que solo lo sugieren ("Compra de insumos").
+                "prioridad": -1 if _llamado(c) == 2 else 0 if filtro.evaluar(nombre=nombre).coincide else 1}
             r.nuevas_candidatas += 1
-    if cubierto > (anterior or desde):
-        estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
 
     # Las que ya cerraron salen de la memoria. Las de tus rubros que cerraron su 1er llamado
     # (y las candidatas que ya calzaban por nombre) quedan por revisar: puede abrirse el 2º.
@@ -439,7 +485,9 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                                    "hasta": (c + timedelta(days=revisar_dias)).isoformat(timespec="seconds")}
 
     for k, v in list(estado["pendientes"].items()):
-        if (c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=margen_horas):
+        # Las de 2º llamado suelen durar poco: se revisan hasta 3 horas antes del cierre.
+        margen = min(margen_horas, 3) if v.get("prioridad") == -1 else margen_horas
+        if (c := _cierre(v["cierre"])) and c < ahora + timedelta(hours=margen):
             del estado["pendientes"][k]
             if v.get("prioridad") == 0:
                 _a_revisar(k, v["cierre"], 1)
@@ -518,8 +566,10 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     r.pendientes = len(estado["pendientes"])
     log.info("Compras Ágiles: %d listadas, %d candidatas nuevas, %d detalles, %d nuevas en tus rubros, "
              "%d abiertas en tus rubros, %d pendientes, %d revisadas por 2º llamado (%d reabiertas, %d por "
-             "revisar)%s", r.listadas, r.nuevas_candidatas, r.detalles, r.nuevas_en_rubros, len(estado["abiertas"]),
-             r.pendientes, r.revisadas, r.reabiertas, len(estado.get("por_revisar") or {}),
+             "revisar), %d listadas en 2º llamado, %d abiertas en 2º llamado en tus rubros%s",
+             r.listadas, r.nuevas_candidatas, r.detalles, r.nuevas_en_rubros, len(estado["abiertas"]),
+             r.pendientes, r.revisadas, r.reabiertas, len(estado.get("por_revisar") or {}), r.segundo_llamado,
+             sum(1 for a in estado["abiertas"].values() if (a.get("fila") or {}).get("llamado") == 2),
              f" ({r.detenida})" if r.detenida else "")
     return r
 
