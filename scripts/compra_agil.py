@@ -75,6 +75,7 @@ def main():
             revisar_cada_horas=ca.get("revisar_cada_horas", 6),
             max_revisiones=ca.get("max_revisiones", 60),
             solo_segundo_llamado=not ca.get("soy_emt", False),
+            dias_iniciales_cambios=ca.get("dias_iniciales_cambios", 1),
         )
     except ErrorApi as e:
         # Lo obtenido hasta el error ya está en `estado`: se guarda igual.

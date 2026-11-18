@@ -513,3 +513,13 @@ def test_sin_emt_no_pide_el_detalle_de_las_de_primer_llamado():
     detalles = [ll[0].rsplit("/", 1)[1] for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]]
     assert detalles == ["DOS", "SIN"] and r.saltadas_primer_llamado == 1
     assert "VIEJA1" not in estado["pendientes"] and "UNO" not in estado["pendientes"]
+
+
+def test_la_abierta_de_primer_llamado_con_otro_formato_de_cierre_no_se_vuelve_a_pedir():
+    # 18-11-2026: 8 detalles se gastaron en abiertas de 1er llamado que el listado mostraba
+    # con un cierre escrito distinto; la API cortó antes de las de 2º llamado.
+    estado = estado_vacio()
+    estado["abiertas"]["A"] = {"fila": {"fecha_cierre": "2026-10-23 15:00:00", "llamado": 1}, "detalle": {}}
+    c = _cliente([_pagina_filas([_fila("A", 1, cierre="2026-10-23 18:00")])])
+    r, _ = _actualizar(c, estado=estado)
+    assert not [ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]] and r.revisadas == 0

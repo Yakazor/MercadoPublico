@@ -394,7 +394,8 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                               margen_horas: float = 12, revisar_dias: float = REVISAR_DIAS,
                               revisar_cada_horas: float = REVISAR_CADA_HORAS,
                               max_revisiones: int = MAX_REVISIONES,
-                              solo_segundo_llamado: bool = False) -> ResultadoCompraAgil:
+                              solo_segundo_llamado: bool = False,
+                              dias_iniciales_cambios: float = 1) -> ResultadoCompraAgil:
     """Suma al `estado` las Compras Ágiles publicadas desde la corrida anterior.
 
     listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas → filtro
@@ -427,8 +428,10 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     # tras unas 400 consultas y listar dos veces dejaba sin consultas para los detalles.
     cambios_ok, rechazado = False, False
     anterior_c = _cierre(estado.get("cambios_hasta"))
+    # La primera vez, un día de cambios: tres días son ~3.000 filas (~300 consultas) y la API
+    # cortaba antes de pedir un solo detalle. Las de 2º llamado abiertas cambiaron hace poco.
     desde_c = max(anterior_c - timedelta(hours=1), ahora - timedelta(days=dias_iniciales)) if anterior_c \
-        else ahora - timedelta(days=dias_iniciales)
+        else ahora - timedelta(days=dias_iniciales_cambios)
     try:
         listadas, cubierto_c = listar_publicadas(cliente, desde_c, ahora, regiones, tamano_pagina, max_paginas,
                                                  hasta_monotonic=limite_listado, por_cambio=True)
@@ -485,12 +488,22 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         cierre_listado = _cierre((c.get("fechas") or {}).get("fecha_cierre"))
         abierta = estado["abiertas"].get(codigo)
         cierre_guardado = _cierre(((abierta or {}).get("fila") or {}).get("fecha_cierre"))
-        llamado_guardado = ((abierta or {}).get("fila") or {}).get("llamado")
-        cambio_llamado = abierta and _llamado(c) and llamado_guardado and _llamado(c) != llamado_guardado
-        if codigo in por_revisar or cambio_llamado or (abierta and cierre_listado and cierre_guardado
-                                                       and cierre_listado != cierre_guardado):
-            # Volvió a aparecer con otro cierre (2º llamado o plazo ampliado): se pide el
-            # detalle de nuevo antes que todo lo demás.
+        llamado = _llamado(c)
+        if llamado is not None and (abierta or codigo in por_revisar or codigo in estado["pendientes"]):
+            # El listado dice en qué llamado está: solo se vuelve a pedir el detalle si pasó al 2º
+            # (antes se repetían detalles de 1er llamado por diferencias de formato en el cierre).
+            llamado_guardado = ((abierta or {}).get("fila") or {}).get("llamado")
+            if llamado == 2 and llamado_guardado != 2 and filtro.es_candidata(nombre):
+                por_revisar.pop(codigo, None)
+                estado["pendientes"][codigo] = {
+                    "cierre": (c.get("fechas") or {}).get("fecha_cierre"), "intentos": 0, "prioridad": -1,
+                    "publicado": (c.get("fechas") or {}).get("fecha_publicacion"), "llamado": 2}
+                r.nuevas_candidatas += 1
+            continue
+        if codigo in por_revisar or (abierta and cierre_listado and cierre_guardado
+                                     and cierre_listado != cierre_guardado):
+            # Sin llamado en el listado: si volvió a aparecer con otro cierre (2º llamado o
+            # plazo ampliado), se pide el detalle de nuevo antes que todo lo demás.
             por_revisar.setdefault(codigo, {"cierre": (c.get("fechas") or {}).get("fecha_cierre"), "prioridad": 0,
                                             "hasta": (ahora + timedelta(days=max(revisar_dias, 1)))
                                             .isoformat(timespec="seconds")})

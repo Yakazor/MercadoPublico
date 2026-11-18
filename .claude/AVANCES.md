@@ -127,6 +127,11 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
   detalle de las de 1er llamado (`solo_segundo_llamado`, de `compra_agil.soy_emt`) y las revisiones una a una de las
   cerradas solo corren si el listado por cambios no está disponible. `listado_hasta` de compras_agiles.json = el
   más reciente de los dos listados (aviso de atraso de la plataforma).
+  **Prueba real en la rama (corrida 44218763604, 18-11 01:50 UTC):** el filtro `cambio_desde/cambio_hasta`
+  funciona y las filas traen `convocatoria.estado_convocatoria`: **829 listadas en 2º llamado** (todo Chile). Pero 0
+  detalles: el listado inicial de 3 días (3.065 filas) más 8 detalles repetidos de abiertas de 1er llamado (cierre
+  con otro formato) agotaron las 410 consultas. Corregido: la primera vez 1 día de cambios
+  (`compra_agil.dias_iniciales_cambios`) y una conocida solo se vuelve a pedir si el listado la muestra en 2º llamado.
 - **18-11 (pedido de la usuaria, PR rubro libros):** nuevo rubro `libros_educativo` («Libros y material educativo»:
   libros, diccionarios, textos escolares, atlas, cuentos, material pedagógico, láminas…; excluye impresión, edición,
   ferias del libro y plataformas). «libros» sale de `deporte_didactico`. Motivo: la Compra Ágil 1126922-1087-COT26
