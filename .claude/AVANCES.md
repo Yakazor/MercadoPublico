@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **18-11 (pedido de la usuaria, PR rubro libros):** nuevo rubro `libros_educativo` («Libros y material educativo»:
+  libros, diccionarios, textos escolares, atlas, cuentos, material pedagógico, láminas…; excluye impresión, edición,
+  ferias del libro y plataformas). «libros» sale de `deporte_didactico`. Motivo: la Compra Ágil 1126922-1087-COT26
+  (45 diccionarios, Puerto Varas, 1er llamado, cierra 19-11 9:30) no calzaba con ningún rubro. Con los datos del
+  17-11: 14 pasan de deporte_didactico a libros y 3 de impresión de libros quedan fuera. 592 pruebas OK.
+
 - **18-11 (pedido de la usuaria; PR #15, unido el 18-11 a pedido de ella):** tres arreglos.
   - **2º llamado de Compras Ágiles:** desde el 25-10 no apareció ninguna en ~30 corridas. Causa probable: el
     workflow lista por fecha de publicación y pide el detalle una sola vez; una compra que reabre en 2º llamado

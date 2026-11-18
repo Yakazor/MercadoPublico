@@ -862,3 +862,22 @@ def test_grupos_de_exclusion_en_el_producto_onu():
     # Las exclusiones propias del rubro (pensadas para el nombre) no se aplican al producto ONU.
     f = FiltroRubros({"x": {"nombre": "X", "palabras_clave": ["luminarias"], "excluir_en_nombre": ["alumbrado publico"]}})
     assert f.evaluar(nombre="Reposición luminarias", productos_onu=["Alumbrado público"]).coincide
+
+
+# --- Libros y material educativo (18-11-2026: una Compra Ágil de diccionarios no calzaba) ---
+
+@pytest.mark.parametrize("nombre,items,rubro", [
+    ("Adquisición de diccionarios para el Colegio Mirador del Lago", ["ARISTOS DICCIONARIO ILUSTRADO"], "libros_educativo"),
+    ("LIBROS PARA NAVIDAD 2026", [], "libros_educativo"),
+    ("Adquisición de textos escolares y atlas", [], "libros_educativo"),
+    ("Material pedagógico para jardines infantiles", ["Láminas educativas"], "libros_educativo"),
+    ("Compra de juguetes y material didáctico", [], "deporte_didactico"),
+    ("IMPRESIÓN EMPAQUETADO Y DISTRIBUCIÓN LIBRO", [], None),
+    ("ADQUISICION DE SERVICIO IMPRESION LIBROS", [], None),
+    ("Fiesta del libro 2026", [], None),
+    ("Separadores de libros impresos con contenido informativo", [], None),
+    ("Suscripción plataforma de libros digitales", [], None),
+])
+def test_rubro_libros_y_material_educativo(real, nombre, items, rubro):
+    r = real.evaluar(nombre=nombre, items=items)
+    assert r.rubro == rubro, (nombre, r.rubro, r.palabras)
