@@ -112,6 +112,11 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-18 — PR #18 unido y probado con la API real
+
+- Corrida 44403071954 (21:35 UTC): lo reciente (14:36–18:36 hora de Chile) primero y después 1.434 atrasadas; 2 esperas por 429; 560 llamadas, 130 detalles. Listado al día hasta 18:36 (completo sin huecos hasta 10:36).
+- Publicadas 101 Compras Ágiles de 2º llamado abiertas con tiempo en sus rubros (antes 39), 7 en Los Lagos.
+
 ### 2026-11-18 — Compras Ágiles: primero lo reciente y corrida cada hora
 
 - Problema: el listado por cambios avanzaba más lento que el reloj (~600 cambios por hora en Chile y HTTP 429 tras ~270–450 llamadas) y GitHub se saltó dos corridas programadas: el radar iba ~1 día atrás de Mercado Público.
