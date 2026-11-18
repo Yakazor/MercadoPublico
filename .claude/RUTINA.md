@@ -4,7 +4,7 @@ Instrucciones para la sesión de Claude que mantiene al día el radar. Repositor
 Yakazor/MercadoPublico, rama `feature/api-mercadopublico`. La plataforma
 (https://radar-mercadopublico.streamlit.app, `plataforma/app.py`) lee sola la rama `datos` y
 `informes/`: no hay que subirle nada. Los datos de la API se actualizan solos en GitHub (radar
-todos los días a las 7 de la mañana; Compras Ágiles cada 3 horas, que se publican al terminar); esta
+todos los días a las 7 de la mañana; Compras Ágiles cada hora, que se publican al terminar); esta
 rutina agrega lo que necesita a Claude y gasta créditos: precios de mercado, proveedores y el
 análisis. Escribe todo (mensajes y commits) en español. El
 ticket `MP_TICKET` nunca va en código, logs ni mensajes. Cada pedido es independiente:
@@ -34,7 +34,7 @@ Hay tres pedidos posibles:
    cuenta solo una de título «Radar diario de licitaciones» con `success` (las «Publicar datos (solo exportar)»
    no consultan la API). Si la hay, usa esos datos y salta al paso 5b (precios de mercado). Si no (o si `gh`
    falla), anota el sha (`git ls-remote origin refs/heads/datos`) y sigue. No uses `generado` de meta.json:
-   Compras Ágiles lo renueva cada 3 horas aunque el radar no haya corrido.
+   Compras Ágiles lo renueva cada hora aunque el radar no haya corrido.
 3. Dispara los workflows (radar y OC) con un push al archivo disparador. Cada paso va en
    su propia llamada, sin `;`, `&&`, `cd` ni pipes (así calzan con los permisos de
    `.claude/settings.json`; un comando compuesto lo bloquea el modo automático):
@@ -80,7 +80,7 @@ Hay tres pedidos posibles:
    cada uno en su propia llamada (mismos reintentos). El push dispara «Verificar precios e
    informes PDF», que abre cada tienda y rehace los PDF.
 8. Publica los precios nuevos en la plataforma sin esperar: `gh workflow run radar-diario.yml -R Yakazor/MercadoPublico --ref feature/api-mercadopublico -f solo_exportar=true`
-   (no llama a la API). Si `gh` no puede, no pasa nada: «Compras Ágiles» los publica en menos de 3 horas.
+   (no llama a la API). Si `gh` no puede, no pasa nada: «Compras Ágiles» los publica en menos de 2 horas.
 9. (Antes del resumen: si `compras_agiles_listado_hasta` de `<tmp>/datos/meta.json` tiene más de 24 horas, la API
    de Compras Ágiles no está respondiendo: dilo en el resumen en vez de «ninguna de 2º llamado».)
    Resumen de 3–6 líneas con PushNotification: licitaciones con precios nuevos y su decisión,

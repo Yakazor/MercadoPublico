@@ -22,7 +22,7 @@ def pagina() -> None:
     col, boton = st.columns([4, 1], vertical_alignment="bottom")
     col.caption(f"Datos publicados: {comun.fecha_hora(meta.get('generado'))} · Compras Ágiles: "
                 f"{comun.fecha_hora(meta.get('compras_agiles_generado'))}. Se actualizan solos en GitHub: las "
-                "licitaciones cada mañana y las Compras Ágiles cada 3 horas (cada vez que se publican, cambia la hora).")
+                "licitaciones cada mañana y las Compras Ágiles cada hora (cada vez que se publican, cambia la hora).")
     if boton.button("Recargar datos", icon="🔄", width="stretch"):
         comun.recargar()
         st.rerun()

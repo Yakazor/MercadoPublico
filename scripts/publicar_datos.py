@@ -38,7 +38,7 @@ MAX_PRECIOS = 3000  # productos con más monto adjudicado (el archivo queda bajo
 
 def compras_agiles(ruta: Path, ahora: datetime | None = None, max_horas: float = 30) -> dict | None:
     """Resultado de scripts/compra_agil.py si tiene menos de `max_horas` (el workflow
-    «Compras Ágiles» corre cada 3 horas; uno muy antiguo no tendría las nuevas)."""
+    «Compras Ágiles» corre cada hora; uno muy antiguo no tendría las nuevas)."""
     if not ruta.exists():
         return None
     try:

@@ -1,11 +1,13 @@
 name: Compras Ágiles
 
-# Cada 3 horas: lista las Compras Ágiles publicadas desde la corrida anterior, pide el
-# detalle de las que calzan con tus rubros y guarda la memoria en la caché. El radar
-# diario (y «actualiza el radar») toma de ahí las abiertas para el dashboard.
+# Cada hora: lista las Compras Ágiles que cambiaron en Mercado Público (primero las últimas
+# horas, después lo atrasado), pide el detalle de las que calzan con tus rubros y guarda la
+# memoria en la caché. Cada corrida dura hasta ~100 min; si la anterior sigue, la nueva
+# espera en la cola (concurrency) y GitHub descarta las que sobran. Cada hora y no cada 3:
+# GitHub a veces se salta corridas programadas (18-11-2026 se saltó dos seguidas).
 on:
   schedule:
-    - cron: "23 */3 * * *"
+    - cron: "23 * * * *"
   # Con «actualiza el radar» corre también (push del archivo disparador).
   push:
     branches: [feature/api-mercadopublico]
