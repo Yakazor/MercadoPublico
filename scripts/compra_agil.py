@@ -74,6 +74,7 @@ def main():
             revisar_dias=ca.get("revisar_segundo_llamado_dias", 3),
             revisar_cada_horas=ca.get("revisar_cada_horas", 6),
             max_revisiones=ca.get("max_revisiones", 60),
+            solo_segundo_llamado=not ca.get("soy_emt", False),
         )
     except ErrorApi as e:
         # Lo obtenido hasta el error ya está en `estado`: se guarda igual.
@@ -95,7 +96,9 @@ def main():
     datos = {
         "generado": datetime.now(ZoneInfo("America/Santiago")).isoformat(timespec="seconds"),
         "fecha": hoy.isoformat(),
-        "listado_hasta": estado.get("listado_hasta"),
+        # Hasta dónde quedó completo el listado (por último cambio o, de respaldo, por publicación):
+        # la plataforma avisa si lleva más de 24 h sin avanzar.
+        "listado_hasta": max((h for h in (estado.get("cambios_hasta"), estado.get("listado_hasta")) if h), default=None),
         "regiones": ca.get("regiones") or [],
         "pendientes": len(estado["pendientes"]),
         "por_revisar": len(estado.get("por_revisar") or {}),
@@ -107,7 +110,7 @@ def main():
     }
     ruta_salida.write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
     logging.info("Abiertas en tus rubros: %d · pendientes: %d · listado completo hasta %s · llamadas: %d",
-                 len(filas), len(estado["pendientes"]), estado.get("listado_hasta"), cliente.llamadas)
+                 len(filas), len(estado["pendientes"]), datos["listado_hasta"], cliente.llamadas)
     sys.exit(codigo_salida)
 
 

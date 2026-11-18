@@ -121,6 +121,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
   hasta 3 h antes del cierre (las demás, 12 h). Si la API rechaza esos filtros (400), sigue como antes. Verificación
   real: log del workflow «Compras Ágiles», línea «… N listadas en 2º llamado, M abiertas en 2º llamado en tus rubros».
   Ojo: la nota del 02-11 «el llamado solo viene en el detalle» puede estar equivocada (confirmar en ese log).
+  **Ajuste tras la corrida de las 21:59 (17-11):** 3.973 listadas, 0 detalles: la API cortó (HTTP 429) tras 417
+  consultas, casi todas de listado. Ahora se lista **una sola vez, por último cambio** (el de publicación queda de
+  respaldo si la API rechaza o ignora el filtro, con log de diagnóstico de la primera página), sin EMT no se pide el
+  detalle de las de 1er llamado (`solo_segundo_llamado`, de `compra_agil.soy_emt`) y las revisiones una a una de las
+  cerradas solo corren si el listado por cambios no está disponible. `listado_hasta` de compras_agiles.json = el
+  más reciente de los dos listados (aviso de atraso de la plataforma).
 - **18-11 (pedido de la usuaria, PR rubro libros):** nuevo rubro `libros_educativo` («Libros y material educativo»:
   libros, diccionarios, textos escolares, atlas, cuentos, material pedagógico, láminas…; excluye impresión, edición,
   ferias del libro y plataformas). «libros» sale de `deporte_didactico`. Motivo: la Compra Ágil 1126922-1087-COT26

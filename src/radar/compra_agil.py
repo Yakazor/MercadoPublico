@@ -199,6 +199,7 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
     tope_filas = max_paginas * tamano_pagina   # no cambia si se achican las páginas
     cubierto = desde
     inicio = desde
+    diagnosticado = False
     while inicio < hasta:
         fin = min(inicio + VENTANA_LISTADO - timedelta(seconds=1), hasta)
         campo = "cambio" if por_cambio else "publicado"
@@ -228,7 +229,19 @@ def listar_publicadas(cliente: ClienteCompraAgil, desde: datetime, hasta: dateti
                     e.parcial = (_sin_repetidos(items), cubierto)
                 raise
             paginas_usadas += 1
-            items += payload.get("items") or []
+            filas = payload.get("items") or []
+            if por_cambio and pagina == 1 and not diagnosticado and filas:
+                diagnosticado = True
+                cambios = [_cierre((f.get("fechas") or {}).get("fecha_ultimo_cambio")) for f in filas]
+                con_fecha = [c for c in cambios if c]
+                log.info("Listado por cambios %s–%s: %s filas; %d de %d traen fecha de último cambio y %d el llamado.",
+                         inicio, fin, (payload.get("paginacion") or {}).get("total_resultados"), len(con_fecha),
+                         len(filas), sum(1 for f in filas if _llamado(f) is not None))
+                # Si ninguna fila cae cerca de la ventana pedida, la API ignoró el filtro.
+                margen = timedelta(hours=6)
+                if con_fecha and not any(inicio - margen <= c <= fin + margen for c in con_fecha):
+                    raise ErrorApi("la API ignoró el filtro de último cambio (fechas fuera de la ventana)")
+            items += filas
             paginacion = payload.get("paginacion") or {}
             if pagina == 1:
                 total_publicadas += paginacion.get("total_resultados") or 0
@@ -339,7 +352,8 @@ def _pendiente(valor) -> dict:
     """Pendiente guardada como texto (formato anterior: solo el cierre) → dict."""
     if isinstance(valor, dict):
         return {"cierre": valor.get("cierre"), "intentos": valor.get("intentos", 0),
-                "prioridad": valor.get("prioridad", 1), "publicado": valor.get("publicado")}
+                "prioridad": valor.get("prioridad", 1), "publicado": valor.get("publicado"),
+                "llamado": valor.get("llamado")}
     return {"cierre": valor, "intentos": 0, "prioridad": 1, "publicado": None}
 
 
@@ -362,6 +376,7 @@ def estado_vacio() -> dict:
 class ResultadoCompraAgil:
     listadas: int = 0
     segundo_llamado: int = 0                                 # listadas en 2º llamado
+    saltadas_primer_llamado: int = 0                         # sin detalle por ser de 1er llamado (sin EMT)
     nuevas_candidatas: int = 0
     detalles: int = 0
     nuevas_en_rubros: int = 0
@@ -378,7 +393,8 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                               hasta_monotonic: float | None = None,
                               margen_horas: float = 12, revisar_dias: float = REVISAR_DIAS,
                               revisar_cada_horas: float = REVISAR_CADA_HORAS,
-                              max_revisiones: int = MAX_REVISIONES) -> ResultadoCompraAgil:
+                              max_revisiones: int = MAX_REVISIONES,
+                              solo_segundo_llamado: bool = False) -> ResultadoCompraAgil:
     """Suma al `estado` las Compras Ágiles publicadas desde la corrida anterior.
 
     listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas → filtro
@@ -388,6 +404,9 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     Una Compra Ágil suele estar abierta 1 o 2 días y el límite de consultas de la API deja
     revisar solo una parte: primero las publicadas más recientemente (las que más tiempo
     dejan para cotizar), y no se revisan las que cierran en menos de `margen_horas`.
+
+    Con `solo_segundo_llamado` (quien no es EMT) no se pide el detalle de las que el listado
+    marca de 1er llamado, y las pendientes de 1er llamado se descartan.
 
     Las que cierran su 1er llamado se revisan `revisar_dias` días más (cada
     `revisar_cada_horas`, a lo más `max_revisiones` detalles por corrida y antes que las
@@ -403,48 +422,60 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
         else ahora - timedelta(days=dias_iniciales)
     # El listado usa a lo más 60 % del tiempo: el resto es para los detalles.
     limite_listado = (time.monotonic() + (hasta_monotonic - time.monotonic()) * 0.6) if hasta_monotonic else None
+    # 1) Por fecha de último cambio: trae las recién publicadas y también las reabiertas en
+    # 2º llamado (conservan su fecha de publicación). Una sola pasada: la API corta (HTTP 429)
+    # tras unas 400 consultas y listar dos veces dejaba sin consultas para los detalles.
+    cambios_ok, rechazado = False, False
+    anterior_c = _cierre(estado.get("cambios_hasta"))
+    desde_c = max(anterior_c - timedelta(hours=1), ahora - timedelta(days=dias_iniciales)) if anterior_c \
+        else ahora - timedelta(days=dias_iniciales)
     try:
-        listadas, cubierto = listar_publicadas(cliente, desde, ahora, regiones, tamano_pagina, max_paginas,
-                                               hasta_monotonic=limite_listado)
+        listadas, cubierto_c = listar_publicadas(cliente, desde_c, ahora, regiones, tamano_pagina, max_paginas,
+                                                 hasta_monotonic=limite_listado, por_cambio=True)
     except ErrorApi as e:
-        if not e.temporal:
+        if e.fatal and not e.temporal:   # ticket rechazado
             raise
-        # Se guarda lo listado hasta la última ventana completa. Con 429 (fatal) no se
-        # hacen más llamadas; con la API lenta o caída (5xx) se intenta igual con los
-        # detalles pendientes: suelen responder aunque el listado no lo haga.
-        listadas, cubierto = getattr(e, "parcial", ([], desde))
-        if e.fatal:
+        listadas, cubierto_c = getattr(e, "parcial", ([], desde_c))
+        if not e.temporal:
+            # 400 o filtro ignorado: la API no sirve para listar por cambios. Se lista por
+            # publicación, como antes (sin las reabiertas: quedan las revisiones una a una).
+            rechazado = True
+            log.warning("Listado por último cambio no disponible (%s): se lista por publicación.", e)
+        elif e.fatal:
             r.detenida = str(e)
         else:
             listado_cortado = f"listado interrumpido ({e})"
             log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
-    if cubierto > (anterior or desde):
-        estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
-    # Segunda pasada, por fecha de último cambio: trae las reabiertas en 2º llamado, que
-    # conservan su fecha de publicación. Usa lo que quede del tiempo del listado.
-    if not r.detenida and not listado_cortado:
-        anterior_c = _cierre(estado.get("cambios_hasta"))
-        desde_c = max(anterior_c - timedelta(hours=1), ahora - timedelta(days=dias_iniciales)) if anterior_c \
-            else ahora - timedelta(days=dias_iniciales)
+    if cubierto_c > (anterior_c or desde_c):
+        estado["cambios_hasta"] = cubierto_c.isoformat(timespec="seconds")
+        cambios_ok = True
+
+    # 2) Respaldo: por fecha de publicación, solo si la API no acepta el listado por cambios.
+    if rechazado and not r.detenida:
         try:
-            por_cambio, cubierto_c = listar_publicadas(cliente, desde_c, ahora, regiones, tamano_pagina, max_paginas,
-                                                       hasta_monotonic=limite_listado, por_cambio=True)
+            listadas, cubierto = listar_publicadas(cliente, desde, ahora, regiones, tamano_pagina, max_paginas,
+                                                   hasta_monotonic=limite_listado)
         except ErrorApi as e:
-            if e.fatal and not e.temporal:   # ticket rechazado
+            if not e.temporal:
                 raise
-            por_cambio, cubierto_c = getattr(e, "parcial", ([], desde_c))
+            # Se guarda lo listado hasta la última ventana completa. Con 429 (fatal) no se
+            # hacen más llamadas; con la API lenta o caída (5xx) se intenta igual con los
+            # detalles pendientes: suelen responder aunque el listado no lo haga.
+            listadas, cubierto = getattr(e, "parcial", ([], desde))
             if e.fatal:
                 r.detenida = str(e)
-            elif e.temporal:
-                listado_cortado = f"listado por cambios interrumpido ({e})"
             else:
-                # 400: la API no aceptó los filtros de cambio. No se corta la corrida: sigue
-                # como antes, solo con el listado por publicación.
-                log.warning("Listado por último cambio rechazado por la API: %s", e)
-        if cubierto_c > (anterior_c or desde_c):
-            estado["cambios_hasta"] = cubierto_c.isoformat(timespec="seconds")
-        listadas = _sin_repetidos(listadas + por_cambio)
+                listado_cortado = f"listado interrumpido ({e})"
+                log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
+        if cubierto > (anterior or desde):
+            estado["listado_hasta"] = cubierto.isoformat(timespec="seconds")
     r.listadas = len(listadas)
+    if solo_segundo_llamado:
+        # Pendientes que ahora el listado muestra en 1er llamado (o que se guardaron así).
+        primer = {c["codigo"] for c in listadas if _llamado(c) == 1}
+        for k in [k for k, v in estado["pendientes"].items()
+                  if k in primer or (isinstance(v, dict) and v.get("llamado") == 1)]:
+            del estado["pendientes"][k]
     r.segundo_llamado = sum(1 for c in listadas if _llamado(c) == 2)
     estado["pendientes"] = {k: _pendiente(v) for k, v in estado["pendientes"].items()}
     por_revisar = estado.setdefault("por_revisar", {})
@@ -465,10 +496,16 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                                             .isoformat(timespec="seconds")})
             por_revisar[codigo] |= {"revisada": None, "prioridad": -1}
             continue
+        if solo_segundo_llamado and _llamado(c) == 1:
+            # Sin EMT no se puede cotizar el 1er llamado: no se gasta una consulta en su
+            # detalle (la API corta con HTTP 429). Si se reabre, el listado por cambios la
+            # vuelve a traer con llamado 2.
+            r.saltadas_primer_llamado += 1
+            continue
         if codigo not in conocidas and filtro.es_candidata(nombre):
             estado["pendientes"][c["codigo"]] = {
                 "cierre": (c.get("fechas") or {}).get("fecha_cierre"), "intentos": 0,
-                "publicado": (c.get("fechas") or {}).get("fecha_publicacion"),
+                "publicado": (c.get("fechas") or {}).get("fecha_publicacion"), "llamado": _llamado(c),
                 # Primero las de 2º llamado (las únicas que puede cotizar quien no es EMT);
                 # después las que ya calzan solo por el nombre ("Compra de guantes de nitrilo")
                 # y al final las que solo lo sugieren ("Compra de insumos").
@@ -511,8 +548,11 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
             estado["descartadas"][codigo] = abierta["fila"].get("fecha_cierre")
             del estado["abiertas"][codigo]
 
+    # Si el listado por cambios funcionó, las reabiertas ya llegan por ahí (con llamado 2): solo
+    # se revisan las que el listado marcó (otro cierre u otro llamado), no una a una las cerradas.
     if not r.detenida:
-        revisar_reaperturas(cliente, filtro, estado, r, ahora, revisar_cada_horas, max_revisiones, hasta_monotonic)
+        revisar_reaperturas(cliente, filtro, estado, r, ahora, revisar_cada_horas, max_revisiones, hasta_monotonic,
+                            solo_marcadas=cambios_ok)
 
     # Primero las más recientes (sin fecha de publicación, la de cierre más lejana), y
     # dentro de eso las que el nombre ya calza con un rubro.
@@ -566,17 +606,18 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     r.pendientes = len(estado["pendientes"])
     log.info("Compras Ágiles: %d listadas, %d candidatas nuevas, %d detalles, %d nuevas en tus rubros, "
              "%d abiertas en tus rubros, %d pendientes, %d revisadas por 2º llamado (%d reabiertas, %d por "
-             "revisar), %d listadas en 2º llamado, %d abiertas en 2º llamado en tus rubros%s",
+             "revisar), %d listadas en 2º llamado, %d abiertas en 2º llamado en tus rubros, %d de 1er llamado sin "
+             "detalle%s",
              r.listadas, r.nuevas_candidatas, r.detalles, r.nuevas_en_rubros, len(estado["abiertas"]),
              r.pendientes, r.revisadas, r.reabiertas, len(estado.get("por_revisar") or {}), r.segundo_llamado,
              sum(1 for a in estado["abiertas"].values() if (a.get("fila") or {}).get("llamado") == 2),
-             f" ({r.detenida})" if r.detenida else "")
+             r.saltadas_primer_llamado, f" ({r.detenida})" if r.detenida else "")
     return r
 
 
 def revisar_reaperturas(cliente: ClienteCompraAgil, filtro: FiltroRubros, estado: dict, r: ResultadoCompraAgil,
                         ahora: datetime, cada_horas: float = REVISAR_CADA_HORAS, maximo: int = MAX_REVISIONES,
-                        hasta_monotonic: float | None = None) -> None:
+                        hasta_monotonic: float | None = None, solo_marcadas: bool = False) -> None:
     """Vuelve a pedir el detalle de las cerradas en su 1er llamado (`estado["por_revisar"]`).
 
     Si el cierre que informa la API ya es futuro, se abrió el 2º llamado (o se amplió el
@@ -586,7 +627,7 @@ def revisar_reaperturas(cliente: ClienteCompraAgil, filtro: FiltroRubros, estado
     por_revisar = estado.setdefault("por_revisar", {})
     # Solo las que ya cerraron (o reaparecieron en el listado), cada una a lo más cada `cada_horas`.
     toca = [(k, v) for k, v in por_revisar.items()
-            if (v.get("prioridad") == -1 or ((c := _cierre(v.get("cierre"))) and c <= ahora))
+            if (v.get("prioridad") == -1 or (not solo_marcadas and (c := _cierre(v.get("cierre"))) and c <= ahora))
             and not ((u := _cierre(v.get("revisada"))) and u > ahora - timedelta(hours=cada_horas))]
     toca.sort(key=lambda kv: (kv[1].get("prioridad", 1), str(kv[1].get("revisada") or "")))
     fallas = 0
