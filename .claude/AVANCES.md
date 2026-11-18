@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-18 — Primera corrida con el arreglo de 2º llamado (PR #17)
+
+- La corrida programada de 00:23 (Chile) no partió (GitHub atrasó/saltó el cron); se lanzó a mano la 44238507650.
+- Resultado: 3205 Compras Ágiles listadas, 554 en 2º llamado; **41 abiertas en 2º llamado en sus rubros** publicadas en `datos` (2 en Los Lagos: 2297-1520-COT26 repuestos móvil 107, 2328-1424-COT26 libros literatura infantil Colegio Darío Salas, cierra 20-11).
+- Siguió el HTTP 429 tras ~450 llamadas: 49 detalles, 625 pendientes y 634 por revisar. El listado por cambios va hasta 17-11 15:00; las siguientes corridas (cada 3 h) deberían ir completando.
+
 - **18-11 (pedido de la usuaria: «sigue apareciendo que no hay de segundo llamado y en Mercado Público hay hartas»):**
   el PR #15 solo seguía las que cerraban su 1er llamado desde ahora; las ya reabiertas no se veían nunca. Según la
   documentación de la API v2 (guía de terceros `ssolis-ti/compra-agil-mcp`, docs/api), el listado acepta
