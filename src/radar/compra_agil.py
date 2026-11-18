@@ -43,6 +43,8 @@ logging.getLogger("urllib3").setLevel(logging.ERROR)
 URL_BASE = "https://api2.mercadopublico.cl"
 TIPO = "Compra Ágil"
 VENTANA_LISTADO = timedelta(hours=1)
+# Horas de cambios recientes que se listan antes que lo atrasado (cubre corridas atrasadas o que GitHub se salta).
+RECIENTES_HORAS = 4
 URL_FICHA = "https://buscador.mercadopublico.cl/ficha?code={}"
 TAMANO_MINIMO = 10   # mínimo de la API y tamaño que no se corta con 504
 
@@ -57,6 +59,7 @@ class ClienteCompraAgil:
         reintentos: int = 3,
         espera_inicial: float = 5.0,
         max_espera_429: float = 900,
+        max_esperas_429: int = 1,
     ):
         self.ticket = ticket
         self.base_url = base_url.rstrip("/")
@@ -68,7 +71,8 @@ class ClienteCompraAgil:
         self._ultima_llamada = 0.0
         self.llamadas = 0
         self.max_espera_429 = max_espera_429
-        self._esperado_429 = False
+        self.max_esperas_429 = max_esperas_429
+        self._esperas_429 = 0
         self.hasta_monotonic: float | None = None   # la espera de un 429 no pasa de aquí
 
     @classmethod
@@ -82,6 +86,7 @@ class ClienteCompraAgil:
             reintentos=ca.get("reintentos", 3),
             espera_inicial=ca.get("espera_inicial_reintento_segundos", 5.0),
             max_espera_429=ca.get("max_espera_429_segundos", 900),
+            max_esperas_429=ca.get("max_esperas_429", 1),
         )
 
     def listado(self, **params) -> dict:
@@ -116,13 +121,13 @@ class ClienteCompraAgil:
                 if resp.status_code in (401, 403):
                     raise ErrorApi(f"{recurso}: HTTP {resp.status_code} - {mensaje}", fatal=True)
                 if resp.status_code == 429:
-                    # Límite de ritmo: se recupera en minutos. Una sola espera por corrida
-                    # (acotada) para no comerse el tiempo del workflow; si vuelve, se corta.
+                    # Límite de ritmo: se recupera en minutos. Hasta `max_esperas_429` esperas
+                    # por corrida (acotadas al tiempo del workflow); después se corta.
                     retry = str((getattr(resp, "headers", None) or {}).get("Retry-After") or "")
                     pausa_429 = float(retry) if retry.isdigit() else self.max_espera_429
                     con_tiempo = self.hasta_monotonic is None or time.monotonic() + pausa_429 < self.hasta_monotonic
-                    if not self._esperado_429 and pausa_429 <= self.max_espera_429 and con_tiempo:
-                        self._esperado_429 = True
+                    if self._esperas_429 < self.max_esperas_429 and pausa_429 <= self.max_espera_429 and con_tiempo:
+                        self._esperas_429 += 1
                         log.warning("%s: HTTP 429 (límite de ritmo). Se espera %.0f s y se reintenta.", recurso, pausa_429)
                         time.sleep(pausa_429)
                         continue
@@ -395,7 +400,8 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
                               revisar_cada_horas: float = REVISAR_CADA_HORAS,
                               max_revisiones: int = MAX_REVISIONES,
                               solo_segundo_llamado: bool = False,
-                              dias_iniciales_cambios: float = 1) -> ResultadoCompraAgil:
+                              dias_iniciales_cambios: float = 1,
+                              recientes_horas: float = RECIENTES_HORAS) -> ResultadoCompraAgil:
     """Suma al `estado` las Compras Ágiles publicadas desde la corrida anterior.
 
     listado (solo lo nuevo) → filtro por nombre → detalle de las candidatas → filtro
@@ -424,34 +430,73 @@ def actualizar_compras_agiles(cliente: ClienteCompraAgil, filtro: FiltroRubros, 
     # El listado usa a lo más 60 % del tiempo: el resto es para los detalles.
     limite_listado = (time.monotonic() + (hasta_monotonic - time.monotonic()) * 0.6) if hasta_monotonic else None
     # 1) Por fecha de último cambio: trae las recién publicadas y también las reabiertas en
-    # 2º llamado (conservan su fecha de publicación). Una sola pasada: la API corta (HTTP 429)
-    # tras unas 400 consultas y listar dos veces dejaba sin consultas para los detalles.
+    # 2º llamado (conservan su fecha de publicación). No se lista además por publicación: la
+    # API corta (HTTP 429) tras unas 400 consultas y no quedaban consultas para los detalles.
     cambios_ok, rechazado = False, False
     anterior_c = _cierre(estado.get("cambios_hasta"))
     # La primera vez, un día de cambios: tres días son ~3.000 filas (~300 consultas) y la API
     # cortaba antes de pedir un solo detalle. Las de 2º llamado abiertas cambiaron hace poco.
     desde_c = max(anterior_c - timedelta(hours=1), ahora - timedelta(days=dias_iniciales)) if anterior_c \
         else ahora - timedelta(days=dias_iniciales_cambios)
-    try:
-        listadas, cubierto_c = listar_publicadas(cliente, desde_c, ahora, regiones, tamano_pagina, max_paginas,
-                                                 hasta_monotonic=limite_listado, por_cambio=True)
-    except ErrorApi as e:
-        if e.fatal and not e.temporal:   # ticket rechazado
-            raise
-        listadas, cubierto_c = getattr(e, "parcial", ([], desde_c))
-        if not e.temporal:
-            # 400 o filtro ignorado: la API no sirve para listar por cambios. Se lista por
-            # publicación, como antes (sin las reabiertas: quedan las revisiones una a una).
-            rechazado = True
-            log.warning("Listado por último cambio no disponible (%s): se lista por publicación.", e)
-        elif e.fatal:
-            r.detenida = str(e)
-        else:
-            listado_cortado = f"listado interrumpido ({e})"
-            log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
+    # Primero las últimas `recientes_horas` (lo que acaba de publicar o reabrir Mercado
+    # Público) y después, con lo que quede, lo atrasado desde `cambios_hasta`: en todo Chile
+    # cambian ~600 Compras Ágiles por hora y, si la API corta (HTTP 429), recorrer solo de lo
+    # más antiguo a lo más nuevo dejaba el radar un día atrás de Mercado Público.
+    # Lo reciente que ya listó una corrida anterior no se vuelve a pedir (media hora de margen):
+    # con corridas cada hora se piden ~1,5 h por corrida y no 4.
+    prev = estado.get("cambios_recientes") or {}
+    prev_desde, prev_hasta = _cierre(prev.get("desde")), _cierre(prev.get("hasta"))
+    inicio_rec = max(desde_c, ahora - timedelta(hours=recientes_horas))
+    if prev_hasta and prev_hasta - timedelta(minutes=30) > inicio_rec:
+        inicio_rec = min(prev_hasta - timedelta(minutes=30), ahora)
+    # Lo atrasado llega hasta donde empieza lo ya listado (el reciente anterior o el de ahora).
+    fin_atrasado = prev_desde if prev_desde and desde_c < prev_desde < inicio_rec else inicio_rec
+
+    def _por_cambio(desde_l, hasta_l):
+        """(listadas, cubierto, seguir): con `seguir` False no se listan más tramos."""
+        nonlocal rechazado, listado_cortado
+        try:
+            l, c = listar_publicadas(cliente, desde_l, hasta_l, regiones, tamano_pagina, max_paginas,
+                                     hasta_monotonic=limite_listado, por_cambio=True)
+            return l, c, c >= hasta_l - timedelta(seconds=1)   # la última ventana cierra 1 s antes
+        except ErrorApi as e:
+            if e.fatal and not e.temporal:   # ticket rechazado
+                raise
+            l, c = getattr(e, "parcial", ([], desde_l))
+            if not e.temporal:
+                # 400 o filtro ignorado: la API no sirve para listar por cambios. Se lista por
+                # publicación, como antes (sin las reabiertas: quedan las revisiones una a una).
+                rechazado = True
+                log.warning("Listado por último cambio no disponible (%s): se lista por publicación.", e)
+            elif e.fatal:
+                r.detenida = str(e)
+            else:
+                listado_cortado = f"listado interrumpido ({e})"
+                log.warning("%s: se sigue con los detalles pendientes.", listado_cortado)
+            return l, c, False
+
+    listadas, cubierto_r, seguir = _por_cambio(inicio_rec, ahora)
+    recientes_ok = cubierto_r > inicio_rec
+    # Tramo listado sin huecos que termina ahora: se une al reciente anterior si se tocan.
+    rec_desde = prev_desde if prev_desde and prev_hasta and prev_hasta >= inicio_rec else inicio_rec
+    if recientes_ok:
+        estado["cambios_recientes"] = {"desde": rec_desde.isoformat(timespec="seconds"),
+                                       "hasta": cubierto_r.isoformat(timespec="seconds")}
+    cubierto_c = cubierto_r if rec_desde <= desde_c else desde_c
+    if rec_desde > desde_c and seguir:
+        atrasadas, cubierto_c, _ = _por_cambio(desde_c, fin_atrasado)
+        listadas = _sin_repetidos(listadas + atrasadas)
+        if cubierto_c >= fin_atrasado - timedelta(seconds=1):
+            # Se alcanzó lo ya listado: si toca lo de esta corrida, queda completo hasta ahora;
+            # si no, hasta donde llegó el reciente anterior (el hueco se recorre la próxima vez).
+            cubierto_c = cubierto_r if rec_desde <= fin_atrasado else (prev_hasta or cubierto_c)
+        log.info("Atrasadas por cambios: %d (completo hasta %s).", len(atrasadas), cubierto_c)
+    elif rec_desde > desde_c:
+        log.warning("Sin consultas para lo atrasado: el listado por cambios sigue desde %s.", desde_c)
     if cubierto_c > (anterior_c or desde_c):
         estado["cambios_hasta"] = cubierto_c.isoformat(timespec="seconds")
-        cambios_ok = True
+    # Marcas de 2º llamado: hay listado por cambios de esta corrida (reciente o atrasado).
+    cambios_ok = recientes_ok or cubierto_c > (anterior_c or desde_c)
 
     # 2) Respaldo: por fecha de publicación, solo si la API no acepta el listado por cambios.
     if rechazado and not r.detenida:

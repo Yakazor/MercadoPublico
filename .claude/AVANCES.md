@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-18 — Compras Ágiles: primero lo reciente y corrida cada hora
+
+- Problema: el listado por cambios avanzaba más lento que el reloj (~600 cambios por hora en Chile y HTTP 429 tras ~270–450 llamadas) y GitHub se saltó dos corridas programadas: el radar iba ~1 día atrás de Mercado Público.
+- Arreglo: cada corrida lista primero las últimas `recientes_horas` (4) sin repetir lo ya listado (estado `cambios_recientes`, 30 min de margen) y después, con lo que quede, lo atrasado desde `cambios_hasta` hasta donde empieza lo ya listado; hasta 3 esperas por 429 (`max_esperas_429`); workflow cada hora (concurrency deja una en cola). `listado_hasta` de la salida considera lo reciente; nuevo `cambios_completo_hasta`.
+- 603 pruebas pasan (4 nuevas que fallan sin el cambio).
+
 ### 2026-11-18 — Rutina ACTUALIZACIÓN
 
 - Radar disparado (último completo era de hace 16 h); datos publicados 12:18 y 12:30 UTC.

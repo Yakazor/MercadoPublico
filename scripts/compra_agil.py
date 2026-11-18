@@ -14,7 +14,7 @@ una memoria (`rutas.compra_agil_estado`, en la caché de GitHub Actions). Escrib
     rutas.compras_agiles   Compras Ágiles abiertas de tus rubros (filas + detalles), que
                            `publicar_datos.py` suma a licitaciones.json e items.json.
 
-Lo corre el workflow «Compras Ágiles» cada 3 horas; el radar diario lee el resultado.
+Lo corre el workflow «Compras Ágiles» cada hora; el radar diario lee el resultado.
 """
 import argparse
 import json
@@ -76,6 +76,7 @@ def main():
             max_revisiones=ca.get("max_revisiones", 60),
             solo_segundo_llamado=not ca.get("soy_emt", False),
             dias_iniciales_cambios=ca.get("dias_iniciales_cambios", 1),
+            recientes_horas=ca.get("recientes_horas", 4),
         )
     except ErrorApi as e:
         # Lo obtenido hasta el error ya está en `estado`: se guarda igual.
@@ -97,9 +98,12 @@ def main():
     datos = {
         "generado": datetime.now(ZoneInfo("America/Santiago")).isoformat(timespec="seconds"),
         "fecha": hoy.isoformat(),
-        # Hasta dónde quedó completo el listado (por último cambio o, de respaldo, por publicación):
-        # la plataforma avisa si lleva más de 24 h sin avanzar.
-        "listado_hasta": max((h for h in (estado.get("cambios_hasta"), estado.get("listado_hasta")) if h), default=None),
+        # Hasta dónde llegó el listado (lo reciente por último cambio o, de respaldo, por
+        # publicación): la plataforma avisa si lleva más de 24 h sin avanzar.
+        # `cambios_completo_hasta`: desde dónde falta recorrer lo atrasado.
+        "listado_hasta": max((h for h in (estado.get("cambios_hasta"), estado.get("listado_hasta"),
+                                          (estado.get("cambios_recientes") or {}).get("hasta")) if h), default=None),
+        "cambios_completo_hasta": estado.get("cambios_hasta"),
         "regiones": ca.get("regiones") or [],
         "pendientes": len(estado["pendientes"]),
         "por_revisar": len(estado.get("por_revisar") or {}),
@@ -110,8 +114,9 @@ def main():
         "detalles": {codigo: a["detalle"] for codigo, a in estado["abiertas"].items()},
     }
     ruta_salida.write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
-    logging.info("Abiertas en tus rubros: %d · pendientes: %d · listado completo hasta %s · llamadas: %d",
-                 len(filas), len(estado["pendientes"]), datos["listado_hasta"], cliente.llamadas)
+    logging.info("Abiertas en tus rubros: %d · pendientes: %d · listado hasta %s (completo hasta %s) · llamadas: %d",
+                 len(filas), len(estado["pendientes"]), datos["listado_hasta"], datos["cambios_completo_hasta"],
+                 cliente.llamadas)
     sys.exit(codigo_salida)
 
 

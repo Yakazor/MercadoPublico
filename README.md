@@ -289,9 +289,11 @@ inválido, código inexistente) no se reintentan.
 HTTP 504) y hay miles de Compras Ágiles abiertas, así que trabaja por tandas:
 
 1. El workflow **«Compras Ágiles»** (`.github/workflows/compra-agil.yml`) corre cada
-   3 horas y lista solo lo publicado desde la corrida anterior (un día a la vez, del
-   más antiguo al más nuevo), en las regiones de `config.yaml > compra_agil > regiones`
-   (vacío = todo Chile).
+   hora y lista las Compras Ágiles que **cambiaron** en Mercado Público (así aparecen las
+   nuevas y las que se reabren en 2º llamado): primero las últimas `recientes_horas` (4) y
+   después, con las consultas que queden, lo atrasado desde la corrida anterior (una hora
+   a la vez, del más antiguo al más nuevo), en las regiones de
+   `config.yaml > compra_agil > regiones` (vacío = todo Chile).
 2. Las que pasan el filtro por nombre quedan **pendientes**; se pide su detalle
    (productos, cantidades, monto disponible, plazo y dirección de entrega, llamado),
    primero las publicadas más recientemente (duran 1 o 2 días y el límite de consultas

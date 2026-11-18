@@ -26,6 +26,9 @@ compra_agil:
   # Listado por fecha de último cambio (trae las reabiertas en 2º llamado): la primera vez,
   # o si la memoria se pierde, parte con estos días (más días agotan las consultas de la API).
   dias_iniciales_cambios: 1
+  # Cada corrida lista primero los cambios de estas últimas horas (lo nuevo de Mercado Público)
+  # y después, con las consultas que queden, lo atrasado.
+  recientes_horas: 4
   tamano_pagina: 10           # con más, la API suele responder HTTP 504
   max_paginas: 400            # por corrida
   max_detalles: 700           # por corrida; primero las publicadas más recientemente
@@ -42,6 +45,7 @@ compra_agil:
   reintentos: 3
   espera_inicial_reintento_segundos: 5
   max_espera_429_segundos: 900
+  max_esperas_429: 3   # esperas por corrida ante el límite de ritmo (se recupera en minutos)
   timeout_segundos: 60
 
 # Rubros a detectar. Cómo se comparan las frases:

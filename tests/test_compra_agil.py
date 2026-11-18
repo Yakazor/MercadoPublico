@@ -211,8 +211,10 @@ def test_clasifica_descarta_y_recuerda():
     c2 = _cliente([_pagina(["A", "D"], 1, 1), _detalle("D")])
     r2 = actualizar_compras_agiles(c2, FILTRO, estado, ahora=AHORA.replace(hour=15))
     primera = c2._sesion.llamadas[0][1]
-    assert primera["cambio_desde"] == "2026-10-21T10:59:59Z"   # una hora de margen
+    # Sigue desde lo ya listado (media hora de margen), sin repetir lo anterior.
+    assert primera["cambio_desde"] == "2026-10-21T11:29:59Z"
     assert primera["ordenar_por"] == "FechaUltimaModificacion"
+    assert estado["cambios_hasta"] == "2026-10-21T15:00:00"
     assert r2.detalles == 1 and "D" in estado["abiertas"]
 
 
@@ -326,8 +328,10 @@ def test_listado_caido_guarda_lo_recorrido_y_sigue_con_los_detalles():
                   _error(504, "timeout"), _detalle("A"), _detalle("P")])
     r, estado = _actualizar(c, estado=estado)
     assert set(estado["abiertas"]) == {"P", "A"} and not estado["pendientes"]
-    # Completa solo la primera hora: la próxima corrida retoma desde ahí.
-    assert estado["cambios_hasta"] == "2026-10-20T12:59:59"
+    # Lo reciente se listó primero y completó su primera hora; lo atrasado no se alcanzó
+    # a recorrer, así que la próxima corrida lo retoma desde el comienzo.
+    assert estado["cambios_recientes"]["hasta"] == "2026-10-21T08:59:59"
+    assert not estado["cambios_hasta"]
     assert r.listadas == 1 and "listado interrumpido" in r.detenida
 
 
@@ -523,3 +527,64 @@ def test_la_abierta_de_primer_llamado_con_otro_formato_de_cierre_no_se_vuelve_a_
     c = _cliente([_pagina_filas([_fila("A", 1, cierre="2026-10-23 18:00")])])
     r, _ = _actualizar(c, estado=estado)
     assert not [ll for ll in c._sesion.llamadas if "/v2/compra-agil/" in ll[0]] and r.revisadas == 0
+
+
+# --- Primero lo reciente (18-11-2026: el radar iba un día atrás de Mercado Público) ---
+
+def test_lista_primero_lo_reciente_y_despues_lo_atrasado():
+    estado = estado_vacio()
+    estado["cambios_hasta"] = "2026-10-20T16:00:00"   # 20 h atrás
+    c = _cliente([_pagina_filas([_fila("NUEVA", 2)]), _detalle("NUEVA", llamado=2)])
+    r, estado = _actualizar(c, estado=estado)
+    desdes = [ll[1]["cambio_desde"] for ll in c._sesion.llamadas if "cambio_desde" in ll[1]]
+    assert desdes[0] == "2026-10-21T08:00:00Z"        # las últimas 4 horas, lo primero
+    assert "2026-10-20T15:00:00Z" in desdes[4:]        # después lo atrasado (1 h de margen)
+    assert "NUEVA" in estado["abiertas"] and r.segundo_llamado == 1
+    # Recorrido todo, el listado queda completo hasta ahora.
+    assert estado["cambios_hasta"] == "2026-10-21T11:59:59"
+
+
+def test_si_la_api_corta_en_lo_atrasado_igual_queda_lo_reciente():
+    estado = estado_vacio()
+    estado["cambios_hasta"] = "2026-10-20T16:00:00"
+    # Lo reciente (4 ventanas) responde; en lo atrasado la API corta por límite de ritmo.
+    vacia = _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
+    c = _cliente([_pagina_filas([_fila("NUEVA", 2)]), vacia, vacia, vacia,
+                  _error(429, "límite"), _error(429, "límite")])
+    r, estado = _actualizar(c, estado=estado)
+    assert estado["cambios_recientes"]["hasta"] == "2026-10-21T11:59:59"
+    assert estado["cambios_hasta"] == "2026-10-20T16:00:00"   # lo atrasado sigue desde ahí
+    assert "NUEVA" in estado["pendientes"] and "429" in r.detenida
+
+
+def test_429_espera_varias_veces_si_se_configura(monkeypatch):
+    esperas = []
+    monkeypatch.setattr(compra_agil.time, "sleep", esperas.append)
+    c = _cliente([_error(429, "límite"), _error(429, "límite"), _pagina(["A"], 1, 1)])
+    c.max_espera_429, c.max_esperas_429 = 60, 2
+    assert c.listado()["items"][0]["codigo"] == "A" and esperas.count(60) == 2
+    c2 = _cliente([_error(429, "límite"), _error(429, "límite")])
+    c2.max_espera_429 = 60   # por omisión, una sola espera
+    with pytest.raises(compra_agil.ErrorApi):
+        c2.listado()
+
+
+def test_corridas_seguidas_no_repiten_lo_reciente_y_cierran_el_hueco():
+    # Corrida 1 (12:00): sin memoria, lista las últimas 4 h y lo atrasado del día anterior se
+    # corta por límite de ritmo: queda lo reciente, el atrasado sigue pendiente.
+    estado = estado_vacio()
+    estado["cambios_hasta"] = "2026-10-20T16:00:00"
+    vacia = lambda: _ok({"items": [], "paginacion": {"numero_pagina": 1, "total_paginas": 0, "total_resultados": 0}})
+    c = _cliente([vacia(), vacia(), vacia(), vacia(), _error(429, "límite"), _error(429, "límite")])
+    _actualizar(c, estado=estado)
+    assert estado["cambios_recientes"] == {"desde": "2026-10-21T08:00:00", "hasta": "2026-10-21T11:59:59"}
+    assert estado["cambios_hasta"] == "2026-10-20T16:00:00"
+    # Corrida 2 (13:00): lo reciente parte en 11:29:59 (no repite 08–11) y lo atrasado va
+    # de 15:00 del día anterior hasta 08:00, donde empezó lo ya listado: queda todo completo.
+    c2 = _cliente([])
+    actualizar_compras_agiles(c2, FILTRO, estado, dias_iniciales=1, ahora=AHORA.replace(hour=13))
+    desdes = [ll[1]["cambio_desde"] for ll in c2._sesion.llamadas if "cambio_desde" in ll[1]]
+    assert desdes[0] == "2026-10-21T11:29:59Z"
+    assert desdes[2] == "2026-10-20T15:00:00Z" and desdes[-1] == "2026-10-21T07:00:00Z"
+    assert estado["cambios_hasta"] == "2026-10-21T13:00:00"
+    assert estado["cambios_recientes"]["desde"] == "2026-10-21T08:00:00"
