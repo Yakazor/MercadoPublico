@@ -18,9 +18,11 @@
      "precio_unitario_neto": 86714.29,
      "coincidencia": "exacta",
      "nota": "Precio de Lider visto en Knasta; fecha del registro por confirmar.",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página muestra $103.990.",
+     "verificado_en": "2026-11-18",
+     "precio_pagina": 103990.0
     },
     {
      "tienda": "Lider",
@@ -33,9 +35,11 @@
      "precio_unitario_neto": 105873.95,
      "coincidencia": "aproximada",
      "nota": "Diseño H/T, no mixto.",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página muestra $125.990.",
+     "verificado_en": "2026-11-18",
+     "precio_pagina": 125990.0
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -57,9 +61,9 @@
      "nota": "Diseño mixto, no confirmado como traccional; cámara y cubrecámara por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 585990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $585.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $585.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -81,17 +85,17 @@
      "nota": "No confirmado como direccional; cámara y cubrecámara por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 585990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $585.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $585.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "opciones": 4,
-  "verificadas": 2
+  "verificadas": 4
  }
 }

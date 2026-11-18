@@ -122,5 +122,10 @@
    "opciones": [],
    "nota": "No cotizable en retail: suturas quirúrgicas (dispositivo médico) por miles de unidades; requiere distribuidor médico. Precio por confirmar."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-18",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

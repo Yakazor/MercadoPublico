@@ -20,9 +20,9 @@
      "nota": "Rango $84.990–$99.990 según vendedor (Techbox/Alcaplus); se toma el mayor. Por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-15",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 99990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $99.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $99.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -42,10 +42,10 @@
      "precio_unitario_neto": 99991.6,
      "coincidencia": "exacta",
      "nota": "$114.944 con transferencia.",
-     "verificado": true,
+     "verificado": false,
      "fecha_consulta": "2026-11-15",
-     "precio_pagina": 121990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $121.990.",
+     "precio_pagina": 110990.0,
+     "verificacion_pagina": "2026-11-18: la página abrió y el precio más parecido es $110.990, no $118.990: puede haber cambiado.",
      "verificado_en": "2026-11-17"
     }
    ],
@@ -66,9 +66,11 @@
      "precio_unitario_neto": 117638.66,
      "coincidencia": "exacta",
      "nota": "Vendido por Tech Box (marketplace).",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-15",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página muestra $139.990.",
+     "verificado_en": "2026-11-18",
+     "precio_pagina": 139990.0
     },
     {
      "tienda": "Notebookstore",
@@ -84,7 +86,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-15",
      "precio_pagina": 149990.0,
-     "verificacion_pagina": "2026-11-17: la página abrió y el precio más parecido es $149.990, no $156.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-18: la página abrió y el precio más parecido es $149.990, no $156.990: puede haber cambiado."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -97,7 +99,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "opciones": 4,
   "verificadas": 2
  }

@@ -18,9 +18,11 @@
      "precio_unitario_neto": 33605.04,
      "coincidencia": "aproximada",
      "nota": "Piden ancho referencial 60 cm; se usa la de 90 cm.",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página muestra $39.990.",
+     "verificado_en": "2026-11-18",
+     "precio_pagina": 39990.0
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -42,9 +44,9 @@
      "nota": "Acero AISI-430.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 34990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $34.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $34.990."
     },
     {
      "tienda": "Paris",
@@ -57,9 +59,11 @@
      "precio_unitario_neto": 33605.04,
      "coincidencia": "exacta",
      "nota": "",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página muestra $39.990.",
+     "verificado_en": "2026-11-18",
+     "precio_pagina": 39990.0
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -72,8 +76,8 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "opciones": 3,
-  "verificadas": 1
+  "verificadas": 3
  }
 }

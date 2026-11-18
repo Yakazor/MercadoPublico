@@ -20,9 +20,9 @@
      "nota": "Visto en listado de Sodimac. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 115990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $115.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $115.990."
     },
     {
      "tienda": "Mercado Libre (Cousiño)",
@@ -37,7 +37,7 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-17: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-11-18: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ]
   },
@@ -58,9 +58,9 @@
      "nota": "Visto en listado de Sodimac. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 80990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $80.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $80.990."
     },
     {
      "tienda": "Easy (ProChef)",
@@ -75,7 +75,8 @@
      "nota": "Cubierta inox, estructura galvanizada. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página abrió y el precio más parecido es $104.990, no $89.990: puede haber cambiado.",
+     "precio_pagina": 104990.0
     }
    ]
   },
@@ -96,9 +97,9 @@
      "nota": "Precio normal; con descuento $1.472. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 1590.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $1.590."
+     "verificacion_pagina": "2026-11-18: la página muestra $1.590."
     }
    ]
   },
@@ -119,9 +120,9 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 5975.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $5.975."
+     "verificacion_pagina": "2026-11-18: la página muestra $5.975."
     },
     {
      "tienda": "Easy",
@@ -136,7 +137,8 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-17: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-18: la página abrió y el precio más parecido es $6.450, no $6.050: puede haber cambiado.",
+     "precio_pagina": 6450.0
     }
    ]
   },
@@ -157,9 +159,9 @@
      "nota": "Sin cara blanca; Durolac blanco 2,8 mm sin precio atribuible. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 9290.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $9.290."
+     "verificacion_pagina": "2026-11-18: la página muestra $9.290."
     }
    ]
   },
@@ -180,9 +182,9 @@
      "nota": "Visto en listado; Kolor 1 gl a $25.490. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 23390.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $23.390."
+     "verificacion_pagina": "2026-11-18: la página muestra $23.390."
     }
    ]
   },
@@ -227,9 +229,9 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 55000.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $55.000."
+     "verificacion_pagina": "2026-11-18: la página muestra $55.000."
     },
     {
      "tienda": "Sodimac (ProChef)",
@@ -244,9 +246,9 @@
      "nota": "Visto en listado de Sodimac. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-17",
+     "verificado_en": "2026-11-18",
      "precio_pagina": 57990.0,
-     "verificacion_pagina": "2026-11-17: la página muestra $57.990."
+     "verificacion_pagina": "2026-11-18: la página muestra $57.990."
     }
    ]
   },
@@ -259,7 +261,7 @@
  ],
  "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
  "verificacion_paginas": {
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "opciones": 11,
   "verificadas": 8
  }
