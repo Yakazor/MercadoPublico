@@ -23,6 +23,9 @@ compra_agil:
   # corrida anterior (la API entrega ~10 compras cada ~5 s). La primera vez, o si la
   # memoria se pierde, parte con los últimos `dias_iniciales` días.
   dias_iniciales: 3
+  # Listado por fecha de último cambio (trae las reabiertas en 2º llamado): la primera vez,
+  # o si la memoria se pierde, parte con estos días (más días agotan las consultas de la API).
+  dias_iniciales_cambios: 1
   tamano_pagina: 10           # con más, la API suele responder HTTP 504
   max_paginas: 400            # por corrida
   max_detalles: 700           # por corrida; primero las publicadas más recientemente

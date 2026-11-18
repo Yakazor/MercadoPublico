@@ -112,6 +112,26 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+- **18-11 (pedido de la usuaria: «sigue apareciendo que no hay de segundo llamado y en Mercado Público hay hartas»):**
+  el PR #15 solo seguía las que cerraban su 1er llamado desde ahora; las ya reabiertas no se veían nunca. Según la
+  documentación de la API v2 (guía de terceros `ssolis-ti/compra-agil-mcp`, docs/api), el listado acepta
+  `cambio_desde`/`cambio_hasta` con `ordenar_por=FechaUltimaModificacion` y cada fila trae
+  `convocatoria.estado_convocatoria` (1 o 2). Ahora cada corrida lista además por fecha de último cambio (memoria
+  `cambios_hasta`; la primera vez, 3 días), las de 2º llamado van primero a pedir detalle (prioridad -1) y se revisan
+  hasta 3 h antes del cierre (las demás, 12 h). Si la API rechaza esos filtros (400), sigue como antes. Verificación
+  real: log del workflow «Compras Ágiles», línea «… N listadas en 2º llamado, M abiertas en 2º llamado en tus rubros».
+  Ojo: la nota del 02-11 «el llamado solo viene en el detalle» puede estar equivocada (confirmar en ese log).
+  **Ajuste tras la corrida de las 21:59 (17-11):** 3.973 listadas, 0 detalles: la API cortó (HTTP 429) tras 417
+  consultas, casi todas de listado. Ahora se lista **una sola vez, por último cambio** (el de publicación queda de
+  respaldo si la API rechaza o ignora el filtro, con log de diagnóstico de la primera página), sin EMT no se pide el
+  detalle de las de 1er llamado (`solo_segundo_llamado`, de `compra_agil.soy_emt`) y las revisiones una a una de las
+  cerradas solo corren si el listado por cambios no está disponible. `listado_hasta` de compras_agiles.json = el
+  más reciente de los dos listados (aviso de atraso de la plataforma).
+  **Prueba real en la rama (corrida 44218763604, 18-11 01:50 UTC):** el filtro `cambio_desde/cambio_hasta`
+  funciona y las filas traen `convocatoria.estado_convocatoria`: **829 listadas en 2º llamado** (todo Chile). Pero 0
+  detalles: el listado inicial de 3 días (3.065 filas) más 8 detalles repetidos de abiertas de 1er llamado (cierre
+  con otro formato) agotaron las 410 consultas. Corregido: la primera vez 1 día de cambios
+  (`compra_agil.dias_iniciales_cambios`) y una conocida solo se vuelve a pedir si el listado la muestra en 2º llamado.
 - **18-11 (pedido de la usuaria, PR rubro libros):** nuevo rubro `libros_educativo` («Libros y material educativo»:
   libros, diccionarios, textos escolares, atlas, cuentos, material pedagógico, láminas…; excluye impresión, edición,
   ferias del libro y plataformas). «libros» sale de `deporte_didactico`. Motivo: la Compra Ágil 1126922-1087-COT26
