@@ -112,7 +112,7 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
-- **18-11 (pedido de la usuaria, rama `fix/compras-agiles-2do-llamado-y-montos`):** tres arreglos.
+- **18-11 (pedido de la usuaria; PR #15, unido el 18-11 a pedido de ella):** tres arreglos.
   - **2º llamado de Compras Ágiles:** desde el 25-10 no apareció ninguna en ~30 corridas. Causa probable: el
     workflow lista por fecha de publicación y pide el detalle una sola vez; una compra que reabre en 2º llamado
     conserva código y fecha de publicación (el listado no la vuelve a traer) y además se borraba de la memoria al
