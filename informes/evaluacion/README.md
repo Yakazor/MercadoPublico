@@ -1,6 +1,6 @@
 # Evaluación comercial de licitaciones
 
-Actualizado: 2026-11-17. 961 oportunidades vigentes en el Excel, 22 con precios de mercado evaluadas: 0 GO, 3 GO con condiciones, 10 con falta de precio (menos del 80 % de las líneas) y 9 NO GO.
+Actualizado: 2026-11-18. 680 oportunidades vigentes en el Excel, 21 con precios de mercado evaluadas: 0 GO, 3 GO con condiciones, 11 con falta de precio (menos del 80 % de las líneas) y 7 NO GO.
 
 - [Excel con todas las licitaciones, la evaluación y el Claude Log](Licitaciones_evaluadas.xlsx)
 
@@ -17,7 +17,7 @@ Actualizado: 2026-11-17. 961 oportunidades vigentes en el Excel, 22 con precios 
 | [691944-43-L126](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=691944-43-L126) Adquisición materiales de ferretería | 2026-11-19 | $3.887.712 | $5.449.000 | 12 % | Alto | 55% | ⚪ FALTA PRECIO | [informe](licitaciones/691944-43-L126_informe.md) · [GO/NO GO](licitaciones/691944-43-L126_go_no_go.md) · [correos](licitaciones/691944-43-L126_correos.md) |
 | [2703-218-L126](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=2703-218-L126) SC 12775 12778 12779 12792 Insumos clínicos. CESFAM. | 2026-11-24 | $2.229.692 | $7.100.000 | 15 % | Medio | 55% | ⚪ FALTA PRECIO | [informe](licitaciones/2703-218-L126_informe.md) · [GO/NO GO](licitaciones/2703-218-L126_go_no_go.md) · [correos](licitaciones/2703-218-L126_correos.md) |
 | [1953-26-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1953-26-LE26) ADQUISICIÓN MOBILIARIO PARA UNIDADES DE LA REGION | 2026-11-27 | $3.328.623 | — | 14 % | Bajo | 25% | ⚪ FALTA PRECIO | [informe](licitaciones/1953-26-LE26_informe.md) · [GO/NO GO](licitaciones/1953-26-LE26_go_no_go.md) · [correos](licitaciones/1953-26-LE26_correos.md) |
-| [1057404-111-CO26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1057404-111-CO26) SUMINISTRO ROPA DE TRABAJO HOSPITAL ARAUCO | 2026-11-20 | $4.632.967 | — | 12 % | Medio | 15% | ⚪ FALTA PRECIO | [informe](licitaciones/1057404-111-CO26_informe.md) · [GO/NO GO](licitaciones/1057404-111-CO26_go_no_go.md) · [correos](licitaciones/1057404-111-CO26_correos.md) |
+| [1057404-111-CO26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1057404-111-CO26) SUMINISTRO ROPA DE TRABAJO HOSPITAL ARAUCO | 2026-11-20 | $4.632.967 | — | 12 % | Alto | 15% | ⚪ FALTA PRECIO | [informe](licitaciones/1057404-111-CO26_informe.md) · [GO/NO GO](licitaciones/1057404-111-CO26_go_no_go.md) · [correos](licitaciones/1057404-111-CO26_correos.md) |
 
 ## Qué hacer ahora
 

@@ -112,6 +112,13 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-18 — Rutina ACTUALIZACIÓN
+
+- Radar disparado (último completo era de hace 16 h); datos publicados 12:18 y 12:30 UTC.
+- Precios: 3608-687-COT26 (cocina, 2º llamado, Araucanía) 6/16 líneas → FALTA PRECIO; 867990-917-COT26 (merchandising con logo), 1271357-103-COT26 (pantalón capoeira) y 1952-103-LP26 (suturas) sin precio en retail (nota «por confirmar»). Se quitaron 2 precios cuya ficha no se pudo abrir (easy.cl no está permitido en la red de la sesión).
+- Evaluación: 0 GO, 3 GO con condiciones (1171142-118-LE26, 994-42-LE26, 4590-26-LE26; proveedores ya registrados), 11 falta precio, 7 NO GO. 4 cerradas archivadas.
+- Compras Ágiles: 39 abiertas de 2º llamado en sus rubros (2 en Los Lagos). **Problema:** el listado por cambios avanza más lento que el reloj (corrida 11:52 UTC llegó solo hasta 17-11 16:36; 645 cambios por hora y HTTP 429 tras 271 llamadas, 0 detalles). Hay que ajustar el código (no se tocó en la rutina).
+
 ### 2026-11-18 — Primera corrida con el arreglo de 2º llamado (PR #17)
 
 - La corrida programada de 00:23 (Chile) no partió (GitHub atrasó/saltó el cron); se lanzó a mano la 44238507650.

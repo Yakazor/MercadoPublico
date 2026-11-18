@@ -1,0 +1,178 @@
+{
+  "codigo": "3608-687-COT26",
+  "nombre": "Adquisición de equipos, maquinaria, mobiliario y utensilios para cocina (Programa mujer jefa de hogar)",
+  "items": [
+    {
+      "linea": 1,
+      "producto": "Botellas de cristal",
+      "opciones": [
+        {
+          "tienda": "Paris",
+          "producto_mercado": "Pack de 3 Frascos de Vidrio con tapa Hermética 500ml Allegra",
+          "url": "https://www.paris.cl/pack-de-3-frascos-de-vidrio-con-tapa-hermetica-500ml-allegra-MKYBWKU2FQ.html",
+          "precio": 8990,
+          "iva_incluido": true,
+          "contenido": "pack 3 un",
+          "unidades_equivalentes": 3,
+          "precio_unitario_neto": 2518.21,
+          "coincidencia": "equivalente",
+          "fecha_consulta": null
+        }
+      ]
+    },
+    {
+      "linea": 2,
+      "producto": "Cámaras congeladoras",
+      "opciones": [
+        {
+          "tienda": "Sodimac",
+          "producto_mercado": "Congelador industrial horizontal 100 litros blanco Maigas SD-100",
+          "url": "https://www.sodimac.cl/sodimac-cl/articulo/110008054/congelador-industrial-horizontal-100-litros-blanco-sd-100",
+          "precio": 159990,
+          "iva_incluido": true,
+          "contenido": "1 unidad",
+          "unidades_equivalentes": 1,
+          "precio_unitario_neto": 134445.38,
+          "coincidencia": "equivalente",
+          "fecha_consulta": null
+        }
+      ]
+    },
+    {
+      "linea": 3,
+      "producto": "Cámaras congeladoras",
+      "opciones": [
+        {
+          "tienda": "Sodimac",
+          "producto_mercado": "Congelador industrial horizontal 100 litros blanco Maigas SD-100",
+          "url": "https://www.sodimac.cl/sodimac-cl/articulo/110008054/congelador-industrial-horizontal-100-litros-blanco-sd-100",
+          "precio": 159990,
+          "iva_incluido": true,
+          "contenido": "1 unidad",
+          "unidades_equivalentes": 1,
+          "precio_unitario_neto": 134445.38,
+          "coincidencia": "equivalente",
+          "nota": "Verificar control de temperatura y descongelación manual en ficha",
+          "fecha_consulta": null
+        }
+      ]
+    },
+    {
+      "linea": 4,
+      "producto": "Cámaras congeladoras",
+      "opciones": [
+        {
+          "tienda": "Paris",
+          "producto_mercado": "Ventus Visi Cooler LG-100 sobremesa 1 puerta 100 lts",
+          "url": "https://www.paris.cl/ventus-visi-cooler-lg-100-sobremesa-1-puerta-100-lts-MKG9D7E6VW.html",
+          "precio": 169990,
+          "iva_incluido": true,
+          "contenido": "1 unidad",
+          "unidades_equivalentes": 1,
+          "precio_unitario_neto": 142848.74,
+          "coincidencia": "equivalente",
+          "nota": "Doble vidrio según ficha; confirmar parrillas y LED",
+          "fecha_consulta": null
+        }
+      ]
+    },
+    {
+      "linea": 5,
+      "producto": "Ollas a presión de uso comercial",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 6,
+      "producto": "Ollas de uso comercial para hervir pasta",
+      "opciones": [],
+      "nota": "Hay precios en listados (horno Thomas TH-100i ~$149.990; olla inox 35 L ~$22.990–28.990) pero no se pudo abrir la ficha para confirmarlos. Precio por confirmar."
+    },
+    {
+      "linea": 7,
+      "producto": "Balanzas de uso comercial",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 8,
+      "producto": "Cucharones de uso comercial",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 9,
+      "producto": "Cocinilla de camping",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 10,
+      "producto": "Hornos microondas domésticos",
+      "opciones": [],
+      "nota": "Hay precios en listados (horno Thomas TH-100i ~$149.990; olla inox 35 L ~$22.990–28.990) pero no se pudo abrir la ficha para confirmarlos. Precio por confirmar."
+    },
+    {
+      "linea": 11,
+      "producto": "Freidoras domésticas",
+      "opciones": [
+        {
+          "tienda": "Easy",
+          "producto_mercado": "Freidora ProChef eléctrica 2 depósitos 5,5 lt c/u",
+          "url": "https://www.easy.cl/freidora-prochef-electrica-2-depositos-55-lt-cu-mkupcp74ak/p",
+          "precio": 69990,
+          "iva_incluido": true,
+          "contenido": "1 unidad",
+          "unidades_equivalentes": 1,
+          "precio_unitario_neto": 58815.13,
+          "coincidencia": "aproximada",
+          "nota": "5,5 L por depósito en vez de 6 L",
+          "fecha_consulta": null
+        }
+      ]
+    },
+    {
+      "linea": 12,
+      "producto": "Batidoras domésticas",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 13,
+      "producto": "Hornos tostadores domésticos",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 14,
+      "producto": "Olla eléctrica doméstica",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 15,
+      "producto": "Sartenes domésticas",
+      "opciones": [],
+      "nota": "Sin precio confiable en esta búsqueda (por confirmar)."
+    },
+    {
+      "linea": 16,
+      "producto": "Mesas de trabajo",
+      "opciones": [
+        {
+          "tienda": "Easy",
+          "producto_mercado": "Mesón Centro ECO Acero Inoxidable 120x60x85 cm",
+          "url": "https://www.easy.cl/meson-centro-eco-acero-inoxidable-120x60x85-cm-mk2yy7fvx6/p",
+          "precio": 89990,
+          "iva_incluido": true,
+          "contenido": "1 unidad",
+          "unidades_equivalentes": 1,
+          "precio_unitario_neto": 75621.85,
+          "coincidencia": "aproximada",
+          "nota": "Mide 120x60, se piden 120x80; buscar fabricante a medida",
+          "fecha_consulta": null
+        }
+      ]
+    }
+  ]
+}
