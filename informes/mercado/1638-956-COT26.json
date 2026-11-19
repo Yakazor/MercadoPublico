@@ -1,0 +1,172 @@
+{
+ "codigo": "1638-956-COT26",
+ "nombre": " Adquisición insumos de oficina para centro de las mujeres, DIDECO, sm 002438",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Hilo de lana",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 2,
+   "producto": "Hilo de poliéster",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 3,
+   "producto": "Papel multiuso",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Resma carta 70 g/m2 500 hojas blanco Office Depot",
+     "url": "https://www.lider.cl/ip/articulos-de-oficina-y-papeleria/resma-carta-70-g-m2-500-hojas-color-blanco-officedepot/00899328000170",
+     "precio": 4490,
+     "iva_incluido": true,
+     "contenido": "resma 500 hojas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3773.11,
+     "coincidencia": "equivalente",
+     "nota": "70 g/m2.",
+     "fecha_consulta": "2026-11-19"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Resma papel multipropósito 75 g 500 hojas carta (Equalit)",
+     "url": "https://www.lider.cl/ip/articulos-de-oficina-y-papeleria/resma-papel-multiproposito-75gr-500hj-carta-/00780651023246",
+     "precio": 5490,
+     "iva_incluido": true,
+     "contenido": "resma 500 hojas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 4613.45,
+     "coincidencia": "equivalente",
+     "nota": "",
+     "fecha_consulta": "2026-11-19"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Resma papel tipo carta Chamex 500 hojas 75 g",
+     "url": "https://www.lider.cl/ip/articulos-de-oficina-y-papeleria/resma-papel-tipo-carta-chamex-500-hojas-75-gr/00789117302288",
+     "precio": 7290,
+     "iva_incluido": true,
+     "contenido": "resma 500 hojas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6126.05,
+     "coincidencia": "equivalente",
+     "nota": "Oferta, antes $8.790.",
+     "fecha_consulta": "2026-11-19"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Papel fotográfico",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 5,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 6,
+   "producto": "Divisores",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 7,
+   "producto": "Botones",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 8,
+   "producto": "Agujas de coser",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 9,
+   "producto": "Blocs de dibujo",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 10,
+   "producto": "Blocs de dibujo",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 11,
+   "producto": "Cartón piedra",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 12,
+   "producto": "Pintura de témpera lavable",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 13,
+   "producto": "Pintura acrílica escolar",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 14,
+   "producto": "Pintura de acuarela de platillo",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 15,
+   "producto": "Pinceles",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 16,
+   "producto": "Lápices de grafito",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 17,
+   "producto": "Productos de artesanía multicultural",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 18,
+   "producto": "Productos de artesanía multicultural",
+   "opciones": [],
+   "nota": "No se encontró precio con link verificable (Jumbo, Ripley y Falabella no se pudieron abrir desde la sesión)."
+  },
+  {
+   "linea": 19,
+   "producto": "Masa de modelado",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Arcilla pasta para modelar blanca 500 g",
+     "url": "https://www.lider.cl/ip/articulos-escolares/arcilla-pasta-para-modelar-blanca-500gr-ps/00842540215297",
+     "precio": 4010,
+     "iva_incluido": true,
+     "contenido": "500 g",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 3369.75,
+     "coincidencia": "equivalente",
+     "nota": "Similar a DAS (secado al aire), otra marca; gramaje pedido no indicado.",
+     "fecha_consulta": "2026-11-19"
+    }
+   ]
+  }
+ ]
+}
