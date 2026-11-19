@@ -115,7 +115,7 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 ### 2026-11-19 — Rutina ACTUALIZACIÓN
 
 - El radar programado de las 10:07 UTC no corrió (GitHub se lo saltó); se disparó con el archivo disparador y terminó bien (472 licitaciones en rubros). «Órdenes de compra históricas» quedó cancelada por la cola compartida.
-- Problema detectado: con #19, al quedar al día, Compras Ágiles se encadenaba una corrida por minuto (62 publicaciones «solo exportar» entre 09 y 11 UTC). Arreglo en PR #20 (encadenar solo con el listado >90 min atrasado), pendiente de que la usuaria lo una. No se pudo pausar el workflow (permiso denegado).
+- Problema detectado: con #19, al quedar al día, Compras Ágiles se encadenaba una corrida por minuto (62 publicaciones «solo exportar» entre 09 y 11 UTC). Arreglo en PR #20 (encadenar solo con el listado >90 min atrasado), unido a las 13:26 UTC y probado: la corrida de las 13:27 vio el listado 27 min atrasado y no lanzó otra («Listado al día: la siguiente corrida la lanza el cron»).
 - Precios nuevos (todas Compras Ágiles de 2º llamado): 4205-310-COT26 5/18 (falta precio), 564953-965-COT26 5/14 (NO GO), 4044-664-COT26 0/16 (repuestos RS100, cotizar con proveedor), 1638-956-COT26 2/19 (NO GO por pocas líneas). Precios tomados de resultados de búsqueda de Lider y Ripley: jumbo.cl, ripley y falabella no abren desde la sesión.
 - Evaluación: 0 GO, 2 GO con condiciones (994-42-LE26, 4590-26-LE26), 10 falta precio, 12 NO GO. Proveedores ya existían para las 3 primeras. 341 Compras Ágiles abiertas de 2º llamado (21 en Los Lagos); listado al día hasta 19-11 08:04.
 
