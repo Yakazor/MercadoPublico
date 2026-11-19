@@ -95,7 +95,11 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "aproximada",
      "nota": "Precio visto en resultado de búsqueda (antes $11.990); solo negro talla 10; colores y tallas S/L por confirmar.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $8.990."
     }
    ]
   },
@@ -114,7 +118,11 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "aproximada",
      "nota": "Precio visto en resultado de búsqueda (antes $11.990); solo negro talla 10; colores y tallas S/L por confirmar.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $8.990."
     }
    ]
   },
@@ -133,7 +141,11 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "aproximada",
      "nota": "Precio visto en resultado de búsqueda (antes $11.990); solo negro talla 10; colores y tallas S/L por confirmar.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $8.990."
     }
    ]
   },
@@ -152,7 +164,11 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "aproximada",
      "nota": "Precio visto en resultado de búsqueda (antes $11.990); solo negro talla 10; colores y tallas S/L por confirmar.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $8.990."
     }
    ]
   },
@@ -171,9 +187,18 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "aproximada",
      "nota": "Precio visto en resultado de búsqueda (antes $11.990); solo negro talla 10; colores y tallas S/L por confirmar.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $8.990."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-19",
+  "opciones": 5,
+  "verificadas": 5
+ }
 }

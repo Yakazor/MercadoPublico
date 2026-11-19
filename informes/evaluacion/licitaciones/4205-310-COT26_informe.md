@@ -29,7 +29,7 @@
 | Punto de equilibrio (oferta mínima con IVA) | $1.194.937 |
 | Oferta sugerida con IVA y despacho | $1.347.960 |
 
-**Riesgos financieros:** 13 de 18 ítems sin precio de mercado: el costo real es mayor.; La mayoría de los precios no está verificada en la página de la tienda.; 5 de 5 precios son de productos aproximados (otra medida, marca o modelo)..
+**Riesgos financieros:** 13 de 18 ítems sin precio de mercado: el costo real es mayor.; 5 de 5 precios son de productos aproximados (otra medida, marca o modelo)..
 
 ## Análisis operacional
 
@@ -47,7 +47,6 @@
 ## Riesgos detectados
 
 - 13 de 18 ítems sin precio de mercado: el costo real es mayor.
-- La mayoría de los precios no está verificada en la página de la tienda.
 - 5 de 5 precios son de productos aproximados (otra medida, marca o modelo).
 - Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
 

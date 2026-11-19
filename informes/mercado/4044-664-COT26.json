@@ -98,5 +98,10 @@
    "opciones": [],
    "nota": "Repuesto específico de máquina (cortadora RS100 u otra): no se encontró precio en tiendas chilenas; requiere cotizar con distribuidor de repuestos textiles."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-19",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

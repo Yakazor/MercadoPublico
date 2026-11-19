@@ -29,7 +29,11 @@
      "precio_unitario_neto": 3773.11,
      "coincidencia": "equivalente",
      "nota": "70 g/m2.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 4490.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $4.490."
     },
     {
      "tienda": "Lider",
@@ -42,7 +46,8 @@
      "precio_unitario_neto": 4613.45,
      "coincidencia": "equivalente",
      "nota": "",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificacion_pagina": "2026-11-19: la tienda respondió HTTP 404."
     },
     {
      "tienda": "Lider",
@@ -55,7 +60,10 @@
      "precio_unitario_neto": 6126.05,
      "coincidencia": "equivalente",
      "nota": "Oferta, antes $8.790.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": false,
+     "precio_pagina": 7690.0,
+     "verificacion_pagina": "2026-11-19: la página abrió y el precio más parecido es $7.690, no $7.290: puede haber cambiado."
     }
    ]
   },
@@ -164,9 +172,18 @@
      "precio_unitario_neto": 3369.75,
      "coincidencia": "equivalente",
      "nota": "Similar a DAS (secado al aire), otra marca; gramaje pedido no indicado.",
-     "fecha_consulta": "2026-11-19"
+     "fecha_consulta": "2026-11-19",
+     "verificado": true,
+     "verificado_en": "2026-11-19",
+     "precio_pagina": 4010.0,
+     "verificacion_pagina": "2026-11-19: la página muestra $4.010."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-19",
+  "opciones": 4,
+  "verificadas": 2
+ }
 }

@@ -505,20 +505,20 @@
  },
  {
   "fecha": "2026-11-19",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "995 vigentes; 24 evaluadas; informes de 10",
-  "resultado": "0 GO, 2 con condiciones, 10 falta precio, 12 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 10 de 16 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5",
-  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 1057404-111-CO26: FALTA PRECIO; 4205-310-COT26: FALTA PRECIO; 3608-687-COT26: FALTA PRECIO",
-  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-19",
   "autor": "Claude",
   "licitaciones_procesadas": "Precios nuevos (Compras Ágiles de 2º llamado): 4205-310-COT26 (vestuario folclórico, 5/18 líneas), 564953-965-COT26 (uniforme de gala, 5/14), 4044-664-COT26 (repuestos de máquinas, 0/16) y 1638-956-COT26 (insumos de oficina y arte, 2/19). Evaluadas 24 con precios.",
   "resultado": "0 GO, 2 GO con condiciones (994-42-LE26 y 4590-26-LE26, neumáticos), 10 falta precio y 12 NO GO. 564953-965-COT26 queda NO GO: con blazers de adulto a $49.995 la oferta supera el monto estimado de $2,4 M. 1638-956-COT26 sale NO GO solo porque tiene 2 de 19 líneas con precio (no es concluyente). 4205-310-COT26 sigue en falta precio: las faldas folclóricas son confección a medida.",
   "riesgos": "Los precios de hoy salen de resultados de búsqueda en Lider y Ripley: no se pudieron abrir las páginas desde la sesión (Jumbo, Ripley y Falabella bloqueados); el workflow de verificación los revisará. Las prendas encontradas son aproximadas (colores y tallas por confirmar). Neumáticos: falta precio de varios ítems.",
   "decisiones": "No se buscaron proveedores nuevos: 994-42-LE26, 4590-26-LE26 y 3191-128-LE26 ya tienen lista en informes/evaluacion/proveedores. Los repuestos RS100 (4044-664-COT26) y las faldas folclóricas quedan para cotizar directo con proveedor.",
   "recomendaciones": "Hoy: pedir precios de los neumáticos faltantes (994-42-LE26 y 4590-26-LE26, cierran el 26-11). 1638-956-COT26 (insumos de arte, cierra 20-11) es fácil de cotizar en una librería: si quieres participar, revisa los precios línea a línea. Las Compras Ágiles de Los Lagos siguen en el radar (filtro 2º llamado)."
+ },
+ {
+  "fecha": "2026-11-19",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "995 vigentes; 24 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 10 falta precio, 12 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 10 de 16 ítems sin precio de mercado; 13 de 18 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).; 2 de 5",
+  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1562-90-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 1057404-111-CO26: FALTA PRECIO; 4205-310-COT26: FALTA PRECIO; 3608-687-COT26: FALTA PRECIO",
+  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1562-90-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido."
  }
 ]
