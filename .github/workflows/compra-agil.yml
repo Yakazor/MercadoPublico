@@ -96,8 +96,10 @@ jobs:
 
       # La siguiente corrida se lanza al terminar esta: GitHub atrasa o se salta las corridas
       # programadas (18-11-2026: ninguna de las 22:23 a las 00:23 UTC). El cron queda de
-      # respaldo por si la cadena se corta. No se lanza si ya hay una en cola (la nueva
-      # la cancelaría) ni si la corrida falló (p. ej. ticket rechazado: no repetir en bucle).
+      # respaldo por si la cadena se corta. Solo se encadena mientras el listado vaya más de
+      # 90 minutos atrasado: al día, la siguiente la lanza el cron (19-11-2026: al ponerse al
+      # día quedó lanzando una corrida por minuto). No se lanza si ya hay una en cola (la
+      # nueva la cancelaría) ni si la corrida falló (p. ej. ticket rechazado: no repetir en bucle).
       - name: Lanzar la siguiente corrida
         if: success() && github.ref_name == 'feature/api-mercadopublico'
         env:
@@ -105,7 +107,24 @@ jobs:
         run: |
           n=$(gh run list -R "${{ github.repository }}" -w compra-agil.yml -L 20 --json status,databaseId \
               --jq '[.[] | select(.databaseId != ${{ github.run_id }}) | select(.status == "queued" or .status == "pending" or .status == "waiting" or .status == "requested" or .status == "in_progress")] | length')
-          if [ "$n" -gt 0 ]; then
+          atraso=$(python - <<'EOF'
+          import json
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          try:
+              hasta = json.load(open("data/compras_agiles.json", encoding="utf-8"))["listado_hasta"]
+              t = datetime.fromisoformat(hasta)
+              if t.tzinfo is None:
+                  t = t.replace(tzinfo=ZoneInfo("America/Santiago"))
+              print(int((datetime.now(ZoneInfo("America/Santiago")) - t).total_seconds() // 60))
+          except Exception:
+              print(9999)
+          EOF
+          )
+          echo "Listado atrasado $atraso minutos."
+          if [ "$atraso" -le 90 ]; then
+            echo "Listado al día: la siguiente corrida la lanza el cron."
+          elif [ "$n" -gt 0 ]; then
             echo "Ya hay otra corrida de Compras Ágiles en curso o en cola."
           else
             gh workflow run compra-agil.yml -R "${{ github.repository }}" --ref "$GITHUB_REF_NAME"
