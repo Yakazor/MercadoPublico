@@ -2,9 +2,10 @@ name: Compras Ágiles
 
 # Cada hora: lista las Compras Ágiles que cambiaron en Mercado Público (primero las últimas
 # horas, después lo atrasado), pide el detalle de las que calzan con tus rubros y guarda la
-# memoria en la caché. Cada corrida dura hasta ~100 min; si la anterior sigue, la nueva
-# espera en la cola (concurrency) y GitHub descarta las que sobran. Cada hora y no cada 3:
-# GitHub a veces se salta corridas programadas (18-11-2026 se saltó dos seguidas).
+# memoria en la caché. Cada corrida dura hasta ~100 min y al terminar lanza la siguiente
+# (GitHub atrasa o se salta corridas programadas: el 18-11-2026 se saltó varias seguidas);
+# el cron de cada hora es el respaldo si la cadena se corta. Si la anterior sigue, la nueva
+# espera en la cola (concurrency) y GitHub descarta las que sobran.
 on:
   schedule:
     - cron: "23 * * * *"
@@ -28,7 +29,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
-      actions: write   # lanza el radar en modo «solo exportar» para publicar en la rama datos
+      actions: write   # lanza el radar en modo «solo exportar» y la siguiente corrida
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
@@ -91,6 +92,24 @@ jobs:
           else
             gh workflow run radar-diario.yml -R "${{ github.repository }}" --ref "$GITHUB_REF_NAME" -f solo_exportar=true
             echo "Radar lanzado en modo «solo exportar» para publicar las Compras Ágiles."
+          fi
+
+      # La siguiente corrida se lanza al terminar esta: GitHub atrasa o se salta las corridas
+      # programadas (18-11-2026: ninguna de las 22:23 a las 00:23 UTC). El cron queda de
+      # respaldo por si la cadena se corta. No se lanza si ya hay una en cola (la nueva
+      # la cancelaría) ni si la corrida falló (p. ej. ticket rechazado: no repetir en bucle).
+      - name: Lanzar la siguiente corrida
+        if: success() && github.ref_name == 'feature/api-mercadopublico'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(gh run list -R "${{ github.repository }}" -w compra-agil.yml -L 20 --json status,databaseId \
+              --jq '[.[] | select(.databaseId != ${{ github.run_id }}) | select(.status == "queued" or .status == "pending" or .status == "waiting" or .status == "requested" or .status == "in_progress")] | length')
+          if [ "$n" -gt 0 ]; then
+            echo "Ya hay otra corrida de Compras Ágiles en curso o en cola."
+          else
+            gh workflow run compra-agil.yml -R "${{ github.repository }}" --ref "$GITHUB_REF_NAME"
+            echo "Siguiente corrida de Compras Ágiles lanzada."
           fi
 
       - name: Resumen
