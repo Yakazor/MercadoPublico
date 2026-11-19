@@ -112,6 +112,10 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-19 — Compras Ágiles: cada corrida lanza la siguiente
+
+- Tras unir #18, GitHub no lanzó ninguna corrida programada entre 22:23 y 00:23 UTC (el cron cada hora no basta). El workflow ahora lanza la siguiente corrida al terminar con éxito (si no hay otra en curso o en cola); el cron queda de respaldo.
+
 ### 2026-11-18 — PR #18 unido y probado con la API real
 
 - Corrida 44403071954 (21:35 UTC): lo reciente (14:36–18:36 hora de Chile) primero y después 1.434 atrasadas; 2 esperas por 429; 560 llamadas, 130 detalles. Listado al día hasta 18:36 (completo sin huecos hasta 10:36).
