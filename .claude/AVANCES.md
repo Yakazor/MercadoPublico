@@ -112,6 +112,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-20 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 20-11 08:00 (el arreglo #20 funciona: sin bucle).
+- Precios nuevos (Compras Ágiles de 2º llamado): 1624-203-COT26 6/16 (NO GO: ítems repetidos en dos líneas, oferta ~$1,02 M vs $503 mil), 3524-80-COT26 1/10 (NO GO no concluyente), 607-289-COT26 0/10 (libros, cotizar con librería) y 1638-980-COT26 0/20 (podología, no buscada por límite). Precios de resultados de búsqueda, sin abrir las páginas.
+- Evaluación: 0 GO, 2 GO con condiciones (994-42-LE26, 4590-26-LE26), 6 falta precio, 11 NO GO. 359 Compras Ágiles abiertas de 2º llamado (18 en Los Lagos).
+
 ### 2026-11-19 — Rutina ACTUALIZACIÓN
 
 - El radar programado de las 10:07 UTC no corrió (GitHub se lo saltó); se disparó con el archivo disparador y terminó bien (472 licitaciones en rubros). «Órdenes de compra históricas» quedó cancelada por la cola compartida.

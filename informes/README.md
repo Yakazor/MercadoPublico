@@ -8,7 +8,7 @@ están en `informes/mercado/` con su fecha de consulta.
 - [Grupos de licitaciones: todos los segmentos vs los rubros del radar](grupos_licitaciones.md)
 - [Versiones en PDF de los informes](pdf/)
 
-Actualizado: 2026-11-19. Margen 20 %, otros costos 5 %, IVA 19 %.
+Actualizado: 2026-11-20. Margen 20 %, otros costos 5 %, IVA 19 %.
 
 ## Licitaciones vigentes
 
@@ -16,17 +16,6 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 
 | Licitación | Rubro | Cierre | Ítems con precio | Costo neto | Oferta total (c/IVA) | Utilidad | Monto estimado | Alertas |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| [867990-917-COT26](presupuestos/867990-917-COT26.md) CDP 94859_CC 102_ Libreta, bolsa, y lápiz grafito. | Artículos de oficina y librería | 2026-11-19 | 0/3 | $0 | $0 | $0 | $499.361 | faltan 3 precios |
-| [5148-18-LP26](presupuestos/5148-18-LP26.md) ADQUISICIÓN DE DISCOS DUROS EXTERNOS | Computación y electrónica | 2026-11-19 | 3/4 | $130.608.242 | $186.508.570 | $26.121.648 | — | falta 1 precio, sin verificar |
-| [3268-35-LE26](presupuestos/3268-35-LE26.md) GBA 1682026 ADQ. DE MAQUINAS DE EJERCICIOS. | Deporte, juguetes y material didáctico | 2026-11-19 | 11/11 | $28.885.185 | $41.248.044 | $5.777.037 | $30.800.000 | supera monto, sin verificar |
-| [1171142-118-LE26](presupuestos/1171142-118-LE26.md) CALZADOS DE SEGURIDAD PARA FUNCIONARIOS DEL CAPLC | Vestuario, uniformes y textiles | 2026-11-19 | 4/4 | $16.274.297 | $23.239.695 | $3.254.859 | $24.540.000 | — |
-| [1233613-83-LE26](presupuestos/1233613-83-LE26.md) ADQUISICIÓN DE PARLANTES PARA EE | Computación y electrónica | 2026-11-19 | 0/14 | $0 | $0 | $0 | — | faltan 14 precios |
-| [1490609-5-LE26](presupuestos/1490609-5-LE26.md) ADQUISICIÓN DE TELEVISORES INTELIGENTES MÁQUINAS DE CORTE Y GRABADO LÁ | Computación y electrónica | 2026-11-19 | 1/4 | $629.979 | $899.610 | $125.996 | $13.700.000 | faltan 3 precios, sin verificar |
-| [1316747-37-L126](presupuestos/1316747-37-L126.md) Almacenamiento impresora y proyectores | Computación y electrónica | 2026-11-19 | 0/3 | $0 | $0 | $0 | $2.494.990 | faltan 3 precios |
-| [691944-43-L126](presupuestos/691944-43-L126.md) Adquisición materiales de ferretería | Ferretería y herramientas | 2026-11-19 | 5/14 | $2.722.487 | $3.887.712 | $544.497 | $5.449.000 | faltan 9 precios, sin verificar |
-| [5052-35-LE26](presupuestos/5052-35-LE26.md) ADQUISICIÓN DE PITILLA PILAS BRAZALETES Y OTROS | Materiales de construcción, eléctricos e iluminación | 2026-11-19 | 0/9 | $0 | $0 | $0 | — | faltan 9 precios |
-| [4205-310-COT26](presupuestos/4205-310-COT26.md) ADQUISICIÓN DE VESTUARIO FOLCLORICO PARA ESCUELA VALLE DE PUANGUE. | Vestuario, uniformes y textiles | 2026-11-20 | 5/18 | $943.950 | $1.347.960 | $188.790 | $3.116.000 | faltan 13 precios |
-| [1638-956-COT26](presupuestos/1638-956-COT26.md) Adquisición insumos de oficina para centro de las mujeres, DIDECO, sm  | Artículos de oficina y librería | 2026-11-20 | 2/19 | $152.408 | $217.638 | $30.482 | $600.000 | faltan 17 precios |
 | [1638-105-LE26](presupuestos/1638-105-LE26.md) Adquisición Juguetes Navidad 2026 DIDECO sm 09514 | Deporte, juguetes y material didáctico | 2026-11-20 | 0/16 | $0 | $0 | $0 | $25.000.000 | faltan 16 precios |
 | [3608-687-COT26](presupuestos/3608-687-COT26.md) Adquisición de equipos, maquinaria, mobiliario y utensilios para cocin | Electrodomésticos, hogar y menaje | 2026-11-20 | 6/16 | $1.322.413 | $1.888.405 | $264.483 | $2.487.700 | faltan 10 precios, sin verificar |
 | [1057404-111-CO26](presupuestos/1057404-111-CO26.md) SUMINISTRO ROPA DE TRABAJO HOSPITAL ARAUCO | Vestuario, uniformes y textiles | 2026-11-20 | 6/10 | $3.244.375 | $4.632.967 | $648.875 | — | faltan 4 precios, sin verificar |
@@ -39,7 +28,10 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [3934-68-L126](presupuestos/3934-68-L126.md) ORDENA LICITACION PÚBLICA APRUEBA BASES ADMINISTRATIVAS GENERALES NOMB | Insumos médicos no regulados y aseo | 2026-11-20 | 0/8 | $0 | $0 | $0 | $6.700.000 | faltan 8 precios |
 | [2277-58-LP26](presupuestos/2277-58-LP26.md) LIBROS PARA NAVIDAD 2026 | Libros y material educativo | 2026-11-20 | 0/4 | $0 | $0 | $0 | — | faltan 4 precios |
 | [4044-664-COT26](presupuestos/4044-664-COT26.md) COMPRA DE REPUESTOS PARA MANTENCIÓN DE MAQUINARIAS DEL PROGRAMA DE REU | Vestuario, uniformes y textiles | 2026-11-21 | 0/16 | $0 | $0 | $0 | $850.000 | faltan 16 precios |
+| [1638-980-COT26](presupuestos/1638-980-COT26.md) Adquisición de herramientas, Oficina del adulto mayor, Fondo F.N.D.R,  | Ferretería y herramientas | 2026-11-21 | 0/20 | $0 | $0 | $0 | $4.029.500 | faltan 20 precios |
 | [564953-965-COT26](presupuestos/564953-965-COT26.md) UNIFORME ESCOLAR DE GALA - LDV | Vestuario, uniformes y textiles | 2026-11-22 | 5/14 | $2.099.790 | $2.998.500 | $419.958 | $2.400.000 | supera monto, faltan 9 precios, sin verificar |
+| [607-289-COT26](presupuestos/607-289-COT26.md) GUIAS DE CAMPO _ LIBROS | Libros y material educativo | 2026-11-22 | 0/10 | $0 | $0 | $0 | $907.429 | faltan 10 precios |
+| [3524-80-COT26](presupuestos/3524-80-COT26.md) ADQUISICIÓN DE ELEMENTOS PARA LA INSTALACIÓN DE TERMO ELECTRICO PARA E | Electrodomésticos, hogar y menaje | 2026-11-23 | 1/10 | $44.499 | $63.545 | $8.900 | $250.000 | faltan 9 precios, sin verificar |
 | [2288-34-LE26](presupuestos/2288-34-LE26.md) ADQUISICIÓN DE JUGUETES NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-11-23 | 0/7 | $0 | $0 | $0 | $19.000.000 | faltan 7 precios |
 | [2487-17-LE26](presupuestos/2487-17-LE26.md) ADQUISICIÓN DE EQUIPOS E INSTRUMENTOS DE MEDICIÓN. | Instrumental e insumos de laboratorio (sin reactivos) | 2026-11-23 | 0/7 | $0 | $0 | $0 | $16.874.200 | faltan 7 precios |
 | [3516-54-LE26](presupuestos/3516-54-LE26.md) JUGUETES DE NAVIDAD — AÑO 2026 | Deporte, juguetes y material didáctico | 2026-11-23 | 0/10 | $0 | $0 | $0 | $25.000.000 | faltan 10 precios |
@@ -51,6 +43,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [3537-76-LE26](presupuestos/3537-76-LE26.md) Adquisición de neumáticos | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-23 | 3/3 | $13.254.486 | $18.927.406 | $2.650.897 | $9.800.000 | supera monto |
 | [4591-26-LE26](presupuestos/4591-26-LE26.md) Neumáticos para Vehículos y Maquinaria Parque de Maquinarias de la Pro | Repuestos, neumáticos, lubricantes y accesorios vehiculares | 2026-11-23 | 0/12 | $0 | $0 | $0 | — | faltan 12 precios |
 | [2354-43-LE26](presupuestos/2354-43-LE26.md) DISEÑO Y CONFECCCION DE VESTUARIO ESCENOGRAFICO PARA ELENCOS MUNICIPAL | Vestuario, uniformes y textiles | 2026-11-23 | 0/3 | $0 | $0 | $0 | $13.750.000 | faltan 3 precios |
+| [1624-203-COT26](presupuestos/1624-203-COT26.md) Impresora y Otros Programa Cardiovascular segun solicitud N° 33 | Computación y electrónica | 2026-11-23 | 6/16 | $715.932 | $1.022.351 | $143.186 | $502.995 | supera monto, faltan 10 precios, sin verificar |
 | [3946-38-LE26](presupuestos/3946-38-LE26.md) Compra de Juguetes de Navidad 2026 Comuna de Pichidegua. | Deporte, juguetes y material didáctico | 2026-11-23 | 0/18 | $0 | $0 | $0 | $16.000.000 | faltan 18 precios |
 | [4469-263-L126](presupuestos/4469-263-L126.md) S.C. N° 41244-41245 (P.C) ADQUISICIÓN DE TABLET , IMPRESORA Y OTROS ;  | Computación y electrónica | 2026-11-23 | 4/4 | $1.725.097 | $2.463.439 | $345.019 | $1.503.681 | supera monto, sin verificar |
 | [1108338-61-L126](presupuestos/1108338-61-L126.md) ADQUISICION DE INSUMOS CLINICOS, APOYO A LA GESTION, VENCIMIENTO MAYOR | Insumos médicos no regulados y aseo | 2026-11-23 | 1/11 | $321.931 | $459.717 | $64.386 | $6.300.000 | faltan 10 precios |
@@ -72,4 +65,4 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1952-103-LP26](presupuestos/1952-103-LP26.md) CONVENIO SUMINISTRO INSUMOS MEDICOS SUTURAS SEGUNDO LLAMADO PARA EL HO | Insumos médicos no regulados y aseo | 2026-12-09 | 0/20 | $0 | $0 | $0 | — | faltan 20 precios |
 | [608-236-LR26](presupuestos/608-236-LR26.md) CME ADQUISICIÓN DE INSUMOS CLÍNICOS Y MATERIAL MÉDICO QUIRÚRGICO PARA  | Insumos médicos no regulados y aseo | 2026-12-11 | 0/17 | $0 | $0 | $0 | — | faltan 17 precios |
 
-Licitaciones ya cerradas: 213. Sus precios de mercado quedan archivados en `informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes).
+Licitaciones ya cerradas: 224. Sus precios de mercado quedan archivados en `informes/mercado/cerradas/` (no se vuelven a verificar ni generan informes).

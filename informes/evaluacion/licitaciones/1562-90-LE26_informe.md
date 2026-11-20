@@ -1,6 +1,6 @@
 # Informe ejecutivo: ELEMENTOS DE PROTECCION PERSONAL SERNAGEOMIN
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,7 +48,7 @@
 
 - 3 de 7 ítems sin precio de mercado: el costo real es mayor.
 - 2 de 4 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 
 ## Proveedores recomendados
 
@@ -61,10 +61,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 57% de las líneas (mínimo 80%): todavía no se puede decidir.
-
-Condiciones:
-- Conseguir precio de las 3 líneas que faltan: con 4 de 7 el margen sale de una parte del pedido.
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar. Calculado con precio para 4 de 7 líneas: con todas, el costo y la oferta serían mayores.
 
 ## Supuestos
 

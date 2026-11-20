@@ -1,0 +1,79 @@
+{
+ "codigo": "3524-80-COT26",
+ "nombre": "ADQUISICIÓN DE ELEMENTOS PARA LA INSTALACIÓN DE TERMO ELECTRICO PARA EL CAMARIN DE SOF DE LA DIVINGE",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Llaves de tuercas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Llave de paso 3/4 HI acero Cosmoplast",
+     "url": "https://www.sodimac.cl/sodimac-cl/articulo/110261778/Llave-de-paso-3-4-HI-acero/110261786",
+     "precio": 21190,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 17806.72,
+     "coincidencia": "aproximada",
+     "nota": "Acero inoxidable, no se confirma que sea de bola; precio visto en ficha de Falabella del mismo producto vendido por Sodimac.",
+     "fecha_consulta": "2026-11-20"
+    }
+   ]
+  },
+  {
+   "linea": 2,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 3,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 4,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 5,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 6,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 7,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 8,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 9,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  },
+  {
+   "linea": 10,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en ferreterías (sodimac/easy no se abren desde la sesión)."
+  }
+ ]
+}
