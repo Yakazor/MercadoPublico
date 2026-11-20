@@ -112,6 +112,18 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-20 — Skill «compra-agil-cotizacion» (flujo para postular a Compras Ágiles)
+
+- Pedido: usar la primera postulación (Compra Ágil 5251-1408-COT26, UTEM) como base y dejar un flujo para las
+  siguientes, con más atención a los detalles. Se creó la skill personal `~/.claude/skills/compra-agil-cotizacion/SKILL.md`
+  con el texto exacto entregado por la usuaria (también está sincronizada en la cuenta como
+  `anthropic-skills:compra-agil-cotizacion`). No se copia al repo: es público y la skill trae nombres de personas.
+- Resumen del flujo: Paso 0 verificar cuenta/oferente, leer bases y contrastar specs (tolerancias, materiales,
+  normas) **al inicio**, con una sola lista de riesgos; Paso 1 formulario (valor unitario neto por ID de línea,
+  despacho, detalle ≤255 caracteres, vigencia, adjuntos); Paso 2 cotización detallada + fichas y anexos firmados
+  (fecha real de envío, datos consistentes, solo PDF); Paso 3 checklist y resumen final, enviar solo con «envía».
+- En sesiones en la nube `~/.claude` se borra al cerrar el contenedor; la copia que persiste es la de la cuenta.
+
 ### 2026-11-20 — Rutina ACTUALIZACIÓN
 
 - El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 20-11 08:00 (el arreglo #20 funciona: sin bucle).
