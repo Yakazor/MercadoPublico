@@ -62,5 +62,10 @@
    "opciones": [],
    "nota": "Libro específico: no se encontró precio con link en librerías chilenas; cotizar con librería o editorial."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-20",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

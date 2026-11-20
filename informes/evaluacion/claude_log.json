@@ -523,20 +523,20 @@
  },
  {
   "fecha": "2026-11-20",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "936 vigentes; 19 evaluadas; informes de 10",
-  "resultado": "0 GO, 2 con condiciones, 6 falta precio, 11 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 10 de 11 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados ",
-  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 4469-257-L126: FALTA PRECIO; 1108338-61-L126: FALTA PRECIO; 1562-90-LE26: NO GO; 3537-76-LE26: NO GO",
-  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-20",
   "autor": "Claude",
   "licitaciones_procesadas": "Precios nuevos (Compras Ágiles de 2º llamado): 1624-203-COT26 (impresora y otros, 6/16 líneas), 3524-80-COT26 (termo eléctrico, 1/10), 607-289-COT26 (guías de campo, 0/10) y 1638-980-COT26 (insumos de podología, 0/20). Evaluadas 19 con precios.",
   "resultado": "0 GO, 2 GO con condiciones (994-42-LE26 y 4590-26-LE26, neumáticos), 6 falta precio, 11 NO GO. 1624-203-COT26 sale NO GO: cada ítem viene repetido en dos líneas y con la impresora L3250 a $219.990 la oferta (~$1,02 M) dobla el monto estimado de $503.000. 3524-80-COT26 NO GO no concluyente (1 de 10 líneas).",
   "riesgos": "Precios tomados de resultados de búsqueda (Paris, Falabella, Sodimac, Notebookstore); las páginas no se pudieron abrir desde la sesión y quedan para el workflow de verificación. Libros y podología sin precio: requieren cotización directa.",
   "decisiones": "No se buscaron proveedores nuevos: las 3 primeras (994-42-LE26, 4590-26-LE26, 3191-128-LE26) ya tienen lista en informes/evaluacion/proveedores.",
   "recomendaciones": "Hoy: conseguir el precio de los neumáticos que faltan (cierran el 26-11). Revisar si 1624-203-COT26 de verdad pide cada ítem dos veces: si es una duplicación, la oferta baja a la mitad y podría competir. Compras Ágiles de Los Lagos: revisar el radar (filtro 2º llamado)."
+ },
+ {
+  "fecha": "2026-11-20",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "936 vigentes; 19 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 6 falta precio, 11 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 10 de 11 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados ",
+  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 4469-257-L126: FALTA PRECIO; 1108338-61-L126: FALTA PRECIO; 1562-90-LE26: NO GO; 3537-76-LE26: NO GO",
+  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
  }
 ]

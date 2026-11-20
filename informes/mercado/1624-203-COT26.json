@@ -29,7 +29,11 @@
      "precio_unitario_neto": 10915.97,
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda; por verificar.",
-     "fecha_consulta": "2026-11-20"
+     "fecha_consulta": "2026-11-20",
+     "verificado": true,
+     "verificado_en": "2026-11-20",
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-11-20: la página muestra $12.990."
     }
    ]
   },
@@ -54,7 +58,11 @@
      "precio_unitario_neto": 10915.97,
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda; por verificar.",
-     "fecha_consulta": "2026-11-20"
+     "fecha_consulta": "2026-11-20",
+     "verificado": true,
+     "verificado_en": "2026-11-20",
+     "precio_pagina": 12990.0,
+     "verificacion_pagina": "2026-11-20: la página muestra $12.990."
     }
    ]
   },
@@ -91,7 +99,11 @@
      "precio_unitario_neto": 23521.01,
      "coincidencia": "equivalente",
      "nota": "$27.038 con transferencia.",
-     "fecha_consulta": "2026-11-20"
+     "fecha_consulta": "2026-11-20",
+     "verificado": true,
+     "verificado_en": "2026-11-20",
+     "precio_pagina": 27990.0,
+     "verificacion_pagina": "2026-11-20: la página muestra $27.990."
     }
    ]
   },
@@ -110,7 +122,11 @@
      "precio_unitario_neto": 23521.01,
      "coincidencia": "equivalente",
      "nota": "$27.038 con transferencia.",
-     "fecha_consulta": "2026-11-20"
+     "fecha_consulta": "2026-11-20",
+     "verificado": true,
+     "verificado_en": "2026-11-20",
+     "precio_pagina": 27990.0,
+     "verificacion_pagina": "2026-11-20: la página muestra $27.990."
     }
    ]
   },
@@ -129,7 +145,8 @@
      "precio_unitario_neto": 184865.55,
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda (referencia $299.990); página no abierta desde la sesión, por verificar.",
-     "fecha_consulta": "2026-11-20"
+     "fecha_consulta": "2026-11-20",
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -148,7 +165,8 @@
      "precio_unitario_neto": 184865.55,
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda (referencia $299.990); página no abierta desde la sesión, por verificar.",
-     "fecha_consulta": "2026-11-20"
+     "fecha_consulta": "2026-11-20",
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -176,5 +194,10 @@
    "opciones": [],
    "nota": "No se encontró precio con link verificable (pack T544 original y otros solo con precio sin link claro)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-20",
+  "opciones": 6,
+  "verificadas": 4
+ }
 }

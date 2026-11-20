@@ -18,7 +18,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 |---|---|---|---:|---:|---:|---:|---:|---|
 | [1638-105-LE26](presupuestos/1638-105-LE26.md) Adquisición Juguetes Navidad 2026 DIDECO sm 09514 | Deporte, juguetes y material didáctico | 2026-11-20 | 0/16 | $0 | $0 | $0 | $25.000.000 | faltan 16 precios |
 | [3608-687-COT26](presupuestos/3608-687-COT26.md) Adquisición de equipos, maquinaria, mobiliario y utensilios para cocin | Electrodomésticos, hogar y menaje | 2026-11-20 | 6/16 | $1.322.413 | $1.888.405 | $264.483 | $2.487.700 | faltan 10 precios, sin verificar |
-| [1057404-111-CO26](presupuestos/1057404-111-CO26.md) SUMINISTRO ROPA DE TRABAJO HOSPITAL ARAUCO | Vestuario, uniformes y textiles | 2026-11-20 | 6/10 | $3.244.375 | $4.632.967 | $648.875 | — | faltan 4 precios, sin verificar |
+| [1057404-111-CO26](presupuestos/1057404-111-CO26.md) SUMINISTRO ROPA DE TRABAJO HOSPITAL ARAUCO | Vestuario, uniformes y textiles | 2026-11-20 | 6/10 | $3.244.375 | $4.632.967 | $648.875 | — | faltan 4 precios |
 | [1271357-103-COT26](presupuestos/1271357-103-COT26.md) MEMO 393/ PANTALON CAPOEIRA/ E. PROFESOR OMAR ARANDA/ EDUCACION | Vestuario, uniformes y textiles | 2026-11-20 | 0/1 | $0 | $0 | $0 | $350.000 | falta 1 precio |
 | [1057822-60-LE26](presupuestos/1057822-60-LE26.md) EQUIPAMIENTO COMPUTACIONAL Y DISPOSITIVOS CVMF | Computación y electrónica | 2026-11-20 | 0/5 | $0 | $0 | $0 | — | faltan 5 precios |
 | [1469-361-L126](presupuestos/1469-361-L126.md) INSUMOS DE LABORATORIO PARA LA ESCUELA DE AGRONOMÍA | Instrumental e insumos de laboratorio (sin reactivos) | 2026-11-20 | 0/3 | $0 | $0 | $0 | $700.000 | faltan 3 precios |
@@ -31,7 +31,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 | [1638-980-COT26](presupuestos/1638-980-COT26.md) Adquisición de herramientas, Oficina del adulto mayor, Fondo F.N.D.R,  | Ferretería y herramientas | 2026-11-21 | 0/20 | $0 | $0 | $0 | $4.029.500 | faltan 20 precios |
 | [564953-965-COT26](presupuestos/564953-965-COT26.md) UNIFORME ESCOLAR DE GALA - LDV | Vestuario, uniformes y textiles | 2026-11-22 | 5/14 | $2.099.790 | $2.998.500 | $419.958 | $2.400.000 | supera monto, faltan 9 precios, sin verificar |
 | [607-289-COT26](presupuestos/607-289-COT26.md) GUIAS DE CAMPO _ LIBROS | Libros y material educativo | 2026-11-22 | 0/10 | $0 | $0 | $0 | $907.429 | faltan 10 precios |
-| [3524-80-COT26](presupuestos/3524-80-COT26.md) ADQUISICIÓN DE ELEMENTOS PARA LA INSTALACIÓN DE TERMO ELECTRICO PARA E | Electrodomésticos, hogar y menaje | 2026-11-23 | 1/10 | $44.499 | $63.545 | $8.900 | $250.000 | faltan 9 precios, sin verificar |
+| [3524-80-COT26](presupuestos/3524-80-COT26.md) ADQUISICIÓN DE ELEMENTOS PARA LA INSTALACIÓN DE TERMO ELECTRICO PARA E | Electrodomésticos, hogar y menaje | 2026-11-23 | 1/10 | $44.499 | $63.545 | $8.900 | $250.000 | faltan 9 precios |
 | [2288-34-LE26](presupuestos/2288-34-LE26.md) ADQUISICIÓN DE JUGUETES NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-11-23 | 0/7 | $0 | $0 | $0 | $19.000.000 | faltan 7 precios |
 | [2487-17-LE26](presupuestos/2487-17-LE26.md) ADQUISICIÓN DE EQUIPOS E INSTRUMENTOS DE MEDICIÓN. | Instrumental e insumos de laboratorio (sin reactivos) | 2026-11-23 | 0/7 | $0 | $0 | $0 | $16.874.200 | faltan 7 precios |
 | [3516-54-LE26](presupuestos/3516-54-LE26.md) JUGUETES DE NAVIDAD — AÑO 2026 | Deporte, juguetes y material didáctico | 2026-11-23 | 0/10 | $0 | $0 | $0 | $25.000.000 | faltan 10 precios |

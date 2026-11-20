@@ -20,7 +20,7 @@
      "verificado": true,
      "verificado_en": "2026-11-18",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-11-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -40,9 +40,9 @@
      "coincidencia": "equivalente",
      "fecha_consulta": null,
      "verificado": true,
-     "verificado_en": "2026-11-19",
+     "verificado_en": "2026-11-20",
      "precio_pagina": 159990.0,
-     "verificacion_pagina": "2026-11-19: la página muestra $159.990."
+     "verificacion_pagina": "2026-11-20: la página muestra $159.990."
     }
    ]
   },
@@ -63,9 +63,9 @@
      "nota": "Verificar control de temperatura y descongelación manual en ficha",
      "fecha_consulta": null,
      "verificado": true,
-     "verificado_en": "2026-11-19",
+     "verificado_en": "2026-11-20",
      "precio_pagina": 159990.0,
-     "verificacion_pagina": "2026-11-19: la página muestra $159.990."
+     "verificacion_pagina": "2026-11-20: la página muestra $159.990."
     }
    ]
   },
@@ -87,7 +87,7 @@
      "fecha_consulta": null,
      "verificado": false,
      "precio_pagina": 179990.0,
-     "verificacion_pagina": "2026-11-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -143,7 +143,7 @@
      "coincidencia": "aproximada",
      "nota": "5,5 L por depósito en vez de 6 L",
      "fecha_consulta": null,
-     "verificacion_pagina": "2026-11-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -190,13 +190,13 @@
      "verificado": true,
      "verificado_en": "2026-11-18",
      "precio_pagina": 88990.0,
-     "verificacion_pagina": "2026-11-19: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-19",
+  "fecha": "2026-11-20",
   "opciones": 6,
   "verificadas": 4
  }

@@ -18,10 +18,10 @@
      "precio_unitario_neto": 146210.08,
      "coincidencia": "exacta",
      "nota": "Precio visto en el listado de Lider (antes $219.990).",
-     "verificado": true,
+     "verificado": false,
      "fecha_consulta": "2026-11-17",
-     "precio_pagina": 169990.0,
-     "verificacion_pagina": "2026-11-19: la página muestra $169.990.",
+     "precio_pagina": 179990.0,
+     "verificacion_pagina": "2026-11-20: la página abrió y el precio más parecido es $179.990, no $173.990: puede haber cambiado.",
      "verificado_en": "2026-11-19"
     }
    ],
@@ -44,7 +44,7 @@
      "nota": "Sin telón de 60\" (va aparte, por confirmar).",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-19: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403.",
      "verificado_en": "2026-11-18",
      "precio_pagina": 119990.0
     },
@@ -61,7 +61,7 @@
      "nota": "Sin telón.",
      "verificado": false,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-19: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
+     "verificacion_pagina": "2026-11-20: la página abrió, pero no muestra el precio en el HTML (probablemente lo carga con JavaScript). Revísalo a mano."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -81,10 +81,11 @@
      "precio_unitario_neto": 461336.13,
      "coincidencia": "exacta",
      "nota": "Envío desde Estados Unidos (marketplace).",
-     "verificado": false,
+     "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "precio_pagina": 626990.0,
-     "verificacion_pagina": "2026-11-19: la página abrió y el precio más parecido es $626.990, no $548.990: puede haber cambiado."
+     "precio_pagina": 557990.0,
+     "verificacion_pagina": "2026-11-20: la página muestra $557.990.",
+     "verificado_en": "2026-11-20"
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -106,16 +107,16 @@
      "nota": "Pack con teclado, lápiz y funda.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificado_en": "2026-11-19",
+     "verificado_en": "2026-11-20",
      "precio_pagina": 409990.0,
-     "verificacion_pagina": "2026-11-19: la página muestra $409.990."
+     "verificacion_pagina": "2026-11-20: la página muestra $409.990."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-19",
+  "fecha": "2026-11-20",
   "opciones": 5,
   "verificadas": 3
  }

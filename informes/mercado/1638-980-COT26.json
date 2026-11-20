@@ -122,5 +122,10 @@
    "opciones": [],
    "nota": "Insumos de podología/clínicos: no buscados en esta corrida por límite de búsquedas; requiere cotizar con distribuidor de insumos médicos."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-20",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
