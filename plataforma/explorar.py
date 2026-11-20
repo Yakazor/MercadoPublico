@@ -4,6 +4,7 @@ import streamlit as st
 
 import comun
 import cotizar
+import estilo
 import manuales
 from radar.evaluacion import CONDICIONADO, GO, NO_GO
 from radar.plataforma import (AYUDA_MONTO, es_compra_agil, es_nueva, filtrar, monto_referencial, ranking, solo_emt,
@@ -28,9 +29,9 @@ def _explorar(compra_agil: bool) -> None:
     pre = "ca" if compra_agil else "lic"
     todas = [l for l in prep["licitaciones"] if es_compra_agil(l) == compra_agil]
     if compra_agil:
-        st.title("Compras Ágiles")
-        st.caption("Hasta 100 UTM: se cotiza el total con IVA y despacho. En el primer llamado solo pueden "
-                   "cotizar empresas de menor tamaño; el plazo de entrega lo fija el comprador.")
+        estilo.encabezado("Compras Ágiles", marcada="Ágiles", antetitulo="Hasta 100 UTM",
+                          subtitulo="Se cotiza el total con IVA y despacho. En el primer llamado solo pueden cotizar "
+                                    "empresas de menor tamaño; el plazo de entrega lo fija el comprador.")
         comun.avisar_compras_agiles(prep["meta"])
         emt = soy_emt()
         if not emt:
@@ -38,9 +39,8 @@ def _explorar(compra_agil: bool) -> None:
                     "Se muestran esas; elige «Todos» en Llamado (Más filtros) para ver también las de 1er llamado.",
                     icon="ℹ️")
     else:
-        st.title("Licitaciones")
-        st.caption("Licitaciones abiertas de tus rubros. Las bases y anexos están en la ficha de Mercado Público "
-                   "(la API no los entrega).")
+        estilo.encabezado("Licitaciones abiertas", marcada="abiertas", antetitulo="Tus rubros",
+                          subtitulo="Las bases y anexos están en la ficha de Mercado Público (la API no los entrega).")
 
     a, b, c = st.columns([2, 1.4, 1.6], vertical_alignment="bottom")
     texto = a.text_input("Buscar", placeholder="código, nombre, organismo o producto", key=f"{pre}_texto")
@@ -81,8 +81,8 @@ def _explorar(compra_agil: bool) -> None:
                     monto_min=monto_min or None, monto_max=monto_max or None,
                     con_precios=set(prep["mercado"]) if solo_precios else None, plazo_max=plazo, llamado=llamado,
                     nuevas_primero=nuevas_primero)
-    evaluadas = {l["codigo"]: comun.DECISION_CORTA[e.decision] for l, _, e in ranking(
-        prep, comun.supuestos(), comun.margen(), comun.otros(), comun.estimar_oc(), comun.cotizaciones())}
+    rk = ranking(prep, comun.supuestos(), comun.margen(), comun.otros(), comun.estimar_oc(), comun.cotizaciones())
+    evaluadas = {l["codigo"]: comun.DECISION_CORTA[e.decision] for l, _, e in rk}
     cv = comun.compra_venta_por_codigo()
     if decisiones:
         lista = [l for l in lista if evaluadas.get(l["codigo"], comun.SIN_EVALUAR) in decisiones]
@@ -95,14 +95,18 @@ def _explorar(compra_agil: bool) -> None:
     sin_monto = sum(1 for l in lista if l.get("monto_estimado") is None) if (monto_min or monto_max) else 0
     hoy = pd.Timestamp.now(tz="America/Santiago").date()
     nuevas = sum(1 for l in lista if es_nueva(l, hoy))
-    st.caption(f"{len(lista)} de {len(todas)} abiertas · {nuevas} 🆕 nuevas (hoy o ayer) · "
+    resumen, cambio = st.columns([5, 1.3], vertical_alignment="center")
+    vista = cambio.segmented_control("Vista", ["Tarjetas", "Tabla"], default="Tarjetas", required=True,
+                                     key=f"{pre}_vista", label_visibility="collapsed")
+    resumen.caption(f"{len(lista)} de {len(todas)} abiertas · {nuevas} 🆕 nuevas (hoy o ayer) · "
                f"{comun.evaluadas_texto(con_precio, con_precio)}, "
                f"{con_decision} con decisión (las demás: ⚪ falta precio). "
                + (f"Incluye {sin_monto} sin monto informado (el filtro de monto no las descarta). " if sin_monto else "")
                + "💲 = tiene precios de tiendas. "
                + ("🚫 = 1er llamado, no puedes cotizarla. " if bloqueadas else "")
-               + "Marca la casilla a la izquierda de una fila para ver el detalle, con el organismo, los ítems y el "
-                 "link a Mercado Público.")
+               + ("«Ver detalle» abre el organismo, los ítems y el link a Mercado Público." if vista == "Tarjetas" else
+                  "Marca la casilla a la izquierda de una fila para ver el detalle, con el organismo, los ítems y el "
+                  "link a Mercado Público."))
     if not lista:
         primeras = [l for l in todas if l.get("llamado") == 1]
         if compra_agil and llamado == 2 and primeras:
@@ -113,6 +117,9 @@ def _explorar(compra_agil: bool) -> None:
         else:
             st.info("Sin resultados con esta búsqueda y estos filtros. Prueba con menos palabras o quita filtros "
                     "(Decisión, Compra y venta directa, Más filtros).", icon="🔍")
+        return
+    if vista == "Tarjetas":
+        _tarjetas(lista, prep, {l["codigo"]: e.decision for l, _, e in rk}, pre, bloqueadas)
         return
     filas = []
     utm = comun.supuestos().get("utm")
@@ -155,6 +162,26 @@ def _explorar(compra_agil: bool) -> None:
     # índice que ya no existe no abre nada.
     if evento.selection.rows and evento.selection.rows[0] < len(lista):
         ficha(lista[evento.selection.rows[0]], prep)
+
+
+POR_PAGINA = 12
+
+
+def _tarjetas(lista: list[dict], prep: dict, decisiones: dict, pre: str, bloqueadas: bool) -> None:
+    """Las abiertas en tarjetas, de a 12 («Mostrar más»). «Ver detalle» abre la ficha en una ventana."""
+    # Claves sin el prefijo «lic_»/«ca_»: app.py reasigna esas y Streamlit no deja asignar un botón.
+    cuantas = st.session_state.get(f"mostrar_{pre}", POR_PAGINA)
+    elegida = estilo.grilla(lista[:cuantas], prep, decisiones, pre, bloquear_emt=bloqueadas)
+    if len(lista) > cuantas:
+        st.button(f"Mostrar más ({len(lista) - cuantas} restantes)", key=f"mas_{pre}", width="stretch",
+                  on_click=lambda: st.session_state.update({f"mostrar_{pre}": cuantas + POR_PAGINA}))
+    if elegida:
+        _ventana(elegida, prep)
+
+
+@st.dialog("Detalle", width="large")
+def _ventana(lic: dict, prep: dict) -> None:
+    ficha(lic, prep)
 
 
 def ficha(lic: dict, prep: dict) -> None:

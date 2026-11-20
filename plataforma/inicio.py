@@ -3,22 +3,17 @@ import pandas as pd
 import streamlit as st
 
 import comun
+import estilo
 from radar.evaluacion import CONDICIONADO, GO
-from radar.plataforma import AYUDA_MONTO, es_compra_agil, monto_referencial, ranking
-
-
-def _tabla(df: pd.DataFrame, codigos: list[str], clave: str, **config) -> None:
-    """Tabla en la que tocar una fila abre esa licitación en Evaluación."""
-    evento = st.dataframe(df, hide_index=True, on_select="rerun", selection_mode="single-row", key=clave,
-                          column_config=config, placeholder="—")
-    if evento.selection.rows and evento.selection.rows[0] < len(codigos):
-        comun.ir_a("evaluacion", codigos[evento.selection.rows[0]])
+from radar.plataforma import es_compra_agil, ranking
 
 
 def pagina() -> None:
     prep = comun.datos()
     lics, meta = prep["licitaciones"], prep["meta"]
-    st.title("Radar Mercado Público")
+    estilo.encabezado("Oportunidades del Estado para tu negocio", marcada="tu negocio",
+                      antetitulo="Radar Mercado Público",
+                      subtitulo="Licitaciones y Compras Ágiles abiertas de tus rubros, evaluadas con tus supuestos.")
     col, boton = st.columns([4, 1], vertical_alignment="bottom")
     col.caption(f"Datos publicados: {comun.fecha_hora(meta.get('generado'))} · Compras Ágiles: "
                 f"{comun.fecha_hora(meta.get('compras_agiles_generado'))}. Se actualizan solos en GitHub: las "
@@ -37,55 +32,33 @@ def pagina() -> None:
     pronto = [l for l in lics if l.get("dias_restantes") is not None and l["dias_restantes"] <= 2]
     evaluadas = ranking(prep, comun.supuestos(), comun.margen(), comun.otros(), comun.estimar_oc(), comun.cotizaciones())
     conteo = pd.Series([e.decision for _, _, e in evaluadas]).value_counts()
-    k = st.columns(5)
-    k[0].metric("Licitaciones abiertas", len(lics) - len(agiles))
-    k[1].metric("Compras Ágiles abiertas", len(agiles))
-    k[2].metric("Cierran en 2 días o menos", len(pronto))
-    k[3].metric("Evaluadas", len(evaluadas), help="Licitaciones y Compras Ágiles con al menos un precio, sea cual sea "
-                "la decisión. Es la misma cifra del Ranking (Evaluación) y de Licitaciones + Compras Ágiles.")
-    k[4].metric("GO / con condiciones", f"{conteo.get(GO, 0)} / {conteo.get(CONDICIONADO, 0)}")
+    # «Evaluadas» = con al menos un precio, sea cual sea la decisión: la misma cifra del Ranking.
+    estilo.indicadores([(len(lics) - len(agiles), "Licitaciones abiertas"), (len(agiles), "Compras Ágiles abiertas"),
+                        (len(pronto), "Cierran en 2 días o menos"), (len(evaluadas), "Evaluadas (con precio)"),
+                        (f"{conteo.get(GO, 0)} / {conteo.get(CONDICIONADO, 0)}", "GO / con condiciones")])
 
-    with st.container():
-        st.subheader("Mejores oportunidades")
-        st.caption("Evaluadas con tus supuestos, de mejor a peor. Marca la casilla a la izquierda de una fila para "
-                   "ver su evaluación.")
-        top = evaluadas[:15]
-        cv = comun.compra_venta_por_codigo()
-        df = pd.DataFrame([{
-            "Código": l["codigo"], "Nombre": ("⚡ " if es_compra_agil(l) else "") + (l.get("nombre") or ""),
-            "Decisión": comun.DECISION_CORTA[e.decision],
-            "Compra-venta": comun.COMPRA_VENTA[cv.get(l["codigo"], (None, ""))[0]],
-            "Margen neto": (e.margenes["neto_pct"] or 0) * 100,
-            "Oferta c/IVA": comun.pesos(e.ingresos["oferta_total"]), "Cierre": comun.dias_texto(l.get("dias_restantes")),
-        } for l, _, e in top])
-        if df.empty:
-            st.info("Todavía no hay licitaciones abiertas con precios. Activa «Estimar con OC del Estado» en "
-                    "⚙️ Supuestos o ingresa cotizaciones en Evaluación.")
-        else:
-            _tabla(df, [l["codigo"] for l, _, _ in top], "inicio_top", **{
-                "Código": st.column_config.TextColumn(width=130),
-                "Nombre": st.column_config.TextColumn(width=330, help="⚡ = Compra Ágil"),
-                "Decisión": st.column_config.TextColumn(width=150),
-                "Compra-venta": st.column_config.TextColumn(width=105, help=comun.AYUDA_COMPRA_VENTA),
-                "Margen neto": st.column_config.NumberColumn(format="%.0f %%", width=90),
-                "Oferta c/IVA": st.column_config.NumberColumn(format="localized", width=110),
-                "Cierre": st.column_config.TextColumn(width=80)})
-    with st.container():
-        st.subheader("Cierran pronto")
-        st.caption("En 2 días o menos. Marca la casilla a la izquierda de una fila para abrir su evaluación.")
-        cierran = sorted(pronto, key=lambda l: l.get("fecha_cierre") or "")[:15]
-        df = pd.DataFrame([{
-            "Código": l["codigo"], "Tipo": "Compra Ágil" if es_compra_agil(l) else l.get("tipo"),
-            "Nombre": l.get("nombre"), "Cierre": pd.to_datetime(l.get("fecha_cierre")),
-            "Monto": comun.pesos(monto), "Origen": origen,
-        } for l in cierran
-            for monto, origen in [monto_referencial(l, prep["items"].get(l["codigo"]), comun.supuestos().get("utm"))]])
-        if df.empty:
-            st.info("Nada cierra en los próximos 2 días.")
-        else:
-            _tabla(df, [l["codigo"] for l in cierran], "inicio_pronto", **{
-                "Código": st.column_config.TextColumn(width=160), "Tipo": st.column_config.TextColumn(width=100),
-                "Nombre": st.column_config.TextColumn(width=350),
-                "Cierre": st.column_config.DatetimeColumn(format="DD-MM HH:mm", width=110),
-                "Monto": st.column_config.NumberColumn(format="localized", width=110, help=AYUDA_MONTO),
-                "Origen": st.column_config.TextColumn(width=70, help=AYUDA_MONTO)})
+    st.subheader("Mejores oportunidades")
+    st.caption("Evaluadas con tus supuestos, de mejor a peor. «Ver evaluación» abre su detalle GO / NO GO.")
+    top = evaluadas[:9]
+    if not top:
+        st.info("Todavía no hay licitaciones abiertas con precios. Activa «Estimar con OC del Estado» en "
+                "⚙️ Supuestos o ingresa cotizaciones en Evaluación.")
+    else:
+        datos = {l["codigo"]: [("Margen neto", f"{(e.margenes['neto_pct'] or 0) * 100:.0f} %"),
+                               ("Oferta c/IVA", estilo.monto_corto(e.ingresos["oferta_total"])),
+                               ("Cierre", comun.dias_texto(l.get("dias_restantes")))] for l, _, e in top}
+        elegida = estilo.grilla([l for l, _, _ in top], prep, {l["codigo"]: e.decision for l, _, e in top},
+                                "top", boton="Ver evaluación", datos=datos)
+        if elegida:
+            comun.ir_a("evaluacion", elegida["codigo"])
+
+    st.subheader("Cierran pronto")
+    st.caption("En 2 días o menos, primero las que cierran antes.")
+    cierran = sorted(pronto, key=lambda l: l.get("fecha_cierre") or "")[:9]
+    if not cierran:
+        st.info("Nada cierra en los próximos 2 días.")
+    else:
+        decisiones = {l["codigo"]: e.decision for l, _, e in evaluadas}
+        elegida = estilo.grilla(cierran, prep, decisiones, "pronto", boton="Ver evaluación")
+        if elegida:
+            comun.ir_a("evaluacion", elegida["codigo"])

@@ -15,6 +15,7 @@ from streamlit.components.v1 import html
 
 import actualizar
 import comun
+import estilo
 import evaluar
 import explorar
 import inicio
@@ -22,6 +23,7 @@ import manuales
 import orden
 
 st.set_page_config(page_title="Radar Mercado Público", page_icon="🔎", layout="wide")
+estilo.aplicar()
 
 
 def guardar_cookie(valor: str, dias: int) -> None:
