@@ -51,7 +51,26 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
 
-## Última tarea: proveedores al abrir una licitación (pedido del 02-11) — unida a la principal tras auditoría (PR #13)
+## Última tarea: estilo de marketplace en la plataforma (pedido del 20-11) — PR abierto, rama `feature/diseno-wherex`
+
+Pedido: «duplicar el formato de la página de WherEX, que es más amigable, pero con nuestra información» (en la
+plataforma). La sesión no puede abrir wherex.com (red); la usuaria pasó la especificación medida por Claude en
+Chrome (blog de wherex.com: colores, letras, tarjetas, píldoras). Se copió solo el estilo, nunca logo ni textos.
+
+- [x] Tema en `.streamlit/config.toml`: fondo #f5f8fa, tarjetas y campos blancos, verde de acción #17806c (el de
+      WherEX, #28b095, no da contraste con texto blanco), Montserrat en títulos y Open Sans en texto, radio 15 px
+- [x] `plataforma/estilo.py`: encabezado con degradado celeste y palabra marcada, caja de indicadores, tarjetas
+      (clave `wxcard_…`) con etiquetas en píldora (tipo, decisión, nueva, cierra pronto, solo EMT, con precios);
+      todo dato pasa por `html.escape`
+- [x] Inicio: encabezado, indicadores y «Mejores oportunidades» / «Cierran pronto» en tarjetas (abren Evaluación)
+- [x] Licitaciones y Compras Ágiles: vista «Tarjetas» por defecto (de a 12, «Mostrar más»), la ficha se abre en
+      una ventana (`st.dialog`); «Tabla» sigue igual. Claves de botones sin prefijo `lic_`/`ca_` (conservar_estado)
+- [x] Pruebas: 605 OK (2 nuevas: tarjetas + ventana + escape de HTML, «Mostrar más»); revisado en Chromium a 1366
+      y 390 px con los datos del 20-11, sin errores
+- [ ] La usuaria revisa y une el PR; después, si lo pide, el mismo estilo en Evaluación, Orden y Manuales, y el
+      panel de proveedor de WherEX (no se pudo ver: sin sesión)
+
+## Tarea anterior: proveedores al abrir una licitación (pedido del 02-11) — unida a la principal tras auditoría (PR #13)
 
 Pedido: «al abrir las Compras Ágiles o licitaciones, empieza a buscar proveedores y déjame el correo para la
 cotización formal» (captura de Evaluación con «None» en la tabla).
@@ -111,6 +130,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 - [x] Radar «solo exportar» con `run-name` propio («Publicar datos»): no bloquea «Actualizar ahora»
 
 ## Bitácora
+
+### 2026-11-20 — Estilo de marketplace (WherEX) en la plataforma
+
+- Estado revisado: workflows del 20-11 en verde; PR #11 (25-10) sigue abierto y parece obsoleto.
+- Análisis de WherEX (marketplace B2B privado; registro gratis, comisión por adjudicación, sin API para proveedores).
+- Rama `feature/diseno-wherex`: tema, `estilo.py`, Inicio y listados en tarjetas, ficha en ventana. 605 pruebas OK.
 
 ### 2026-11-20 — Rutina ACTUALIZACIÓN
 

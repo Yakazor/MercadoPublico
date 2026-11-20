@@ -497,7 +497,9 @@ def test_ficha_muestra_los_precios_y_la_evaluacion_los_usa(plataforma, monkeypat
     cotizar._automaticas().clear()
     monkeypatch.setattr(prov, "leer_precios", lambda **k: {"1-1-LE26": [PRECIO_SILLA]})
     cotizar.comun._indice_precios.clear()
-    lista = AppTest.from_function(_lista, args=(str(RAIZ),), default_timeout=60).run()
+    lista = AppTest.from_function(_lista, args=(str(RAIZ),), default_timeout=60)
+    lista.session_state["lic_vista"] = "Tabla"   # se abre en tarjetas: la decisión se lee en la tabla
+    lista.run()
     assert not lista.exception, [e.value for e in lista.exception]
     decision = lista.dataframe[0].value["Decisión"][0]
     assert decision != "⚪ Falta precio"

@@ -1,5 +1,6 @@
 import io
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -141,6 +142,18 @@ def test_leer_datos_desde_carpeta(tmp_path):
     assert leer_datos(str(tmp_path))["licitaciones"][0]["codigo"] == "1-1-LE26"
 
 
+def _titulos(at) -> list[str]:
+    """Títulos de la página: los st.title y el encabezado con degradado (estilo.encabezado, en HTML)."""
+    return [t.value for t in at.title] + [re.sub(r"<[^>]+>", "", h) for e in at.get("html")
+                                          for h in re.findall(r"<h1>(.*?)</h1>", e.proto.body)]
+
+
+def _en_tabla(at):
+    """Licitaciones y Compras Ágiles se abren en tarjetas: estas pruebas revisan la vista de tabla."""
+    at.session_state["lic_vista"] = at.session_state["ca_vista"] = "Tabla"
+    return at
+
+
 def _pagina(modulo: str, funcion: str, raiz: str) -> None:
     """Corre una página de la plataforma dentro de AppTest."""
     import importlib
@@ -170,7 +183,7 @@ def test_paginas_cargan_sin_errores(tmp_path, monkeypatch, modulo, funcion):
     monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
     at = AppTest.from_function(_pagina, args=(modulo, funcion, str(RAIZ)), default_timeout=60).run()
     assert not at.exception, [e.value for e in at.exception]
-    assert at.title
+    assert _titulos(at)
 
 
 def test_app_completa_abre_en_inicio(tmp_path, monkeypatch):
@@ -182,7 +195,8 @@ def test_app_completa_abre_en_inicio(tmp_path, monkeypatch):
     monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
     at = AppTest.from_file(str(RAIZ / "plataforma" / "app.py"), default_timeout=60).run()
     assert not at.exception, [e.value for e in at.exception]
-    assert at.title[0].value == "Radar Mercado Público"
+    assert _titulos(at)[0] == "Oportunidades del Estado para tu negocio"
+    assert any(s.value == "Mejores oportunidades" for s in at.subheader)
 
 
 class _Respuesta:
@@ -369,7 +383,7 @@ def test_acceso_con_clave_recordarme_y_cerrar_sesion(tmp_path, monkeypatch):
     at.text_input[0].input("ciruela")
     at.button[0].click().run()
     assert not at.exception, [e.value for e in at.exception]
-    assert at.title[0].value == "Radar Mercado Público" and not at.text_input
+    assert _titulos(at)[0] == "Oportunidades del Estado para tu negocio" and not at.text_input
     salir = next(b for b in at.button if b.label == "Cerrar sesión")
     salir.click().run()
     assert at.text_input and at.text_input[0].label == "Clave de acceso"
@@ -478,7 +492,8 @@ def test_licitaciones_sin_precio_dicen_que_falta_y_cuantas_tienen_decision(tmp_p
     for nombre, valor in datos.items():
         (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
     monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
-    at = AppTest.from_function(_pagina, args=("explorar", "licitaciones", str(RAIZ)), default_timeout=60).run()
+    at = _en_tabla(AppTest.from_function(_pagina, args=("explorar", "licitaciones", str(RAIZ)),
+                                         default_timeout=60)).run()
     assert not at.exception, [e.value for e in at.exception]
     assert any("con decisión (las demás: ⚪ falta precio)" in c.value for c in at.caption)
     tabla = at.dataframe[0].value
@@ -522,7 +537,7 @@ def test_busqueda_por_comienzo_de_palabra_y_por_codigo():
 
 
 def test_monto_minimo_mayor_que_el_maximo_avisa_y_no_filtra(tmp_path, monkeypatch):
-    at = _app(tmp_path, monkeypatch, "explorar", "licitaciones").run()
+    at = _en_tabla(_app(tmp_path, monkeypatch, "explorar", "licitaciones")).run()
     total = len(at.dataframe[0].value)
     at.number_input(key="lic_min").set_value(5_000_000)
     at.number_input(key="lic_max").set_value(1_000_000).run()
@@ -532,14 +547,14 @@ def test_monto_minimo_mayor_que_el_maximo_avisa_y_no_filtra(tmp_path, monkeypatc
 
 
 def test_sin_resultados_lo_dice_en_vez_de_una_tabla_vacia(tmp_path, monkeypatch):
-    at = _app(tmp_path, monkeypatch, "explorar", "licitaciones").run()
+    at = _en_tabla(_app(tmp_path, monkeypatch, "explorar", "licitaciones")).run()
     at.text_input(key="lic_texto").set_value("zzzzqq").run()
     assert not at.exception, [e.value for e in at.exception]
     assert not at.dataframe and any("Sin resultados" in i.value for i in at.info)
 
 
 def test_compras_agiles_sin_2o_llamado_ofrece_ver_las_de_1er_llamado(tmp_path, monkeypatch):
-    at = _app(tmp_path, monkeypatch, "explorar", "compras_agiles").run()
+    at = _en_tabla(_app(tmp_path, monkeypatch, "explorar", "compras_agiles")).run()
     assert not at.exception, [e.value for e in at.exception]
     assert any("Hay 1 de 1er llamado" in i.value for i in at.info) and not at.dataframe
     next(b for b in at.button if b.label == "Ver las de 1er llamado").click().run()
@@ -576,8 +591,8 @@ def test_cambiar_un_filtro_con_el_boton_de_1er_llamado_a_la_vista(tmp_path, monk
     for nombre, valor in datos.items():
         (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
     monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
-    at = AppTest.from_function(_pagina_como_app, args=("explorar", "compras_agiles", str(RAIZ)),
-                               default_timeout=60).run()
+    at = _en_tabla(AppTest.from_function(_pagina_como_app, args=("explorar", "compras_agiles", str(RAIZ)),
+                                         default_timeout=60)).run()
     assert not at.exception, [e.value for e in at.exception]
     assert any(b.label == "Ver las de 1er llamado" for b in at.button)
     region = at.multiselect(key="ca_regiones")
@@ -691,3 +706,44 @@ def test_nuevas_y_orden_por_nuevas():
     assert not es_nueva(vieja, hoy) and es_nueva(nueva, hoy) and es_nueva(ca, hoy)
     assert [l["codigo"] for l in filtrar([vieja, nueva, ca])] == ["V", "C", "N"]
     assert [l["codigo"] for l in filtrar([vieja, nueva, ca], nuevas_primero=True)] == ["C", "N", "V"]
+
+
+def test_licitaciones_se_abren_en_tarjetas_y_el_detalle_en_una_ventana(tmp_path, monkeypatch):
+    # Estilo de marketplace (20-11): tarjetas por defecto, la tabla sigue en «Vista».
+    datos = _datos()
+    for lic in datos["licitaciones"]:
+        lic["fecha_cierre"] = "2099-01-01 12:00:00"
+    datos["licitaciones"][0]["nombre"] = "Guantes <b>nitrilo</b> & más"
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    at = AppTest.from_function(_pagina, args=("explorar", "licitaciones", str(RAIZ)), default_timeout=60).run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert not at.dataframe
+    botones = [b for b in at.button if b.label == "Ver detalle"]
+    assert botones
+    tarjetas = " ".join(e.proto.body for e in at.get("html"))
+    # Los textos de los datos van escapados: un nombre con etiquetas no se interpreta como HTML.
+    assert "Guantes &lt;b&gt;nitrilo&lt;/b&gt; &amp; más" in tarjetas and "<b>nitrilo</b>" not in tarjetas
+    botones[0].click().run()
+    assert not at.exception, [e.value for e in at.exception]
+
+
+def test_mostrar_mas_tarjetas_de_a_doce(tmp_path, monkeypatch):
+    datos = _datos()
+    base = next(l for l in datos["licitaciones"] if l.get("tipo") != "Compra Ágil")
+    datos["licitaciones"] = [dict(base, codigo=f"9-{n}-LE26", fecha_cierre="2099-01-01 12:00:00") for n in range(15)]
+    for nombre, valor in datos.items():
+        (tmp_path / f"{nombre}.json").write_text(json.dumps(valor), encoding="utf-8")
+    monkeypatch.setenv("RADAR_DATOS", str(tmp_path))
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    at = AppTest.from_function(_pagina, args=("explorar", "licitaciones", str(RAIZ)), default_timeout=60).run()
+    assert sum(b.label == "Ver detalle" for b in at.button) == 12
+    next(b for b in at.button if b.label.startswith("Mostrar más (3")).click().run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert sum(b.label == "Ver detalle" for b in at.button) == 15

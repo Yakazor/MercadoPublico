@@ -1,6 +1,24 @@
 # Configuración de la plataforma (plataforma/app.py).
 [theme]
-primaryColor = "#1F3864"
+# Estilo de marketplace B2B: fondo gris azulado muy claro, tarjetas y campos blancos, un solo verde de
+# acción (más oscuro que el de referencia para que el texto blanco tenga contraste 4,8:1), títulos en
+# Montserrat y texto en Open Sans. El resto (tarjetas, etiquetas, indicadores) está en plataforma/estilo.py.
+base = "light"
+primaryColor = "#17806c"
+backgroundColor = "#f5f8fa"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#191d38"
+linkColor = "#0b6f8c"
+borderColor = "#e3e8ef"
+dataframeBorderColor = "#e3e8ef"
+dataframeHeaderBackgroundColor = "#f2f9fa"
+showWidgetBorder = true
+baseRadius = "15px"
+buttonRadius = "15px"
+font = "Open Sans:https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+headingFont = "Montserrat:https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap"
+headingFontWeights = [800, 700, 600, 600, 600, 600]
+metricValueFontWeight = 700
 
 [browser]
 gatherUsageStats = false
