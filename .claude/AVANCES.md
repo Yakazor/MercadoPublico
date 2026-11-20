@@ -51,7 +51,7 @@ guía de despacho y factura https://claude.ai/artifact/XSskNUJg2g5E1HFud8UQ5U
   «Verificar precios e informes PDF» no reescriba los ~160 PDF cuando solo cambia su fecha interna
   (cada corrida deja un commit con PDF de igual tamaño, p. ej. 20e7f53).
 
-## Última tarea: estilo de marketplace en la plataforma (pedido del 20-11) — PR abierto, rama `feature/diseno-wherex`
+## Última tarea: estilo de marketplace en la plataforma (pedido del 20-11) — unida (PR #21, a641867)
 
 Pedido: «duplicar el formato de la página de WherEX, que es más amigable, pero con nuestra información» (en la
 plataforma). La sesión no puede abrir wherex.com (red); la usuaria pasó la especificación medida por Claude en
@@ -67,7 +67,7 @@ Chrome (blog de wherex.com: colores, letras, tarjetas, píldoras). Se copió sol
       una ventana (`st.dialog`); «Tabla» sigue igual. Claves de botones sin prefijo `lic_`/`ca_` (conservar_estado)
 - [x] Pruebas: 605 OK (2 nuevas: tarjetas + ventana + escape de HTML, «Mostrar más»); revisado en Chromium a 1366
       y 390 px con los datos del 20-11, sin errores
-- [ ] La usuaria revisa y une el PR; después, si lo pide, el mismo estilo en Evaluación, Orden y Manuales, y el
+- [x] PR #21 unido el 20-11 a pedido de la usuaria («revisa el estado y aplícalo»). Pendiente, si lo pide: el mismo estilo en Evaluación, Orden y Manuales, y el
       panel de proveedor de WherEX (no se pudo ver: sin sesión)
 
 ## Tarea anterior: proveedores al abrir una licitación (pedido del 02-11) — unida a la principal tras auditoría (PR #13)
