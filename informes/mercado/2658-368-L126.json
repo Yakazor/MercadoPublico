@@ -21,7 +21,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-14",
      "precio_pagina": 139990.0,
-     "verificacion_pagina": "2026-11-20: la página abrió y el precio más parecido es $139.990, no $135.490: puede haber cambiado."
+     "verificacion_pagina": "2026-11-21: la página abrió y el precio más parecido es $139.990, no $135.490: puede haber cambiado."
     }
    ]
   },
@@ -42,9 +42,9 @@
      "nota": "Equivalencia con Epotraf 6020 por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-14",
-     "verificado_en": "2026-11-20",
+     "verificado_en": "2026-11-21",
      "precio_pagina": 179990.0,
-     "verificacion_pagina": "2026-11-20: la página muestra $179.990."
+     "verificacion_pagina": "2026-11-21: la página muestra $179.990."
     }
    ]
   },
@@ -62,7 +62,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-20",
+  "fecha": "2026-11-21",
   "opciones": 2,
   "verificadas": 1
  }

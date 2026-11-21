@@ -541,20 +541,20 @@
  },
  {
   "fecha": "2026-11-21",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "869 vigentes; 20 evaluadas; informes de 10",
-  "resultado": "0 GO, 2 con condiciones, 8 falta precio, 10 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 10 de 11 ítems sin precio de mercado; 15 de 16 ítems sin precio de mercado; 18 de 19 ítems sin precio de mercado; 2 de ",
-  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 4469-257-L126: FALTA PRECIO; 2585-1578-COT26: FALTA PRECIO; 4044-688-COT26: FALTA PRECIO; 1108338-61-L126: FALTA PRECIO",
-  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-21",
   "autor": "Claude",
   "licitaciones_procesadas": "Precios nuevos (Compras Ágiles de 2º llamado): 1057499-349-COT26 (electrodomésticos Cesfam, 3/9 líneas), 2403-1020-COT26 (oficina, 1/10), 2585-1578-COT26 (librería Arica, 1/19) y 4044-688-COT26 (basureros y materiales, 1/16). Evaluadas 20 con precios.",
   "resultado": "0 GO, 2 GO con condiciones (994-42-LE26 y 4590-26-LE26, neumáticos), 8 falta precio, 10 NO GO. 1057499-349-COT26 sale NO GO: solo 5 televisores de 50\" (~$370.000 c/u), refrigerador 338 L y hervidores ya proyectan ~$3,7 M contra $3 M. 2403-1020-COT26 NO GO no concluyente (1/10).",
   "riesgos": "Precios tomados de resultados de búsqueda (Lider, Falabella, Easy); las páginas no se pudieron abrir desde la sesión. Tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile.",
   "decisiones": "No se buscaron proveedores nuevos: 994-42-LE26, 4590-26-LE26 y 3191-128-LE26 ya tienen lista.",
   "recomendaciones": "Neumáticos (cierran 26-11): conseguir precios faltantes. 2585-1578-COT26 (librería, $2 M, Arica) tiene productos simples: vale la pena cotizarla completa con tóner/tintas alternativos si el comprador los acepta."
+ },
+ {
+  "fecha": "2026-11-21",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "869 vigentes; 20 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 8 falta precio, 10 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 7 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 10 de 11 ítems sin precio de mercado; 15 de 16 ítems sin precio de mercado; 18 de 19 ítems sin precio de mercado; 2 de ",
+  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 4469-257-L126: FALTA PRECIO; 2585-1578-COT26: FALTA PRECIO; 4044-688-COT26: FALTA PRECIO; 1108338-61-L126: FALTA PRECIO",
+  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
  }
 ]

@@ -31,9 +31,9 @@
      "nota": "Precio de resultado de búsqueda; por verificar.",
      "fecha_consulta": "2026-11-20",
      "verificado": true,
-     "verificado_en": "2026-11-20",
+     "verificado_en": "2026-11-21",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-20: la página muestra $12.990."
+     "verificacion_pagina": "2026-11-21: la página muestra $12.990."
     }
    ]
   },
@@ -60,9 +60,9 @@
      "nota": "Precio de resultado de búsqueda; por verificar.",
      "fecha_consulta": "2026-11-20",
      "verificado": true,
-     "verificado_en": "2026-11-20",
+     "verificado_en": "2026-11-21",
      "precio_pagina": 12990.0,
-     "verificacion_pagina": "2026-11-20: la página muestra $12.990."
+     "verificacion_pagina": "2026-11-21: la página muestra $12.990."
     }
    ]
   },
@@ -101,9 +101,9 @@
      "nota": "$27.038 con transferencia.",
      "fecha_consulta": "2026-11-20",
      "verificado": true,
-     "verificado_en": "2026-11-20",
+     "verificado_en": "2026-11-21",
      "precio_pagina": 27990.0,
-     "verificacion_pagina": "2026-11-20: la página muestra $27.990."
+     "verificacion_pagina": "2026-11-21: la página muestra $27.990."
     }
    ]
   },
@@ -124,9 +124,9 @@
      "nota": "$27.038 con transferencia.",
      "fecha_consulta": "2026-11-20",
      "verificado": true,
-     "verificado_en": "2026-11-20",
+     "verificado_en": "2026-11-21",
      "precio_pagina": 27990.0,
-     "verificacion_pagina": "2026-11-20: la página muestra $27.990."
+     "verificacion_pagina": "2026-11-21: la página muestra $27.990."
     }
    ]
   },
@@ -146,7 +146,7 @@
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda (referencia $299.990); página no abierta desde la sesión, por verificar.",
      "fecha_consulta": "2026-11-20",
-     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -166,7 +166,7 @@
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda (referencia $299.990); página no abierta desde la sesión, por verificar.",
      "fecha_consulta": "2026-11-20",
-     "verificacion_pagina": "2026-11-20: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-21: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -196,7 +196,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-20",
+  "fecha": "2026-11-21",
   "opciones": 6,
   "verificadas": 4
  }

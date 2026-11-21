@@ -35,7 +35,11 @@
      "precio_unitario_neto": 2932.77,
      "coincidencia": "aproximada",
      "nota": "Precio en página de categoría; no confirma lomo ancho 7-8,5 cm.",
-     "fecha_consulta": "2026-11-21"
+     "fecha_consulta": "2026-11-21",
+     "verificado": true,
+     "verificado_en": "2026-11-21",
+     "precio_pagina": 3490.0,
+     "verificacion_pagina": "2026-11-21: la página muestra $3.490."
     }
    ]
   },
@@ -75,5 +79,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-21",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

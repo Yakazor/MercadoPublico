@@ -18,7 +18,7 @@ Alertas: «supera monto» (la oferta total pasa el monto estimado), «faltan N p
 |---|---|---|---:|---:|---:|---:|---:|---|
 | [564953-965-COT26](presupuestos/564953-965-COT26.md) UNIFORME ESCOLAR DE GALA - LDV | Vestuario, uniformes y textiles | 2026-11-22 | 5/14 | $2.099.790 | $2.998.500 | $419.958 | $2.400.000 | supera monto, faltan 9 precios, sin verificar |
 | [607-289-COT26](presupuestos/607-289-COT26.md) GUIAS DE CAMPO _ LIBROS | Libros y material educativo | 2026-11-22 | 0/10 | $0 | $0 | $0 | $907.429 | faltan 10 precios |
-| [2403-1020-COT26](presupuestos/2403-1020-COT26.md) Adquisición de artículos de oficina (YCAF) 2026. | Artículos de oficina y librería | 2026-11-23 | 1/10 | $43.974 | $62.795 | $8.795 | $250.000 | faltan 9 precios, sin verificar |
+| [2403-1020-COT26](presupuestos/2403-1020-COT26.md) Adquisición de artículos de oficina (YCAF) 2026. | Artículos de oficina y librería | 2026-11-23 | 1/10 | $43.974 | $62.795 | $8.795 | $250.000 | faltan 9 precios |
 | [3524-80-COT26](presupuestos/3524-80-COT26.md) ADQUISICIÓN DE ELEMENTOS PARA LA INSTALACIÓN DE TERMO ELECTRICO PARA E | Electrodomésticos, hogar y menaje | 2026-11-23 | 1/10 | $44.499 | $63.545 | $8.900 | $250.000 | faltan 9 precios |
 | [1057499-349-COT26](presupuestos/1057499-349-COT26.md) Electrodomésticos y otros para Cesfam Haydee Lopez. | Electrodomésticos, hogar y menaje | 2026-11-23 | 3/9 | $2.593.353 | $3.703.308 | $518.671 | $3.000.000 | supera monto, faltan 6 precios, sin verificar |
 | [2288-34-LE26](presupuestos/2288-34-LE26.md) ADQUISICIÓN DE JUGUETES NAVIDAD 2026 | Deporte, juguetes y material didáctico | 2026-11-23 | 0/7 | $0 | $0 | $0 | $19.000.000 | faltan 7 precios |

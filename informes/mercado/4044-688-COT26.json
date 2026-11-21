@@ -107,9 +107,15 @@
      "precio_unitario_neto": 33605.04,
      "coincidencia": "exacta",
      "nota": "20% de descuento (normal $49.990).",
-     "fecha_consulta": "2026-11-21"
+     "fecha_consulta": "2026-11-21",
+     "verificacion_pagina": "2026-11-21: la tienda respondió HTTP 403."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-21",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

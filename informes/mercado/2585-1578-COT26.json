@@ -35,7 +35,10 @@
      "precio_unitario_neto": 6630.25,
      "coincidencia": "exacta",
      "nota": "Antes $9.490.",
-     "fecha_consulta": "2026-11-21"
+     "fecha_consulta": "2026-11-21",
+     "verificado": false,
+     "precio_pagina": 8290.0,
+     "verificacion_pagina": "2026-11-21: la página abrió y el precio más parecido es $8.290, no $7.890: puede haber cambiado."
     }
    ]
   },
@@ -129,5 +132,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-21",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

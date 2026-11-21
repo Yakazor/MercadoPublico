@@ -23,7 +23,10 @@
      "precio_unitario_neto": 285705.88,
      "coincidencia": "exacta",
      "nota": "Precio visto en listado de Sodimac del mismo modelo; por verificar en esta página.",
-     "fecha_consulta": "2026-11-21"
+     "fecha_consulta": "2026-11-21",
+     "verificado": false,
+     "precio_pagina": 319990.0,
+     "verificacion_pagina": "2026-11-21: la página abrió y el precio más parecido es $319.990, no $339.990: puede haber cambiado."
     }
    ]
   },
@@ -60,7 +63,10 @@
      "precio_unitario_neto": 29403.36,
      "coincidencia": "equivalente",
      "nota": "Precio de resultado de búsqueda (antes $49.990).",
-     "fecha_consulta": "2026-11-21"
+     "fecha_consulta": "2026-11-21",
+     "verificado": false,
+     "precio_pagina": 39990.0,
+     "verificacion_pagina": "2026-11-21: la página abrió y el precio más parecido es $39.990, no $34.990: puede haber cambiado."
     }
    ]
   },
@@ -85,7 +91,10 @@
      "precio_unitario_neto": 310915.97,
      "coincidencia": "equivalente",
      "nota": "50 pulgadas (piden 49). Precio de resultado de búsqueda; por verificar.",
-     "fecha_consulta": "2026-11-21"
+     "fecha_consulta": "2026-11-21",
+     "verificado": false,
+     "precio_pagina": 329990.0,
+     "verificacion_pagina": "2026-11-21: la página abrió y el precio más parecido es $329.990, no $369.990: puede haber cambiado."
     }
    ]
   },
@@ -95,5 +104,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-21",
+  "opciones": 3,
+  "verificadas": 0
+ }
 }
