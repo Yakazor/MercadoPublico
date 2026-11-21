@@ -1,0 +1,115 @@
+{
+ "codigo": "4044-688-COT26",
+ "nombre": "BASUREROS Y MATERIALES PARA TRABAJOS EN EDIFICIO CONSISTORIAL - SOLICITA DIRECCION DE OPERACIONES",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Aditivos ácidos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 2,
+   "producto": "Lubricantes anticorrosivos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 3,
+   "producto": "Lubricantes anticorrosivos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 4,
+   "producto": "La soldadura o el kit",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 5,
+   "producto": "Aparato de corte o de soldadura fuerte o de soldadura por llama de gas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 6,
+   "producto": "Ángulos de acero",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 7,
+   "producto": "Perfiles de acero",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 8,
+   "producto": "Alquitrán de hulla",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 9,
+   "producto": "Tornillos de apriete",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 10,
+   "producto": "Discos abrasivos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 11,
+   "producto": "Brochas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 12,
+   "producto": "Brochas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 13,
+   "producto": "Rodillos de pintar",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 14,
+   "producto": "Disco de ruptura",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 15,
+   "producto": "Disolventes",
+   "opciones": [],
+   "nota": "Sin precio con link verificable; detalle en memorándum adjunto."
+  },
+  {
+   "linea": 16,
+   "producto": "Vertedero de basuras",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Basurero con tapa y ruedas 240 litros industrial gris",
+     "url": "https://www.easy.cl/basurero-tapa-y-ruedas-240-litros-industrial-gris-1189438/p",
+     "precio": 39990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 33605.04,
+     "coincidencia": "exacta",
+     "nota": "20% de descuento (normal $49.990).",
+     "fecha_consulta": "2026-11-21"
+    }
+   ]
+  }
+ ]
+}

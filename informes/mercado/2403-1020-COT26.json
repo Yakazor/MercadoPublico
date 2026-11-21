@@ -1,0 +1,79 @@
+{
+ "codigo": "2403-1020-COT26",
+ "nombre": "Adquisición de artículos de oficina (YCAF) 2026.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Artículos de papelería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 2,
+   "producto": "Separadores de cartón",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Corcheteras",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Archivadores de fichas",
+   "opciones": [
+    {
+     "tienda": "Super Lider",
+     "producto_mercado": "Archivador oficio color negro Colón",
+     "url": "https://super.lider.cl/v/archivadores-oficio",
+     "precio": 3490,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2932.77,
+     "coincidencia": "aproximada",
+     "nota": "Precio en página de categoría; no confirma lomo ancho 7-8,5 cm.",
+     "fecha_consulta": "2026-11-21"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Carpetas para archivos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Corchetes",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Clips para papel",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Clips para papel",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Etiquetas autoadhesivas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Impresión de envoltorios, etiquetas, sellos o bolsas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  }
+ ]
+}

@@ -131,6 +131,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-21 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 21-11 08:24.
+- Precios nuevos (Compras Ágiles de 2º llamado): 1057499-349-COT26 3/9 (NO GO: TV 50" ~$370 mil x5 + refrigerador ya pasan los $3 M), 2403-1020-COT26 1/10 (NO GO no concluyente), 2585-1578-COT26 1/19 y 4044-688-COT26 1/16 (falta precio). Precios de resultados de búsqueda, sin abrir las páginas.
+- Evaluación: 0 GO, 2 GO con condiciones (994-42-LE26, 4590-26-LE26), 8 falta precio, 10 NO GO. 340 Compras Ágiles abiertas de 2º llamado (28 en Los Lagos).
+
 ### 2026-11-20 — Estilo de marketplace (WherEX) en la plataforma
 
 - Estado revisado: workflows del 20-11 en verde; PR #11 (25-10) sigue abierto y parece obsoleto.

@@ -1,0 +1,133 @@
+{
+ "codigo": "2585-1578-COT26",
+ "nombre": " ARTICULOS DE LIBRERIA, ORD. 4753/2026, OLN, DIDECO, IMA, GMH",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tintas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 2,
+   "producto": "Siliconas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 3,
+   "producto": "Siliconas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 4,
+   "producto": "Papel multiuso",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Resma papel tipo oficio Chamex 500 hojas 75 g",
+     "url": "https://www.lider.cl/ip/articulos-de-oficina-y-papeleria/resma-papel-tipo-oficio-chamex-500-hojas-75gr/00789117302490",
+     "precio": 7890,
+     "iva_incluido": true,
+     "contenido": "resma 500 hojas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6630.25,
+     "coincidencia": "exacta",
+     "nota": "Antes $9.490.",
+     "fecha_consulta": "2026-11-21"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Papel multiuso",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 6,
+   "producto": "Libros o cuadernos de registro",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 7,
+   "producto": "Tablas de madera",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 8,
+   "producto": "Adhesivos de láminas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 9,
+   "producto": "Adhesivos de láminas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 10,
+   "producto": "Almohadillas de ratón o mousepad",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 11,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 12,
+   "producto": "Lápiz pasta",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 13,
+   "producto": "Marcadores",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 14,
+   "producto": "Cinta correctora",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 15,
+   "producto": "Carpetas para archivos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 16,
+   "producto": "Cajas de archivo o accesorios",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 17,
+   "producto": "Fundas de etiquetas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 18,
+   "producto": "Barras de pegamento libres de ácido",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  },
+  {
+   "linea": 19,
+   "producto": "Figuras de goma Eva",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (tintas GI-16 y tóner TN-1060 originales sin precio claro en Chile)."
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "codigo": "1057499-349-COT26",
+ "nombre": " Electrodomésticos y otros para Cesfam Haydee Lopez.",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Proyectores multimedia",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
+  },
+  {
+   "linea": 2,
+   "producto": "Refrigeradores domésticos",
+   "opciones": [
+    {
+     "tienda": "Falabella",
+     "producto_mercado": "Refrigerador No Frost 338 L Maigas HD-468FWEN",
+     "url": "https://www.falabella.com/falabella-cl/product/126983340/refrigerador-no-frost-338-lt-maigas-hd-468fwen",
+     "precio": 339990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 285705.88,
+     "coincidencia": "exacta",
+     "nota": "Precio visto en listado de Sodimac del mismo modelo; por verificar en esta página.",
+     "fecha_consulta": "2026-11-21"
+    }
+   ]
+  },
+  {
+   "linea": 3,
+   "producto": "Refrigeradores domésticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
+  },
+  {
+   "linea": 4,
+   "producto": "Hornos microondas domésticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
+  },
+  {
+   "linea": 5,
+   "producto": "Congeladores verticales domésticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
+  },
+  {
+   "linea": 6,
+   "producto": "Hervidores y teteras",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Hervidor Touch 1,7 L FDV",
+     "url": "https://www.lider.cl/ip/electrodomesticos-cocina/hervidor-touch-1-7-lts-fdv/00046778136616",
+     "precio": 34990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 29403.36,
+     "coincidencia": "equivalente",
+     "nota": "Precio de resultado de búsqueda (antes $49.990).",
+     "fecha_consulta": "2026-11-21"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Vajilla de uso doméstico",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
+  },
+  {
+   "linea": 8,
+   "producto": "Televisores convencionales, de plasma y LCD",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Televisor 50\" Mini LED M70H 4K Smart TV (2026)",
+     "url": "https://www.lider.cl/ip/tv/televisor-50-mini-led-m70h-4k-smart-tv-2026-/00880609901117",
+     "precio": 369990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 310915.97,
+     "coincidencia": "equivalente",
+     "nota": "50 pulgadas (piden 49). Precio de resultado de búsqueda; por verificar.",
+     "fecha_consulta": "2026-11-21"
+    }
+   ]
+  },
+  {
+   "linea": 9,
+   "producto": "Colchones o sets de cama",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sin especificación de modelo)."
+  }
+ ]
+}
