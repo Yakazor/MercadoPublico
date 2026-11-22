@@ -89,7 +89,10 @@
      "precio_unitario_neto": 65537.82,
      "coincidencia": "exacta",
      "nota": "La página figuraba agotada al indexarse; confirmar stock.",
-     "fecha_consulta": "2026-11-22"
+     "fecha_consulta": "2026-11-22",
+     "verificado": false,
+     "precio_pagina": 107090.0,
+     "verificacion_pagina": "2026-11-22: la página abrió y el precio más parecido es $107.090, no $77.990: puede haber cambiado."
     }
    ]
   },
@@ -120,7 +123,8 @@
      "precio_unitario_neto": 190567.23,
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda (antes $310.650); confirmar vendedor.",
-     "fecha_consulta": "2026-11-22"
+     "fecha_consulta": "2026-11-22",
+     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -130,5 +134,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-22",
+  "opciones": 2,
+  "verificadas": 0
+ }
 }

@@ -35,7 +35,11 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "aproximada",
      "nota": "No confirma que sea de curaguilla ni tamaño industrial.",
-     "fecha_consulta": "2026-11-22"
+     "fecha_consulta": "2026-11-22",
+     "verificado": true,
+     "verificado_en": "2026-11-22",
+     "precio_pagina": 8990.0,
+     "verificacion_pagina": "2026-11-22: la página muestra $8.990."
     }
    ]
   },
@@ -57,5 +61,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-22",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

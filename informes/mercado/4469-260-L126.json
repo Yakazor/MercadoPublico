@@ -20,7 +20,7 @@
      "nota": "Piden ancho referencial 60 cm; se usa la de 90 cm.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-21: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403.",
      "verificado_en": "2026-11-18",
      "precio_pagina": 39990.0
     }
@@ -44,9 +44,9 @@
      "nota": "Acero AISI-430.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificado_en": "2026-11-21",
+     "verificado_en": "2026-11-22",
      "precio_pagina": 34990.0,
-     "verificacion_pagina": "2026-11-21: la página muestra $34.990."
+     "verificacion_pagina": "2026-11-22: la página muestra $34.990."
     },
     {
      "tienda": "Paris",
@@ -61,7 +61,7 @@
      "nota": "",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-21: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403.",
      "verificado_en": "2026-11-18",
      "precio_pagina": 39990.0
     }
@@ -76,7 +76,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-21",
+  "fecha": "2026-11-22",
   "opciones": 3,
   "verificadas": 3
  }
