@@ -1,0 +1,61 @@
+{
+ "codigo": "2343-582-COT26",
+ "nombre": "ADQUISICION DE MATERIALES DE ASEO PARA LA MANTENCION DE PISCINAS MUNICIPALES - Ped.1352",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Rastrillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
+  },
+  {
+   "linea": 2,
+   "producto": "Carros para limpieza",
+   "opciones": [],
+   "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
+  },
+  {
+   "linea": 3,
+   "producto": "Bolsas de basura",
+   "opciones": [],
+   "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
+  },
+  {
+   "linea": 4,
+   "producto": "Escobas",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Escoba de ramas 5 costuras Kleine Wolke",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/5815177/escoba-de-ramas-5-costuras",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "aproximada",
+     "nota": "No confirma que sea de curaguilla ni tamaño industrial.",
+     "fecha_consulta": "2026-11-22"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Cepillos de limpieza",
+   "opciones": [],
+   "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
+  },
+  {
+   "linea": 6,
+   "producto": "Kits de limpieza de uso general",
+   "opciones": [],
+   "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
+  },
+  {
+   "linea": 7,
+   "producto": "Pértigas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable (pértiga de 10,5 m no se encontró en Chile; máximo hallado 4,8 m)."
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "codigo": "2107-181-LE26",
+ "nombre": "ADQUISICIÓN DE ART. DE ESCRITORIO PARA DPTO. LOGISTICA",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "DVD de lectura y escritura",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 2,
+   "producto": "Cintas de papel",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Cinta para empaquetar",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Corchetes",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 5,
+   "producto": "Pizarras para plumón y accesorios",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Libros o cuadernos de registro",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Sobres estándar",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Sobres de ventanillas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Barras de pegamento libres de ácido",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Fundas de productos de identificación o accesorios",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 11,
+   "producto": "Notas de papel autoadhesivo",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Lápiz pasta",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Tóner",
+   "opciones": [
+    {
+     "tienda": "HP Chile",
+     "producto_mercado": "Cartucho de tóner HP 79A negro LaserJet original CF279A",
+     "url": "https://www.hp.com/cl-es/shop/cartucho-de-toner-hp-79a-negro-laserjet-original-cf279a.html",
+     "precio": 77990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 65537.82,
+     "coincidencia": "exacta",
+     "nota": "La página figuraba agotada al indexarse; confirmar stock.",
+     "fecha_consulta": "2026-11-22"
+    }
+   ]
+  },
+  {
+   "linea": 14,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 15,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 16,
+   "producto": "Tóner",
+   "opciones": [
+    {
+     "tienda": "Paris",
+     "producto_mercado": "HP Tóner LaserJet 87A negro CF287A original",
+     "url": "https://www.paris.cl/hp-toner-laserjet-87a-negro-cf287a-original-MKY991QN1M.html",
+     "precio": 226775,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 190567.23,
+     "coincidencia": "exacta",
+     "nota": "Precio de resultado de búsqueda (antes $310.650); confirmar vendedor.",
+     "fecha_consulta": "2026-11-22"
+    }
+   ]
+  },
+  {
+   "linea": 17,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  }
+ ]
+}

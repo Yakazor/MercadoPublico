@@ -40,13 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 6
+- **Días para el cierre:** 5
 - **Viabilidad:** Alta.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 2 de 5 ítems sin precio de mercado: el costo real es mayor.
+- Cierra en 5 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
 ## Proveedores recomendados

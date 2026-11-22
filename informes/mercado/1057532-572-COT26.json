@@ -1,0 +1,134 @@
+{
+ "codigo": "1057532-572-COT26",
+ "nombre": "F1-483-26-MAR/ INSUMOS MEDICOS",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 2,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 5,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [
+    {
+     "tienda": "Falabella (IVMEDICAL)",
+     "producto_mercado": "50 tiras reactivas Accu-Chek Instant",
+     "url": "https://www.falabella.com/falabella-cl/product/133768652/50-Tiras--cintas-Reactivas-Accu-Chek-Instant-Vencimiento-20-Julio-2026/133768653",
+     "precio": 12490,
+     "iva_incluido": true,
+     "contenido": "caja 50 tiras",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 10495.8,
+     "coincidencia": "exacta",
+     "nota": "La publicación indicaba vencimiento julio 2026 (ya vencido): confirmar lote vigente.",
+     "fecha_consulta": "2026-11-22"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Tiras reactivas Accu-Chek Instant 25 unidades",
+     "url": "https://www.lider.cl/ip/salud-y-bienestar/tiras-reactivas-accu-chek-instant-25-unidades/00401563006707",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "caja 25 tiras",
+     "unidades_equivalentes": 0.5,
+     "precio_unitario_neto": 15109.24,
+     "coincidencia": "exacta",
+     "nota": "Piden caja de 50: equivale a 2 cajas de 25.",
+     "fecha_consulta": "2026-11-22"
+    }
+   ]
+  },
+  {
+   "linea": 8,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 11,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 14,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 15,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 16,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 17,
+   "producto": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios",
+   "opciones": [],
+   "nota": "Insumo clínico: sin precio con link verificable en esta corrida."
+  }
+ ]
+}
