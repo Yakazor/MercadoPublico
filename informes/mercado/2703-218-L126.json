@@ -50,9 +50,9 @@
      "nota": "Es de 3 ml; se piden 6 ml. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 15000.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $15.000."
+     "verificacion_pagina": "2026-11-23: la página muestra $15.000."
     }
    ]
   },
@@ -73,9 +73,9 @@
      "nota": "Descrita como cosmética. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 11990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $11.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $11.990."
     },
     {
      "tienda": "Falabella (VP Chemicals)",
@@ -90,9 +90,9 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $15.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $15.990."
     }
    ]
   },
@@ -113,16 +113,16 @@
      "nota": "Se vende por unidad, no en caja de 20. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 1499.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $1.499."
+     "verificacion_pagina": "2026-11-23: la página muestra $1.499."
     }
    ]
   }
  ],
  "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
  "verificacion_paginas": {
-  "fecha": "2026-11-22",
+  "fecha": "2026-11-23",
   "opciones": 4,
   "verificadas": 4
  }

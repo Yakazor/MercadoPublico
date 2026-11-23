@@ -86,5 +86,10 @@
    "opciones": [],
    "nota": "Insumo de laboratorio/biología celular: no se encontró precio con link verificable en esta corrida; cotizar con distribuidor (Thermo Fisher, Merck/Sigma, VWR)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-23",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

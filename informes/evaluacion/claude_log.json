@@ -577,20 +577,20 @@
  },
  {
   "fecha": "2026-11-23",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "664 vigentes; 21 evaluadas; informes de 10",
-  "resultado": "0 GO, 2 con condiciones, 7 falta precio, 12 NO GO",
-  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 15 de 16 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 18 de 19 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados ",
-  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 2585-1578-COT26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 4044-688-COT26: FALTA PRECIO; 3537-76-LE26: NO GO",
-  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-23",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote del 23-11: 813-780-COT26 (columna HPLC Phenomenex), 2020-230-COT26 (carpetas de ceremonia), 4513-10-LE26 (uniformes municipales, 16 líneas) y 564162-174-L126 (insumos de cultivo celular). Ninguna con precio en tiendas: quedan registradas como no cotizables por línea para que no vuelvan al lote.",
   "resultado": "0 GO, 2 GO con condiciones (994-42-LE26 y 4590-26-LE26, neumáticos), 7 falta precio, 12 NO GO.",
   "riesgos": "El lote de hoy fue de productos especializados o a pedido (laboratorio, confección): no se pueden cotizar en tiendas.",
   "decisiones": "No se buscaron proveedores nuevos: las 3 primeras ya tienen lista.",
   "recomendaciones": "Neumáticos 994-42-LE26 y 4590-26-LE26 cierran el 26-11: conseguir hoy los precios faltantes con distribuidores. 4513-10-LE26 (uniformes, cierra 02-12) solo conviene con una confeccionista que cotice según el Anexo N°7."
+ },
+ {
+  "fecha": "2026-11-23",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "664 vigentes; 21 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 7 falta precio, 12 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 15 de 16 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 18 de 19 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados ",
+  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 2585-1578-COT26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 4044-688-COT26: FALTA PRECIO; 3537-76-LE26: NO GO",
+  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
  }
 ]

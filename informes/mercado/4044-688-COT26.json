@@ -108,13 +108,13 @@
      "coincidencia": "exacta",
      "nota": "20% de descuento (normal $49.990).",
      "fecha_consulta": "2026-11-21",
-     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-23: la tienda respondió HTTP 403."
     }
    ]
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-22",
+  "fecha": "2026-11-23",
   "opciones": 1,
   "verificadas": 0
  }

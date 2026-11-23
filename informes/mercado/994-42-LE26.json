@@ -20,7 +20,7 @@
      "nota": "H/T; se pide mixto. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-23: la tienda respondió HTTP 403.",
      "verificado_en": "2026-11-18",
      "precio_pagina": 69990.0
     },
@@ -38,7 +38,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-16",
      "precio_pagina": 64990.0,
-     "verificacion_pagina": "2026-11-22: la página abrió y el precio más parecido es $64.990, no $78.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-23: la página abrió y el precio más parecido es $64.990, no $78.990: puede haber cambiado."
     }
    ]
   },
@@ -59,7 +59,7 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-23: la tienda respondió HTTP 403.",
      "verificado_en": "2026-11-18",
      "precio_pagina": 76990.0
     },
@@ -76,7 +76,7 @@
      "nota": "Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-22: la tienda respondió HTTP 403.",
+     "verificacion_pagina": "2026-11-23: la tienda respondió HTTP 403.",
      "verificado_en": "2026-11-18",
      "precio_pagina": 79990.0
     }
@@ -99,9 +99,9 @@
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 357990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $357.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $357.990."
     }
    ]
   },
@@ -122,9 +122,9 @@
      "nota": "Listado de marca: ADC53 y AGC08 a $361.490, ADR69 a $374.490. Confirmar diseño direccional/traccional. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 357990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $357.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $357.990."
     }
    ]
   },
@@ -145,7 +145,7 @@
      "nota": "16PR; confirmar posición (HD969 es de tracción). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-22: la página abrió y el precio más parecido es $239.990, no $225.590: puede haber cambiado.",
+     "verificacion_pagina": "2026-11-23: la página abrió y el precio más parecido es $239.990, no $225.590: puede haber cambiado.",
      "precio_pagina": 239990.0
     }
    ]
@@ -167,7 +167,7 @@
      "nota": "16PR; confirmar posición (HD969 es de tracción). Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": false,
      "fecha_consulta": "2026-11-16",
-     "verificacion_pagina": "2026-11-22: la página abrió y el precio más parecido es $239.990, no $225.590: puede haber cambiado.",
+     "verificacion_pagina": "2026-11-23: la página abrió y el precio más parecido es $239.990, no $225.590: puede haber cambiado.",
      "precio_pagina": 239990.0
     }
    ]
@@ -189,9 +189,9 @@
      "nota": "Asignación precio-modelo deducida del listado; el AGM10 aparecía a $158.690. Confirmar. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 249990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $249.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $249.990."
     }
    ]
   },
@@ -212,9 +212,9 @@
      "nota": "Asignación precio-modelo deducida del listado; el AGM10 aparecía a $158.690. Confirmar. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 249990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $249.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $249.990."
     }
    ]
   },
@@ -236,7 +236,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-16",
      "precio_pagina": 118.0,
-     "verificacion_pagina": "2026-11-22: la página abrió y el precio más parecido es $118, no $92.300: puede haber cambiado."
+     "verificacion_pagina": "2026-11-23: la página abrió y el precio más parecido es $118, no $92.300: puede haber cambiado."
     }
    ]
   },
@@ -263,9 +263,9 @@
      "nota": "Listado de marca BKT. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 339990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $339.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $339.990."
     }
    ]
   },
@@ -286,9 +286,9 @@
      "nota": "Listado de marca BKT. Precio del resultado de búsqueda del 16-11; sin abrir la página (sitios .cl bloqueados en la sesión).",
      "verificado": true,
      "fecha_consulta": "2026-11-16",
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 350000.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $350.000."
+     "verificacion_pagina": "2026-11-23: la página muestra $350.000."
     }
    ]
   },
@@ -301,7 +301,7 @@
  ],
  "verificacion": "sin verificar (WebSearch; las páginas .cl no se pudieron abrir desde la sesión)",
  "verificacion_paginas": {
-  "fecha": "2026-11-22",
+  "fecha": "2026-11-23",
   "opciones": 13,
   "verificadas": 9
  }

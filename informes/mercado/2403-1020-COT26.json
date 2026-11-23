@@ -37,9 +37,9 @@
      "nota": "Precio en página de categoría; no confirma lomo ancho 7-8,5 cm.",
      "fecha_consulta": "2026-11-21",
      "verificado": true,
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 3490.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $3.490."
+     "verificacion_pagina": "2026-11-23: la página muestra $3.490."
     }
    ]
   },
@@ -81,7 +81,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-22",
+  "fecha": "2026-11-23",
   "opciones": 1,
   "verificadas": 1
  }

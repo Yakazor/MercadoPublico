@@ -37,9 +37,9 @@
      "nota": "No confirma que sea de curaguilla ni tamaño industrial.",
      "fecha_consulta": "2026-11-22",
      "verificado": true,
-     "verificado_en": "2026-11-22",
+     "verificado_en": "2026-11-23",
      "precio_pagina": 8990.0,
-     "verificacion_pagina": "2026-11-22: la página muestra $8.990."
+     "verificacion_pagina": "2026-11-23: la página muestra $8.990."
     }
    ]
   },
@@ -63,7 +63,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-22",
+  "fecha": "2026-11-23",
   "opciones": 1,
   "verificadas": 1
  }
