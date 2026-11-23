@@ -131,6 +131,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-23 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 23-11 08:00.
+- Lote sin precios: 813-780-COT26 (columna HPLC), 2020-230-COT26 (carpetas a pedido), 4513-10-LE26 (uniformes según anexo) y 564162-174-L126 (cultivo celular). Guardadas como no cotizables por línea.
+- Evaluación: 0 GO, 2 GO con condiciones (994-42-LE26, 4590-26-LE26), 7 falta precio, 12 NO GO. 137 Compras Ágiles abiertas de 2º llamado (8 en Los Lagos).
+
 ### 2026-11-22 — Rutina ACTUALIZACIÓN
 
 - El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 22-11 05:08.

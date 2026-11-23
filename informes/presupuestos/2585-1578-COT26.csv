@@ -1,20 +1,20 @@
 ﻿codigo;linea;producto;descripcion;categoria;cantidad;unidad;ref_producto;ref_mediana;ref_p25;ref_p75;ref_n_ordenes;ref_similitud;tienda;producto_mercado;url;fecha_consulta;coincidencia;verificado;unidad_global;costo_unitario_neto;oferta_unitaria_neta;subtotal_costo;subtotal_oferta;referencia_comparable;referencia_confiable;margen_vs_referencia
-2585-1578-COT26;1;Tintas;TINTAS GI-16 BK (NEGRO) GI-16C (CIAN) GI-16 M (MAGENTA) GI-16 (AMARILLO);;15,0;EA;tintas;177750,0;32500,0;607635,0;18,0;1,0;;;;;;;False;;;;;;;
+2585-1578-COT26;1;Tintas;TINTAS GI-16 BK (NEGRO) GI-16C (CIAN) GI-16 M (MAGENTA) GI-16 (AMARILLO);;15,0;EA;tintas;141500,0;29950,0;582024,0;19,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;2;Siliconas;SILICONA EN BARRA 7 MM 10 PCS 20 CM;;12,0;EA;;;;;;;;;;;;;False;;;;;;;
 2585-1578-COT26;3;Siliconas;PISTOLA PARA SILICONA CON INTERRUPTOR 13W 7.2 MM;;3,0;EA;;;;;;;;;;;;;False;;;;;;;
 2585-1578-COT26;4;Papel multiuso;PAPEL FOTOCOPIA OFICIO 500 HOJAS;;120,0;EA;papel multiuso;898,0;898,0;898,0;1,0;1,0;Lider;Resma papel tipo oficio Chamex 500 hojas 75 g;https://www.lider.cl/ip/articulos-de-oficina-y-papeleria/resma-papel-tipo-oficio-chamex-500-hojas-75gr/00789117302490;2026-11-21;exacta;False;False;6630,0;9941,0;994140,0;1192968,0;True;False;-0,892
 2585-1578-COT26;5;Papel multiuso;OPALINA LISA BLANCA TAMAÑO CARTA 200G. 100 HOJAS;;20,0;EA;papel multiuso;898,0;898,0;898,0;1,0;1,0;;;;;;;False;;;;;;;
-2585-1578-COT26;6;Libros o cuadernos de registro;CUADERNO UNIVERSITARIO LISO 7 MM 100 HOJAS TORRE;;35,0;EA;libros o cuadernos de registro;4064,0;1900,0;10495,0;202,0;1,0;;;;;;;False;;;;;;;
+2585-1578-COT26;6;Libros o cuadernos de registro;CUADERNO UNIVERSITARIO LISO 7 MM 100 HOJAS TORRE;;35,0;EA;libros o cuadernos de registro;4027,0;1875,0;10444,0;205,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;7;Tablas de madera;ANOTADOR DOBLE VINIL OFICIO;;25,0;EA;tablas de madera;87172,0;85758,0;88586,0;2,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;8;Adhesivos de láminas;LAMINAS PARA TERMOLAMINAR OFICIO 228 X 340 MM 100 UNIDADES, 125 MICRONES;;8,0;EA;adhesivos de laminas;6830,0;666,0;9057,0;27,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;9;Adhesivos de láminas;BLISTER CINTA CORRECTORA;;30,0;EA;adhesivos de laminas;6830,0;666,0;9057,0;27,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;10;Almohadillas de ratón o mousepad;ALFOMBRILLA RATÓN ERGONOMICO Y REPOSAMUÑECAS ANTIDESLIZANTE. COLOR NEGRO (PACK);;30,0;EA;almohadillas de raton o mousepad;6368,0;3012,0;17861,0;11,0;1,0;;;;;;;False;;;;;;;
-2585-1578-COT26;11;Tóner;TONER BROTHER TN 1060 NEGRO;;18,0;EA;toner;47102,0;12600,0;94995,0;257,0;1,0;;;;;;;False;;;;;;;
-2585-1578-COT26;12;Lápiz pasta;LÁPIZ PASTA NEW ORANGE PUNTA FINA AZUL 1 UNIDAD 0.8 MM;;206,0;EA;lapiz pasta;850,0;222,0;3564,0;252,0;1,0;;;;;;;False;;;;;;;
+2585-1578-COT26;11;Tóner;TONER BROTHER TN 1060 NEGRO;;18,0;EA;toner;48000,0;12700,0;95000,0;259,0;1,0;;;;;;;False;;;;;;;
+2585-1578-COT26;12;Lápiz pasta;LÁPIZ PASTA NEW ORANGE PUNTA FINA AZUL 1 UNIDAD 0.8 MM;;206,0;EA;lapiz pasta;840,0;222,0;3564,0;254,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;13;Marcadores;SET 4 DESTACADORES TORRE COLORES NEON O PASTEL;;25,0;EA;marcadores;1180,0;908,0;128995,0;3,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;14;Cinta correctora;CARPETA CON PAPEL CARTULINA 18 HOJAS 14 COLORES;;8,0;EA;;;;;;;;;;;;;False;;;;;;;
-2585-1578-COT26;15;Carpetas para archivos;CARPETA CON ELASTICO ESTANDAR OFICIO 41 A 80 HOJAS;;40,0;EA;carpetas para archivos;665,0;360,0;2220,0;207,0;1,0;;;;;;;False;;;;;;;
+2585-1578-COT26;15;Carpetas para archivos;CARPETA CON ELASTICO ESTANDAR OFICIO 41 A 80 HOJAS;;40,0;EA;carpetas para archivos;639,0;359,0;2180,0;211,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;16;Cajas de archivo o accesorios;CAJA DE ARCHIVO DOBLE ESTANDAR;;25,0;EA;cajas de archivo o accesorios;2776,0;1567,0;4320,0;28,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;17;Fundas de etiquetas;FUNDAS PLASTICAS TRANSPARENTE OFICIO 100 UNIDADES;;10,0;EA;;;;;;;;;;;;;False;;;;;;;
-2585-1578-COT26;18;Barras de pegamento libres de ácido;PEGAMENTO EN BARRA 36 GRAMOS;;30,0;EA;barras de pegamento libres de acido;934,0;514,0;1879,0;71,0;1,0;;;;;;;False;;;;;;;
+2585-1578-COT26;18;Barras de pegamento libres de ácido;PEGAMENTO EN BARRA 36 GRAMOS;;30,0;EA;barras de pegamento libres de acido;934,0;496,0;1846,0;73,0;1,0;;;;;;;False;;;;;;;
 2585-1578-COT26;19;Figuras de goma Eva;GOMA EVA COLORES SURTIDOS 10 LÁMINAS 20X30 CM;;8,0;EA;;;;;;;;;;;;;False;;;;;;;
