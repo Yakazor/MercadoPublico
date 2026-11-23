@@ -15,6 +15,9 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
   `.streamlit/secrets.toml` (ignorado) o en `proveedores/ordenes_proveedor/` (ignorado).
 - Nunca inventar precios, correos, teléfonos ni links. Los correos a proveedores son
   borradores: nunca se envían solos.
+- **Cuando la usuaria quiera postular** a una Compra Ágil o licitación, seguir desde el inicio
+  `.claude/POSTULAR_COMPRA_AGIL.md`: leer ficha completa, EETT y anexos, y armar la tabla de
+  requisitos antes de cotizar. No avisarle de requisitos faltantes recién al final.
 - Un commit que solo toca `informes/` dispara «Verificar precios e informes PDF»; si es un
   commit intermedio, agrega `[skip actions]` al mensaje.
   Ojo: al poner una rama al día con la principal, el push también lleva los informes que regeneró
