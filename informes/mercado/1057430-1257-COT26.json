@@ -1,0 +1,127 @@
+{
+ "codigo": "1057430-1257-COT26",
+ "nombre": "Materiales Cambio Tablero Eléctrico Urgencias",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 2,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 5,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Interruptor automático 16 A curva C 6 kA (Legrand)",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/779962/interruptor-automatico-16-a-curva-c-6ka",
+     "precio": 6990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5873.95,
+     "coincidencia": "aproximada",
+     "nota": "No confirma 1 polo en el resultado de búsqueda.",
+     "fecha_consulta": "2026-11-24"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 11,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 14,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 15,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 16,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 17,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 18,
+   "producto": "Tarjetas de tablero de conectadores de circuitos",
+   "opciones": [],
+   "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
+  }
+ ]
+}

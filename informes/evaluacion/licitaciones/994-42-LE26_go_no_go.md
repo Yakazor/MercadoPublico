@@ -25,5 +25,6 @@
 
 - Conseguir precio de los ítems que faltan antes de ofertar.
 - Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
+- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
 
 Costo total estimado $34.796.002 neto; punto de equilibrio $41.407.242 con IVA (oferta mínima que cubre todos los costos).

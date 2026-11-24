@@ -1,0 +1,24 @@
+{
+ "codigo": "1561-101-COT26",
+ "nombre": "DQUISICIÓN DE ELEMENTOS DE PROTECCIÓN PERSONAL Y TERMÓMETROS AMBIENTALES ",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Equipo de protección corporal",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos (jockeys, bloqueador, respiradores, guantes, cotonas)."
+  },
+  {
+   "linea": 2,
+   "producto": "Delantales protectores",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos (jockeys, bloqueador, respiradores, guantes, cotonas)."
+  },
+  {
+   "linea": 3,
+   "producto": "Guantes protectores",
+   "opciones": [],
+   "nota": "No cotizable por línea: cada línea agrupa varios productos (jockeys, bloqueador, respiradores, guantes, cotonas)."
+  }
+ ]
+}

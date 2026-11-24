@@ -592,5 +592,23 @@
   "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 15 de 16 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 18 de 19 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 3 precios son de productos aproximados ",
   "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3191-128-LE26: FALTA PRECIO; 1427185-2-LE26: FALTA PRECIO; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 2585-1578-COT26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 4044-688-COT26: FALTA PRECIO; 3537-76-LE26: NO GO",
   "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3191-128-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 6 líneas que faltan: con 1 de 7 el margen sale de una parte del pedido. - **1427185-2-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 3 líneas que faltan: con 8 de 11 el margen sale de una parte del pedido. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-24",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "620 vigentes; 10 evaluadas; informes de 10",
+  "resultado": "0 GO, 2 con condiciones, 3 falta precio, 5 NO GO",
+  "riesgos": "1 de 1 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 2 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 8 precios son de productos aproximados (otra medida, marca o modelo).; 15 de 17 ítems sin precio de mercado; 17 de 18 ítems sin precio de mercado; 17 de 19 ítems sin precio de mercado; 2 de ",
+  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 2703-218-L126: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 3191-128-LE26: NO GO; 1427185-2-LE26: NO GO; 2658-368-L126: NO GO; 1057430-1257-COT26: NO GO; 3892-454-COT26: NO GO",
+  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **2703-218-L126**: ⚪ FALTA PRECIO. Conseguir precio de las 5 líneas que faltan: con 3 de 8 el margen sale de una parte del pedido. - **1953-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido. - **2107-181-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 15 líneas que faltan: con 2 de 17 el margen sale de una parte del pedido."
+ },
+ {
+  "fecha": "2026-11-24",
+  "autor": "Claude",
+  "licitaciones_procesadas": "Lote del 24-11 (Compras Ágiles de 2º llamado): 3892-454-COT26 (herramientas, 2/19), 1057430-1257-COT26 (tablero eléctrico, 1/18), 2296-704-COT26 (oficina, 0/10) y 1561-101-COT26 (EPP agrupado, no cotizable por línea).",
+  "resultado": "0 GO, 2 GO con condiciones (994-42-LE26 y 4590-26-LE26), 3 falta precio, 5 NO GO. 3892-454 y 1057430-1257 salen NO GO solo por cobertura de precios (no concluyente).",
+  "riesgos": "La usuaria aún no puede ofertar: el RUT disponible no es de primera categoría; está creando una empresa. Precios de resultados de búsqueda sin abrir las páginas.",
+  "decisiones": "Sin proveedores nuevos ni borradores: no se preparan ofertas hasta que la empresa esté habilitada (giro con IVA, factura electrónica, Registro de Proveedores).",
+  "recomendaciones": "Priorizar crear la empresa. 3892-454-COT26 (herramientas Total, $950 mil, cierra 26-11) es buen ejemplo de Compra Ágil cotizable en tiendas cuando ya puedan ofertar."
  }
 ]

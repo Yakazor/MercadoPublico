@@ -1,0 +1,146 @@
+{
+ "codigo": "3892-454-COT26",
+ "nombre": "MATERIAL FERRETERIA ALUMNOS EN PRACTICA",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 2,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Grapas de ferretería",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Juego de destornilladores aislados 6 piezas Total THTIS566",
+     "url": "https://www.easy.cl/juego-de-destornilladores-6-piezas-thtis566-total-1323026/p",
+     "precio": 8990,
+     "iva_incluido": true,
+     "contenido": "set 6 piezas",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 7554.62,
+     "coincidencia": "exacta",
+     "nota": "Normal $10.990.",
+     "fecha_consulta": "2026-11-24"
+    }
+   ]
+  },
+  {
+   "linea": 5,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 11,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 14,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 15,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 16,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 17,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 18,
+   "producto": "Grapas de ferretería",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Combo Total 20V: taladro percutor + esmeril angular 4 1/2 + llave de impacto, 2 baterías, cargador y maleta",
+     "url": "https://www.lider.cl/ip/herramientas/combo-total-20v-tal-percutor-esmeril-angular-4-1-2-llave-impacto-2b-car-maleta/00693258480808",
+     "precio": 188990,
+     "iva_incluido": true,
+     "contenido": "1 kit",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 158815.13,
+     "coincidencia": "equivalente",
+     "nota": "Incluye además llave de impacto. Precio de resultado de búsqueda (antes $341.143).",
+     "fecha_consulta": "2026-11-24"
+    }
+   ]
+  },
+  {
+   "linea": 19,
+   "producto": "Grapas de ferretería",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  }
+ ]
+}

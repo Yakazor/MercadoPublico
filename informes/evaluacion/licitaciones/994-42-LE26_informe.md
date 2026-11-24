@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 3
+- **Días para el cierre:** 2
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 2 de 13 ítems sin precio de mercado: el costo real es mayor.
-- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de Atacama: despacho caro y lento desde Santiago.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
@@ -69,6 +69,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 Condiciones:
 - Conseguir precio de los ítems que faltan antes de ofertar.
 - Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
+- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
 
 ## Supuestos
 

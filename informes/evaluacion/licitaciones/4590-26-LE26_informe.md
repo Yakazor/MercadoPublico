@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 3
+- **Días para el cierre:** 2
 - **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,7 +48,7 @@
 
 - 3 de 15 ítems sin precio de mercado: el costo real es mayor.
 - 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 2 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
 ## Proveedores recomendados
@@ -70,6 +70,7 @@ Condiciones:
 - Conseguir precio de los ítems que faltan antes de ofertar.
 - Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
 - Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
+- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
 
 ## Supuestos
 
