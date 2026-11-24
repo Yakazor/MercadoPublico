@@ -18,6 +18,8 @@ Al cerrar cada avance: actualiza este archivo (estado, siguiente paso), haz comm
 - **Cuando la usuaria quiera postular** a una Compra Ágil o licitación, seguir desde el inicio
   `.claude/POSTULAR_COMPRA_AGIL.md`: leer ficha completa, EETT y anexos, y armar la tabla de
   requisitos antes de cotizar. No avisarle de requisitos faltantes recién al final.
+- Ofertas enviadas y el carro a comprar si se adjudican: `.claude/POSTULACIONES.md`. Cuando la usuaria
+  avise una adjudicación (o pregunte por una postulación), revisar ese archivo primero.
 - Un commit que solo toca `informes/` dispara «Verificar precios e informes PDF»; si es un
   commit intermedio, agrega `[skip actions]` al mensaje.
   Ojo: al poner una rama al día con la principal, el push también lleva los informes que regeneró
