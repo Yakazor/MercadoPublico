@@ -16,7 +16,11 @@ usuaria al final: se resuelve antes.
       fichas técnicas, anexos firmados), plazo de entrega con despacho, causales de inadmisibilidad.
 - [ ] ¿Piden marca/modelo exacto o «similar»? Si es exacto, buscar solo ese modelo.
 
-## 2. Requisitos de la proveedora (una vez, pero confirmarlos)
+## 2. Requisitos de la proveedora — VERIFICAR PRIMERO, antes de todo lo demás
+
+Lección del 24-11-2026: se prepararon dos ofertas completas con un RUT que no era de primera categoría.
+Antes de buscar precios, pedir captura de «Actividades económicas» del SII del RUT que va a ofertar.
+
 - [ ] Ofertar con el RUT de quien va a facturar. Ese RUT necesita: actividad de comercio de
       primera categoría **afecta a IVA** en el SII, **factura electrónica** activa y estar **hábil**
       en el Registro de Proveedores (acreditación pagada).
