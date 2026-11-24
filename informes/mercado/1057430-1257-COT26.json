@@ -47,7 +47,10 @@
      "precio_unitario_neto": 5873.95,
      "coincidencia": "aproximada",
      "nota": "No confirma 1 polo en el resultado de búsqueda.",
-     "fecha_consulta": "2026-11-24"
+     "fecha_consulta": "2026-11-24",
+     "verificado": false,
+     "precio_pagina": 4390.0,
+     "verificacion_pagina": "2026-11-24: la página abrió y el precio más parecido es $4.390, no $6.990: puede haber cambiado."
     }
    ]
   },
@@ -123,5 +126,10 @@
    "opciones": [],
    "nota": "Material eléctrico con ficha técnica obligatoria: sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-24",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

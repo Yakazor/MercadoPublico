@@ -92,7 +92,7 @@
      "fecha_consulta": "2026-11-22",
      "verificado": false,
      "precio_pagina": 107090.0,
-     "verificacion_pagina": "2026-11-23: la página abrió y el precio más parecido es $107.090, no $77.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-24: la página abrió y el precio más parecido es $107.090, no $77.990: puede haber cambiado."
     }
    ]
   },
@@ -124,7 +124,7 @@
      "coincidencia": "exacta",
      "nota": "Precio de resultado de búsqueda (antes $310.650); confirmar vendedor.",
      "fecha_consulta": "2026-11-22",
-     "verificacion_pagina": "2026-11-23: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-24: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -136,7 +136,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-23",
+  "fecha": "2026-11-24",
   "opciones": 2,
   "verificadas": 0
  }

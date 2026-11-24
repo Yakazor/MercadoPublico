@@ -62,5 +62,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida (varias líneas «según EE.TT»)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-24",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

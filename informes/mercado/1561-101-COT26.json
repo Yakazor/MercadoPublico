@@ -20,5 +20,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: cada línea agrupa varios productos (jockeys, bloqueador, respiradores, guantes, cotonas)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-24",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

@@ -35,7 +35,8 @@
      "precio_unitario_neto": 7554.62,
      "coincidencia": "exacta",
      "nota": "Normal $10.990.",
-     "fecha_consulta": "2026-11-24"
+     "fecha_consulta": "2026-11-24",
+     "verificacion_pagina": "2026-11-24: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -132,7 +133,10 @@
      "precio_unitario_neto": 158815.13,
      "coincidencia": "equivalente",
      "nota": "Incluye además llave de impacto. Precio de resultado de búsqueda (antes $341.143).",
-     "fecha_consulta": "2026-11-24"
+     "fecha_consulta": "2026-11-24",
+     "verificado": false,
+     "precio_pagina": 201990.0,
+     "verificacion_pagina": "2026-11-24: la página abrió y el precio más parecido es $201.990, no $188.990: puede haber cambiado."
     }
    ]
   },
@@ -142,5 +146,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-24",
+  "opciones": 2,
+  "verificadas": 0
+ }
 }
