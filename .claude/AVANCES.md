@@ -136,6 +136,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-25 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 25-11 08:00.
+- Precios nuevos: 3907-15-LE26 3/15 (juguetes Navidad; tienda sobre lo que paga el Estado). 1736-882-COT26, 813-820-COT26 y 4238-97-LE26 no cotizables en tiendas.
+- Evaluación: 0 GO, 2 GO con condiciones (994-42-LE26, 4590-26-LE26), 3 falta precio, 2 NO GO. 200 Compras Ágiles abiertas (187 de 2º llamado, 10 en Los Lagos).
+
 ### 2026-11-24 — Rutina ACTUALIZACIÓN
 
 - El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 23-11 23:20.

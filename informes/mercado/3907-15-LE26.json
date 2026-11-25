@@ -1,0 +1,148 @@
+{
+ "codigo": "3907-15-LE26",
+ "nombre": "ADQUISICIÓN DE JUGUETES Y CONFITES NAVIDAD COMUNAL 2026 PARA NIÑOS Y NIÑAS DE LA COMUNA DE RENAICO",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 2,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 3,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 4,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 5,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 6,
+   "producto": "Juguetes didácticos",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Bicicleta de equilibrio para niños sin pedales verde (Babyluna)",
+     "url": "https://www.lider.cl/ip/juegos-de-exterior/bicicleta-de-equilibrio-para-ninos-sin-pedales-verde/00075328702890",
+     "precio": 15990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 13436.97,
+     "coincidencia": "equivalente",
+     "nota": "Rango de edad no confirmado; piden 200 unidades: confirmar stock. Antes $39.990.",
+     "fecha_consulta": "2026-11-25"
+    }
+   ]
+  },
+  {
+   "linea": 7,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 8,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 9,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 10,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 11,
+   "producto": "Juguetes didácticos",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Mini Karaoke Kiddos LED azul",
+     "url": "https://www.lider.cl/ip/audio/mini-karaoke-kiddos-led-azul/00084037230347",
+     "precio": 19990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 16798.32,
+     "coincidencia": "aproximada",
+     "nota": "Envío desde Estados Unidos; piden 150 unidades. Confirmar micrófono inalámbrico.",
+     "fecha_consulta": "2026-11-25"
+    },
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Parlante karaoke JYX K12-P con 2 micrófonos inalámbricos",
+     "url": "https://www.lider.cl/ip/audio/parlante-karaoke-jyx-mini-parlante-bluetooth-portatil-con-2-microfonos-inalambricos-y-voz-magica-divertida-compatible-con-entrada-tf-aux-k12-p/00073075641462",
+     "precio": 31990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 26882.35,
+     "coincidencia": "equivalente",
+     "nota": "2 micrófonos inalámbricos, Bluetooth.",
+     "fecha_consulta": "2026-11-25"
+    }
+   ]
+  },
+  {
+   "linea": 12,
+   "producto": "Juguetes didácticos",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Contixo KB5 audífonos inalámbricos Bluetooth para niños",
+     "url": "https://www.lider.cl/ip/mundo-gamer/contixo-kb5-audifonos-inalambricos-bluetooth-para-ninos-con-microfono-control-de-volumen-usb-c-y-cable-3-5mm/00073164272282",
+     "precio": 24884,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 20910.92,
+     "coincidencia": "equivalente",
+     "nota": "Envío desde Estados Unidos; piden 300 unidades: no hay stock local probable.",
+     "fecha_consulta": "2026-11-25"
+    }
+   ]
+  },
+  {
+   "linea": 13,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 14,
+   "producto": "Juguetes didácticos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  },
+  {
+   "linea": 15,
+   "producto": "Dulces de chocolate o sustitutos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
+  }
+ ]
+}
