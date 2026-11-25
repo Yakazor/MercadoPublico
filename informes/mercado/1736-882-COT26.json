@@ -56,5 +56,10 @@
    "opciones": [],
    "nota": "No cotizable por línea: todas las líneas dicen «según documento adjunto»."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-25",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

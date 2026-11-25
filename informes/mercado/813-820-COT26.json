@@ -26,5 +26,10 @@
    "opciones": [],
    "nota": "Insumos Agilent con catálogo específico (5190-5082, 5190-5107, 5191-4103, 5191-4112): cotizar con distribuidor Agilent."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-25",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

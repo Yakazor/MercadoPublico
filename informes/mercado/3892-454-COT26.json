@@ -36,7 +36,7 @@
      "coincidencia": "exacta",
      "nota": "Normal $10.990.",
      "fecha_consulta": "2026-11-24",
-     "verificacion_pagina": "2026-11-24: la tienda respondió HTTP 403."
+     "verificacion_pagina": "2026-11-25: la tienda respondió HTTP 403."
     }
    ]
   },
@@ -136,7 +136,7 @@
      "fecha_consulta": "2026-11-24",
      "verificado": false,
      "precio_pagina": 201990.0,
-     "verificacion_pagina": "2026-11-24: la página abrió y el precio más parecido es $201.990, no $188.990: puede haber cambiado."
+     "verificacion_pagina": "2026-11-25: la página abrió y el precio más parecido es $201.990, no $188.990: puede haber cambiado."
     }
    ]
   },
@@ -148,7 +148,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-24",
+  "fecha": "2026-11-25",
   "opciones": 2,
   "verificadas": 0
  }

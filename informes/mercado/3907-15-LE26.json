@@ -47,7 +47,11 @@
      "precio_unitario_neto": 13436.97,
      "coincidencia": "equivalente",
      "nota": "Rango de edad no confirmado; piden 200 unidades: confirmar stock. Antes $39.990.",
-     "fecha_consulta": "2026-11-25"
+     "fecha_consulta": "2026-11-25",
+     "verificado": true,
+     "verificado_en": "2026-11-25",
+     "precio_pagina": 15990.0,
+     "verificacion_pagina": "2026-11-25: la página muestra $15.990."
     }
    ]
   },
@@ -90,7 +94,11 @@
      "precio_unitario_neto": 16798.32,
      "coincidencia": "aproximada",
      "nota": "Envío desde Estados Unidos; piden 150 unidades. Confirmar micrófono inalámbrico.",
-     "fecha_consulta": "2026-11-25"
+     "fecha_consulta": "2026-11-25",
+     "verificado": true,
+     "verificado_en": "2026-11-25",
+     "precio_pagina": 19990.0,
+     "verificacion_pagina": "2026-11-25: la página muestra $19.990."
     },
     {
      "tienda": "Lider",
@@ -103,7 +111,11 @@
      "precio_unitario_neto": 26882.35,
      "coincidencia": "equivalente",
      "nota": "2 micrófonos inalámbricos, Bluetooth.",
-     "fecha_consulta": "2026-11-25"
+     "fecha_consulta": "2026-11-25",
+     "verificado": true,
+     "verificado_en": "2026-11-25",
+     "precio_pagina": 31990.0,
+     "verificacion_pagina": "2026-11-25: la página muestra $31.990."
     }
    ]
   },
@@ -122,7 +134,11 @@
      "precio_unitario_neto": 20910.92,
      "coincidencia": "equivalente",
      "nota": "Envío desde Estados Unidos; piden 300 unidades: no hay stock local probable.",
-     "fecha_consulta": "2026-11-25"
+     "fecha_consulta": "2026-11-25",
+     "verificado": true,
+     "verificado_en": "2026-11-25",
+     "precio_pagina": 24884.0,
+     "verificacion_pagina": "2026-11-25: la página muestra $24.884."
     }
    ]
   },
@@ -144,5 +160,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida; volúmenes altos (50 a 300 unidades por línea) requieren mayorista."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-25",
+  "opciones": 4,
+  "verificadas": 4
+ }
 }

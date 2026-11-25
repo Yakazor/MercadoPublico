@@ -116,5 +116,10 @@
    "opciones": [],
    "nota": "Equipamiento clínico (monitor desfibrilador, camillas, balanzas Seca, comodato): requiere distribuidor de equipos médicos."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-25",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

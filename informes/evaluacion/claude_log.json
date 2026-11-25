@@ -613,20 +613,20 @@
  },
  {
   "fecha": "2026-11-25",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "652 vigentes; 7 evaluadas; informes de 7",
-  "resultado": "0 GO, 2 con condiciones, 3 falta precio, 2 NO GO",
-  "riesgos": "1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 12 de 15 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 17 de 19 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 5 ítems sin precio de mercado; 3 de 15 ítems sin precio de mercado; 5 de 8 ítems sin precio de mercado; Cierra en 0 día(s); Cierra en 1 día(s); Cierra en 2 día(s); Cierra en 5 día(s); Entrega",
-  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3907-15-LE26: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 2703-218-L126: NO GO; 3892-454-COT26: NO GO",
-  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3907-15-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 12 líneas que faltan: con 3 de 15 el margen sale de una parte del pedido. - **1953-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido. - **2107-181-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 15 líneas que faltan: con 2 de 17 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-25",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote del 25-11: 3907-15-LE26 (juguetes y confites Navidad, 3/15 líneas), 1736-882-COT26 (muebles según adjunto), 813-820-COT26 (insumos Agilent) y 4238-97-LE26 (equipamiento clínico). Las tres últimas quedan como no cotizables en tiendas.",
   "resultado": "0 GO, 2 GO con condiciones (994-42-LE26 y 4590-26-LE26, neumáticos), 3 falta precio, 2 NO GO. 3907-15-LE26 queda en falta precio: los juguetes en tienda (bicicleta de equilibrio $15.990, karaoke $19.990-31.990, audífonos $24.884) superan los ~$12.000 netos que el Estado pagó en OC parecidas.",
   "riesgos": "Volúmenes altos (hasta 300 unidades por línea) y varios productos con envío desde EE.UU.: no hay stock local para cumplir. Precios de resultados de búsqueda sin abrir las páginas.",
   "decisiones": "Sin ofertas ni borradores: la usuaria aún no tiene empresa habilitada (ver .claude/POSTULACIONES.md).",
   "recomendaciones": "Seguir con la creación de la empresa. Las Compras Ágiles con productos de tienda y pocas unidades son las más fáciles para partir."
+ },
+ {
+  "fecha": "2026-11-25",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "652 vigentes; 7 evaluadas; informes de 7",
+  "resultado": "0 GO, 2 con condiciones, 3 falta precio, 2 NO GO",
+  "riesgos": "1 de 12 precios son de productos aproximados (otra medida, marca o modelo).; 1 de 3 precios son de productos aproximados (otra medida, marca o modelo).; 12 de 15 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 17 de 19 ítems sin precio de mercado; 2 de 13 ítems sin precio de mercado; 2 de 5 ítems sin precio de mercado; 3 de 15 ítems sin precio de mercado; 5 de 8 ítems sin precio de mercado; Cierra en 0 día(s); Cierra en 1 día(s); Cierra en 2 día(s); Cierra en 5 día(s); Entrega",
+  "decisiones": "994-42-LE26: GO CON CONDICIONES; 4590-26-LE26: GO CON CONDICIONES; 3907-15-LE26: FALTA PRECIO; 1953-26-LE26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 2703-218-L126: NO GO; 3892-454-COT26: NO GO",
+  "recomendaciones": "- **994-42-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **4590-26-LE26**: 🟡 GO CON CONDICIONES. Conseguir precio de los ítems que faltan antes de ofertar. - **3907-15-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 12 líneas que faltan: con 3 de 15 el margen sale de una parte del pedido. - **1953-26-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido. - **2107-181-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 15 líneas que faltan: con 2 de 17 el margen sale de una parte del pedido."
  }
 ]
