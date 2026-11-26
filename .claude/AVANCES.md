@@ -136,6 +136,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-26 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 25-11 22:50.
+- Precios nuevos: 1214102-1501-COT26 1/7, 3000-46-LE26 1/14; 2974-282-COT26 (muebles a medida) y 2996-191-COT26 (repuestos por modelo) sin precio en tiendas.
+- Evaluación: 0 GO, 0 GO con condiciones (neumáticos ya cerrados), 4 falta precio, 3 NO GO. 215 Compras Ágiles abiertas (206 de 2º llamado, 8 en Los Lagos).
+
 ### 2026-11-25 — Rutina ACTUALIZACIÓN
 
 - El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 25-11 08:00.

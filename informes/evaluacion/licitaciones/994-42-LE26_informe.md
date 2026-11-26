@@ -1,6 +1,6 @@
 # Informe ejecutivo: ADQUISICION DE NEUMATICOS PARA VEHICULOS Y MAQUINARIAS
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 2 de 13 ítems sin precio de mercado: el costo real es mayor.
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 - Entrega en Región de Atacama: despacho caro y lento desde Santiago.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
@@ -64,12 +64,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
-
-Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar. Calculado con precio para 11 de 13 líneas: con todas, el costo y la oferta serían mayores.
 
 ## Supuestos
 

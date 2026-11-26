@@ -1,0 +1,61 @@
+{
+ "codigo": "1214102-1501-COT26",
+ "nombre": "(RML) SILLAS Y BANCAS",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sillas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
+  },
+  {
+   "linea": 2,
+   "producto": "Sillas para trabajar",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
+  },
+  {
+   "linea": 3,
+   "producto": "Sillas para trabajar",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Silla ejecutiva malla 122x55x64 cm negro",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/1698052/Silla-Ejecutiva-Malla-122x55x64-cm-Negro/1698052",
+     "precio": 49990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 42008.4,
+     "coincidencia": "aproximada",
+     "nota": "No confirma certificación BIFMA exigida.",
+     "fecha_consulta": "2026-11-26"
+    }
+   ]
+  },
+  {
+   "linea": 4,
+   "producto": "Banquetas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
+  },
+  {
+   "linea": 5,
+   "producto": "Banquetas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
+  },
+  {
+   "linea": 6,
+   "producto": "Banquetas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
+  },
+  {
+   "linea": 7,
+   "producto": "Banquetas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
+  }
+ ]
+}

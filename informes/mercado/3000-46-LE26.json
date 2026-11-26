@@ -1,0 +1,103 @@
+{
+ "codigo": "3000-46-LE26",
+ "nombre": "MATERIALES DE CONSTRUCCIÓN DIDECO DEPORTES",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 2,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 5,
+   "producto": "Sets de construcción",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Plancha zincalum 5V 0,35 x 895 x 3000 mm",
+     "url": "https://www.easy.cl/plancha-zincalum-5v-035x895x3000-mm-118904/p",
+     "precio": 11060,
+     "iva_incluido": true,
+     "contenido": "1 plancha",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 9294.12,
+     "coincidencia": "exacta",
+     "nota": "Descuento por volumen según la página.",
+     "fecha_consulta": "2026-11-26"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 11,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 14,
+   "producto": "Sets de construcción",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  }
+ ]
+}

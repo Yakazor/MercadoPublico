@@ -1,6 +1,6 @@
 # Informe ejecutivo: Neumáticos para Vehículos y Maquinaria Parque de Maquinarias de la Provincia de Cachapoal Vialidad OHiggins
 
-**🟡 RECOMENDACIÓN CONDICIONADA** · 🟡 GO CON CONDICIONES
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,7 +40,7 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
@@ -48,7 +48,7 @@
 
 - 3 de 15 ítems sin precio de mercado: el costo real es mayor.
 - 1 de 12 precios son de productos aproximados (otra medida, marca o modelo).
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
 ## Proveedores recomendados
@@ -64,13 +64,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🟡 RECOMENDACIÓN CONDICIONADA.** La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
-
-Condiciones:
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
-- Confirmar que los productos aproximados cumplen la especificación de las bases (o cotizar el exacto).
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar. Calculado con precio para 12 de 15 líneas: con todas, el costo y la oferta serían mayores.
 
 ## Supuestos
 

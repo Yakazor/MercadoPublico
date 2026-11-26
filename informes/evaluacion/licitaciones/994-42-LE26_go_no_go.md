@@ -1,6 +1,6 @@
 # GO / NO GO: 994-42-LE26
 
-## Resultado: 🟡 GO CON CONDICIONES
+## Resultado: 🔴 NO GO
 
 | Indicador | Valor |
 |---|---|
@@ -19,12 +19,7 @@
 
 ## Por qué
 
-- La oportunidad es rentable, pero depende de cumplir las condiciones indicadas.
-
-## Condiciones para postular
-
-- Conseguir precio de los ítems que faltan antes de ofertar.
-- Sin monto estimado ni referencia precisa de OC: revisar en las bases el presupuesto disponible antes de ofertar.
-- Confirmar proveedor y stock hoy mismo (cierra en menos de 3 días).
+- Cierra hoy o ya cerró: no hay tiempo para cotizar.
+- Calculado con precio para 11 de 13 líneas: con todas, el costo y la oferta serían mayores.
 
 Costo total estimado $34.796.002 neto; punto de equilibrio $41.407.242 con IVA (oferta mínima que cubre todos los costos).
