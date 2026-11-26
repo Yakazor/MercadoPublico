@@ -110,5 +110,10 @@
    "opciones": [],
    "nota": "Repuestos específicos por modelo de vehículo: cotizar con distribuidor de repuestos; neumáticos Westlake sin link con precio verificable."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-26",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

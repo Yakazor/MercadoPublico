@@ -29,7 +29,11 @@
      "precio_unitario_neto": 42008.4,
      "coincidencia": "aproximada",
      "nota": "No confirma certificación BIFMA exigida.",
-     "fecha_consulta": "2026-11-26"
+     "fecha_consulta": "2026-11-26",
+     "verificado": true,
+     "verificado_en": "2026-11-26",
+     "precio_pagina": 49990.0,
+     "verificacion_pagina": "2026-11-26: la página muestra $49.990."
     }
    ]
   },
@@ -57,5 +61,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida (sillas y bancas con especificaciones detalladas)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-26",
+  "opciones": 1,
+  "verificadas": 1
+ }
 }

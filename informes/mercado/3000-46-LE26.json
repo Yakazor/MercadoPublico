@@ -41,7 +41,10 @@
      "precio_unitario_neto": 9294.12,
      "coincidencia": "exacta",
      "nota": "Descuento por volumen según la página.",
-     "fecha_consulta": "2026-11-26"
+     "fecha_consulta": "2026-11-26",
+     "verificado": false,
+     "precio_pagina": 10190.0,
+     "verificacion_pagina": "2026-11-26: la página abrió y el precio más parecido es $10.190, no $11.060: puede haber cambiado."
     }
    ]
   },
@@ -99,5 +102,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-26",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }
