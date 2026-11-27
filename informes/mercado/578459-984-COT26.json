@@ -1,0 +1,73 @@
+{
+ "codigo": "578459-984-COT26",
+ "nombre": "HERRAMIENTAS Y EQUIPAMIENTO - MEMO 579-13/2026 - PROGRAMA SALUD FAMILIAR 2027 - NATALIA VILLARROEL",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Semillas o almácigos de alfalfa",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 2,
+   "producto": "Semillas o almácigos de alfalfa",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 3,
+   "producto": "Malla",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 4,
+   "producto": "Azadones",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 5,
+   "producto": "Rastrillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 6,
+   "producto": "Palas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 7,
+   "producto": "Cercos de madera",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 8,
+   "producto": "Sillas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida (especificaciones en documento adjunto)."
+  },
+  {
+   "linea": 9,
+   "producto": "Mesas",
+   "opciones": [
+    {
+     "tienda": "Lider",
+     "producto_mercado": "Mesa plegable blanca 180 cm",
+     "url": "https://www.lider.cl/ip/camping/mesa-plegable-blanca-180-cm/00047000004625",
+     "precio": 25990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 21840.34,
+     "coincidencia": "equivalente",
+     "nota": "Antes $29.990; confirmar medidas 180x74x74 cm.",
+     "fecha_consulta": "2026-11-27"
+    }
+   ]
+  }
+ ]
+}

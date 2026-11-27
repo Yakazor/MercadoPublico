@@ -1,6 +1,6 @@
 # Informe ejecutivo: ADQUISICIÓN MOBILIARIO PARA UNIDADES DE LA REGION
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
+**🔴 NO RECOMENDADA** · 🔴 NO GO
 
 ## Resumen general
 
@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 1
+- **Días para el cierre:** 0
 - **Viabilidad:** Baja.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 2 de 5 ítems sin precio de mercado: el costo real es mayor.
-- Cierra en 1 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
 ## Proveedores recomendados
@@ -61,10 +61,7 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 60% de las líneas (mínimo 80%): todavía no se puede decidir.
-
-Condiciones:
-- Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido.
+**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar. Calculado con precio para 3 de 5 líneas: con todas, el costo y la oferta serían mayores.
 
 ## Supuestos
 

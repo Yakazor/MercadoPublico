@@ -1,0 +1,127 @@
+{
+ "codigo": "2452-30-LE26",
+ "nombre": "TONER Y TAMBORES PARA PARQUE DE IMPRESORAS",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 2,
+   "producto": "Tambores para impresora, fax o fotocopiadora",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 3,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 4,
+   "producto": "Tambores para impresora, fax o fotocopiadora",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 5,
+   "producto": "Tóner",
+   "opciones": [
+    {
+     "tienda": "HP Chile",
+     "producto_mercado": "Cartucho de tóner HP 79A negro LaserJet original CF279A",
+     "url": "https://www.hp.com/cl-es/shop/cartucho-de-toner-hp-79a-negro-laserjet-original-cf279a.html",
+     "precio": 77990,
+     "iva_incluido": true,
+     "contenido": "1 unidad",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 65537.82,
+     "coincidencia": "exacta",
+     "nota": "Figuraba agotado al indexarse; piden 30 unidades: requiere distribuidor.",
+     "fecha_consulta": "2026-11-27"
+    }
+   ]
+  },
+  {
+   "linea": 6,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 7,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 8,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 9,
+   "producto": "Tóner",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 10,
+   "producto": "Tintas",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 11,
+   "producto": "Tintas",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 12,
+   "producto": "Tintas",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 13,
+   "producto": "Tintas",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 14,
+   "producto": "Cartuchos de tinta",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 15,
+   "producto": "Cartuchos de tinta",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 16,
+   "producto": "Cartuchos de tinta",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 17,
+   "producto": "Cartuchos de tinta",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  },
+  {
+   "linea": 18,
+   "producto": "Cartuchos de tinta",
+   "opciones": [],
+   "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
+  }
+ ]
+}

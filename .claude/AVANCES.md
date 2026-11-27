@@ -136,6 +136,12 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-27 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 27-11 08:00.
+- Precios nuevos: 578459-984-COT26 1/9, 2452-30-LE26 1/18, 877-184-COT26 0/9, 2859-1532-COT26 0/18 (sin decisión firme por cobertura).
+- Evaluación: 0 GO, 0 GO con condiciones, 3 falta precio, 3 NO GO. 399 Compras Ágiles abiertas (393 de 2º llamado, 27 en Los Lagos).
+
 ### 2026-11-26 — Rutina ACTUALIZACIÓN
 
 - El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 25-11 22:50.
