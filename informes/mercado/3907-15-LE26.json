@@ -49,9 +49,9 @@
      "nota": "Rango de edad no confirmado; piden 200 unidades: confirmar stock. Antes $39.990.",
      "fecha_consulta": "2026-11-25",
      "verificado": true,
-     "verificado_en": "2026-11-26",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 15990.0,
-     "verificacion_pagina": "2026-11-26: la página muestra $15.990."
+     "verificacion_pagina": "2026-11-27: la página muestra $15.990."
     }
    ]
   },
@@ -96,9 +96,9 @@
      "nota": "Envío desde Estados Unidos; piden 150 unidades. Confirmar micrófono inalámbrico.",
      "fecha_consulta": "2026-11-25",
      "verificado": true,
-     "verificado_en": "2026-11-26",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 19990.0,
-     "verificacion_pagina": "2026-11-26: la página muestra $19.990."
+     "verificacion_pagina": "2026-11-27: la página muestra $19.990."
     },
     {
      "tienda": "Lider",
@@ -113,9 +113,9 @@
      "nota": "2 micrófonos inalámbricos, Bluetooth.",
      "fecha_consulta": "2026-11-25",
      "verificado": true,
-     "verificado_en": "2026-11-26",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 31990.0,
-     "verificacion_pagina": "2026-11-26: la página muestra $31.990."
+     "verificacion_pagina": "2026-11-27: la página muestra $31.990."
     }
    ]
   },
@@ -136,9 +136,9 @@
      "nota": "Envío desde Estados Unidos; piden 300 unidades: no hay stock local probable.",
      "fecha_consulta": "2026-11-25",
      "verificado": true,
-     "verificado_en": "2026-11-26",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 24884.0,
-     "verificacion_pagina": "2026-11-26: la página muestra $24.884."
+     "verificacion_pagina": "2026-11-27: la página muestra $24.884."
     }
    ]
   },
@@ -162,7 +162,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-26",
+  "fecha": "2026-11-27",
   "opciones": 4,
   "verificadas": 4
  }

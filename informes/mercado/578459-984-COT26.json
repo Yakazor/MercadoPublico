@@ -65,9 +65,17 @@
      "precio_unitario_neto": 21840.34,
      "coincidencia": "equivalente",
      "nota": "Antes $29.990; confirmar medidas 180x74x74 cm.",
-     "fecha_consulta": "2026-11-27"
+     "fecha_consulta": "2026-11-27",
+     "verificado": false,
+     "precio_pagina": 24990.0,
+     "verificacion_pagina": "2026-11-27: la página abrió y el precio más parecido es $24.990, no $25.990: puede haber cambiado."
     }
    ]
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-27",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }

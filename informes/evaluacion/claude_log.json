@@ -649,20 +649,20 @@
  },
  {
   "fecha": "2026-11-27",
-  "autor": "Sistema (script)",
-  "licitaciones_procesadas": "861 vigentes; 6 evaluadas; informes de 6",
-  "resultado": "0 GO, 0 con condiciones, 3 falta precio, 3 NO GO",
-  "riesgos": "12 de 15 ítems sin precio de mercado; 13 de 14 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 17 de 18 ítems sin precio de mercado; 2 de 5 ítems sin precio de mercado; 8 de 9 ítems sin precio de mercado; Cierra en 0 día(s); Cierra en 1 día(s); Cierra en 3 día(s); Cierra en 4 día(s); Cierra en 5 día(s); Entrega en Región de Coquimbo; Entrega en Región de la Araucanía; La mayoría de los precios no está verificada en la página de la tienda.; Plazo de entrega de 2 día(s); Sin mon",
-  "decisiones": "3907-15-LE26: FALTA PRECIO; 2452-30-LE26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 1953-26-LE26: NO GO; 578459-984-COT26: NO GO; 3000-46-LE26: NO GO",
-  "recomendaciones": "- **3907-15-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 12 líneas que faltan: con 3 de 15 el margen sale de una parte del pedido. - **2452-30-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 17 líneas que faltan: con 1 de 18 el margen sale de una parte del pedido. - **2107-181-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 15 líneas que faltan: con 2 de 17 el margen sale de una parte del pedido."
- },
- {
-  "fecha": "2026-11-27",
   "autor": "Claude",
   "licitaciones_procesadas": "Lote del 27-11: 578459-984-COT26 (huerto y mobiliario plegable, 1/9), 877-184-COT26 (librería, 0/9), 2452-30-LE26 (tóner y tambores, $20 M, 1/18) y 2859-1532-COT26 (EPP y materiales de terreno, 0/18).",
   "resultado": "0 GO, 0 GO con condiciones, 3 falta precio, 3 NO GO. Las cuatro nuevas quedan con muy poca cobertura de precios: sin decisión firme.",
   "riesgos": "Tóner originales con stock incierto (HP 79A figuraba agotado); EPP con certificación exigida. Precios de resultados de búsqueda sin abrir las páginas.",
   "decisiones": "Sin ofertas ni borradores: la usuaria aún no tiene empresa habilitada.",
   "recomendaciones": "Hoy hay 399 Compras Ágiles abiertas (393 de 2º llamado, 27 en Los Lagos), un alza fuerte: buen momento para tener la empresa lista. 578459-984-COT26 (mesa y sillas plegables, herramientas de huerto) y 877-184-COT26 (librería) son de productos de tienda."
+ },
+ {
+  "fecha": "2026-11-27",
+  "autor": "Sistema (script)",
+  "licitaciones_procesadas": "861 vigentes; 6 evaluadas; informes de 6",
+  "resultado": "0 GO, 0 con condiciones, 3 falta precio, 3 NO GO",
+  "riesgos": "12 de 15 ítems sin precio de mercado; 13 de 14 ítems sin precio de mercado; 15 de 17 ítems sin precio de mercado; 17 de 18 ítems sin precio de mercado; 2 de 5 ítems sin precio de mercado; 8 de 9 ítems sin precio de mercado; Cierra en 0 día(s); Cierra en 1 día(s); Cierra en 3 día(s); Cierra en 4 día(s); Cierra en 5 día(s); Entrega en Región de Coquimbo; Entrega en Región de la Araucanía; La mayoría de los precios no está verificada en la página de la tienda.; Plazo de entrega de 2 día(s); Sin mon",
+  "decisiones": "3907-15-LE26: FALTA PRECIO; 2452-30-LE26: FALTA PRECIO; 2107-181-LE26: FALTA PRECIO; 1953-26-LE26: NO GO; 578459-984-COT26: NO GO; 3000-46-LE26: NO GO",
+  "recomendaciones": "- **3907-15-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 12 líneas que faltan: con 3 de 15 el margen sale de una parte del pedido. - **2452-30-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 17 líneas que faltan: con 1 de 18 el margen sale de una parte del pedido. - **2107-181-LE26**: ⚪ FALTA PRECIO. Conseguir precio de las 15 líneas que faltan: con 2 de 17 el margen sale de una parte del pedido."
  }
 ]

@@ -56,5 +56,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-27",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }

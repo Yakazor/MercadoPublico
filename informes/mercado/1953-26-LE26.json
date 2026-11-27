@@ -26,8 +26,8 @@
      "nota": "Tipo de gas y certificación SEC por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-26: la página muestra $739.990.",
-     "verificado_en": "2026-11-26",
+     "verificacion_pagina": "2026-11-27: la página muestra $739.990.",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 739990.0
     },
     {
@@ -44,7 +44,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-17",
      "precio_pagina": 1251290.0,
-     "verificacion_pagina": "2026-11-26: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-27: la tienda respondió HTTP 404."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -66,8 +66,8 @@
      "nota": "Tipo de gas y certificación SEC por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-26: la página muestra $739.990.",
-     "verificado_en": "2026-11-26",
+     "verificacion_pagina": "2026-11-27: la página muestra $739.990.",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 739990.0
     },
     {
@@ -84,7 +84,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-17",
      "precio_pagina": 1251290.0,
-     "verificacion_pagina": "2026-11-26: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-27: la tienda respondió HTTP 404."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -106,8 +106,8 @@
      "nota": "Tipo de gas y certificación SEC por confirmar.",
      "verificado": true,
      "fecha_consulta": "2026-11-17",
-     "verificacion_pagina": "2026-11-26: la página muestra $739.990.",
-     "verificado_en": "2026-11-26",
+     "verificacion_pagina": "2026-11-27: la página muestra $739.990.",
+     "verificado_en": "2026-11-27",
      "precio_pagina": 739990.0
     },
     {
@@ -124,7 +124,7 @@
      "verificado": false,
      "fecha_consulta": "2026-11-17",
      "precio_pagina": 1251290.0,
-     "verificacion_pagina": "2026-11-26: la tienda respondió HTTP 404."
+     "verificacion_pagina": "2026-11-27: la tienda respondió HTTP 404."
     }
    ],
    "nota": "Precio de buscador, sin verificar."
@@ -137,7 +137,7 @@
   }
  ],
  "verificacion_paginas": {
-  "fecha": "2026-11-26",
+  "fecha": "2026-11-27",
   "opciones": 6,
   "verificadas": 3
  }

@@ -41,7 +41,10 @@
      "precio_unitario_neto": 65537.82,
      "coincidencia": "exacta",
      "nota": "Figuraba agotado al indexarse; piden 30 unidades: requiere distribuidor.",
-     "fecha_consulta": "2026-11-27"
+     "fecha_consulta": "2026-11-27",
+     "verificado": false,
+     "precio_pagina": 107090.0,
+     "verificacion_pagina": "2026-11-27: la página abrió y el precio más parecido es $107.090, no $77.990: puede haber cambiado."
     }
    ]
   },
@@ -123,5 +126,10 @@
    "opciones": [],
    "nota": "Tóner/tinta original: sin precio con link verificable en esta corrida; por volumen conviene distribuidor (Intcomex, Ingram)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-27",
+  "opciones": 1,
+  "verificadas": 0
+ }
 }
