@@ -17,7 +17,8 @@
      "precio_unitario_neto": 2512.61,
      "coincidencia": "exacta",
      "nota": "Posible oferta puntual (normal $6.290).",
-     "fecha_consulta": "2026-11-28"
+     "fecha_consulta": "2026-11-28",
+     "verificacion_pagina": "2026-11-28: la tienda respondió HTTP 403."
     },
     {
      "tienda": "Easy",
@@ -30,7 +31,8 @@
      "precio_unitario_neto": 5033.61,
      "coincidencia": "exacta",
      "nota": "Precio de buscador; confirmar vigente.",
-     "fecha_consulta": "2026-11-28"
+     "fecha_consulta": "2026-11-28",
+     "verificacion_pagina": "2026-11-28: la tienda respondió HTTP 403."
     }
    ],
    "nota": ""
@@ -50,7 +52,8 @@
      "precio_unitario_neto": 6773.11,
      "coincidencia": "aproximada",
      "nota": "Ondulada, no acanalada; AZM150 por confirmar.",
-     "fecha_consulta": "2026-11-28"
+     "fecha_consulta": "2026-11-28",
+     "verificacion_pagina": "2026-11-28: la tienda respondió HTTP 403."
     }
    ],
    "nota": "Acanalada exacta sin precio verificable."
@@ -112,7 +115,8 @@
      "precio_unitario_neto": 2773.11,
      "coincidencia": "exacta",
      "nota": "Precio de buscador; confirmar vigente.",
-     "fecha_consulta": "2026-11-28"
+     "fecha_consulta": "2026-11-28",
+     "verificacion_pagina": "2026-11-28: la tienda respondió HTTP 403."
     }
    ],
    "nota": ""
@@ -144,7 +148,8 @@
      "precio_unitario_neto": 18142.86,
      "coincidencia": "equivalente",
      "nota": "Agorex 60 = pegatodo universal; precio de buscador, confirmar.",
-     "fecha_consulta": "2026-11-28"
+     "fecha_consulta": "2026-11-28",
+     "verificacion_pagina": "2026-11-28: la tienda respondió HTTP 403."
     }
    ],
    "nota": ""
@@ -161,5 +166,10 @@
    "opciones": [],
    "nota": "Sin precio con link verificable en esta corrida."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-28",
+  "opciones": 5,
+  "verificadas": 0
+ }
 }

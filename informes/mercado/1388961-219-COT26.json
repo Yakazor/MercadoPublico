@@ -38,5 +38,10 @@
    "opciones": [],
    "nota": "No cotizable con retail (repuesto especializado)."
   }
- ]
+ ],
+ "verificacion_paginas": {
+  "fecha": "2026-11-28",
+  "opciones": 0,
+  "verificadas": 0
+ }
 }
