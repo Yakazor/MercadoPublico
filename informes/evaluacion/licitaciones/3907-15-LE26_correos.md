@@ -38,7 +38,7 @@ Asimismo, solicitamos indicar:
 - Vigencia de la oferta.
 - Condiciones de pago.
 
-Idealmente requerimos respuesta antes del 30-11-2026.
+Idealmente requerimos respuesta antes del 01-12-2026.
 
 Quedamos atentos.
 

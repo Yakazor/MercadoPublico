@@ -1,0 +1,42 @@
+{
+ "codigo": "1388961-219-COT26",
+ "nombre": "Compra de repuestos y componentes para globo de televigilancia Águila 7",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Rollos de cable",
+   "opciones": [],
+   "nota": "No cotizable con retail (repuesto especializado)."
+  },
+  {
+   "linea": 2,
+   "producto": "Actuadores eléctricos",
+   "opciones": [],
+   "nota": "No cotizable con retail (repuesto especializado)."
+  },
+  {
+   "linea": 3,
+   "producto": "Tablero de cables imprimido",
+   "opciones": [],
+   "nota": "No cotizable con retail (repuesto especializado)."
+  },
+  {
+   "linea": 4,
+   "producto": "Conversores de frecuencia",
+   "opciones": [],
+   "nota": "No cotizable con retail (repuesto especializado)."
+  },
+  {
+   "linea": 5,
+   "producto": "Transformadores de transmisión",
+   "opciones": [],
+   "nota": "No cotizable con retail (repuesto especializado)."
+  },
+  {
+   "linea": 6,
+   "producto": "Transformadores de transmisión",
+   "opciones": [],
+   "nota": "No cotizable con retail (repuesto especializado)."
+  }
+ ]
+}

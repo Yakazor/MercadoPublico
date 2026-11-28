@@ -1,0 +1,16 @@
+﻿codigo;linea;producto;descripcion;categoria;cantidad;unidad;ref_producto;ref_mediana;ref_p25;ref_p75;ref_n_ordenes;ref_similitud;tienda;producto_mercado;url;fecha_consulta;coincidencia;verificado;unidad_global;costo_unitario_neto;oferta_unitaria_neta;subtotal_costo;subtotal_oferta;referencia_comparable;referencia_confiable;margen_vs_referencia
+1218462-13-COT26;1;Electrodos para soldar;ELECTRODO 6011 3/32, 1 KG P-A;;1,0;EA;;;;;;;Easy;Electrodo 3/32 1 kg E6011 Krafter;https://www.easy.cl/electrodo-332-1-kg-e6011-krafter-1285011/p;2026-11-28;exacta;False;False;2513,0;3767,0;3140,0;3767,0;;;
+1218462-13-COT26;2;Plancha de acero;PLANCHA AC 0,35 × 851 × 3000 AZM150;;8,0;EA;;;;;;;Easy;Plancha zincalum ondulada 0,35x851x3000 mm;https://www.easy.cl/plancha-zincalum-ondulada-035x851x3000-mm-118890/p;2026-11-28;aproximada;False;False;6773,0;10156,0;67704,0;81245,0;;;
+1218462-13-COT26;3;Suelos de vinilo;PISO SPC OAKTON GR 4,0/1,0 IX, 2,5 M² POR CAJA;;3,0;BX;suelos de vinilo;11000,0;11000,0;11000,0;1,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;4;Marcos de puertas;JUEGO MARCO PINO 40 × 90 × 5,41;;1,0;EA;marcos de puertas;13402,0;11007,0;15798,0;13,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;5;Tornillos para metales;TORNILLO AUTOPERFORANTE METAL 8 × 1/2, 500 UN;;1,0;EA;tornillos para metales;2500,0;67,0;5486,0;32,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;6;Tornillos para metales;TORNILLO AUTOPERFORANTE METAL 12 × 2 1/2, 100 UN;;1,0;EA;tornillos para metales;2500,0;67,0;5486,0;32,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;7;Tornillos para madera;TORNILLO AUTOPERFORANTE MADERA 8 × 1, 100 UN;;1,0;EA;tornillos para madera;2502,0;1380,0;6076,0;72,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;8;Perfiles de montaje;ESTRUCTURA OMEGA 35 × 38 × 600;;5,0;EA;perfiles de montaje;5990,0;2500,0;16990,0;69,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;9;Perfiles de montaje;PERFIL U ESTRUCTURAL 2 × 3 × 0,85 MM, 3 M;;14,0;EA;perfiles de montaje;5990,0;2500,0;16990,0;69,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;10;Perfiles de montaje;PERFIL C ESTRUCTURAL 2 × 3 × 0,85 MM, 2,4 M;;14,0;EA;perfiles de montaje;5990,0;2500,0;16990,0;69,0;1,0;Easy;Estructural C 2x3'' 0,85 mm 2,4 m;https://www.easy.cl/estructural-c-2x3-085-mm-24-m-2304-kg-118969/p;2026-11-28;exacta;False;False;2773,0;4158,0;48510,0;58212,0;True;False;0,729
+1218462-13-COT26;11;Juntas;PACK 3 BISAGRAS 3 × 3 BRONCE;;3,0;EA;juntas;17400,0;17400,0;17400,0;1,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;12;Juntas;POMEL 3/4? 95 MM, 2 UN;;1,0;EA;juntas;17400,0;17400,0;17400,0;1,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;13;Adhesivos líquidos;ADHESIVO AGOREX 60 1 L;;2,0;EA;adhesivos liquidos;3614,0;2553,0;6026,0;36,0;1,0;Easy;Adhesivo de contacto 1 litro Pegatodo Universal Agorex;https://www.easy.cl/adhesivo-de-contacto-1-litro-pegatodo-universal-agorex-119680/p;2026-11-28;equivalente;False;False;18143,0;27203,0;45339,0;54407,0;True;False;-0,841
+1218462-13-COT26;14;Rodillos de pintar;RODILLO CHIPORRO NATURAL 50 MM × 23 CM;;2,0;EA;rodillos de pintar;3719,0;2900,0;5819,0;100,0;1,0;;;;;;;False;;;;;;;
+1218462-13-COT26;15;Ácido muriático;ÁCIDO MURIÁTICO 5 L;;1,0;EA;;;;;;;;;;;;;False;;;;;;;

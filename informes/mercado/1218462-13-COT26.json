@@ -1,0 +1,165 @@
+{
+ "codigo": "1218462-13-COT26",
+ "nombre": "MATERIALES FERRETERÍA",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Electrodos para soldar",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Electrodo 3/32 1 kg E6011 Krafter",
+     "url": "https://www.easy.cl/electrodo-332-1-kg-e6011-krafter-1285011/p",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "exacta",
+     "nota": "Posible oferta puntual (normal $6.290).",
+     "fecha_consulta": "2026-11-28"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Electrodo 3/32 6011 display 1 kg Indura",
+     "url": "https://www.easy.cl/electrodo-332-6011-display-1-kg-indura-151589/p",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5033.61,
+     "coincidencia": "exacta",
+     "nota": "Precio de buscador; confirmar vigente.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": ""
+  },
+  {
+   "linea": 2,
+   "producto": "Plancha de acero",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Plancha zincalum ondulada 0,35x851x3000 mm",
+     "url": "https://www.easy.cl/plancha-zincalum-ondulada-035x851x3000-mm-118890/p",
+     "precio": 8060,
+     "iva_incluido": true,
+     "contenido": "1 plancha",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 6773.11,
+     "coincidencia": "aproximada",
+     "nota": "Ondulada, no acanalada; AZM150 por confirmar.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": "Acanalada exacta sin precio verificable."
+  },
+  {
+   "linea": 3,
+   "producto": "Suelos de vinilo",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Marcos de puertas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 5,
+   "producto": "Tornillos para metales",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Tornillos para metales",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Tornillos para madera",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Perfiles de montaje",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Perfiles de montaje",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Perfiles de montaje",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Estructural C 2x3'' 0,85 mm 2,4 m",
+     "url": "https://www.easy.cl/estructural-c-2x3-085-mm-24-m-2304-kg-118969/p",
+     "precio": 3300,
+     "iva_incluido": true,
+     "contenido": "1 tira",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2773.11,
+     "coincidencia": "exacta",
+     "nota": "Precio de buscador; confirmar vigente.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": ""
+  },
+  {
+   "linea": 11,
+   "producto": "Juntas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Juntas",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Adhesivos líquidos",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Adhesivo de contacto 1 litro Pegatodo Universal Agorex",
+     "url": "https://www.easy.cl/adhesivo-de-contacto-1-litro-pegatodo-universal-agorex-119680/p",
+     "precio": 21590,
+     "iva_incluido": true,
+     "contenido": "1 L",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 18142.86,
+     "coincidencia": "equivalente",
+     "nota": "Agorex 60 = pegatodo universal; precio de buscador, confirmar.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": ""
+  },
+  {
+   "linea": 14,
+   "producto": "Rodillos de pintar",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 15,
+   "producto": "Ácido muriático",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  }
+ ]
+}

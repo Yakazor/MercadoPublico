@@ -1,0 +1,169 @@
+{
+ "codigo": "5441-559-COT26",
+ "nombre": "TPS / ADQUISICION DE MATERIALES DE FERRETERIA (Proyecto FONDAP ACCDIS Fac, Quimica Dr. Cristian Torres)",
+ "items": [
+  {
+   "linea": 1,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [
+    {
+     "tienda": "Sodimac",
+     "producto_mercado": "Melamina Blanco 18 mm 183x250 cm",
+     "url": "https://www.sodimac.cl/sodimac-cl/product/571547/melamina-blanco-18-mm-183x250-cm",
+     "precio": 48990,
+     "iva_incluido": true,
+     "contenido": "1 plancha",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 41168.07,
+     "coincidencia": "aproximada",
+     "nota": "Mismo formato pero color blanco; azul acero sin precio verificable.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": "Color azul acero no encontrado con precio; referencia en blanco."
+  },
+  {
+   "linea": 2,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 3,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 4,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 5,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 6,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 7,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 8,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 9,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 10,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 11,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 12,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 13,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 14,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 15,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Adhesivo de contacto 1 litro Pegatodo Universal Agorex",
+     "url": "https://www.easy.cl/adhesivo-de-contacto-1-litro-pegatodo-universal-agorex-119680/p",
+     "precio": 21590,
+     "iva_incluido": true,
+     "contenido": "1 L",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 18142.86,
+     "coincidencia": "equivalente",
+     "nota": "Agorex 60 = pegatodo universal; precio de buscador, confirmar.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": ""
+  },
+  {
+   "linea": 16,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  },
+  {
+   "linea": 17,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Electrodo 3/32 1 kg E6011 Krafter",
+     "url": "https://www.easy.cl/electrodo-332-1-kg-e6011-krafter-1285011/p",
+     "precio": 2990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 2512.61,
+     "coincidencia": "exacta",
+     "nota": "Posible oferta puntual (normal $6.290).",
+     "fecha_consulta": "2026-11-28"
+    },
+    {
+     "tienda": "Easy",
+     "producto_mercado": "Electrodo 3/32 6011 display 1 kg Indura",
+     "url": "https://www.easy.cl/electrodo-332-6011-display-1-kg-indura-151589/p",
+     "precio": 5990,
+     "iva_incluido": true,
+     "contenido": "1 kg",
+     "unidades_equivalentes": 1,
+     "precio_unitario_neto": 5033.61,
+     "coincidencia": "exacta",
+     "nota": "Precio de buscador; confirmar vigente.",
+     "fecha_consulta": "2026-11-28"
+    }
+   ],
+   "nota": ""
+  },
+  {
+   "linea": 18,
+   "producto": "Cubiertas de tornillos",
+   "opciones": [],
+   "nota": "Sin precio con link verificable en esta corrida."
+  }
+ ]
+}

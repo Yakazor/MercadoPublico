@@ -1,12 +1,12 @@
 # Informe ejecutivo: ADQUISICIÓN MOBILIARIO PARA UNIDADES DE LA REGION
 
-**🔴 NO RECOMENDADA** · 🔴 NO GO
+**⚪ SIN DECISIÓN: FALTAN PRECIOS** · ⚪ FALTA PRECIO
 
 ## Resumen general
 
 - **Licitación:** [1953-26-LE26](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=1953-26-LE26) (LE)
 - **Organismo comprador:** DIRECCION GENERAL DE GENDARMERIA DE CHIL (Región de Valparaíso)
-- **Fecha de cierre:** 2026-11-27 15:00
+- **Fecha de cierre:** 2026-12-01 15:00
 - **Monto referencial:** —
 - **Ítems:** 5 (60% con precio de mercado)
 
@@ -40,14 +40,14 @@
 
 ## Análisis de plazos
 
-- **Días para el cierre:** 0
-- **Viabilidad:** Baja.
+- **Días para el cierre:** 3
+- **Viabilidad:** Media.
 - **Mitigación:** pedir cotización hoy (correos abajo), confirmar stock por escrito y tener un segundo proveedor.
 
 ## Riesgos detectados
 
 - 2 de 5 ítems sin precio de mercado: el costo real es mayor.
-- Cierra en 0 día(s): poco tiempo para cotizar con proveedores.
+- Cierra en 3 día(s): poco tiempo para cotizar con proveedores.
 - Sin monto estimado publicado: no hay una referencia precisa de OC con qué comparar la oferta; el tipo LE admite hasta 1.000 UTM ($72.151.000).
 
 ## Proveedores recomendados
@@ -61,7 +61,10 @@ Prioridad: los que cubren más líneas primero. Riesgo: precios al detalle; pedi
 
 ## Conclusión ejecutiva
 
-**🔴 NO RECOMENDADA.** Cierra hoy o ya cerró: no hay tiempo para cotizar. Calculado con precio para 3 de 5 líneas: con todas, el costo y la oferta serían mayores.
+**⚪ SIN DECISIÓN: FALTAN PRECIOS.** Hay precio para 60% de las líneas (mínimo 80%): todavía no se puede decidir.
+
+Condiciones:
+- Conseguir precio de las 2 líneas que faltan: con 3 de 5 el margen sale de una parte del pedido.
 
 ## Supuestos
 

@@ -136,6 +136,14 @@ cotización formal» (captura de Evaluación con «None» en la tabla).
 
 ## Bitácora
 
+### 2026-11-28 — Rutina ACTUALIZACIÓN
+
+- El radar programado no corrió en 12 h; se disparó con el archivo disparador (run 46137772778, OK). Compras Ágiles al día hasta 28-11 08:00.
+- Lote: 5441-559-COT26 (ferretería FONDAP, 3/18 con precio), 1388961-219-COT26 (repuestos especializados, 0/6), 691944-46-L126 (EETT en adjunto, 0/17) y 1218462-13-COT26 (ferretería La Serena, 4/15).
+- Evaluación: 0 GO, 5 falta precio, 3 NO GO (1218462-13-COT26 con margen neto negativo con cobertura parcial). Claude Log registrado. Sin ofertas ni borradores (empresa aún no habilitada).
+- 362 Compras Ágiles abiertas (357 de 2º llamado, 36 en Los Lagos). Pruebas: 573 OK, 32 omitidas.
+- Sin errores.
+
 ### 2026-11-27 — Rutina ACTUALIZACIÓN
 
 - El radar programado no corrió en 12 h; se disparó con el archivo disparador y terminó bien. Compras Ágiles al día hasta 27-11 08:00.
