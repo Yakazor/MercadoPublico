@@ -1,0 +1,7 @@
+﻿codigo;linea;producto;descripcion;categoria;cantidad;unidad;ref_producto;ref_mediana;ref_p25;ref_p75;ref_n_ordenes;ref_similitud;tienda;producto_mercado;url;fecha_consulta;coincidencia;verificado;unidad_global;costo_unitario_neto;oferta_unitaria_neta;subtotal_costo;subtotal_oferta;referencia_comparable;referencia_confiable;margen_vs_referencia
+1388961-219-COT26;1;Rollos de cable;Cable/control 5 milímetros modelos 12 G1, color Gris, 9 mts.;;9,0;EA;rollos de cable;31450,0;834,0;75000,0;11,0;1,0;;;;;;;False;;;;;;;
+1388961-219-COT26;2;Actuadores eléctricos;Equipo isometro marca Bender o su equivalente modelo IR 423-D4W-2;;1,0;EA;;;;;;;;;;;;;False;;;;;;;
+1388961-219-COT26;3;Tablero de cables imprimido;Botonera, 6 botones IP 68 (resistencia bajo agua);;1,0;EA;;;;;;;;;;;;;False;;;;;;;
+1388961-219-COT26;4;Conversores de frecuencia;Conversor DC-DC Gabinete 25W SD-25 IP-67;;1,0;EA;;;;;;;;;;;;;False;;;;;;;
+1388961-219-COT26;5;Transformadores de transmisión;Transformador fuente de poder 24V AC 3amp  IP-67;;1,0;EA;;;;;;;;;;;;;False;;;;;;;
+1388961-219-COT26;6;Transformadores de transmisión;Fuente de poder 12 volts 3 amp 35W LPV-35 IP-67;;1,0;EA;;;;;;;;;;;;;False;;;;;;;
